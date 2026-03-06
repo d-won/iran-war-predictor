@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026 Iran War End Prediction Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', -apple-system, sans-serif;
+      background: #0a0e17;
+      color: #e0e6ed;
+      min-height: 100vh;
+    }
+    .header {
+      background: linear-gradient(135deg, #1a1f35, #0d1321);
+      border-bottom: 1px solid #2a3454;
+      padding: 20px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .header h1 {
+      font-size: 22px;
+      color: #fff;
+    }
+    .header h1 span { color: #f56565; }
+    .header-info {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      font-size: 13px;
+    }
+    .war-day {
+      background: #f56565;
+      color: #fff;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 14px;
+    }
+    .update-timer {
+      color: #8892b0;
+    }
+    .update-timer strong { color: #64ffda; }
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .full-width { grid-column: 1 / -1; }
+    .card {
+      background: #111827;
+      border: 1px solid #1e2a4a;
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .card h2 {
+      font-size: 16px;
+      color: #8892b0;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+    .prob-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 12px;
+    }
+    .prob-item {
+      background: #0d1321;
+      border: 1px solid #1e2a4a;
+      border-radius: 10px;
+      padding: 14px;
+      text-align: center;
+      transition: all 0.3s;
+    }
+    .prob-item:hover {
+      border-color: #64ffda;
+      transform: translateY(-2px);
+    }
+    .prob-item .label {
+      font-size: 12px;
+      color: #8892b0;
+      margin-bottom: 8px;
+    }
+    .prob-item .value {
+      font-size: 28px;
+      font-weight: 700;
+    }
+    .prob-item .bar {
+      height: 4px;
+      background: #1e2a4a;
+      border-radius: 2px;
+      margin-top: 8px;
+      overflow: hidden;
+    }
+    .prob-item .bar-fill {
+      height: 100%;
+      border-radius: 2px;
+      transition: width 0.5s;
+    }
+    .chart-container {
+      position: relative;
+      height: 350px;
+    }
+    .factors-list {
+      max-height: 400px;
+      overflow-y: auto;
+    }
+    .factor-item {
+      padding: 12px;
+      border-bottom: 1px solid #1e2a4a;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .factor-item:hover { background: #1a2235; }
+    .factor-item .factor-name {
+      font-weight: 600;
+      color: #e2e8f0;
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+    .factor-item .factor-impact {
+      font-size: 12px;
+      color: #8892b0;
+    }
+    .factor-item .factor-weight {
+      font-size: 12px;
+      color: #64ffda;
+      margin-top: 2px;
+    }
+    .news-list {
+      max-height: 400px;
+      overflow-y: auto;
+    }
+    .news-item {
+      padding: 10px 12px;
+      border-bottom: 1px solid #1e2a4a;
+    }
+    .news-item a {
+      color: #90cdf4;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+    }
+    .news-item a:hover { color: #64ffda; }
+    .news-item .news-meta {
+      font-size: 11px;
+      color: #4a5568;
+      margin-top: 3px;
+    }
+    .news-item .news-snippet {
+      font-size: 12px;
+      color: #718096;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+    .history-table {
+      width: 100%;
+      font-size: 12px;
+      border-collapse: collapse;
+    }
+    .history-table th {
+      color: #8892b0;
+      text-align: left;
+      padding: 8px;
+      border-bottom: 1px solid #1e2a4a;
+      font-weight: 600;
+    }
+    .history-table td {
+      padding: 8px;
+      border-bottom: 1px solid #0d1321;
+      cursor: pointer;
+    }
+    .history-table tr:hover td { background: #1a2235; }
+    .historical-wars {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+    }
+    .war-card {
+      background: #0d1321;
+      border: 1px solid #1e2a4a;
+      border-radius: 8px;
+      padding: 12px;
+      font-size: 12px;
+    }
+    .war-card .war-name {
+      font-weight: 600;
+      color: #e2e8f0;
+      margin-bottom: 6px;
+      font-size: 13px;
+    }
+    .war-card .war-duration {
+      color: #f6ad55;
+      font-weight: 700;
+      font-size: 16px;
+    }
+    .war-card .war-detail {
+      color: #718096;
+      margin-top: 4px;
+    }
+    .signals-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 8px;
+    }
+    .signal-item {
+      background: #0d1321;
+      border-radius: 8px;
+      padding: 10px;
+      text-align: center;
+    }
+    .signal-item .signal-label {
+      font-size: 10px;
+      color: #8892b0;
+      text-transform: uppercase;
+    }
+    .signal-item .signal-value {
+      font-size: 22px;
+      font-weight: 700;
+      margin-top: 4px;
+    }
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.7);
+      z-index: 100;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal {
+      background: #111827;
+      border: 1px solid #2a3454;
+      border-radius: 12px;
+      padding: 24px;
+      max-width: 700px;
+      width: 90%;
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+    .modal h3 {
+      color: #fff;
+      margin-bottom: 16px;
+      font-size: 18px;
+    }
+    .modal .close-btn {
+      float: right;
+      background: none;
+      border: none;
+      color: #8892b0;
+      font-size: 24px;
+      cursor: pointer;
+    }
+    .modal .close-btn:hover { color: #fff; }
+    .btn {
+      background: #2563eb;
+      color: #fff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 13px;
+    }
+    .btn:hover { background: #1d4ed8; }
+    .btn-sm { padding: 4px 10px; font-size: 11px; }
+    .color-green { color: #48bb78; }
+    .color-red { color: #f56565; }
+    .color-yellow { color: #f6ad55; }
+    .color-blue { color: #63b3ed; }
+    .color-purple { color: #b794f4; }
+    .color-teal { color: #64ffda; }
+    .color-pink { color: #f687b3; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0e17; }
+    ::-webkit-scrollbar-thumb { background: #2a3454; border-radius: 3px; }
+    .loading {
+      text-align: center;
+      padding: 40px;
+      color: #8892b0;
+    }
+    .loading::after {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #2a3454;
+      border-top-color: #64ffda;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-left: 10px;
+      vertical-align: middle;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @media (max-width: 768px) {
+      .container { grid-template-columns: 1fr; }
+      .header { flex-direction: column; gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>2026 <span>Iran War</span> End Prediction Dashboard</h1>
+    <div class="header-info">
+      <div class="war-day" id="warDay">D+0</div>
+      <div class="update-timer">
+        Next update: <strong id="nextUpdate">--:--</strong>
+        <button class="btn btn-sm" onclick="manualUpdate()" style="margin-left:8px;">Update Now</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Current Prediction -->
+    <div class="card full-width">
+      <h2>Current Prediction - War End Probability</h2>
+      <div class="prob-grid" id="probGrid">
+        <div class="loading">Loading prediction data</div>
+      </div>
+    </div>
+
+    <!-- Trend Chart -->
+    <div class="card full-width">
+      <h2>Prediction Trend (Click a point to see reasoning)</h2>
+      <div class="chart-container">
+        <canvas id="trendChart"></canvas>
+      </div>
+    </div>
+
+    <!-- Bar Chart -->
+    <div class="card">
+      <h2>Current Distribution</h2>
+      <div class="chart-container">
+        <canvas id="barChart"></canvas>
+      </div>
+    </div>
+
+    <!-- News Signals -->
+    <div class="card">
+      <h2>News Signal Analysis</h2>
+      <div class="signals-grid" id="signalsGrid">
+        <div class="loading">Analyzing signals</div>
+      </div>
+    </div>
+
+    <!-- Factors -->
+    <div class="card">
+      <h2>Prediction Factors (Click for Details)</h2>
+      <div class="factors-list" id="factorsList">
+        <div class="loading">Loading factors</div>
+      </div>
+    </div>
+
+    <!-- Latest News -->
+    <div class="card">
+      <h2>Latest Iran War News</h2>
+      <div class="news-list" id="newsList">
+        <div class="loading">Fetching news</div>
+      </div>
+    </div>
+
+    <!-- Historical Wars Comparison -->
+    <div class="card full-width">
+      <h2>Historical Wars Comparison</h2>
+      <div class="historical-wars" id="historicalWars"></div>
+    </div>
+
+    <!-- Prediction History -->
+    <div class="card full-width">
+      <h2>Update History (Click to see reasoning at that time)</h2>
+      <div style="overflow-x: auto;">
+        <table class="history-table" id="historyTable">
+          <thead>
+            <tr>
+              <th>Time</th>
+              <th>War Day</th>
+              <th>&lt;1M</th>
+              <th>1-2M</th>
+              <th>2-4M</th>
+              <th>4-6M</th>
+              <th>6-9M</th>
+              <th>9-12M</th>
+              <th>12M+</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="historyBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Detail Modal -->
+  <div class="modal-overlay" id="modal">
+    <div class="modal">
+      <button class="close-btn" onclick="closeModal()">&times;</button>
+      <h3 id="modalTitle">Prediction Details</h3>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <script>
+    const COLORS = ['#48bb78', '#64ffda', '#63b3ed', '#f6ad55', '#f56565', '#b794f4', '#f687b3'];
+    const PERIOD_LABELS = ['1month_within', '1-2months', '2-4months', '4-6months', '6-9months', '9-12months', '12months_plus'];
+    const PERIOD_DISPLAY = ['1month within (~3/28)', '1-2months (Apr)', '2-4months (May-Jun)', '4-6months (Jul-Aug)', '6-9months (Sep-Nov)', '9-12months (Dec-Feb\'27)', '12months+'];
+
+    let trendChart = null;
+    let barChart = null;
+    let predictionHistoryLocal = JSON.parse(localStorage.getItem('predictionHistory') || '[]');
+    let currentPrediction = null;
+    let updateInterval = null;
+    let countdownInterval = null;
+    let nextUpdateTime = null;
+
+    async function fetchPrediction() {
+      try {
+        const res = await fetch('/api/predict');
+        const data = await res.json();
+        currentPrediction = data;
+        storePrediction(data);
+        renderAll(data);
+        return data;
+      } catch (e) {
+        console.error('Fetch failed:', e);
+        // Use cached/fallback data
+        if (predictionHistoryLocal.length > 0) {
+          renderAll(predictionHistoryLocal[predictionHistoryLocal.length - 1]);
+        }
+      }
+    }
+
+    function storePrediction(data) {
+      const entry = {
+        timestamp: data.timestamp,
+        probabilities: data.probabilities,
+        factors: data.factors,
+        war_day: data.war_day,
+        news_signals: data.news_signals,
+        news_count: data.latest_news ? data.latest_news.length : 0,
+      };
+      predictionHistoryLocal.push(entry);
+      // Keep last 500 entries
+      if (predictionHistoryLocal.length > 500) {
+        predictionHistoryLocal = predictionHistoryLocal.slice(-500);
+      }
+      localStorage.setItem('predictionHistory', JSON.stringify(predictionHistoryLocal));
+    }
+
+    function renderAll(data) {
+      renderWarDay(data.war_day);
+      renderProbabilities(data.probabilities);
+      renderBarChart(data.probabilities);
+      renderSignals(data.news_signals);
+      renderFactors(data.factors);
+      renderNews(data.latest_news || []);
+      renderHistoricalWars(data.historical_comparison || []);
+      renderTrendChart();
+      renderHistory();
+    }
+
+    function renderWarDay(day) {
+      document.getElementById('warDay').textContent = `D+${day}`;
+    }
+
+    function renderProbabilities(probs) {
+      const grid = document.getElementById('probGrid');
+      const keys = Object.keys(probs);
+      grid.innerHTML = keys.map((key, i) => {
+        const val = probs[key];
+        return `
+          <div class="prob-item">
+            <div class="label">${key}</div>
+            <div class="value" style="color:${COLORS[i]}">${val}%</div>
+            <div class="bar">
+              <div class="bar-fill" style="width:${val}%;background:${COLORS[i]}"></div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function renderBarChart(probs) {
+      const ctx = document.getElementById('barChart').getContext('2d');
+      const keys = Object.keys(probs);
+      const values = Object.values(probs);
+
+      if (barChart) barChart.destroy();
+      barChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: keys.map(k => k.split('(')[0].trim()),
+          datasets: [{
+            data: values,
+            backgroundColor: COLORS.map(c => c + '88'),
+            borderColor: COLORS,
+            borderWidth: 1,
+          }],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { display: false } },
+          scales: {
+            y: {
+              beginAtZero: true,
+              max: 40,
+              ticks: { color: '#8892b0', callback: v => v + '%' },
+              grid: { color: '#1e2a4a' },
+            },
+            x: {
+              ticks: { color: '#8892b0', maxRotation: 45, font: { size: 10 } },
+              grid: { display: false },
+            },
+          },
+        },
+      });
+    }
+
+    function renderTrendChart() {
+      const ctx = document.getElementById('trendChart').getContext('2d');
+      if (predictionHistoryLocal.length === 0) return;
+
+      const datasets = [];
+      const keys = Object.keys(predictionHistoryLocal[0].probabilities);
+
+      keys.forEach((key, i) => {
+        datasets.push({
+          label: key.split('(')[0].trim(),
+          data: predictionHistoryLocal.map(h => ({
+            x: new Date(h.timestamp),
+            y: h.probabilities[key],
+          })),
+          borderColor: COLORS[i],
+          backgroundColor: COLORS[i] + '22',
+          borderWidth: 2,
+          pointRadius: 4,
+          pointHoverRadius: 7,
+          tension: 0.3,
+          fill: false,
+        });
+      });
+
+      if (trendChart) trendChart.destroy();
+      trendChart = new Chart(ctx, {
+        type: 'line',
+        data: { datasets },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          interaction: { mode: 'index', intersect: false },
+          onClick: (evt, elements) => {
+            if (elements.length > 0) {
+              const idx = elements[0].index;
+              showHistoryDetail(idx);
+            }
+          },
+          plugins: {
+            legend: {
+              labels: { color: '#8892b0', font: { size: 11 }, usePointStyle: true },
+              position: 'top',
+            },
+            tooltip: {
+              callbacks: {
+                title: (items) => {
+                  const d = new Date(items[0].parsed.x);
+                  return d.toLocaleString('ko-KR');
+                },
+                label: (item) => `${item.dataset.label}: ${item.parsed.y}%`,
+              },
+            },
+          },
+          scales: {
+            x: {
+              type: 'time',
+              time: { unit: 'hour', displayFormats: { hour: 'MM/dd HH:mm' } },
+              ticks: { color: '#8892b0', maxTicksLimit: 12 },
+              grid: { color: '#1e2a4a' },
+            },
+            y: {
+              beginAtZero: true,
+              max: 40,
+              ticks: { color: '#8892b0', callback: v => v + '%' },
+              grid: { color: '#1e2a4a' },
+            },
+          },
+        },
+      });
+    }
+
+    function renderSignals(signals) {
+      if (!signals) return;
+      const grid = document.getElementById('signalsGrid');
+      const items = [
+        { label: 'Ceasefire', value: signals.ceasefire_mentions, color: '#48bb78' },
+        { label: 'Escalation', value: signals.escalation_mentions, color: '#f56565' },
+        { label: 'Negotiation', value: signals.negotiation_mentions, color: '#64ffda' },
+        { label: 'Casualties', value: signals.casualty_mentions, color: '#f6ad55' },
+        { label: 'Peace', value: signals.peace_mentions, color: '#63b3ed' },
+        { label: 'Regional Spread', value: signals.regional_spread, color: '#b794f4' },
+        { label: 'Total Articles', value: signals.total_articles, color: '#e2e8f0' },
+      ];
+      grid.innerHTML = items.map(it => `
+        <div class="signal-item">
+          <div class="signal-label">${it.label}</div>
+          <div class="signal-value" style="color:${it.color}">${it.value}</div>
+        </div>
+      `).join('');
+    }
+
+    function renderFactors(factors) {
+      if (!factors) return;
+      const list = document.getElementById('factorsList');
+      list.innerHTML = factors.map((f, i) => `
+        <div class="factor-item" onclick="showFactorDetail(${i})">
+          <div class="factor-name">${f.factor}</div>
+          <div class="factor-impact">${f.impact}</div>
+          <div class="factor-weight">${f.weight}</div>
+        </div>
+      `).join('');
+    }
+
+    function renderNews(articles) {
+      const list = document.getElementById('newsList');
+      if (articles.length === 0) {
+        list.innerHTML = '<div style="padding:12px;color:#8892b0;">No news articles fetched. RSS feeds may be unavailable. Using cached prediction model.</div>';
+        return;
+      }
+      list.innerHTML = articles.map(a => `
+        <div class="news-item">
+          <a href="${a.link}" target="_blank">${a.title}</a>
+          <div class="news-meta">${a.source} | ${new Date(a.pubDate).toLocaleString('ko-KR')}</div>
+          ${a.snippet ? `<div class="news-snippet">${a.snippet}</div>` : ''}
+        </div>
+      `).join('');
+    }
+
+    function renderHistoricalWars(wars) {
+      const container = document.getElementById('historicalWars');
+      container.innerHTML = wars.map(w => `
+        <div class="war-card">
+          <div class="war-name">${w.name}</div>
+          <div class="war-duration">${w.duration_days}days</div>
+          <div class="war-detail">Type: ${w.type}</div>
+          <div class="war-detail">End: ${w.ended_by}</div>
+          <div class="war-detail">Involved Countries: ${w.involved_countries}</div>
+        </div>
+      `).join('');
+    }
+
+    function renderHistory() {
+      const body = document.getElementById('historyBody');
+      const recent = predictionHistoryLocal.slice(-20).reverse();
+      body.innerHTML = recent.map((h, i) => {
+        const keys = Object.keys(h.probabilities);
+        const vals = Object.values(h.probabilities);
+        const realIdx = predictionHistoryLocal.length - 1 - i;
+        return `
+          <tr onclick="showHistoryDetail(${realIdx})">
+            <td>${new Date(h.timestamp).toLocaleString('ko-KR')}</td>
+            <td>D+${h.war_day}</td>
+            ${vals.map((v, j) => `<td style="color:${COLORS[j]}">${v}%</td>`).join('')}
+            <td><button class="btn btn-sm">Details</button></td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    function showHistoryDetail(idx) {
+      const entry = predictionHistoryLocal[idx];
+      if (!entry) return;
+
+      document.getElementById('modalTitle').textContent =
+        `Prediction Details - ${new Date(entry.timestamp).toLocaleString('ko-KR')} (D+${entry.war_day})`;
+
+      let html = '<div style="margin-bottom:16px;">';
+      html += '<h4 style="color:#64ffda;margin-bottom:8px;">Probability Distribution</h4>';
+      const keys = Object.keys(entry.probabilities);
+      keys.forEach((k, i) => {
+        html += `<div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid #1e2a4a;">
+          <span style="color:${COLORS[i]}">${k}</span>
+          <strong style="color:${COLORS[i]}">${entry.probabilities[k]}%</strong>
+        </div>`;
+      });
+      html += '</div>';
+
+      if (entry.factors && entry.factors.length > 0) {
+        html += '<h4 style="color:#f6ad55;margin-bottom:8px;">Analysis Factors</h4>';
+        entry.factors.forEach(f => {
+          html += `<div style="padding:8px;margin-bottom:6px;background:#0d1321;border-radius:6px;">
+            <div style="font-weight:600;color:#e2e8f0;">${f.factor}</div>
+            <div style="font-size:12px;color:#8892b0;margin-top:2px;">${f.impact}</div>
+            <div style="font-size:12px;color:#64ffda;margin-top:2px;">${f.weight}</div>
+          </div>`;
+        });
+      }
+
+      if (entry.news_signals) {
+        html += '<h4 style="color:#63b3ed;margin-bottom:8px;margin-top:12px;">News Signals at This Time</h4>';
+        html += `<div style="font-size:13px;line-height:1.8;">
+          Ceasefire Mentions: <strong class="color-green">${entry.news_signals.ceasefire_mentions}</strong> |
+          Escalation: <strong class="color-red">${entry.news_signals.escalation_mentions}</strong> |
+          Negotiation: <strong class="color-teal">${entry.news_signals.negotiation_mentions}</strong> |
+          Casualties: <strong class="color-yellow">${entry.news_signals.casualty_mentions}</strong> |
+          Peace: <strong class="color-blue">${entry.news_signals.peace_mentions}</strong> |
+          Regional Spread: <strong class="color-purple">${entry.news_signals.regional_spread}</strong> |
+          Total Articles: <strong>${entry.news_signals.total_articles}</strong>
+        </div>`;
+      }
+
+      document.getElementById('modalContent').innerHTML = html;
+      document.getElementById('modal').classList.add('active');
+    }
+
+    function showFactorDetail(idx) {
+      if (!currentPrediction || !currentPrediction.factors) return;
+      const f = currentPrediction.factors[idx];
+
+      document.getElementById('modalTitle').textContent = 'Factor Detail';
+      document.getElementById('modalContent').innerHTML = `
+        <div style="padding:16px;background:#0d1321;border-radius:8px;">
+          <h4 style="color:#e2e8f0;margin-bottom:8px;">${f.factor}</h4>
+          <p style="color:#8892b0;margin-bottom:8px;">${f.impact}</p>
+          <p style="color:#64ffda;font-weight:600;">Impact: ${f.weight}</p>
+        </div>
+      `;
+      document.getElementById('modal').classList.add('active');
+    }
+
+    function closeModal() {
+      document.getElementById('modal').classList.remove('active');
+    }
+
+    document.getElementById('modal').addEventListener('click', (e) => {
+      if (e.target === document.getElementById('modal')) closeModal();
+    });
+
+    async function manualUpdate() {
+      try {
+        const res = await fetch('/api/update', { method: 'POST' });
+        const data = await res.json();
+        currentPrediction = data;
+        storePrediction(data);
+        renderAll(data);
+        resetTimer();
+      } catch (e) {
+        console.error('Manual update failed:', e);
+      }
+    }
+
+    function resetTimer() {
+      nextUpdateTime = Date.now() + 3600000; // 1 hour
+    }
+
+    function updateCountdown() {
+      if (!nextUpdateTime) return;
+      const remaining = Math.max(0, nextUpdateTime - Date.now());
+      const min = Math.floor(remaining / 60000);
+      const sec = Math.floor((remaining % 60000) / 1000);
+      document.getElementById('nextUpdate').textContent =
+        `${String(min).padStart(2, '0')}:${String(sec).padStart(2, '0')}`;
+    }
+
+    // Auto-update every hour
+    async function startAutoUpdate() {
+      await fetchPrediction();
+      resetTimer();
+
+      updateInterval = setInterval(async () => {
+        await manualUpdate();
+      }, 3600000); // 1 hour
+
+      countdownInterval = setInterval(updateCountdown, 1000);
+    }
+
+    // Initialize
+    startAutoUpdate();
+  </script>
+</body>
+</html>

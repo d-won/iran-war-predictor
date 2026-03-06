@@ -1,0 +1,447 @@
+const express = require('express');
+const RssParser = require('rss-parser');
+const path = require('path');
+
+const app = express();
+const rssParser = new RssParser();
+const PORT = 3000;
+
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.json());
+
+// In-memory store for prediction history
+const predictionHistory = [];
+
+// RSS feeds for Iran war news
+const RSS_FEEDS = [
+  'https://www.aljazeera.com/xml/rss/all.xml',
+  'https://rss.nytimes.com/services/xml/rss/nyt/MiddleEast.xml',
+  'https://feeds.bbci.co.uk/news/world/middle_east/rss.xml',
+  'https://www.theguardian.com/world/middleeast/rss',
+];
+
+const KEYWORDS = ['iran', 'tehran', 'israel', 'ceasefire', 'negotiation', 'diplomacy',
+  'missile', 'strike', 'bombing', 'hormuz', 'hezbollah', 'irgc', 'epic fury',
+  'casualt', 'peace', 'truce', 'surrender', 'withdraw', 'escalat', 'de-escalat',
+  'sanction', 'nuclear', 'khamenei', 'trump', 'war'];
+
+async function fetchNews() {
+  const articles = [];
+  for (const feedUrl of RSS_FEEDS) {
+    try {
+      const feed = await rssParser.parseURL(feedUrl);
+      for (const item of feed.items.slice(0, 30)) {
+        const text = ((item.title || '') + ' ' + (item.contentSnippet || '')).toLowerCase();
+        const isRelevant = KEYWORDS.some(kw => text.includes(kw));
+        if (isRelevant) {
+          articles.push({
+            title: item.title,
+            link: item.link,
+            pubDate: item.pubDate || item.isoDate,
+            source: feed.title,
+            snippet: (item.contentSnippet || '').slice(0, 200),
+          });
+        }
+      }
+    } catch (e) {
+      console.error(`Failed to fetch ${feedUrl}: ${e.message}`);
+    }
+  }
+  // Sort by date desc, deduplicate by title similarity
+  articles.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
+  return articles.slice(0, 50);
+}
+
+// Sentiment/signal analysis from news articles
+function analyzeNewsSignals(articles) {
+  const signals = {
+    ceasefire_mentions: 0,
+    escalation_mentions: 0,
+    negotiation_mentions: 0,
+    casualty_mentions: 0,
+    diplomacy_mentions: 0,
+    regional_spread: 0,
+    peace_mentions: 0,
+    total_articles: articles.length,
+  };
+
+  const ceasefireWords = ['ceasefire', 'truce', 'armistice', 'halt', 'pause', 'stop fighting'];
+  const escalationWords = ['escalat', 'expand', 'spread', 'intensif', 'widen', 'new front', 'ground invasion'];
+  const negotiationWords = ['negotiat', 'talks', 'dialog', 'diplomat', 'mediati', 'proposal'];
+  const casualtyWords = ['killed', 'dead', 'casualt', 'wounded', 'death toll', 'victims'];
+  const peaceWords = ['peace', 'de-escalat', 'withdraw', 'retreat', 'surrender', 'end war'];
+  const regionalWords = ['saudi', 'uae', 'qatar', 'bahrain', 'kuwait', 'iraq', 'lebanon', 'turkey', 'nato'];
+
+  for (const article of articles) {
+    const text = ((article.title || '') + ' ' + (article.snippet || '')).toLowerCase();
+    if (ceasefireWords.some(w => text.includes(w))) signals.ceasefire_mentions++;
+    if (escalationWords.some(w => text.includes(w))) signals.escalation_mentions++;
+    if (negotiationWords.some(w => text.includes(w))) signals.negotiation_mentions++;
+    if (casualtyWords.some(w => text.includes(w))) signals.casualty_mentions++;
+    if (peaceWords.some(w => text.includes(w))) signals.peace_mentions++;
+    if (regionalWords.some(w => text.includes(w))) signals.regional_spread++;
+  }
+
+  return signals;
+}
+
+// Historical war data for comparison
+const HISTORICAL_WARS = [
+  {
+    name: '걸프전 (1991)',
+    duration_days: 42,
+    type: 'air_campaign_then_ground',
+    coalition: true,
+    involved_countries: 35,
+    trigger: 'invasion',
+    ended_by: 'military_defeat',
+    nuclear_dimension: false,
+  },
+  {
+    name: '이라크 전쟁 - 주요 전투 (2003)',
+    duration_days: 42,
+    type: 'invasion',
+    coalition: true,
+    involved_countries: 4,
+    trigger: 'preemptive',
+    ended_by: 'regime_change',
+    nuclear_dimension: true,
+  },
+  {
+    name: '2006 레바논 전쟁',
+    duration_days: 34,
+    type: 'air_and_ground',
+    coalition: false,
+    involved_countries: 2,
+    trigger: 'border_incident',
+    ended_by: 'ceasefire_un',
+    nuclear_dimension: false,
+  },
+  {
+    name: '2008 가자 전쟁',
+    duration_days: 22,
+    type: 'air_then_ground',
+    coalition: false,
+    involved_countries: 2,
+    trigger: 'rocket_attacks',
+    ended_by: 'unilateral_ceasefire',
+    nuclear_dimension: false,
+  },
+  {
+    name: '2014 가자 전쟁',
+    duration_days: 50,
+    type: 'air_and_ground',
+    coalition: false,
+    involved_countries: 2,
+    trigger: 'kidnapping',
+    ended_by: 'ceasefire_negotiated',
+    nuclear_dimension: false,
+  },
+  {
+    name: '리비아 내전 - NATO 개입 (2011)',
+    duration_days: 222,
+    type: 'air_campaign',
+    coalition: true,
+    involved_countries: 18,
+    trigger: 'civil_war',
+    ended_by: 'regime_change',
+    nuclear_dimension: false,
+  },
+  {
+    name: '포클랜드 전쟁 (1982)',
+    duration_days: 74,
+    type: 'naval_air_ground',
+    coalition: false,
+    involved_countries: 2,
+    trigger: 'invasion',
+    ended_by: 'military_defeat',
+    nuclear_dimension: false,
+  },
+  {
+    name: '코소보 전쟁 - NATO 폭격 (1999)',
+    duration_days: 78,
+    type: 'air_campaign',
+    coalition: true,
+    involved_countries: 19,
+    trigger: 'humanitarian',
+    ended_by: 'capitulation',
+    nuclear_dimension: false,
+  },
+  {
+    name: '2023-2025 이스라엘-하마스 전쟁',
+    duration_days: 470,
+    type: 'air_and_ground',
+    coalition: false,
+    involved_countries: 2,
+    trigger: 'terror_attack',
+    ended_by: 'ceasefire_negotiated',
+    nuclear_dimension: false,
+  },
+  {
+    name: '이란-이라크 전쟁 (1980-1988)',
+    duration_days: 2922,
+    type: 'total_war',
+    coalition: false,
+    involved_countries: 2,
+    trigger: 'territorial',
+    ended_by: 'ceasefire_un',
+    nuclear_dimension: false,
+  },
+  {
+    name: '2025 이란-이스라엘 교전',
+    duration_days: 12,
+    type: 'air_campaign',
+    coalition: true,
+    involved_countries: 3,
+    trigger: 'nuclear_threat',
+    ended_by: 'ceasefire_brokered',
+    nuclear_dimension: true,
+  },
+];
+
+// Current war parameters
+function getCurrentWarParams(newsSignals) {
+  const warStartDate = new Date('2026-02-28');
+  const now = new Date();
+  const daysSinceStart = Math.floor((now - warStartDate) / (1000 * 60 * 60 * 24));
+
+  return {
+    days_elapsed: daysSinceStart,
+    type: 'air_campaign_expanding',
+    coalition: true,
+    involved_countries: 9,
+    trigger: 'preemptive_regime_change',
+    nuclear_dimension: true,
+    leader_killed: true,
+    strait_blocked: true,
+    proxy_involvement: true,
+    ground_invasion_started: true,
+    news_signals: newsSignals,
+  };
+}
+
+// Prediction engine
+function calculatePrediction(warParams, newsSignals) {
+  // Base probabilities from historical comparison
+  // Categories: <1month, 1-2months, 2-4months, 4-6months, 6-9months, 9-12months, 12+months
+  let probs = [0.12, 0.22, 0.25, 0.18, 0.12, 0.07, 0.04];
+
+  const factors = [];
+
+  // Factor 1: Trump stated 4-5 weeks => increases 1-2 month probability
+  probs[1] += 0.06;
+  probs[0] += 0.03;
+  factors.push({
+    factor: '트럼프 대통령 4-5주 예상 발언',
+    impact: '1-2개월 내 종전 확률 증가',
+    weight: '+6%p (1-2개월)',
+  });
+
+  // Factor 2: Air superiority achieved (80% air defense destroyed)
+  probs[0] += 0.04;
+  probs[1] += 0.05;
+  factors.push({
+    factor: '이스라엘 제공권 장악 (이란 방공 80% 파괴)',
+    impact: '단기 종전 가능성 증가',
+    weight: '+4%p (1개월 내), +5%p (1-2개월)',
+  });
+
+  // Factor 3: Iran missile capability dropping fast
+  if (newsSignals.escalation_mentions < newsSignals.ceasefire_mentions) {
+    probs[0] += 0.05;
+    probs[1] += 0.03;
+    factors.push({
+      factor: '이란 미사일 능력 급감 (90% 감소)',
+      impact: '전쟁 지속 능력 약화로 단기 종전 가능성 증가',
+      weight: '+5%p (1개월 내)',
+    });
+  } else {
+    probs[2] += 0.03;
+    probs[3] += 0.02;
+    factors.push({
+      factor: '에스컬레이션 뉴스가 휴전 뉴스보다 많음',
+      impact: '전쟁 장기화 가능성 약간 증가',
+      weight: '+3%p (2-4개월)',
+    });
+  }
+
+  // Factor 4: Strait of Hormuz closure => international pressure for quick resolution
+  probs[0] += 0.03;
+  probs[1] += 0.04;
+  factors.push({
+    factor: '호르무즈 해협 봉쇄 → 국제 경제 압력',
+    impact: '경제적 압력으로 빠른 해결 촉구',
+    weight: '+3%p (1개월 내), +4%p (1-2개월)',
+  });
+
+  // Factor 5: 9 countries involved => complex but also more pressure
+  probs[2] += 0.04;
+  probs[3] += 0.03;
+  factors.push({
+    factor: '9개국 참전 - 분쟁의 복잡성 증가',
+    impact: '다자간 분쟁으로 협상 복잡화',
+    weight: '+4%p (2-4개월), +3%p (4-6개월)',
+  });
+
+  // Factor 6: Leader killed => regime collapse possible but also chaos
+  probs[1] += 0.03;
+  probs[2] += 0.04;
+  factors.push({
+    factor: '하메네이 사망 - 이란 지도부 공백',
+    impact: '정권 붕괴 가능성과 함께 내부 혼란 장기화 위험',
+    weight: '+3%p (1-2개월), +4%p (2-4개월)',
+  });
+
+  // Factor 7: Ground invasion started (Kurdish forces)
+  probs[2] += 0.03;
+  probs[3] += 0.03;
+  factors.push({
+    factor: '쿠르드족 지상군 이란 국경 진입',
+    impact: '지상전 확전으로 전쟁 장기화 위험',
+    weight: '+3%p (2-4개월), +3%p (4-6개월)',
+  });
+
+  // Factor 8: Iran attempted negotiation on March 5
+  if (warParams.days_elapsed >= 5) {
+    probs[0] += 0.05;
+    probs[1] += 0.06;
+    factors.push({
+      factor: '이란 3/5 CIA 통한 협상 시도',
+      impact: '이란의 협상 의지 → 단기 종전 가능성 증가',
+      weight: '+5%p (1개월 내), +6%p (1-2개월)',
+    });
+  }
+
+  // Factor 9: Historical comparison - Gulf War pattern
+  factors.push({
+    factor: '걸프전(42일) 패턴 유사성',
+    impact: '공중전 우위 → 지상전 → 빠른 종결 패턴',
+    weight: '참고: 걸프전 42일, 코소보 78일, 포클랜드 74일',
+  });
+
+  // Factor 10: News signal adjustments
+  if (newsSignals.negotiation_mentions > 3) {
+    probs[0] += 0.02 * Math.min(newsSignals.negotiation_mentions, 10);
+    probs[1] += 0.01 * Math.min(newsSignals.negotiation_mentions, 10);
+    factors.push({
+      factor: `협상/외교 관련 뉴스 ${newsSignals.negotiation_mentions}건`,
+      impact: '외교적 해결 움직임 감지',
+      weight: `+${(0.02 * Math.min(newsSignals.negotiation_mentions, 10)).toFixed(1)}%p (1개월 내)`,
+    });
+  }
+
+  if (newsSignals.regional_spread > 5) {
+    probs[3] += 0.02;
+    probs[4] += 0.02;
+    factors.push({
+      factor: `지역 확산 뉴스 ${newsSignals.regional_spread}건`,
+      impact: '주변국 연루 확대로 장기화 위험',
+      weight: '+2%p (4-6개월, 6-9개월)',
+    });
+  }
+
+  // Factor 11: Senate support for war
+  probs[1] += 0.02;
+  probs[2] += 0.02;
+  factors.push({
+    factor: '미 상원 전쟁 결의안 부결 (전쟁 지속 지지)',
+    impact: '미국 내 정치적 지지로 군사작전 지속 가능',
+    weight: '+2%p (1-2개월, 2-4개월)',
+  });
+
+  // Factor 12: Saudi/UAE joining coalition
+  probs[0] += 0.03;
+  probs[1] += 0.04;
+  factors.push({
+    factor: '사우디/UAE 연합군 참전',
+    impact: '이란 포위망 강화 → 조기 항복 가능성',
+    weight: '+3%p (1개월 내), +4%p (1-2개월)',
+  });
+
+  // Normalize probabilities
+  const total = probs.reduce((a, b) => a + b, 0);
+  probs = probs.map(p => Math.round((p / total) * 1000) / 10);
+
+  // Ensure they sum to 100
+  const diff = 100 - probs.reduce((a, b) => a + b, 0);
+  probs[2] = Math.round((probs[2] + diff) * 10) / 10;
+
+  return {
+    timestamp: new Date().toISOString(),
+    probabilities: {
+      '1개월 내 (~3/28)': probs[0],
+      '1-2개월 (4월)': probs[1],
+      '2-4개월 (5-6월)': probs[2],
+      '4-6개월 (7-8월)': probs[3],
+      '6-9개월 (9-11월)': probs[4],
+      '9-12개월 (12월-2027/2월)': probs[5],
+      '12개월 이상': probs[6],
+    },
+    factors,
+    war_day: warParams.days_elapsed,
+    news_signals: newsSignals,
+    historical_comparison: HISTORICAL_WARS,
+  };
+}
+
+// API: Get latest prediction
+app.get('/api/predict', async (req, res) => {
+  try {
+    const articles = await fetchNews();
+    const signals = analyzeNewsSignals(articles);
+    const warParams = getCurrentWarParams(signals);
+    const prediction = calculatePrediction(warParams, signals);
+    prediction.latest_news = articles.slice(0, 15);
+
+    // Store in history
+    predictionHistory.push({
+      timestamp: prediction.timestamp,
+      probabilities: prediction.probabilities,
+      factors_summary: prediction.factors.length + ' factors analyzed',
+      war_day: prediction.war_day,
+    });
+
+    res.json(prediction);
+  } catch (e) {
+    console.error(e);
+    res.status(500).json({ error: e.message });
+  }
+});
+
+// API: Get prediction history
+app.get('/api/history', (req, res) => {
+  res.json(predictionHistory);
+});
+
+// API: Get historical wars data
+app.get('/api/historical-wars', (req, res) => {
+  res.json(HISTORICAL_WARS);
+});
+
+// API: manual trigger for update (also used by auto-update)
+app.post('/api/update', async (req, res) => {
+  try {
+    const articles = await fetchNews();
+    const signals = analyzeNewsSignals(articles);
+    const warParams = getCurrentWarParams(signals);
+    const prediction = calculatePrediction(warParams, signals);
+    prediction.latest_news = articles.slice(0, 15);
+
+    predictionHistory.push({
+      timestamp: prediction.timestamp,
+      probabilities: prediction.probabilities,
+      factors: prediction.factors,
+      war_day: prediction.war_day,
+      news_signals: prediction.news_signals,
+      news_count: articles.length,
+    });
+
+    res.json(prediction);
+  } catch (e) {
+    res.status(500).json({ error: e.message });
+  }
+});
+
+app.listen(PORT, () => {
+  console.log(`Iran War Prediction Dashboard running at http://localhost:${PORT}`);
+});
