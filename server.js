@@ -310,11 +310,12 @@ const DECAY_STD = { rate: 0.05, min: 0.3 };
 const MIL_KEYWORDS = ['제공권', '방공', '미사일 능력', '호르무즈'];
 function calcDecay(dateStr, name) {
   if (!dateStr || dateStr === '실시간') return 1;
-  const days = Math.floor((new Date() - new Date(dateStr)) / 864e5);
-  if (days <= 0) return 1;
+  const hours = (new Date() - new Date(dateStr)) / 3600000;
+  if (hours <= 0) return 1;
+  const days = hours / 24;
   const isMil = MIL_KEYWORDS.some(k => (name || '').includes(k));
   const cfg = isMil ? DECAY_MIL : DECAY_STD;
-  return Math.max(cfg.min, +(1 - days * cfg.rate).toFixed(3));
+  return Math.max(cfg.min, +(1 - days * cfg.rate).toFixed(4));
 }
 function dw(s, d) { return d >= 0.99 ? s : s + ` (잔존${Math.round(d * 100)}%)`; }
 

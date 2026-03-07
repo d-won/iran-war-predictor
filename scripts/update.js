@@ -539,59 +539,88 @@ function analyzeSignals(articles, seenKeys) {
   return { signals: s, newSeenKeys: trimmed };
 }
 
+// Time decay: 군사적 기정사실(제공권,방공,미사일,호르무즈)은 느린 감쇠, 나머지는 일반 감쇠
+// 시간 단위(fractional days)로 계산하여 30분 크론마다 미세 변화 반영
+const DECAY_MIL = { rate: 0.02, min: 0.4 };
+const DECAY_STD = { rate: 0.05, min: 0.3 };
+const MIL_KW = ['제공권', '방공', '미사일 능력', '호르무즈'];
+function calcDecay(dateStr, name) {
+  if (!dateStr || dateStr === '실시간') return 1;
+  const hours = (new Date() - new Date(dateStr)) / 3600000;
+  if (hours <= 0) return 1;
+  const days = hours / 24;
+  const isMil = MIL_KW.some(k => (name || '').includes(k));
+  const cfg = isMil ? DECAY_MIL : DECAY_STD;
+  return Math.max(cfg.min, +(1 - days * cfg.rate).toFixed(4));
+}
+function dw(s, d) { return d >= 0.99 ? s : s + ` (잔존${Math.round(d * 100)}%)`; }
+
 function calculatePrediction(daysElapsed, ns, econImpact, criticalEvents) {
   let p = [.15,.35,.28,.15,.07];
   const f = [];
 
-  p[1]+=.08; p[0]+=.03;
-  f.push({factor:'트럼프 대통령 4-5주 예상 발언',impact:'2~3개월 내 종전 확률 상승',weight:'+8%p (2~3개월)',direction:'shorten',detail:FX['트럼프 대통령 4-5주 예상 발언'],keywords:['trump','4 week','5 week','timeline','end war'],applied:'2026-03-01',active:true});
+  // 요인별 시간 감쇠
+  const dTrump = calcDecay('2026-03-01', '트럼프');
+  const dAir = calcDecay('2026-03-01', '제공권');
+  const dMissile = calcDecay('2026-03-02', '미사일 능력');
+  const dHormuz = calcDecay('2026-03-01', '호르무즈');
+  const d9n = calcDecay('2026-03-02', '참전');
+  const dKham = calcDecay('2026-03-03', '하메네이');
+  const dKurd = calcDecay('2026-03-04', '쿠르드');
+  const dCIA = calcDecay('2026-03-05', 'CIA');
+  const dSenate = calcDecay('2026-03-04', '상원');
+  const dSaudi = calcDecay('2026-03-03', '사우디');
+  console.log(`  [DECAY] 트럼프:${(dTrump*100).toFixed(1)}% 제공권:${(dAir*100).toFixed(1)}% 미사일:${(dMissile*100).toFixed(1)}% 호르무즈:${(dHormuz*100).toFixed(1)}%`);
 
-  p[0]+=.04; p[1]+=.06;
-  f.push({factor:'이스라엘 제공권 장악 (이란 방공 80% 파괴)',impact:'단기 종전 가능성 증가',weight:'+4%p (1개월내), +6%p (2~3개월)',direction:'shorten',detail:FX['이스라엘 제공권 장악 (이란 방공 80% 파괴)'],keywords:['air superi','air defens','s-300','s-400','radar','anti-air'],applied:'2026-03-01',active:true});
+  p[1]+=.08*dTrump; p[0]+=.03*dTrump;
+  f.push({factor:'트럼프 대통령 4-5주 예상 발언',impact:'2~3개월 내 종전 확률 상승',weight:dw('+8%p (2~3개월)',dTrump),direction:'shorten',detail:FX['트럼프 대통령 4-5주 예상 발언'],keywords:['trump','4 week','5 week','timeline','end war'],applied:'2026-03-01',active:true,decay:dTrump});
+
+  p[0]+=.04*dAir; p[1]+=.06*dAir;
+  f.push({factor:'이스라엘 제공권 장악 (이란 방공 80% 파괴)',impact:'단기 종전 가능성 증가',weight:dw('+4%p (1개월내), +6%p (2~3개월)',dAir),direction:'shorten',detail:FX['이스라엘 제공권 장악 (이란 방공 80% 파괴)'],keywords:['air superi','air defens','s-300','s-400','radar','anti-air'],applied:'2026-03-01',active:true,decay:dAir});
 
   if (ns.escalation_mentions < ns.ceasefire_mentions) {
-    p[0]+=.05; p[1]+=.04;
-    f.push({factor:'이란 미사일 능력 급감 (90% 감소)',impact:'전쟁 지속 능력 약화로 단기 종전 가능성 증가',weight:'+5%p (1개월내), +4%p (2~3개월)',direction:'shorten',detail:FX['이란 미사일 능력 급감 (90% 감소)'],keywords:['missile','ballistic','launch','strike capab'],applied:'2026-03-02',active:true});
+    p[0]+=.05*dMissile; p[1]+=.04*dMissile;
+    f.push({factor:'이란 미사일 능력 급감 (90% 감소)',impact:'전쟁 지속 능력 약화로 단기 종전 가능성 증가',weight:dw('+5%p (1개월내), +4%p (2~3개월)',dMissile),direction:'shorten',detail:FX['이란 미사일 능력 급감 (90% 감소)'],keywords:['missile','ballistic','launch','strike capab'],applied:'2026-03-02',active:true,decay:dMissile});
   } else {
     p[2]+=.04; p[3]+=.02;
-    f.push({factor:'확전 뉴스가 휴전 뉴스보다 많음',impact:'전쟁 장기화 가능성 소폭 증가',weight:'+4%p (4~6개월)',direction:'lengthen',detail:FX['확전 뉴스가 휴전 뉴스보다 많음'],keywords:['escalat','intensif','expand','widen'],applied:'실시간',active:true});
+    f.push({factor:'확전 뉴스가 휴전 뉴스보다 많음',impact:'전쟁 장기화 가능성 소폭 증가',weight:'+4%p (4~6개월)',direction:'lengthen',detail:FX['확전 뉴스가 휴전 뉴스보다 많음'],keywords:['escalat','intensif','expand','widen'],applied:'실시간',active:true,decay:1});
   }
 
-  p[0]+=.03; p[1]+=.05;
-  f.push({factor:'호르무즈 해협 봉쇄 → 국제 경제 압력',impact:'경제적 압력으로 빠른 해결 촉구',weight:'+3%p (1개월내), +5%p (2~3개월)',direction:'shorten',detail:FX['호르무즈 해협 봉쇄 → 국제 경제 압력'],keywords:['hormuz','strait','oil price','blockade','shipping','tanker'],applied:'2026-03-01',active:true});
+  p[0]+=.03*dHormuz; p[1]+=.05*dHormuz;
+  f.push({factor:'호르무즈 해협 봉쇄 → 국제 경제 압력',impact:'경제적 압력으로 빠른 해결 촉구',weight:dw('+3%p (1개월내), +5%p (2~3개월)',dHormuz),direction:'shorten',detail:FX['호르무즈 해협 봉쇄 → 국제 경제 압력'],keywords:['hormuz','strait','oil price','blockade','shipping','tanker'],applied:'2026-03-01',active:true,decay:dHormuz});
 
-  p[2]+=.05; p[3]+=.03;
-  f.push({factor:'9개국 참전 - 분쟁 복잡성 증가',impact:'다자간 분쟁으로 협상 복잡화',weight:'+5%p (4~6개월), +3%p (7~12개월)',direction:'lengthen',detail:FX['9개국 참전 - 분쟁 복잡성 증가'],keywords:['coalition','allies','nato','joint operation','multinational'],applied:'2026-03-02',active:true});
+  p[2]+=.05*d9n; p[3]+=.03*d9n;
+  f.push({factor:'9개국 참전 - 분쟁 복잡성 증가',impact:'다자간 분쟁으로 협상 복잡화',weight:dw('+5%p (4~6개월), +3%p (7~12개월)',d9n),direction:'lengthen',detail:FX['9개국 참전 - 분쟁 복잡성 증가'],keywords:['coalition','allies','nato','joint operation','multinational'],applied:'2026-03-02',active:true,decay:d9n});
 
-  p[1]+=.04; p[2]+=.04;
-  f.push({factor:'하메네이 사망 - 이란 지도부 공백',impact:'정권 붕괴 가능성과 내부 혼란 장기화 위험',weight:'+4%p (2~3개월), +4%p (4~6개월)',direction:'mixed',detail:FX['하메네이 사망 - 이란 지도부 공백'],keywords:['khamenei','supreme leader','succession','leadership','regime'],applied:'2026-03-03',active:true});
+  p[1]+=.04*dKham; p[2]+=.04*dKham;
+  f.push({factor:'하메네이 사망 - 이란 지도부 공백',impact:'정권 붕괴 가능성과 내부 혼란 장기화 위험',weight:dw('+4%p (2~3개월), +4%p (4~6개월)',dKham),direction:'mixed',detail:FX['하메네이 사망 - 이란 지도부 공백'],keywords:['khamenei','supreme leader','succession','leadership','regime'],applied:'2026-03-03',active:true,decay:dKham});
 
-  p[2]+=.04; p[3]+=.03;
-  f.push({factor:'쿠르드족 지상군 이란 국경 진입',impact:'지상전 확대로 전쟁 장기화 위험',weight:'+4%p (4~6개월), +3%p (7~12개월)',direction:'lengthen',detail:FX['쿠르드족 지상군 이란 국경 진입'],keywords:['kurd','peshmerga','ground','border','northern front'],applied:'2026-03-04',active:true});
+  p[2]+=.04*dKurd; p[3]+=.03*dKurd;
+  f.push({factor:'쿠르드족 지상군 이란 국경 진입',impact:'지상전 확대로 전쟁 장기화 위험',weight:dw('+4%p (4~6개월), +3%p (7~12개월)',dKurd),direction:'lengthen',detail:FX['쿠르드족 지상군 이란 국경 진입'],keywords:['kurd','peshmerga','ground','border','northern front'],applied:'2026-03-04',active:true,decay:dKurd});
 
   if (daysElapsed >= 5) {
-    p[0]+=.05; p[1]+=.08;
-    f.push({factor:'이란 3/5 CIA 통한 협상 시도',impact:'이란의 협상 의지 → 단기 종전 가능성 증가',weight:'+5%p (1개월내), +8%p (2~3개월)',direction:'shorten',detail:FX['이란 3/5 CIA 통한 협상 시도'],keywords:['cia','backchannel','secret talk','negotiat','iran offer','surrender'],applied:'2026-03-05',active:true});
+    p[0]+=.05*dCIA; p[1]+=.08*dCIA;
+    f.push({factor:'이란 3/5 CIA 통한 협상 시도',impact:'이란의 협상 의지 → 단기 종전 가능성 증가',weight:dw('+5%p (1개월내), +8%p (2~3개월)',dCIA),direction:'shorten',detail:FX['이란 3/5 CIA 통한 협상 시도'],keywords:['cia','backchannel','secret talk','negotiat','iran offer','surrender'],applied:'2026-03-05',active:true,decay:dCIA});
   }
 
-  f.push({factor:'걸프전(42일) 패턴 유사성',impact:'제공권→지상작전→빠른 종결 패턴',weight:'참고: 걸프전 42일, 코소보 78일, 포클랜드 74일',direction:'reference',detail:FX['걸프전(42일) 패턴 유사성'],keywords:['gulf war','desert storm','pattern','historical'],applied:'2026-02-28',active:true});
+  f.push({factor:'걸프전(42일) 패턴 유사성',impact:'제공권→지상작전→빠른 종결 패턴',weight:'참고: 걸프전 42일, 코소보 78일, 포클랜드 74일',direction:'reference',detail:FX['걸프전(42일) 패턴 유사성'],keywords:['gulf war','desert storm','pattern','historical'],applied:'2026-02-28',active:true,decay:1});
 
   if (ns.negotiation_mentions > 3) {
     const n = Math.min(ns.negotiation_mentions, 10);
     p[0]+=.02*n; p[1]+=.015*n;
-    f.push({factor:`협상/외교 뉴스 ${ns.negotiation_mentions}건 감지`,impact:'외교적 해결 움직임 포착',weight:`+${(.02*n).toFixed(1)}%p (1개월내)`,direction:'shorten',detail:`실시간 뉴스에서 협상 관련 기사 ${ns.negotiation_mentions}건이 감지되었습니다.`,keywords:['negotiat','talks','dialog','diplomat','mediati'],applied:'실시간',active:true});
+    f.push({factor:`협상/외교 뉴스 ${ns.negotiation_mentions}건 감지`,impact:'외교적 해결 움직임 포착',weight:`+${(.02*n).toFixed(1)}%p (1개월내)`,direction:'shorten',detail:`실시간 뉴스에서 협상 관련 기사 ${ns.negotiation_mentions}건이 감지되었습니다.`,keywords:['negotiat','talks','dialog','diplomat','mediati'],applied:'실시간',active:true,decay:1});
   }
 
   if (ns.regional_spread > 5) {
     p[2]+=.02; p[3]+=.02;
-    f.push({factor:`지역 확산 뉴스 ${ns.regional_spread}건 감지`,impact:'주변국 연루 확대로 장기화 위험',weight:'+2%p (4~6개월, 7~12개월)',direction:'lengthen',detail:`주변국을 언급하는 기사 ${ns.regional_spread}건이 감지되었습니다.`,keywords:['saudi','uae','qatar','iraq','lebanon','turkey'],applied:'실시간',active:true});
+    f.push({factor:`지역 확산 뉴스 ${ns.regional_spread}건 감지`,impact:'주변국 연루 확대로 장기화 위험',weight:'+2%p (4~6개월, 7~12개월)',direction:'lengthen',detail:`주변국을 언급하는 기사 ${ns.regional_spread}건이 감지되었습니다.`,keywords:['saudi','uae','qatar','iraq','lebanon','turkey'],applied:'실시간',active:true,decay:1});
   }
 
-  p[1]+=.03; p[2]+=.02;
-  f.push({factor:'미 상원 전쟁 결의안 부결',impact:'미국 내 정치적 지지로 군사작전 지속 가능',weight:'+3%p (2~3개월), +2%p (4~6개월)',direction:'mixed',detail:FX['미 상원 전쟁 결의안 부결'],keywords:['senate','resolution','war powers','congress','vote'],applied:'2026-03-04',active:true});
+  p[1]+=.03*dSenate; p[2]+=.02*dSenate;
+  f.push({factor:'미 상원 전쟁 결의안 부결',impact:'미국 내 정치적 지지로 군사작전 지속 가능',weight:dw('+3%p (2~3개월), +2%p (4~6개월)',dSenate),direction:'mixed',detail:FX['미 상원 전쟁 결의안 부결'],keywords:['senate','resolution','war powers','congress','vote'],applied:'2026-03-04',active:true,decay:dSenate});
 
-  p[0]+=.03; p[1]+=.05;
-  f.push({factor:'사우디/UAE 연합군 참전',impact:'이란 포위망 강화 → 조기 항복 가능성',weight:'+3%p (1개월내), +5%p (2~3개월)',direction:'shorten',detail:FX['사우디/UAE 연합군 참전'],keywords:['saudi','uae','coalition','join','alliance','gcc'],applied:'2026-03-03',active:true});
+  p[0]+=.03*dSaudi; p[1]+=.05*dSaudi;
+  f.push({factor:'사우디/UAE 연합군 참전',impact:'이란 포위망 강화 → 조기 항복 가능성',weight:dw('+3%p (1개월내), +5%p (2~3개월)',dSaudi),direction:'shorten',detail:FX['사우디/UAE 연합군 참전'],keywords:['saudi','uae','coalition','join','alliance','gcc'],applied:'2026-03-03',active:true,decay:dSaudi});
 
   // Critical event factors (high-impact news detection)
   if (criticalEvents && criticalEvents.length > 0) {
