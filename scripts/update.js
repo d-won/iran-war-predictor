@@ -274,6 +274,129 @@ function articleKey(a) {
 }
 
 // --- Analysis ---
+
+// Critical event patterns - high-impact events that significantly shift probabilities
+// Each pattern has: keywords (all must match), severity multiplier, probability adjustments
+const CRITICAL_EVENTS = [
+  {
+    id: 'iran_capitulation',
+    name: '이란 항복/사과/공식 양보',
+    keywords: [['iran','apolog'],['iran','surrender'],['iran','capitulat'],['pezeshkian','apolog'],['iran','unconditional'],['iran','no more attack'],['iran','halt attack'],['iran','stop attack']],
+    severity: 'critical',
+    adjust: [+0.08, +0.12, -0.05, -0.05, -0.02], // big boost to 1-month, 2-3 month
+    direction: 'shorten',
+    detail: '이란 지도부가 공식적으로 사과하거나 양보를 선언했습니다. 이는 패전국의 전형적인 항복 전 단계로, 역사적으로 수일~수주 내 종전으로 이어집니다.',
+  },
+  {
+    id: 'ceasefire_deal',
+    name: '휴전 합의/협정 체결',
+    keywords: [['ceasefire','agree'],['ceasefire','deal'],['ceasefire','sign'],['truce','agree'],['armistice','sign'],['peace deal','iran']],
+    severity: 'critical',
+    adjust: [+0.15, +0.10, -0.08, -0.06, -0.03],
+    direction: 'shorten',
+    detail: '휴전 합의가 이루어졌습니다. 공식 휴전 합의는 전쟁 종결의 결정적 단계입니다.',
+  },
+  {
+    id: 'iran_regime_collapse',
+    name: '이란 정권 붕괴/내전',
+    keywords: [['iran','regime','collaps'],['iran','government','fall'],['tehran','fall'],['iran','civil war'],['iran','coup']],
+    severity: 'critical',
+    adjust: [+0.10, +0.08, +0.02, -0.05, -0.04],
+    direction: 'shorten',
+    detail: '이란 정권이 붕괴하거나 내부 쿠데타가 발생했습니다. 교전 상대의 정권 소멸은 빠른 전쟁 종결로 이어집니다.',
+  },
+  {
+    id: 'nuclear_threat',
+    name: '핵무기 위협/사용',
+    keywords: [['nuclear','strike'],['nuclear','weapon','use'],['nuclear','threat','iran'],['atomic','weapon']],
+    severity: 'critical',
+    adjust: [+0.05, +0.05, +0.05, +0.03, +0.02],
+    direction: 'lengthen',
+    detail: '핵무기 위협 또는 사용 가능성이 보도되었습니다. 분쟁의 성격이 근본적으로 변할 수 있는 극단적 시나리오입니다.',
+  },
+  {
+    id: 'us_ground_invasion',
+    name: '미국 대규모 지상군 투입',
+    keywords: [['us','ground','troops','iran'],['american','soldiers','iran'],['ground invasion','iran'],['us','deploy','iran','troops']],
+    severity: 'high',
+    adjust: [+0.03, +0.06, +0.04, +0.02, 0],
+    direction: 'mixed',
+    detail: '미국이 대규모 지상군을 이란에 투입했습니다. 공중전에서 지상전으로의 전환은 전쟁 기간을 늘리거나 빠른 항복을 이끌 수 있습니다.',
+  },
+  {
+    id: 'capital_bombing',
+    name: '수도 대규모 폭격',
+    keywords: [['tehran','explosion'],['tehran','bomb'],['tehran','strike'],['tehran','pound'],['tehran','attack']],
+    severity: 'high',
+    adjust: [+0.04, +0.06, -0.02, -0.02, -0.01],
+    direction: 'shorten',
+    detail: '이란 수도 테헤란이 대규모 폭격을 받고 있습니다. 수도 직접 타격은 정권의 전쟁 지속 의지를 크게 약화시킵니다.',
+  },
+  {
+    id: 'iran_no_attack_neighbors',
+    name: '이란 이웃국 공격 중단 선언',
+    keywords: [['iran','no attack','neighb'],['iran','halt','neighb'],['iran','stop','attack','neighb'],['iran','not attack','neighb'],['iran','apologi','neighb']],
+    severity: 'high',
+    adjust: [+0.05, +0.07, -0.03, -0.03, -0.01],
+    direction: 'shorten',
+    detail: '이란이 이웃국에 대한 공격을 중단하겠다고 선언했습니다. 이는 전선을 스스로 축소하는 행위로, 연합군 해체를 유도하려는 시도이자 전쟁 종결 의지의 강력한 신호입니다.',
+  },
+  {
+    id: 'major_surrender',
+    name: '대규모 항복/투항',
+    keywords: [['iran','troops','surrender'],['iranian','forces','surrender'],['mass surrender'],['irgc','surrender'],['iran','army','surrender']],
+    severity: 'high',
+    adjust: [+0.06, +0.08, -0.03, -0.03, -0.02],
+    direction: 'shorten',
+    detail: '이란군의 대규모 항복/투항이 보도되었습니다. 이는 조직적 저항이 무너지고 있음을 의미합니다.',
+  },
+  {
+    id: 'china_russia_mediation',
+    name: '중국/러시아 중재 개입',
+    keywords: [['china','mediat','iran'],['russia','mediat','iran'],['beijing','peace','iran'],['moscow','peace','iran'],['china','broker','ceasefire']],
+    severity: 'moderate',
+    adjust: [+0.02, +0.04, +0.02, -0.01, -0.01],
+    direction: 'shorten',
+    detail: '중국 또는 러시아가 중재에 나섰습니다. 강대국의 외교적 개입은 협상을 가속화할 수 있습니다.',
+  },
+  {
+    id: 'war_spread_new_country',
+    name: '새로운 국가 참전/전선 확대',
+    keywords: [['turkey','join','war'],['pakistan','join','war'],['egypt','join'],['new front'],['war spread'],['conflict expand']],
+    severity: 'moderate',
+    adjust: [-0.02, -0.03, +0.04, +0.03, +0.02],
+    direction: 'lengthen',
+    detail: '새로운 국가가 참전하거나 전선이 확대되었습니다. 분쟁의 복잡성이 증가하여 종전이 지연될 수 있습니다.',
+  },
+];
+
+function detectCriticalEvents(articles) {
+  const detected = [];
+  for (const evt of CRITICAL_EVENTS) {
+    let matchCount = 0;
+    let matchedArticles = [];
+    for (const a of articles) {
+      const text = ((a.title || '') + ' ' + (a.snippet || '')).toLowerCase();
+      for (const kwGroup of evt.keywords) {
+        if (kwGroup.every(kw => text.includes(kw))) {
+          matchCount += a.isNew ? 3 : 1; // new articles weighted 3x for critical events
+          matchedArticles.push(a.title);
+          break; // one match per article per event
+        }
+      }
+    }
+    if (matchCount > 0) {
+      detected.push({
+        ...evt,
+        matchCount,
+        confidence: Math.min(matchCount / 3, 1.0), // 3+ matches = 100% confidence
+        matchedArticles: matchedArticles.slice(0, 5),
+      });
+    }
+  }
+  return detected;
+}
+
 function analyzeSignals(articles, seenKeys) {
   let newCount = 0;
   const nowSeen = new Set(seenKeys);
@@ -306,7 +429,7 @@ function analyzeSignals(articles, seenKeys) {
   return { signals: s, newSeenKeys: trimmed };
 }
 
-function calculatePrediction(daysElapsed, ns, econImpact) {
+function calculatePrediction(daysElapsed, ns, econImpact, criticalEvents) {
   let p = [.15,.35,.28,.15,.07];
   const f = [];
 
@@ -359,6 +482,35 @@ function calculatePrediction(daysElapsed, ns, econImpact) {
 
   p[0]+=.03; p[1]+=.05;
   f.push({factor:'사우디/UAE 연합군 참전',impact:'이란 포위망 강화 → 조기 항복 가능성',weight:'+3%p (1개월내), +5%p (2~3개월)',direction:'shorten',detail:FX['사우디/UAE 연합군 참전'],keywords:['saudi','uae','coalition','join','alliance','gcc'],applied:'2026-03-03',active:true});
+
+  // Critical event factors (high-impact news detection)
+  if (criticalEvents && criticalEvents.length > 0) {
+    for (const evt of criticalEvents) {
+      const conf = evt.confidence;
+      const adj = evt.adjust.map(v => v * conf);
+      p[0] += adj[0]; p[1] += adj[1]; p[2] += adj[2]; p[3] += adj[3]; p[4] += adj[4];
+      // Clamp to prevent negatives
+      p = p.map(v => Math.max(v, 0.01));
+      const confLabel = conf >= 0.8 ? '확실' : conf >= 0.5 ? '높음' : '감지';
+      const adjStr = evt.adjust.map((v, i) => {
+        if (Math.abs(v) < 0.005) return null;
+        const labels = ['1개월내', '2~3개월', '4~6개월', '7~12개월', '1년초과'];
+        return `${v > 0 ? '+' : ''}${(v * conf * 100).toFixed(1)}%p (${labels[i]})`;
+      }).filter(Boolean).join(', ');
+      f.push({
+        factor: `[중대 이벤트] ${evt.name}`,
+        impact: evt.detail,
+        weight: adjStr,
+        direction: evt.direction,
+        detail: `${evt.detail}\n\n신뢰도: ${confLabel} (${(conf * 100).toFixed(0)}%), 관련 기사 ${evt.matchCount}건 감지.${evt.matchedArticles.length ? '\n관련: ' + evt.matchedArticles.slice(0, 3).join(' | ') : ''}`,
+        keywords: evt.keywords.flat(),
+        applied: new Date().toISOString().split('T')[0],
+        active: true,
+        severity: evt.severity,
+      });
+      console.log(`  [CRITICAL EVENT] ${evt.name} (confidence: ${(conf * 100).toFixed(0)}%, articles: ${evt.matchCount})`);
+    }
+  }
 
   // Economic indicator factors
   if (econImpact) {
@@ -418,8 +570,9 @@ async function main() {
 
   // Analyze
   const { signals, newSeenKeys } = analyzeSignals(articles, seenKeys);
+  const criticalEvents = detectCriticalEvents(articles);
   const daysElapsed = Math.floor((new Date() - new Date('2026-02-28')) / 864e5);
-  const pred = calculatePrediction(daysElapsed, signals, econImpact);
+  const pred = calculatePrediction(daysElapsed, signals, econImpact, criticalEvents);
 
   const result = {
     timestamp: new Date().toISOString(),
@@ -430,6 +583,7 @@ async function main() {
     latest_news: articles.slice(0, 15),
     historical_comparison: HISTORICAL_WARS,
     economic_indicators: econData,
+    critical_events: criticalEvents.map(e => ({ id: e.id, name: e.name, severity: e.severity, confidence: e.confidence, matchCount: e.matchCount, direction: e.direction })),
     feeds_loaded: feedCount,
     feeds_total: RSS_FEEDS.length,
   };
