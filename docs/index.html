@@ -7,100 +7,100 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="이란전쟁">
-  <meta name="theme-color" content="#f5f5f5">
+  <meta name="theme-color" content="#1e222a">
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
-    body{font-family:-apple-system,'SF Pro Display','Segoe UI',sans-serif;background:#f0f2f5;color:#1a1a2e;min-height:100vh;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent;padding-bottom:env(safe-area-inset-bottom,0)}
-    .header{background:#fff;border-bottom:1px solid #e0e0e0;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:50;box-shadow:0 1px 3px rgba(0,0,0,.08)}
-    .header h1{font-size:18px;color:#1a1a2e;line-height:1.3}
-    .header h1 span{color:#d32f2f}
+    body{font-family:-apple-system,'SF Pro Display','Segoe UI',sans-serif;background:#1e222a;color:#d4d8e0;min-height:100vh;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent;padding-bottom:env(safe-area-inset-bottom,0)}
+    .header{background:#272c36;border-bottom:1px solid #3a3f4a;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:50;box-shadow:0 1px 3px rgba(0,0,0,.2)}
+    .header h1{font-size:18px;color:#eee;line-height:1.3}
+    .header h1 span{color:#e05555}
     .header-info{display:flex;gap:10px;align-items:center;font-size:12px;flex-shrink:0}
-    .war-day{background:#d32f2f;color:#fff;padding:5px 12px;border-radius:20px;font-weight:700;font-size:13px;white-space:nowrap}
-    .update-timer{color:#666;display:flex;align-items:center;gap:6px}
-    .update-timer strong{color:#2e7d32}
+    .war-day{background:#e05555;color:#fff;padding:5px 12px;border-radius:20px;font-weight:700;font-size:13px;white-space:nowrap}
+    .update-timer{color:#8a909c;display:flex;align-items:center;gap:6px}
+    .update-timer strong{color:#6bc98a}
     .container{max-width:1400px;margin:0 auto;padding:12px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
     .full-width{grid-column:1/-1}
-    .card{background:#fff;border:1px solid #e0e0e0;border-radius:12px;padding:16px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.04)}
-    .card h2{font-size:14px;color:#555;margin-bottom:14px;letter-spacing:.5px;font-weight:600;display:flex;align-items:center;gap:8px}
+    .card{background:#272c36;border:1px solid #3a3f4a;border-radius:12px;padding:16px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.15)}
+    .card h2{font-size:14px;color:#9aa0ad;margin-bottom:14px;letter-spacing:.5px;font-weight:600;display:flex;align-items:center;gap:8px}
     .prob-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
-    .prob-item{background:#f8f9fa;border:1px solid #e8e8e8;border-radius:10px;padding:12px;text-align:center;transition:all .3s}
+    .prob-item{background:#2e333d;border:1px solid #3a3f4a;border-radius:10px;padding:12px;text-align:center;transition:all .3s}
     .prob-item:active{transform:scale(.97)}
-    .prob-item .label{font-size:11px;color:#777;margin-bottom:6px;line-height:1.3}
+    .prob-item .label{font-size:11px;color:#9aa0ad;margin-bottom:6px;line-height:1.3}
     .prob-item .value{font-size:26px;font-weight:700}
-    .prob-item .bar{height:4px;background:#e0e0e0;border-radius:2px;margin-top:6px;overflow:hidden}
+    .prob-item .bar{height:4px;background:#3a3f4a;border-radius:2px;margin-top:6px;overflow:hidden}
     .prob-item .bar-fill{height:100%;border-radius:2px;transition:width .5s}
     .chart-container{position:relative;height:300px}
     .factors-list{max-height:500px;overflow-y:auto;-webkit-overflow-scrolling:touch}
-    .factor-item{padding:14px 12px;border-bottom:1px solid #eee;cursor:pointer;transition:background .2s;display:flex;flex-direction:column;gap:4px}
-    .factor-item:active{background:#f5f5f5}
-    .factor-item .factor-name{font-weight:600;color:#1a1a2e;font-size:14px;line-height:1.4}
-    .factor-item .factor-impact{font-size:12px;color:#777;line-height:1.4}
-    .factor-item .factor-weight{font-size:12px;color:#2e7d32}
-    .factor-item .factor-arrow{color:#aaa;font-size:12px;margin-top:2px}
+    .factor-item{padding:14px 12px;border-bottom:1px solid #3a3f4a;cursor:pointer;transition:background .2s;display:flex;flex-direction:column;gap:4px}
+    .factor-item:active{background:#333842}
+    .factor-item .factor-name{font-weight:600;color:#d4d8e0;font-size:14px;line-height:1.4}
+    .factor-item .factor-impact{font-size:12px;color:#8a909c;line-height:1.4}
+    .factor-item .factor-weight{font-size:12px;color:#6bc98a}
+    .factor-item .factor-arrow{color:#666;font-size:12px;margin-top:2px}
     .news-list{max-height:500px;overflow-y:auto;-webkit-overflow-scrolling:touch}
-    .news-item{padding:12px;border-bottom:1px solid #eee}
-    .news-item a{color:#1565c0;text-decoration:none;font-size:14px;font-weight:500;line-height:1.4;display:block}
-    .news-item a:active{color:#0d47a1}
-    .news-item .news-meta{font-size:11px;color:#999;margin-top:4px}
-    .news-item .news-snippet{font-size:12px;color:#666;margin-top:4px;line-height:1.5}
+    .news-item{padding:12px;border-bottom:1px solid #3a3f4a}
+    .news-item a{color:#7ab3e0;text-decoration:none;font-size:14px;font-weight:500;line-height:1.4;display:block}
+    .news-item a:active{color:#9cc8ee}
+    .news-item .news-meta{font-size:11px;color:#6b7280;margin-top:4px}
+    .news-item .news-snippet{font-size:12px;color:#8a909c;margin-top:4px;line-height:1.5}
     .history-table{width:100%;font-size:11px;border-collapse:collapse}
-    .history-table th{color:#777;text-align:left;padding:8px 4px;border-bottom:1px solid #ddd;font-weight:600;white-space:nowrap}
-    .history-table td{padding:8px 4px;border-bottom:1px solid #f0f0f0;cursor:pointer;white-space:nowrap}
-    .history-table tr:active td{background:#f5f5f5}
+    .history-table th{color:#9aa0ad;text-align:left;padding:8px 4px;border-bottom:1px solid #3a3f4a;font-weight:600;white-space:nowrap}
+    .history-table td{padding:8px 4px;border-bottom:1px solid #2e333d;cursor:pointer;white-space:nowrap}
+    .history-table tr:active td{background:#333842}
     .historical-wars{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px}
-    .war-card{background:#f8f9fa;border:1px solid #e8e8e8;border-radius:8px;padding:12px;font-size:12px}
-    .war-card .war-name{font-weight:600;color:#1a1a2e;margin-bottom:6px;font-size:13px;line-height:1.3}
-    .war-card .war-duration{color:#e65100;font-weight:700;font-size:16px}
-    .war-card .war-detail{color:#777;margin-top:3px;line-height:1.4}
+    .war-card{background:#2e333d;border:1px solid #3a3f4a;border-radius:8px;padding:12px;font-size:12px}
+    .war-card .war-name{font-weight:600;color:#d4d8e0;margin-bottom:6px;font-size:13px;line-height:1.3}
+    .war-card .war-duration{color:#e8a54a;font-weight:700;font-size:16px}
+    .war-card .war-detail{color:#8a909c;margin-top:3px;line-height:1.4}
     .signals-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(90px,1fr));gap:8px}
-    .signal-item{background:#f8f9fa;border-radius:8px;padding:10px 6px;text-align:center}
-    .signal-item .signal-label{font-size:9px;color:#888;letter-spacing:.3px}
+    .signal-item{background:#2e333d;border-radius:8px;padding:10px 6px;text-align:center}
+    .signal-item .signal-label{font-size:9px;color:#9aa0ad;letter-spacing:.3px}
     .signal-item .signal-value{font-size:20px;font-weight:700;margin-top:4px}
-    .modal-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.4);z-index:100;justify-content:center;align-items:flex-end}
+    .modal-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.6);z-index:100;justify-content:center;align-items:flex-end}
     .modal-overlay.active{display:flex}
-    .modal{background:#fff;border:1px solid #ddd;border-radius:16px 16px 0 0;padding:20px;padding-bottom:calc(20px + env(safe-area-inset-bottom,0));width:100%;max-width:700px;max-height:85vh;overflow-y:auto;-webkit-overflow-scrolling:touch;animation:slideUp .3s ease-out}
+    .modal{background:#272c36;border:1px solid #3a3f4a;border-radius:16px 16px 0 0;padding:20px;padding-bottom:calc(20px + env(safe-area-inset-bottom,0));width:100%;max-width:700px;max-height:85vh;overflow-y:auto;-webkit-overflow-scrolling:touch;animation:slideUp .3s ease-out}
     @keyframes slideUp{from{transform:translateY(100%)}to{transform:translateY(0)}}
-    .modal .modal-handle{width:36px;height:4px;background:#ccc;border-radius:2px;margin:0 auto 16px}
-    .modal h3{color:#1a1a2e;margin-bottom:16px;font-size:17px;line-height:1.3}
-    .modal .close-btn{float:right;background:#eee;border:none;color:#666;font-size:18px;cursor:pointer;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center}
-    .modal .close-btn:active{background:#ddd;color:#333}
-    .btn{background:#1565c0;color:#fff;border:none;padding:10px 18px;border-radius:8px;cursor:pointer;font-size:14px}
-    .btn:active{background:#0d47a1;transform:scale(.97)}
+    .modal .modal-handle{width:36px;height:4px;background:#555;border-radius:2px;margin:0 auto 16px}
+    .modal h3{color:#eee;margin-bottom:16px;font-size:17px;line-height:1.3}
+    .modal .close-btn{float:right;background:#3a3f4a;border:none;color:#8a909c;font-size:18px;cursor:pointer;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+    .modal .close-btn:active{background:#4a4f5a;color:#ddd}
+    .btn{background:#4a8fd4;color:#fff;border:none;padding:10px 18px;border-radius:8px;cursor:pointer;font-size:14px}
+    .btn:active{background:#3a7fc4;transform:scale(.97)}
     .btn-sm{padding:6px 12px;font-size:12px;border-radius:6px}
     ::-webkit-scrollbar{width:4px}
     ::-webkit-scrollbar-track{background:transparent}
-    ::-webkit-scrollbar-thumb{background:#ccc;border-radius:2px}
-    .loading{text-align:center;padding:30px;color:#888;font-size:14px}
-    .loading::after{content:'';display:inline-block;width:18px;height:18px;border:2px solid #ddd;border-top-color:#1565c0;border-radius:50%;animation:spin 1s linear infinite;margin-left:8px;vertical-align:middle}
+    ::-webkit-scrollbar-thumb{background:#4a4f5a;border-radius:2px}
+    .loading{text-align:center;padding:30px;color:#8a909c;font-size:14px}
+    .loading::after{content:'';display:inline-block;width:18px;height:18px;border:2px solid #3a3f4a;border-top-color:#4a8fd4;border-radius:50%;animation:spin 1s linear infinite;margin-left:8px;vertical-align:middle}
     @keyframes spin{to{transform:rotate(360deg)}}
-    .status-bar{background:#fafafa;border-bottom:1px solid #e0e0e0;padding:5px 20px;font-size:10px;color:#999;display:flex;justify-content:space-between}
-    .status-bar .rss-status{color:#2e7d32}
-    .status-bar .rss-status.error{color:#d32f2f}
-    .method-section{background:#f8f9fa;border:1px solid #e8e8e8;border-radius:10px;padding:16px;margin-top:12px}
-    .method-section h4{color:#1565c0;font-size:14px;margin-bottom:10px}
-    .method-step{padding:12px;margin-bottom:8px;background:#fff;border-radius:8px;border-left:3px solid #1565c0}
-    .method-step .step-num{display:inline-block;background:#1565c0;color:#fff;width:22px;height:22px;border-radius:50%;text-align:center;line-height:22px;font-size:11px;font-weight:700;margin-right:8px}
-    .method-step .step-title{font-weight:600;color:#1a1a2e;font-size:13px;display:flex;align-items:center;margin-bottom:4px}
-    .method-step .step-desc{font-size:12px;color:#666;line-height:1.6;margin-left:30px}
-    .method-step .step-example{font-size:11px;color:#1565c0;margin-left:30px;margin-top:4px;font-style:italic}
-    .method-toggle{background:none;border:1px solid #ddd;color:#777;padding:8px 14px;border-radius:8px;font-size:13px;cursor:pointer;width:100%;text-align:left;display:flex;justify-content:space-between;align-items:center;margin-top:12px}
-    .method-toggle:active{background:#f5f5f5}
+    .status-bar{background:#22272f;border-bottom:1px solid #3a3f4a;padding:5px 20px;font-size:10px;color:#6b7280;display:flex;justify-content:space-between}
+    .status-bar .rss-status{color:#6bc98a}
+    .status-bar .rss-status.error{color:#e05555}
+    .method-section{background:#2e333d;border:1px solid #3a3f4a;border-radius:10px;padding:16px;margin-top:12px}
+    .method-section h4{color:#7ab3e0;font-size:14px;margin-bottom:10px}
+    .method-step{padding:12px;margin-bottom:8px;background:#272c36;border-radius:8px;border-left:3px solid #4a8fd4}
+    .method-step .step-num{display:inline-block;background:#4a8fd4;color:#fff;width:22px;height:22px;border-radius:50%;text-align:center;line-height:22px;font-size:11px;font-weight:700;margin-right:8px}
+    .method-step .step-title{font-weight:600;color:#d4d8e0;font-size:13px;display:flex;align-items:center;margin-bottom:4px}
+    .method-step .step-desc{font-size:12px;color:#8a909c;line-height:1.6;margin-left:30px}
+    .method-step .step-example{font-size:11px;color:#7ab3e0;margin-left:30px;margin-top:4px;font-style:italic}
+    .method-toggle{background:none;border:1px solid #3a3f4a;color:#9aa0ad;padding:8px 14px;border-radius:8px;font-size:13px;cursor:pointer;width:100%;text-align:left;display:flex;justify-content:space-between;align-items:center;margin-top:12px}
+    .method-toggle:active{background:#333842}
     .method-toggle .chevron{transition:transform .3s}
     .method-toggle.open .chevron{transform:rotate(180deg)}
     .method-detail{display:none}
     .method-detail.open{display:block}
-    .factor-detail-card{padding:16px;background:#f8f9fa;border-radius:10px;margin-bottom:12px}
-    .factor-detail-card h4{color:#1a1a2e;margin-bottom:10px;font-size:15px;line-height:1.4}
+    .factor-detail-card{padding:16px;background:#2e333d;border-radius:10px;margin-bottom:12px}
+    .factor-detail-card h4{color:#d4d8e0;margin-bottom:10px;font-size:15px;line-height:1.4}
     .factor-detail-card .detail-row{display:flex;gap:8px;margin-bottom:8px;align-items:flex-start}
-    .factor-detail-card .detail-label{color:#999;font-size:11px;min-width:60px;padding-top:2px}
+    .factor-detail-card .detail-label{color:#6b7280;font-size:11px;min-width:60px;padding-top:2px}
     .factor-detail-card .detail-value{font-size:13px;line-height:1.5}
     .prob-change-pill{display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600}
-    .summary-banner{background:#fff;border:1px solid #e0e0e0;border-radius:12px;padding:16px;margin-bottom:12px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
-    .summary-banner .summary-title{font-size:13px;color:#888;margin-bottom:8px}
-    .summary-banner .summary-text{font-size:15px;color:#1a1a2e;line-height:1.6}
-    .summary-banner .summary-text strong{color:#1565c0}
+    .summary-banner{background:#272c36;border:1px solid #3a3f4a;border-radius:12px;padding:16px;margin-bottom:12px;box-shadow:0 1px 3px rgba(0,0,0,.15)}
+    .summary-banner .summary-title{font-size:13px;color:#9aa0ad;margin-bottom:8px}
+    .summary-banner .summary-text{font-size:15px;color:#d4d8e0;line-height:1.6}
+    .summary-banner .summary-text strong{color:#7ab3e0}
     @media(max-width:768px){
       .container{grid-template-columns:1fr;padding:8px;gap:10px}
       .header{padding:12px 16px}
@@ -180,17 +180,17 @@
     <div class="card">
       <h2>뉴스 신호 분석</h2>
       <div class="signals-grid" id="signalsGrid"><div class="loading">신호 분석 중</div></div>
-      <div style="margin-top:12px;padding:10px;background:#f8f9fa;border-radius:8px;font-size:11px;color:#777;line-height:1.6" id="signalExplain">알자지라, BBC, NYT, 가디언의 실시간 뉴스에서 키워드 빈도를 측정합니다.</div>
+      <div style="margin-top:12px;padding:10px;background:#2e333d;border-radius:8px;font-size:11px;color:#8a909c;line-height:1.6" id="signalExplain">알자지라, BBC, NYT, 가디언의 실시간 뉴스에서 키워드 빈도를 측정합니다.</div>
     </div>
     <div class="card">
       <h2>예측 요인</h2>
-      <div style="padding:8px 10px;background:#f8f9fa;border-radius:8px;font-size:11px;color:#777;margin-bottom:10px;line-height:1.5">아래 각 요인이 기본 확률을 조정합니다. 탭하면 상세 설명을 볼 수 있습니다.</div>
+      <div style="padding:8px 10px;background:#2e333d;border-radius:8px;font-size:11px;color:#8a909c;margin-bottom:10px;line-height:1.5">아래 각 요인이 기본 확률을 조정합니다. 탭하면 상세 설명을 볼 수 있습니다.</div>
       <div class="factors-list" id="factorsList"><div class="loading">요인 로딩 중</div></div>
     </div>
     <div class="card"><h2>최신 이란 전쟁 뉴스</h2><div class="news-list" id="newsList"><div class="loading">뉴스 수집 중</div></div></div>
     <div class="card full-width">
       <h2>역사적 전쟁 비교</h2>
-      <div style="padding:8px 10px;background:#f8f9fa;border-radius:8px;font-size:11px;color:#777;margin-bottom:10px;line-height:1.5">유사한 현대전과 비교합니다. 이번 전쟁의 패턴은 걸프전(연합군 공습 → 지상작전 → 빠른 종결)과 가장 유사합니다.</div>
+      <div style="padding:8px 10px;background:#2e333d;border-radius:8px;font-size:11px;color:#8a909c;margin-bottom:10px;line-height:1.5">유사한 현대전과 비교합니다. 이번 전쟁의 패턴은 걸프전(연합군 공습 → 지상작전 → 빠른 종결)과 가장 유사합니다.</div>
       <div class="historical-wars" id="historicalWars"></div>
     </div>
     <div class="card full-width">
@@ -209,7 +209,7 @@
     </div>
   </div>
   <script>
-    const COLORS=['#2e7d32','#00897b','#1565c0','#e65100','#c62828','#6a1b9a','#ad1457'];
+    const COLORS=['#6bc98a','#5cc4b8','#7ab3e0','#e8a54a','#e06060','#b07ad4','#d4708a'];
     const KEYWORDS=['iran','tehran','israel','ceasefire','negotiation','diplomacy','missile','strike','bombing','hormuz','hezbollah','irgc','casualt','peace','truce','surrender','withdraw','escalat','de-escalat','sanction','nuclear','khamenei','trump','war'];
     const RSS_FEEDS=['https://www.aljazeera.com/xml/rss/all.xml','https://rss.nytimes.com/services/xml/rss/nyt/MiddleEast.xml','https://feeds.bbci.co.uk/news/world/middle_east/rss.xml','https://www.theguardian.com/world/middleeast/rss'];
     const CORS_PROXIES=[url=>`https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`,url=>`https://corsproxy.io/?${encodeURIComponent(url)}`];
@@ -283,15 +283,15 @@
     function renderAll(d){renderWarDay(d.war_day);document.getElementById('summaryText').innerHTML=generateSummary(d);renderProbs(d.probabilities);renderBarChart(d.probabilities);renderSignals(d.news_signals);renderFactors(d.factors);renderNews(d.latest_news||[]);renderWars(d.historical_comparison||[]);renderTrend();renderHistory()}
     function renderWarDay(d){document.getElementById('warDay').textContent=`D+${d}`}
     function renderProbs(pr){document.getElementById('probGrid').innerHTML=Object.entries(pr).map(([k,v],i)=>`<div class="prob-item"><div class="label">${k}</div><div class="value" style="color:${COLORS[i]}">${v}%</div><div class="bar"><div class="bar-fill" style="width:${Math.min(v*2.5,100)}%;background:${COLORS[i]}"></div></div></div>`).join('')}
-    function renderBarChart(pr){const ctx=document.getElementById('barChart').getContext('2d');if(barChart)barChart.destroy();barChart=new Chart(ctx,{type:'bar',data:{labels:Object.keys(pr).map(k=>k.split('(')[0].trim()),datasets:[{data:Object.values(pr),backgroundColor:COLORS.map(c=>c+'44'),borderColor:COLORS,borderWidth:1}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{y:{beginAtZero:true,max:40,ticks:{color:'#888',callback:v=>v+'%',font:{size:10}},grid:{color:'#e8e8e8'}},x:{ticks:{color:'#888',maxRotation:45,font:{size:9}},grid:{display:false}}}}})}
-    function renderTrend(){const ctx=document.getElementById('trendChart').getContext('2d');if(!predictionHistoryLocal.length)return;const ds=PROB_KEYS.map((key,i)=>({label:key.split('(')[0].trim(),data:predictionHistoryLocal.map(h=>({x:new Date(h.timestamp),y:h.probabilities[key]})).filter(d=>d.y!==undefined),borderColor:COLORS[i],backgroundColor:COLORS[i]+'22',borderWidth:2,pointRadius:1,pointHoverRadius:4,tension:.3,fill:false}));if(trendChart)trendChart.destroy();trendChart=new Chart(ctx,{type:'line',data:{datasets:ds},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},onClick:(e,el)=>{if(el.length>0)showHistoryDetail(el[0].index)},plugins:{legend:{labels:{color:'#666',font:{size:10},usePointStyle:true,boxWidth:6},position:'top'},tooltip:{callbacks:{title:i=>new Date(i[0].parsed.x).toLocaleString('ko-KR'),label:i=>`${i.dataset.label}: ${i.parsed.y}%`}}},scales:{x:{type:'time',time:{unit:'hour',displayFormats:{hour:'MM/dd HH:mm'}},ticks:{color:'#888',maxTicksLimit:8,font:{size:9}},grid:{color:'#e8e8e8'}},y:{beginAtZero:true,max:40,ticks:{color:'#888',callback:v=>v+'%',font:{size:10}},grid:{color:'#e8e8e8'}}}}})}
-    function renderSignals(sg){if(!sg)return;const g=document.getElementById('signalsGrid'),items=[{l:'휴전',v:sg.ceasefire_mentions,c:'#2e7d32'},{l:'확전',v:sg.escalation_mentions,c:'#c62828'},{l:'협상',v:sg.negotiation_mentions,c:'#00897b'},{l:'사상자',v:sg.casualty_mentions,c:'#e65100'},{l:'평화',v:sg.peace_mentions,c:'#1565c0'},{l:'지역확산',v:sg.regional_spread,c:'#6a1b9a'},{l:'전체기사',v:sg.total_articles,c:'#333'}];g.innerHTML=items.map(i=>`<div class="signal-item"><div class="signal-label">${i.l}</div><div class="signal-value" style="color:${i.c}">${i.v}</div></div>`).join('');const ce=sg.ceasefire_mentions,es=sg.escalation_mentions;let ex=`4개 언론사에서 ${sg.total_articles}건의 기사를 분석했습니다. `;if(ce>es)ex+=`휴전 언급(${ce}건)이 확전(${es}건)보다 많아 조기 종전에 긍정적 신호입니다.`;else if(es>ce)ex+=`확전 언급(${es}건)이 휴전(${ce}건)보다 많아 단기 종전 확률이 소폭 하락합니다.`;else ex+=`휴전과 확전 신호가 균형을 이루고 있습니다.`;document.getElementById('signalExplain').textContent=ex}
-    function renderFactors(factors){if(!factors)return;const l=document.getElementById('factorsList'),ic={shorten:'▲',lengthen:'▼',mixed:'◆',reference:'◇'},co={shorten:'#2e7d32',lengthen:'#c62828',mixed:'#e65100',reference:'#888'};l.innerHTML=factors.map((f,i)=>`<div class="factor-item" onclick="showFactorDetail(${i})"><div class="factor-name"><span style="color:${co[f.direction]||'#888'}">${ic[f.direction]||'•'}</span> ${f.factor}</div><div class="factor-impact">${f.impact}</div><div class="factor-weight" style="color:${co[f.direction]||'#2e7d32'}">${f.weight}</div><div class="factor-arrow">탭하여 상세 설명 보기 →</div></div>`).join('')}
+    function renderBarChart(pr){const ctx=document.getElementById('barChart').getContext('2d');if(barChart)barChart.destroy();barChart=new Chart(ctx,{type:'bar',data:{labels:Object.keys(pr).map(k=>k.split('(')[0].trim()),datasets:[{data:Object.values(pr),backgroundColor:COLORS.map(c=>c+'44'),borderColor:COLORS,borderWidth:1}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{y:{beginAtZero:true,max:40,ticks:{color:'#8a909c',callback:v=>v+'%',font:{size:10}},grid:{color:'#3a3f4a'}},x:{ticks:{color:'#8a909c',maxRotation:45,font:{size:9}},grid:{display:false}}}}})}
+    function renderTrend(){const ctx=document.getElementById('trendChart').getContext('2d');if(!predictionHistoryLocal.length)return;const ds=PROB_KEYS.map((key,i)=>({label:key.split('(')[0].trim(),data:predictionHistoryLocal.map(h=>({x:new Date(h.timestamp),y:h.probabilities[key]})).filter(d=>d.y!==undefined),borderColor:COLORS[i],backgroundColor:COLORS[i]+'22',borderWidth:2,pointRadius:1,pointHoverRadius:4,tension:.3,fill:false}));if(trendChart)trendChart.destroy();trendChart=new Chart(ctx,{type:'line',data:{datasets:ds},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},onClick:(e,el)=>{if(el.length>0)showHistoryDetail(el[0].index)},plugins:{legend:{labels:{color:'#9aa0ad',font:{size:10},usePointStyle:true,boxWidth:6},position:'top'},tooltip:{callbacks:{title:i=>new Date(i[0].parsed.x).toLocaleString('ko-KR'),label:i=>`${i.dataset.label}: ${i.parsed.y}%`}}},scales:{x:{type:'time',time:{tooltipFormat:'yyyy-MM-dd HH:mm',displayFormats:{minute:'HH:mm',hour:'MM/dd HH:mm',day:'MM/dd',week:'MM/dd',month:'yyyy/MM'}},ticks:{color:'#8a909c',maxTicksLimit:8,font:{size:9},autoSkip:true},grid:{color:'#3a3f4a'}},y:{beginAtZero:true,max:40,ticks:{color:'#8a909c',callback:v=>v+'%',font:{size:10}},grid:{color:'#3a3f4a'}}}}})}
+    function renderSignals(sg){if(!sg)return;const g=document.getElementById('signalsGrid'),items=[{l:'휴전',v:sg.ceasefire_mentions,c:'#6bc98a'},{l:'확전',v:sg.escalation_mentions,c:'#e06060'},{l:'협상',v:sg.negotiation_mentions,c:'#5cc4b8'},{l:'사상자',v:sg.casualty_mentions,c:'#e8a54a'},{l:'평화',v:sg.peace_mentions,c:'#7ab3e0'},{l:'지역확산',v:sg.regional_spread,c:'#b07ad4'},{l:'전체기사',v:sg.total_articles,c:'#d4d8e0'}];g.innerHTML=items.map(i=>`<div class="signal-item"><div class="signal-label">${i.l}</div><div class="signal-value" style="color:${i.c}">${i.v}</div></div>`).join('');const ce=sg.ceasefire_mentions,es=sg.escalation_mentions;let ex=`4개 언론사에서 ${sg.total_articles}건의 기사를 분석했습니다. `;if(ce>es)ex+=`휴전 언급(${ce}건)이 확전(${es}건)보다 많아 조기 종전에 긍정적 신호입니다.`;else if(es>ce)ex+=`확전 언급(${es}건)이 휴전(${ce}건)보다 많아 단기 종전 확률이 소폭 하락합니다.`;else ex+=`휴전과 확전 신호가 균형을 이루고 있습니다.`;document.getElementById('signalExplain').textContent=ex}
+    function renderFactors(factors){if(!factors)return;const l=document.getElementById('factorsList'),ic={shorten:'▲',lengthen:'▼',mixed:'◆',reference:'◇'},co={shorten:'#6bc98a',lengthen:'#e06060',mixed:'#e8a54a',reference:'#888'};l.innerHTML=factors.map((f,i)=>`<div class="factor-item" onclick="showFactorDetail(${i})"><div class="factor-name"><span style="color:${co[f.direction]||'#888'}">${ic[f.direction]||'•'}</span> ${f.factor}</div><div class="factor-impact">${f.impact}</div><div class="factor-weight" style="color:${co[f.direction]||'#6bc98a'}">${f.weight}</div><div class="factor-arrow">탭하여 상세 설명 보기 →</div></div>`).join('')}
     function renderNews(articles){const l=document.getElementById('newsList');if(!articles.length){l.innerHTML='<div style="padding:12px;color:#888;font-size:13px;line-height:1.6">뉴스를 가져오지 못했습니다. RSS 피드가 일시적으로 사용 불가능할 수 있습니다. 예측은 내장 분석 모델을 기반으로 합니다.</div>';return}l.innerHTML=articles.map(a=>`<div class="news-item"><a href="${a.link}" target="_blank" rel="noopener">${a.title}</a><div class="news-meta">${a.source} · ${new Date(a.pubDate).toLocaleString('ko-KR')}</div>${a.snippet?`<div class="news-snippet">${a.snippet}</div>`:''}</div>`).join('')}
     function renderWars(wars){document.getElementById('historicalWars').innerHTML=wars.map(w=>`<div class="war-card"><div class="war-name">${w.name}</div><div class="war-duration">${w.duration_days}일</div><div class="war-detail">유형: ${w.type}</div><div class="war-detail">종결: ${w.ended_by}</div><div class="war-detail">참전국: ${w.involved_countries}개국</div></div>`).join('')}
     function renderHistory(){const b=document.getElementById('historyBody'),r=predictionHistoryLocal.slice(-20).reverse();b.innerHTML=r.map((h,i)=>{const v=Object.values(h.probabilities),ri=predictionHistoryLocal.length-1-i;return`<tr onclick="showHistoryDetail(${ri})"><td>${new Date(h.timestamp).toLocaleString('ko-KR',{month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit'})}</td><td>D+${h.war_day}</td>${v.map((val,j)=>`<td style="color:${COLORS[j]}">${val}%</td>`).join('')}<td><button class="btn btn-sm">보기</button></td></tr>`}).join('')}
-    function showHistoryDetail(idx){const e=predictionHistoryLocal[idx];if(!e)return;document.getElementById('modalTitle').textContent=`D+${e.war_day} 예측 상세`;let h='<div style="margin-bottom:16px">';h+=`<div style="font-size:12px;color:#999;margin-bottom:10px">${new Date(e.timestamp).toLocaleString('ko-KR')}</div>`;h+='<h4 style="color:#1565c0;margin-bottom:10px;font-size:14px">확률 분포</h4>';Object.entries(e.probabilities).forEach(([k,v],i)=>{h+=`<div style="display:flex;align-items:center;padding:6px 0;border-bottom:1px solid #eee;gap:8px"><span style="color:${COLORS[i]};font-size:13px;flex:1">${k}</span><strong style="color:${COLORS[i]};font-size:15px">${v}%</strong><div style="width:60px;height:6px;background:#e0e0e0;border-radius:3px;overflow:hidden"><div style="width:${Math.min(v*2.5,100)}%;height:100%;background:${COLORS[i]};border-radius:3px"></div></div></div>`});h+='</div>';if(e.factors&&e.factors.length){h+='<h4 style="color:#e65100;margin-bottom:8px;font-size:14px">분석 요인</h4>';e.factors.forEach(f=>{h+=`<div style="padding:10px;margin-bottom:6px;background:#f8f9fa;border-radius:8px"><div style="font-weight:600;color:#1a1a2e;font-size:13px;line-height:1.4">${f.factor}</div><div style="font-size:12px;color:#777;margin-top:4px;line-height:1.4">${f.impact}</div><div style="font-size:12px;color:#2e7d32;margin-top:2px">${f.weight}</div></div>`})}if(e.news_signals){h+='<h4 style="color:#1565c0;margin-bottom:8px;margin-top:12px;font-size:14px">뉴스 신호</h4>';const s=e.news_signals,ps=[['휴전',s.ceasefire_mentions,'#2e7d32'],['확전',s.escalation_mentions,'#c62828'],['협상',s.negotiation_mentions,'#00897b'],['사상자',s.casualty_mentions,'#e65100'],['평화',s.peace_mentions,'#1565c0'],['지역확산',s.regional_spread,'#6a1b9a']];h+='<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px">';ps.forEach(([l,v,c])=>{h+=`<div style="text-align:center;background:#f8f9fa;padding:8px;border-radius:6px"><div style="font-size:9px;color:#888">${l}</div><div style="font-size:18px;font-weight:700;color:${c};margin-top:2px">${v}</div></div>`});h+='</div>'}document.getElementById('modalContent').innerHTML=h;document.getElementById('modal').classList.add('active')}
-    function showFactorDetail(idx){if(!currentPrediction||!currentPrediction.factors)return;const f=currentPrediction.factors[idx],lb={shorten:'전쟁 단축',lengthen:'전쟁 장기화',mixed:'복합 효과',reference:'참고 자료'},dc={shorten:'#2e7d32',lengthen:'#c62828',mixed:'#e65100',reference:'#888'};document.getElementById('modalTitle').textContent='요인 상세 분석';document.getElementById('modalContent').innerHTML=`<div class="factor-detail-card"><h4>${f.factor}</h4><div class="detail-row"><span class="detail-label">방향</span><span class="prob-change-pill" style="color:${dc[f.direction]};background:${dc[f.direction]}15">${lb[f.direction]||f.direction}</span></div><div class="detail-row"><span class="detail-label">영향</span><span class="detail-value" style="color:#1a1a2e">${f.impact}</span></div><div class="detail-row"><span class="detail-label">확률 변동</span><span class="detail-value" style="color:#2e7d32;font-weight:600">${f.weight}</span></div></div><div style="padding:16px;background:#f8f9fa;border-radius:10px"><h4 style="color:#1565c0;margin-bottom:10px;font-size:14px">상세 설명</h4><p style="color:#444;font-size:13px;line-height:1.8">${f.detail||f.impact}</p></div>`;document.getElementById('modal').classList.add('active')}
+    function showHistoryDetail(idx){const e=predictionHistoryLocal[idx];if(!e)return;document.getElementById('modalTitle').textContent=`D+${e.war_day} 예측 상세`;let h='<div style="margin-bottom:16px">';h+=`<div style="font-size:12px;color:#8a909c;margin-bottom:10px">${new Date(e.timestamp).toLocaleString('ko-KR')}</div>`;h+='<h4 style="color:#7ab3e0;margin-bottom:10px;font-size:14px">확률 분포</h4>';Object.entries(e.probabilities).forEach(([k,v],i)=>{h+=`<div style="display:flex;align-items:center;padding:6px 0;border-bottom:1px solid #3a3f4a;gap:8px"><span style="color:${COLORS[i]};font-size:13px;flex:1">${k}</span><strong style="color:${COLORS[i]};font-size:15px">${v}%</strong><div style="width:60px;height:6px;background:#3a3f4a;border-radius:3px;overflow:hidden"><div style="width:${Math.min(v*2.5,100)}%;height:100%;background:${COLORS[i]};border-radius:3px"></div></div></div>`});h+='</div>';if(e.factors&&e.factors.length){h+='<h4 style="color:#e8a54a;margin-bottom:8px;font-size:14px">분석 요인</h4>';e.factors.forEach(f=>{h+=`<div style="padding:10px;margin-bottom:6px;background:#2e333d;border-radius:8px"><div style="font-weight:600;color:#d4d8e0;font-size:13px;line-height:1.4">${f.factor}</div><div style="font-size:12px;color:#8a909c;margin-top:4px;line-height:1.4">${f.impact}</div><div style="font-size:12px;color:#6bc98a;margin-top:2px">${f.weight}</div></div>`})}if(e.news_signals){h+='<h4 style="color:#7ab3e0;margin-bottom:8px;margin-top:12px;font-size:14px">뉴스 신호</h4>';const s=e.news_signals,ps=[['휴전',s.ceasefire_mentions,'#6bc98a'],['확전',s.escalation_mentions,'#e06060'],['협상',s.negotiation_mentions,'#5cc4b8'],['사상자',s.casualty_mentions,'#e8a54a'],['평화',s.peace_mentions,'#7ab3e0'],['지역확산',s.regional_spread,'#b07ad4']];h+='<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px">';ps.forEach(([l,v,c])=>{h+=`<div style="text-align:center;background:#2e333d;padding:8px;border-radius:6px"><div style="font-size:9px;color:#888">${l}</div><div style="font-size:18px;font-weight:700;color:${c};margin-top:2px">${v}</div></div>`});h+='</div>'}document.getElementById('modalContent').innerHTML=h;document.getElementById('modal').classList.add('active')}
+    function showFactorDetail(idx){if(!currentPrediction||!currentPrediction.factors)return;const f=currentPrediction.factors[idx],lb={shorten:'전쟁 단축',lengthen:'전쟁 장기화',mixed:'복합 효과',reference:'참고 자료'},dc={shorten:'#6bc98a',lengthen:'#e06060',mixed:'#e8a54a',reference:'#888'};document.getElementById('modalTitle').textContent='요인 상세 분석';document.getElementById('modalContent').innerHTML=`<div class="factor-detail-card"><h4>${f.factor}</h4><div class="detail-row"><span class="detail-label">방향</span><span class="prob-change-pill" style="color:${dc[f.direction]};background:${dc[f.direction]}15">${lb[f.direction]||f.direction}</span></div><div class="detail-row"><span class="detail-label">영향</span><span class="detail-value" style="color:#d4d8e0">${f.impact}</span></div><div class="detail-row"><span class="detail-label">확률 변동</span><span class="detail-value" style="color:#6bc98a;font-weight:600">${f.weight}</span></div></div><div style="padding:16px;background:#2e333d;border-radius:10px"><h4 style="color:#7ab3e0;margin-bottom:10px;font-size:14px">상세 설명</h4><p style="color:#c0c4cc;font-size:13px;line-height:1.8">${f.detail||f.impact}</p></div>`;document.getElementById('modal').classList.add('active')}
     function closeModal(){document.getElementById('modal').classList.remove('active')}
     document.getElementById('modal').addEventListener('click',e=>{if(e.target===document.getElementById('modal'))closeModal()});
     async function manualUpdate(){await runPrediction();resetTimer()}
