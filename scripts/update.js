@@ -44,24 +44,28 @@ const ECON_FALLBACK = {
 
 async function fetchEconomicData() {
   const results = {};
-  for (const [name, symbol] of Object.entries(ECON_SYMBOLS)) {
-    try {
-      const url = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(symbol)}?interval=1d&range=5d`;
-      const raw = await fetchUrl(url, 8000);
-      const json = JSON.parse(raw);
-      const meta = json.chart.result[0].meta;
-      const closes = json.chart.result[0].indicators.quote[0].close.filter(v => v != null);
-      const current = meta.regularMarketPrice || closes[closes.length - 1];
-      const prev = closes.length >= 2 ? closes[closes.length - 2] : current;
-      const change = +(current - prev).toFixed(2);
-      const changePercent = prev ? +((change / prev) * 100).toFixed(2) : 0;
-      results[name] = { price: +current.toFixed(2), change, changePercent, prev: +prev.toFixed(2) };
-      console.log(`  [ECON] ${name}: ${current.toFixed(2)} (${change >= 0 ? '+' : ''}${change})`);
-    } catch (e) {
-      console.log(`  [ECON FAIL] ${name}: ${e.message}`);
-      results[name] = { ...ECON_FALLBACK[name], fallback: true };
+  const entries = Object.entries(ECON_SYMBOLS);
+  const fetches = entries.map(async ([name, symbol]) => {
+    for (const host of ['query2.finance.yahoo.com', 'query1.finance.yahoo.com']) {
+      try {
+        const url = `https://${host}/v8/finance/chart/${encodeURIComponent(symbol)}?interval=1d&range=5d`;
+        const raw = await fetchUrl(url, 8000);
+        const json = JSON.parse(raw);
+        const meta = json.chart.result[0].meta;
+        const closes = json.chart.result[0].indicators.quote[0].close.filter(v => v != null);
+        const current = meta.regularMarketPrice || closes[closes.length - 1];
+        const prev = closes.length >= 2 ? closes[closes.length - 2] : current;
+        const change = +(current - prev).toFixed(2);
+        const changePercent = prev ? +((change / prev) * 100).toFixed(2) : 0;
+        results[name] = { price: +current.toFixed(2), change, changePercent, prev: +prev.toFixed(2) };
+        console.log(`  [ECON] ${name}: ${current.toFixed(2)} (${change >= 0 ? '+' : ''}${change})`);
+        return;
+      } catch (e) { /* try next host */ }
     }
-  }
+    console.log(`  [ECON FAIL] ${name}`);
+    results[name] = { ...ECON_FALLBACK[name], fallback: true };
+  });
+  await Promise.all(fetches);
 
   // Try to get US 10Y from Treasury.gov as backup if Yahoo failed
   if (results.US10Y.fallback) {

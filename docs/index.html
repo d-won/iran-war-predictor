@@ -360,26 +360,44 @@
     function renderProbs(pr){document.getElementById('probGrid').innerHTML=Object.entries(pr).map(([k,v],i)=>`<div class="prob-item"><div class="label">${k}</div><div class="value" style="color:${COLORS[i]}">${v}%</div><div class="bar"><div class="bar-fill" style="width:${Math.min(v*2.5,100)}%;background:${COLORS[i]}"></div></div></div>`).join('')}
     function calcYMax(vals){return Math.ceil((Math.max(...vals)+10)/10)*10}
     function renderBarChart(pr){const ctx=document.getElementById('barChart').getContext('2d');if(barChart)barChart.destroy();const vals=Object.values(pr);barChart=new Chart(ctx,{type:'bar',data:{labels:Object.keys(pr).map(k=>k.split('(')[0].trim()),datasets:[{data:vals,backgroundColor:COLORS.map(c=>c+'44'),borderColor:COLORS,borderWidth:1}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{y:{beginAtZero:true,max:calcYMax(vals),ticks:{color:'#b8bfcc',callback:v=>v+'%',font:{size:10}},grid:{color:'#4a5268'}},x:{ticks:{color:'#b8bfcc',maxRotation:45,font:{size:9}},grid:{display:false}}}}})}
-    async function fetchEconClient() {
-      const results = {};
-      const proxyUrl = url => `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`;
-      for (const [name, symbol] of Object.entries(ECON_SYMBOLS)) {
+    function yahooChartUrl(symbol, range, interval) {
+      return `https://query2.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(symbol)}?interval=${interval||'1d'}&range=${range||'5d'}`;
+    }
+    async function fetchYahoo(symbol, range, interval) {
+      const url = yahooChartUrl(symbol, range, interval);
+      const proxies = [
+        u => `https://api.allorigins.win/raw?url=${encodeURIComponent(u)}`,
+        u => `https://corsproxy.io/?url=${encodeURIComponent(u)}`,
+        u => `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(u)}`,
+      ];
+      for (const proxy of proxies) {
         try {
-          const url = proxyUrl(`https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(symbol)}?interval=1d&range=5d`);
-          const r = await fetch(url, { signal: AbortSignal.timeout(6000) });
-          if (!r.ok) throw new Error('HTTP ' + r.status);
+          const r = await fetch(proxy(url), { signal: AbortSignal.timeout(6000) });
+          if (!r.ok) continue;
           const json = await r.json();
+          if (json.chart && json.chart.result) return json;
+        } catch(e) { /* try next proxy */ }
+      }
+      throw new Error('All proxies failed');
+    }
+    async function fetchEconClient() {
+      const entries = Object.entries(ECON_SYMBOLS);
+      const fetches = entries.map(async ([name, symbol]) => {
+        try {
+          const json = await fetchYahoo(symbol, '5d', '1d');
           const meta = json.chart.result[0].meta;
           const closes = json.chart.result[0].indicators.quote[0].close.filter(v => v != null);
           const current = meta.regularMarketPrice || closes[closes.length - 1];
           const prev = closes.length >= 2 ? closes[closes.length - 2] : current;
           const change = +(current - prev).toFixed(2);
           const changePercent = prev ? +((change / prev) * 100).toFixed(2) : 0;
-          results[name] = { price: +current.toFixed(2), change, changePercent };
+          return [name, { price: +current.toFixed(2), change, changePercent }];
         } catch (e) {
-          results[name] = { ...ECON_FALLBACK[name], fallback: true };
+          return [name, { ...ECON_FALLBACK[name], fallback: true }];
         }
-      }
+      });
+      const results = {};
+      (await Promise.all(fetches)).forEach(([k, v]) => { results[k] = v; });
       return results;
     }
     function renderEcon(econ) {
@@ -429,11 +447,7 @@
       document.getElementById('modalContent').innerHTML=`<div style="position:relative;height:300px"><canvas id="econModalCanvas"></canvas></div><div id="econModalInfo" style="margin-top:12px;font-size:13px;color:#b8bfcc;text-align:center">데이터 로딩 중...</div>`;
       document.getElementById('modal').classList.add('active');
       try{
-        const proxyUrl=u=>`https://api.allorigins.win/raw?url=${encodeURIComponent(u)}`;
-        const url=proxyUrl(`https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(symbol)}?interval=1d&range=6mo`);
-        const r=await fetch(url,{signal:AbortSignal.timeout(10000)});
-        if(!r.ok)throw new Error('HTTP '+r.status);
-        const json=await r.json();
+        const json=await fetchYahoo(symbol,'6mo','1d');
         const result=json.chart.result[0];
         const timestamps=result.timestamp;
         const closes=result.indicators.quote[0].close;
