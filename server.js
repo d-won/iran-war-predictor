@@ -304,40 +304,67 @@ function getCurrentWarParams(newsSignals) {
   };
 }
 
+// Time decay: 군사적 기정사실은 느린 감쇠(0.02/일, 최소40%), 나머지는 일반 감쇠(0.05/일, 최소30%), 실시간은 감쇠 없음
+const DECAY_MIL = { rate: 0.02, min: 0.4 };
+const DECAY_STD = { rate: 0.05, min: 0.3 };
+const MIL_KEYWORDS = ['제공권', '방공', '미사일 능력', '호르무즈'];
+function calcDecay(dateStr, name) {
+  if (!dateStr || dateStr === '실시간') return 1;
+  const days = Math.floor((new Date() - new Date(dateStr)) / 864e5);
+  if (days <= 0) return 1;
+  const isMil = MIL_KEYWORDS.some(k => (name || '').includes(k));
+  const cfg = isMil ? DECAY_MIL : DECAY_STD;
+  return Math.max(cfg.min, +(1 - days * cfg.rate).toFixed(3));
+}
+function dw(s, d) { return d >= 0.99 ? s : s + ` (잔존${Math.round(d * 100)}%)`; }
+
 // Prediction engine
 function calculatePrediction(warParams, newsSignals, econImpact) {
-  // Base probabilities from historical comparison
   // Categories: <1month, 1-2months, 2-4months, 4-6months, 6-9months, 9-12months, 12+months
   let probs = [0.12, 0.22, 0.25, 0.18, 0.12, 0.07, 0.04];
-
   const factors = [];
 
-  // Factor 1: Trump stated 4-5 weeks => increases 1-2 month probability
-  probs[1] += 0.06;
-  probs[0] += 0.03;
+  // 요인별 시간 감쇠 계산
+  const dTrump = calcDecay('2026-03-01', '트럼프');
+  const dAir = calcDecay('2026-03-01', '제공권');
+  const dMissile = calcDecay('2026-03-02', '미사일 능력');
+  const dHormuz = calcDecay('2026-03-01', '호르무즈');
+  const d9n = calcDecay('2026-03-02', '참전');
+  const dKham = calcDecay('2026-03-03', '하메네이');
+  const dKurd = calcDecay('2026-03-04', '쿠르드');
+  const dCIA = calcDecay('2026-03-05', 'CIA');
+  const dSenate = calcDecay('2026-03-04', '상원');
+  const dSaudi = calcDecay('2026-03-03', '사우디');
+
+  // Factor 1: Trump stated 4-5 weeks
+  probs[1] += 0.06 * dTrump;
+  probs[0] += 0.03 * dTrump;
   factors.push({
     factor: '트럼프 대통령 4-5주 예상 발언',
     impact: '1-2개월 내 종전 확률 증가',
-    weight: '+6%p (1-2개월)',
+    weight: dw('+6%p (1-2개월)', dTrump),
+    decay: dTrump,
   });
 
-  // Factor 2: Air superiority achieved (80% air defense destroyed)
-  probs[0] += 0.04;
-  probs[1] += 0.05;
+  // Factor 2: Air superiority achieved (military fact - slow decay)
+  probs[0] += 0.04 * dAir;
+  probs[1] += 0.05 * dAir;
   factors.push({
     factor: '이스라엘 제공권 장악 (이란 방공 80% 파괴)',
     impact: '단기 종전 가능성 증가',
-    weight: '+4%p (1개월 내), +5%p (1-2개월)',
+    weight: dw('+4%p (1개월 내), +5%p (1-2개월)', dAir),
+    decay: dAir,
   });
 
-  // Factor 3: Iran missile capability dropping fast
+  // Factor 3: Iran missile capability (military fact - slow decay)
   if (newsSignals.escalation_mentions < newsSignals.ceasefire_mentions) {
-    probs[0] += 0.05;
-    probs[1] += 0.03;
+    probs[0] += 0.05 * dMissile;
+    probs[1] += 0.03 * dMissile;
     factors.push({
       factor: '이란 미사일 능력 급감 (90% 감소)',
       impact: '전쟁 지속 능력 약화로 단기 종전 가능성 증가',
-      weight: '+5%p (1개월 내)',
+      weight: dw('+5%p (1개월 내)', dMissile),
+      decay: dMissile,
     });
   } else {
     probs[2] += 0.03;
@@ -346,64 +373,71 @@ function calculatePrediction(warParams, newsSignals, econImpact) {
       factor: '에스컬레이션 뉴스가 휴전 뉴스보다 많음',
       impact: '전쟁 장기화 가능성 약간 증가',
       weight: '+3%p (2-4개월)',
+      decay: 1,
     });
   }
 
-  // Factor 4: Strait of Hormuz closure => international pressure for quick resolution
-  probs[0] += 0.03;
-  probs[1] += 0.04;
+  // Factor 4: Strait of Hormuz (military fact - slow decay)
+  probs[0] += 0.03 * dHormuz;
+  probs[1] += 0.04 * dHormuz;
   factors.push({
     factor: '호르무즈 해협 봉쇄 → 국제 경제 압력',
     impact: '경제적 압력으로 빠른 해결 촉구',
-    weight: '+3%p (1개월 내), +4%p (1-2개월)',
+    weight: dw('+3%p (1개월 내), +4%p (1-2개월)', dHormuz),
+    decay: dHormuz,
   });
 
-  // Factor 5: 9 countries involved => complex but also more pressure
-  probs[2] += 0.04;
-  probs[3] += 0.03;
+  // Factor 5: 9 countries involved
+  probs[2] += 0.04 * d9n;
+  probs[3] += 0.03 * d9n;
   factors.push({
     factor: '9개국 참전 - 분쟁의 복잡성 증가',
     impact: '다자간 분쟁으로 협상 복잡화',
-    weight: '+4%p (2-4개월), +3%p (4-6개월)',
+    weight: dw('+4%p (2-4개월), +3%p (4-6개월)', d9n),
+    decay: d9n,
   });
 
-  // Factor 6: Leader killed => regime collapse possible but also chaos
-  probs[1] += 0.03;
-  probs[2] += 0.04;
+  // Factor 6: Leader killed
+  probs[1] += 0.03 * dKham;
+  probs[2] += 0.04 * dKham;
   factors.push({
     factor: '하메네이 사망 - 이란 지도부 공백',
     impact: '정권 붕괴 가능성과 함께 내부 혼란 장기화 위험',
-    weight: '+3%p (1-2개월), +4%p (2-4개월)',
+    weight: dw('+3%p (1-2개월), +4%p (2-4개월)', dKham),
+    decay: dKham,
   });
 
-  // Factor 7: Ground invasion started (Kurdish forces)
-  probs[2] += 0.03;
-  probs[3] += 0.03;
+  // Factor 7: Ground invasion (Kurdish forces)
+  probs[2] += 0.03 * dKurd;
+  probs[3] += 0.03 * dKurd;
   factors.push({
     factor: '쿠르드족 지상군 이란 국경 진입',
     impact: '지상전 확전으로 전쟁 장기화 위험',
-    weight: '+3%p (2-4개월), +3%p (4-6개월)',
+    weight: dw('+3%p (2-4개월), +3%p (4-6개월)', dKurd),
+    decay: dKurd,
   });
 
   // Factor 8: Iran attempted negotiation on March 5
   if (warParams.days_elapsed >= 5) {
-    probs[0] += 0.05;
-    probs[1] += 0.06;
+    probs[0] += 0.05 * dCIA;
+    probs[1] += 0.06 * dCIA;
     factors.push({
       factor: '이란 3/5 CIA 통한 협상 시도',
       impact: '이란의 협상 의지 → 단기 종전 가능성 증가',
-      weight: '+5%p (1개월 내), +6%p (1-2개월)',
+      weight: dw('+5%p (1개월 내), +6%p (1-2개월)', dCIA),
+      decay: dCIA,
     });
   }
 
-  // Factor 9: Historical comparison - Gulf War pattern
+  // Factor 9: Historical comparison (reference, no decay)
   factors.push({
     factor: '걸프전(42일) 패턴 유사성',
     impact: '공중전 우위 → 지상전 → 빠른 종결 패턴',
     weight: '참고: 걸프전 42일, 코소보 78일, 포클랜드 74일',
+    decay: 1,
   });
 
-  // Factor 10: News signal adjustments
+  // Factor 10: News signal adjustments (실시간, no decay)
   if (newsSignals.negotiation_mentions > 3) {
     probs[0] += 0.02 * Math.min(newsSignals.negotiation_mentions, 10);
     probs[1] += 0.01 * Math.min(newsSignals.negotiation_mentions, 10);
@@ -411,6 +445,7 @@ function calculatePrediction(warParams, newsSignals, econImpact) {
       factor: `협상/외교 관련 뉴스 ${newsSignals.negotiation_mentions}건`,
       impact: '외교적 해결 움직임 감지',
       weight: `+${(0.02 * Math.min(newsSignals.negotiation_mentions, 10)).toFixed(1)}%p (1개월 내)`,
+      decay: 1,
     });
   }
 
@@ -421,25 +456,28 @@ function calculatePrediction(warParams, newsSignals, econImpact) {
       factor: `지역 확산 뉴스 ${newsSignals.regional_spread}건`,
       impact: '주변국 연루 확대로 장기화 위험',
       weight: '+2%p (4-6개월, 6-9개월)',
+      decay: 1,
     });
   }
 
   // Factor 11: Senate support for war
-  probs[1] += 0.02;
-  probs[2] += 0.02;
+  probs[1] += 0.02 * dSenate;
+  probs[2] += 0.02 * dSenate;
   factors.push({
     factor: '미 상원 전쟁 결의안 부결 (전쟁 지속 지지)',
     impact: '미국 내 정치적 지지로 군사작전 지속 가능',
-    weight: '+2%p (1-2개월, 2-4개월)',
+    weight: dw('+2%p (1-2개월, 2-4개월)', dSenate),
+    decay: dSenate,
   });
 
   // Factor 12: Saudi/UAE joining coalition
-  probs[0] += 0.03;
-  probs[1] += 0.04;
+  probs[0] += 0.03 * dSaudi;
+  probs[1] += 0.04 * dSaudi;
   factors.push({
     factor: '사우디/UAE 연합군 참전',
     impact: '이란 포위망 강화 → 조기 항복 가능성',
-    weight: '+3%p (1개월 내), +4%p (1-2개월)',
+    weight: dw('+3%p (1개월 내), +4%p (1-2개월)', dSaudi),
+    decay: dSaudi,
   });
 
   // Economic indicator factors
