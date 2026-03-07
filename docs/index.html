@@ -337,6 +337,10 @@
         predictionHistoryLocal=serverData.history;
         document.getElementById('rssStatus').textContent=`RSS: ${serverData.latest.feeds_loaded||0}/${serverData.latest.feeds_total||4} 피드 (서버)`;
         document.getElementById('rssStatus').className='rss-status';
+        // If server data lacks economic_indicators, fetch client-side
+        if(!currentPrediction.economic_indicators || Object.keys(currentPrediction.economic_indicators).length===0){
+          try{ currentPrediction.economic_indicators = await fetchEconClient(); }catch(e){ console.warn('Client econ fetch failed',e); }
+        }
       }else{
         // Fallback: client-side
         const [a, econClient] = await Promise.all([fetchNews(), fetchEconClient()]);
