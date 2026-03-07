@@ -282,8 +282,39 @@
       return{timestamp:new Date().toISOString(),probabilities:probs,factors:f,war_day:wp.days_elapsed,news_signals:ns,historical_comparison:HISTORICAL_WARS};
     }
     function generateSummary(pred){const pr=pred.probabilities,k=Object.keys(pr),v=Object.values(pr),mx=v.indexOf(Math.max(...v)),st=v[0]+v[1],mt=v[2],sg=pred.news_signals;let s=`종전 확률이 가장 높은 시기는 <strong>${k[mx]}</strong>로 <strong>${v[mx]}%</strong>입니다. 3개월 내 종전 확률은 <strong>${st.toFixed(1)}%</strong>, 4~6개월은 <strong>${mt.toFixed(1)}%</strong>입니다. `;if(sg.ceasefire_mentions>sg.escalation_mentions)s+=`현재 휴전 관련 보도가 확전 보도를 앞서 조기 종전에 <strong>긍정적 신호</strong>입니다.`;else if(sg.escalation_mentions>sg.ceasefire_mentions)s+=`현재 확전 보도가 휴전 보도를 앞서 <strong>단기 종전 전망은 보수적</strong>으로 봐야 합니다.`;else s+=`뉴스 신호가 혼재되어 있으며 상황이 유동적입니다.`;return s}
-    async function runPrediction(){const a=await fetchNews(),sg=analyzeNewsSignals(a),wp=getCurrentWarParams(sg),pred=calculatePrediction(wp,sg);pred.latest_news=a.slice(0,15);currentPrediction=pred;storePrediction(pred);renderAll(pred);document.getElementById('lastUpdated').textContent=`마지막 갱신: ${new Date().toLocaleString('ko-KR')}`;return pred}
-    function storePrediction(d){const e={timestamp:d.timestamp,probabilities:d.probabilities,factors:d.factors,war_day:d.war_day,news_signals:d.news_signals,news_count:d.latest_news?d.latest_news.length:0};predictionHistoryLocal.push(e);if(predictionHistoryLocal.length>500)predictionHistoryLocal=predictionHistoryLocal.slice(-500);localStorage.setItem('predictionHistory',JSON.stringify(predictionHistoryLocal))}
+    async function fetchServerData(){
+      try{
+        const [latestRes,historyRes]=await Promise.all([
+          fetch('data/latest.json?t='+Date.now()),
+          fetch('data/history.json?t='+Date.now())
+        ]);
+        if(!latestRes.ok)throw new Error('latest.json not found');
+        const latest=await latestRes.json();
+        let history=[];
+        if(historyRes.ok)history=await historyRes.json();
+        return{latest,history};
+      }catch(e){console.error('Server data fetch failed:',e);return null}
+    }
+    async function runPrediction(){
+      const serverData=await fetchServerData();
+      if(serverData){
+        currentPrediction=serverData.latest;
+        predictionHistoryLocal=serverData.history;
+        document.getElementById('rssStatus').textContent=`RSS: ${serverData.latest.feeds_loaded||0}/${serverData.latest.feeds_total||4} 피드 (서버)`;
+        document.getElementById('rssStatus').className='rss-status';
+      }else{
+        // Fallback: client-side
+        const a=await fetchNews(),sg=analyzeNewsSignals(a),wp=getCurrentWarParams(sg),pred=calculatePrediction(wp,sg);
+        pred.latest_news=a.slice(0,15);pred.historical_comparison=HISTORICAL_WARS;
+        currentPrediction=pred;
+        predictionHistoryLocal.push({timestamp:pred.timestamp,probabilities:pred.probabilities,factors:pred.factors,war_day:pred.war_day,news_signals:pred.news_signals});
+        if(predictionHistoryLocal.length>500)predictionHistoryLocal=predictionHistoryLocal.slice(-500);
+      }
+      renderAll(currentPrediction);
+      const ts=currentPrediction.timestamp?new Date(currentPrediction.timestamp).toLocaleString('ko-KR'):'알 수 없음';
+      document.getElementById('lastUpdated').textContent=`마지막 갱신: ${ts}`;
+      return currentPrediction
+    }
     function renderAll(d){renderWarDay(d.war_day);document.getElementById('summaryText').innerHTML=generateSummary(d);renderProbs(d.probabilities);renderBarChart(d.probabilities);renderSignals(d.news_signals);renderFactors(d.factors);renderNews(d.latest_news||[]);renderWars(d.historical_comparison||[]);renderTrend();renderHistory()}
     function renderWarDay(d){document.getElementById('warDay').textContent=`D+${d}`}
     function renderProbs(pr){document.getElementById('probGrid').innerHTML=Object.entries(pr).map(([k,v],i)=>`<div class="prob-item"><div class="label">${k}</div><div class="value" style="color:${COLORS[i]}">${v}%</div><div class="bar"><div class="bar-fill" style="width:${Math.min(v*2.5,100)}%;background:${COLORS[i]}"></div></div></div>`).join('')}
@@ -300,7 +331,7 @@
     function closeModal(){document.getElementById('modal').classList.remove('active')}
     document.getElementById('modal').addEventListener('click',e=>{if(e.target===document.getElementById('modal'))closeModal()});
     async function manualUpdate(){await runPrediction();scheduleNextUpdate()}
-    function getNextKSTSlot(){const now=new Date();const kst=new Date(now.getTime()+9*3600000);const m=kst.getMinutes();let nextM=m<30?30:60;const diff=(nextM-m)*60000-kst.getSeconds()*1000-kst.getMilliseconds();return{ms:diff,label:m<30?`${String(kst.getHours()).padStart(2,'0')}:30`:`${String((kst.getHours()+1)%24).padStart(2,'0')}:00`}}
+    function getNextKSTSlot(){const now=new Date();const kst=new Date(now.getTime()+9*3600000);const m=kst.getMinutes();let nextM=m<30?30:60;const diff=(nextM-m)*60000-kst.getSeconds()*1000-kst.getMilliseconds();const waitMs=diff+120000;return{ms:waitMs,label:m<30?`${String(kst.getHours()).padStart(2,'0')}:30`:`${String((kst.getHours()+1)%24).padStart(2,'0')}:00`}}
     function scheduleNextUpdate(){const slot=getNextKSTSlot();nextUpdateTime=Date.now()+slot.ms;document.getElementById('nextSlot').textContent=`(KST ${slot.label})`;if(window._autoTimer)clearTimeout(window._autoTimer);window._autoTimer=setTimeout(async()=>{await runPrediction();scheduleNextUpdate()},slot.ms)}
     function updateCountdown(){if(!nextUpdateTime)return;const r=Math.max(0,nextUpdateTime-Date.now()),m=Math.floor(r/60000),s=Math.floor((r%60000)/1000);document.getElementById('nextUpdate').textContent=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`}
     async function startAutoUpdate(){await runPrediction();scheduleNextUpdate();setInterval(updateCountdown,1000)}
