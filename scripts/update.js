@@ -20,6 +20,182 @@ const RSS_FEEDS = [
 
 const PROB_KEYS = ['1개월 내 (~3월)','2~3개월 (4~5월)','4~6개월 (6~8월)','7~12개월 (9월~27/2월)','1년 초과'];
 
+// --- Economic indicators ---
+const ECON_SYMBOLS = {
+  'WTI': 'CL=F',
+  'BRENT': 'BZ=F',
+  'GOLD': 'GC=F',
+  'VIX': '^VIX',
+  'DXY': 'DX-Y.NYB',
+  'US10Y': '^TNX',
+  'US2Y': '^IRX',
+};
+
+// Fallback values (approximate recent values as of early March 2026)
+const ECON_FALLBACK = {
+  WTI: { price: 95.0, change: 0, changePercent: 0 },
+  BRENT: { price: 98.0, change: 0, changePercent: 0 },
+  GOLD: { price: 3100, change: 0, changePercent: 0 },
+  VIX: { price: 28.0, change: 0, changePercent: 0 },
+  DXY: { price: 104.5, change: 0, changePercent: 0 },
+  US10Y: { price: 4.35, change: 0, changePercent: 0 },
+  US2Y: { price: 4.10, change: 0, changePercent: 0 },
+};
+
+async function fetchEconomicData() {
+  const results = {};
+  for (const [name, symbol] of Object.entries(ECON_SYMBOLS)) {
+    try {
+      const url = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(symbol)}?interval=1d&range=5d`;
+      const raw = await fetchUrl(url, 8000);
+      const json = JSON.parse(raw);
+      const meta = json.chart.result[0].meta;
+      const closes = json.chart.result[0].indicators.quote[0].close.filter(v => v != null);
+      const current = meta.regularMarketPrice || closes[closes.length - 1];
+      const prev = closes.length >= 2 ? closes[closes.length - 2] : current;
+      const change = +(current - prev).toFixed(2);
+      const changePercent = prev ? +((change / prev) * 100).toFixed(2) : 0;
+      results[name] = { price: +current.toFixed(2), change, changePercent, prev: +prev.toFixed(2) };
+      console.log(`  [ECON] ${name}: ${current.toFixed(2)} (${change >= 0 ? '+' : ''}${change})`);
+    } catch (e) {
+      console.log(`  [ECON FAIL] ${name}: ${e.message}`);
+      results[name] = { ...ECON_FALLBACK[name], fallback: true };
+    }
+  }
+
+  // Try to get US 10Y from Treasury.gov as backup if Yahoo failed
+  if (results.US10Y.fallback) {
+    try {
+      const year = new Date().getFullYear();
+      const month = String(new Date().getMonth() + 1).padStart(2, '0');
+      const tUrl = `https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/all/${year}${month}?type=daily_treasury_yield_curve&field_tdr_date_value=${year}&page&_format=csv`;
+      const csv = await fetchUrl(tUrl, 10000);
+      const lines = csv.trim().split('\n');
+      if (lines.length >= 2) {
+        const headers = lines[0].split(',').map(h => h.trim().replace(/"/g, ''));
+        const lastLine = lines[lines.length - 1].split(',').map(v => v.trim().replace(/"/g, ''));
+        const i10y = headers.findIndex(h => h.includes('10 Yr'));
+        const i2y = headers.findIndex(h => h.includes('2 Yr'));
+        if (i10y >= 0 && lastLine[i10y]) {
+          results.US10Y = { price: +parseFloat(lastLine[i10y]).toFixed(2), change: 0, changePercent: 0, source: 'treasury.gov' };
+          console.log(`  [ECON] US10Y (Treasury.gov): ${results.US10Y.price}`);
+        }
+        if (i2y >= 0 && lastLine[i2y]) {
+          results.US2Y = { price: +parseFloat(lastLine[i2y]).toFixed(2), change: 0, changePercent: 0, source: 'treasury.gov' };
+          console.log(`  [ECON] US2Y (Treasury.gov): ${results.US2Y.price}`);
+        }
+      }
+    } catch (e) {
+      console.log(`  [ECON FAIL] Treasury.gov: ${e.message}`);
+    }
+  }
+
+  return results;
+}
+
+function analyzeEconomicImpact(econ) {
+  const impact = { factors: [], war_pressure: 0 };
+
+  // Oil price impact - high oil = more international pressure for quick resolution
+  const oil = econ.WTI || econ.BRENT;
+  if (oil && oil.price > 90) {
+    const severity = oil.price > 120 ? 'extreme' : oil.price > 100 ? 'high' : 'moderate';
+    const pressureMap = { extreme: 0.06, high: 0.04, moderate: 0.02 };
+    impact.war_pressure += pressureMap[severity];
+    impact.factors.push({
+      factor: `유가 급등 (WTI $${econ.WTI.price}/배럴)`,
+      impact: severity === 'extreme' ? '극심한 경제 압력 → 조기 종전 강력 촉구' : severity === 'high' ? '높은 경제 압력 → 빠른 해결 요구 증가' : '중간 수준 경제 압력',
+      weight: `+${(pressureMap[severity] * 100).toFixed(0)}%p (1-2개월)`,
+      direction: 'shorten',
+      detail: `WTI 유가가 $${econ.WTI.price}/배럴로 ${severity === 'extreme' ? '120달러 돌파' : severity === 'high' ? '100달러 돌파' : '90달러 이상'}입니다. 호르무즈 해협 봉쇄와 맞물려 글로벌 에너지 시장에 큰 충격을 주고 있으며, 주요국들의 조기 종전 압력이 강화되고 있습니다.`,
+      keywords: ['oil', 'crude', 'wti', 'brent', 'energy', 'gas price'],
+      applied: '실시간',
+      active: true,
+    });
+  }
+
+  // Gold price impact - high gold = safe haven demand = market stress
+  if (econ.GOLD && econ.GOLD.price > 2800) {
+    const severity = econ.GOLD.price > 3200 ? 'extreme' : econ.GOLD.price > 3000 ? 'high' : 'moderate';
+    impact.factors.push({
+      factor: `금값 사상최고 ($${econ.GOLD.price}/oz)`,
+      impact: '안전자산 수요 폭증 → 글로벌 불안 심화',
+      weight: severity === 'extreme' ? '+2%p (4-6개월)' : '+1%p (2-3개월)',
+      direction: severity === 'extreme' ? 'lengthen' : 'mixed',
+      detail: `금 가격이 온스당 $${econ.GOLD.price}로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.`,
+      keywords: ['gold', 'safe haven', 'precious metal', 'investor'],
+      applied: '실시간',
+      active: true,
+    });
+  }
+
+  // VIX impact - high VIX = market fear = political pressure
+  if (econ.VIX && econ.VIX.price > 25) {
+    const severity = econ.VIX.price > 40 ? 'extreme' : econ.VIX.price > 30 ? 'high' : 'moderate';
+    const pressureMap = { extreme: 0.04, high: 0.02, moderate: 0.01 };
+    impact.war_pressure += pressureMap[severity];
+    impact.factors.push({
+      factor: `VIX 공포지수 ${econ.VIX.price} (${severity === 'extreme' ? '극도 공포' : severity === 'high' ? '공포' : '불안'})`,
+      impact: '시장 공포 심화 → 정치적 종전 압력 증가',
+      weight: `+${(pressureMap[severity] * 100).toFixed(0)}%p (단기)`,
+      direction: 'shorten',
+      detail: `VIX 지수가 ${econ.VIX.price}로 ${severity === 'extreme' ? '40을 넘어 극도의 시장 공포 상태' : severity === 'high' ? '30 이상의 높은 공포 수준' : '25 이상의 불안 수준'}입니다. 금융시장 불안이 커지면서 각국 정부에 전쟁 종결 압력이 가해지고 있습니다.`,
+      keywords: ['vix', 'volatility', 'fear', 'market', 'stock'],
+      applied: '실시간',
+      active: true,
+    });
+  }
+
+  // US Treasury yield impact
+  if (econ.US10Y) {
+    const yield10 = econ.US10Y.price;
+    const yield2 = econ.US2Y ? econ.US2Y.price : null;
+    const inverted = yield2 && yield10 < yield2;
+
+    if (inverted) {
+      impact.factors.push({
+        factor: `미국 국채 장단기 금리 역전 (10Y ${yield10}% < 2Y ${yield2}%)`,
+        impact: '경기침체 신호 → 전쟁 비용 부담 가중',
+        weight: '+2%p (2-3개월)',
+        direction: 'shorten',
+        detail: `미국 10년물 국채금리(${yield10}%)가 2년물(${yield2}%)보다 낮은 금리 역전 현상이 발생했습니다. 이는 경기침체 신호로, 전쟁 장기화 시 미국 경제에 미치는 부담이 커져 조기 종전 압력이 됩니다.`,
+        keywords: ['treasury', 'yield', 'bond', 'recession', 'invert'],
+        applied: '실시간',
+        active: true,
+      });
+      impact.war_pressure += 0.02;
+    } else if (yield10 > 4.5) {
+      impact.factors.push({
+        factor: `미국 10년 국채금리 ${yield10}% (고금리 지속)`,
+        impact: '전쟁 자금 조달 비용 증가',
+        weight: '+1%p (4-6개월)',
+        direction: 'mixed',
+        detail: `미국 10년물 국채금리가 ${yield10}%로 높은 수준을 유지하고 있습니다. 전쟁 자금 조달 비용이 증가하며, 장기전의 경제적 부담이 커지고 있습니다.`,
+        keywords: ['treasury', 'yield', 'bond', 'interest rate', 'fed'],
+        applied: '실시간',
+        active: true,
+      });
+    }
+  }
+
+  // DXY (Dollar strength) impact
+  if (econ.DXY && econ.DXY.price > 106) {
+    impact.factors.push({
+      factor: `달러 강세 (DXY ${econ.DXY.price})`,
+      impact: '이란 경제 추가 압박 → 협상 압력 증가',
+      weight: '+1%p (2-3개월)',
+      direction: 'shorten',
+      detail: `달러 인덱스가 ${econ.DXY.price}으로 강세를 보이고 있습니다. 달러 강세는 이란 리알화 추가 약세로 이어져 이란 경제에 이중 압박을 가하며 협상 테이블로 이끄는 요인이 됩니다.`,
+      keywords: ['dollar', 'dxy', 'currency', 'rial', 'exchange rate'],
+      applied: '실시간',
+      active: true,
+    });
+    impact.war_pressure += 0.01;
+  }
+
+  return impact;
+}
+
 const HISTORICAL_WARS = [
   {name:'걸프전 (1991)',duration_days:42,type:'공습→지상전',involved_countries:35,ended_by:'군사적 패배'},
   {name:'이라크전 주요전투 (2003)',duration_days:42,type:'침공',involved_countries:4,ended_by:'정권 교체'},
@@ -125,7 +301,7 @@ function analyzeSignals(articles, seenKeys) {
   return { signals: s, newSeenKeys: trimmed };
 }
 
-function calculatePrediction(daysElapsed, ns) {
+function calculatePrediction(daysElapsed, ns, econImpact) {
   let p = [.15,.35,.28,.15,.07];
   const f = [];
 
@@ -179,6 +355,18 @@ function calculatePrediction(daysElapsed, ns) {
   p[0]+=.03; p[1]+=.05;
   f.push({factor:'사우디/UAE 연합군 참전',impact:'이란 포위망 강화 → 조기 항복 가능성',weight:'+3%p (1개월내), +5%p (2~3개월)',direction:'shorten',detail:FX['사우디/UAE 연합군 참전'],keywords:['saudi','uae','coalition','join','alliance','gcc'],applied:'2026-03-03',active:true});
 
+  // Economic indicator factors
+  if (econImpact) {
+    const wp = econImpact.war_pressure || 0;
+    if (wp > 0) {
+      p[0] += wp * 0.4;
+      p[1] += wp * 0.6;
+    }
+    for (const ef of (econImpact.factors || [])) {
+      f.push(ef);
+    }
+  }
+
   // Normalize
   const total = p.reduce((a,b) => a+b, 0);
   p = p.map(v => Math.round((v/total)*1000)/10);
@@ -218,10 +406,15 @@ async function main() {
   allArticles.sort((a,b) => new Date(b.pubDate) - new Date(a.pubDate));
   const articles = allArticles.slice(0, 50);
 
+  // Fetch economic data
+  console.log('  Fetching economic indicators...');
+  const econData = await fetchEconomicData();
+  const econImpact = analyzeEconomicImpact(econData);
+
   // Analyze
   const { signals, newSeenKeys } = analyzeSignals(articles, seenKeys);
   const daysElapsed = Math.floor((new Date() - new Date('2026-02-28')) / 864e5);
-  const pred = calculatePrediction(daysElapsed, signals);
+  const pred = calculatePrediction(daysElapsed, signals, econImpact);
 
   const result = {
     timestamp: new Date().toISOString(),
@@ -231,6 +424,7 @@ async function main() {
     news_signals: signals,
     latest_news: articles.slice(0, 15),
     historical_comparison: HISTORICAL_WARS,
+    economic_indicators: econData,
     feeds_loaded: feedCount,
     feeds_total: RSS_FEEDS.length,
   };
