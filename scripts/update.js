@@ -578,12 +578,19 @@ function calculatePrediction(daysElapsed, ns, econImpact, criticalEvents) {
   p[0]+=.04*dAir; p[1]+=.06*dAir;
   f.push({factor:'이스라엘 제공권 장악 (이란 방공 80% 파괴)',impact:'단기 종전 가능성 증가',weight:dw('+4%p (1개월내), +6%p (2~3개월)',dAir),direction:'shorten',detail:FX['이스라엘 제공권 장악 (이란 방공 80% 파괴)'],keywords:['air superi','air defens','s-300','s-400','radar','anti-air'],applied:'2026-03-01',active:true,decay:dAir});
 
-  if (ns.escalation_mentions < ns.ceasefire_mentions) {
-    p[0]+=.05*dMissile; p[1]+=.04*dMissile;
-    f.push({factor:'이란 미사일 능력 급감 (90% 감소)',impact:'전쟁 지속 능력 약화로 단기 종전 가능성 증가',weight:dw('+5%p (1개월내), +4%p (2~3개월)',dMissile),direction:'shorten',detail:FX['이란 미사일 능력 급감 (90% 감소)'],keywords:['missile','ballistic','launch','strike capab'],applied:'2026-03-02',active:true,decay:dMissile});
+  // 휴전 vs 확전: 비율 + 절대량 모두 반영
+  const ceTotal = Math.max(ns.ceasefire_mentions + ns.escalation_mentions, 1);
+  const ceaseR = ns.ceasefire_mentions / ceTotal;  // 0~1 비율
+  const escalR = ns.escalation_mentions / ceTotal;  // 0~1 비율
+  const ceMag = Math.min(ceTotal / 8, 2);  // 0~2 절대량 스케일 (8건=1x, 16건=2x)
+  // 휴전 우세 → 미사일 능력 급감 요인 비례 적용
+  p[0] += .05 * ceaseR * ceMag * dMissile; p[1] += .04 * ceaseR * ceMag * dMissile;
+  // 확전 우세 → 장기화 요인 비례 적용
+  p[2] += .04 * escalR * ceMag; p[3] += .02 * escalR * ceMag;
+  if (ceaseR > escalR) {
+    f.push({factor:`이란 미사일 능력 급감 (휴전${ns.ceasefire_mentions}:확전${ns.escalation_mentions})`,impact:'전쟁 지속 능력 약화로 단기 종전 가능성 증가',weight:dw(`+${(.05*ceaseR).toFixed(1)}%p (1개월내), +${(.04*ceaseR).toFixed(1)}%p (2~3개월)`,dMissile),direction:'shorten',detail:FX['이란 미사일 능력 급감 (90% 감소)'],keywords:['missile','ballistic','launch','strike capab'],applied:'2026-03-02',active:true,decay:dMissile});
   } else {
-    p[2]+=.04; p[3]+=.02;
-    f.push({factor:'확전 뉴스가 휴전 뉴스보다 많음',impact:'전쟁 장기화 가능성 소폭 증가',weight:'+4%p (4~6개월)',direction:'lengthen',detail:FX['확전 뉴스가 휴전 뉴스보다 많음'],keywords:['escalat','intensif','expand','widen'],applied:'실시간',active:true,decay:1});
+    f.push({factor:`확전 뉴스 우세 (확전${ns.escalation_mentions}:휴전${ns.ceasefire_mentions})`,impact:`전쟁 장기화 가능성 (확전비율 ${(escalR*100).toFixed(0)}%)`,weight:`+${(.04*escalR).toFixed(2)}%p (4~6개월)`,direction:'lengthen',detail:FX['확전 뉴스가 휴전 뉴스보다 많음'],keywords:['escalat','intensif','expand','widen'],applied:'실시간',active:true,decay:1});
   }
 
   p[0]+=.03*dHormuz; p[1]+=.05*dHormuz;
@@ -605,15 +612,20 @@ function calculatePrediction(daysElapsed, ns, econImpact, criticalEvents) {
 
   f.push({factor:'걸프전(42일) 패턴 유사성',impact:'제공권→지상작전→빠른 종결 패턴',weight:'참고: 걸프전 42일, 코소보 78일, 포클랜드 74일',direction:'reference',detail:FX['걸프전(42일) 패턴 유사성'],keywords:['gulf war','desert storm','pattern','historical'],applied:'2026-02-28',active:true,decay:1});
 
-  if (ns.negotiation_mentions > 3) {
-    const n = Math.min(ns.negotiation_mentions, 10);
-    p[0]+=.02*n; p[1]+=.015*n;
-    f.push({factor:`협상/외교 뉴스 ${ns.negotiation_mentions}건 감지`,impact:'외교적 해결 움직임 포착',weight:`+${(.02*n).toFixed(1)}%p (1개월내)`,direction:'shorten',detail:`실시간 뉴스에서 협상 관련 기사 ${ns.negotiation_mentions}건이 감지되었습니다.`,keywords:['negotiat','talks','dialog','diplomat','mediati'],applied:'실시간',active:true,decay:1});
+  // 협상 뉴스: 비례 적용 (건수에 따라 가중치 스케일)
+  {
+    const n = Math.min(ns.negotiation_mentions || 0, 15);
+    const nScale = n / 10; // 0~1.5
+    p[0] += .02 * nScale; p[1] += .015 * nScale;
+    f.push({factor:`협상/외교 뉴스 ${ns.negotiation_mentions || 0}건 감지`,impact: n > 3 ? '외교적 해결 움직임 포착' : n > 0 ? '외교 움직임 미약' : '외교 움직임 부재',weight:`+${(.02*nScale).toFixed(2)}%p (1개월내), +${(.015*nScale).toFixed(2)}%p (2~3개월)`,direction:'shorten',detail:`실시간 뉴스에서 협상 관련 기사 ${ns.negotiation_mentions || 0}건이 감지되었습니다.`,keywords:['negotiat','talks','dialog','diplomat','mediati'],applied:'실시간',active:true,decay:1});
   }
 
-  if (ns.regional_spread > 5) {
-    p[2]+=.02; p[3]+=.02;
-    f.push({factor:`지역 확산 뉴스 ${ns.regional_spread}건 감지`,impact:'주변국 연루 확대로 장기화 위험',weight:'+2%p (4~6개월, 7~12개월)',direction:'lengthen',detail:`주변국을 언급하는 기사 ${ns.regional_spread}건이 감지되었습니다.`,keywords:['saudi','uae','qatar','iraq','lebanon','turkey'],applied:'실시간',active:true,decay:1});
+  // 지역 확산: 비례 적용 (건수에 따라 스케일)
+  {
+    const r = ns.regional_spread || 0;
+    const rScale = Math.min(r / 10, 3); // 0~3
+    p[2] += .01 * rScale; p[3] += .01 * rScale;
+    f.push({factor:`지역 확산 뉴스 ${r}건 감지`,impact: r > 15 ? '주변국 대규모 연루 → 장기화 위험 높음' : r > 5 ? '주변국 연루 확대로 장기화 위험' : '주변국 연루 제한적',weight:`+${(.01*rScale).toFixed(2)}%p (4~6개월), +${(.01*rScale).toFixed(2)}%p (7~12개월)`,direction:'lengthen',detail:`주변국을 언급하는 기사 ${r}건이 감지되었습니다.`,keywords:['saudi','uae','qatar','iraq','lebanon','turkey'],applied:'실시간',active:true,decay:1});
   }
 
   p[1]+=.03*dSenate; p[2]+=.02*dSenate;
