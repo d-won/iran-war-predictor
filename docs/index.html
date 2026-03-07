@@ -59,7 +59,7 @@
     .signal-item .signal-label{font-size:9px;color:#c4ccd8;letter-spacing:.3px}
     .signal-item .signal-value{font-size:20px;font-weight:700;margin-top:4px}
     .econ-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}
-    .econ-item{background:#343d55;border:1px solid #4a5268;border-radius:10px;padding:12px;text-align:center;transition:all .2s}
+    .econ-item{background:#343d55;border:1px solid #4a5268;border-radius:10px;padding:12px;text-align:center;transition:all .2s;cursor:pointer}
     .econ-item:active{transform:scale(.97)}
     .econ-item .econ-label{font-size:10px;color:#b8bfcc;letter-spacing:.3px;margin-bottom:4px}
     .econ-item .econ-name{font-size:12px;color:#c4ccd8;font-weight:600;margin-bottom:6px}
@@ -399,7 +399,7 @@
         const sign = ch > 0 ? '+' : '';
         const arrow = ch > 0 ? '▲' : ch < 0 ? '▼' : '-';
         const priceStr = cfg.key.includes('Y') ? d.price.toFixed(2) + '%' : cfg.key === 'VIX' || cfg.key === 'DXY' ? d.price.toFixed(1) : '$' + d.price.toLocaleString();
-        return `<div class="econ-item">
+        return `<div class="econ-item" onclick="showEconChart('${cfg.key}')">
           <div class="econ-label">${cfg.unit}</div>
           <div class="econ-name">${cfg.name}</div>
           <div class="econ-price" style="color:${cfg.color}">${priceStr}</div>
@@ -419,6 +419,47 @@
       else if (econ.US10Y && econ.US10Y.price > 4.5) parts.push(`10년 국채금리(${econ.US10Y.price}%)가 높아 전쟁 자금 조달 비용이 증가합니다.`);
       if (econ.DXY && econ.DXY.price > 106) parts.push(`달러 강세(${econ.DXY.price})로 이란 경제에 추가 압박.`);
       explain.textContent = parts.length ? parts.join(' ') : '경제 지표가 예측 모델에 반영되고 있습니다.';
+    }
+    let econModalChart=null;
+    async function showEconChart(key){
+      const cfg=ECON_CONFIG.find(c=>c.key===key);
+      if(!cfg)return;
+      const symbol=ECON_SYMBOLS[key];
+      document.getElementById('modalTitle').textContent=`${cfg.name} - 최근 6개월 추이`;
+      document.getElementById('modalContent').innerHTML=`<div style="position:relative;height:300px"><canvas id="econModalCanvas"></canvas></div><div id="econModalInfo" style="margin-top:12px;font-size:13px;color:#b8bfcc;text-align:center">데이터 로딩 중...</div>`;
+      document.getElementById('modal').classList.add('active');
+      try{
+        const proxyUrl=u=>`https://api.allorigins.win/raw?url=${encodeURIComponent(u)}`;
+        const url=proxyUrl(`https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(symbol)}?interval=1d&range=6mo`);
+        const r=await fetch(url,{signal:AbortSignal.timeout(10000)});
+        if(!r.ok)throw new Error('HTTP '+r.status);
+        const json=await r.json();
+        const result=json.chart.result[0];
+        const timestamps=result.timestamp;
+        const closes=result.indicators.quote[0].close;
+        const data=[];
+        for(let i=0;i<timestamps.length;i++){
+          if(closes[i]!=null)data.push({x:new Date(timestamps[i]*1000),y:+closes[i].toFixed(2)});
+        }
+        if(!data.length)throw new Error('No data');
+        const prices=data.map(d=>d.y);
+        const minP=Math.min(...prices),maxP=Math.max(...prices);
+        const firstP=prices[0],lastP=prices[prices.length-1];
+        const totalChange=+(lastP-firstP).toFixed(2);
+        const totalPct=firstP?+((totalChange/firstP)*100).toFixed(2):0;
+        const isUp=totalChange>=0;
+        const lineColor=cfg.color;
+        const ctx=document.getElementById('econModalCanvas').getContext('2d');
+        if(econModalChart)econModalChart.destroy();
+        econModalChart=new Chart(ctx,{type:'line',data:{datasets:[{data,borderColor:lineColor,backgroundColor:lineColor+'22',borderWidth:2,pointRadius:0,pointHoverRadius:4,tension:.3,fill:true}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{title:i=>new Date(i[0].parsed.x).toLocaleDateString('ko-KR'),label:i=>{const v=i.parsed.y;return key.includes('Y')?v.toFixed(2)+'%':key==='VIX'||key==='DXY'?v.toFixed(1):'$'+v.toLocaleString()}}}},scales:{x:{type:'time',time:{tooltipFormat:'yyyy-MM-dd',displayFormats:{day:'MM/dd',week:'MM/dd',month:'yyyy/MM'}},ticks:{color:'#b8bfcc',maxTicksLimit:8,font:{size:10}},grid:{color:'#4a5268'}},y:{ticks:{color:'#b8bfcc',font:{size:10},callback:v=>key.includes('Y')?v.toFixed(1)+'%':key==='VIX'||key==='DXY'?v.toFixed(0):'$'+v.toLocaleString()},grid:{color:'#4a5268'}}}}});
+        const sign=isUp?'+':'';
+        const chColor=isUp?'#e06060':'#6bc98a';
+        const unitStr=key.includes('Y')?'%':cfg.unit?` ${cfg.unit}`:'';
+        document.getElementById('econModalInfo').innerHTML=`<div style="display:flex;justify-content:space-around;flex-wrap:wrap;gap:10px"><div><span style="color:#9ca4b4">6개월 변동</span><br><span style="color:${chColor};font-weight:700;font-size:16px">${sign}${totalChange}${unitStr} (${sign}${totalPct}%)</span></div><div><span style="color:#9ca4b4">최저</span><br><span style="font-weight:600">${minP.toFixed(2)}</span></div><div><span style="color:#9ca4b4">최고</span><br><span style="font-weight:600">${maxP.toFixed(2)}</span></div><div><span style="color:#9ca4b4">현재</span><br><span style="color:${cfg.color};font-weight:700;font-size:16px">${lastP.toFixed(2)}</span></div></div><div style="margin-top:10px;font-size:12px;color:#9ca4b4">${cfg.impact}</div>`;
+      }catch(e){
+        console.warn('Econ chart fetch failed',e);
+        document.getElementById('econModalInfo').innerHTML='<div style="color:#e06060">차트 데이터를 불러올 수 없습니다. 잠시 후 다시 시도해주세요.</div>';
+      }
     }
     function renderTrend(){const ctx=document.getElementById('trendChart').getContext('2d');if(!predictionHistoryLocal.length)return;const ds=PROB_KEYS.map((key,i)=>({label:key.split('(')[0].trim(),data:predictionHistoryLocal.map(h=>({x:new Date(h.timestamp),y:h.probabilities[key]})).filter(d=>d.y!==undefined),borderColor:COLORS[i],backgroundColor:COLORS[i]+'22',borderWidth:2,pointRadius:1,pointHoverRadius:4,tension:.3,fill:false}));const allVals=ds.flatMap(d=>d.data.map(p=>p.y));const yMax=allVals.length?calcYMax(allVals):50;if(trendChart)trendChart.destroy();trendChart=new Chart(ctx,{type:'line',data:{datasets:ds},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},onClick:(e,el)=>{if(el.length>0)showHistoryDetail(el[0].index)},plugins:{legend:{labels:{color:'#c4ccd8',font:{size:10},usePointStyle:true,boxWidth:6},position:'top'},tooltip:{callbacks:{title:i=>new Date(i[0].parsed.x).toLocaleString('ko-KR'),label:i=>`${i.dataset.label}: ${i.parsed.y}%`}}},scales:{x:{type:'time',time:{tooltipFormat:'yyyy-MM-dd HH:mm',displayFormats:{minute:'HH:mm',hour:'MM/dd HH:mm',day:'MM/dd',week:'MM/dd',month:'yyyy/MM'}},ticks:{color:'#b8bfcc',maxTicksLimit:8,font:{size:9},autoSkip:true},grid:{color:'#4a5268'}},y:{beginAtZero:true,max:yMax,ticks:{color:'#b8bfcc',callback:v=>v+'%',font:{size:10}},grid:{color:'#4a5268'}}}}})}
     function renderSignals(sg){if(!sg)return;const g=document.getElementById('signalsGrid'),items=[{l:'휴전',v:sg.ceasefire_mentions,c:'#6bc98a'},{l:'확전',v:sg.escalation_mentions,c:'#e06060'},{l:'협상',v:sg.negotiation_mentions,c:'#5cc4b8'},{l:'사상자',v:sg.casualty_mentions,c:'#e8a54a'},{l:'평화',v:sg.peace_mentions,c:'#7ab3e0'},{l:'지역확산',v:sg.regional_spread,c:'#b07ad4'},{l:'전체기사',v:sg.total_articles,c:'#d4d8e0'},{l:'신규기사',v:sg.new_articles||0,c:'#f0c040'}];g.innerHTML=items.map(i=>`<div class="signal-item"><div class="signal-label">${i.l}</div><div class="signal-value" style="color:${i.c}">${i.v}</div></div>`).join('');const ce=sg.ceasefire_mentions,es=sg.escalation_mentions;let ex=`4개 언론사에서 ${sg.total_articles}건 분석 (신규 ${sg.new_articles||0}건). 새 기사는 2배 가중치로 반영합니다. `;if(ce>es)ex+=`휴전 언급(${ce}건)이 확전(${es}건)보다 많아 조기 종전에 긍정적 신호입니다.`;else if(es>ce)ex+=`확전 언급(${es}건)이 휴전(${ce}건)보다 많아 단기 종전 확률이 소폭 하락합니다.`;else ex+=`휴전과 확전 신호가 균형을 이루고 있습니다.`;document.getElementById('signalExplain').textContent=ex}
