@@ -85,6 +85,90 @@ function analyzeNewsSignals(articles) {
   return signals;
 }
 
+// --- Economic indicators ---
+const https = require('https');
+const http = require('http');
+
+const ECON_SYMBOLS = {
+  WTI: 'CL=F', BRENT: 'BZ=F', GOLD: 'GC=F', VIX: '^VIX',
+  DXY: 'DX-Y.NYB', US10Y: '^TNX', US2Y: '^IRX',
+};
+const ECON_FALLBACK = {
+  WTI: { price: 95.0, change: 0, changePercent: 0 },
+  BRENT: { price: 98.0, change: 0, changePercent: 0 },
+  GOLD: { price: 3100, change: 0, changePercent: 0 },
+  VIX: { price: 28.0, change: 0, changePercent: 0 },
+  DXY: { price: 104.5, change: 0, changePercent: 0 },
+  US10Y: { price: 4.35, change: 0, changePercent: 0 },
+  US2Y: { price: 4.10, change: 0, changePercent: 0 },
+};
+
+function fetchUrlRaw(url, timeout = 8000) {
+  return new Promise((resolve, reject) => {
+    const mod = url.startsWith('https') ? https : http;
+    const req = mod.get(url, { headers: { 'User-Agent': 'Mozilla/5.0' } }, res => {
+      if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
+        return fetchUrlRaw(res.headers.location, timeout).then(resolve).catch(reject);
+      }
+      let data = '';
+      res.on('data', c => data += c);
+      res.on('end', () => resolve(data));
+    });
+    req.on('error', reject);
+    req.setTimeout(timeout, () => { req.destroy(); reject(new Error('timeout')); });
+  });
+}
+
+async function fetchEconomicData() {
+  const results = {};
+  for (const [name, symbol] of Object.entries(ECON_SYMBOLS)) {
+    try {
+      const url = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(symbol)}?interval=1d&range=5d`;
+      const raw = await fetchUrlRaw(url);
+      const json = JSON.parse(raw);
+      const meta = json.chart.result[0].meta;
+      const closes = json.chart.result[0].indicators.quote[0].close.filter(v => v != null);
+      const current = meta.regularMarketPrice || closes[closes.length - 1];
+      const prev = closes.length >= 2 ? closes[closes.length - 2] : current;
+      const change = +(current - prev).toFixed(2);
+      const changePercent = prev ? +((change / prev) * 100).toFixed(2) : 0;
+      results[name] = { price: +current.toFixed(2), change, changePercent };
+    } catch (e) {
+      results[name] = { ...ECON_FALLBACK[name], fallback: true };
+    }
+  }
+  return results;
+}
+
+function analyzeEconomicImpact(econ) {
+  const impact = { factors: [], war_pressure: 0 };
+  const oil = econ.WTI || econ.BRENT;
+  if (oil && oil.price > 90) {
+    const severity = oil.price > 120 ? 'extreme' : oil.price > 100 ? 'high' : 'moderate';
+    const pm = { extreme: 0.06, high: 0.04, moderate: 0.02 };
+    impact.war_pressure += pm[severity];
+    impact.factors.push({ factor: `유가 급등 (WTI $${econ.WTI.price}/배럴)`, impact: '경제 압력 → 조기 종전 촉구', weight: `+${(pm[severity]*100).toFixed(0)}%p (1-2개월)` });
+  }
+  if (econ.GOLD && econ.GOLD.price > 2800) {
+    impact.factors.push({ factor: `금값 사상최고 ($${econ.GOLD.price}/oz)`, impact: '안전자산 수요 폭증', weight: '+1%p (2-3개월)' });
+  }
+  if (econ.VIX && econ.VIX.price > 25) {
+    const pm = { extreme: 0.04, high: 0.02, moderate: 0.01 };
+    const s = econ.VIX.price > 40 ? 'extreme' : econ.VIX.price > 30 ? 'high' : 'moderate';
+    impact.war_pressure += pm[s];
+    impact.factors.push({ factor: `VIX 공포지수 ${econ.VIX.price}`, impact: '시장 공포 → 정치적 종전 압력', weight: `+${(pm[s]*100).toFixed(0)}%p (단기)` });
+  }
+  if (econ.US10Y && econ.US2Y && econ.US10Y.price < econ.US2Y.price) {
+    impact.war_pressure += 0.02;
+    impact.factors.push({ factor: `장단기 금리 역전 (10Y ${econ.US10Y.price}% < 2Y ${econ.US2Y.price}%)`, impact: '경기침체 신호 → 전쟁 비용 부담', weight: '+2%p (2-3개월)' });
+  }
+  if (econ.DXY && econ.DXY.price > 106) {
+    impact.war_pressure += 0.01;
+    impact.factors.push({ factor: `달러 강세 (DXY ${econ.DXY.price})`, impact: '이란 경제 추가 압박', weight: '+1%p (2-3개월)' });
+  }
+  return impact;
+}
+
 // Historical war data for comparison
 const HISTORICAL_WARS = [
   {
@@ -221,7 +305,7 @@ function getCurrentWarParams(newsSignals) {
 }
 
 // Prediction engine
-function calculatePrediction(warParams, newsSignals) {
+function calculatePrediction(warParams, newsSignals, econImpact) {
   // Base probabilities from historical comparison
   // Categories: <1month, 1-2months, 2-4months, 4-6months, 6-9months, 9-12months, 12+months
   let probs = [0.12, 0.22, 0.25, 0.18, 0.12, 0.07, 0.04];
@@ -358,6 +442,13 @@ function calculatePrediction(warParams, newsSignals) {
     weight: '+3%p (1개월 내), +4%p (1-2개월)',
   });
 
+  // Economic indicator factors
+  if (econImpact) {
+    const wp = econImpact.war_pressure || 0;
+    if (wp > 0) { probs[0] += wp * 0.4; probs[1] += wp * 0.6; }
+    for (const ef of (econImpact.factors || [])) { factors.push(ef); }
+  }
+
   // Normalize probabilities
   const total = probs.reduce((a, b) => a + b, 0);
   probs = probs.map(p => Math.round((p / total) * 1000) / 10);
@@ -387,11 +478,13 @@ function calculatePrediction(warParams, newsSignals) {
 // API: Get latest prediction
 app.get('/api/predict', async (req, res) => {
   try {
-    const articles = await fetchNews();
+    const [articles, econData] = await Promise.all([fetchNews(), fetchEconomicData()]);
     const signals = analyzeNewsSignals(articles);
     const warParams = getCurrentWarParams(signals);
-    const prediction = calculatePrediction(warParams, signals);
+    const econImpact = analyzeEconomicImpact(econData);
+    const prediction = calculatePrediction(warParams, signals, econImpact);
     prediction.latest_news = articles.slice(0, 15);
+    prediction.economic_indicators = econData;
 
     // Store in history
     predictionHistory.push({
@@ -421,11 +514,13 @@ app.get('/api/historical-wars', (req, res) => {
 // API: manual trigger for update (also used by auto-update)
 app.post('/api/update', async (req, res) => {
   try {
-    const articles = await fetchNews();
+    const [articles, econData] = await Promise.all([fetchNews(), fetchEconomicData()]);
     const signals = analyzeNewsSignals(articles);
     const warParams = getCurrentWarParams(signals);
-    const prediction = calculatePrediction(warParams, signals);
+    const econImpact = analyzeEconomicImpact(econData);
+    const prediction = calculatePrediction(warParams, signals, econImpact);
     prediction.latest_news = articles.slice(0, 15);
+    prediction.economic_indicators = econData;
 
     predictionHistory.push({
       timestamp: prediction.timestamp,
