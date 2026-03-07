@@ -211,6 +211,7 @@ const HISTORICAL_WARS = [
   {name:'코소보 NATO 폭격 (1999)',duration_days:78,type:'공습 작전',involved_countries:19,ended_by:'항복'},
   {name:'이스라엘-하마스 (2023-25)',duration_days:470,type:'공습+지상전',involved_countries:2,ended_by:'협상 휴전'},
   {name:'이란-이라크 전쟁 (1980-88)',duration_days:2922,type:'총력전',involved_countries:2,ended_by:'UN 휴전'},
+  {name:'러시아-우크라이나 전쟁 (2022-)',duration_days:1105,type:'전면 침공+소모전',involved_countries:2,ended_by:'진행 중'},
   {name:'2025 이란-이스라엘 교전',duration_days:12,type:'공습 작전',involved_countries:3,ended_by:'중재 휴전'},
 ];
 
