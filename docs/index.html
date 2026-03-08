@@ -117,8 +117,8 @@
     .digest-recent-body{font-size:13px;color:#eaecf2;line-height:1.7}
     .digest-recent-cat{margin-bottom:8px}
     .digest-recent-cat-name{font-size:12px;color:#e8a54a;font-weight:600;margin-bottom:4px}
-    .digest-recent-item{padding:6px 0;border-bottom:1px solid #4a526833}
-    .digest-recent-item:last-child{border-bottom:none}
+    .digest-recent-item{padding:3px 0}
+    .digest-recent-item a{color:#7ab3e0;text-decoration:none;font-size:12px}
     @media(max-width:768px){
       #newsDigestGrid{grid-template-columns:1fr !important}
     }
@@ -297,101 +297,6 @@
       '사우디/UAE 연합군 참전':'사우디와 UAE가 연합군에 합류하면서 이란 포위망이 강화됩니다. 다방면에서의 군사적 압력이 조기 항복 또는 휴전 가능성을 높입니다.',
       '미 상원 전쟁 결의안 부결':'미 상원이 전쟁권한 제한 결의안을 부결시켜, 군사 작전 지속에 대한 정치적 지지를 보여주었습니다.',
     };
-    // --- Headline keyword-based Korean translation ---
-    const TRANSLATE_MAP=[
-      // Subjects / Actors
-      [/\biran\b/gi,'이란'],[/\bisrael\b/gi,'이스라엘'],[/\bu\.?s\.?\b|united states/gi,'미국'],
-      [/\btrump\b/gi,'트럼프'],[/\bbiden\b/gi,'바이든'],[/\bnetanyahu\b/gi,'네타냐후'],
-      [/\bkhamenei\b/gi,'하메네이'],[/\braisi\b/gi,'라이시'],[/\bpezeshkian\b/gi,'페제시키안'],
-      [/\bzelensky\b/gi,'젤렌스키'],[/\bputin\b/gi,'푸틴'],[/\bmacron\b/gi,'마크롱'],
-      [/\birgc\b/gi,'혁명수비대(IRGC)'],[/\bidf\b/gi,'이스라엘군(IDF)'],
-      [/\bpentagon\b/gi,'펜타곤'],[/\bnato\b/gi,'나토(NATO)'],[/\bcentcom\b/gi,'중부사령부'],
-      [/\bhezbollah\b/gi,'헤즈볼라'],[/\bhamas\b/gi,'하마스'],[/\bhouthi\b/gi,'후티'],
-      [/\bkurd(?:ish|s)?\b/gi,'쿠르드'],[/\bpeshmerga\b/gi,'페쉬메르가'],
-      [/\bsaudi\s*(?:arabia)?\b/gi,'사우디'],[/\buae\b/gi,'UAE'],[/\bqatar\b/gi,'카타르'],
-      [/\biraq\b/gi,'이라크'],[/\bsyria\b/gi,'시리아'],[/\blebanon\b/gi,'레바논'],
-      [/\bturkey\b|türkiye/gi,'튀르키예'],[/\begypt\b/gi,'이집트'],[/\bjordan\b/gi,'요르단'],
-      [/\brussia\b/gi,'러시아'],[/\bchina\b/gi,'중국'],[/\bun\b(?=\s)/g,'유엔(UN)'],
-      [/\bcia\b/gi,'CIA'],[/\beu\b/gi,'EU'],
-      // Places
-      [/\btehran\b/gi,'테헤란'],[/\bisfahan\b/gi,'이스파한'],[/\btabriz\b/gi,'타브리즈'],
-      [/\bshiraz\b/gi,'시라즈'],[/\bbushehr\b/gi,'부셰르'],[/\bnatanz\b/gi,'나탄즈'],
-      [/\btel\s*aviv\b/gi,'텔아비브'],[/\bjerusalem\b/gi,'예루살렘'],[/\bgaza\b/gi,'가자'],
-      [/\bwest\s*bank\b/gi,'서안지구'],[/\bstraits?\s*of\s*hormuz\b/gi,'호르무즈 해협'],
-      [/\bpersian\s*gulf\b/gi,'페르시아만'],[/\bred\s*sea\b/gi,'홍해'],
-      [/\bbaghdad\b/gi,'바그다드'],[/\bdamascus\b/gi,'다마스쿠스'],[/\bbeirut\b/gi,'베이루트'],
-      // Military actions
-      [/\bairstrikes?\b/gi,'공습'],[/\bair\s*strikes?\b/gi,'공습'],
-      [/\bstrikes?\b(?!\s*(?:a|the|out|back))/gi,'타격'],
-      [/\bbomb(?:ing|s|ed)?\b/gi,'폭격'],[/\bshell(?:ing|ed|s)?\b/gi,'포격'],
-      [/\bmissile\s*(?:attack|strike)s?\b/gi,'미사일 공격'],[/\bmissiles?\b/gi,'미사일'],
-      [/\bdrone\s*(?:attack|strike)s?\b/gi,'드론 공격'],[/\bdrones?\b/gi,'드론'],
-      [/\braid(?:s|ed)?\b/gi,'급습'],[/\boffensive\b/gi,'공세'],
-      [/\binvasion\b/gi,'침공'],[/\bground\s*(?:offensive|invasion|operation)\b/gi,'지상 작전'],
-      [/\bescalat(?:ion|es?|ing)\b/gi,'확전'],[/\bde-escalat(?:ion|es?|ing)\b/gi,'긴장 완화'],
-      [/\bretali?at(?:ion|es?|ing|ory)\b/gi,'보복'],[/\bintercept(?:s|ed|ing|ion)?\b/gi,'요격'],
-      [/\bair\s*defen[cs]e\b/gi,'방공'],[/\bair\s*superiority\b/gi,'제공권 장악'],
-      [/\bblockade\b/gi,'봉쇄'],[/\bsiege\b/gi,'포위'],[/\bambush\b/gi,'매복'],
-      [/\bsabotage\b/gi,'사보타주'],[/\binfiltrat(?:ion|e)\b/gi,'침투'],
-      // Military equipment
-      [/\bnuclear\s*(?:weapon|warhead|bomb)s?\b/gi,'핵무기'],
-      [/\bnuclear\s*(?:facility|plant|site|reactor)s?\b/gi,'핵시설'],
-      [/\bnuclear\b/gi,'핵'],[/\buranium\s*enrichment\b/gi,'우라늄 농축'],
-      [/\bballistic\s*missiles?\b/gi,'탄도미사일'],[/\bcruise\s*missiles?\b/gi,'순항미사일'],
-      [/\bfighter\s*jets?\b/gi,'전투기'],[/\bf-35s?\b/gi,'F-35'],
-      [/\baircraft\s*carriers?\b/gi,'항공모함'],[/\bwarships?\b/gi,'군함'],
-      [/\bs-300\b/gi,'S-300'],[/\bs-400\b/gi,'S-400'],
-      [/\biron\s*dome\b/gi,'아이언돔'],
-      // Diplomacy
-      [/\bceasefire\b/gi,'휴전'],[/\btruce\b/gi,'정전'],[/\barmistice\b/gi,'휴전협정'],
-      [/\bnegotiat(?:ion|e|ing|or)s?\b/gi,'협상'],[/\bpeace\s*talks?\b/gi,'평화 회담'],
-      [/\btreaty\b/gi,'조약'],[/\bagreement\b/gi,'합의'],[/\bdeal\b/gi,'합의'],
-      [/\bsummit\b/gi,'정상회담'],[/\bmediat(?:ion|or|e|ing)\b/gi,'중재'],
-      [/\bdiplomat(?:ic|s|cy)?\b/gi,'외교'],[/\benvoy\b/gi,'특사'],
-      [/\bambassador\b/gi,'대사'],[/\bsanctions?\b/gi,'제재'],
-      [/\bembargo\b/gi,'금수조치'],[/\bresolution\b/gi,'결의안'],
-      // Casualties / Humanitarian
-      [/\bkilled\b/gi,'사망'],[/\bdead\b/gi,'사망'],[/\bdeaths?\b/gi,'사망'],
-      [/\bwounded\b/gi,'부상'],[/\binjured\b/gi,'부상'],[/\bcasualt(?:y|ies)\b/gi,'사상자'],
-      [/\bdeath\s*toll\b/gi,'사망자 수'],[/\bcivilians?\b/gi,'민간인'],
-      [/\brefugees?\b/gi,'난민'],[/\bdisplaced\b/gi,'실향민'],
-      [/\bhumanitarian\b/gi,'인도주의'],[/\bevacuat(?:ion|ed|ing)\b/gi,'대피'],
-      [/\bwar\s*crimes?\b/gi,'전쟁범죄'],[/\bgenocide\b/gi,'대량학살'],
-      // Politics
-      [/\bcongress\b/gi,'의회'],[/\bsenate\b/gi,'상원'],[/\bparliament\b/gi,'의회'],
-      [/\bvote[ds]?\b(?!\s*for)/gi,'투표'],[/\bprotest(?:s|ers?|ing)?\b/gi,'시위'],
-      [/\bsupreme\s*leader\b/gi,'최고지도자'],[/\bregime\b/gi,'정권'],
-      [/\bcoup\b/gi,'쿠데타'],[/\bsurrender\b/gi,'항복'],[/\bcapitulat(?:ion|e)\b/gi,'항복'],
-      // Economy
-      [/\boil\s*price\b/gi,'유가'],[/\bcrude\s*oil\b/gi,'원유'],
-      [/\bshipping\b/gi,'해상 운송'],[/\btankers?\b/gi,'유조선'],
-      [/\bsupply\s*chain\b/gi,'공급망'],[/\bopec\b/gi,'OPEC'],
-      [/\binflation\b/gi,'인플레이션'],[/\brecession\b/gi,'경기침체'],
-      // Common verbs/phrases
-      [/\blaunche?(?:s|d|ing)?\b/gi,'발사'],[/\btargets?\b/gi,'목표'],
-      [/\bdestroys?(?:ed)?\b/gi,'파괴'],[/\bseis?[zs]e[ds]?\b/gi,'장악'],
-      [/\bcaptur(?:ed?|ing|es?)\b/gi,'점령'],[/\badvance[ds]?\b/gi,'진격'],
-      [/\bretreat(?:s|ed|ing)?\b/gi,'후퇴'],[/\bwithdraw(?:al|s|n|ing)?\b/gi,'철수'],
-      [/\bdeploy(?:s|ed|ment|ing)?\b/gi,'배치'],[/\breinforce(?:ments?|d|s)?\b/gi,'증원'],
-      [/\bwarn(?:s|ed|ing)?\b/gi,'경고'],[/\bthreat(?:en)?(?:s|ed|ing)?\b/gi,'위협'],
-      [/\baccus(?:es?|ed|ing|ations?)\b/gi,'비난'],[/\bcondemn(?:s|ed|ing)?\b/gi,'규탄'],
-      [/\bvow(?:s|ed|ing)?\b/gi,'다짐'],[/\bpledge[ds]?\b/gi,'약속'],
-      [/\burge[ds]?\b/gi,'촉구'],[/\bcall(?:s|ed)?\s*(?:for|on)\b/gi,'요구'],
-      [/\bimpose[ds]?\b/gi,'부과'],[/\bviolat(?:ion|es?|ing)\b/gi,'위반'],
-      [/\breport(?:s|ed|ing)?\b/gi,'보도'],[/\bconfirm(?:s|ed|ing)?\b/gi,'확인'],
-      [/\bdeni(?:es|ed|al)\b/gi,'부인'],[/\bclaim(?:s|ed|ing)?\b/gi,'주장'],
-      [/\bbreaking\b/gi,'속보'],[/\bexclusive\b/gi,'단독'],
-      [/\bsays?\b/gi,'발언'],[/\btells?\b/gi,'전달'],
-    ];
-    function translateHeadline(title){
-      if(!title)return'';
-      let t=title;
-      for(const [rx,kr] of TRANSLATE_MAP){
-        t=t.replace(rx,kr);
-      }
-      // Clean up: collapse multiple spaces, trim
-      return t.replace(/\s{2,}/g,' ').trim();
-    }
     const ECON_CONFIG = [
       { key: 'WTI', name: 'WTI 원유', unit: '$/배럴', color: '#e8a54a', impact: '유가↑ → 국제 종전 압력↑', warImpact: 'shorten' },
       { key: 'BRENT', name: '브렌트 원유', unit: '$/배럴', color: '#e06060', impact: '국제유가 벤치마크', warImpact: 'shorten' },
@@ -710,8 +615,7 @@
           const cicon=catIcons[catId]||'📰';
           rh+=`<div class="digest-recent-cat"><div class="digest-recent-cat-name">${cicon} ${cname} (${info.count}건)</div>`;
           for(const t of info.titles){
-            const krTitle=translateHeadline(t.title);
-            rh+=`<div class="digest-recent-item" style="padding:6px 0;border-bottom:1px solid #4a526833"><div style="font-size:13px;color:#eaecf2;line-height:1.5">• ${krTitle}</div><div style="margin-left:14px;margin-top:2px"><a href="${t.link}" target="_blank" rel="noopener" style="color:#7ab3e0;font-size:11px;text-decoration:none;line-height:1.4">${t.title}</a> <span style="color:#9ca4b4;font-size:10px">${t.source}</span></div></div>`;
+            rh+=`<div class="digest-recent-item">• <a href="${t.link}" target="_blank" rel="noopener">${t.title}</a> <span style="color:#9ca4b4;font-size:10px">${t.source}</span></div>`;
           }
           rh+='</div>';
         }
