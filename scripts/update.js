@@ -273,6 +273,143 @@ function articleKey(a) {
   return (a.title || '').trim().slice(0, 80).toLowerCase().replace(/[^a-z0-9]/g, '');
 }
 
+// --- News categorization & digest ---
+const NEWS_CATEGORIES = [
+  {
+    id: 'military',
+    name: '군사 작전',
+    icon: '⚔️',
+    keywords: ['strike','bomb','missile','attack','offensive','raid','troops','military','airforce','navy','army','drone','fighter','jet','weapon','artillery','tank','infantry','operation','battle','combat','airstrike','ground','invasion','advance','retreat','front','deploy','intercept','air defense','anti-air','s-300','s-400','irgc','pentagon','centcom','idf'],
+  },
+  {
+    id: 'diplomacy',
+    name: '외교/협상',
+    icon: '🤝',
+    keywords: ['negotiat','diplomat','talks','dialog','ceasefire','truce','peace','treaty','agreement','summit','mediati','broker','proposal','envoy','ambassador','un security','resolution','framework','backchannel','secret talk','channel'],
+  },
+  {
+    id: 'economy',
+    name: '경제 영향',
+    icon: '📊',
+    keywords: ['oil price','crude','energy','gas price','sanction','trade','market','stock','economy','inflation','currency','rial','dollar','export','import','shipping','tanker','hormuz','blockade','supply chain','opec','gdp','recession'],
+  },
+  {
+    id: 'humanitarian',
+    name: '인도주의/피해',
+    icon: '🏥',
+    keywords: ['civilian','casualt','killed','dead','wounded','death toll','refugee','displaced','humanitarian','aid','relief','hospital','evacuation','shelter','crisis','victim','survivor','rescue','red cross','un agency','unhcr'],
+  },
+  {
+    id: 'politics',
+    name: '국내 정치',
+    icon: '🏛️',
+    keywords: ['congress','senate','parliament','vote','election','poll','protest','demonstrat','public opinion','opposition','impeach','resign','cabinet','minister','president','trump','biden','khamenei','supreme leader','succession','political'],
+  },
+  {
+    id: 'regional',
+    name: '지역 정세',
+    icon: '🌍',
+    keywords: ['saudi','uae','qatar','bahrain','kuwait','iraq','lebanon','turkey','syria','jordan','egypt','pakistan','india','china','russia','nato','hezbollah','houthi','proxy','coalition','alliance','regional','neighbor','border'],
+  },
+  {
+    id: 'nuclear',
+    name: '핵/WMD',
+    icon: '☢️',
+    keywords: ['nuclear','atomic','uranium','enrichment','centrifuge','warhead','wmd','chemical weapon','biological','iaea','nonproliferat','radioactiv'],
+  },
+];
+
+function categorizeArticle(article) {
+  const text = ((article.title || '') + ' ' + (article.snippet || '')).toLowerCase();
+  const scores = {};
+  for (const cat of NEWS_CATEGORIES) {
+    let score = 0;
+    for (const kw of cat.keywords) {
+      if (text.includes(kw)) score++;
+    }
+    if (score > 0) scores[cat.id] = score;
+  }
+  // Primary category = highest score; if none, 'other'
+  const sorted = Object.entries(scores).sort((a, b) => b[1] - a[1]);
+  const primary = sorted.length > 0 ? sorted[0][0] : 'other';
+  const secondary = sorted.length > 1 ? sorted.slice(1).map(s => s[0]) : [];
+  return { primary, secondary };
+}
+
+function buildNewsDigest(articles) {
+  // Group articles by category
+  const groups = {};
+  for (const cat of NEWS_CATEGORIES) {
+    groups[cat.id] = [];
+  }
+  groups['other'] = [];
+
+  for (const article of articles) {
+    const { primary } = categorizeArticle(article);
+    if (!groups[primary]) groups[primary] = [];
+    groups[primary].push({
+      title: article.title,
+      link: article.link,
+      source: article.source,
+      pubDate: article.pubDate,
+      snippet: article.snippet,
+      isNew: article.isNew || false,
+    });
+  }
+
+  // Build digest
+  const digest = [];
+  for (const cat of NEWS_CATEGORIES) {
+    const items = groups[cat.id];
+    if (items.length === 0) continue;
+    digest.push({
+      category_id: cat.id,
+      category_name: cat.name,
+      category_icon: cat.icon,
+      count: items.length,
+      new_count: items.filter(a => a.isNew).length,
+      articles: items.slice(0, 10), // max 10 per category
+    });
+  }
+  // 'other' category
+  if (groups['other'].length > 0) {
+    digest.push({
+      category_id: 'other',
+      category_name: '기타',
+      category_icon: '📰',
+      count: groups['other'].length,
+      new_count: groups['other'].filter(a => a.isNew).length,
+      articles: groups['other'].slice(0, 5),
+    });
+  }
+
+  // Sort by article count desc
+  digest.sort((a, b) => b.count - a.count);
+
+  // Recent 30-min summary (new articles only)
+  const newArticles = articles.filter(a => a.isNew);
+  const recentSummary = {
+    total_new: newArticles.length,
+    by_category: {},
+  };
+  for (const a of newArticles) {
+    const { primary } = categorizeArticle(a);
+    if (!recentSummary.by_category[primary]) {
+      recentSummary.by_category[primary] = { count: 0, titles: [] };
+    }
+    recentSummary.by_category[primary].count++;
+    if (recentSummary.by_category[primary].titles.length < 5) {
+      recentSummary.by_category[primary].titles.push({
+        title: a.title,
+        link: a.link,
+        source: a.source,
+      });
+    }
+  }
+
+  return { categories: digest, recent_30min: recentSummary };
+}
+
 // --- Analysis ---
 
 // Critical event patterns based on historical war-ending research
@@ -725,6 +862,10 @@ async function main() {
   const daysElapsed = Math.floor((new Date() - new Date('2026-02-28')) / 864e5);
   const pred = calculatePrediction(daysElapsed, signals, econImpact, criticalEvents);
 
+  // Build categorized news digest
+  const newsDigest = buildNewsDigest(articles);
+  console.log(`  [DIGEST] ${newsDigest.categories.length} categories, ${newsDigest.recent_30min.total_new} new articles in last 30min`);
+
   const result = {
     timestamp: new Date().toISOString(),
     war_day: daysElapsed,
@@ -732,6 +873,7 @@ async function main() {
     factors: pred.factors,
     news_signals: signals,
     latest_news: articles.slice(0, 15),
+    news_digest: newsDigest,
     historical_comparison: HISTORICAL_WARS,
     economic_indicators: econData,
     critical_events: criticalEvents.map(e => ({ id: e.id, name: e.name, severity: e.severity, confidence: e.confidence, matchCount: e.matchCount, direction: e.direction })),
