@@ -423,14 +423,44 @@
       if(serverData){
         currentPrediction=serverData.latest;
         predictionHistoryLocal=serverData.history;
-        document.getElementById('rssStatus').textContent=`RSS: ${serverData.latest.feeds_loaded||0}/${serverData.latest.feeds_total||4} 피드 (서버)`;
+        const serverFeeds=serverData.latest.feeds_loaded||0;
+        const serverArticles=(serverData.latest.latest_news||[]).length;
+        document.getElementById('rssStatus').textContent=`RSS: ${serverFeeds}/${serverData.latest.feeds_total||4} 피드 (서버)`;
         document.getElementById('rssStatus').className='rss-status';
+        // If server has no articles, try client-side RSS to supplement
+        if(serverArticles===0){
+          try{
+            document.getElementById('rssStatus').textContent=`RSS: 서버 0건 → 클라이언트 직접 수집 중...`;
+            const clientArticles=await fetchNews();
+            if(clientArticles.length>0){
+              const sg=analyzeNewsSignals(clientArticles);
+              const wp=getCurrentWarParams(sg);
+              const pred=calculatePrediction(wp,sg,clientArticles);
+              // Merge: keep server probabilities/factors/history but use client news
+              currentPrediction.latest_news=clientArticles.slice(0,15);
+              currentPrediction.news_signals=sg;
+              currentPrediction.news_digest=buildClientDigest(clientArticles);
+              // Re-calculate prediction with real news data
+              currentPrediction.probabilities=pred.probabilities;
+              currentPrediction.factors=pred.factors;
+              document.getElementById('rssStatus').textContent=`RSS: ${clientArticles.length}건 수집 (클라이언트)`;
+              document.getElementById('rssStatus').className='rss-status';
+            }else{
+              document.getElementById('rssStatus').textContent=`RSS: 서버·클라이언트 모두 수집 실패`;
+              document.getElementById('rssStatus').className='rss-status error';
+            }
+          }catch(e){
+            console.warn('Client RSS fallback failed',e);
+            document.getElementById('rssStatus').textContent=`RSS: 서버·클라이언트 모두 수집 실패`;
+            document.getElementById('rssStatus').className='rss-status error';
+          }
+        }
         // If server data lacks economic_indicators, fetch client-side
-        if(!currentPrediction.economic_indicators || Object.keys(currentPrediction.economic_indicators).length===0){
+        if(!currentPrediction.economic_indicators || Object.keys(currentPrediction.economic_indicators).length===0 || Object.values(currentPrediction.economic_indicators).every(v=>v.fallback)){
           try{ currentPrediction.economic_indicators = await fetchEconClient(); }catch(e){ console.warn('Client econ fetch failed',e); }
         }
       }else{
-        // Fallback: client-side
+        // Fallback: full client-side
         const [a, econClient] = await Promise.all([fetchNews(), fetchEconClient()]);
         const sg=analyzeNewsSignals(a),wp=getCurrentWarParams(sg),pred=calculatePrediction(wp,sg,a);
         pred.latest_news=a.slice(0,15);pred.historical_comparison=HISTORICAL_WARS;pred.economic_indicators=econClient;pred.news_digest=buildClientDigest(a);

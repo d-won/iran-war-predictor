@@ -231,12 +231,15 @@ const FX = {
 };
 
 // --- Fetch helpers ---
-function fetchUrl(url, timeout = 10000) {
+function fetchUrlOnce(url, timeout = 10000) {
   return new Promise((resolve, reject) => {
     const mod = url.startsWith('https') ? https : http;
-    const req = mod.get(url, { headers: { 'User-Agent': 'Mozilla/5.0 IranWarPredictor/1.0' } }, res => {
+    const req = mod.get(url, { headers: { 'User-Agent': 'Mozilla/5.0 (compatible; IranWarPredictor/1.0; +https://github.com/d-won/iran-war-predictor)' } }, res => {
       if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
-        return fetchUrl(res.headers.location, timeout).then(resolve).catch(reject);
+        return fetchUrlOnce(res.headers.location, timeout).then(resolve).catch(reject);
+      }
+      if (res.statusCode >= 400) {
+        return reject(new Error(`HTTP ${res.statusCode}`));
       }
       let data = '';
       res.on('data', c => data += c);
@@ -245,6 +248,24 @@ function fetchUrl(url, timeout = 10000) {
     req.on('error', reject);
     req.setTimeout(timeout, () => { req.destroy(); reject(new Error('timeout')); });
   });
+}
+
+async function fetchUrl(url, timeout = 10000) {
+  const maxRetries = 3;
+  for (let attempt = 1; attempt <= maxRetries; attempt++) {
+    try {
+      return await fetchUrlOnce(url, timeout);
+    } catch(e) {
+      const isRetryable = e.message.includes('EAI_AGAIN') || e.message.includes('ECONNRESET') || e.message.includes('ETIMEDOUT') || e.message.includes('timeout');
+      if (attempt < maxRetries && isRetryable) {
+        const delay = attempt * 2000;
+        console.log(`    [RETRY ${attempt}/${maxRetries}] ${url.split('/')[2]} - ${e.message}, waiting ${delay}ms...`);
+        await new Promise(r => setTimeout(r, delay));
+        continue;
+      }
+      throw e;
+    }
+  }
 }
 
 function parseRSS(xml, sourceName) {
