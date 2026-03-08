@@ -443,19 +443,37 @@
         }catch(e){console.warn('Client RSS failed',e)}
       }
 
-      if(!usedClient && serverData){
-        // Use server data
+      // 3) Client RSS succeeded → build fresh prediction from it
+      if(usedClient){
+        let econClient;
+        try{ econClient=await fetchEconClient(); }catch(e){ econClient=ECON_FALLBACK; }
+        const sg=analyzeNewsSignals(articles);
+        const wp=getCurrentWarParams(sg);
+        const pred=calculatePrediction(wp,sg,articles);
+        pred.latest_news=articles.slice(0,15);
+        pred.historical_comparison=HISTORICAL_WARS;
+        pred.economic_indicators=econClient;
+        pred.news_digest=buildClientDigest(articles);
+        currentPrediction=pred;
+        document.getElementById('rssStatus').textContent=`RSS: ${articles.length}건 수집 (실시간)`;
+        document.getElementById('rssStatus').className='rss-status';
+        renderAll(currentPrediction);
+        const ts=new Date().toLocaleString('ko-KR');
+        document.getElementById('lastUpdated').textContent=`마지막 갱신: ${ts}`;
+        return currentPrediction;
+      }
+
+      // 4) Client RSS failed or initial load → fall back to server data
+      if(serverData){
         const serverArticles=serverData.latest.latest_news||[];
         if(serverArticles.length>0){
           currentPrediction=serverData.latest;
           const serverFeeds=serverData.latest.feeds_loaded||0;
           document.getElementById('rssStatus').textContent=`RSS: ${serverFeeds}/${serverData.latest.feeds_total||4} 피드 (서버)`;
           document.getElementById('rssStatus').className='rss-status';
-          // If server econ is all fallback, try client
           if(!currentPrediction.economic_indicators || Object.keys(currentPrediction.economic_indicators).length===0 || Object.values(currentPrediction.economic_indicators).every(v=>v.fallback)){
             try{ currentPrediction.economic_indicators = await fetchEconClient(); }catch(e){}
           }
-          // If no digest from server, build client-side
           if(!currentPrediction.news_digest || !currentPrediction.news_digest.categories || currentPrediction.news_digest.categories.length===0){
             currentPrediction.news_digest=buildClientDigest(currentPrediction.latest_news||[]);
           }
@@ -464,22 +482,17 @@
           document.getElementById('lastUpdated').textContent=`마지막 갱신: ${ts}`;
           return currentPrediction;
         }
-        // Server has 0 articles, try client
-        if(!usedClient){
-          document.getElementById('rssStatus').textContent='RSS: 서버 0건 → 클라이언트 수집 중...';
-          try{ articles=await fetchNews(); if(articles.length>0) usedClient=true; }catch(e){}
-        }
-      }
-
-      if(!usedClient && !serverData){
-        // No server data at all, try client
+        // Server has 0 articles, try client as last resort
         try{ articles=await fetchNews(); if(articles.length>0) usedClient=true; }catch(e){}
       }
 
-      // 3) Build prediction from articles (client or empty)
+      if(!serverData && !usedClient){
+        try{ articles=await fetchNews(); if(articles.length>0) usedClient=true; }catch(e){}
+      }
+
+      // 5) Last resort: build from whatever we have
       let econClient;
       try{ econClient=await fetchEconClient(); }catch(e){ econClient=ECON_FALLBACK; }
-
       const sg=analyzeNewsSignals(articles);
       const wp=getCurrentWarParams(sg);
       const pred=calculatePrediction(wp,sg,articles);
