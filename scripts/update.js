@@ -9,13 +9,18 @@ const LATEST_FILE = path.join(DATA_DIR, 'latest.json');
 const HISTORY_FILE = path.join(DATA_DIR, 'history.json');
 const SEEN_FILE = path.join(DATA_DIR, 'seen_keys.json');
 
-const KEYWORDS = ['iran','tehran','israel','ceasefire','negotiation','diplomacy','missile','strike','bombing','hormuz','hezbollah','irgc','casualt','peace','truce','surrender','withdraw','escalat','de-escalat','sanction','nuclear','khamenei','trump','war'];
+const KEYWORDS = ['iran','tehran','israel','ceasefire','negotiation','diplomacy','missile','strike','bombing','hormuz','hezbollah','irgc','casualt','peace','truce','surrender','withdraw','escalat','de-escalat','sanction','nuclear','khamenei','trump','war',
+  '이란','테헤란','이스라엘','휴전','미사일','폭격','호르무즈','헤즈볼라','혁명수비대','전쟁','공습','핵','제재','트럼프','하메네이','중동'];
 
 const RSS_FEEDS = [
   { url: 'https://www.aljazeera.com/xml/rss/all.xml', name: 'aljazeera' },
   { url: 'https://rss.nytimes.com/services/xml/rss/nyt/MiddleEast.xml', name: 'nytimes' },
   { url: 'https://feeds.bbci.co.uk/news/world/middle_east/rss.xml', name: 'bbc' },
   { url: 'https://www.theguardian.com/world/middleeast/rss', name: 'guardian' },
+  { url: 'http://rss.cnn.com/rss/edition_meast.rss', name: 'cnn' },
+  { url: 'https://www.ft.com/middle-east?format=rss', name: 'ft' },
+  { url: 'https://www.yna.co.kr/rss/international.xml', name: 'yonhap' },
+  { url: 'https://www.chosun.com/arc/outboundfeeds/rss/category/international/', name: 'chosun' },
 ];
 
 const PROB_KEYS = ['1개월 내 (~3월)','2~3개월 (4~5월)','4~6개월 (6~8월)','7~12개월 (9월~27/2월)','1년 초과'];
@@ -270,8 +275,10 @@ async function fetchUrl(url, timeout = 10000) {
 
 function parseRSS(xml, sourceName) {
   const doc = new DOMParser().parseFromString(xml, 'text/xml');
-  const items = doc.getElementsByTagName('item');
   const results = [];
+
+  // RSS <item> elements
+  const items = doc.getElementsByTagName('item');
   for (let i = 0; i < Math.min(items.length, 30); i++) {
     const item = items[i];
     const getTag = tag => {
@@ -280,18 +287,40 @@ function parseRSS(xml, sourceName) {
     };
     const title = getTag('title');
     const link = getTag('link');
-    const pubDate = getTag('pubDate');
+    const pubDate = getTag('pubDate') || getTag('dc:date');
     const snippet = getTag('description').replace(/<[^>]*>/g, '').slice(0, 200);
     const text = (title + ' ' + snippet).toLowerCase();
     if (KEYWORDS.some(k => text.includes(k))) {
       results.push({ title, link, pubDate, source: sourceName, snippet });
     }
   }
+
+  // Atom <entry> elements (FT etc.)
+  if (results.length === 0) {
+    const entries = doc.getElementsByTagName('entry');
+    for (let i = 0; i < Math.min(entries.length, 30); i++) {
+      const entry = entries[i];
+      const getTag = tag => {
+        const el = entry.getElementsByTagName(tag)[0];
+        return el ? (el.textContent || '') : '';
+      };
+      const title = getTag('title');
+      const linkEl = entry.getElementsByTagName('link')[0];
+      const link = linkEl ? (linkEl.getAttribute('href') || linkEl.textContent || '') : '';
+      const pubDate = getTag('published') || getTag('updated');
+      const snippet = (getTag('summary') || getTag('content')).replace(/<[^>]*>/g, '').slice(0, 200);
+      const text = (title + ' ' + snippet).toLowerCase();
+      if (KEYWORDS.some(k => text.includes(k))) {
+        results.push({ title, link, pubDate, source: sourceName, snippet });
+      }
+    }
+  }
+
   return results;
 }
 
 function articleKey(a) {
-  return (a.title || '').trim().slice(0, 80).toLowerCase().replace(/[^a-z0-9]/g, '');
+  return (a.title || '').trim().slice(0, 80).toLowerCase().replace(/[^a-z0-9가-힣]/g, '');
 }
 
 // --- News categorization & digest ---
@@ -300,43 +329,50 @@ const NEWS_CATEGORIES = [
     id: 'military',
     name: '군사 작전',
     icon: '⚔️',
-    keywords: ['strike','bomb','missile','attack','offensive','raid','troops','military','airforce','navy','army','drone','fighter','jet','weapon','artillery','tank','infantry','operation','battle','combat','airstrike','ground','invasion','advance','retreat','front','deploy','intercept','air defense','anti-air','s-300','s-400','irgc','pentagon','centcom','idf'],
+    keywords: ['strike','bomb','missile','attack','offensive','raid','troops','military','airforce','navy','army','drone','fighter','jet','weapon','artillery','tank','infantry','operation','battle','combat','airstrike','ground','invasion','advance','retreat','front','deploy','intercept','air defense','anti-air','s-300','s-400','irgc','pentagon','centcom','idf',
+      '공습','폭격','미사일','공격','군사','드론','전투기','포격','지상전','침공','작전','타격','방공','요격','혁명수비대'],
   },
   {
     id: 'diplomacy',
     name: '외교/협상',
     icon: '🤝',
-    keywords: ['negotiat','diplomat','talks','dialog','ceasefire','truce','peace','treaty','agreement','summit','mediati','broker','proposal','envoy','ambassador','un security','resolution','framework','backchannel','secret talk','channel'],
+    keywords: ['negotiat','diplomat','talks','dialog','ceasefire','truce','peace','treaty','agreement','summit','mediati','broker','proposal','envoy','ambassador','un security','resolution','framework','backchannel','secret talk','channel',
+      '협상','외교','휴전','정전','평화','회담','합의','중재','특사','유엔'],
   },
   {
     id: 'economy',
     name: '경제 영향',
     icon: '📊',
-    keywords: ['oil price','crude','energy','gas price','sanction','trade','market','stock','economy','inflation','currency','rial','dollar','export','import','shipping','tanker','hormuz','blockade','supply chain','opec','gdp','recession'],
+    keywords: ['oil price','crude','energy','gas price','sanction','trade','market','stock','economy','inflation','currency','rial','dollar','export','import','shipping','tanker','hormuz','blockade','supply chain','opec','gdp','recession',
+      '유가','원유','제재','경제','주가','인플레이션','호르무즈','봉쇄','공급망','수출','수입'],
   },
   {
     id: 'humanitarian',
     name: '인도주의/피해',
     icon: '🏥',
-    keywords: ['civilian','casualt','killed','dead','wounded','death toll','refugee','displaced','humanitarian','aid','relief','hospital','evacuation','shelter','crisis','victim','survivor','rescue','red cross','un agency','unhcr'],
+    keywords: ['civilian','casualt','killed','dead','wounded','death toll','refugee','displaced','humanitarian','aid','relief','hospital','evacuation','shelter','crisis','victim','survivor','rescue','red cross','un agency','unhcr',
+      '민간인','사망','부상','사상자','난민','대피','구호','인도주의','피해'],
   },
   {
     id: 'politics',
     name: '국내 정치',
     icon: '🏛️',
-    keywords: ['congress','senate','parliament','vote','election','poll','protest','demonstrat','public opinion','opposition','impeach','resign','cabinet','minister','president','trump','biden','khamenei','supreme leader','succession','political'],
+    keywords: ['congress','senate','parliament','vote','election','poll','protest','demonstrat','public opinion','opposition','impeach','resign','cabinet','minister','president','trump','biden','khamenei','supreme leader','succession','political',
+      '의회','상원','투표','시위','정권','대통령','트럼프','하메네이','정치'],
   },
   {
     id: 'regional',
     name: '지역 정세',
     icon: '🌍',
-    keywords: ['saudi','uae','qatar','bahrain','kuwait','iraq','lebanon','turkey','syria','jordan','egypt','pakistan','india','china','russia','nato','hezbollah','houthi','proxy','coalition','alliance','regional','neighbor','border'],
+    keywords: ['saudi','uae','qatar','bahrain','kuwait','iraq','lebanon','turkey','syria','jordan','egypt','pakistan','india','china','russia','nato','hezbollah','houthi','proxy','coalition','alliance','regional','neighbor','border',
+      '사우디','이라크','시리아','레바논','중동','헤즈볼라','후티','연합','동맹'],
   },
   {
     id: 'nuclear',
     name: '핵/WMD',
     icon: '☢️',
-    keywords: ['nuclear','atomic','uranium','enrichment','centrifuge','warhead','wmd','chemical weapon','biological','iaea','nonproliferat','radioactiv'],
+    keywords: ['nuclear','atomic','uranium','enrichment','centrifuge','warhead','wmd','chemical weapon','biological','iaea','nonproliferat','radioactiv',
+      '핵','우라늄','농축','핵무기','핵시설','화학무기','생물무기'],
   },
 ];
 

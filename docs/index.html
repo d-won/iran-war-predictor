@@ -265,8 +265,9 @@
   </div>
   <script>
     const COLORS=['#6bc98a','#5cc4b8','#e8a54a','#e06060','#b07ad4'];
-    const KEYWORDS=['iran','tehran','israel','ceasefire','negotiation','diplomacy','missile','strike','bombing','hormuz','hezbollah','irgc','casualt','peace','truce','surrender','withdraw','escalat','de-escalat','sanction','nuclear','khamenei','trump','war'];
-    const RSS_FEEDS=['https://www.aljazeera.com/xml/rss/all.xml','https://rss.nytimes.com/services/xml/rss/nyt/MiddleEast.xml','https://feeds.bbci.co.uk/news/world/middle_east/rss.xml','https://www.theguardian.com/world/middleeast/rss'];
+    const KEYWORDS=['iran','tehran','israel','ceasefire','negotiation','diplomacy','missile','strike','bombing','hormuz','hezbollah','irgc','casualt','peace','truce','surrender','withdraw','escalat','de-escalat','sanction','nuclear','khamenei','trump','war',
+      '이란','테헤란','이스라엘','휴전','미사일','폭격','호르무즈','헤즈볼라','혁명수비대','전쟁','공습','핵','제재','트럼프','하메네이','중동'];
+    const RSS_FEEDS=['https://www.aljazeera.com/xml/rss/all.xml','https://rss.nytimes.com/services/xml/rss/nyt/MiddleEast.xml','https://feeds.bbci.co.uk/news/world/middle_east/rss.xml','https://www.theguardian.com/world/middleeast/rss','http://rss.cnn.com/rss/edition_meast.rss','https://www.ft.com/middle-east?format=rss','https://www.yna.co.kr/rss/international.xml','https://www.chosun.com/arc/outboundfeeds/rss/category/international/'];
     const CORS_PROXIES=[url=>`https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`,url=>`https://corsproxy.io/?${encodeURIComponent(url)}`];
     const PROB_KEYS=['1개월 내 (~3월)','2~3개월 (4~5월)','4~6개월 (6~8월)','7~12개월 (9월~27/2월)','1년 초과'];
     const HISTORICAL_WARS=[
@@ -310,13 +311,13 @@
     const ECON_SYMBOLS = { WTI:'CL=F', BRENT:'BZ=F', GOLD:'GC=F', VIX:'^VIX', DXY:'DX-Y.NYB', US10Y:'^TNX', US2Y:'^IRX' };
 
     const NEWS_CATEGORIES=[
-      {id:'military',name:'군사 작전',icon:'⚔️',keywords:['strike','bomb','missile','attack','offensive','raid','troops','military','airforce','navy','army','drone','fighter','jet','weapon','artillery','tank','infantry','operation','battle','combat','airstrike','ground','invasion','advance','retreat','front','deploy','intercept','air defense','irgc','pentagon','centcom','idf']},
-      {id:'diplomacy',name:'외교/협상',icon:'🤝',keywords:['negotiat','diplomat','talks','dialog','ceasefire','truce','peace','treaty','agreement','summit','mediati','broker','proposal','envoy','ambassador','un security','resolution','framework','backchannel']},
-      {id:'economy',name:'경제 영향',icon:'📊',keywords:['oil price','crude','energy','gas price','sanction','trade','market','stock','economy','inflation','currency','rial','dollar','export','import','shipping','tanker','hormuz','blockade','supply chain','opec']},
-      {id:'humanitarian',name:'인도주의/피해',icon:'🏥',keywords:['civilian','casualt','killed','dead','wounded','death toll','refugee','displaced','humanitarian','aid','relief','hospital','evacuation','shelter','crisis','victim','survivor','rescue']},
-      {id:'politics',name:'국내 정치',icon:'🏛️',keywords:['congress','senate','parliament','vote','election','poll','protest','demonstrat','public opinion','opposition','impeach','resign','cabinet','minister','president','trump','biden','khamenei','supreme leader','succession','political']},
-      {id:'regional',name:'지역 정세',icon:'🌍',keywords:['saudi','uae','qatar','bahrain','kuwait','iraq','lebanon','turkey','syria','jordan','egypt','pakistan','india','china','russia','nato','hezbollah','houthi','proxy','coalition','alliance','regional']},
-      {id:'nuclear',name:'핵/WMD',icon:'☢️',keywords:['nuclear','atomic','uranium','enrichment','centrifuge','warhead','wmd','chemical weapon','biological','iaea','nonproliferat']},
+      {id:'military',name:'군사 작전',icon:'⚔️',keywords:['strike','bomb','missile','attack','offensive','raid','troops','military','airforce','navy','army','drone','fighter','jet','weapon','artillery','tank','infantry','operation','battle','combat','airstrike','ground','invasion','advance','retreat','front','deploy','intercept','air defense','irgc','pentagon','centcom','idf','공습','폭격','미사일','공격','군사','드론','전투기','포격','지상전','침공','작전','타격','방공','요격','혁명수비대']},
+      {id:'diplomacy',name:'외교/협상',icon:'🤝',keywords:['negotiat','diplomat','talks','dialog','ceasefire','truce','peace','treaty','agreement','summit','mediati','broker','proposal','envoy','ambassador','un security','resolution','framework','backchannel','협상','외교','휴전','정전','평화','회담','합의','중재','특사','유엔']},
+      {id:'economy',name:'경제 영향',icon:'📊',keywords:['oil price','crude','energy','gas price','sanction','trade','market','stock','economy','inflation','currency','rial','dollar','export','import','shipping','tanker','hormuz','blockade','supply chain','opec','유가','원유','제재','경제','주가','인플레이션','호르무즈','봉쇄','공급망','수출','수입']},
+      {id:'humanitarian',name:'인도주의/피해',icon:'🏥',keywords:['civilian','casualt','killed','dead','wounded','death toll','refugee','displaced','humanitarian','aid','relief','hospital','evacuation','shelter','crisis','victim','survivor','rescue','민간인','사망','부상','사상자','난민','대피','구호','인도주의','피해']},
+      {id:'politics',name:'국내 정치',icon:'🏛️',keywords:['congress','senate','parliament','vote','election','poll','protest','demonstrat','public opinion','opposition','impeach','resign','cabinet','minister','president','trump','biden','khamenei','supreme leader','succession','political','의회','상원','투표','시위','정권','대통령','트럼프','하메네이','정치']},
+      {id:'regional',name:'지역 정세',icon:'🌍',keywords:['saudi','uae','qatar','bahrain','kuwait','iraq','lebanon','turkey','syria','jordan','egypt','pakistan','india','china','russia','nato','hezbollah','houthi','proxy','coalition','alliance','regional','사우디','이라크','시리아','레바논','중동','헤즈볼라','후티','연합','동맹']},
+      {id:'nuclear',name:'핵/WMD',icon:'☢️',keywords:['nuclear','atomic','uranium','enrichment','centrifuge','warhead','wmd','chemical weapon','biological','iaea','nonproliferat','핵','우라늄','농축','핵무기','핵시설','화학무기','생물무기']},
     ];
     function categorizeArticle(a){const t=((a.title||'')+' '+(a.snippet||'')).toLowerCase();const sc={};for(const c of NEWS_CATEGORIES){let s=0;for(const k of c.keywords)if(t.includes(k))s++;if(s>0)sc[c.id]=s}const sorted=Object.entries(sc).sort((a,b)=>b[1]-a[1]);return sorted.length?sorted[0][0]:'other'}
     function buildClientDigest(articles){
@@ -343,7 +344,12 @@
       if(predictionHistoryLocal.length!==raw.length)localStorage.setItem('predictionHistory',JSON.stringify(predictionHistoryLocal));
     })();
     function toggleMethod(){document.getElementById('methodDetail').classList.toggle('open');document.getElementById('methodToggle').classList.toggle('open')}
-    function parseRSSXml(t){const p=new DOMParser(),d=p.parseFromString(t,'text/xml'),r=[];d.querySelectorAll('item').forEach(i=>{r.push({title:i.querySelector('title')?.textContent||'',link:i.querySelector('link')?.textContent||'',pubDate:i.querySelector('pubDate')?.textContent||'',snippet:(i.querySelector('description')?.textContent||'').replace(/<[^>]*>/g,'').slice(0,200)})});return r}
+    function parseRSSXml(t){const p=new DOMParser(),d=p.parseFromString(t,'text/xml'),r=[];
+      // RSS <item> elements
+      d.querySelectorAll('item').forEach(i=>{r.push({title:i.querySelector('title')?.textContent||'',link:i.querySelector('link')?.textContent||'',pubDate:i.querySelector('pubDate')?.textContent||i.querySelector('dc\\:date,date')?.textContent||'',snippet:(i.querySelector('description')?.textContent||'').replace(/<[^>]*>/g,'').slice(0,200)})});
+      // Atom <entry> elements (FT etc.)
+      if(r.length===0){d.querySelectorAll('entry').forEach(i=>{const linkEl=i.querySelector('link[href]');r.push({title:i.querySelector('title')?.textContent||'',link:linkEl?linkEl.getAttribute('href'):'',pubDate:i.querySelector('published,updated')?.textContent||'',snippet:(i.querySelector('summary,content')?.textContent||'').replace(/<[^>]*>/g,'').slice(0,200)})})}
+      return r}
     async function fetchRSSFeed(u){for(const p of CORS_PROXIES){try{const r=await fetch(p(u),{signal:AbortSignal.timeout(8000)});if(!r.ok)continue;return parseRSSXml(await r.text())}catch(e){continue}}return[]}
     function articleKey(a){return(a.title||'').trim().slice(0,80).toLowerCase().replace(/[^a-z0-9가-힣]/g,'')}
     async function fetchNews(){const a=[];let fl=0;await Promise.allSettled(RSS_FEEDS.map(async u=>{try{const items=await fetchRSSFeed(u);fl++;for(const i of items.slice(0,30)){const t=(i.title+' '+i.snippet).toLowerCase();if(KEYWORDS.some(k=>t.includes(k)))a.push({title:i.title,link:i.link,pubDate:i.pubDate,source:new URL(u).hostname.replace('www.','').split('.')[0],snippet:i.snippet})}}catch(e){}}));document.getElementById('rssStatus').textContent=`RSS: ${fl}/${RSS_FEEDS.length} 피드 로드됨`;document.getElementById('rssStatus').className=fl>0?'rss-status':'rss-status error';a.sort((a,b)=>new Date(b.pubDate)-new Date(a.pubDate));const filtered=a.slice(0,50);let newCount=0;filtered.forEach(ar=>{const k=articleKey(ar);if(!seenArticleKeys.has(k)){ar.isNew=true;newCount++;seenArticleKeys.add(k)}else{ar.isNew=false}});lastNewArticleCount=newCount;if(seenArticleKeys.size>2000){const keep=[...seenArticleKeys].slice(-1000);seenArticleKeys=new Set(keep)}localStorage.setItem('seenArticleKeys',JSON.stringify([...seenArticleKeys]));return filtered}
