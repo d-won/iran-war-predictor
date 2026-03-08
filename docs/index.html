@@ -217,7 +217,6 @@
       </div>
     </div>
     <div class="card full-width"><h2>예측 추이</h2><div class="chart-container"><canvas id="trendChart"></canvas></div></div>
-    <div class="card"><h2>현재 확률 분포</h2><div class="chart-container"><canvas id="barChart"></canvas></div></div>
     <div class="card">
       <h2>뉴스 신호 분석</h2>
       <div class="signals-grid" id="signalsGrid"><div class="loading">신호 분석 중</div></div>
@@ -331,7 +330,7 @@
       for(const a of newArts){const cat=categorizeArticle(a);if(!byCat[cat])byCat[cat]={count:0,titles:[]};byCat[cat].count++;if(byCat[cat].titles.length<5)byCat[cat].titles.push({title:a.title,link:a.link,source:a.source})}
       return{categories:digest,recent_30min:{total_new:newArts.length,by_category:byCat}}
     }
-    let trendChart=null,barChart=null,predictionHistoryLocal=[],currentPrediction=null,nextUpdateTime=null;
+    let trendChart=null,predictionHistoryLocal=[],currentPrediction=null,nextUpdateTime=null;
     let seenArticleKeys=new Set(JSON.parse(localStorage.getItem('seenArticleKeys')||'[]'));
     let lastNewArticleCount=0;
     // Load history and migrate old English keys
@@ -503,11 +502,10 @@
       document.getElementById('lastUpdated').textContent=`마지막 갱신: ${ts}`;
       return currentPrediction
     }
-    function renderAll(d){renderWarDay(d.war_day);document.getElementById('summaryText').innerHTML=generateSummary(d);renderProbs(d.probabilities);renderBarChart(d.probabilities);renderEcon(d.economic_indicators);renderSignals(d.news_signals);renderFactors(d.factors);renderNewsDigest(d.news_digest,d.latest_news||[]);renderNews(d.latest_news||[]);renderWars(d.historical_comparison||[]);renderTrend();renderHistory()}
+    function renderAll(d){renderWarDay(d.war_day);document.getElementById('summaryText').innerHTML=generateSummary(d);renderProbs(d.probabilities);renderEcon(d.economic_indicators);renderSignals(d.news_signals);renderFactors(d.factors);renderNewsDigest(d.news_digest,d.latest_news||[]);renderNews(d.latest_news||[]);renderWars(d.historical_comparison||[]);renderTrend();renderHistory()}
     function renderWarDay(d){document.getElementById('warDay').textContent=`D+${d}`}
     function renderProbs(pr){document.getElementById('probGrid').innerHTML=Object.entries(pr).map(([k,v],i)=>`<div class="prob-item"><div class="label">${k}</div><div class="value" style="color:${COLORS[i]}">${v}%</div><div class="bar"><div class="bar-fill" style="width:${Math.min(v*2.5,100)}%;background:${COLORS[i]}"></div></div></div>`).join('')}
     function calcYMax(vals){return Math.ceil((Math.max(...vals)+10)/10)*10}
-    function renderBarChart(pr){const ctx=document.getElementById('barChart').getContext('2d');if(barChart)barChart.destroy();const vals=Object.values(pr);barChart=new Chart(ctx,{type:'bar',data:{labels:Object.keys(pr).map(k=>k.split('(')[0].trim()),datasets:[{data:vals,backgroundColor:COLORS.map(c=>c+'44'),borderColor:COLORS,borderWidth:1}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{y:{beginAtZero:true,max:calcYMax(vals),ticks:{color:'#b8bfcc',callback:v=>v+'%',font:{size:10}},grid:{color:'#4a5268'}},x:{ticks:{color:'#b8bfcc',maxRotation:45,font:{size:9}},grid:{display:false}}}}})}
     function yahooChartUrl(symbol, range, interval) {
       return `https://query2.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(symbol)}?interval=${interval||'1d'}&range=${range||'5d'}`;
     }
