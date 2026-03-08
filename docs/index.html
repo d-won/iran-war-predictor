@@ -97,30 +97,38 @@
     .method-step .step-desc{font-size:12px;color:#b8bfcc;line-height:1.6;margin-left:30px}
     .method-step .step-example{font-size:11px;color:#7ab3e0;margin-left:30px;margin-top:4px;font-style:italic}
     .method-toggle{background:none;border:1px solid #4a5268;color:#c4ccd8;padding:8px 14px;border-radius:8px;font-size:13px;cursor:pointer;width:100%;text-align:left;display:flex;justify-content:space-between;align-items:center;margin-top:12px}
-    .digest-cat{background:#343d55;border:1px solid #4a5268;border-radius:10px;padding:14px;overflow:hidden}
-    .digest-cat-header{display:flex;align-items:center;gap:8px;margin-bottom:10px;cursor:pointer}
-    .digest-cat-header .cat-icon{font-size:18px}
-    .digest-cat-header .cat-name{font-weight:600;color:#eaecf2;font-size:14px;flex:1}
-    .digest-cat-header .cat-count{font-size:12px;color:#b8bfcc}
-    .digest-cat-header .cat-new{background:#f0c040;color:#1a1a1a;font-size:10px;font-weight:700;padding:1px 6px;border-radius:8px}
-    .digest-cat-header .cat-chevron{color:#9ca4b4;font-size:11px;transition:transform .3s}
-    .digest-cat.open .cat-chevron{transform:rotate(180deg)}
-    .digest-cat-body{display:none;max-height:300px;overflow-y:auto}
-    .digest-cat.open .digest-cat-body{display:block}
-    .digest-article{padding:8px 0;border-bottom:1px solid #4a526866}
-    .digest-article:last-child{border-bottom:none}
-    .digest-article a{color:#7ab3e0;text-decoration:none;font-size:13px;line-height:1.4;display:block}
-    .digest-article a:active{color:#9cc8ee}
-    .digest-article .da-meta{font-size:10px;color:#9ca4b4;margin-top:2px}
-    .digest-recent{background:#343d55;border:1px solid #5cc4b855;border-radius:10px;padding:14px}
-    .digest-recent-title{font-size:13px;color:#5cc4b8;font-weight:600;margin-bottom:8px;display:flex;align-items:center;gap:6px}
-    .digest-recent-body{font-size:13px;color:#eaecf2;line-height:1.7}
-    .digest-recent-cat{margin-bottom:8px}
-    .digest-recent-cat-name{font-size:12px;color:#e8a54a;font-weight:600;margin-bottom:4px}
-    .digest-recent-item{padding:3px 0}
-    .digest-recent-item a{color:#7ab3e0;text-decoration:none;font-size:12px}
+    /* News Timeline */
+    .news-timeline-header{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;padding:10px;background:#343d55;border-radius:8px}
+    .ntl-summary-chip{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:14px;font-size:11px;font-weight:600;background:#2b3348;border:1px solid #4a5268}
+    .ntl-summary-chip .chip-dot{width:6px;height:6px;border-radius:50%;display:inline-block}
+    .ntl-time-group{margin-bottom:14px}
+    .ntl-time-header{display:flex;align-items:center;gap:8px;padding:10px 12px;background:#343d55;border-radius:10px 10px 0 0;border:1px solid #4a5268;border-bottom:none;cursor:pointer;user-select:none}
+    .ntl-time-header:active{background:#3e4760}
+    .ntl-time-label{font-weight:700;font-size:13px;color:#eaecf2;flex:1}
+    .ntl-time-badge{font-size:10px;padding:2px 8px;border-radius:10px;font-weight:700}
+    .ntl-time-badge.new{background:#f0c040;color:#1a1a1a}
+    .ntl-time-badge.total{background:#4a5268;color:#c4ccd8}
+    .ntl-time-signals{display:flex;gap:4px;flex-wrap:wrap}
+    .ntl-signal-tag{font-size:9px;padding:2px 6px;border-radius:6px;font-weight:600;white-space:nowrap}
+    .ntl-time-chevron{color:#9ca4b4;font-size:11px;transition:transform .3s}
+    .ntl-time-group.open .ntl-time-chevron{transform:rotate(180deg)}
+    .ntl-time-body{display:none;border:1px solid #4a5268;border-top:none;border-radius:0 0 10px 10px;max-height:400px;overflow-y:auto;-webkit-overflow-scrolling:touch}
+    .ntl-time-group.open .ntl-time-body{display:block}
+    .ntl-article{padding:10px 12px;border-bottom:1px solid #4a526866;display:flex;flex-direction:column;gap:4px}
+    .ntl-article:last-child{border-bottom:none}
+    .ntl-article-title{display:flex;align-items:flex-start;gap:6px}
+    .ntl-article-title a{color:#7ab3e0;text-decoration:none;font-size:13px;line-height:1.4;flex:1}
+    .ntl-article-title a:active{color:#9cc8ee}
+    .ntl-article-meta{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+    .ntl-article-meta .meta-text{font-size:10px;color:#9ca4b4}
+    .ntl-article-tags{display:flex;gap:3px;flex-wrap:wrap}
+    .ntl-tag{font-size:8px;padding:1px 5px;border-radius:4px;font-weight:600}
+    .ntl-new-badge{background:#f0c040;color:#1a1a1a;font-size:8px;font-weight:700;padding:2px 6px;border-radius:4px;white-space:nowrap;flex-shrink:0;margin-top:2px}
+    .ntl-weight-badge{font-size:8px;padding:1px 5px;border-radius:4px;font-weight:600;white-space:nowrap;flex-shrink:0;margin-top:2px}
+    .ntl-empty{padding:16px;text-align:center;color:#9ca4b4;font-size:13px;border:1px solid #4a5268;border-top:none;border-radius:0 0 10px 10px}
     @media(max-width:768px){
-      #newsDigestGrid{grid-template-columns:1fr !important}
+      .ntl-time-header{padding:8px 10px}
+      .ntl-article{padding:8px 10px}
     }
     .method-toggle:active{background:#3e4760}
     .method-toggle .chevron{transition:transform .3s}
@@ -235,13 +243,12 @@
       <div style="padding:8px 10px;background:#343d55;border-radius:8px;font-size:11px;color:#b8bfcc;margin-bottom:10px;line-height:1.5">아래 각 요인이 기본 확률을 조정합니다. 탭하면 상세 설명을 볼 수 있습니다.</div>
       <div class="factors-list" id="factorsList"><div class="loading">요인 로딩 중</div></div>
     </div>
-    <!-- News Digest: Categorized + 30min summary -->
+    <!-- News Timeline: Time-grouped with signal tags -->
     <div class="card full-width">
-      <h2>뉴스 다이제스트 (분야별 분류)</h2>
-      <div id="newsDigestRecent" style="margin-bottom:14px"></div>
-      <div id="newsDigestGrid" style="display:grid;grid-template-columns:1fr 1fr;gap:10px"><div class="loading">뉴스 분류 중</div></div>
+      <h2>뉴스 타임라인</h2>
+      <div class="news-timeline-header" id="newsTimelineHeader"></div>
+      <div id="newsTimeline"><div class="loading">뉴스 분석 중</div></div>
     </div>
-    <div class="card"><h2>최신 이란 전쟁 뉴스</h2><div class="news-list" id="newsList"><div class="loading">뉴스 수집 중</div></div></div>
     <div class="card full-width">
       <h2>역사적 전쟁 비교</h2>
       <div style="padding:8px 10px;background:#343d55;border-radius:8px;font-size:11px;color:#b8bfcc;margin-bottom:10px;line-height:1.5">유사한 현대전과 비교합니다. 이번 전쟁의 패턴은 걸프전(연합군 공습 → 지상작전 → 빠른 종결)과 가장 유사합니다.</div>
@@ -453,7 +460,6 @@
         pred.latest_news=articles.slice(0,15);
         pred.historical_comparison=HISTORICAL_WARS;
         pred.economic_indicators=econClient;
-        pred.news_digest=buildClientDigest(articles);
         currentPrediction=pred;
         document.getElementById('rssStatus').textContent=`RSS: ${articles.length}건 수집 (실시간)`;
         document.getElementById('rssStatus').className='rss-status';
@@ -473,9 +479,6 @@
           document.getElementById('rssStatus').className='rss-status';
           if(!currentPrediction.economic_indicators || Object.keys(currentPrediction.economic_indicators).length===0 || Object.values(currentPrediction.economic_indicators).every(v=>v.fallback)){
             try{ currentPrediction.economic_indicators = await fetchEconClient(); }catch(e){}
-          }
-          if(!currentPrediction.news_digest || !currentPrediction.news_digest.categories || currentPrediction.news_digest.categories.length===0){
-            currentPrediction.news_digest=buildClientDigest(currentPrediction.latest_news||[]);
           }
           renderAll(currentPrediction);
           const ts=currentPrediction.timestamp?new Date(currentPrediction.timestamp).toLocaleString('ko-KR'):'알 수 없음';
@@ -515,7 +518,7 @@
       document.getElementById('lastUpdated').textContent=`마지막 갱신: ${ts}`;
       return currentPrediction
     }
-    function renderAll(d){renderWarDay(d.war_day);document.getElementById('summaryText').innerHTML=generateSummary(d);renderProbs(d.probabilities);renderEcon(d.economic_indicators);renderSignals(d.news_signals);renderFactors(d.factors);renderNewsDigest(d.news_digest,d.latest_news||[]);renderNews(d.latest_news||[]);renderWars(d.historical_comparison||[]);renderTrend();renderHistory()}
+    function renderAll(d){renderWarDay(d.war_day);document.getElementById('summaryText').innerHTML=generateSummary(d);renderProbs(d.probabilities);renderEcon(d.economic_indicators);renderSignals(d.news_signals);renderFactors(d.factors);renderNewsTimeline(d.latest_news||[]);renderWars(d.historical_comparison||[]);renderTrend();renderHistory()}
     function renderWarDay(d){document.getElementById('warDay').textContent=`D+${d}`}
     function renderProbs(pr){document.getElementById('probGrid').innerHTML=Object.entries(pr).map(([k,v],i)=>`<div class="prob-item"><div class="label">${k}</div><div class="value" style="color:${COLORS[i]}">${v}%</div><div class="bar"><div class="bar-fill" style="width:${Math.min(v*2.5,100)}%;background:${COLORS[i]}"></div></div></div>`).join('')}
     function calcYMax(vals){return Math.ceil((Math.max(...vals)+10)/10)*10}
@@ -637,43 +640,111 @@
     function renderTrend(){const ctx=document.getElementById('trendChart').getContext('2d');if(!predictionHistoryLocal.length)return;const ds=PROB_KEYS.map((key,i)=>({label:key.split('(')[0].trim(),data:predictionHistoryLocal.map(h=>({x:new Date(h.timestamp),y:h.probabilities[key]})).filter(d=>d.y!==undefined),borderColor:COLORS[i],backgroundColor:COLORS[i]+'22',borderWidth:2,pointRadius:1,pointHoverRadius:4,tension:.3,fill:false}));const allVals=ds.flatMap(d=>d.data.map(p=>p.y));const yMax=allVals.length?calcYMax(allVals):50;if(trendChart)trendChart.destroy();trendChart=new Chart(ctx,{type:'line',data:{datasets:ds},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},onClick:(e,el)=>{if(el.length>0)showHistoryDetail(el[0].index)},plugins:{legend:{labels:{color:'#c4ccd8',font:{size:10},usePointStyle:true,boxWidth:6},position:'top'},tooltip:{callbacks:{title:i=>new Date(i[0].parsed.x).toLocaleString('ko-KR'),label:i=>`${i.dataset.label}: ${i.parsed.y}%`}}},scales:{x:{type:'time',time:{tooltipFormat:'yyyy-MM-dd HH:mm',displayFormats:{minute:'HH:mm',hour:'MM/dd HH:mm',day:'MM/dd',week:'MM/dd',month:'yyyy/MM'}},ticks:{color:'#b8bfcc',maxTicksLimit:8,font:{size:9},autoSkip:true},grid:{color:'#4a5268'}},y:{beginAtZero:true,max:yMax,ticks:{color:'#b8bfcc',callback:v=>v+'%',font:{size:10}},grid:{color:'#4a5268'}}}}})}
     function renderSignals(sg){if(!sg)return;const g=document.getElementById('signalsGrid'),items=[{l:'휴전',v:sg.ceasefire_mentions,c:'#6bc98a'},{l:'확전',v:sg.escalation_mentions,c:'#e06060'},{l:'협상',v:sg.negotiation_mentions,c:'#5cc4b8'},{l:'사상자',v:sg.casualty_mentions,c:'#e8a54a'},{l:'평화',v:sg.peace_mentions,c:'#7ab3e0'},{l:'지역확산',v:sg.regional_spread,c:'#b07ad4'},{l:'전체기사',v:sg.total_articles,c:'#d4d8e0'},{l:'신규기사',v:sg.new_articles||0,c:'#f0c040'}];g.innerHTML=items.map(i=>`<div class="signal-item"><div class="signal-label">${i.l}</div><div class="signal-value" style="color:${i.c}">${i.v}</div></div>`).join('');const ce=sg.ceasefire_mentions,es=sg.escalation_mentions;let ex=`4개 언론사에서 ${sg.total_articles}건 분석 (신규 ${sg.new_articles||0}건). 새 기사는 2배 가중치로 반영합니다. `;if(ce>es)ex+=`휴전 언급(${ce}건)이 확전(${es}건)보다 많아 조기 종전에 긍정적 신호입니다.`;else if(es>ce)ex+=`확전 언급(${es}건)이 휴전(${ce}건)보다 많아 단기 종전 확률이 소폭 하락합니다.`;else ex+=`휴전과 확전 신호가 균형을 이루고 있습니다.`;document.getElementById('signalExplain').textContent=ex}
     function renderFactors(factors){if(!factors)return;const l=document.getElementById('factorsList'),ic={shorten:'▲',lengthen:'▼',mixed:'◆',reference:'◇'},co={shorten:'#6bc98a',lengthen:'#e06060',mixed:'#e8a54a',reference:'#888'};const sorted=[...factors].sort((a,b)=>(b.severity==='critical'?2:b.severity==='high'?1:0)-(a.severity==='critical'?2:a.severity==='high'?1:0));l.innerHTML=sorted.map((f,i)=>{const idx=factors.indexOf(f);const isCritical=f.severity==='critical'||f.severity==='high';const style=isCritical?'border-left:3px solid #f0c040;background:#343d5588;':'';return`<div class="factor-item" style="${style}" onclick="showFactorDetail(${idx})"><div class="factor-name"><span style="color:${co[f.direction]||'#888'}">${ic[f.direction]||'•'}</span> ${f.factor}</div><div class="factor-impact">${f.impact}</div><div class="factor-weight" style="color:${co[f.direction]||'#6bc98a'}">${f.weight}</div><div class="factor-arrow">탭하여 상세 설명 보기 →</div></div>`}).join('')}
-    function renderNews(articles){const l=document.getElementById('newsList');if(!articles.length){l.innerHTML='<div style="padding:12px;color:#aab0bc;font-size:13px;line-height:1.6">뉴스를 가져오지 못했습니다. RSS 피드가 일시적으로 사용 불가능할 수 있습니다. 예측은 내장 분석 모델을 기반으로 합니다.</div>';return}l.innerHTML=articles.map(a=>`<div class="news-item"><a href="${a.link}" target="_blank" rel="noopener">${a.isNew?'<span style="background:#f0c040;color:#1a1a1a;font-size:9px;font-weight:700;padding:1px 5px;border-radius:3px;margin-right:5px;vertical-align:middle">NEW</span>':''}${a.title}</a><div class="news-meta">${a.source} · ${new Date(a.pubDate).toLocaleString('ko-KR')}</div>${a.snippet?`<div class="news-snippet">${a.snippet}</div>`:''}</div>`).join('')}
-    function renderNewsDigest(digestData, articles){
-      const grid=document.getElementById('newsDigestGrid');
-      const recentEl=document.getElementById('newsDigestRecent');
-      // Use server digest if available, otherwise build client-side
-      const digest=digestData||buildClientDigest(articles||[]);
-      if(!digest||!digest.categories||!digest.categories.length){grid.innerHTML='<div style="color:#9ca4b4;padding:12px;font-size:13px;grid-column:1/-1">뉴스 데이터가 없습니다.</div>';recentEl.innerHTML='';return}
-      // Render 30-min summary
-      const r30=digest.recent_30min;
-      if(r30&&r30.total_new>0){
-        const catNames={};NEWS_CATEGORIES.forEach(c=>{catNames[c.id]=c.name});catNames['other']='기타';
-        const catIcons={};NEWS_CATEGORIES.forEach(c=>{catIcons[c.id]=c.icon});catIcons['other']='📰';
-        let rh=`<div class="digest-recent"><div class="digest-recent-title">🕐 최근 30분 새 뉴스 (${r30.total_new}건)</div><div class="digest-recent-body">`;
-        const cats=Object.entries(r30.by_category).sort((a,b)=>b[1].count-a[1].count);
-        for(const [catId,info] of cats){
-          const cname=catNames[catId]||catId;
-          const cicon=catIcons[catId]||'📰';
-          rh+=`<div class="digest-recent-cat"><div class="digest-recent-cat-name">${cicon} ${cname} (${info.count}건)</div>`;
-          for(const t of info.titles){
-            rh+=`<div class="digest-recent-item">• <a href="${t.link}" target="_blank" rel="noopener">${t.title}</a> <span style="color:#9ca4b4;font-size:10px">${t.source}</span></div>`;
-          }
-          rh+='</div>';
-        }
-        rh+='</div></div>';
-        recentEl.innerHTML=rh;
-      }else{
-        recentEl.innerHTML=`<div class="digest-recent"><div class="digest-recent-title">🕐 최근 30분 새 뉴스</div><div style="font-size:13px;color:#b8bfcc">새로운 기사가 없습니다. 다음 갱신을 기다려주세요.</div></div>`;
+    function getArticleSignals(a){
+      const t=((a.title||'')+' '+(a.snippet||'')).toLowerCase();
+      const signals=[];
+      const checks=[
+        {id:'ceasefire',label:'휴전',color:'#6bc98a',bg:'#6bc98a22',words:['ceasefire','truce','armistice','halt','pause','휴전','정전']},
+        {id:'escalation',label:'확전',color:'#e06060',bg:'#e0606022',words:['escalat','expand','intensif','widen','new front','확전','격화']},
+        {id:'negotiation',label:'협상',color:'#5cc4b8',bg:'#5cc4b822',words:['negotiat','talks','dialog','diplomat','mediati','협상','회담','외교']},
+        {id:'casualty',label:'사상자',color:'#e8a54a',bg:'#e8a54a22',words:['killed','dead','casualt','wounded','death toll','사망','부상','사상자']},
+        {id:'peace',label:'평화',color:'#7ab3e0',bg:'#7ab3e022',words:['peace','de-escalat','withdraw','retreat','surrender','평화','철수','항복']},
+        {id:'regional',label:'지역확산',color:'#b07ad4',bg:'#b07ad422',words:['saudi','uae','qatar','bahrain','kuwait','iraq','lebanon','turkey','nato','사우디','이라크','레바논']},
+        {id:'military',label:'군사',color:'#d4785a',bg:'#d4785a22',words:['strike','bomb','missile','attack','offensive','troops','military','drone','airstrike','공습','폭격','미사일','공격','군사']},
+        {id:'nuclear',label:'핵',color:'#ff6b9d',bg:'#ff6b9d22',words:['nuclear','uranium','enrichment','warhead','wmd','핵','우라늄']},
+      ];
+      for(const c of checks){if(c.words.some(w=>t.includes(w)))signals.push(c)}
+      return signals;
+    }
+    function getTimeGroup(pubDate){
+      const now=Date.now(),d=new Date(pubDate).getTime();
+      const diffMin=(now-d)/60000;
+      if(diffMin<30)return{id:'30m',label:'30분 이내',icon:'🔴',order:0,color:'#f0c040'};
+      if(diffMin<60)return{id:'1h',label:'1시간 이내',icon:'🟡',order:1,color:'#e8a54a'};
+      if(diffMin<180)return{id:'3h',label:'3시간 이내',icon:'🟢',order:2,color:'#6bc98a'};
+      if(diffMin<720)return{id:'12h',label:'12시간 이내',icon:'🔵',order:3,color:'#7ab3e0'};
+      return{id:'old',label:'12시간+',icon:'⚪',order:4,color:'#9ca4b4'};
+    }
+    function renderNewsTimeline(articles){
+      const container=document.getElementById('newsTimeline');
+      const header=document.getElementById('newsTimelineHeader');
+      if(!articles.length){
+        container.innerHTML='<div style="padding:16px;color:#9ca4b4;font-size:13px;text-align:center">뉴스를 가져오지 못했습니다. RSS 피드가 일시적으로 사용 불가능할 수 있습니다.</div>';
+        header.innerHTML='';
+        return;
       }
-      // Render category cards
-      grid.innerHTML=digest.categories.map((cat,ci)=>{
-        const artHtml=cat.articles.map(a=>{
-          const newBadge=a.isNew?'<span style="background:#f0c040;color:#1a1a1a;font-size:8px;font-weight:700;padding:1px 4px;border-radius:3px;margin-right:4px;vertical-align:middle">NEW</span>':'';
-          const dateStr=a.pubDate?new Date(a.pubDate).toLocaleString('ko-KR',{month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit'}):'';
-          return`<div class="digest-article">${newBadge}<a href="${a.link}" target="_blank" rel="noopener">${a.title}</a><div class="da-meta">${a.source||''} · ${dateStr}</div></div>`;
+      // Enrich articles with signals and time group
+      const enriched=articles.map(a=>({...a,signals:getArticleSignals(a),timeGroup:getTimeGroup(a.pubDate)}));
+      // Group by time
+      const groups={};
+      for(const a of enriched){
+        const g=a.timeGroup;
+        if(!groups[g.id])groups[g.id]={...g,articles:[],newCount:0,signalCounts:{}};
+        groups[g.id].articles.push(a);
+        if(a.isNew)groups[g.id].newCount++;
+        for(const s of a.signals){groups[g.id].signalCounts[s.id]=(groups[g.id].signalCounts[s.id]||0)+(a.isNew?2:1)}
+      }
+      const sortedGroups=Object.values(groups).sort((a,b)=>a.order-b.order);
+      // Header summary chips
+      const totalNew=enriched.filter(a=>a.isNew).length;
+      const allSignals={};
+      for(const a of enriched){for(const s of a.signals){allSignals[s.id]=(allSignals[s.id]||{...s,count:0});allSignals[s.id].count+=(a.isNew?2:1)}}
+      const topSignals=Object.values(allSignals).sort((a,b)=>b.count-a.count).slice(0,6);
+      let hh=`<div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">`;
+      hh+=`<span style="font-size:12px;color:#eaecf2;font-weight:600">${articles.length}건 분석</span>`;
+      if(totalNew>0)hh+=`<span class="ntl-summary-chip" style="border-color:#f0c040;color:#f0c040"><span class="chip-dot" style="background:#f0c040"></span>NEW ${totalNew}건 (2x 가중)</span>`;
+      for(const s of topSignals){hh+=`<span class="ntl-summary-chip" style="border-color:${s.color};color:${s.color}"><span class="chip-dot" style="background:${s.color}"></span>${s.label} ${s.count}</span>`}
+      hh+='</div>';
+      header.innerHTML=hh;
+      // Render time groups
+      let html='';
+      for(const g of sortedGroups){
+        const isFirst=g.order<=1;
+        // Signal tags for group header
+        const gSignals=Object.entries(g.signalCounts).sort((a,b)=>b[1]-a[1]).slice(0,4);
+        const signalTagsHtml=gSignals.map(([sid,cnt])=>{
+          const sdef=enriched[0].signals.find(s=>s.id===sid)||{label:sid,color:'#9ca4b4',bg:'#9ca4b422'};
+          // find from checks
+          const allChecks=[
+            {id:'ceasefire',label:'휴전',color:'#6bc98a',bg:'#6bc98a22'},
+            {id:'escalation',label:'확전',color:'#e06060',bg:'#e0606022'},
+            {id:'negotiation',label:'협상',color:'#5cc4b8',bg:'#5cc4b822'},
+            {id:'casualty',label:'사상자',color:'#e8a54a',bg:'#e8a54a22'},
+            {id:'peace',label:'평화',color:'#7ab3e0',bg:'#7ab3e022'},
+            {id:'regional',label:'지역확산',color:'#b07ad4',bg:'#b07ad422'},
+            {id:'military',label:'군사',color:'#d4785a',bg:'#d4785a22'},
+            {id:'nuclear',label:'핵',color:'#ff6b9d',bg:'#ff6b9d22'},
+          ];
+          const sc=allChecks.find(c=>c.id===sid)||{label:sid,color:'#9ca4b4',bg:'#9ca4b422'};
+          return`<span class="ntl-signal-tag" style="color:${sc.color};background:${sc.bg}">${sc.label}${cnt>1?' '+cnt:''}</span>`;
         }).join('');
-        return`<div class="digest-cat${ci<2?' open':''}" onclick="this.classList.toggle('open')"><div class="digest-cat-header"><span class="cat-icon">${cat.category_icon}</span><span class="cat-name">${cat.category_name}</span>${cat.new_count?`<span class="cat-new">${cat.new_count} NEW</span>`:''}<span class="cat-count">${cat.count}건</span><span class="cat-chevron">▼</span></div><div class="digest-cat-body">${artHtml}</div></div>`;
-      }).join('');
+        html+=`<div class="ntl-time-group${isFirst?' open':''}" onclick="this.classList.toggle('open')">`;
+        html+=`<div class="ntl-time-header">`;
+        html+=`<span class="ntl-time-label" style="color:${g.color}">${g.icon} ${g.label}</span>`;
+        html+=`<div class="ntl-time-signals">${signalTagsHtml}</div>`;
+        if(g.newCount>0)html+=`<span class="ntl-time-badge new">NEW ${g.newCount}</span>`;
+        html+=`<span class="ntl-time-badge total">${g.articles.length}건</span>`;
+        html+=`<span class="ntl-time-chevron">▼</span>`;
+        html+=`</div>`;
+        html+=`<div class="ntl-time-body">`;
+        for(const a of g.articles){
+          const dateStr=a.pubDate?new Date(a.pubDate).toLocaleString('ko-KR',{month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit'}):'';
+          const tagsHtml=a.signals.map(s=>`<span class="ntl-tag" style="color:${s.color};background:${s.bg}">${s.label}</span>`).join('');
+          html+=`<div class="ntl-article">`;
+          html+=`<div class="ntl-article-title">`;
+          if(a.isNew)html+=`<span class="ntl-new-badge">NEW</span>`;
+          else html+=`<span class="ntl-weight-badge" style="color:#9ca4b4;background:#9ca4b422">x1</span>`;
+          html+=`<a href="${a.link}" target="_blank" rel="noopener">${a.title}</a>`;
+          html+=`</div>`;
+          html+=`<div class="ntl-article-meta">`;
+          html+=`<span class="meta-text">${a.source} · ${dateStr}</span>`;
+          html+=`<div class="ntl-article-tags">${tagsHtml}</div>`;
+          html+=`</div>`;
+          html+=`</div>`;
+        }
+        html+=`</div></div>`;
+      }
+      container.innerHTML=html;
     }
     function renderWars(wars){document.getElementById('historicalWars').innerHTML=wars.map(w=>`<div class="war-card"><div class="war-name">${w.name}</div><div class="war-duration">${w.duration_days}일</div><div class="war-detail">유형: ${w.type}</div><div class="war-detail">종결: ${w.ended_by}</div><div class="war-detail">참전국: ${w.involved_countries}개국</div></div>`).join('')}
     function renderHistory(){const b=document.getElementById('historyBody'),r=predictionHistoryLocal.slice(-20).reverse();b.innerHTML=r.map((h,i)=>{const v=Object.values(h.probabilities),ri=predictionHistoryLocal.length-1-i;return`<tr onclick="showHistoryDetail(${ri})"><td>${new Date(h.timestamp).toLocaleString('ko-KR',{month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit'})}</td><td>D+${h.war_day}</td>${v.map((val,j)=>`<td style="color:${COLORS[j]}">${val}%</td>`).join('')}<td><button class="btn btn-sm">보기</button></td></tr>`}).join('')}
