@@ -829,80 +829,110 @@
       });
       h+=`</div>`;
 
-      // --- Changes: factors grouped by added/changed/removed ---
+      // --- Per-period breakdown: which factors caused each probability change ---
       if(prev){
-        const changes=[];
-        Object.entries(e.probabilities).forEach(([k,v])=>{
-          if(prev.probabilities[k]!==undefined){
-            const d=+(v-prev.probabilities[k]).toFixed(1);
-            if(Math.abs(d)>=0.5)changes.push({key:k,diff:d,val:v,prevVal:prev.probabilities[k]})
+        // Parse factor weights to extract per-period contributions
+        // e.g. "+4%p (1개월내), +6%p (2~3개월) (잔존85%)" → {1개월내: 4, 2~3개월: 6}
+        const periodAliases={'1개월내':'1개월 내','1개월 내':'1개월 내','1-2개월':'1개월 내','2~3개월':'2~3개월','2-3개월':'2~3개월','4~6개월':'4~6개월','4-6개월':'4~6개월','7~12개월':'7~12개월','7-12개월':'7~12개월','1년':'1년 초과','1년 초과':'1년 초과'};
+        function parseWeightPeriods(w){
+          const result={};
+          const re=/([+-]?\d+(?:\.\d+)?)\s*%p\s*\(([^)]+)\)/g;
+          let m;
+          while((m=re.exec(w))!==null){
+            let period=m[2].trim();
+            period=periodAliases[period]||period;
+            result[period]=(result[period]||0)+parseFloat(m[1]);
           }
+          return result;
+        }
+        // Map PROB_KEYS short names to period names
+        const probKeyToPeriod={};
+        PROB_KEYS.forEach(k=>{
+          const short=k.split('(')[0].trim();
+          probKeyToPeriod[k]=short;
         });
 
-        const newFactors=e.factors?e.factors.filter(f=>f.direction!=='reference'):[];
-        const prevFactorNames=prev.factors?prev.factors.map(f=>f.factor):[];
-        const addedFactors=newFactors.filter(f=>!prevFactorNames.includes(f.factor));
-        const keptFactors=newFactors.filter(f=>prevFactorNames.includes(f.factor));
+        const allFactors=e.factors?e.factors.filter(f=>f.direction!=='reference'):[];
+        const prevFactorNames=new Set(prev.factors?prev.factors.map(f=>f.factor):[]);
         const removedFactors=prev.factors?prev.factors.filter(f=>f.direction!=='reference'&&!(e.factors||[]).map(x=>x.factor).includes(f.factor)):[];
 
-        h+=`<div style="background:#343d55;border-radius:10px;padding:12px;margin-bottom:12px">`;
-        h+=`<h4 style="color:#e8a54a;font-size:13px;margin:0 0 8px 0">직전 대비 변동</h4>`;
+        h+=`<div style="margin-bottom:12px">`;
+        h+=`<h4 style="color:#e8a54a;font-size:13px;margin:0 0 10px 0">직전 대비 변동</h4>`;
 
-        if(!changes.length&&!addedFactors.length&&!removedFactors.length){
-          h+=`<div style="font-size:12px;color:#9ca4b4;padding:8px 0">유의미한 변동 없음 (±0.5%p 미만)</div>`;
-        }else{
-          // Probability changes as compact pills
-          if(changes.length){
-            changes.sort((a,b)=>Math.abs(b.diff)-Math.abs(a.diff));
-            h+=`<div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px">`;
-            changes.forEach(c=>{
-              const dc=c.diff>0?'#e06060':'#6bc98a';
-              const sign=c.diff>0?'+':'';
-              const arrow=c.diff>0?'▲':'▼';
-              const label=c.key.split('(')[0].trim();
-              h+=`<div style="background:${dc}15;border:1px solid ${dc}44;border-radius:8px;padding:6px 10px;display:flex;flex-direction:column;align-items:center;min-width:80px">`;
-              h+=`<span style="font-size:10px;color:#b8bfcc">${label}</span>`;
-              h+=`<span style="font-size:15px;font-weight:700;color:${dc}">${arrow}${sign}${c.diff}%p</span>`;
-              h+=`<span style="font-size:9px;color:#9ca4b4">${c.prevVal}% → ${c.val}%</span>`;
-              h+=`</div>`;
-            });
-            h+=`</div>`;
-          }
+        let anyChange=false;
+        Object.entries(e.probabilities).forEach(([k,v],i)=>{
+          if(!prev.probabilities[k]&&prev.probabilities[k]!==0)return;
+          const diff=+(v-prev.probabilities[k]).toFixed(1);
+          if(Math.abs(diff)<0.1)return;
+          anyChange=true;
+          const dc=diff>0?'#e06060':'#6bc98a';
+          const sign=diff>0?'+':'';
+          const arrow=diff>0?'▲':'▼';
+          const periodName=probKeyToPeriod[k]||k;
 
-          // New factors
-          if(addedFactors.length){
-            h+=`<div style="margin-bottom:8px">`;
-            h+=`<div style="font-size:11px;color:#6bc98a;font-weight:700;margin-bottom:4px;display:flex;align-items:center;gap:4px"><span style="background:#6bc98a;color:#1a1a1a;font-size:9px;padding:1px 5px;border-radius:4px;font-weight:700">NEW</span> 새로 반영된 요인 (${addedFactors.length})</div>`;
-            addedFactors.forEach(f=>{
-              const fdc={shorten:'#6bc98a',lengthen:'#e06060',mixed:'#e8a54a'};
-              const fc=fdc[f.direction]||'#b8bfcc';
-              const dirLabel={shorten:'단축',lengthen:'장기화',mixed:'복합'}[f.direction]||'';
-              h+=`<div style="padding:8px;margin-bottom:4px;background:#2b3348;border-left:3px solid ${fc};border-radius:0 6px 6px 0">`;
-              h+=`<div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap">`;
-              h+=`<span style="font-size:12px;font-weight:600;color:#eaecf2">${f.factor}</span>`;
-              h+=`<span style="font-size:9px;padding:1px 5px;border-radius:4px;background:${fc}22;color:${fc};font-weight:600">${dirLabel}</span>`;
-              h+=`</div>`;
-              h+=`<div style="font-size:11px;color:${fc};margin-top:3px">${f.weight}</div>`;
-              if(f.applied){
-                const appliedStr=f.applied==='실시간'?'실시간':'~'+f.applied;
-                h+=`<div style="font-size:9px;color:#9ca4b4;margin-top:2px">반영: ${appliedStr}${f.decay!==undefined&&f.decay<0.99?' · 잔존 '+Math.round(f.decay*100)+'%':''}</div>`;
+          // Find factors that affect this period
+          const contributing=[];
+          allFactors.forEach(f=>{
+            const periods=parseWeightPeriods(f.weight);
+            // Check if this factor mentions a period that matches
+            for(const [p,val] of Object.entries(periods)){
+              if(periodName.includes(p)||p.includes(periodName)||
+                 (periodName==='1개월 내'&&(p==='1개월 내'||p==='1개월내'||p==='1-2개월'))||
+                 (periodName==='2~3개월'&&(p==='2~3개월'||p==='2-3개월'))||
+                 (periodName==='4~6개월'&&(p==='4~6개월'||p==='4-6개월'))||
+                 (periodName==='7~12개월'&&(p==='7~12개월'||p==='7-12개월'))||
+                 (periodName==='1년 초과'&&(p==='1년 초과'||p==='1년'))){
+                const isNew=!prevFactorNames.has(f.factor);
+                contributing.push({factor:f.factor,val,direction:f.direction,isNew,applied:f.applied,decay:f.decay});
+                break;
               }
+            }
+          });
+          // Sort: positive contributors first if diff>0, negative first if diff<0
+          contributing.sort((a,b)=>{
+            if(diff<0)return a.val-b.val; // most negative first (shorten)
+            return b.val-a.val; // most positive first (lengthen)
+          });
+
+          h+=`<div style="background:#343d55;border-radius:10px;padding:12px;margin-bottom:8px;border-left:3px solid ${COLORS[i]}">`;
+          // Header: period name + change
+          h+=`<div style="display:flex;align-items:center;gap:8px;margin-bottom:${contributing.length?'8':'0'}px">`;
+          h+=`<span style="color:${COLORS[i]};font-weight:700;font-size:14px;flex:1">${k}</span>`;
+          h+=`<span style="font-size:18px;font-weight:800;color:${dc}">${arrow}${sign}${diff}%p</span>`;
+          h+=`<span style="font-size:11px;color:#9ca4b4">${prev.probabilities[k]}%→${v}%</span>`;
+          h+=`</div>`;
+
+          // Contributing factors
+          if(contributing.length){
+            contributing.forEach(c=>{
+              const fc=c.direction==='shorten'?'#6bc98a':c.direction==='lengthen'?'#e06060':'#e8a54a';
+              const valSign=c.val>0?'+':'';
+              const valArrow=c.val>0?'↑':'↓';
+              h+=`<div style="display:flex;align-items:center;gap:6px;padding:5px 8px;margin-bottom:3px;background:#2b3348;border-radius:6px">`;
+              if(c.isNew)h+=`<span style="background:#f0c040;color:#1a1a1a;font-size:8px;font-weight:700;padding:1px 4px;border-radius:3px;flex-shrink:0">NEW</span>`;
+              h+=`<span style="font-size:11px;color:#eaecf2;flex:1;line-height:1.3">${c.factor}</span>`;
+              h+=`<span style="font-size:12px;font-weight:700;color:${fc};flex-shrink:0;white-space:nowrap">${valArrow}${valSign}${c.val}%p</span>`;
               h+=`</div>`;
             });
-            h+=`</div>`;
+          }else{
+            h+=`<div style="font-size:10px;color:#9ca4b4;padding-top:4px">뉴스 신호 변동 및 정규화에 의한 간접 변동</div>`;
           }
+          h+=`</div>`;
+        });
 
-          // Removed factors
-          if(removedFactors.length){
-            h+=`<div style="margin-bottom:8px">`;
-            h+=`<div style="font-size:11px;color:#e06060;font-weight:700;margin-bottom:4px;display:flex;align-items:center;gap:4px"><span style="background:#e06060;color:#fff;font-size:9px;padding:1px 5px;border-radius:4px;font-weight:700">OUT</span> 해제된 요인 (${removedFactors.length})</div>`;
-            removedFactors.forEach(f=>{
-              h+=`<div style="padding:4px 8px;margin-bottom:2px;font-size:11px;color:#9ca4b4;background:#e0606010;border-radius:4px;text-decoration:line-through">${f.factor}</div>`;
-            });
-            h+=`</div>`;
-          }
+        if(!anyChange){
+          h+=`<div style="background:#343d55;border-radius:10px;padding:12px;font-size:12px;color:#9ca4b4">유의미한 변동 없음 (±0.1%p 미만)</div>`;
         }
-        h+=`</div>`;
+
+        // Removed factors (compact)
+        if(removedFactors.length){
+          h+=`<div style="margin-top:6px;padding:8px 10px;background:#e0606010;border-radius:8px;border:1px solid #e0606033">`;
+          h+=`<div style="font-size:10px;color:#e06060;font-weight:700;margin-bottom:4px">해제된 요인 (${removedFactors.length})</div>`;
+          h+=removedFactors.map(f=>`<span style="font-size:10px;color:#9ca4b4;text-decoration:line-through;display:inline-block;margin-right:8px">${f.factor}</span>`).join('');
+          h+=`</div>`;
+        }
+
+        h+=`</div>`; // end 직전 대비 변동
       }
 
       // --- All active factors (collapsed) ---
