@@ -418,58 +418,82 @@
         return{latest,history};
       }catch(e){console.error('Server data fetch failed:',e);return null}
     }
-    async function runPrediction(){
+    async function runPrediction(forceClientFetch){
+      // 1) Always load server data for history/base
       const serverData=await fetchServerData();
       if(serverData){
-        currentPrediction=serverData.latest;
         predictionHistoryLocal=serverData.history;
-        const serverFeeds=serverData.latest.feeds_loaded||0;
-        const serverArticles=(serverData.latest.latest_news||[]).length;
-        document.getElementById('rssStatus').textContent=`RSS: ${serverFeeds}/${serverData.latest.feeds_total||4} 피드 (서버)`;
-        document.getElementById('rssStatus').className='rss-status';
-        // If server has no articles, try client-side RSS to supplement
-        if(serverArticles===0){
-          try{
-            document.getElementById('rssStatus').textContent=`RSS: 서버 0건 → 클라이언트 직접 수집 중...`;
-            const clientArticles=await fetchNews();
-            if(clientArticles.length>0){
-              const sg=analyzeNewsSignals(clientArticles);
-              const wp=getCurrentWarParams(sg);
-              const pred=calculatePrediction(wp,sg,clientArticles);
-              // Merge: keep server probabilities/factors/history but use client news
-              currentPrediction.latest_news=clientArticles.slice(0,15);
-              currentPrediction.news_signals=sg;
-              currentPrediction.news_digest=buildClientDigest(clientArticles);
-              // Re-calculate prediction with real news data
-              currentPrediction.probabilities=pred.probabilities;
-              currentPrediction.factors=pred.factors;
-              document.getElementById('rssStatus').textContent=`RSS: ${clientArticles.length}건 수집 (클라이언트)`;
-              document.getElementById('rssStatus').className='rss-status';
-            }else{
-              document.getElementById('rssStatus').textContent=`RSS: 서버·클라이언트 모두 수집 실패`;
-              document.getElementById('rssStatus').className='rss-status error';
-            }
-          }catch(e){
-            console.warn('Client RSS fallback failed',e);
-            document.getElementById('rssStatus').textContent=`RSS: 서버·클라이언트 모두 수집 실패`;
-            document.getElementById('rssStatus').className='rss-status error';
-          }
-        }
-        // If server data lacks economic_indicators, fetch client-side
-        if(!currentPrediction.economic_indicators || Object.keys(currentPrediction.economic_indicators).length===0 || Object.values(currentPrediction.economic_indicators).every(v=>v.fallback)){
-          try{ currentPrediction.economic_indicators = await fetchEconClient(); }catch(e){ console.warn('Client econ fetch failed',e); }
-        }
-      }else{
-        // Fallback: full client-side
-        const [a, econClient] = await Promise.all([fetchNews(), fetchEconClient()]);
-        const sg=analyzeNewsSignals(a),wp=getCurrentWarParams(sg),pred=calculatePrediction(wp,sg,a);
-        pred.latest_news=a.slice(0,15);pred.historical_comparison=HISTORICAL_WARS;pred.economic_indicators=econClient;pred.news_digest=buildClientDigest(a);
-        currentPrediction=pred;
-        predictionHistoryLocal.push({timestamp:pred.timestamp,probabilities:pred.probabilities,factors:pred.factors,war_day:pred.war_day,news_signals:pred.news_signals});
-        if(predictionHistoryLocal.length>500)predictionHistoryLocal=predictionHistoryLocal.slice(-500);
       }
+
+      // 2) Decide: use client RSS or server data for news
+      let articles=[];
+      let usedClient=false;
+
+      if(forceClientFetch){
+        // Manual refresh or auto-update: always try client RSS first
+        document.getElementById('rssStatus').textContent='RSS: 실시간 수집 중...';
+        try{
+          articles=await fetchNews();
+          if(articles.length>0) usedClient=true;
+        }catch(e){console.warn('Client RSS failed',e)}
+      }
+
+      if(!usedClient && serverData){
+        // Use server data
+        const serverArticles=serverData.latest.latest_news||[];
+        if(serverArticles.length>0){
+          currentPrediction=serverData.latest;
+          const serverFeeds=serverData.latest.feeds_loaded||0;
+          document.getElementById('rssStatus').textContent=`RSS: ${serverFeeds}/${serverData.latest.feeds_total||4} 피드 (서버)`;
+          document.getElementById('rssStatus').className='rss-status';
+          // If server econ is all fallback, try client
+          if(!currentPrediction.economic_indicators || Object.keys(currentPrediction.economic_indicators).length===0 || Object.values(currentPrediction.economic_indicators).every(v=>v.fallback)){
+            try{ currentPrediction.economic_indicators = await fetchEconClient(); }catch(e){}
+          }
+          // If no digest from server, build client-side
+          if(!currentPrediction.news_digest || !currentPrediction.news_digest.categories || currentPrediction.news_digest.categories.length===0){
+            currentPrediction.news_digest=buildClientDigest(currentPrediction.latest_news||[]);
+          }
+          renderAll(currentPrediction);
+          const ts=currentPrediction.timestamp?new Date(currentPrediction.timestamp).toLocaleString('ko-KR'):'알 수 없음';
+          document.getElementById('lastUpdated').textContent=`마지막 갱신: ${ts}`;
+          return currentPrediction;
+        }
+        // Server has 0 articles, try client
+        if(!usedClient){
+          document.getElementById('rssStatus').textContent='RSS: 서버 0건 → 클라이언트 수집 중...';
+          try{ articles=await fetchNews(); if(articles.length>0) usedClient=true; }catch(e){}
+        }
+      }
+
+      if(!usedClient && !serverData){
+        // No server data at all, try client
+        try{ articles=await fetchNews(); if(articles.length>0) usedClient=true; }catch(e){}
+      }
+
+      // 3) Build prediction from articles (client or empty)
+      let econClient;
+      try{ econClient=await fetchEconClient(); }catch(e){ econClient=ECON_FALLBACK; }
+
+      const sg=analyzeNewsSignals(articles);
+      const wp=getCurrentWarParams(sg);
+      const pred=calculatePrediction(wp,sg,articles);
+      pred.latest_news=articles.slice(0,15);
+      pred.historical_comparison=HISTORICAL_WARS;
+      pred.economic_indicators=econClient;
+      pred.news_digest=buildClientDigest(articles);
+      currentPrediction=pred;
+
+      if(usedClient){
+        document.getElementById('rssStatus').textContent=`RSS: ${articles.length}건 수집 (실시간)`;
+        document.getElementById('rssStatus').className='rss-status';
+      }else{
+        document.getElementById('rssStatus').textContent='RSS: 수집 실패';
+        document.getElementById('rssStatus').className='rss-status error';
+      }
+
       renderAll(currentPrediction);
-      const ts=currentPrediction.timestamp?new Date(currentPrediction.timestamp).toLocaleString('ko-KR'):'알 수 없음';
+      const ts=new Date().toLocaleString('ko-KR');
       document.getElementById('lastUpdated').textContent=`마지막 갱신: ${ts}`;
       return currentPrediction
     }
@@ -640,11 +664,38 @@
     function showFactorDetail(idx){if(!currentPrediction||!currentPrediction.factors)return;const f=currentPrediction.factors[idx],lb={shorten:'전쟁 단축',lengthen:'전쟁 장기화',mixed:'복합 효과',reference:'참고 자료'},dc={shorten:'#6bc98a',lengthen:'#e06060',mixed:'#e8a54a',reference:'#888'};let relNews=[];if(f.keywords&&currentPrediction.latest_news){relNews=currentPrediction.latest_news.filter(a=>{const t=((a.title||'')+' '+(a.snippet||'')).toLowerCase();return f.keywords.some(k=>t.includes(k))}).slice(0,5)}const appliedStr=f.applied==='실시간'?'실시간 (매 갱신시 재계산)':f.applied+' 부터 반영';let h=`<div class="factor-detail-card"><h4>${f.factor}</h4><div class="detail-row"><span class="detail-label">방향</span><span class="prob-change-pill" style="color:${dc[f.direction]};background:${dc[f.direction]}15">${lb[f.direction]||f.direction}</span></div><div class="detail-row"><span class="detail-label">영향</span><span class="detail-value" style="color:#eaecf2">${f.impact}</span></div><div class="detail-row"><span class="detail-label">확률 변동</span><span class="detail-value" style="color:#6bc98a;font-weight:600">${f.weight}</span></div><div class="detail-row"><span class="detail-label">반영 시점</span><span class="detail-value" style="color:#b8bfcc">${appliedStr}</span></div><div class="detail-row"><span class="detail-label">현재 상태</span><span class="detail-value" style="color:${f.active?'#6bc98a':'#e06060'};font-weight:600">${f.active?'현재 반영 중':'해제됨'}</span></div>${f.decay!==undefined&&f.decay<0.99?`<div class="detail-row"><span class="detail-label">시간 감쇠</span><span class="detail-value" style="color:#e8a54a;font-weight:600">잔존 ${Math.round(f.decay*100)}% (원래 가중치의 ${Math.round(f.decay*100)}%만 반영)</span></div>`:''}</div>`;h+=`<div style="padding:16px;background:#343d55;border-radius:10px;margin-bottom:12px"><h4 style="color:#7ab3e0;margin-bottom:10px;font-size:14px">상세 설명</h4><p style="color:#c0c4cc;font-size:13px;line-height:1.8">${f.detail||f.impact}</p></div>`;h+=`<div style="padding:16px;background:#343d55;border-radius:10px"><h4 style="color:#e8a54a;margin-bottom:10px;font-size:14px">관련 뉴스 (${relNews.length}건)</h4>`;if(relNews.length){relNews.forEach(a=>{h+=`<div style="padding:10px 0;border-bottom:1px solid #4a5268"><a href="${a.link}" target="_blank" rel="noopener" style="color:#7ab3e0;text-decoration:none;font-size:13px;line-height:1.4;display:block">${a.title}</a><div style="font-size:11px;color:#9ca4b4;margin-top:3px">${a.source} · ${new Date(a.pubDate).toLocaleString('ko-KR')}</div></div>`})}else{h+=`<p style="color:#9ca4b4;font-size:12px">현재 수집된 뉴스 중 이 요인과 직접 관련된 기사가 없습니다.</p>`}h+='</div>';document.getElementById('modalTitle').textContent='요인 상세 분석';document.getElementById('modalContent').innerHTML=h;document.getElementById('modal').classList.add('active')}
     function closeModal(){document.getElementById('modal').classList.remove('active')}
     document.getElementById('modal').addEventListener('click',e=>{if(e.target===document.getElementById('modal'))closeModal()});
-    async function manualUpdate(){await runPrediction();scheduleNextUpdate()}
-    function getNextKSTSlot(){const now=new Date();const m=now.getMinutes();const diff=(m<30?30-m:60-m)*60000-now.getSeconds()*1000-now.getMilliseconds();const waitMs=diff+120000;const next=new Date(now.getTime()+diff+120000);const kstNext=new Date(next.getTime()+9*3600000);const hh=String(kstNext.getUTCHours()).padStart(2,'0');const mm=String(kstNext.getUTCMinutes()).padStart(2,'0');return{ms:waitMs,label:`${hh}:${mm}`}}
-    function scheduleNextUpdate(){const slot=getNextKSTSlot();nextUpdateTime=Date.now()+slot.ms;document.getElementById('nextSlot').textContent=`(KST ${slot.label})`;if(window._autoTimer)clearTimeout(window._autoTimer);window._autoTimer=setTimeout(async()=>{await runPrediction();scheduleNextUpdate()},slot.ms)}
+    async function manualUpdate(){
+      const btn=document.querySelector('.header .btn');
+      btn.textContent='갱신중...';btn.disabled=true;
+      try{await runPrediction(true)}finally{btn.textContent='갱신';btn.disabled=false}
+      scheduleNextUpdate();
+    }
+    function getNextSlotMs(){
+      // Auto-refresh every 30 minutes aligned to :02 and :32 (2min after GitHub Actions)
+      const now=new Date();
+      const m=now.getMinutes(),s=now.getSeconds();
+      let nextMin=m<2?2:m<32?32:62; // 62 = next hour :02
+      let waitMs=(nextMin-m)*60000-s*1000-now.getMilliseconds();
+      if(waitMs<60000)waitMs+=1800000; // at least 1min away, else skip to next slot
+      const next=new Date(now.getTime()+waitMs);
+      const kstNext=new Date(next.getTime()+9*3600000);
+      const hh=String(kstNext.getUTCHours()).padStart(2,'0');
+      const mm=String(kstNext.getUTCMinutes()).padStart(2,'0');
+      return{ms:waitMs,label:`${hh}:${mm}`};
+    }
+    function scheduleNextUpdate(){
+      const slot=getNextSlotMs();
+      nextUpdateTime=Date.now()+slot.ms;
+      document.getElementById('nextSlot').textContent=`(KST ${slot.label})`;
+      if(window._autoTimer)clearTimeout(window._autoTimer);
+      window._autoTimer=setTimeout(async()=>{await runPrediction(true);scheduleNextUpdate()},slot.ms);
+    }
     function updateCountdown(){if(!nextUpdateTime)return;const r=Math.max(0,nextUpdateTime-Date.now()),m=Math.floor(r/60000),s=Math.floor((r%60000)/1000);document.getElementById('nextUpdate').textContent=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`}
-    async function startAutoUpdate(){await runPrediction();scheduleNextUpdate();setInterval(updateCountdown,1000)}
+    async function startAutoUpdate(){
+      await runPrediction(false); // initial: use server data
+      scheduleNextUpdate();
+      setInterval(updateCountdown,1000);
+    }
     startAutoUpdate();
   </script>
 </body>
