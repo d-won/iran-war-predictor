@@ -323,6 +323,78 @@ function articleKey(a) {
   return (a.title || '').trim().slice(0, 80).toLowerCase().replace(/[^a-z0-9가-힣]/g, '');
 }
 
+// --- Deduplication: similarity-based clustering ---
+const STOPWORDS = new Set([
+  'the','and','for','with','from','that','this','was','are','has','have','had','been','were',
+  'will','would','could','should','its','into','over','after','before','about','between',
+  'through','during','under','also','more','than','very','just','only','now','new','says',
+  'said','told','according','report','reports','news','latest','breaking','update',
+]);
+
+// Tokenize text into meaningful word set (stopwords removed)
+function tokenize(text) {
+  return new Set(
+    (text || '').toLowerCase().replace(/[^a-z0-9가-힣\s]/g, '').split(/\s+/)
+      .filter(w => w.length > 2 && !STOPWORDS.has(w))
+  );
+}
+
+// Similarity: max of Jaccard and overlap coefficient
+// Jaccard = intersection / union (balanced comparison)
+// Overlap = intersection / min(|A|,|B|) (detects subset relationships)
+function similarity(setA, setB) {
+  if (setA.size === 0 && setB.size === 0) return 1;
+  let intersection = 0;
+  for (const w of setA) { if (setB.has(w)) intersection++; }
+  const jaccard = intersection / (setA.size + setB.size - intersection);
+  const overlap = intersection / Math.min(setA.size, setB.size);
+  return Math.max(jaccard, overlap * 0.7); // overlap weighted 0.7 to avoid false positives
+}
+
+// Cluster articles about the same event
+// Returns: array of clusters, each = { representative, duplicates, sourceCount }
+function clusterArticles(articles, threshold = 0.3) {
+  const clusters = []; // each: { rep: article, repTokens: Set, members: [article] }
+
+  for (const article of articles) {
+    const tokens = tokenize(article.title + ' ' + (article.snippet || '').slice(0, 100));
+    let bestCluster = null;
+    let bestSim = 0;
+
+    for (const cluster of clusters) {
+      // Compare against representative only (prevents token dilution)
+      const sim = similarity(tokens, cluster.repTokens);
+      if (sim > bestSim) {
+        bestSim = sim;
+        bestCluster = cluster;
+      }
+    }
+
+    if (bestCluster && bestSim >= threshold) {
+      // Add to existing cluster
+      bestCluster.members.push(article);
+      // Pick representative: prefer longer snippet + newer date
+      const curRep = bestCluster.rep;
+      const curLen = (curRep.snippet || '').length;
+      const newLen = (article.snippet || '').length;
+      if (newLen > curLen || (newLen === curLen && new Date(article.pubDate) > new Date(curRep.pubDate))) {
+        bestCluster.rep = article;
+        bestCluster.repTokens = tokens;
+      }
+    } else {
+      // New cluster
+      clusters.push({ rep: article, repTokens: tokens, members: [article] });
+    }
+  }
+
+  return clusters.map(c => ({
+    representative: c.rep,
+    duplicates: c.members.filter(m => m !== c.rep),
+    sourceCount: new Set(c.members.map(m => m.source)).size,
+    memberCount: c.members.length,
+  }));
+}
+
 // --- News categorization & digest ---
 const NEWS_CATEGORIES = [
   {
@@ -393,7 +465,18 @@ function categorizeArticle(article) {
   return { primary, secondary };
 }
 
-function buildNewsDigest(articles) {
+function buildNewsDigest(articles, clusters) {
+  // Use only representative articles from clusters (deduplicated)
+  const reps = clusters
+    ? clusters.map(c => ({
+        ...c.representative,
+        _sources: [...new Set(c.representative._sourceCount > 1
+          ? [c.representative.source, ...c.duplicates.map(d => d.source)]
+          : [c.representative.source])],
+        _clusterSize: c.memberCount,
+      }))
+    : articles;
+
   // Group articles by category
   const groups = {};
   for (const cat of NEWS_CATEGORIES) {
@@ -401,13 +484,14 @@ function buildNewsDigest(articles) {
   }
   groups['other'] = [];
 
-  for (const article of articles) {
+  for (const article of reps) {
     const { primary } = categorizeArticle(article);
     if (!groups[primary]) groups[primary] = [];
     groups[primary].push({
       title: article.title,
       link: article.link,
       source: article.source,
+      sources: article._sources || [article.source],
       pubDate: article.pubDate,
       snippet: article.snippet,
       isNew: article.isNew || false,
@@ -674,26 +758,31 @@ const CRITICAL_EVENTS = [
   },
 ];
 
-function detectCriticalEvents(articles) {
+function detectCriticalEvents(articles, clusters) {
+  // Use only representative articles from clusters to prevent duplicate inflation
+  const reps = clusters ? clusters.map(c => c.representative) : articles;
   const detected = [];
   for (const evt of CRITICAL_EVENTS) {
     let matchCount = 0;
     let matchedArticles = [];
-    for (const a of articles) {
+    for (const a of reps) {
       const text = ((a.title || '') + ' ' + (a.snippet || '')).toLowerCase();
       for (const kwGroup of evt.keywords) {
         if (kwGroup.every(kw => text.includes(kw))) {
-          matchCount += a.isNew ? 3 : 1; // new articles weighted 3x for critical events
+          // Base: new=2, seen=1. Multi-source adds confidence, not count inflation
+          const baseScore = a.isNew ? 2 : 1;
+          const sourceBonus = (a._sourceCount || 1) > 1 ? 1.3 : 1;
+          matchCount += baseScore * sourceBonus;
           matchedArticles.push(a.title);
-          break; // one match per article per event
+          break;
         }
       }
     }
     if (matchCount > 0) {
       detected.push({
         ...evt,
-        matchCount,
-        confidence: Math.min(matchCount / 3, 1.0), // 3+ matches = 100% confidence
+        matchCount: Math.round(matchCount * 10) / 10,
+        confidence: Math.min(matchCount / 3, 1.0),
         matchedArticles: matchedArticles.slice(0, 5),
       });
     }
@@ -710,15 +799,41 @@ function analyzeSignals(articles, seenKeys) {
     else { a.isNew = false; }
   });
 
-  const s = { ceasefire_mentions:0, escalation_mentions:0, negotiation_mentions:0, casualty_mentions:0, peace_mentions:0, regional_spread:0, total_articles:articles.length, new_articles:newCount };
+  // Cluster articles to deduplicate same-event reports from different sources
+  const clusters = clusterArticles(articles);
+  const dedupedArticles = clusters.map(c => {
+    const rep = c.representative;
+    // Multi-source confirmation boosts confidence but doesn't multiply signal count
+    rep._sourceCount = c.sourceCount;
+    rep._isDuplicated = c.memberCount > 1;
+    rep._clusterSize = c.memberCount;
+    // Mark duplicates so they don't affect probability
+    for (const dup of c.duplicates) { dup._isDuplicate = true; }
+    return rep;
+  });
+
+  console.log(`  [DEDUP] ${articles.length} articles → ${dedupedArticles.length} unique events (${articles.length - dedupedArticles.length} duplicates removed)`);
+
+  const s = {
+    ceasefire_mentions:0, escalation_mentions:0, negotiation_mentions:0,
+    casualty_mentions:0, peace_mentions:0, regional_spread:0,
+    total_articles: articles.length, new_articles: newCount,
+    unique_events: dedupedArticles.length,
+    duplicates_removed: articles.length - dedupedArticles.length,
+  };
   const cw=['ceasefire','truce','armistice','halt','pause'], ew=['escalat','expand','intensif','widen','new front'];
   const nw=['negotiat','talks','dialog','diplomat','mediati'], kw=['killed','dead','casualt','wounded','death toll'];
   const pw=['peace','de-escalat','withdraw','retreat','surrender'];
   const rw=['saudi','uae','qatar','bahrain','kuwait','iraq','lebanon','turkey','nato'];
 
-  for (const a of articles) {
+  // Only count signals from deduplicated representative articles
+  for (const a of dedupedArticles) {
     const t = ((a.title||'') + ' ' + (a.snippet||'')).toLowerCase();
-    const w = a.isNew ? 2 : 1;
+    // New article = weight 2, seen = weight 1
+    // Multi-source confirmation adds small bonus (1.0 ~ 1.3x)
+    const baseW = a.isNew ? 2 : 1;
+    const sourceBonus = a._sourceCount > 1 ? 1 + Math.min((a._sourceCount - 1) * 0.1, 0.3) : 1;
+    const w = baseW * sourceBonus;
     if (cw.some(k=>t.includes(k))) s.ceasefire_mentions += w;
     if (ew.some(k=>t.includes(k))) s.escalation_mentions += w;
     if (nw.some(k=>t.includes(k))) s.negotiation_mentions += w;
@@ -730,7 +845,7 @@ function analyzeSignals(articles, seenKeys) {
   // Keep seen keys manageable
   const seenArr = [...nowSeen];
   const trimmed = seenArr.length > 2000 ? seenArr.slice(-1000) : seenArr;
-  return { signals: s, newSeenKeys: trimmed };
+  return { signals: s, newSeenKeys: trimmed, clusters };
 }
 
 // Time decay: 군사적 기정사실(제공권,방공,미사일,호르무즈)은 느린 감쇠, 나머지는 일반 감쇠
@@ -914,13 +1029,13 @@ async function main() {
   const econImpact = analyzeEconomicImpact(econData);
 
   // Analyze
-  const { signals, newSeenKeys } = analyzeSignals(articles, seenKeys);
-  const criticalEvents = detectCriticalEvents(articles);
+  const { signals, newSeenKeys, clusters } = analyzeSignals(articles, seenKeys);
+  const criticalEvents = detectCriticalEvents(articles, clusters);
   const daysElapsed = Math.floor((new Date() - new Date('2026-02-28')) / 864e5);
   const pred = calculatePrediction(daysElapsed, signals, econImpact, criticalEvents);
 
-  // Build categorized news digest
-  const newsDigest = buildNewsDigest(articles);
+  // Build categorized news digest (using deduplicated clusters)
+  const newsDigest = buildNewsDigest(articles, clusters);
   console.log(`  [DIGEST] ${newsDigest.categories.length} categories, ${newsDigest.recent_30min.total_new} new articles in last 30min`);
 
   const result = {
@@ -929,7 +1044,11 @@ async function main() {
     probabilities: pred.probabilities,
     factors: pred.factors,
     news_signals: signals,
-    latest_news: articles.slice(0, 15),
+    latest_news: articles.slice(0, 15).map(a => ({
+      ...a,
+      _isDuplicate: a._isDuplicate || false,
+      _sourceCount: a._sourceCount || 1,
+    })),
     news_digest: newsDigest,
     historical_comparison: HISTORICAL_WARS,
     economic_indicators: econData,
