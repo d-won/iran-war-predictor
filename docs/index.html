@@ -904,16 +904,59 @@
 
           // Contributing factors
           if(contributing.length){
+            // Table header
+            h+=`<div style="display:flex;gap:4px;padding:2px 8px;margin-bottom:2px">`;
+            h+=`<span style="flex:1;font-size:9px;color:#9ca4b4">요인</span>`;
+            h+=`<span style="width:52px;font-size:9px;color:#9ca4b4;text-align:center;flex-shrink:0">원래</span>`;
+            h+=`<span style="width:16px;font-size:9px;color:#9ca4b4;text-align:center;flex-shrink:0"></span>`;
+            h+=`<span style="width:42px;font-size:9px;color:#9ca4b4;text-align:center;flex-shrink:0">감쇠</span>`;
+            h+=`<span style="width:16px;font-size:9px;color:#9ca4b4;text-align:center;flex-shrink:0"></span>`;
+            h+=`<span style="width:58px;font-size:9px;color:#9ca4b4;text-align:right;flex-shrink:0">실효</span>`;
+            h+=`</div>`;
             contributing.forEach(c=>{
               const fc=c.direction==='shorten'?'#6bc98a':c.direction==='lengthen'?'#e06060':'#e8a54a';
-              const valSign=c.val>0?'+':'';
-              const valArrow=c.val>0?'↑':'↓';
-              h+=`<div style="display:flex;align-items:center;gap:6px;padding:5px 8px;margin-bottom:3px;background:#2b3348;border-radius:6px">`;
-              if(c.isNew)h+=`<span style="background:#f0c040;color:#1a1a1a;font-size:8px;font-weight:700;padding:1px 4px;border-radius:3px;flex-shrink:0">NEW</span>`;
-              h+=`<span style="font-size:11px;color:#eaecf2;flex:1;line-height:1.3">${c.factor}</span>`;
-              h+=`<span style="font-size:12px;font-weight:700;color:${fc};flex-shrink:0;white-space:nowrap">${valArrow}${valSign}${c.val}%p</span>`;
+              const rawVal=c.val;
+              const decayPct=(c.decay!==undefined&&c.decay!==null)?c.decay:1;
+              const effectiveVal=+(rawVal*decayPct).toFixed(2);
+              const effectiveSign=effectiveVal>0?'+':'';
+              const hasDecay=decayPct<0.99;
+              h+=`<div style="display:flex;align-items:center;gap:4px;padding:6px 8px;margin-bottom:2px;background:#2b3348;border-radius:6px">`;
+              // Factor name
+              h+=`<div style="flex:1;min-width:0">`;
+              if(c.isNew)h+=`<span style="background:#f0c040;color:#1a1a1a;font-size:7px;font-weight:700;padding:1px 3px;border-radius:2px;margin-right:3px;vertical-align:middle">NEW</span>`;
+              h+=`<span style="font-size:10px;color:#eaecf2;line-height:1.3">${c.factor}</span>`;
+              h+=`</div>`;
+              // Raw value
+              h+=`<span style="width:52px;text-align:center;font-size:11px;font-weight:600;color:#eaecf2;flex-shrink:0">${rawVal>0?'+':''}${rawVal}%p</span>`;
+              // ×
+              h+=`<span style="width:16px;text-align:center;font-size:10px;color:#9ca4b4;flex-shrink:0">×</span>`;
+              // Decay
+              h+=`<span style="width:42px;text-align:center;font-size:11px;color:${hasDecay?'#e8a54a':'#9ca4b4'};flex-shrink:0;font-weight:${hasDecay?'600':'400'}">${Math.round(decayPct*100)}%</span>`;
+              // =
+              h+=`<span style="width:16px;text-align:center;font-size:10px;color:#9ca4b4;flex-shrink:0">=</span>`;
+              // Effective value
+              h+=`<span style="width:58px;text-align:right;font-size:12px;font-weight:700;color:${fc};flex-shrink:0">${effectiveSign}${effectiveVal}%p</span>`;
               h+=`</div>`;
             });
+            // Sum line
+            const totalRaw=contributing.reduce((s,c)=>s+c.val,0);
+            const totalEff=contributing.reduce((s,c)=>{
+              const d=(c.decay!==undefined&&c.decay!==null)?c.decay:1;
+              return s+c.val*d;
+            },0);
+            h+=`<div style="display:flex;align-items:center;gap:4px;padding:4px 8px;margin-top:2px;border-top:1px solid #4a5268">`;
+            h+=`<span style="flex:1;font-size:10px;color:#9ca4b4;font-weight:600">합계</span>`;
+            h+=`<span style="width:52px;text-align:center;font-size:10px;color:#b8bfcc;flex-shrink:0">${totalRaw>0?'+':''}${+totalRaw.toFixed(1)}%p</span>`;
+            h+=`<span style="width:16px;flex-shrink:0"></span>`;
+            h+=`<span style="width:42px;flex-shrink:0"></span>`;
+            h+=`<span style="width:16px;text-align:center;font-size:10px;color:#9ca4b4;flex-shrink:0">→</span>`;
+            h+=`<span style="width:58px;text-align:right;font-size:11px;font-weight:700;color:${dc};flex-shrink:0">${totalEff>0?'+':''}${+totalEff.toFixed(1)}%p</span>`;
+            h+=`</div>`;
+            // Note about normalization if sum differs from actual diff
+            const actualDiff=diff;
+            if(Math.abs(+totalEff.toFixed(1)-actualDiff)>0.5){
+              h+=`<div style="font-size:9px;color:#9ca4b4;padding:3px 8px;line-height:1.4">* 실제 ${sign}${diff}%p는 전체 확률 정규화(합=100%) 후 값으로, 요인 합계와 차이가 있습니다</div>`;
+            }
           }else{
             h+=`<div style="font-size:10px;color:#9ca4b4;padding-top:4px">뉴스 신호 변동 및 정규화에 의한 간접 변동</div>`;
           }
