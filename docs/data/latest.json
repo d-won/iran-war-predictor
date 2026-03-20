@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-03-20T12:56:56.547Z",
+  "timestamp": "2026-03-20T14:01:50.869Z",
   "war_day": 20,
   "probabilities": {
-    "1개월 내 (~3월)": 18,
-    "2~3개월 (4~5월)": 37.2,
-    "4~6개월 (6~8월)": 26.7,
-    "7~12개월 (9월~27/2월)": 13,
-    "1년 초과": 5.1
+    "1개월 내 (~3월)": 21.2,
+    "2~3개월 (4~5월)": 41.3,
+    "4~6개월 (6~8월)": 23.5,
+    "7~12개월 (9월~27/2월)": 10.1,
+    "1년 초과": 3.9
   },
   "factors": [
     {
@@ -42,11 +42,11 @@
       ],
       "applied": "2026-03-01",
       "active": true,
-      "decay": 0.6092
+      "decay": 0.6083
     },
     {
-      "factor": "확전 뉴스 우세 (확전6:휴전6)",
-      "impact": "전쟁 장기화 가능성 (확전비율 50%)",
+      "factor": "확전 뉴스 우세 (확전8:휴전6)",
+      "impact": "전쟁 장기화 가능성 (확전비율 57%)",
       "weight": "+0.02%p (4~6개월)",
       "direction": "lengthen",
       "detail": "언론에서 휴전보다 확전을 더 많이 보도하고 있습니다.",
@@ -76,7 +76,7 @@
       ],
       "applied": "2026-03-01",
       "active": true,
-      "decay": 0.6092
+      "decay": 0.6083
     },
     {
       "factor": "9개국 참전 - 분쟁 복잡성 증가",
@@ -164,11 +164,11 @@
       "decay": 1
     },
     {
-      "factor": "협상/외교 뉴스 2건 감지",
-      "impact": "외교 움직임 미약",
+      "factor": "협상/외교 뉴스 0건 감지",
+      "impact": "외교 움직임 부재",
       "weight": "+0.00%p (1개월내), +0.00%p (2~3개월)",
       "direction": "shorten",
-      "detail": "실시간 뉴스에서 협상 관련 기사 2건이 감지되었습니다.",
+      "detail": "실시간 뉴스에서 협상 관련 기사 0건이 감지되었습니다.",
       "keywords": [
         "negotiat",
         "talks",
@@ -181,11 +181,11 @@
       "decay": 1
     },
     {
-      "factor": "지역 확산 뉴스 4건 감지",
+      "factor": "지역 확산 뉴스 4.2건 감지",
       "impact": "주변국 연루 제한적",
       "weight": "+0.00%p (4~6개월), +0.00%p (7~12개월)",
       "direction": "lengthen",
-      "detail": "주변국을 언급하는 기사 4건이 감지되었습니다.",
+      "detail": "주변국을 언급하는 기사 4.2건이 감지되었습니다.",
       "keywords": [
         "saudi",
         "uae",
@@ -234,6 +234,40 @@
       "decay": 0.3
     },
     {
+      "factor": "[중대 이벤트] 일방적 전투 축소/자제 선언",
+      "impact": "교전국의 일방적 전투 축소 또는 자제 선언. 역사적으로 패전국의 자발적 전선 축소는 80% 이상 공식 항복의 전조.",
+      "weight": "+4.3%p (1개월내), +6.1%p (2~3개월), -2.6%p (4~6개월), -2.6%p (7~12개월), -0.9%p (1년초과)",
+      "direction": "shorten",
+      "detail": "교전국의 일방적 전투 축소 또는 자제 선언. 역사적으로 패전국의 자발적 전선 축소는 80% 이상 공식 항복의 전조.\n\n신뢰도: 확실 (87%), 관련 기사 2.6건 감지.\n관련: Iran says it will show ‘zero restraint’ if energy infrastructure is targeted again",
+      "keywords": [
+        "halt",
+        "attack",
+        "stop",
+        "attack",
+        "neighb",
+        "no more",
+        "attack",
+        "withdraw",
+        "forces",
+        "pull back",
+        "troops",
+        "unilateral",
+        "ceasefire",
+        "reduce",
+        "operation",
+        "de-escalat",
+        "announc",
+        "restrain",
+        "attack",
+        "not attack",
+        "suspend",
+        "operation"
+      ],
+      "applied": "2026-03-20",
+      "active": true,
+      "severity": "high"
+    },
+    {
       "factor": "[중대 이벤트] 외교적 돌파구/강대국 중재",
       "impact": "주요 외교적 돌파구 또는 강대국 중재. 데이턴(1995): 미국 중재 → 3주만에 합의. UN 안보리 결의는 평균 2~4주 내 휴전 이행.",
       "weight": "+2.0%p (1개월내), +4.0%p (2~3개월), +1.3%p (4~6개월), -1.3%p (7~12개월), -0.7%p (1년초과)",
@@ -258,6 +292,38 @@
         "china",
         "mediat",
         "peace framework"
+      ],
+      "applied": "2026-03-20",
+      "active": true,
+      "severity": "high"
+    },
+    {
+      "factor": "[중대 이벤트] 수도 직접 공격/포위",
+      "impact": "수도 직접 공격. 베오그라드(1999): 78일 폭격 후 항복. 바그다드(2003): 21일만에 함락. 수도 타격은 전쟁 지속 의지를 급격히 약화.",
+      "weight": "+2.7%p (1개월내), +4.0%p (2~3개월), -1.3%p (4~6개월), -1.3%p (7~12개월), -0.7%p (1년초과)",
+      "direction": "shorten",
+      "detail": "수도 직접 공격. 베오그라드(1999): 78일 폭격 후 항복. 바그다드(2003): 21일만에 함락. 수도 타격은 전쟁 지속 의지를 급격히 약화.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: In maps: Attacks across Iran and the Middle East continue across third week",
+      "keywords": [
+        "capital",
+        "bomb",
+        "capital",
+        "strike",
+        "capital",
+        "attack",
+        "capital",
+        "siege",
+        "capital",
+        "pound",
+        "capital",
+        "explosion",
+        "tehran",
+        "bomb",
+        "tehran",
+        "strike",
+        "tehran",
+        "pound",
+        "tehran",
+        "explosion"
       ],
       "applied": "2026-03-20",
       "active": true,
@@ -290,11 +356,11 @@
       "severity": "moderate"
     },
     {
-      "factor": "유가 급등 (WTI $94.83/배럴)",
+      "factor": "유가 급등 (WTI $95.85/배럴)",
       "impact": "중간 수준 경제 압력",
       "weight": "+2%p (1-2개월)",
       "direction": "shorten",
-      "detail": "WTI 유가가 $94.83/배럴로 90달러 이상입니다. 호르무즈 해협 봉쇄와 맞물려 글로벌 에너지 시장에 큰 충격을 주고 있으며, 주요국들의 조기 종전 압력이 강화되고 있습니다.",
+      "detail": "WTI 유가가 $95.85/배럴로 90달러 이상입니다. 호르무즈 해협 봉쇄와 맞물려 글로벌 에너지 시장에 큰 충격을 주고 있으며, 주요국들의 조기 종전 압력이 강화되고 있습니다.",
       "keywords": [
         "oil",
         "crude",
@@ -307,11 +373,11 @@
       "active": true
     },
     {
-      "factor": "금값 사상최고 ($4675.5/oz)",
+      "factor": "금값 사상최고 ($4631.3/oz)",
       "impact": "안전자산 수요 폭증 → 글로벌 불안 심화",
       "weight": "+2%p (4-6개월)",
       "direction": "lengthen",
-      "detail": "금 가격이 온스당 $4675.5로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
+      "detail": "금 가격이 온스당 $4631.3로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
       "keywords": [
         "gold",
         "safe haven",
@@ -324,11 +390,11 @@
   ],
   "news_signals": {
     "ceasefire_mentions": 6,
-    "escalation_mentions": 6,
-    "negotiation_mentions": 2,
-    "casualty_mentions": 14.2,
+    "escalation_mentions": 8,
+    "negotiation_mentions": 0,
+    "casualty_mentions": 10,
     "peace_mentions": 0,
-    "regional_spread": 4,
+    "regional_spread": 4.2,
     "total_articles": 50,
     "new_articles": 49,
     "unique_events": 38,
@@ -336,11 +402,35 @@
   },
   "latest_news": [
     {
-      "title": "Father of killed US military member disputes Hegseth’s claim he said to ‘finish’ the job in Iran",
-      "link": "https://www.theguardian.com/us-news/2026/mar/20/iran-war-military-father-pete-hegseth",
-      "pubDate": "Fri, 20 Mar 2026 12:50:41 GMT",
+      "title": "Moments amid the chaos of war in the Middle East – in pictures",
+      "link": "https://www.theguardian.com/world/gallery/2026/mar/20/middle-east-iran-war-moments-gallery",
+      "pubDate": "Fri, 20 Mar 2026 14:00:26 GMT",
       "source": "guardian",
-      "snippet": "Defense secretary had said relatives of service members killed in refueling tanker crash told him ‘do not stop until the job is done’Sign up for the Breaking News US email to get newsletter alerts in ",
+      "snippet": "Since the conflict broke out in the middle east at the end of February, everyday life has been upended for thousands of ordinary people in the region. Amidst the devastation and threat to life, people",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "뉴욕증시, 연내 금리인하 기대감 소멸에 하락 출발",
+      "link": "https://www.yna.co.kr/view/AKR20260320183100009",
+      "pubDate": "Fri, 20 Mar 2026 22:59:29 +0900",
+      "source": "yonhap",
+      "snippet": "(서울=연합뉴스) 윤정원 연합인포맥스 기자 = 뉴욕증시의 3대 주가지수는 미국과 이란 간의 전면전에 따른 고유가 부담이 연방준비제도(Fed·연준...",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Israel denies ‘dragging’ US into war – as it happened",
+      "link": "https://www.theguardian.com/world/live/2026/mar/19/iran-war-live-updates-oil-prices-gas-field-strikes-pentagon-more-funds-trump-news",
+      "pubDate": "Fri, 20 Mar 2026 02:26:48 GMT",
+      "source": "guardian",
+      "snippet": "This blog is now closed – our coverage of the Middle East crisis continues hereTurning to Australia now, a petrol tsar will manage “unprecedented” supply issues caused by the Middle East conflict as t",
       "isNew": true,
       "_sourceCount": 2,
       "_isDuplicated": true,
@@ -348,11 +438,23 @@
       "_isDuplicate": false
     },
     {
-      "title": "우크라, 중동 5개국에 드론 요격 부대 배치",
-      "link": "https://www.yna.co.kr/view/AKR20260320180100109",
-      "pubDate": "Fri, 20 Mar 2026 21:45:11 +0900",
-      "source": "yonhap",
-      "snippet": "(로마=연합뉴스) 민경락 특파원 = 이란발 드론 대응법을 동맹국에 전수 중인 우크라이나가 중동 5개국에 드론 요격 부대를 배치했다고 로이터통신이...",
+      "title": "Iran says it will show ‘zero restraint’ if energy infrastructure is targeted again",
+      "link": "https://www.theguardian.com/world/2026/mar/19/iran-says-it-will-show-zero-restraint-if-energy-infrastructure-is-targeted-again",
+      "pubDate": "Thu, 19 Mar 2026 22:02:05 GMT",
+      "source": "guardian",
+      "snippet": "Foreign minister issues warning after Israeli attack on South Pars gasfield and as Qatar reels from retaliatory strike‘Doomsday scenario’: a visual guide to the oil and gas site attacks in the Middle ",
+      "isNew": true,
+      "_sourceCount": 2,
+      "_isDuplicated": true,
+      "_clusterSize": 2,
+      "_isDuplicate": false
+    },
+    {
+      "title": "The Guardian view on the Iran war escalation: as Trump breaks things, who will pick up the pieces? | Editorial",
+      "link": "https://www.theguardian.com/commentisfree/2026/mar/19/the-guardian-view-on-the-iran-war-escalation-as-trump-breaks-things-who-will-pick-up-the-pieces",
+      "pubDate": "Thu, 19 Mar 2026 18:36:44 GMT",
+      "source": "guardian",
+      "snippet": "The US president wanted an easy win, but the conflict is spiralling following Israel’s attack on a gas field and Iranian retaliation across the regionShortly after the US and Israel began their illega",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -390,9 +492,9 @@
       "source": "guardian",
       "snippet": "Foreign minister claims Israel convinced Donald Trump to make ‘grave miscalculation’ of waging war on IranMiddle East crisis – live updatesOman’s foreign minister has claimed the US has “lost control ",
       "isNew": true,
-      "_sourceCount": 2,
-      "_isDuplicated": true,
-      "_clusterSize": 2,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
       "_isDuplicate": false
     },
     {
@@ -466,30 +568,6 @@
       "_isDuplicate": false
     },
     {
-      "title": "Israel strikes Iran’s South Pars gasfield hours after forces kill intelligence minister",
-      "link": "https://www.theguardian.com/world/2026/mar/18/iran-intelligence-minister-esmail-khatib-killed-israel-claims",
-      "pubDate": "Wed, 18 Mar 2026 19:25:39 GMT",
-      "source": "guardian",
-      "snippet": "Death confirmed of Esmail Khatib, the third senior Iranian figure killed in 24 hours, as Israel also launches intense airstrikes on LebanonMiddle East crisis – live updatesExplainer: why attacks on ga",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "UK says it remains in talks over escorting ships through strait of Hormuz",
-      "link": "https://www.theguardian.com/world/2026/mar/18/uk-says-it-remains-in-talks-over-escorting-ships-through-strait-of-hormuz",
-      "pubDate": "Wed, 18 Mar 2026 18:52:33 GMT",
-      "source": "guardian",
-      "snippet": "Officials say military planners liaising with US Central Command but situation remains too dangerous for anything to happen soonMiddle East crisis – live updatesBritain has said it remains involved in",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
       "title": "Several dead after Israeli joint security forces raid in West Bank",
       "link": "https://www.cnn.com/2022/10/25/middleeast/israel-forces-raid-nablus-palestine-intl-hnk/index.html",
       "pubDate": "Tue, 25 Oct 2022 13:58:46 GMT",
@@ -500,16 +578,6 @@
       "_isDuplicated": false,
       "_clusterSize": 1,
       "_isDuplicate": false
-    },
-    {
-      "title": "Iran",
-      "link": "https://www.cnn.com/specials/middleeast/iran?utm_source=section",
-      "pubDate": "",
-      "source": "cnn",
-      "snippet": "",
-      "isNew": true,
-      "_isDuplicate": true,
-      "_sourceCount": 1
     }
   ],
   "news_digest": {
@@ -518,19 +586,19 @@
         "category_id": "military",
         "category_name": "군사 작전",
         "category_icon": "⚔️",
-        "count": 8,
-        "new_count": 8,
+        "count": 11,
+        "new_count": 11,
         "articles": [
           {
-            "title": "Father of killed US military member disputes Hegseth’s claim he said to ‘finish’ the job in Iran",
-            "link": "https://www.theguardian.com/us-news/2026/mar/20/iran-war-military-father-pete-hegseth",
+            "title": "Iran says it will show ‘zero restraint’ if energy infrastructure is targeted again",
+            "link": "https://www.theguardian.com/world/2026/mar/19/iran-says-it-will-show-zero-restraint-if-energy-infrastructure-is-targeted-again",
             "source": "guardian",
             "sources": [
               "guardian",
               "cnn"
             ],
-            "pubDate": "Fri, 20 Mar 2026 12:50:41 GMT",
-            "snippet": "Defense secretary had said relatives of service members killed in refueling tanker crash told him ‘do not stop until the job is done’Sign up for the Breaking News US email to get newsletter alerts in ",
+            "pubDate": "Thu, 19 Mar 2026 22:02:05 GMT",
+            "snippet": "Foreign minister issues warning after Israeli attack on South Pars gasfield and as Qatar reels from retaliatory strike‘Doomsday scenario’: a visual guide to the oil and gas site attacks in the Middle ",
             "isNew": true
           },
           {
@@ -542,17 +610,6 @@
             ],
             "pubDate": "Thu, 19 Mar 2026 15:58:21 GMT",
             "snippet": "Attacks on facilities by both sides in the conflict this week threaten grave consequences for the global economyMiddle East crisis – live updatesThe escalating attacks on key oil and gas projects in t",
-            "isNew": true
-          },
-          {
-            "title": "Israel strikes Iran’s South Pars gasfield hours after forces kill intelligence minister",
-            "link": "https://www.theguardian.com/world/2026/mar/18/iran-intelligence-minister-esmail-khatib-killed-israel-claims",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Wed, 18 Mar 2026 19:25:39 GMT",
-            "snippet": "Death confirmed of Esmail Khatib, the third senior Iranian figure killed in 24 hours, as Israel also launches intense airstrikes on LebanonMiddle East crisis – live updatesExplainer: why attacks on ga",
             "isNew": true
           },
           {
@@ -600,112 +657,47 @@
             "isNew": true
           },
           {
-            "title": "The war in Iran is ripping up the Gulf’s plan for stability | Sanam Vakil",
-            "link": "https://www.theguardian.com/commentisfree/2026/mar/20/war-us-iran-gulf-states-stability",
-            "source": "guardian",
+            "title": "이란군,  美·이스라엘 군인에 \"안전한 곳 없다\" 경고",
+            "link": "https://www.yna.co.kr/view/AKR20260320182400079",
+            "source": "yonhap",
             "sources": [
-              "guardian"
+              "yonhap"
             ],
-            "pubDate": "Fri, 20 Mar 2026 12:30:22 GMT",
-            "snippet": "As missiles fall from the sky and energy infrastructure is targeted, the limitations of relying on the US for protection are becoming all too obviousFor more than two weeks, missiles and drones have b",
-            "isNew": true
-          }
-        ]
-      },
-      {
-        "category_id": "politics",
-        "category_name": "국내 정치",
-        "category_icon": "🏛️",
-        "count": 8,
-        "new_count": 8,
-        "articles": [
-          {
-            "title": "Oman claims Israel pushed US into Iran war when deal was possible",
-            "link": "https://www.theguardian.com/world/2026/mar/19/us-lost-control-of-its-own-foreign-policy-oman-foreign-minister",
-            "source": "guardian",
-            "sources": [
-              "guardian",
-              "cnn"
-            ],
-            "pubDate": "Thu, 19 Mar 2026 15:50:13 GMT",
-            "snippet": "Foreign minister claims Israel convinced Donald Trump to make ‘grave miscalculation’ of waging war on IranMiddle East crisis – live updatesOman’s foreign minister has claimed the US has “lost control ",
+            "pubDate": "Fri, 20 Mar 2026 22:49:47 +0900",
+            "snippet": "(카이로=연합뉴스) 김상훈 특파원 = 이란 군 당국이 20일(현지시간) 자국을 공격한 미국과 이스라엘의 공직자, 군 지휘관들을 추적해 보복하겠다...",
             "isNew": true
           },
           {
-            "title": "Trump thinks brute force will arrest the US’s decline. His heavy-handed actions in Iran are only accelerating it | Owen Jones",
-            "link": "https://www.theguardian.com/commentisfree/2026/mar/19/donald-trump-brute-force-us-decline-iran-war",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Thu, 19 Mar 2026 12:00:08 GMT",
-            "snippet": "From Venezuela to the Middle East, this is gangsterism fused with colonialism. It repudiates the moral language through which US power once justified itselfGone are any pretences about saving the Iran",
-            "isNew": true
-          },
-          {
-            "title": "June 1, 2024 - Israel-Gaza news",
-            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-01-24/index.html",
-            "source": "cnn",
-            "sources": [
-              "cnn"
-            ],
-            "pubDate": "",
-            "snippet": "President Joe Biden has laid out a three-phase proposal to end the conflict in Gaza, as global condemnation of Israel's offensive in Rafah grows.",
-            "isNew": true
-          },
-          {
-            "title": "May 21, 2024 Israel-Hamas war, Iran president death news",
-            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-21-24/index.html",
-            "source": "cnn",
-            "sources": [
-              "cnn"
-            ],
-            "pubDate": "",
-            "snippet": "Prime Minister Benjamin Netanyahu blasted the charges brought by the International Criminal Court against himself and Israel's defense minister as \"beyond outrageous\" in an interview Tuesday with CNN'",
-            "isNew": true
-          },
-          {
-            "title": "May 19, 2024 helicopter crash involving Iranian president",
-            "link": "https://www.cnn.com/middleeast/live-news/raisi-iran-president-helicopter-crash/index.html",
-            "source": "cnn",
-            "sources": [
-              "cnn"
-            ],
-            "pubDate": "",
-            "snippet": "A helicopter carrying Iranian President Ebrahim Raisi crashed while he was visiting a northern region in the country Sunday, according to the Iranian state news agency IRNA.",
-            "isNew": true
-          },
-          {
-            "title": "Behind the bombast, Trump will be worried: when he tries to stop the war on Iran, will anyone listen? | Simon Tisdall",
-            "link": "https://www.theguardian.com/commentisfree/2026/mar/20/donald-trump-war-iran-president-power",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Fri, 20 Mar 2026 12:10:03 GMT",
-            "snippet": "Though the president wields great power, the conflict in the Middle East is spiralling in unforeseen ways that he may not be able to controlWhat a pity Benjamin Netanyahu remains at large after an int",
-            "isNew": true
-          },
-          {
-            "title": "Iran Executes 3 Men, Including Teenage Wrestler Saleh Mohammadi",
-            "link": "https://www.nytimes.com/2026/03/20/world/middleeast/iran-executed-wrestler-mohammadi-hanging-protests.html",
+            "title": "Attacks on Oil and Natural Gas Facilities Could Lead to Much Higher Prices",
+            "link": "https://www.nytimes.com/2026/03/19/business/energy-environment/iran-oil-natural-gas-attacks.html",
             "source": "nytimes",
             "sources": [
               "nytimes"
             ],
-            "pubDate": "Fri, 20 Mar 2026 11:58:58 +0000",
-            "snippet": "The Iranian authorities accused the men of killing two police officers during anti-government protests in January. Human rights groups had raised concerns about the cases against them.",
+            "pubDate": "Fri, 20 Mar 2026 13:45:36 +0000",
+            "snippet": "Attacks on oil and natural gas facilities this week could make it much harder for Persian Gulf countries to rebuild and restart production when the war eventually ends.",
             "isNew": true
           },
           {
-            "title": "Slovenia heads to polls with diverging views on Israel in focus",
-            "link": "https://www.aljazeera.com/news/2026/3/20/slovenia-heads-to-polls-with-diverging-views-on-israel-in-focus?traffic_source=rss",
+            "title": "Who are the Gulf’s military allies, and how are they helping in Iran war?",
+            "link": "https://www.aljazeera.com/news/2026/3/20/who-are-the-gulfs-military-allies-and-how-are-they-helping-in-iran-war?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Fri, 20 Mar 2026 11:51:23 +0000",
-            "snippet": "Slovenia&#039;s election sees the centre-left coalition take on the populist right amid claims of foreign meddling.",
+            "pubDate": "Fri, 20 Mar 2026 13:45:18 +0000",
+            "snippet": "Experts say while Gulf states need support in face of Iranian attacks, it is less clear what their allies can provide. ",
+            "isNew": true
+          },
+          {
+            "title": "Iran video said to show US F-35 being hit",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/3/20/iran-video-said-to-show-us-f-35-being-hit?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Fri, 20 Mar 2026 13:44:06 +0000",
+            "snippet": "Iran’s semi-official Tasnim news agency has released military video said to show air defence systems hitting a US F-35.",
             "isNew": true
           }
         ]
@@ -718,14 +710,15 @@
         "new_count": 7,
         "articles": [
           {
-            "title": "UK says it remains in talks over escorting ships through strait of Hormuz",
-            "link": "https://www.theguardian.com/world/2026/mar/18/uk-says-it-remains-in-talks-over-escorting-ships-through-strait-of-hormuz",
+            "title": "Israel denies ‘dragging’ US into war – as it happened",
+            "link": "https://www.theguardian.com/world/live/2026/mar/19/iran-war-live-updates-oil-prices-gas-field-strikes-pentagon-more-funds-trump-news",
             "source": "guardian",
             "sources": [
-              "guardian"
+              "guardian",
+              "cnn"
             ],
-            "pubDate": "Wed, 18 Mar 2026 18:52:33 GMT",
-            "snippet": "Officials say military planners liaising with US Central Command but situation remains too dangerous for anything to happen soonMiddle East crisis – live updatesBritain has said it remains involved in",
+            "pubDate": "Fri, 20 Mar 2026 02:26:48 GMT",
+            "snippet": "This blog is now closed – our coverage of the Middle East crisis continues hereTurning to Australia now, a petrol tsar will manage “unprecedented” supply issues caused by the Middle East conflict as t",
             "isNew": true
           },
           {
@@ -797,118 +790,76 @@
         ]
       },
       {
-        "category_id": "economy",
-        "category_name": "경제 영향",
-        "category_icon": "📊",
-        "count": 5,
-        "new_count": 5,
+        "category_id": "politics",
+        "category_name": "국내 정치",
+        "category_icon": "🏛️",
+        "count": 6,
+        "new_count": 6,
         "articles": [
           {
-            "title": "Why gasfield attacks are major escalation in Iran war – The Latest",
-            "link": "https://www.theguardian.com/news/audio/2026/mar/19/why-gasfield-attacks-are-major-escalation-in-iran-war-the-latest",
+            "title": "The Guardian view on the Iran war escalation: as Trump breaks things, who will pick up the pieces? | Editorial",
+            "link": "https://www.theguardian.com/commentisfree/2026/mar/19/the-guardian-view-on-the-iran-war-escalation-as-trump-breaks-things-who-will-pick-up-the-pieces",
             "source": "guardian",
             "sources": [
               "guardian"
             ],
-            "pubDate": "Thu, 19 Mar 2026 16:50:54 GMT",
-            "snippet": "Donald Trump is threatening to ‘blow up’ a major Iranian energy facility, as attacks on gasfields across the Middle East send gas and oil prices skyrocketing again. The threat comes after Israeli stri",
+            "pubDate": "Thu, 19 Mar 2026 18:36:44 GMT",
+            "snippet": "The US president wanted an easy win, but the conflict is spiralling following Israel’s attack on a gas field and Iranian retaliation across the regionShortly after the US and Israel began their illega",
             "isNew": true
           },
           {
-            "title": "West Point analysis warns that strait of Hormuz blockade will strangle US defense industry",
-            "link": "https://www.theguardian.com/world/2026/mar/19/west-point-analysis-iran-war-costs",
+            "title": "Oman claims Israel pushed US into Iran war when deal was possible",
+            "link": "https://www.theguardian.com/world/2026/mar/19/us-lost-control-of-its-own-foreign-policy-oman-foreign-minister",
             "source": "guardian",
             "sources": [
               "guardian"
             ],
-            "pubDate": "Thu, 19 Mar 2026 11:00:07 GMT",
-            "snippet": "Report shows how minerals critical to defense readiness have seen a ‘near total’ disruption in seaborne tradeMiddle East crisis – live updatesSign up for the Breaking News US email to get newsletter a",
+            "pubDate": "Thu, 19 Mar 2026 15:50:13 GMT",
+            "snippet": "Foreign minister claims Israel convinced Donald Trump to make ‘grave miscalculation’ of waging war on IranMiddle East crisis – live updatesOman’s foreign minister has claimed the US has “lost control ",
             "isNew": true
           },
           {
-            "title": "Cathay Pacific suspends flights to and from Dubai until end of April – as it happened",
-            "link": "https://www.theguardian.com/world/live/2026/mar/18/iran-war-live-updates-oil-prices-hormuz-trump-larijani-key-leader-killed-israel-strikes",
+            "title": "Trump thinks brute force will arrest the US’s decline. His heavy-handed actions in Iran are only accelerating it | Owen Jones",
+            "link": "https://www.theguardian.com/commentisfree/2026/mar/19/donald-trump-brute-force-us-decline-iran-war",
             "source": "guardian",
             "sources": [
               "guardian"
             ],
-            "pubDate": "Thu, 19 Mar 2026 03:43:15 GMT",
-            "snippet": "This liveblog is closed – follow our new liveblog here.Iran is still exporting millions of barrels of oil, with about 90 ships, including oil tankers, having crossed the strait of Hormuz since the beg",
+            "pubDate": "Thu, 19 Mar 2026 12:00:08 GMT",
+            "snippet": "From Venezuela to the Middle East, this is gangsterism fused with colonialism. It repudiates the moral language through which US power once justified itselfGone are any pretences about saving the Iran",
             "isNew": true
           },
           {
-            "title": "Iran war is the greatest threat to global energy ‘in history’, warns IEA",
-            "link": "https://www.ft.com/content/09524a74-db3c-4aef-b4f7-51eda3068320",
-            "source": "ft",
-            "sources": [
-              "ft"
-            ],
-            "pubDate": "Fri, 20 Mar 2026 12:38:14 GMT",
-            "snippet": "Agency’s head Fatih Birol says recovery of oil and gasfields in Gulf region could take more than six months",
-            "isNew": true
-          },
-          {
-            "title": "\"호르무즈 개방 원하는 트럼프, 하르그섬 점령·봉쇄 검토중\"",
-            "link": "https://www.yna.co.kr/view/AKR20260320179000009",
-            "source": "yonhap",
-            "sources": [
-              "yonhap"
-            ],
-            "pubDate": "Fri, 20 Mar 2026 21:16:17 +0900",
-            "snippet": "(서울=연합뉴스) 신재우 기자 = 도널드 트럼프 미국 대통령이 이란에 호르무즈 해협 재개방을 압박하기 위해 이란의 원유 수출 거점인 하르그섬을 ...",
-            "isNew": true
-          }
-        ]
-      },
-      {
-        "category_id": "regional",
-        "category_name": "지역 정세",
-        "category_icon": "🌍",
-        "count": 4,
-        "new_count": 4,
-        "articles": [
-          {
-            "title": "우크라, 중동 5개국에 드론 요격 부대 배치",
-            "link": "https://www.yna.co.kr/view/AKR20260320180100109",
-            "source": "yonhap",
-            "sources": [
-              "yonhap"
-            ],
-            "pubDate": "Fri, 20 Mar 2026 21:45:11 +0900",
-            "snippet": "(로마=연합뉴스) 민경락 특파원 = 이란발 드론 대응법을 동맹국에 전수 중인 우크라이나가 중동 5개국에 드론 요격 부대를 배치했다고 로이터통신이...",
-            "isNew": true
-          },
-          {
-            "title": "June 5, 2024 Israel-Hamas war",
-            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-05-24/index.html",
+            "title": "June 1, 2024 - Israel-Gaza news",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-01-24/index.html",
             "source": "cnn",
             "sources": [
               "cnn"
             ],
             "pubDate": "",
-            "snippet": "Tensions are ramping up at the Israel-Lebanon border, with Hezbollah claiming responsibility for a Wednesday evening attack in northern Israel that left multiple people injured.",
+            "snippet": "President Joe Biden has laid out a three-phase proposal to end the conflict in Gaza, as global condemnation of Israel's offensive in Rafah grows.",
             "isNew": true
           },
           {
-            "title": "물가 우려에 영국 국채 금리 2008년 금융위기후 최고",
-            "link": "https://www.yna.co.kr/view/AKR20260320179800085",
-            "source": "yonhap",
+            "title": "May 21, 2024 Israel-Hamas war, Iran president death news",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-21-24/index.html",
+            "source": "cnn",
             "sources": [
-              "yonhap"
+              "cnn"
             ],
-            "pubDate": "Fri, 20 Mar 2026 21:26:44 +0900",
-            "snippet": "(런던=연합뉴스) 김지연 특파원 = 중동 전쟁 등에 따른 물가급등 우려가 커지면서 영국 국채 금리가 2008년 금융위기 이후 최고치를 기록했다.",
+            "pubDate": "",
+            "snippet": "Prime Minister Benjamin Netanyahu blasted the charges brought by the International Criminal Court against himself and Israel's defense minister as \"beyond outrageous\" in an interview Tuesday with CNN'",
             "isNew": true
           },
           {
-            "title": "러, 중동 전쟁에도 7회 연속 기준금리 인하",
-            "link": "https://www.yna.co.kr/view/AKR20260320178600099",
-            "source": "yonhap",
+            "title": "May 19, 2024 helicopter crash involving Iranian president",
+            "link": "https://www.cnn.com/middleeast/live-news/raisi-iran-president-helicopter-crash/index.html",
+            "source": "cnn",
             "sources": [
-              "yonhap"
+              "cnn"
             ],
-            "pubDate": "Fri, 20 Mar 2026 21:08:50 +0900",
-            "snippet": "(요하네스버그=연합뉴스) 나확진 특파원 = 러시아 중앙은행은 20일(현지시간) 기준금리를 연 15.5%에서 15.0%로 0.5%포인트 인하했다고...",
+            "pubDate": "",
+            "snippet": "A helicopter carrying Iranian President Ebrahim Raisi crashed while he was visiting a northern region in the country Sunday, according to the Iranian state news agency IRNA.",
             "isNew": true
           }
         ]
@@ -917,9 +868,20 @@
         "category_id": "other",
         "category_name": "기타",
         "category_icon": "📰",
-        "count": 4,
-        "new_count": 4,
+        "count": 6,
+        "new_count": 6,
         "articles": [
+          {
+            "title": "Moments amid the chaos of war in the Middle East – in pictures",
+            "link": "https://www.theguardian.com/world/gallery/2026/mar/20/middle-east-iran-war-moments-gallery",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Fri, 20 Mar 2026 14:00:26 GMT",
+            "snippet": "Since the conflict broke out in the middle east at the end of February, everyday life has been upended for thousands of ordinary people in the region. Amidst the devastation and threat to life, people",
+            "isNew": true
+          },
           {
             "title": "Iran could be the US's Boer war: a hollow victory that marks the beginning of the end of empire | Larry Elliott",
             "link": "https://www.theguardian.com/commentisfree/2026/mar/19/iran-us-boer-war-victory-empire-economy",
@@ -967,6 +929,59 @@
         ]
       },
       {
+        "category_id": "economy",
+        "category_name": "경제 영향",
+        "category_icon": "📊",
+        "count": 4,
+        "new_count": 4,
+        "articles": [
+          {
+            "title": "뉴욕증시, 연내 금리인하 기대감 소멸에 하락 출발",
+            "link": "https://www.yna.co.kr/view/AKR20260320183100009",
+            "source": "yonhap",
+            "sources": [
+              "yonhap"
+            ],
+            "pubDate": "Fri, 20 Mar 2026 22:59:29 +0900",
+            "snippet": "(서울=연합뉴스) 윤정원 연합인포맥스 기자 = 뉴욕증시의 3대 주가지수는 미국과 이란 간의 전면전에 따른 고유가 부담이 연방준비제도(Fed·연준...",
+            "isNew": true
+          },
+          {
+            "title": "Why gasfield attacks are major escalation in Iran war – The Latest",
+            "link": "https://www.theguardian.com/news/audio/2026/mar/19/why-gasfield-attacks-are-major-escalation-in-iran-war-the-latest",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Thu, 19 Mar 2026 16:50:54 GMT",
+            "snippet": "Donald Trump is threatening to ‘blow up’ a major Iranian energy facility, as attacks on gasfields across the Middle East send gas and oil prices skyrocketing again. The threat comes after Israeli stri",
+            "isNew": true
+          },
+          {
+            "title": "West Point analysis warns that strait of Hormuz blockade will strangle US defense industry",
+            "link": "https://www.theguardian.com/world/2026/mar/19/west-point-analysis-iran-war-costs",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Thu, 19 Mar 2026 11:00:07 GMT",
+            "snippet": "Report shows how minerals critical to defense readiness have seen a ‘near total’ disruption in seaborne tradeMiddle East crisis – live updatesSign up for the Breaking News US email to get newsletter a",
+            "isNew": true
+          },
+          {
+            "title": "Cathay Pacific suspends flights to and from Dubai until end of April – as it happened",
+            "link": "https://www.theguardian.com/world/live/2026/mar/18/iran-war-live-updates-oil-prices-hormuz-trump-larijani-key-leader-killed-israel-strikes",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Thu, 19 Mar 2026 03:43:15 GMT",
+            "snippet": "This liveblog is closed – follow our new liveblog here.Iran is still exporting millions of barrels of oil, with about 90 ships, including oil tankers, having crossed the strait of Hormuz since the beg",
+            "isNew": true
+          }
+        ]
+      },
+      {
         "category_id": "diplomacy",
         "category_name": "외교/협상",
         "category_icon": "🤝",
@@ -996,129 +1011,50 @@
             "isNew": true
           }
         ]
+      },
+      {
+        "category_id": "regional",
+        "category_name": "지역 정세",
+        "category_icon": "🌍",
+        "count": 2,
+        "new_count": 2,
+        "articles": [
+          {
+            "title": "June 5, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-05-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "Tensions are ramping up at the Israel-Lebanon border, with Hezbollah claiming responsibility for a Wednesday evening attack in northern Israel that left multiple people injured.",
+            "isNew": true
+          },
+          {
+            "title": "생방중 러 기자 바로 뒤 '쾅'…\"이스라엘이 표적 공습\"(종합)",
+            "link": "https://www.yna.co.kr/view/AKR20260320030751009",
+            "source": "yonhap",
+            "sources": [
+              "yonhap"
+            ],
+            "pubDate": "Fri, 20 Mar 2026 22:08:09 +0900",
+            "snippet": "(서울·요하네스버그=연합뉴스) 강건택 기자 나확진 특파원 = 레바논에서 전쟁 상황을 생방송으로 보도하던 러시아 국영매체 기자의 바로 뒤에 이스라...",
+            "isNew": true
+          }
+        ]
       }
     ],
     "recent_30min": {
       "total_new": 49,
       "by_category": {
-        "military": {
-          "count": 12,
-          "titles": [
-            {
-              "title": "Father of killed US military member disputes Hegseth’s claim he said to ‘finish’ the job in Iran",
-              "link": "https://www.theguardian.com/us-news/2026/mar/20/iran-war-military-father-pete-hegseth",
-              "source": "guardian"
-            },
-            {
-              "title": "‘Doomsday scenario’: a visual guide to the oil and gas site attacks in the Middle East",
-              "link": "https://www.theguardian.com/world/ng-interactive/2026/mar/19/visual-guide-oil-and-gas-site-attacks-middle-east",
-              "source": "guardian"
-            },
-            {
-              "title": "Middle East war: why tit-for-tat attacks on gasfields are a major escalation",
-              "link": "https://www.theguardian.com/world/2026/mar/18/middle-east-war-why-attacks-gasfield-south-pars-are-a-major-escalation",
-              "source": "guardian"
-            },
-            {
-              "title": "Israel strikes Iran’s South Pars gasfield hours after forces kill intelligence minister",
-              "link": "https://www.theguardian.com/world/2026/mar/18/iran-intelligence-minister-esmail-khatib-killed-israel-claims",
-              "source": "guardian"
-            },
-            {
-              "title": "June 12, 2024 Israel-Hamas war",
-              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-12-24-intl/index.html",
-              "source": "cnn"
-            }
-          ]
-        },
-        "regional": {
-          "count": 4,
-          "titles": [
-            {
-              "title": "우크라, 중동 5개국에 드론 요격 부대 배치",
-              "link": "https://www.yna.co.kr/view/AKR20260320180100109",
-              "source": "yonhap"
-            },
-            {
-              "title": "June 5, 2024 Israel-Hamas war",
-              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-05-24/index.html",
-              "source": "cnn"
-            },
-            {
-              "title": "물가 우려에 영국 국채 금리 2008년 금융위기후 최고",
-              "link": "https://www.yna.co.kr/view/AKR20260320179800085",
-              "source": "yonhap"
-            },
-            {
-              "title": "러, 중동 전쟁에도 7회 연속 기준금리 인하",
-              "link": "https://www.yna.co.kr/view/AKR20260320178600099",
-              "source": "yonhap"
-            }
-          ]
-        },
-        "economy": {
-          "count": 5,
-          "titles": [
-            {
-              "title": "Why gasfield attacks are major escalation in Iran war – The Latest",
-              "link": "https://www.theguardian.com/news/audio/2026/mar/19/why-gasfield-attacks-are-major-escalation-in-iran-war-the-latest",
-              "source": "guardian"
-            },
-            {
-              "title": "West Point analysis warns that strait of Hormuz blockade will strangle US defense industry",
-              "link": "https://www.theguardian.com/world/2026/mar/19/west-point-analysis-iran-war-costs",
-              "source": "guardian"
-            },
-            {
-              "title": "Cathay Pacific suspends flights to and from Dubai until end of April – as it happened",
-              "link": "https://www.theguardian.com/world/live/2026/mar/18/iran-war-live-updates-oil-prices-hormuz-trump-larijani-key-leader-killed-israel-strikes",
-              "source": "guardian"
-            },
-            {
-              "title": "Iran war is the greatest threat to global energy ‘in history’, warns IEA",
-              "link": "https://www.ft.com/content/09524a74-db3c-4aef-b4f7-51eda3068320",
-              "source": "ft"
-            },
-            {
-              "title": "\"호르무즈 개방 원하는 트럼프, 하르그섬 점령·봉쇄 검토중\"",
-              "link": "https://www.yna.co.kr/view/AKR20260320179000009",
-              "source": "yonhap"
-            }
-          ]
-        },
-        "politics": {
-          "count": 10,
-          "titles": [
-            {
-              "title": "Oman claims Israel pushed US into Iran war when deal was possible",
-              "link": "https://www.theguardian.com/world/2026/mar/19/us-lost-control-of-its-own-foreign-policy-oman-foreign-minister",
-              "source": "guardian"
-            },
-            {
-              "title": "Trump thinks brute force will arrest the US’s decline. His heavy-handed actions in Iran are only accelerating it | Owen Jones",
-              "link": "https://www.theguardian.com/commentisfree/2026/mar/19/donald-trump-brute-force-us-decline-iran-war",
-              "source": "guardian"
-            },
-            {
-              "title": "June 17, 2024 - Israel-Gaza news",
-              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-17-24/index.html",
-              "source": "cnn"
-            },
-            {
-              "title": "June 1, 2024 - Israel-Gaza news",
-              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-01-24/index.html",
-              "source": "cnn"
-            },
-            {
-              "title": "May 21, 2024 Israel-Hamas war, Iran president death news",
-              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-21-24/index.html",
-              "source": "cnn"
-            }
-          ]
-        },
         "other": {
-          "count": 6,
+          "count": 8,
           "titles": [
+            {
+              "title": "Moments amid the chaos of war in the Middle East – in pictures",
+              "link": "https://www.theguardian.com/world/gallery/2026/mar/20/middle-east-iran-war-moments-gallery",
+              "source": "guardian"
+            },
             {
               "title": "Iran could be the US's Boer war: a hollow victory that marks the beginning of the end of empire | Larry Elliott",
               "link": "https://www.theguardian.com/commentisfree/2026/mar/19/iran-us-boer-war-victory-empire-economy",
@@ -1138,11 +1074,31 @@
               "title": "Israel",
               "link": "https://www.cnn.com/specials/middleeast/israel?utm_source=section",
               "source": "cnn"
+            }
+          ]
+        },
+        "economy": {
+          "count": 4,
+          "titles": [
+            {
+              "title": "뉴욕증시, 연내 금리인하 기대감 소멸에 하락 출발",
+              "link": "https://www.yna.co.kr/view/AKR20260320183100009",
+              "source": "yonhap"
             },
             {
-              "title": "May 30, 2024 Israel-Hamas war",
-              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-30-24/index.html",
-              "source": "cnn"
+              "title": "Why gasfield attacks are major escalation in Iran war – The Latest",
+              "link": "https://www.theguardian.com/news/audio/2026/mar/19/why-gasfield-attacks-are-major-escalation-in-iran-war-the-latest",
+              "source": "guardian"
+            },
+            {
+              "title": "West Point analysis warns that strait of Hormuz blockade will strangle US defense industry",
+              "link": "https://www.theguardian.com/world/2026/mar/19/west-point-analysis-iran-war-costs",
+              "source": "guardian"
+            },
+            {
+              "title": "Cathay Pacific suspends flights to and from Dubai until end of April – as it happened",
+              "link": "https://www.theguardian.com/world/live/2026/mar/18/iran-war-live-updates-oil-prices-hormuz-trump-larijani-key-leader-killed-israel-strikes",
+              "source": "guardian"
             }
           ]
         },
@@ -1150,8 +1106,8 @@
           "count": 10,
           "titles": [
             {
-              "title": "UK says it remains in talks over escorting ships through strait of Hormuz",
-              "link": "https://www.theguardian.com/world/2026/mar/18/uk-says-it-remains-in-talks-over-escorting-ships-through-strait-of-hormuz",
+              "title": "Israel denies ‘dragging’ US into war – as it happened",
+              "link": "https://www.theguardian.com/world/live/2026/mar/19/iran-war-live-updates-oil-prices-gas-field-strikes-pentagon-more-funds-trump-news",
               "source": "guardian"
             },
             {
@@ -1176,6 +1132,66 @@
             }
           ]
         },
+        "military": {
+          "count": 15,
+          "titles": [
+            {
+              "title": "Iran says it will show ‘zero restraint’ if energy infrastructure is targeted again",
+              "link": "https://www.theguardian.com/world/2026/mar/19/iran-says-it-will-show-zero-restraint-if-energy-infrastructure-is-targeted-again",
+              "source": "guardian"
+            },
+            {
+              "title": "‘Doomsday scenario’: a visual guide to the oil and gas site attacks in the Middle East",
+              "link": "https://www.theguardian.com/world/ng-interactive/2026/mar/19/visual-guide-oil-and-gas-site-attacks-middle-east",
+              "source": "guardian"
+            },
+            {
+              "title": "Middle East war: why tit-for-tat attacks on gasfields are a major escalation",
+              "link": "https://www.theguardian.com/world/2026/mar/18/middle-east-war-why-attacks-gasfield-south-pars-are-a-major-escalation",
+              "source": "guardian"
+            },
+            {
+              "title": "June 12, 2024 Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-12-24-intl/index.html",
+              "source": "cnn"
+            },
+            {
+              "title": "June 6, 2024 Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-06-24/index.html",
+              "source": "cnn"
+            }
+          ]
+        },
+        "politics": {
+          "count": 8,
+          "titles": [
+            {
+              "title": "The Guardian view on the Iran war escalation: as Trump breaks things, who will pick up the pieces? | Editorial",
+              "link": "https://www.theguardian.com/commentisfree/2026/mar/19/the-guardian-view-on-the-iran-war-escalation-as-trump-breaks-things-who-will-pick-up-the-pieces",
+              "source": "guardian"
+            },
+            {
+              "title": "Oman claims Israel pushed US into Iran war when deal was possible",
+              "link": "https://www.theguardian.com/world/2026/mar/19/us-lost-control-of-its-own-foreign-policy-oman-foreign-minister",
+              "source": "guardian"
+            },
+            {
+              "title": "Trump thinks brute force will arrest the US’s decline. His heavy-handed actions in Iran are only accelerating it | Owen Jones",
+              "link": "https://www.theguardian.com/commentisfree/2026/mar/19/donald-trump-brute-force-us-decline-iran-war",
+              "source": "guardian"
+            },
+            {
+              "title": "June 17, 2024 - Israel-Gaza news",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-17-24/index.html",
+              "source": "cnn"
+            },
+            {
+              "title": "June 1, 2024 - Israel-Gaza news",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-01-24/index.html",
+              "source": "cnn"
+            }
+          ]
+        },
         "diplomacy": {
           "count": 2,
           "titles": [
@@ -1188,6 +1204,21 @@
               "title": "June 10, 2024 Israel-Hamas war",
               "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-10-24/index.html",
               "source": "cnn"
+            }
+          ]
+        },
+        "regional": {
+          "count": 2,
+          "titles": [
+            {
+              "title": "June 5, 2024 Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-05-24/index.html",
+              "source": "cnn"
+            },
+            {
+              "title": "생방중 러 기자 바로 뒤 '쾅'…\"이스라엘이 표적 공습\"(종합)",
+              "link": "https://www.yna.co.kr/view/AKR20260320030751009",
+              "source": "yonhap"
             }
           ]
         }
@@ -1281,53 +1312,69 @@
     }
   ],
   "economic_indicators": {
-    "GOLD": {
-      "price": 4675.5,
-      "change": 74.8,
-      "changePercent": 1.63,
-      "prev": 4600.7
-    },
-    "BRENT": {
-      "price": 103.18,
-      "change": -5.47,
-      "changePercent": -5.03,
-      "prev": 108.65
-    },
-    "US10Y": {
-      "price": 4.31,
-      "change": 0.03,
-      "changePercent": 0.7,
-      "prev": 4.28
-    },
-    "DXY": {
-      "price": 99.4,
-      "change": 0.17,
-      "changePercent": 0.17,
-      "prev": 99.23
-    },
-    "VIX": {
-      "price": 24.9,
-      "change": 0.84,
-      "changePercent": 3.49,
-      "prev": 24.06
-    },
     "WTI": {
-      "price": 94.83,
-      "change": -1.31,
-      "changePercent": -1.36,
+      "price": 95.85,
+      "change": -0.29,
+      "changePercent": -0.3,
       "prev": 96.14
     },
+    "VIX": {
+      "price": 24.97,
+      "change": 0.91,
+      "changePercent": 3.78,
+      "prev": 24.06
+    },
     "US2Y": {
-      "price": 3.61,
+      "price": 3.62,
       "change": 0,
       "changePercent": 0,
       "prev": 3.61
+    },
+    "GOLD": {
+      "price": 4631.3,
+      "change": 30.6,
+      "changePercent": 0.67,
+      "prev": 4600.7
+    },
+    "US10Y": {
+      "price": 4.33,
+      "change": 0.05,
+      "changePercent": 1.17,
+      "prev": 4.28
+    },
+    "BRENT": {
+      "price": 104.94,
+      "change": -3.71,
+      "changePercent": -3.41,
+      "prev": 108.65
+    },
+    "DXY": {
+      "price": 99.6,
+      "change": 0.37,
+      "changePercent": 0.37,
+      "prev": 99.23
     }
   },
   "critical_events": [
     {
+      "id": "unilateral_deescalation",
+      "name": "일방적 전투 축소/자제 선언",
+      "severity": "high",
+      "confidence": 0.8666666666666667,
+      "matchCount": 2.6,
+      "direction": "shorten"
+    },
+    {
       "id": "diplomatic_breakthrough",
       "name": "외교적 돌파구/강대국 중재",
+      "severity": "high",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "shorten"
+    },
+    {
+      "id": "capital_attack",
+      "name": "수도 직접 공격/포위",
       "severity": "high",
       "confidence": 0.6666666666666666,
       "matchCount": 2,
