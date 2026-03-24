@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-03-24T20:38:11.608Z",
+  "timestamp": "2026-03-24T21:34:58.106Z",
   "war_day": 24,
   "probabilities": {
-    "1개월 내 (~3월)": 19.3,
-    "2~3개월 (4~5월)": 37.1,
-    "4~6개월 (6~8월)": 25.4,
-    "7~12개월 (9월~27/2월)": 13.1,
-    "1년 초과": 5.1
+    "1개월 내 (~3월)": 21.9,
+    "2~3개월 (4~5월)": 37.9,
+    "4~6개월 (6~8월)": 25.6,
+    "7~12개월 (9월~27/2월)": 11,
+    "1년 초과": 3.6
   },
   "factors": [
     {
@@ -42,7 +42,7 @@
       ],
       "applied": "2026-03-01",
       "active": true,
-      "decay": 0.5228
+      "decay": 0.522
     },
     {
       "factor": "확전 뉴스 우세 (확전4.2:휴전2)",
@@ -76,7 +76,7 @@
       ],
       "applied": "2026-03-01",
       "active": true,
-      "decay": 0.5228
+      "decay": 0.522
     },
     {
       "factor": "9개국 참전 - 분쟁 복잡성 증가",
@@ -164,11 +164,11 @@
       "decay": 1
     },
     {
-      "factor": "협상/외교 뉴스 22건 감지",
+      "factor": "협상/외교 뉴스 20건 감지",
       "impact": "외교적 해결 움직임 포착",
       "weight": "+0.03%p (1개월내), +0.02%p (2~3개월)",
       "direction": "shorten",
-      "detail": "실시간 뉴스에서 협상 관련 기사 22건이 감지되었습니다.",
+      "detail": "실시간 뉴스에서 협상 관련 기사 20건이 감지되었습니다.",
       "keywords": [
         "negotiat",
         "talks",
@@ -181,11 +181,11 @@
       "decay": 1
     },
     {
-      "factor": "지역 확산 뉴스 30건 감지",
+      "factor": "지역 확산 뉴스 26건 감지",
       "impact": "주변국 대규모 연루 → 장기화 위험 높음",
       "weight": "+0.03%p (4~6개월), +0.03%p (7~12개월)",
       "direction": "lengthen",
-      "detail": "주변국을 언급하는 기사 30건이 감지되었습니다.",
+      "detail": "주변국을 언급하는 기사 26건이 감지되었습니다.",
       "keywords": [
         "saudi",
         "uae",
@@ -234,6 +234,34 @@
       "decay": 0.3
     },
     {
+      "factor": "[중대 이벤트] 교전국 정권 붕괴/쿠데타",
+      "impact": "교전국 정권 붕괴 또는 쿠데타. 이라크(2003): 바그다드 함락 후 3주 내 주요 전투 종료. 리비아(2011): 트리폴리 함락 후 2개월 내 종전.",
+      "weight": "+6.7%p (1개월내), +5.3%p (2~3개월), +1.3%p (4~6개월), -3.3%p (7~12개월), -2.7%p (1년초과)",
+      "direction": "shorten",
+      "detail": "교전국 정권 붕괴 또는 쿠데타. 이라크(2003): 바그다드 함락 후 3주 내 주요 전투 종료. 리비아(2011): 트리폴리 함락 후 2개월 내 종전.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Trump claims US has achieved ‘regime change’, ‘received present’ from Iran",
+      "keywords": [
+        "regime",
+        "collaps",
+        "regime",
+        "fall",
+        "government",
+        "fall",
+        "capital",
+        "fall",
+        "capital",
+        "captur",
+        "coup",
+        "detat",
+        "government",
+        "overthrow",
+        "regime",
+        "change"
+      ],
+      "applied": "2026-03-24",
+      "active": true,
+      "severity": "critical"
+    },
+    {
       "factor": "[중대 이벤트] 외교적 돌파구/강대국 중재",
       "impact": "주요 외교적 돌파구 또는 강대국 중재. 데이턴(1995): 미국 중재 → 3주만에 합의. UN 안보리 결의는 평균 2~4주 내 휴전 이행.",
       "weight": "+2.0%p (1개월내), +4.0%p (2~3개월), +1.3%p (4~6개월), -1.3%p (7~12개월), -0.7%p (1년초과)",
@@ -266,9 +294,9 @@
     {
       "factor": "[중대 이벤트] 수도 직접 공격/포위",
       "impact": "수도 직접 공격. 베오그라드(1999): 78일 폭격 후 항복. 바그다드(2003): 21일만에 함락. 수도 타격은 전쟁 지속 의지를 급격히 약화.",
-      "weight": "+4.0%p (1개월내), +6.0%p (2~3개월), -2.0%p (4~6개월), -2.0%p (7~12개월), -1.0%p (1년초과)",
+      "weight": "+2.7%p (1개월내), +4.0%p (2~3개월), -1.3%p (4~6개월), -1.3%p (7~12개월), -0.7%p (1년초과)",
       "direction": "shorten",
-      "detail": "수도 직접 공격. 베오그라드(1999): 78일 폭격 후 항복. 바그다드(2003): 21일만에 함락. 수도 타격은 전쟁 지속 의지를 급격히 약화.\n\n신뢰도: 확실 (100%), 관련 기사 4건 감지.\n관련: Moment rescuers find man alive under the rubble in Tehran | Trump’s ‘very good’ talks with Iran buy him time with oil and energy markets",
+      "detail": "수도 직접 공격. 베오그라드(1999): 78일 폭격 후 항복. 바그다드(2003): 21일만에 함락. 수도 타격은 전쟁 지속 의지를 급격히 약화.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Trump’s ‘very good’ talks with Iran buy him time with oil and energy markets",
       "keywords": [
         "capital",
         "bomb",
@@ -352,11 +380,11 @@
       "severity": "critical"
     },
     {
-      "factor": "금값 사상최고 ($4454.7/oz)",
+      "factor": "금값 사상최고 ($4474.9/oz)",
       "impact": "안전자산 수요 폭증 → 글로벌 불안 심화",
       "weight": "+2%p (4-6개월)",
       "direction": "lengthen",
-      "detail": "금 가격이 온스당 $4454.7로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
+      "detail": "금 가격이 온스당 $4474.9로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
       "keywords": [
         "gold",
         "safe haven",
@@ -386,10 +414,10 @@
   "news_signals": {
     "ceasefire_mentions": 2,
     "escalation_mentions": 4.2,
-    "negotiation_mentions": 22,
-    "casualty_mentions": 6.2,
+    "negotiation_mentions": 20,
+    "casualty_mentions": 8.2,
     "peace_mentions": 8,
-    "regional_spread": 30,
+    "regional_spread": 26,
     "total_articles": 50,
     "new_articles": 50,
     "unique_events": 48,
@@ -397,11 +425,23 @@
   },
   "latest_news": [
     {
-      "title": "JP모건 다이먼 \"이란전쟁, 단기론 위험…장기론 더 나은 기회\"",
-      "link": "https://www.yna.co.kr/view/AKR20260325007900072",
-      "pubDate": "Wed, 25 Mar 2026 05:27:36 +0900",
-      "source": "yonhap",
-      "snippet": "(뉴욕=연합뉴스) 이지헌 특파원 = 미국 은행 JP모건체이스의 제이미 다이먼 최고경영자(CEO)는 24일 이란 전쟁이 단기적으로는 위험 요인이지...",
+      "title": "Trump��s Threat to ‘Obliterate’ Iran’s Power Stations Could Constitute a War Crime, Rights Experts Say",
+      "link": "https://www.nytimes.com/2026/03/24/us/politics/trump-iran-power-stations.html",
+      "pubDate": "Tue, 24 Mar 2026 21:26:30 +0000",
+      "source": "nytimes",
+      "snippet": "Intentionally targeting the country’s energy infrastructure could constitute a war crime under international law.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Pakistan Offers to Host Talks Between Iran and the United States",
+      "link": "https://www.nytimes.com/2026/03/24/world/middleeast/pakistan-iran-us-mediation.html",
+      "pubDate": "Tue, 24 Mar 2026 21:13:34 +0000",
+      "source": "nytimes",
+      "snippet": "Pakistan, which has cultivated ties with both Washington and Tehran, sees a diplomatic opening to intervene in the war in Iran, its neighbor.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -411,7 +451,7 @@
     {
       "title": "Middle East crisis live: Trump claims Iran has agreed ‘never’ to have a nuclear weapon as he reportedly approves sending more troops to region",
       "link": "https://www.theguardian.com/world/live/2026/mar/24/iran-war-live-updates-trump-ursula-von-der-leyen-oil-prices-energy-crisis-israel-strikes",
-      "pubDate": "Tue, 24 Mar 2026 20:23:11 GMT",
+      "pubDate": "Tue, 24 Mar 2026 21:12:27 GMT",
       "source": "guardian",
       "snippet": "President makes latest claim in White House press briefing as Sky News and NBC News report pending deployment of more than 1,000 soldiers to Middle EastJD Vance role touted as Pakistan attempts to bro",
       "isNew": true,
@@ -421,11 +461,107 @@
       "_isDuplicate": false
     },
     {
+      "title": "United States Said to Have Sent Iran a Plan to End the Middle East War",
+      "link": "https://www.nytimes.com/2026/03/24/world/middleeast/us-iran-peace-plan.html",
+      "pubDate": "Tue, 24 Mar 2026 21:07:30 +0000",
+      "source": "nytimes",
+      "snippet": "The 15-point plan was delivered via Pakistan, whose army chief has emerged as the key interlocutor between the United States and Iran, officials say.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Building collapses after Iranian missile strike on Israel",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/3/24/building-collapses-after-iranian-missile-strike-on-israel?traffic_source=rss",
+      "pubDate": "Tue, 24 Mar 2026 21:07:10 +0000",
+      "source": "aljazeera",
+      "snippet": "A building has collapsed in Bnei Brak, near Tel Aviv, after Israeli authorities said it was hit by an Iranian missile.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Trump claims US has achieved ‘regime change’, ‘received present’ from Iran",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/3/24/trump-claims-us-has-achieved-regime-change-received-present-from-iran?traffic_source=rss",
+      "pubDate": "Tue, 24 Mar 2026 21:06:28 +0000",
+      "source": "aljazeera",
+      "snippet": "US President Donald Trump has told reporters in the Oval Office that the US has achieved regime change in Iran.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Iraq to summon US, Iran envoys over deadly attacks: PM’s office",
+      "link": "https://www.aljazeera.com/news/2026/3/24/iraq-to-summon-us-iranian-envoys-over-deadly-attacks-pms-office?traffic_source=rss",
+      "pubDate": "Tue, 24 Mar 2026 21:05:15 +0000",
+      "source": "aljazeera",
+      "snippet": "Iraqi government says it plans to deliver &#039;formal notes of protest&#039; amid recent strikes tied to US-Israeli war on Iran.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "뉴욕증시, 시시각각 변하는 이란 전쟁 협상…약세 마감",
+      "link": "https://www.yna.co.kr/view/AKR20260325010500009",
+      "pubDate": "Wed, 25 Mar 2026 06:01:02 +0900",
+      "source": "yonhap",
+      "snippet": "(뉴욕=연합뉴스) 진정호 연합인포맥스 특파원 = 뉴욕증시의 3대 주가지수가 모두 약세로 마감했다.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "NASA to spend $20bn on moon base, nuclear-powered Mars spacecraft",
+      "link": "https://www.aljazeera.com/news/2026/3/24/nasa-to-spend-20bn-on-moon-base-nuclear-powered-mars-spacecraft?traffic_source=rss",
+      "pubDate": "Tue, 24 Mar 2026 20:58:04 +0000",
+      "source": "aljazeera",
+      "snippet": "The agency will increase robotic missions to the Moon and launch a nuclear spacecraft called Space Reactor 1 Freedom. ",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Iranian missiles cause injuries and major damage across Israel",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/3/24/iranian-missiles-cause-injuries-and-major-damage-across-israel?traffic_source=rss",
+      "pubDate": "Tue, 24 Mar 2026 20:54:37 +0000",
+      "source": "aljazeera",
+      "snippet": "Iran released a video showing the launch of missiles as a new wave targeted areas across Israel.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
       "title": "High Oil and Gas Prices Could Outlast Trump’s War With Iran",
       "link": "https://www.nytimes.com/2026/03/24/us/politics/oil-gas-prices-iran.html",
-      "pubDate": "Tue, 24 Mar 2026 20:18:07 +0000",
+      "pubDate": "Tue, 24 Mar 2026 20:41:20 +0000",
       "source": "nytimes",
       "snippet": "While the president has promised rapid relief, Americans could feel the financial sting of the conflict for some time after it ends.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Has Iran brought down an ‘unkillable’ US F-35 jet?",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/3/24/has-iran-brought-down-an-unkillable-us-f-35-jet-3?traffic_source=rss",
+      "pubDate": "Tue, 24 Mar 2026 20:34:34 +0000",
+      "source": "aljazeera",
+      "snippet": "Iran says it struck a US F-35 and released footage of the incident.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -467,112 +603,6 @@
       "_isDuplicated": false,
       "_clusterSize": 1,
       "_isDuplicate": false
-    },
-    {
-      "title": "Egypt’s Mohamed Salah to leave Liverpool at end of season after 9-year stay",
-      "link": "https://www.aljazeera.com/sports/2026/3/24/egypts-mohamed-salah-to-leave-liverpool-at-end-of-season-after-9-year-stay?traffic_source=rss",
-      "pubDate": "Tue, 24 Mar 2026 19:23:24 +0000",
-      "source": "aljazeera",
-      "snippet": "The former Chelsea and Roma forward has been linked with a move from Premier League champions to Saudi Pro League.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "UK offers to host international summit on reopening strait of Hormuz",
-      "link": "https://www.theguardian.com/world/2026/mar/24/uk-offers-to-host-international-security-summit-on-reopening-strait-of-hormuz",
-      "pubDate": "Tue, 24 Mar 2026 19:18:52 GMT",
-      "source": "guardian",
-      "snippet": "Defence chiefs have been discussing how to unblock the conduit for about a fifth of the world’s oil suppliesThe UK has offered to host an international security summit to draw up a “viable, collective",
-      "isNew": true,
-      "_sourceCount": 2,
-      "_isDuplicated": true,
-      "_clusterSize": 2,
-      "_isDuplicate": false
-    },
-    {
-      "title": "What impact is the war on Iran having on Israel?",
-      "link": "https://www.aljazeera.com/video/inside-story/2026/3/24/what-impact-is-the-war-on-iran-having-on-israel?traffic_source=rss",
-      "pubDate": "Tue, 24 Mar 2026 19:15:36 +0000",
-      "source": "aljazeera",
-      "snippet": "Iranian missiles hit the country as global economic damage deepens.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Why is Trump asking for Europe’s help in war on Iran?",
-      "link": "https://www.aljazeera.com/video/the-bottom-line/2026/3/24/why-is-trump-asking-for-europes-help-in-war-on-iran?traffic_source=rss",
-      "pubDate": "Tue, 24 Mar 2026 19:08:11 +0000",
-      "source": "aljazeera",
-      "snippet": "Former French Ambassador to the US Gerard Araud argues that Europe is right to avoid the US-Israeli war on Iran.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Tangled trail probably leads from Golders Green ambulance attack to Tehran",
-      "link": "https://www.theguardian.com/world/2026/mar/24/a-tangled-web-leads-from-golders-green-ambulance-attack-to-tehran",
-      "pubDate": "Tue, 24 Mar 2026 19:08:00 GMT",
-      "source": "guardian",
-      "snippet": "British investigators are circumspect but experts and security officials say incident has hallmarks of Iranian intelligenceMiddle East crisis – live updatesFrom Golders Green, where four ambulances be",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "US set to send airborne troops to Middle East as Trump claims talks with Iran taking place",
-      "link": "https://www.theguardian.com/world/2026/mar/24/middle-east-violence-trump-claims-very-good-talks-iran",
-      "pubDate": "Tue, 24 Mar 2026 18:59:32 GMT",
-      "source": "guardian",
-      "snippet": "Israel and Gulf states are targeted by Iran while Tehran denies any negotiations with US to end warMiddle East crisis – live updatesThe US is poised to deploy airborne troops to the Middle East as str",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "The Guardian view on the Iran war: energy, markets and a dangerous illusion | Editorial",
-      "link": "https://www.theguardian.com/commentisfree/2026/mar/24/the-guardian-view-on-the-iran-war-energy-markets-and-a-dangerous-illusion",
-      "pubDate": "Tue, 24 Mar 2026 18:52:15 GMT",
-      "source": "guardian",
-      "snippet": "Markets and the Treasury are pricing a quick exit. Without a credible political endgame, Donald Trump cannot deliver oneWhatever else Donald Trump’s “pause” is, it is not a ceasefire. Iranian barrages",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Why President Trump Has a Big Oil Problem",
-      "link": "https://www.nytimes.com/video/world/middleeast/100000010796844/why-iran-strait-of-hormuz-is-important-trump.html",
-      "pubDate": "Tue, 24 Mar 2026 18:39:38 +0000",
-      "source": "nytimes",
-      "snippet": "Our national security correspondent David E. Sanger looks at President Trump’s trouble handling retaliatory attacks by Iran that have largely choked off the Strait of Hormuz.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Iran names successor to security chief killed in US-Israeli attack",
-      "link": "https://www.aljazeera.com/news/2026/3/24/mohammad-bagher-zolghadr-succeeds-slain-larijani-as-iran-security-chief?traffic_source=rss",
-      "pubDate": "Tue, 24 Mar 2026 18:11:47 +0000",
-      "source": "aljazeera",
-      "snippet": "Mohammad Bagher Zolghadr, ex-IRGC commander, to replace late Ali Larijani as chief of Supreme National Security Council.",
-      "isNew": true,
-      "_isDuplicate": true,
-      "_sourceCount": 1
     }
   ],
   "news_digest": {
@@ -581,8 +611,8 @@
         "category_id": "military",
         "category_name": "군사 작전",
         "category_icon": "⚔️",
-        "count": 17,
-        "new_count": 17,
+        "count": 19,
+        "new_count": 19,
         "articles": [
           {
             "title": "Middle East crisis live: Trump claims Iran has agreed ‘never’ to have a nuclear weapon as he reportedly approves sending more troops to region",
@@ -591,8 +621,63 @@
             "sources": [
               "guardian"
             ],
-            "pubDate": "Tue, 24 Mar 2026 20:23:11 GMT",
+            "pubDate": "Tue, 24 Mar 2026 21:12:27 GMT",
             "snippet": "President makes latest claim in White House press briefing as Sky News and NBC News report pending deployment of more than 1,000 soldiers to Middle EastJD Vance role touted as Pakistan attempts to bro",
+            "isNew": true
+          },
+          {
+            "title": "United States Said to Have Sent Iran a Plan to End the Middle East War",
+            "link": "https://www.nytimes.com/2026/03/24/world/middleeast/us-iran-peace-plan.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Tue, 24 Mar 2026 21:07:30 +0000",
+            "snippet": "The 15-point plan was delivered via Pakistan, whose army chief has emerged as the key interlocutor between the United States and Iran, officials say.",
+            "isNew": true
+          },
+          {
+            "title": "Building collapses after Iranian missile strike on Israel",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/3/24/building-collapses-after-iranian-missile-strike-on-israel?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Tue, 24 Mar 2026 21:07:10 +0000",
+            "snippet": "A building has collapsed in Bnei Brak, near Tel Aviv, after Israeli authorities said it was hit by an Iranian missile.",
+            "isNew": true
+          },
+          {
+            "title": "Iraq to summon US, Iran envoys over deadly attacks: PM’s office",
+            "link": "https://www.aljazeera.com/news/2026/3/24/iraq-to-summon-us-iranian-envoys-over-deadly-attacks-pms-office?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Tue, 24 Mar 2026 21:05:15 +0000",
+            "snippet": "Iraqi government says it plans to deliver &#039;formal notes of protest&#039; amid recent strikes tied to US-Israeli war on Iran.",
+            "isNew": true
+          },
+          {
+            "title": "Iranian missiles cause injuries and major damage across Israel",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/3/24/iranian-missiles-cause-injuries-and-major-damage-across-israel?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Tue, 24 Mar 2026 20:54:37 +0000",
+            "snippet": "Iran released a video showing the launch of missiles as a new wave targeted areas across Israel.",
+            "isNew": true
+          },
+          {
+            "title": "Has Iran brought down an ‘unkillable’ US F-35 jet?",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/3/24/has-iran-brought-down-an-unkillable-us-f-35-jet-3?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Tue, 24 Mar 2026 20:34:34 +0000",
+            "snippet": "Iran says it struck a US F-35 and released footage of the incident.",
             "isNew": true
           },
           {
@@ -638,62 +723,6 @@
             "pubDate": "Tue, 24 Mar 2026 18:59:32 GMT",
             "snippet": "Israel and Gulf states are targeted by Iran while Tehran denies any negotiations with US to end warMiddle East crisis – live updatesThe US is poised to deploy airborne troops to the Middle East as str",
             "isNew": true
-          },
-          {
-            "title": "Iran’s New Security Chief Is a Hard-Line Former Guards Commander",
-            "link": "https://www.nytimes.com/2026/03/24/world/middleeast/iran-security-chief-larijani-zolghadr.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes",
-              "aljazeera"
-            ],
-            "pubDate": "Tue, 24 Mar 2026 18:05:16 +0000",
-            "snippet": "Mohammad Bagher Zolghadr replaces Ali Larijani, who was killed last week in an Israeli strike. He has a history of expanding the Guards’ reach into Iran’s politics.",
-            "isNew": true
-          },
-          {
-            "title": "Israeli strike lands near Roman ruins in Lebanon",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/3/24/israeli-strike-lands-near-roman-ruins-in-lebanon?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Tue, 24 Mar 2026 18:06:04 +0000",
-            "snippet": "Smoke was seen rising close to Roman ruins in the Lebanese city of Tyre after an Israeli strike hit a building nearby.",
-            "isNew": true
-          },
-          {
-            "title": "Kim Jong Un says North Korea will never give up on nuclear weapons",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/3/24/kim-jong-un-says-north-korea-will-never-give-up-on-nuclear-weapons?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Tue, 24 Mar 2026 18:01:06 +0000",
-            "snippet": "Kim Jong Un has said North Korea will never give up on its push for nuclear weapons.",
-            "isNew": true
-          },
-          {
-            "title": "Israeli defences questioned as Iran continues to cause damage",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/3/24/israeli-defences-questioned-as-iran-continues-to-cause-damage?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Tue, 24 Mar 2026 16:31:31 +0000",
-            "snippet": "Iranian missiles have caused damage in Israel, raising questions about the country’s air defence systems.",
-            "isNew": true
-          },
-          {
-            "title": "Israel Plans to Control Large Parts of Southern Lebanon, Defense Minister Says",
-            "link": "https://www.nytimes.com/2026/03/24/world/middleeast/israel-southern-lebanon-defense-minister.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Tue, 24 Mar 2026 16:21:18 +0000",
-            "snippet": "Israel Katz, the Israeli defense minister, suggested that Israeli troops might remain in parts of Lebanon even after the fighting there winds down.",
-            "isNew": true
           }
         ]
       },
@@ -701,9 +730,31 @@
         "category_id": "diplomacy",
         "category_name": "외교/협상",
         "category_icon": "🤝",
-        "count": 9,
-        "new_count": 9,
+        "count": 10,
+        "new_count": 10,
         "articles": [
+          {
+            "title": "Pakistan Offers to Host Talks Between Iran and the United States",
+            "link": "https://www.nytimes.com/2026/03/24/world/middleeast/pakistan-iran-us-mediation.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Tue, 24 Mar 2026 21:13:34 +0000",
+            "snippet": "Pakistan, which has cultivated ties with both Washington and Tehran, sees a diplomatic opening to intervene in the war in Iran, its neighbor.",
+            "isNew": true
+          },
+          {
+            "title": "뉴욕증시, 시시각각 변하는 이란 전쟁 협상…약세 마감",
+            "link": "https://www.yna.co.kr/view/AKR20260325010500009",
+            "source": "yonhap",
+            "sources": [
+              "yonhap"
+            ],
+            "pubDate": "Wed, 25 Mar 2026 06:01:02 +0900",
+            "snippet": "(뉴욕=연합뉴스) 진정호 연합인포맥스 특파원 = 뉴욕증시의 3대 주가지수가 모두 약세로 마감했다.",
+            "isNew": true
+          },
           {
             "title": "US says they’re talking, Iran says they’re not. Who’s telling the truth?",
             "link": "https://www.aljazeera.com/news/2026/3/24/us-says-theyre-talking-iran-says-theyre-not-whos-telling-the-truth?traffic_source=rss",
@@ -769,17 +820,6 @@
             ],
             "pubDate": "Tue, 24 Mar 2026 14:41:24 GMT",
             "snippet": "Diplomatic sources say negotiations may begin in Islamabad next week, though no formal agreement is in placeMiddle East crisis – live updatesPakistan’s prime minister, Shehbaz Sharif, says his country",
-            "isNew": true
-          },
-          {
-            "title": "Is the US talking to Iran’s Mohammad Bagher Ghalibaf, and who is he?",
-            "link": "https://www.aljazeera.com/news/2026/3/24/is-the-us-talking-to-irans-mohammad-bagher-ghalibaf-and-who-is-he?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Tue, 24 Mar 2026 14:16:21 +0000",
-            "snippet": "Iranian leaders, including Ghalibaf, have denied that talks with the US are under way.",
             "isNew": true
           },
           {
@@ -874,8 +914,8 @@
         "category_id": "other",
         "category_name": "기타",
         "category_icon": "📰",
-        "count": 5,
-        "new_count": 5,
+        "count": 4,
+        "new_count": 4,
         "articles": [
           {
             "title": "Israeli soldiers accused of ‘torturing’ toddler in Gaza",
@@ -920,17 +960,6 @@
             "pubDate": "Tue, 24 Mar 2026 16:46:29 +0000",
             "snippet": "The Israel Football Association was fined by FIFA for racism and discrimination breaches following Palestinian report.",
             "isNew": true
-          },
-          {
-            "title": "UN experts urge Israel to free Gaza doctor amid reports of ‘severe torture’",
-            "link": "https://www.aljazeera.com/news/2026/3/24/un-experts-urge-israel-to-free-gaza-doctor-amid-reports-of-severe-torture?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Tue, 24 Mar 2026 15:09:34 +0000",
-            "snippet": "Dr Hussam Abu Safia &#039;systematically denied&#039; medical treatment in Israeli detention, UN special rapporteurs warn.",
-            "isNew": true
           }
         ]
       },
@@ -938,9 +967,20 @@
         "category_id": "economy",
         "category_name": "경제 영향",
         "category_icon": "📊",
-        "count": 4,
-        "new_count": 4,
+        "count": 3,
+        "new_count": 3,
         "articles": [
+          {
+            "title": "Trump��s Threat to ‘Obliterate’ Iran’s Power Stations Could Constitute a War Crime, Rights Experts Say",
+            "link": "https://www.nytimes.com/2026/03/24/us/politics/trump-iran-power-stations.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Tue, 24 Mar 2026 21:26:30 +0000",
+            "snippet": "Intentionally targeting the country’s energy infrastructure could constitute a war crime under international law.",
+            "isNew": true
+          },
           {
             "title": "The Guardian view on the Iran war: energy, markets and a dangerous illusion | Editorial",
             "link": "https://www.theguardian.com/commentisfree/2026/mar/24/the-guardian-view-on-the-iran-war-energy-markets-and-a-dangerous-illusion",
@@ -950,28 +990,6 @@
             ],
             "pubDate": "Tue, 24 Mar 2026 18:52:15 GMT",
             "snippet": "Markets and the Treasury are pricing a quick exit. Without a credible political endgame, Donald Trump cannot deliver oneWhatever else Donald Trump’s “pause” is, it is not a ceasefire. Iranian barrages",
-            "isNew": true
-          },
-          {
-            "title": "Trump’s Threat to ‘Obliterate’ Iran’s Power Stations Could Constitute a War Crime, Rights Experts Say",
-            "link": "https://www.nytimes.com/2026/03/24/us/politics/trump-iran-power-stations.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Tue, 24 Mar 2026 15:34:19 +0000",
-            "snippet": "Intentionally targeting the country’s energy infrastructure could constitute a war crime under international law.",
-            "isNew": true
-          },
-          {
-            "title": "QatarEnergy declares force majeure on some LNG contracts due to Iran war",
-            "link": "https://www.aljazeera.com/news/2026/3/24/qatarenergy-declares-force-majeure-on-some-lng-contracts?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Tue, 24 Mar 2026 14:22:13 +0000",
-            "snippet": "The move comes amid production disruptions linked to the US-Israeli war on Iran, which have affected Qatar.",
             "isNew": true
           },
           {
@@ -991,9 +1009,20 @@
         "category_id": "politics",
         "category_name": "국내 정치",
         "category_icon": "🏛️",
-        "count": 4,
-        "new_count": 4,
+        "count": 3,
+        "new_count": 3,
         "articles": [
+          {
+            "title": "Trump claims US has achieved ‘regime change’, ‘received present’ from Iran",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/3/24/trump-claims-us-has-achieved-regime-change-received-present-from-iran?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Tue, 24 Mar 2026 21:06:28 +0000",
+            "snippet": "US President Donald Trump has told reporters in the Oval Office that the US has achieved regime change in Iran.",
+            "isNew": true
+          },
           {
             "title": "High Oil and Gas Prices Could Outlast Trump’s War With Iran",
             "link": "https://www.nytimes.com/2026/03/24/us/politics/oil-gas-prices-iran.html",
@@ -1001,7 +1030,7 @@
             "sources": [
               "nytimes"
             ],
-            "pubDate": "Tue, 24 Mar 2026 20:18:07 +0000",
+            "pubDate": "Tue, 24 Mar 2026 20:41:20 +0000",
             "snippet": "While the president has promised rapid relief, Americans could feel the financial sting of the conflict for some time after it ends.",
             "isNew": true
           },
@@ -1015,28 +1044,6 @@
             "pubDate": "Tue, 24 Mar 2026 18:39:38 +0000",
             "snippet": "Our national security correspondent David E. Sanger looks at President Trump’s trouble handling retaliatory attacks by Iran that have largely choked off the Strait of Hormuz.",
             "isNew": true
-          },
-          {
-            "title": "Who is Markwayne Mullin, Trump’s new homeland security chief?",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/3/24/who-is-markwayne-mullin-trumps-new-homeland-security-chief?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Tue, 24 Mar 2026 14:58:33 +0000",
-            "snippet": "Here&#039;s what we know about Markwayne Mullin, who&#039;ll oversee Trump’s contentious crackdown on migrants in the US.",
-            "isNew": true
-          },
-          {
-            "title": "Trump Says U.S. Is Negotiating With Iran, Which Publicly Denies His Claim",
-            "link": "https://www.nytimes.com/2026/03/23/world/middleeast/iran-war-trump.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Mon, 23 Mar 2026 23:48:51 +0000",
-            "snippet": "“Very, very strong talks,” President Trump claimed. Fake news, replied an Iranian parliamentary leader.",
-            "isNew": true
           }
         ]
       },
@@ -1044,20 +1051,9 @@
         "category_id": "regional",
         "category_name": "지역 정세",
         "category_icon": "🌍",
-        "count": 4,
-        "new_count": 4,
+        "count": 3,
+        "new_count": 3,
         "articles": [
-          {
-            "title": "JP모건 다이먼 \"이란전쟁, 단기론 위험…장기론 더 나은 기회\"",
-            "link": "https://www.yna.co.kr/view/AKR20260325007900072",
-            "source": "yonhap",
-            "sources": [
-              "yonhap"
-            ],
-            "pubDate": "Wed, 25 Mar 2026 05:27:36 +0900",
-            "snippet": "(뉴욕=연합뉴스) 이지헌 특파원 = 미국 은행 JP모건체이스의 제이미 다이먼 최고경영자(CEO)는 24일 이란 전쟁이 단기적으로는 위험 요인이지...",
-            "isNew": true
-          },
           {
             "title": "Lebanon Expels Iranian Envoy as Rift With Tehran Deepens",
             "link": "https://www.nytimes.com/2026/03/24/world/middleeast/lebanon-iran-envoy-expelled.html",
@@ -1092,94 +1088,69 @@
             "isNew": true
           }
         ]
+      },
+      {
+        "category_id": "nuclear",
+        "category_name": "핵/WMD",
+        "category_icon": "☢️",
+        "count": 1,
+        "new_count": 1,
+        "articles": [
+          {
+            "title": "NASA to spend $20bn on moon base, nuclear-powered Mars spacecraft",
+            "link": "https://www.aljazeera.com/news/2026/3/24/nasa-to-spend-20bn-on-moon-base-nuclear-powered-mars-spacecraft?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Tue, 24 Mar 2026 20:58:04 +0000",
+            "snippet": "The agency will increase robotic missions to the Moon and launch a nuclear spacecraft called Space Reactor 1 Freedom. ",
+            "isNew": true
+          }
+        ]
       }
     ],
     "recent_30min": {
       "total_new": 50,
       "by_category": {
-        "regional": {
+        "economy": {
           "count": 4,
           "titles": [
             {
-              "title": "JP모건 다이먼 \"이란전쟁, 단기론 위험…장기론 더 나은 기회\"",
-              "link": "https://www.yna.co.kr/view/AKR20260325007900072",
-              "source": "yonhap"
-            },
-            {
-              "title": "Lebanon Expels Iranian Envoy as Rift With Tehran Deepens",
-              "link": "https://www.nytimes.com/2026/03/24/world/middleeast/lebanon-iran-envoy-expelled.html",
+              "title": "Trump��s Threat to ‘Obliterate’ Iran’s Power Stations Could Constitute a War Crime, Rights Experts Say",
+              "link": "https://www.nytimes.com/2026/03/24/us/politics/trump-iran-power-stations.html",
               "source": "nytimes"
             },
             {
-              "title": "Egypt’s Mohamed Salah to leave Liverpool at end of season after 9-year stay",
-              "link": "https://www.aljazeera.com/sports/2026/3/24/egypts-mohamed-salah-to-leave-liverpool-at-end-of-season-after-9-year-stay?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Iranian IRGC’s ties to Hezbollah deepen tensions in Lebanese politics",
-              "link": "https://www.aljazeera.com/features/2026/3/24/iranian-irgc-ties-hezbollah-deepen-tensions-lebanese-politics?traffic_source=rss",
-              "source": "aljazeera"
-            }
-          ]
-        },
-        "military": {
-          "count": 18,
-          "titles": [
-            {
-              "title": "Middle East crisis live: Trump claims Iran has agreed ‘never’ to have a nuclear weapon as he reportedly approves sending more troops to region",
-              "link": "https://www.theguardian.com/world/live/2026/mar/24/iran-war-live-updates-trump-ursula-von-der-leyen-oil-prices-energy-crisis-israel-strikes",
+              "title": "The Guardian view on the Iran war: energy, markets and a dangerous illusion | Editorial",
+              "link": "https://www.theguardian.com/commentisfree/2026/mar/24/the-guardian-view-on-the-iran-war-energy-markets-and-a-dangerous-illusion",
               "source": "guardian"
             },
             {
-              "title": "Russia hits Ukraine with rare daytime barrage as new offensive begins",
-              "link": "https://www.aljazeera.com/news/2026/3/24/russia-hits-ukraine-with-deadly-daytime-barrage-as-spring-offensive-starts?traffic_source=rss",
-              "source": "aljazeera"
+              "title": "Reopening the Strait of Hormuz will be difficult without a deal with Iran.",
+              "link": "https://www.nytimes.com/live/2026/world/us-israel-iran-attack-maps/reopening-the-strait-of-hormuz-will-be-difficult-without-a-deal-with-iran",
+              "source": "nytimes"
             },
             {
-              "title": "What impact is the war on Iran having on Israel?",
-              "link": "https://www.aljazeera.com/video/inside-story/2026/3/24/what-impact-is-the-war-on-iran-having-on-israel?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Tangled trail probably leads from Golders Green ambulance attack to Tehran",
-              "link": "https://www.theguardian.com/world/2026/mar/24/a-tangled-web-leads-from-golders-green-ambulance-attack-to-tehran",
+              "title": "Trump’s sanctions against a UN human rights expert show free speech is dying |",
+              "link": "https://www.theguardian.com/commentisfree/2026/mar/24/trump-sanctions-un-human-rights-expert-free-speech",
               "source": "guardian"
-            },
-            {
-              "title": "US set to send airborne troops to Middle East as Trump claims talks with Iran taking place",
-              "link": "https://www.theguardian.com/world/2026/mar/24/middle-east-violence-trump-claims-very-good-talks-iran",
-              "source": "guardian"
-            }
-          ]
-        },
-        "politics": {
-          "count": 4,
-          "titles": [
-            {
-              "title": "High Oil and Gas Prices Could Outlast Trump’s War With Iran",
-              "link": "https://www.nytimes.com/2026/03/24/us/politics/oil-gas-prices-iran.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Why President Trump Has a Big Oil Problem",
-              "link": "https://www.nytimes.com/video/world/middleeast/100000010796844/why-iran-strait-of-hormuz-is-important-trump.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Who is Markwayne Mullin, Trump’s new homeland security chief?",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/3/24/who-is-markwayne-mullin-trumps-new-homeland-security-chief?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Trump Says U.S. Is Negotiating With Iran, Which Publicly Denies His Claim",
-              "link": "https://www.nytimes.com/2026/03/23/world/middleeast/iran-war-trump.html",
-              "source": "nytimes"
             }
           ]
         },
         "diplomacy": {
-          "count": 9,
+          "count": 10,
           "titles": [
+            {
+              "title": "Pakistan Offers to Host Talks Between Iran and the United States",
+              "link": "https://www.nytimes.com/2026/03/24/world/middleeast/pakistan-iran-us-mediation.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "뉴욕증시, 시시각각 변하는 이란 전쟁 협상…약세 마감",
+              "link": "https://www.yna.co.kr/view/AKR20260325010500009",
+              "source": "yonhap"
+            },
             {
               "title": "US says they’re talking, Iran says they’re not. Who’s telling the truth?",
               "link": "https://www.aljazeera.com/news/2026/3/24/us-says-theyre-talking-iran-says-theyre-not-whos-telling-the-truth?traffic_source=rss",
@@ -1194,46 +1165,86 @@
               "title": "Why is Trump asking for Europe’s help in war on Iran?",
               "link": "https://www.aljazeera.com/video/the-bottom-line/2026/3/24/why-is-trump-asking-for-europes-help-in-war-on-iran?traffic_source=rss",
               "source": "aljazeera"
-            },
-            {
-              "title": "Qatar Is Not Mediating U.S.-Iran Talks, Foreign Minister Says",
-              "link": "https://www.nytimes.com/2026/03/24/world/middleeast/qatar-us-iran-talks-mediation.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Ella Baron on Donald Trump’s peace negotiations with Iran – cartoon",
-              "link": "https://www.theguardian.com/commentisfree/picture/2026/mar/24/ella-baron-donald-trump-peace-negotiations-iran-cartoon",
-              "source": "guardian"
             }
           ]
         },
-        "economy": {
-          "count": 5,
+        "military": {
+          "count": 20,
           "titles": [
             {
-              "title": "The Guardian view on the Iran war: energy, markets and a dangerous illusion | Editorial",
-              "link": "https://www.theguardian.com/commentisfree/2026/mar/24/the-guardian-view-on-the-iran-war-energy-markets-and-a-dangerous-illusion",
+              "title": "Middle East crisis live: Trump claims Iran has agreed ‘never’ to have a nuclear weapon as he reportedly approves sending more troops to region",
+              "link": "https://www.theguardian.com/world/live/2026/mar/24/iran-war-live-updates-trump-ursula-von-der-leyen-oil-prices-energy-crisis-israel-strikes",
               "source": "guardian"
             },
             {
-              "title": "Reopening the Strait of Hormuz will be difficult without a deal with Iran.",
-              "link": "https://www.nytimes.com/live/2026/world/us-israel-iran-attack-maps/reopening-the-strait-of-hormuz-will-be-difficult-without-a-deal-with-iran",
+              "title": "United States Said to Have Sent Iran a Plan to End the Middle East War",
+              "link": "https://www.nytimes.com/2026/03/24/world/middleeast/us-iran-peace-plan.html",
               "source": "nytimes"
             },
             {
-              "title": "Trump’s Threat to ‘Obliterate’ Iran’s Power Stations Could Constitute a War Crime, Rights Experts Say",
-              "link": "https://www.nytimes.com/2026/03/24/us/politics/trump-iran-power-stations.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "QatarEnergy declares force majeure on some LNG contracts due to Iran war",
-              "link": "https://www.aljazeera.com/news/2026/3/24/qatarenergy-declares-force-majeure-on-some-lng-contracts?traffic_source=rss",
+              "title": "Building collapses after Iranian missile strike on Israel",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/3/24/building-collapses-after-iranian-missile-strike-on-israel?traffic_source=rss",
               "source": "aljazeera"
             },
             {
-              "title": "Trump’s sanctions against a UN human rights expert show free speech is dying |",
-              "link": "https://www.theguardian.com/commentisfree/2026/mar/24/trump-sanctions-un-human-rights-expert-free-speech",
-              "source": "guardian"
+              "title": "Iraq to summon US, Iran envoys over deadly attacks: PM’s office",
+              "link": "https://www.aljazeera.com/news/2026/3/24/iraq-to-summon-us-iranian-envoys-over-deadly-attacks-pms-office?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Iranian missiles cause injuries and major damage across Israel",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/3/24/iranian-missiles-cause-injuries-and-major-damage-across-israel?traffic_source=rss",
+              "source": "aljazeera"
+            }
+          ]
+        },
+        "politics": {
+          "count": 3,
+          "titles": [
+            {
+              "title": "Trump claims US has achieved ‘regime change’, ‘received present’ from Iran",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/3/24/trump-claims-us-has-achieved-regime-change-received-present-from-iran?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "High Oil and Gas Prices Could Outlast Trump’s War With Iran",
+              "link": "https://www.nytimes.com/2026/03/24/us/politics/oil-gas-prices-iran.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Why President Trump Has a Big Oil Problem",
+              "link": "https://www.nytimes.com/video/world/middleeast/100000010796844/why-iran-strait-of-hormuz-is-important-trump.html",
+              "source": "nytimes"
+            }
+          ]
+        },
+        "nuclear": {
+          "count": 1,
+          "titles": [
+            {
+              "title": "NASA to spend $20bn on moon base, nuclear-powered Mars spacecraft",
+              "link": "https://www.aljazeera.com/news/2026/3/24/nasa-to-spend-20bn-on-moon-base-nuclear-powered-mars-spacecraft?traffic_source=rss",
+              "source": "aljazeera"
+            }
+          ]
+        },
+        "regional": {
+          "count": 3,
+          "titles": [
+            {
+              "title": "Lebanon Expels Iranian Envoy as Rift With Tehran Deepens",
+              "link": "https://www.nytimes.com/2026/03/24/world/middleeast/lebanon-iran-envoy-expelled.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Egypt’s Mohamed Salah to leave Liverpool at end of season after 9-year stay",
+              "link": "https://www.aljazeera.com/sports/2026/3/24/egypts-mohamed-salah-to-leave-liverpool-at-end-of-season-after-9-year-stay?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Iranian IRGC’s ties to Hezbollah deepen tensions in Lebanese politics",
+              "link": "https://www.aljazeera.com/features/2026/3/24/iranian-irgc-ties-hezbollah-deepen-tensions-lebanese-politics?traffic_source=rss",
+              "source": "aljazeera"
             }
           ]
         },
@@ -1268,7 +1279,7 @@
           ]
         },
         "other": {
-          "count": 5,
+          "count": 4,
           "titles": [
             {
               "title": "Israeli soldiers accused of ‘torturing’ toddler in Gaza",
@@ -1288,11 +1299,6 @@
             {
               "title": "Palestinian FA calls for Israeli ban after FIFA discrimination report",
               "link": "https://www.aljazeera.com/sports/2026/3/24/palestine-fa-calls-for-israel-football-ban-after-fifa-discrimination-report?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "UN experts urge Israel to free Gaza doctor amid reports of ‘severe torture’",
-              "link": "https://www.aljazeera.com/news/2026/3/24/un-experts-urge-israel-to-free-gaza-doctor-amid-reports-of-severe-torture?traffic_source=rss",
               "source": "aljazeera"
             }
           ]
@@ -1387,16 +1393,22 @@
     }
   ],
   "economic_indicators": {
-    "VIX": {
-      "price": 26.95,
-      "change": 0.8,
-      "changePercent": 3.06,
-      "prev": 26.15
+    "BRENT": {
+      "price": 100.04,
+      "change": 0.1,
+      "changePercent": 0.1,
+      "prev": 99.94
+    },
+    "GOLD": {
+      "price": 4474.9,
+      "change": 70.8,
+      "changePercent": 1.61,
+      "prev": 4404.1
     },
     "WTI": {
-      "price": 88.25,
-      "change": 0.12,
-      "changePercent": 0.14,
+      "price": 88.39,
+      "change": 0.26,
+      "changePercent": 0.3,
       "prev": 88.13
     },
     "US10Y": {
@@ -1405,32 +1417,34 @@
       "changePercent": 1.38,
       "prev": 4.33
     },
-    "DXY": {
-      "price": 99.18,
-      "change": 0.23,
-      "changePercent": 0.23,
-      "prev": 98.95
-    },
-    "BRENT": {
-      "price": 99.74,
-      "change": -0.2,
-      "changePercent": -0.2,
-      "prev": 99.94
-    },
     "US2Y": {
       "price": 3.62,
       "change": 0.01,
       "changePercent": 0.28,
       "prev": 3.61
     },
-    "GOLD": {
-      "price": 4454.7,
-      "change": 50.6,
-      "changePercent": 1.15,
-      "prev": 4404.1
+    "DXY": {
+      "price": 99.23,
+      "change": 0.28,
+      "changePercent": 0.28,
+      "prev": 98.95
+    },
+    "VIX": {
+      "price": 26.95,
+      "change": 0.8,
+      "changePercent": 3.06,
+      "prev": 26.15
     }
   },
   "critical_events": [
+    {
+      "id": "regime_collapse",
+      "name": "교전국 정권 붕괴/쿠데타",
+      "severity": "critical",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "shorten"
+    },
     {
       "id": "diplomatic_breakthrough",
       "name": "외교적 돌파구/강대국 중재",
@@ -1443,8 +1457,8 @@
       "id": "capital_attack",
       "name": "수도 직접 공격/포위",
       "severity": "high",
-      "confidence": 1,
-      "matchCount": 4,
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
       "direction": "shorten"
     },
     {
