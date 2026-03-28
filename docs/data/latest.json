@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-03-28T22:25:56.122Z",
+  "timestamp": "2026-03-28T22:56:34.919Z",
   "war_day": 28,
   "probabilities": {
-    "1개월 내 (~3월)": 17.6,
-    "2~3개월 (4~5월)": 36.9,
-    "4~6개월 (6~8월)": 27,
-    "7~12개월 (9월~27/2월)": 14,
-    "1년 초과": 4.5
+    "1개월 내 (~3월)": 18.3,
+    "2~3개월 (4~5월)": 37.7,
+    "4~6개월 (6~8월)": 27.2,
+    "7~12개월 (9월~27/2월)": 12.9,
+    "1년 초과": 3.9
   },
   "factors": [
     {
@@ -42,10 +42,10 @@
       ],
       "applied": "2026-03-01",
       "active": true,
-      "decay": 0.4413
+      "decay": 0.4409
     },
     {
-      "factor": "확전 뉴스 우세 (확전10:휴전0)",
+      "factor": "확전 뉴스 우세 (확전12:휴전0)",
       "impact": "전쟁 장기화 가능성 (확전비율 100%)",
       "weight": "+0.04%p (4~6개월)",
       "direction": "lengthen",
@@ -76,7 +76,7 @@
       ],
       "applied": "2026-03-01",
       "active": true,
-      "decay": 0.4413
+      "decay": 0.4409
     },
     {
       "factor": "9개국 참전 - 분쟁 복잡성 증가",
@@ -164,11 +164,11 @@
       "decay": 1
     },
     {
-      "factor": "협상/외교 뉴스 2건 감지",
-      "impact": "외교 움직임 미약",
-      "weight": "+0.00%p (1개월내), +0.00%p (2~3개월)",
+      "factor": "협상/외교 뉴스 4건 감지",
+      "impact": "외교적 해결 움직임 포착",
+      "weight": "+0.01%p (1개월내), +0.01%p (2~3개월)",
       "direction": "shorten",
-      "detail": "실시간 뉴스에서 협상 관련 기사 2건이 감지되었습니다.",
+      "detail": "실시간 뉴스에서 협상 관련 기사 4건이 감지되었습니다.",
       "keywords": [
         "negotiat",
         "talks",
@@ -234,11 +234,41 @@
       "decay": 0.3
     },
     {
+      "factor": "[중대 이벤트] 외교적 돌파구/강대국 중재",
+      "impact": "주요 외교적 돌파구 또는 강대국 중재. 데이턴(1995): 미국 중재 → 3주만에 합의. UN 안보리 결의는 평균 2~4주 내 휴전 이행.",
+      "weight": "+2.0%p (1개월내), +4.0%p (2~3개월), +1.3%p (4~6개월), -1.3%p (7~12개월), -0.7%p (1년초과)",
+      "direction": "shorten",
+      "detail": "주요 외교적 돌파구 또는 강대국 중재. 데이턴(1995): 미국 중재 → 3주만에 합의. UN 안보리 결의는 평균 2~4주 내 휴전 이행.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Pakistan secures Iran deal to send 20 ships through Strait of Hormuz",
+      "keywords": [
+        "peace talk",
+        "agree",
+        "diplomatic",
+        "breakthrough",
+        "summit",
+        "peace",
+        "mediati",
+        "accept",
+        "un",
+        "resolution",
+        "ceasefire",
+        "broker",
+        "peace",
+        "negotiat",
+        "breakthrough",
+        "china",
+        "mediat",
+        "peace framework"
+      ],
+      "applied": "2026-03-28",
+      "active": true,
+      "severity": "high"
+    },
+    {
       "factor": "[중대 이벤트] 수도 직접 공격/포위",
       "impact": "수도 직접 공격. 베오그라드(1999): 78일 폭격 후 항복. 바그다드(2003): 21일만에 함락. 수도 타격은 전쟁 지속 의지를 급격히 약화.",
       "weight": "+4.0%p (1개월내), +6.0%p (2~3개월), -2.0%p (4~6개월), -2.0%p (7~12개월), -1.0%p (1년초과)",
       "direction": "shorten",
-      "detail": "수도 직접 공격. 베오그라드(1999): 78일 폭격 후 항복. 바그다드(2003): 21일만에 함락. 수도 타격은 전쟁 지속 의지를 급격히 약화.\n\n신뢰도: 확실 (100%), 관련 기사 8건 감지.\n관련: Airstrikes batter a university and residential zones in Tehran. | Gulf countries warn of rising threat from Iran-backed militias and proxies | 'My daughter is under the rubble': Inside Tehran as civilian toll of strikes rises",
+      "detail": "수도 직접 공격. 베오그라드(1999): 78일 폭격 후 항복. 바그다드(2003): 21일만에 함락. 수도 타격은 전쟁 지속 의지를 급격히 약화.\n\n신뢰도: 확실 (100%), 관련 기사 6건 감지.\n관련: Airstrikes batter a university and residential zones in Tehran. | Gulf countries warn of rising threat from Iran-backed militias and proxies | 'My daughter is under the rubble': Inside Tehran as civilian toll of strikes rises",
       "keywords": [
         "capital",
         "bomb",
@@ -391,8 +421,8 @@
   ],
   "news_signals": {
     "ceasefire_mentions": 0,
-    "escalation_mentions": 10,
-    "negotiation_mentions": 2,
+    "escalation_mentions": 12,
+    "negotiation_mentions": 4,
     "casualty_mentions": 10.2,
     "peace_mentions": 6,
     "regional_spread": 18.2,
@@ -403,9 +433,21 @@
   },
   "latest_news": [
     {
+      "title": "Air strikes in Iraq kill three PMF fighters, two police",
+      "link": "https://www.aljazeera.com/news/2026/3/28/air-strikes-in-iraq-kill-three-pmf-fighters-and-two-iraqi-police?traffic_source=rss",
+      "pubDate": "Sat, 28 Mar 2026 22:32:05 +0000",
+      "source": "aljazeera",
+      "snippet": "Iraq turning into &#039;expanding battleground&#039; in war, which began on February 28 with US-Israeli strikes on Iran.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
       "title": "Here’s What Happened in the War in the Middle East on Saturday",
       "link": "https://www.nytimes.com/2026/03/28/world/middleeast/iran-israel-united-states-war-recap.html",
-      "pubDate": "Sat, 28 Mar 2026 22:24:23 +0000",
+      "pubDate": "Sat, 28 Mar 2026 22:24:24 +0000",
       "source": "nytimes",
       "snippet": "The war with Iran escalated on Saturday as the Iran-allied Houthis joined the conflict and Israel bombarded Tehran with airstrikes.",
       "isNew": true,
@@ -430,6 +472,30 @@
       "pubDate": "Sun, 29 Mar 2026 07:12:23 +0900",
       "source": "yonhap",
       "snippet": "(워싱턴=연합뉴스) 백나리 특파원 = &quot;트럼프를 탄핵해야 하느냐고요? 탄핵으로는 충분하지 않아요. 감옥에 보내야 합니다. 모든 일을 자신의 경제...",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Reza Pahlavi pledges to ‘make Iran great again’ at 2026 CPAC conference",
+      "link": "https://www.aljazeera.com/news/2026/3/28/reza-pahlavi-pledges-to-make-iran-great-again-at-2026-cpac-conference?traffic_source=rss",
+      "pubDate": "Sat, 28 Mar 2026 22:05:31 +0000",
+      "source": "aljazeera",
+      "snippet": "Iranian opposition leader calls on Trump administration to &#039;stay the course&#039; as the US and Israel wage war on Iran.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Pakistan secures Iran deal to send 20 ships through Strait of Hormuz",
+      "link": "https://www.aljazeera.com/news/2026/3/28/pakistan-secures-iran-deal-to-send-20-ships-through-strait-of-hormuz?traffic_source=rss",
+      "pubDate": "Sat, 28 Mar 2026 21:56:30 +0000",
+      "source": "aljazeera",
+      "snippet": "Islamabad&#039;s diplomatic push bears fruit as the world watches for signs of a broader breakthrough.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -541,42 +607,6 @@
       "_isDuplicated": false,
       "_clusterSize": 1,
       "_isDuplicate": false
-    },
-    {
-      "title": "Tears and defiance as Lebanese family bury child, 11, killed in Israeli strike",
-      "link": "https://www.bbc.com/news/articles/c62lx8ek9x9o?at_medium=RSS&at_campaign=rss",
-      "pubDate": "Sat, 28 Mar 2026 19:02:40 GMT",
-      "source": "bbc",
-      "snippet": "Jawad Younes and his uncle Ragheb were laid to rest on Saturday after their family compound was hit a day earlier. ",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Media association condemns ‘violent assault’ on CNN crew by Israeli soldiers",
-      "link": "https://www.theguardian.com/world/2026/mar/28/israeli-soldiers-cnn-crew-west-bank-foreign-press-association",
-      "pubDate": "Sat, 28 Mar 2026 18:18:01 GMT",
-      "source": "guardian",
-      "snippet": "CNN team detained while reporting on aftermath of attack by settlers in West Bank, Foreign Press Association saysMiddle East crisis – live updatesAn international media association has condemned what ",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "‘No Kings’ protests erupt across the US, with a Minnesota focus",
-      "link": "https://www.aljazeera.com/gallery/2026/3/28/photos-no-kings-protests-erupt-across-the-us-with-a-minnesota-focus?traffic_source=rss",
-      "pubDate": "Sat, 28 Mar 2026 18:16:38 +0000",
-      "source": "aljazeera",
-      "snippet": "Saturday&#039;s rallies mark the third round of &#039;No Kings&#039; protests since President Trump took office for a second term.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
     }
   ],
   "news_digest": {
@@ -588,6 +618,17 @@
         "count": 24,
         "new_count": 24,
         "articles": [
+          {
+            "title": "Air strikes in Iraq kill three PMF fighters, two police",
+            "link": "https://www.aljazeera.com/news/2026/3/28/air-strikes-in-iraq-kill-three-pmf-fighters-and-two-iraqi-police?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Sat, 28 Mar 2026 22:32:05 +0000",
+            "snippet": "Iraq turning into &#039;expanding battleground&#039; in war, which began on February 28 with US-Israeli strikes on Iran.",
+            "isNew": true
+          },
           {
             "title": "Here’s What Happened in the War in the Middle East on Friday",
             "link": "https://www.nytimes.com/2026/03/27/world/middleeast/iran-war-middle-east-recap.html",
@@ -687,80 +728,80 @@
             "pubDate": "Sat, 28 Mar 2026 18:06:29 +0000",
             "snippet": "There has long been concern that the Houthis, an Iran-backed militia, could disrupt shipping in the Red Sea if they entered the broader war.",
             "isNew": true
-          },
-          {
-            "title": "As war rages, Iranian politicians push for exit from nuclear weapons treaty",
-            "link": "https://www.aljazeera.com/news/2026/3/28/lawmakers-push-npt-exit-as-us-israel-hit-irans-nuclear-sites-steel-plants?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sat, 28 Mar 2026 17:48:55 +0000",
-            "snippet": "While US-Israeli attacks hit key infrastructure, hardliners demand withdrawal from Nuclear Non-Proliferation Treaty.",
-            "isNew": true
           }
         ]
       },
       {
-        "category_id": "other",
-        "category_name": "기타",
-        "category_icon": "📰",
+        "category_id": "politics",
+        "category_name": "국내 정치",
+        "category_icon": "🏛️",
         "count": 6,
         "new_count": 6,
         "articles": [
           {
-            "title": "In Dubai, a famed horse race goes on, despite the war.",
-            "link": "https://www.nytimes.com/live/2026/03/28/world/iran-war-trump-israel-oil/in-dubai-a-famed-horse-race-goes-on-despite-the-war",
-            "source": "nytimes",
+            "title": "Reza Pahlavi pledges to ‘make Iran great again’ at 2026 CPAC conference",
+            "link": "https://www.aljazeera.com/news/2026/3/28/reza-pahlavi-pledges-to-make-iran-great-again-at-2026-cpac-conference?traffic_source=rss",
+            "source": "aljazeera",
             "sources": [
-              "nytimes"
+              "aljazeera"
             ],
-            "pubDate": "Sat, 28 Mar 2026 22:22:11 +0000",
-            "snippet": "",
+            "pubDate": "Sat, 28 Mar 2026 22:05:31 +0000",
+            "snippet": "Iranian opposition leader calls on Trump administration to &#039;stay the course&#039; as the US and Israel wage war on Iran.",
             "isNew": true
           },
           {
-            "title": "BBC Arabic defended as lone voice in region for giving ‘Israeli perspective’",
-            "link": "https://www.theguardian.com/media/2026/mar/28/bbc-arabic-defended-lone-voice-region-israeli-perspective",
+            "title": "‘No Kings’ protests erupt across the US, with a Minnesota focus",
+            "link": "https://www.aljazeera.com/gallery/2026/3/28/photos-no-kings-protests-erupt-across-the-us-with-a-minnesota-focus?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Sat, 28 Mar 2026 18:16:38 +0000",
+            "snippet": "Saturday&#039;s rallies mark the third round of &#039;No Kings&#039; protests since President Trump took office for a second term.",
+            "isNew": true
+          },
+          {
+            "title": "One month in, disapproval high but US lawmakers take no action on Iran war",
+            "link": "https://www.aljazeera.com/news/2026/3/28/one-month-in-disapproval-high-but-us-lawmakers-take-no-action-on-iran-war?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Sat, 28 Mar 2026 15:39:46 +0000",
+            "snippet": "Republicans and Democrats remain entrenched despite public polling showing dismay over war, petrol prices. ",
+            "isNew": true
+          },
+          {
+            "title": "Iran warns neighbours not to let ‘enemies run the war’ from their land",
+            "link": "https://www.aljazeera.com/news/2026/3/28/iran-warns-neighbours-not-to-let-enemies-run-the-war-from-their-land?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Sat, 28 Mar 2026 13:34:32 +0000",
+            "snippet": "President Pezeshkian&#039;s warning is the latest by Tehran to neighbours not to allow their territory to be used in the war.",
+            "isNew": true
+          },
+          {
+            "title": "Hundreds of organised protests show resilience of Iranian regime, experts say",
+            "link": "https://www.theguardian.com/world/2026/mar/28/iran-pro-regime-demonstrations-detained-people",
             "source": "guardian",
             "sources": [
               "guardian"
             ],
-            "pubDate": "Sat, 28 Mar 2026 17:00:32 GMT",
-            "snippet": "Exclusive: World Service director Fiona Crack says platform pursues stories ignored by the Gulf’s state-owned mediaA senior BBC executive has defended BBC Arabic as a lone voice in the region covering",
+            "pubDate": "Sat, 28 Mar 2026 09:00:24 GMT",
+            "snippet": "More than 850 public demonstrations of support held since start of war and at least 1,400 arrests, research revealsParents of Iran school bombing victims describe their worst dayIran’s regime has orga",
             "isNew": true
           },
           {
-            "title": "Senegal parade AFCON trophy, despite title being awarded to Morocco",
-            "link": "https://www.aljazeera.com/sports/2026/3/28/senegal-parade-afcon-trophy-despite-title-being-awarded-to-morocco?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sat, 28 Mar 2026 15:58:57 +0000",
-            "snippet": "Senegal parade AFCON trophy at Stade de France ahead of friendly against Peru, despite being stripped of the title.",
-            "isNew": true
-          },
-          {
-            "title": "How the US and Israel are making the Islamic republic stronger",
-            "link": "https://www.aljazeera.com/opinions/2026/3/28/how-the-us-and-israel-are-making-the-islamic-republic?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sat, 28 Mar 2026 11:12:32 +0000",
-            "snippet": "The war is feeding into a theological narrative of martyrdom and sacrifice that is helping maintain the Islamic Republic",
-            "isNew": true
-          },
-          {
-            "title": "Government Trolls Sling Memes in the Online Trenches of Mideast War",
-            "link": "https://www.nytimes.com/2026/03/27/world/middleeast/iran-war-memes-propaganda.html",
+            "title": "Elon Musk Joins in Phone Call Between Donald Trump and Narendra Modi",
+            "link": "https://www.nytimes.com/2026/03/27/us/politics/musk-joins-call-with-trump-modi.html",
             "source": "nytimes",
             "sources": [
               "nytimes"
             ],
-            "pubDate": "Sat, 28 Mar 2026 00:34:50 +0000",
-            "snippet": "Officials in Tehran and Washington alike are trading taunts in English, often using American pop culture references.",
+            "pubDate": "Fri, 27 Mar 2026 19:11:58 +0000",
+            "snippet": "Mr. Musk’s participation was notable because it is rare for a private citizen to be on a call between heads of state. It also suggests that Mr. Musk is back on better terms with the president.",
             "isNew": true
           }
         ]
@@ -830,65 +871,107 @@
         ]
       },
       {
-        "category_id": "politics",
-        "category_name": "국내 정치",
-        "category_icon": "🏛️",
+        "category_id": "other",
+        "category_name": "기타",
+        "category_icon": "📰",
         "count": 5,
         "new_count": 5,
         "articles": [
           {
-            "title": "‘No Kings’ protests erupt across the US, with a Minnesota focus",
-            "link": "https://www.aljazeera.com/gallery/2026/3/28/photos-no-kings-protests-erupt-across-the-us-with-a-minnesota-focus?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sat, 28 Mar 2026 18:16:38 +0000",
-            "snippet": "Saturday&#039;s rallies mark the third round of &#039;No Kings&#039; protests since President Trump took office for a second term.",
-            "isNew": true
-          },
-          {
-            "title": "One month in, disapproval high but US lawmakers take no action on Iran war",
-            "link": "https://www.aljazeera.com/news/2026/3/28/one-month-in-disapproval-high-but-us-lawmakers-take-no-action-on-iran-war?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sat, 28 Mar 2026 15:39:46 +0000",
-            "snippet": "Republicans and Democrats remain entrenched despite public polling showing dismay over war, petrol prices. ",
-            "isNew": true
-          },
-          {
-            "title": "Iran warns neighbours not to let ‘enemies run the war’ from their land",
-            "link": "https://www.aljazeera.com/news/2026/3/28/iran-warns-neighbours-not-to-let-enemies-run-the-war-from-their-land?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sat, 28 Mar 2026 13:34:32 +0000",
-            "snippet": "President Pezeshkian&#039;s warning is the latest by Tehran to neighbours not to allow their territory to be used in the war.",
-            "isNew": true
-          },
-          {
-            "title": "Hundreds of organised protests show resilience of Iranian regime, experts say",
-            "link": "https://www.theguardian.com/world/2026/mar/28/iran-pro-regime-demonstrations-detained-people",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Sat, 28 Mar 2026 09:00:24 GMT",
-            "snippet": "More than 850 public demonstrations of support held since start of war and at least 1,400 arrests, research revealsParents of Iran school bombing victims describe their worst dayIran’s regime has orga",
-            "isNew": true
-          },
-          {
-            "title": "Elon Musk Joins in Phone Call Between Donald Trump and Narendra Modi",
-            "link": "https://www.nytimes.com/2026/03/27/us/politics/musk-joins-call-with-trump-modi.html",
+            "title": "In Dubai, a famed horse race goes on, despite the war.",
+            "link": "https://www.nytimes.com/live/2026/03/28/world/iran-war-trump-israel-oil/in-dubai-a-famed-horse-race-goes-on-despite-the-war",
             "source": "nytimes",
             "sources": [
               "nytimes"
             ],
-            "pubDate": "Fri, 27 Mar 2026 19:11:58 +0000",
-            "snippet": "Mr. Musk’s participation was notable because it is rare for a private citizen to be on a call between heads of state. It also suggests that Mr. Musk is back on better terms with the president.",
+            "pubDate": "Sat, 28 Mar 2026 22:22:11 +0000",
+            "snippet": "",
+            "isNew": true
+          },
+          {
+            "title": "BBC Arabic defended as lone voice in region for giving ‘Israeli perspective’",
+            "link": "https://www.theguardian.com/media/2026/mar/28/bbc-arabic-defended-lone-voice-region-israeli-perspective",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Sat, 28 Mar 2026 17:00:32 GMT",
+            "snippet": "Exclusive: World Service director Fiona Crack says platform pursues stories ignored by the Gulf’s state-owned mediaA senior BBC executive has defended BBC Arabic as a lone voice in the region covering",
+            "isNew": true
+          },
+          {
+            "title": "Senegal parade AFCON trophy, despite title being awarded to Morocco",
+            "link": "https://www.aljazeera.com/sports/2026/3/28/senegal-parade-afcon-trophy-despite-title-being-awarded-to-morocco?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Sat, 28 Mar 2026 15:58:57 +0000",
+            "snippet": "Senegal parade AFCON trophy at Stade de France ahead of friendly against Peru, despite being stripped of the title.",
+            "isNew": true
+          },
+          {
+            "title": "Government Trolls Sling Memes in the Online Trenches of Mideast War",
+            "link": "https://www.nytimes.com/2026/03/27/world/middleeast/iran-war-memes-propaganda.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Sat, 28 Mar 2026 00:34:50 +0000",
+            "snippet": "Officials in Tehran and Washington alike are trading taunts in English, often using American pop culture references.",
+            "isNew": true
+          },
+          {
+            "title": "Global Food Supply Faces a Dangerous Bottleneck as Iran War Persists",
+            "link": "https://www.nytimes.com/2026/03/27/business/economy/fertilizer-food-supply-iran-war.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Fri, 27 Mar 2026 19:43:57 +0000",
+            "snippet": "Fertilizer prices are climbing as a result of disruptions in the Middle East, putting global food supplies at risk.",
+            "isNew": true
+          }
+        ]
+      },
+      {
+        "category_id": "diplomacy",
+        "category_name": "외교/협상",
+        "category_icon": "🤝",
+        "count": 3,
+        "new_count": 3,
+        "articles": [
+          {
+            "title": "Pakistan secures Iran deal to send 20 ships through Strait of Hormuz",
+            "link": "https://www.aljazeera.com/news/2026/3/28/pakistan-secures-iran-deal-to-send-20-ships-through-strait-of-hormuz?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Sat, 28 Mar 2026 21:56:30 +0000",
+            "snippet": "Islamabad&#039;s diplomatic push bears fruit as the world watches for signs of a broader breakthrough.",
+            "isNew": true
+          },
+          {
+            "title": "Former US defence chief says more war won’t bring peace to Middle East",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/3/28/former-us-defence-chief-says-more-war-wont-bring-peace-to-middle-east?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Sat, 28 Mar 2026 12:17:18 +0000",
+            "snippet": "Leon Panetta, former US Secretary of Defence, says that there is no clear end to the war in Iran.",
+            "isNew": true
+          },
+          {
+            "title": "Gaza peace doubts deepen as attention shifts to Iran",
+            "link": "https://www.bbc.com/news/articles/crr10v5p7lgo?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc"
+            ],
+            "pubDate": "Sat, 28 Mar 2026 06:00:37 GMT",
+            "snippet": "With the world focused on the Iran war, there is increasing uncertainty about what happens next for Gaza. ",
             "isNew": true
           }
         ]
@@ -897,8 +980,8 @@
         "category_id": "regional",
         "category_name": "지역 정세",
         "category_icon": "🌍",
-        "count": 4,
-        "new_count": 4,
+        "count": 3,
+        "new_count": 3,
         "articles": [
           {
             "title": "Iran-backed Houthis join war with attack against Israel",
@@ -931,48 +1014,6 @@
             ],
             "pubDate": "Sat, 28 Mar 2026 14:21:47 +0000",
             "snippet": "The foreign ministers of Saudi Arabia, Turkey and Egypt are expected in Islamabad on Sunday as the Pakistani government strives to find a diplomatic solution to the war.",
-            "isNew": true
-          },
-          {
-            "title": "Protests in Yemen against US-Israeli attacks as Houthis warn of action",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/3/28/protests-in-yemen-against-us-israeli-attacks-as-houthis-warn-of-action?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sat, 28 Mar 2026 11:24:33 +0000",
-            "snippet": "Protesters in Yemen took to the streets to voice support for Iran, Palestine, and Lebanon amid US and Israeli attacks.",
-            "isNew": true
-          }
-        ]
-      },
-      {
-        "category_id": "diplomacy",
-        "category_name": "외교/협상",
-        "category_icon": "🤝",
-        "count": 2,
-        "new_count": 2,
-        "articles": [
-          {
-            "title": "Former US defence chief says more war won’t bring peace to Middle East",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/3/28/former-us-defence-chief-says-more-war-wont-bring-peace-to-middle-east?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sat, 28 Mar 2026 12:17:18 +0000",
-            "snippet": "Leon Panetta, former US Secretary of Defence, says that there is no clear end to the war in Iran.",
-            "isNew": true
-          },
-          {
-            "title": "Gaza peace doubts deepen as attention shifts to Iran",
-            "link": "https://www.bbc.com/news/articles/crr10v5p7lgo?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
-            "sources": [
-              "bbc"
-            ],
-            "pubDate": "Sat, 28 Mar 2026 06:00:37 GMT",
-            "snippet": "With the world focused on the Iran war, there is increasing uncertainty about what happens next for Gaza. ",
             "isNew": true
           }
         ]
@@ -1016,6 +1057,11 @@
           "count": 26,
           "titles": [
             {
+              "title": "Air strikes in Iraq kill three PMF fighters, two police",
+              "link": "https://www.aljazeera.com/news/2026/3/28/air-strikes-in-iraq-kill-three-pmf-fighters-and-two-iraqi-police?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
               "title": "Here’s What Happened in the War in the Middle East on Saturday",
               "link": "https://www.nytimes.com/2026/03/28/world/middleeast/iran-israel-united-states-war-recap.html",
               "source": "nytimes"
@@ -1034,16 +1080,11 @@
               "title": "Could Ukraine’s drone expertise serve Gulf countries?",
               "link": "https://www.aljazeera.com/video/inside-story/2026/3/28/could-ukraines-drone-expertise-serve-gulf-countries?traffic_source=rss",
               "source": "aljazeera"
-            },
-            {
-              "title": "Airstrikes batter a university and residential zones in Tehran.",
-              "link": "https://www.nytimes.com/live/2026/03/28/world/iran-war-trump-israel-oil/airstrikes-university-tehran",
-              "source": "nytimes"
             }
           ]
         },
         "other": {
-          "count": 6,
+          "count": 5,
           "titles": [
             {
               "title": "In Dubai, a famed horse race goes on, despite the war.",
@@ -1061,13 +1102,13 @@
               "source": "aljazeera"
             },
             {
-              "title": "How the US and Israel are making the Islamic republic stronger",
-              "link": "https://www.aljazeera.com/opinions/2026/3/28/how-the-us-and-israel-are-making-the-islamic-republic?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
               "title": "Government Trolls Sling Memes in the Online Trenches of Mideast War",
               "link": "https://www.nytimes.com/2026/03/27/world/middleeast/iran-war-memes-propaganda.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Global Food Supply Faces a Dangerous Bottleneck as Iran War Persists",
+              "link": "https://www.nytimes.com/2026/03/27/business/economy/fertilizer-food-supply-iran-war.html",
               "source": "nytimes"
             }
           ]
@@ -1102,49 +1143,14 @@
             }
           ]
         },
-        "regional": {
-          "count": 4,
-          "titles": [
-            {
-              "title": "Iran-backed Houthis join war with attack against Israel",
-              "link": "https://www.bbc.com/news/articles/cd6l5n8jv4yo?at_medium=RSS&at_campaign=rss",
-              "source": "bbc"
-            },
-            {
-              "title": "Israeli Strike Kills 3 Journalists in Southern Lebanon, Officials Say",
-              "link": "https://www.nytimes.com/2026/03/28/world/middleeast/lebanon-journalists-killed-israeli-strike.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Pakistan Set to Host Top Regional Diplomats for Talks on Iran War",
-              "link": "https://www.nytimes.com/2026/03/28/world/middleeast/iran-pakistan-diplomacy.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Protests in Yemen against US-Israeli attacks as Houthis warn of action",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/3/28/protests-in-yemen-against-us-israeli-attacks-as-houthis-warn-of-action?traffic_source=rss",
-              "source": "aljazeera"
-            }
-          ]
-        },
-        "humanitarian": {
-          "count": 2,
-          "titles": [
-            {
-              "title": "Tears and defiance as Lebanese family bury child, 11, killed in Israeli strike",
-              "link": "https://www.bbc.com/news/articles/c62lx8ek9x9o?at_medium=RSS&at_campaign=rss",
-              "source": "bbc"
-            },
-            {
-              "title": "Gulf countries warn of rising threat from Iran-backed militias and proxies",
-              "link": "https://www.theguardian.com/world/2026/mar/28/gulf-countries-threat-iran-backed-militias-proxies-war-us-israel-middle-east",
-              "source": "guardian"
-            }
-          ]
-        },
         "politics": {
-          "count": 5,
+          "count": 6,
           "titles": [
+            {
+              "title": "Reza Pahlavi pledges to ‘make Iran great again’ at 2026 CPAC conference",
+              "link": "https://www.aljazeera.com/news/2026/3/28/reza-pahlavi-pledges-to-make-iran-great-again-at-2026-cpac-conference?traffic_source=rss",
+              "source": "aljazeera"
+            },
             {
               "title": "‘No Kings’ protests erupt across the US, with a Minnesota focus",
               "link": "https://www.aljazeera.com/gallery/2026/3/28/photos-no-kings-protests-erupt-across-the-us-with-a-minnesota-focus?traffic_source=rss",
@@ -1164,17 +1170,17 @@
               "title": "Hundreds of organised protests show resilience of Iranian regime, experts say",
               "link": "https://www.theguardian.com/world/2026/mar/28/iran-pro-regime-demonstrations-detained-people",
               "source": "guardian"
-            },
-            {
-              "title": "Elon Musk Joins in Phone Call Between Donald Trump and Narendra Modi",
-              "link": "https://www.nytimes.com/2026/03/27/us/politics/musk-joins-call-with-trump-modi.html",
-              "source": "nytimes"
             }
           ]
         },
         "diplomacy": {
-          "count": 2,
+          "count": 3,
           "titles": [
+            {
+              "title": "Pakistan secures Iran deal to send 20 ships through Strait of Hormuz",
+              "link": "https://www.aljazeera.com/news/2026/3/28/pakistan-secures-iran-deal-to-send-20-ships-through-strait-of-hormuz?traffic_source=rss",
+              "source": "aljazeera"
+            },
             {
               "title": "Former US defence chief says more war won’t bring peace to Middle East",
               "link": "https://www.aljazeera.com/video/newsfeed/2026/3/28/former-us-defence-chief-says-more-war-wont-bring-peace-to-middle-east?traffic_source=rss",
@@ -1184,6 +1190,41 @@
               "title": "Gaza peace doubts deepen as attention shifts to Iran",
               "link": "https://www.bbc.com/news/articles/crr10v5p7lgo?at_medium=RSS&at_campaign=rss",
               "source": "bbc"
+            }
+          ]
+        },
+        "regional": {
+          "count": 3,
+          "titles": [
+            {
+              "title": "Iran-backed Houthis join war with attack against Israel",
+              "link": "https://www.bbc.com/news/articles/cd6l5n8jv4yo?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
+            },
+            {
+              "title": "Israeli Strike Kills 3 Journalists in Southern Lebanon, Officials Say",
+              "link": "https://www.nytimes.com/2026/03/28/world/middleeast/lebanon-journalists-killed-israeli-strike.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Pakistan Set to Host Top Regional Diplomats for Talks on Iran War",
+              "link": "https://www.nytimes.com/2026/03/28/world/middleeast/iran-pakistan-diplomacy.html",
+              "source": "nytimes"
+            }
+          ]
+        },
+        "humanitarian": {
+          "count": 2,
+          "titles": [
+            {
+              "title": "Tears and defiance as Lebanese family bury child, 11, killed in Israeli strike",
+              "link": "https://www.bbc.com/news/articles/c62lx8ek9x9o?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
+            },
+            {
+              "title": "Gulf countries warn of rising threat from Iran-backed militias and proxies",
+              "link": "https://www.theguardian.com/world/2026/mar/28/gulf-countries-threat-iran-backed-militias-proxies-war-us-israel-middle-east",
+              "source": "guardian"
             }
           ]
         }
@@ -1283,17 +1324,29 @@
       "changePercent": -2.49,
       "prev": 108.01
     },
-    "DXY": {
-      "price": 100.19,
-      "change": 0.29,
-      "changePercent": 0.29,
-      "prev": 99.9
+    "WTI": {
+      "price": 99.64,
+      "change": 5.16,
+      "changePercent": 5.46,
+      "prev": 94.48
     },
     "US2Y": {
       "price": 3.61,
       "change": -0.01,
       "changePercent": -0.28,
       "prev": 3.62
+    },
+    "DXY": {
+      "price": 100.19,
+      "change": 0.29,
+      "changePercent": 0.29,
+      "prev": 99.9
+    },
+    "US10Y": {
+      "price": 4.44,
+      "change": 0.02,
+      "changePercent": 0.45,
+      "prev": 4.42
     },
     "VIX": {
       "price": 31.05,
@@ -1306,27 +1359,23 @@
       "change": 148.8,
       "changePercent": 3.4,
       "prev": 4375.5
-    },
-    "WTI": {
-      "price": 99.64,
-      "change": 5.16,
-      "changePercent": 5.46,
-      "prev": 94.48
-    },
-    "US10Y": {
-      "price": 4.44,
-      "change": 0.02,
-      "changePercent": 0.45,
-      "prev": 4.42
     }
   },
   "critical_events": [
+    {
+      "id": "diplomatic_breakthrough",
+      "name": "외교적 돌파구/강대국 중재",
+      "severity": "high",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "shorten"
+    },
     {
       "id": "capital_attack",
       "name": "수도 직접 공격/포위",
       "severity": "high",
       "confidence": 1,
-      "matchCount": 8,
+      "matchCount": 6,
       "direction": "shorten"
     },
     {
