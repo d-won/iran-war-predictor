@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-04-11T15:59:07.753Z",
+  "timestamp": "2026-04-11T16:48:13.318Z",
   "war_day": 42,
   "probabilities": {
-    "1개월 내 (~3월)": 28.7,
-    "2~3개월 (4~5월)": 42.4,
-    "4~6개월 (6~8월)": 17.8,
-    "7~12개월 (9월~27/2월)": 8.5,
-    "1년 초과": 2.6
+    "1개월 내 (~3월)": 28.1,
+    "2~3개월 (4~5월)": 42.5,
+    "4~6개월 (6~8월)": 19.2,
+    "7~12개월 (9월~27/2월)": 7.5,
+    "1년 초과": 2.7
   },
   "factors": [
     {
@@ -164,11 +164,11 @@
       "decay": 1
     },
     {
-      "factor": "협상/외교 뉴스 46.2건 감지",
+      "factor": "협상/외교 뉴스 18.2건 감지",
       "impact": "외교적 해결 움직임 포착",
       "weight": "+0.03%p (1개월내), +0.02%p (2~3개월)",
       "direction": "shorten",
-      "detail": "실시간 뉴스에서 협상 관련 기사 46.2건이 감지되었습니다.",
+      "detail": "실시간 뉴스에서 협상 관련 기사 18.2건이 감지되었습니다.",
       "keywords": [
         "negotiat",
         "talks",
@@ -181,11 +181,11 @@
       "decay": 1
     },
     {
-      "factor": "지역 확산 뉴스 16.2건 감지",
-      "impact": "주변국 대규모 연루 → 장기화 위험 높음",
-      "weight": "+0.02%p (4~6개월), +0.02%p (7~12개월)",
+      "factor": "지역 확산 뉴스 8.2건 감지",
+      "impact": "주변국 연루 확대로 장기화 위험",
+      "weight": "+0.01%p (4~6개월), +0.01%p (7~12개월)",
       "direction": "lengthen",
-      "detail": "주변국을 언급하는 기사 16.2건이 감지되었습니다.",
+      "detail": "주변국을 언급하는 기사 8.2건이 감지되었습니다.",
       "keywords": [
         "saudi",
         "uae",
@@ -238,7 +238,7 @@
       "impact": "공식 휴전 또는 평화 합의 체결. 휴전 합의는 전쟁 종결의 결정적 단계이며, 합의 후 이행까지 평균 1~2주 소요.",
       "weight": "+15.0%p (1개월내), +10.0%p (2~3개월), -8.0%p (4~6개월), -6.0%p (7~12개월), -3.0%p (1년초과)",
       "direction": "shorten",
-      "detail": "공식 휴전 또는 평화 합의 체결. 휴전 합의는 전쟁 종결의 결정적 단계이며, 합의 후 이행까지 평균 1~2주 소요.\n\n신뢰도: 확실 (100%), 관련 기사 6.6건 감지.\n관련: US-Iran ceasefire: Can pressure, incentives, and risks deliver a final deal | Iran Tries to Grasp Economic Devastation of War, and Find a Way Past It | How many ships are crossing the Strait of Hormuz?",
+      "detail": "공식 휴전 또는 평화 합의 체결. 휴전 합의는 전쟁 종결의 결정적 단계이며, 합의 후 이행까지 평균 1~2주 소요.\n\n신뢰도: 확실 (100%), 관련 기사 8건 감지.\n관련: Hezbollah launches rockets at Israel – as it happened | Russia-Ukraine Orthodox Easter ceasefire begins | US and Iran hold talks in Islamabad as Pakistan seeks to broker peace deal",
       "keywords": [
         "ceasefire",
         "agree",
@@ -258,6 +258,62 @@
       "applied": "2026-04-11",
       "active": true,
       "severity": "critical"
+    },
+    {
+      "factor": "[중대 이벤트] 외교적 돌파구/강대국 중재",
+      "impact": "주요 외교적 돌파구 또는 강대국 중재. 데이턴(1995): 미국 중재 → 3주만에 합의. UN 안보리 결의는 평균 2~4주 내 휴전 이행.",
+      "weight": "+3.0%p (1개월내), +6.0%p (2~3개월), +2.0%p (4~6개월), -2.0%p (7~12개월), -1.0%p (1년초과)",
+      "direction": "shorten",
+      "detail": "주요 외교적 돌파구 또는 강대국 중재. 데이턴(1995): 미국 중재 → 3주만에 합의. UN 안보리 결의는 평균 2~4주 내 휴전 이행.\n\n신뢰도: 확실 (100%), 관련 기사 4건 감지.\n관련: June 10, 2024 Israel-Hamas war | US and Iran hold talks in Islamabad as Pakistan seeks to broker peace deal",
+      "keywords": [
+        "peace talk",
+        "agree",
+        "diplomatic",
+        "breakthrough",
+        "summit",
+        "peace",
+        "mediati",
+        "accept",
+        "un",
+        "resolution",
+        "ceasefire",
+        "broker",
+        "peace",
+        "negotiat",
+        "breakthrough",
+        "china",
+        "mediat",
+        "peace framework"
+      ],
+      "applied": "2026-04-11",
+      "active": true,
+      "severity": "high"
+    },
+    {
+      "factor": "[중대 이벤트] 전선 확대/신규 참전국",
+      "impact": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).",
+      "weight": "-1.3%p (1개월내), -2.0%p (2~3개월), +2.7%p (4~6개월), +2.0%p (7~12개월), +1.3%p (1년초과)",
+      "direction": "lengthen",
+      "detail": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Devastation in Gaza as Israel wages war on Hamas",
+      "keywords": [
+        "new front",
+        "war spread",
+        "conflict expand",
+        "join",
+        "war",
+        "enter",
+        "war",
+        "open",
+        "front",
+        "declare war",
+        "widen",
+        "conflict",
+        "second front",
+        "new theater"
+      ],
+      "applied": "2026-04-11",
+      "active": true,
+      "severity": "moderate"
     },
     {
       "factor": "유가 급등 (WTI $96.57/배럴)",
@@ -295,22 +351,22 @@
   "news_signals": {
     "ceasefire_mentions": 16.2,
     "escalation_mentions": 2,
-    "negotiation_mentions": 46.2,
-    "casualty_mentions": 14,
-    "peace_mentions": 18,
-    "regional_spread": 16.2,
+    "negotiation_mentions": 18.2,
+    "casualty_mentions": 12,
+    "peace_mentions": 4,
+    "regional_spread": 8.2,
     "total_articles": 50,
-    "new_articles": 50,
-    "unique_events": 44,
-    "duplicates_removed": 6
+    "new_articles": 49,
+    "unique_events": 38,
+    "duplicates_removed": 12
   },
   "latest_news": [
     {
-      "title": "U.S.-Iran Talks Timeline: Key Moments Between Two Adversaries",
-      "link": "https://www.nytimes.com/2026/04/11/world/middleeast/us-iran-talks-timeline-key-moments.html",
-      "pubDate": "Sat, 11 Apr 2026 15:33:21 +0000",
-      "source": "nytimes",
-      "snippet": "From sanctions relief to nuclear talks, here’s a look at how negotiations between Washington and Tehran have gone over the decades.",
+      "title": "US state department revokes green cards of three Iranian nationals it links to regime",
+      "link": "https://www.theguardian.com/us-news/2026/apr/11/state-department-revokes-green-cards-iran-arrests",
+      "pubDate": "Sat, 11 Apr 2026 16:37:22 GMT",
+      "source": "guardian",
+      "snippet": "Three arrested by federal agents had family ties to Iranian military general, regime spokesperson or security chiefUnited States federal agents arrested three Iranian nationals – including the son of ",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -318,93 +374,11 @@
       "_isDuplicate": false
     },
     {
-      "title": "Christians return to Jerusalem’s Holy Sepulchre as Israel eases restriction",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/4/11/christians-return-to-jerusalems-holy-sepulchre-as-israel-eases-restriction?traffic_source=rss",
-      "pubDate": "Sat, 11 Apr 2026 15:04:39 +0000",
-      "source": "aljazeera",
-      "snippet": "Orthodox Christians celebrated Easter’s Holy Fire ceremony at Jerusalem’s Holy Sepulchre.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "US-Iran ceasefire: Can pressure, incentives, and risks deliver a final deal",
-      "link": "https://www.aljazeera.com/video/this-is-america/2026/4/11/us-iran-ceasefire-can-pressure-incentives-and-risks-deliver-a-final-deal?traffic_source=rss",
-      "pubDate": "Sat, 11 Apr 2026 14:39:38 +0000",
-      "source": "aljazeera",
-      "snippet": "Can US‑Iran ceasefire hold for talks? Vance team, midterm politics, energy risks, Tehran seeks relief.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "What We Know About the U.S.-Iran Cease-Fire Talks in Pakistan",
-      "link": "https://www.nytimes.com/2026/04/09/world/middleeast/iran-us-ceasefire-talks-negotiations.html",
-      "pubDate": "Sat, 11 Apr 2026 14:28:03 +0000",
-      "source": "nytimes",
-      "snippet": "Vice President JD Vance is leading the U.S. delegation, which is in Pakistan for talks with Iranian officials on Saturday.",
-      "isNew": true,
-      "_isDuplicate": true,
-      "_sourceCount": 1
-    },
-    {
-      "title": "Iran Has Been Consistent in War. Will It Be Consistent in Peace Talks?",
-      "link": "https://www.nytimes.com/2026/04/11/world/middleeast/iran-peace-talks-demands.html",
-      "pubDate": "Sat, 11 Apr 2026 14:22:30 +0000",
-      "source": "nytimes",
-      "snippet": "While President Trump’s war aims have changed by the moment, Iran has stuck to firm demands. The question is whether it will compromise in peace negotiations.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Lebanon mourns security forces killed in Israeli strike",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/4/11/lebanon-mourns-security-forces-killed-in-israeli-strike?traffic_source=rss",
-      "pubDate": "Sat, 11 Apr 2026 14:17:16 +0000",
-      "source": "aljazeera",
-      "snippet": "Lebanon held funeral ceremonies for 13 members of the country’s State Security agency killed in an Israeli strike.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "US-Iran direct talks on ending war under way in Pakistan",
-      "link": "https://www.aljazeera.com/news/2026/4/11/us-iran-talks-on-ending-war-begin-in-pakistan?traffic_source=rss",
-      "pubDate": "Sat, 11 Apr 2026 13:26:53 +0000",
-      "source": "aljazeera",
-      "snippet": "Discussions between Iran and US delegations begin following separate bilateral meetings with Pakistani prime minister.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Al Jazeera’s Diplomatic Editor outlines key issues in US-Iran talks",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/4/11/al-jazeeras-diplomatic-editor-outlines-key-issues-in-us-iran-talks?traffic_source=rss",
-      "pubDate": "Sat, 11 Apr 2026 13:21:41 +0000",
-      "source": "aljazeera",
-      "snippet": "With US and Iranian officials set to meet in Pakistan, Al Jazeera’s James Bays outlines the sticking points ahead.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Video: JD Vance meets with Pakistani PM ahead of Iran talks",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/4/11/video-jd-vance-meets-with-pakistani-pm-ahead-of-iran-talks?traffic_source=rss",
-      "pubDate": "Sat, 11 Apr 2026 12:38:48 +0000",
-      "source": "aljazeera",
-      "snippet": "US officials have met Pakistani PM Shehbaz Sharif in Islamabad ahead of possible talks with Iran.",
+      "title": "美·이란, 종전협상 담판…\"파키스탄 포함 3자 대면 회담\"(종합2보)",
+      "link": "https://www.yna.co.kr/view/AKR20260411054153108",
+      "pubDate": "Sun, 12 Apr 2026 01:26:07 +0900",
+      "source": "yonhap",
+      "snippet": "(이슬라마바드·이스탄불=연합뉴스) 손현규 김동호 특파원 = 미국과 이란 대표단이 11일(현지시간) 파키스탄 수도 이슬라마바드에서 전쟁 종식을 위...",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": true,
@@ -412,23 +386,11 @@
       "_isDuplicate": false
     },
     {
-      "title": "Makeshift Gaza university offers chance to resurrect academic studies",
-      "link": "https://www.aljazeera.com/features/2026/4/11/makeshift-gaza-university-offers-chance-to-resurrect-academic-studies?traffic_source=rss",
-      "pubDate": "Sat, 11 Apr 2026 12:15:32 +0000",
-      "source": "aljazeera",
-      "snippet": "Solar-powered halls create academic lifelines for Gaza students battling war&#039;s aftermath and scarce resources.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "‘Endless war’: inside an Israeli kibbutz near Lebanon’s volatile border",
-      "link": "https://www.theguardian.com/world/2026/apr/11/inside-israeli-kibbutz-lebanon-border",
-      "pubDate": "Sat, 11 Apr 2026 11:00:48 GMT",
+      "title": "Why is anyone surprised by the US and Israel’s latest war? It’s only what the world allowed them to do in Gaza | Owen Jones",
+      "link": "https://www.theguardian.com/commentisfree/2026/apr/10/us-israel-war-iran-lebanon-western-silence-gaza",
+      "pubDate": "Fri, 10 Apr 2026 09:48:46 GMT",
       "source": "guardian",
-      "snippet": "Residents describe the constant disruption of life under fire and whether military action should wind downIt is a day after Israel killed more than 300 in a ceasefire-defying attack in Lebanon, and fi",
+      "snippet": "The price of silence from western politicians and media outlets over Israel’s actions in Palestine is now being paid by Iranian and Lebanese civiliansThe president of the United States threatened this",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -436,11 +398,11 @@
       "_isDuplicate": false
     },
     {
-      "title": "We need a regional agreement for the Strait of Hormuz",
-      "link": "https://www.aljazeera.com/opinions/2026/4/11/we-need-a-regional-agreement-for-the-strait-of-hormuz?traffic_source=rss",
-      "pubDate": "Sat, 11 Apr 2026 10:56:33 +0000",
-      "source": "aljazeera",
-      "snippet": "A governing arrangement for the strait can and must be developed based on law and fact.",
+      "title": "Deadly Israeli strikes hit Beirut – video",
+      "link": "https://www.theguardian.com/world/video/2026/apr/10/deadly-israeli-strikes-hit-beirut-lebanon-video",
+      "pubDate": "Fri, 10 Apr 2026 09:38:05 GMT",
+      "source": "guardian",
+      "snippet": "Footage shows bulldozers and diggers clearing rubble from central Beirut as Israeli strikes continued in Lebanon. More than 300 people were killed after the announcement of a ceasefire in the Iran war",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -448,11 +410,23 @@
       "_isDuplicate": false
     },
     {
-      "title": "Israel in row with South Korean leader over Palestinian abuse concerns",
-      "link": "https://www.aljazeera.com/news/2026/4/11/israel-in-row-with-south-korea-leader-over-palestinian-abuse-concerns?traffic_source=rss",
-      "pubDate": "Sat, 11 Apr 2026 10:47:55 +0000",
-      "source": "aljazeera",
-      "snippet": "South Korea&#039;s president says it’s disappointing Israel does not &#039;even once reflect on criticisms from around the world&#039;.",
+      "title": "Gulf states rethink security in light of US-Israel war on Iran",
+      "link": "https://www.theguardian.com/world/2026/apr/10/gulf-states-rethink-security-us-israel-war-iran-ceasefire",
+      "pubDate": "Fri, 10 Apr 2026 06:44:58 GMT",
+      "source": "guardian",
+      "snippet": "Whatever outcome of ceasefire talks, the region will have to live with a continuing threat from the regime in TehranMiddle East crisis – live updatesGulf nations will seek to add security partners as ",
+      "isNew": true,
+      "_sourceCount": 2,
+      "_isDuplicated": true,
+      "_clusterSize": 2,
+      "_isDuplicate": false
+    },
+    {
+      "title": "AI got the blame for the Iran school bombing. The truth is far more worrying – podcast",
+      "link": "https://www.theguardian.com/news/audio/2026/apr/10/ai-got-the-blame-for-the-iran-school-bombing-the-truth-is-far-more-worrying-podcast",
+      "pubDate": "Fri, 10 Apr 2026 04:00:08 GMT",
+      "source": "guardian",
+      "snippet": "LLMs-gone-rogue dominated coverage, but had nothing to do with the targeting. Instead, it was choices made by human beings, over many years, that gave us this atrocityBy Kevin T Baker. Read by Adam Si",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -460,21 +434,101 @@
       "_isDuplicate": false
     },
     {
-      "title": "Video: ‘Crucial talks’ says Al Jazeera reporter at US-Iran meeting venue",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/4/11/video-crucial-talks-says-al-jazeera-reporter-at-us-iran-meeting-venue?traffic_source=rss",
-      "pubDate": "Sat, 11 Apr 2026 10:24:16 +0000",
-      "source": "aljazeera",
-      "snippet": "Talks involving officials from Iran and Pakistani mediators have begun in Islamabad.",
+      "title": "Greens say Australia should step up pressure on Israel over ‘disastrous, illegal, immoral war’ on Lebanon",
+      "link": "https://www.theguardian.com/world/2026/apr/10/australia-pressure-israel-war-lebanon-greens",
+      "pubDate": "Fri, 10 Apr 2026 02:43:40 GMT",
+      "source": "guardian",
+      "snippet": "Call comes on same day former prime minister Tony Abbott says Australia should send troops to fight alongside US forces in the Middle EastFollow our Australia news live blog for latest updatesGet our ",
+      "isNew": true,
+      "_sourceCount": 2,
+      "_isDuplicated": true,
+      "_clusterSize": 2,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Hezbollah launches rockets at Israel – as it happened",
+      "link": "https://www.theguardian.com/world/live/2026/apr/09/iran-war-ceasefire-live-strait-of-hormuz-israel-strikes-middle-east-crisis-latest-news",
+      "pubDate": "Fri, 10 Apr 2026 02:41:27 GMT",
+      "source": "guardian",
+      "snippet": "This live blog has now closed. Our coverage of the Middle East crisis continues hereThe UK foreign minister, Yvette Cooper, has said Lebanon must be included in any ceasefire agreement. In other remar",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Several dead after Israeli joint security forces raid in West Bank",
+      "link": "https://www.cnn.com/2022/10/25/middleeast/israel-forces-raid-nablus-palestine-intl-hnk/index.html",
+      "pubDate": "Tue, 25 Oct 2022 13:58:46 GMT",
+      "source": "cnn",
+      "snippet": "",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Iran",
+      "link": "https://www.cnn.com/specials/middleeast/iran?utm_source=section",
+      "pubDate": "",
+      "source": "cnn",
+      "snippet": "",
       "isNew": true,
       "_isDuplicate": true,
       "_sourceCount": 1
     },
     {
-      "title": "Trump’s Iran fiasco has led him into the gravest territory | Sidney Blumenthal",
-      "link": "https://www.theguardian.com/commentisfree/2026/apr/11/trump-iran-international-law",
-      "pubDate": "Sat, 11 Apr 2026 10:00:44 GMT",
-      "source": "guardian",
-      "snippet": "As the president spirals over his disastrous war, his threats have escalated beyond the red line of international lawDonald Trump has hung nine glowering portraits of himself throughout the White Hous",
+      "title": "Israel",
+      "link": "https://www.cnn.com/specials/middleeast/israel?utm_source=section",
+      "pubDate": "",
+      "source": "cnn",
+      "snippet": "",
+      "isNew": true,
+      "_isDuplicate": true,
+      "_sourceCount": 1
+    },
+    {
+      "title": "June 17, 2024 - Israel-Gaza news",
+      "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-17-24/index.html",
+      "pubDate": "",
+      "source": "cnn",
+      "snippet": "Israeli Prime Minister Benjamin Netanyahu has disbanded the country's war cabinet, an Israeli official says, just over a week after opposition leader Benny Gantz withdrew from the body.",
+      "isNew": true,
+      "_isDuplicate": true,
+      "_sourceCount": 1
+    },
+    {
+      "title": "June 13, 2024 Israel-Hamas war",
+      "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-13-24/index.html",
+      "pubDate": "",
+      "source": "cnn",
+      "snippet": "The US-backed Gaza ceasefire proposal doesn't meet Hamas' demands for an end to the war, a senior official has told CNN. Osama Hamdan also said that \"no one has an idea\" how many of the hostages held ",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "June 12, 2024 Israel-Hamas war",
+      "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-12-24-intl/index.html",
+      "pubDate": "",
+      "source": "cnn",
+      "snippet": "Israel launched strikes on Al-Mawasi in southern Gaza early Thursday, bombarding an area it had previously designated as a \"safe zone\" by land, sea and air, according to the official Palestinian news ",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "June 10, 2024 Israel-Hamas war",
+      "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-10-24/index.html",
+      "pubDate": "",
+      "source": "cnn",
+      "snippet": "The UN Security Council adopted a resolution proposed by the United States for a permanent ceasefire and release of the hostages in Gaza.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -488,9 +542,109 @@
         "category_id": "diplomacy",
         "category_name": "외교/협상",
         "category_icon": "🤝",
-        "count": 21,
-        "new_count": 21,
+        "count": 15,
+        "new_count": 15,
         "articles": [
+          {
+            "title": "美·이란, 종전협상 담판…\"파키스탄 포함 3자 대면 회담\"(종합2보)",
+            "link": "https://www.yna.co.kr/view/AKR20260411054153108",
+            "source": "yonhap",
+            "sources": [
+              "yonhap"
+            ],
+            "pubDate": "Sun, 12 Apr 2026 01:26:07 +0900",
+            "snippet": "(이슬라마바드·이스탄불=연합뉴스) 손현규 김동호 특파원 = 미국과 이란 대표단이 11일(현지시간) 파키스탄 수도 이슬라마바드에서 전쟁 종식을 위...",
+            "isNew": true
+          },
+          {
+            "title": "Gulf states rethink security in light of US-Israel war on Iran",
+            "link": "https://www.theguardian.com/world/2026/apr/10/gulf-states-rethink-security-us-israel-war-iran-ceasefire",
+            "source": "guardian",
+            "sources": [
+              "guardian",
+              "cnn"
+            ],
+            "pubDate": "Fri, 10 Apr 2026 06:44:58 GMT",
+            "snippet": "Whatever outcome of ceasefire talks, the region will have to live with a continuing threat from the regime in TehranMiddle East crisis – live updatesGulf nations will seek to add security partners as ",
+            "isNew": true
+          },
+          {
+            "title": "Hezbollah launches rockets at Israel – as it happened",
+            "link": "https://www.theguardian.com/world/live/2026/apr/09/iran-war-ceasefire-live-strait-of-hormuz-israel-strikes-middle-east-crisis-latest-news",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Fri, 10 Apr 2026 02:41:27 GMT",
+            "snippet": "This live blog has now closed. Our coverage of the Middle East crisis continues hereThe UK foreign minister, Yvette Cooper, has said Lebanon must be included in any ceasefire agreement. In other remar",
+            "isNew": true
+          },
+          {
+            "title": "June 13, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-13-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "The US-backed Gaza ceasefire proposal doesn't meet Hamas' demands for an end to the war, a senior official has told CNN. Osama Hamdan also said that \"no one has an idea\" how many of the hostages held ",
+            "isNew": true
+          },
+          {
+            "title": "June 10, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-10-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "The UN Security Council adopted a resolution proposed by the United States for a permanent ceasefire and release of the hostages in Gaza.",
+            "isNew": true
+          },
+          {
+            "title": "US-Iran talks at a ‘stalemate’ over Strait of Hormuz, negotiators say",
+            "link": "https://www.ft.com/content/d5c00c1b-0807-4f94-b181-4f3a50937540",
+            "source": "ft",
+            "sources": [
+              "ft"
+            ],
+            "pubDate": "Sat, 11 Apr 2026 16:35:11 GMT",
+            "snippet": "Two American warships have passed through the contested waterway for first time since start of war",
+            "isNew": true
+          },
+          {
+            "title": "Russia-Ukraine Orthodox Easter ceasefire begins",
+            "link": "https://www.aljazeera.com/news/2026/4/11/russia-ukraine-orthodox-easter-ceasefire-begins?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Sat, 11 Apr 2026 16:09:51 +0000",
+            "snippet": "Both sides have agreed to observe the temporary truce, as US-led diplomatic efforts to end the war continue to stall.",
+            "isNew": true
+          },
+          {
+            "title": "US and Iran hold talks in Islamabad as Pakistan seeks to broker peace deal",
+            "link": "https://www.theguardian.com/world/2026/apr/11/us-iran-talks-peace-deal-islamabad-pakistan",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Sat, 11 Apr 2026 16:06:21 GMT",
+            "snippet": "JD Vance leads American delegation while Iran’s negotiators headed up by Iran’s parliamentary speakerPeace talks between Iran and the US began in Islamabad this afternoon, with senior negotiators from",
+            "isNew": true
+          },
+          {
+            "title": "What We Know About the U.S.-Iran Cease-Fire Talks in Pakistan",
+            "link": "https://www.nytimes.com/2026/04/09/world/middleeast/iran-us-ceasefire-talks-negotiations.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Sat, 11 Apr 2026 16:01:41 +0000",
+            "snippet": "Vice President JD Vance is leading the U.S. delegation, which is in Pakistan for talks with Iranian officials on Saturday.",
+            "isNew": true
+          },
           {
             "title": "U.S.-Iran Talks Timeline: Key Moments Between Two Adversaries",
             "link": "https://www.nytimes.com/2026/04/11/world/middleeast/us-iran-talks-timeline-key-moments.html",
@@ -501,104 +655,102 @@
             "pubDate": "Sat, 11 Apr 2026 15:33:21 +0000",
             "snippet": "From sanctions relief to nuclear talks, here’s a look at how negotiations between Washington and Tehran have gone over the decades.",
             "isNew": true
-          },
+          }
+        ]
+      },
+      {
+        "category_id": "humanitarian",
+        "category_name": "인도주의/피해",
+        "category_icon": "🏥",
+        "count": 8,
+        "new_count": 8,
+        "articles": [
           {
-            "title": "US-Iran ceasefire: Can pressure, incentives, and risks deliver a final deal",
-            "link": "https://www.aljazeera.com/video/this-is-america/2026/4/11/us-iran-ceasefire-can-pressure-incentives-and-risks-deliver-a-final-deal?traffic_source=rss",
-            "source": "aljazeera",
+            "title": "Why is anyone surprised by the US and Israel’s latest war? It’s only what the world allowed them to do in Gaza | Owen Jones",
+            "link": "https://www.theguardian.com/commentisfree/2026/apr/10/us-israel-war-iran-lebanon-western-silence-gaza",
+            "source": "guardian",
             "sources": [
-              "aljazeera"
+              "guardian"
             ],
-            "pubDate": "Sat, 11 Apr 2026 14:39:38 +0000",
-            "snippet": "Can US‑Iran ceasefire hold for talks? Vance team, midterm politics, energy risks, Tehran seeks relief.",
+            "pubDate": "Fri, 10 Apr 2026 09:48:46 GMT",
+            "snippet": "The price of silence from western politicians and media outlets over Israel’s actions in Palestine is now being paid by Iranian and Lebanese civiliansThe president of the United States threatened this",
             "isNew": true
           },
           {
-            "title": "Iran Has Been Consistent in War. Will It Be Consistent in Peace Talks?",
-            "link": "https://www.nytimes.com/2026/04/11/world/middleeast/iran-peace-talks-demands.html",
-            "source": "nytimes",
+            "title": "Deadly Israeli strikes hit Beirut – video",
+            "link": "https://www.theguardian.com/world/video/2026/apr/10/deadly-israeli-strikes-hit-beirut-lebanon-video",
+            "source": "guardian",
             "sources": [
-              "nytimes"
+              "guardian"
             ],
-            "pubDate": "Sat, 11 Apr 2026 14:22:30 +0000",
-            "snippet": "While President Trump’s war aims have changed by the moment, Iran has stuck to firm demands. The question is whether it will compromise in peace negotiations.",
+            "pubDate": "Fri, 10 Apr 2026 09:38:05 GMT",
+            "snippet": "Footage shows bulldozers and diggers clearing rubble from central Beirut as Israeli strikes continued in Lebanon. More than 300 people were killed after the announcement of a ceasefire in the Iran war",
             "isNew": true
           },
           {
-            "title": "US-Iran direct talks on ending war under way in Pakistan",
-            "link": "https://www.aljazeera.com/news/2026/4/11/us-iran-talks-on-ending-war-begin-in-pakistan?traffic_source=rss",
-            "source": "aljazeera",
+            "title": "Several dead after Israeli joint security forces raid in West Bank",
+            "link": "https://www.cnn.com/2022/10/25/middleeast/israel-forces-raid-nablus-palestine-intl-hnk/index.html",
+            "source": "cnn",
             "sources": [
-              "aljazeera"
+              "cnn"
             ],
-            "pubDate": "Sat, 11 Apr 2026 13:26:53 +0000",
-            "snippet": "Discussions between Iran and US delegations begin following separate bilateral meetings with Pakistani prime minister.",
+            "pubDate": "Tue, 25 Oct 2022 13:58:46 GMT",
+            "snippet": "",
             "isNew": true
           },
           {
-            "title": "Al Jazeera’s Diplomatic Editor outlines key issues in US-Iran talks",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/4/11/al-jazeeras-diplomatic-editor-outlines-key-issues-in-us-iran-talks?traffic_source=rss",
-            "source": "aljazeera",
+            "title": "June 9, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-09-24/index.html",
+            "source": "cnn",
             "sources": [
-              "aljazeera"
+              "cnn"
             ],
-            "pubDate": "Sat, 11 Apr 2026 13:21:41 +0000",
-            "snippet": "With US and Iranian officials set to meet in Pakistan, Al Jazeera’s James Bays outlines the sticking points ahead.",
+            "pubDate": "",
+            "snippet": "Key Israeli war cabinet member Benny Gantz quit Prime Minister Benjamin Netanyahu's government Sunday. Meanwhile, the death toll from Israel's hostage rescue in central Gaza keeps rising. Follow for l",
             "isNew": true
           },
           {
-            "title": "Video: JD Vance meets with Pakistani PM ahead of Iran talks",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/4/11/video-jd-vance-meets-with-pakistani-pm-ahead-of-iran-talks?traffic_source=rss",
-            "source": "aljazeera",
+            "title": "June 8, 2024 - Israel-Gaza news",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-08-24/index.html",
+            "source": "cnn",
             "sources": [
-              "aljazeera"
+              "cnn"
             ],
-            "pubDate": "Sat, 11 Apr 2026 12:38:48 +0000",
-            "snippet": "US officials have met Pakistani PM Shehbaz Sharif in Islamabad ahead of possible talks with Iran.",
+            "pubDate": "",
+            "snippet": "The Israeli military says it rescued four hostages from central Gaza on Saturday. Palestinians report scenes of horror on the ground, and Gaza hospital officials say more than 200 people were killed.",
             "isNew": true
           },
           {
-            "title": "We need a regional agreement for the Strait of Hormuz",
-            "link": "https://www.aljazeera.com/opinions/2026/4/11/we-need-a-regional-agreement-for-the-strait-of-hormuz?traffic_source=rss",
-            "source": "aljazeera",
+            "title": "May 19, 2024 - Israel-Gaza news",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-19-24/index.html",
+            "source": "cnn",
             "sources": [
-              "aljazeera"
+              "cnn"
             ],
-            "pubDate": "Sat, 11 Apr 2026 10:56:33 +0000",
-            "snippet": "A governing arrangement for the strait can and must be developed based on law and fact.",
+            "pubDate": "",
+            "snippet": "An Israeli airstrike on a refugee camp in central Gaza has killed at least 35 people, including seven children, according to hospital officials. Meanwhile, Israeli war cabinet divisions are spilling i",
             "isNew": true
           },
           {
-            "title": "Israel and Lebanon Plan Talks in D.C. as War Threatens U.S.-Iran Cease-Fire Deal",
-            "link": "https://www.nytimes.com/2026/04/10/world/middleeast/israel-lebanon-ceasefire-talks-iran-war.html",
-            "source": "nytimes",
+            "title": "Devastation in Gaza as Israel wages war on Hamas",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-18-24/index.html",
+            "source": "cnn",
             "sources": [
-              "nytimes"
+              "cnn"
             ],
-            "pubDate": "Sat, 11 Apr 2026 01:21:53 +0000",
-            "snippet": "Whether Israel’s conflict with Hezbollah, the Iran-backed militant group in Lebanon, is included in the Iran cease-fire is one of the major disputes rattling the truce.",
+            "pubDate": "",
+            "snippet": "Gaza faces a \"dire\" food situation as barely more than 300 aid trucks have entered the strip since Israel began its offensive in Rafah, a UN agency said in a report published Friday. Follow live updat",
             "isNew": true
           },
           {
-            "title": "Many Iranians Are Glad the Fighting Has Paused. Some Hard-liners Aren’t.",
-            "link": "https://www.nytimes.com/2026/04/11/world/middleeast/iranians-hardliners-ceasefire.html",
-            "source": "nytimes",
+            "title": "May 14, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-14-24/index.html",
+            "source": "cnn",
             "sources": [
-              "nytimes"
+              "cnn"
             ],
-            "pubDate": "Sat, 11 Apr 2026 09:20:27 +0000",
-            "snippet": "The most fervent backers of the Islamic republic believe pausing the war for negotiations risks squandering what they see as a hard-won upper hand.",
-            "isNew": true
-          },
-          {
-            "title": "Iran Tries to Grasp Economic Devastation of War, and Find a Way Past It",
-            "link": "https://www.nytimes.com/2026/04/11/world/middleeast/iran-economy-war.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Sat, 11 Apr 2026 09:02:25 +0000",
-            "snippet": "The vast scale of destruction wrought by U.S. and Israeli bombardment will make sanctions relief all the more vital to Iran’s government as it tries to negotiate a peace agreement.",
+            "pubDate": "",
+            "snippet": "Amid signs that Israel may launch a full-scale incursion in Rafah, aid agencies are warning any escalation in the southern Gaza city risks exacerbating the already deteriorating humanitarian situation",
             "isNew": true
           }
         ]
@@ -607,117 +759,85 @@
         "category_id": "military",
         "category_name": "군사 작전",
         "category_icon": "⚔️",
-        "count": 11,
-        "new_count": 11,
+        "count": 7,
+        "new_count": 7,
         "articles": [
           {
-            "title": "Lebanon mourns security forces killed in Israeli strike",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/4/11/lebanon-mourns-security-forces-killed-in-israeli-strike?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sat, 11 Apr 2026 14:17:16 +0000",
-            "snippet": "Lebanon held funeral ceremonies for 13 members of the country’s State Security agency killed in an Israeli strike.",
-            "isNew": true
-          },
-          {
-            "title": "‘Endless war’: inside an Israeli kibbutz near Lebanon’s volatile border",
-            "link": "https://www.theguardian.com/world/2026/apr/11/inside-israeli-kibbutz-lebanon-border",
+            "title": "US state department revokes green cards of three Iranian nationals it links to regime",
+            "link": "https://www.theguardian.com/us-news/2026/apr/11/state-department-revokes-green-cards-iran-arrests",
             "source": "guardian",
             "sources": [
               "guardian"
             ],
-            "pubDate": "Sat, 11 Apr 2026 11:00:48 GMT",
-            "snippet": "Residents describe the constant disruption of life under fire and whether military action should wind downIt is a day after Israel killed more than 300 in a ceasefire-defying attack in Lebanon, and fi",
+            "pubDate": "Sat, 11 Apr 2026 16:37:22 GMT",
+            "snippet": "Three arrested by federal agents had family ties to Iranian military general, regime spokesperson or security chiefUnited States federal agents arrested three Iranian nationals – including the son of ",
             "isNew": true
           },
           {
-            "title": "At least seven Palestinians killed in Israeli attacks on Gaza",
-            "link": "https://www.aljazeera.com/news/2026/4/11/at-least-seven-palestinians-killed-in-israeli-attacks-on-gaza?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sat, 11 Apr 2026 08:35:13 +0000",
-            "snippet": "An early-morning strike hits a group of civilians in ​​Bureij camp as drones attack a tent in Khan Younis.",
-            "isNew": true
-          },
-          {
-            "title": "Trump warns of fresh strikes if Iran talks fail – as it happened",
-            "link": "https://www.theguardian.com/world/live/2026/apr/10/iran-war-live-updates-trump-ceasefire-strait-hormuz-israel-lebanon-hezbollah",
+            "title": "AI got the blame for the Iran school bombing. The truth is far more worrying – podcast",
+            "link": "https://www.theguardian.com/news/audio/2026/apr/10/ai-got-the-blame-for-the-iran-school-bombing-the-truth-is-far-more-worrying-podcast",
             "source": "guardian",
             "sources": [
               "guardian"
             ],
-            "pubDate": "Sat, 11 Apr 2026 02:36:52 GMT",
-            "snippet": "US president says that warships are being reloaded with weaponry to strike Iran if Saturday’s Islamabad talks fail to produce a dealJD Vance warns Iran against trying to ‘play’ the US in peace talksNe",
+            "pubDate": "Fri, 10 Apr 2026 04:00:08 GMT",
+            "snippet": "LLMs-gone-rogue dominated coverage, but had nothing to do with the targeting. Instead, it was choices made by human beings, over many years, that gave us this atrocityBy Kevin T Baker. Read by Adam Si",
             "isNew": true
           },
           {
-            "title": "Iran’s South Africa Mission Trolls Trump Amid Hormuz Ceasefire",
-            "link": "https://www.nytimes.com/2026/04/10/world/africa/iran-south-africa-trump-war-ceasefire.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Sat, 11 Apr 2026 01:21:00 +0000",
-            "snippet": "Official social media accounts for Iranian embassies have engaged in information warfare, but the ones in Africa appear to have taken the lead on the attacks.",
-            "isNew": true
-          },
-          {
-            "title": "European Airports Warn of Jet Fuel Shortages if Strait of Hormuz Remains Shut",
-            "link": "https://www.nytimes.com/2026/04/10/business/europe-airports-jet-fuel-shortage.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Sat, 11 Apr 2026 00:23:00 +0000",
-            "snippet": "An association of airports told European Union officials that fuel shipments through the Strait of Hormuz had to restart within three weeks to avoid a “systemic” shortage.",
-            "isNew": true
-          },
-          {
-            "title": "What the Cease-Fire Means for Iran",
-            "link": "https://www.nytimes.com/video/world/middleeast/100000010831941/what-the-cease-fire-means-for-iran.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Fri, 10 Apr 2026 23:15:05 +0000",
-            "snippet": "Emerging from weeks of U.S. and Israeli airstrikes, an emboldened Iran has 10 demands for talks during the tenuous cease-fire, according to Iranian state media. Our reporter Erika Solomon assesses Ira",
-            "isNew": true
-          },
-          {
-            "title": "New Evidence Further Implicates U.S. Missiles in Strikes That Killed 21 Civilians in Iran",
-            "link": "https://www.nytimes.com/2026/04/10/world/middleeast/iran-us-missle-strike-civilians-lamerd.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Fri, 10 Apr 2026 22:40:09 +0000",
-            "snippet": "Additional images and video build on an earlier analysis, which the Pentagon has disputed, showing Precision Strike Missiles, or PrSMs, hit a sports hall and residential areas in the Iranian city of L",
-            "isNew": true
-          },
-          {
-            "title": "Fuel Protests Cause Transport Chaos in Ireland as Iran War Spikes Prices",
-            "link": "https://www.nytimes.com/2026/04/10/world/europe/ireland-fuel-protests-oil-prices-iran-war.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Fri, 10 Apr 2026 20:43:35 +0000",
-            "snippet": "The Irish government said it had called in the army after protesters blocked highways, ports and an oil refinery, causing widespread disruption.",
-            "isNew": true
-          },
-          {
-            "title": "The Guardian view on Trump’s civilisational threats: the words that fuel war must be condemned | Editorial",
-            "link": "https://www.theguardian.com/commentisfree/2026/apr/10/the-guardian-view-on-trumps-civilisational-threats-the-words-that-fuel-war-must-be-condemned",
+            "title": "Greens say Australia should step up pressure on Israel over ‘disastrous, illegal, immoral war’ on Lebanon",
+            "link": "https://www.theguardian.com/world/2026/apr/10/australia-pressure-israel-war-lebanon-greens",
             "source": "guardian",
             "sources": [
-              "guardian"
+              "guardian",
+              "cnn"
             ],
-            "pubDate": "Fri, 10 Apr 2026 17:17:03 GMT",
-            "snippet": "Military euphemisms can be deadly. Yet the brutal rhetoric of the US and Israel is proving still more lethal“Metaphors can kill,” the linguist George Lakoff wrote in an influential essay on the Gulf w",
+            "pubDate": "Fri, 10 Apr 2026 02:43:40 GMT",
+            "snippet": "Call comes on same day former prime minister Tony Abbott says Australia should send troops to fight alongside US forces in the Middle EastFollow our Australia news live blog for latest updatesGet our ",
+            "isNew": true
+          },
+          {
+            "title": "June 12, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-12-24-intl/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "Israel launched strikes on Al-Mawasi in southern Gaza early Thursday, bombarding an area it had previously designated as a \"safe zone\" by land, sea and air, according to the official Palestinian news ",
+            "isNew": true
+          },
+          {
+            "title": "June 6, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-06-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "Dozens of people were killed in an Israeli airstrike on a United Nations-run school in central Gaza, authorities said, in an attack that CNN analysis found was conducted with a US-made weapon.",
+            "isNew": true
+          },
+          {
+            "title": "May 29, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-29-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "The Israeli military says it established \"operational control\" over the Philadelphi Corridor, a 14-kilometer (8.7 miles) strip of land along the border between Gaza and Egypt.",
+            "isNew": true
+          },
+          {
+            "title": "May 24, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-24-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "The United Nations' top court has ordered Israel to immediately halt its controversial military operation in the southern Gaza city of Rafah, further increasing international pressure on Israel over i",
             "isNew": true
           }
         ]
@@ -730,48 +850,47 @@
         "new_count": 4,
         "articles": [
           {
-            "title": "World Leaders Push to Save Iran Talks Amid Israel’s Attacks in Lebanon",
-            "link": "https://www.nytimes.com/2026/04/10/us/politics/iran-israel-lebanon-trump-talks.html",
-            "source": "nytimes",
+            "title": "June 1, 2024 - Israel-Gaza news",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-01-24/index.html",
+            "source": "cnn",
             "sources": [
-              "nytimes",
-              "aljazeera"
+              "cnn"
             ],
-            "pubDate": "Sat, 11 Apr 2026 05:11:37 +0000",
-            "snippet": "President Trump’s cease-fire with Iran appears at risk as Vice President JD Vance heads to Pakistan for discussions with Iranian officials.",
+            "pubDate": "",
+            "snippet": "President Joe Biden has laid out a three-phase proposal to end the conflict in Gaza, as global condemnation of Israel's offensive in Rafah grows.",
             "isNew": true
           },
           {
-            "title": "Israel in row with South Korean leader over Palestinian abuse concerns",
-            "link": "https://www.aljazeera.com/news/2026/4/11/israel-in-row-with-south-korea-leader-over-palestinian-abuse-concerns?traffic_source=rss",
-            "source": "aljazeera",
+            "title": "May 21, 2024 Israel-Hamas war, Iran president death news",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-21-24/index.html",
+            "source": "cnn",
             "sources": [
-              "aljazeera"
+              "cnn"
             ],
-            "pubDate": "Sat, 11 Apr 2026 10:47:55 +0000",
-            "snippet": "South Korea&#039;s president says it’s disappointing Israel does not &#039;even once reflect on criticisms from around the world&#039;.",
+            "pubDate": "",
+            "snippet": "Prime Minister Benjamin Netanyahu blasted the charges brought by the International Criminal Court against himself and Israel's defense minister as \"beyond outrageous\" in an interview Tuesday with CNN'",
             "isNew": true
           },
           {
-            "title": "Trump’s Iran fiasco has led him into the gravest territory | Sidney Blumenthal",
-            "link": "https://www.theguardian.com/commentisfree/2026/apr/11/trump-iran-international-law",
-            "source": "guardian",
+            "title": "May 19, 2024 helicopter crash involving Iranian president",
+            "link": "https://www.cnn.com/middleeast/live-news/raisi-iran-president-helicopter-crash/index.html",
+            "source": "cnn",
             "sources": [
-              "guardian"
+              "cnn"
             ],
-            "pubDate": "Sat, 11 Apr 2026 10:00:44 GMT",
-            "snippet": "As the president spirals over his disastrous war, his threats have escalated beyond the red line of international lawDonald Trump has hung nine glowering portraits of himself throughout the White Hous",
+            "pubDate": "",
+            "snippet": "A helicopter carrying Iranian President Ebrahim Raisi crashed while he was visiting a northern region in the country Sunday, according to the Iranian state news agency IRNA.",
             "isNew": true
           },
           {
-            "title": "‘I’m Fed Up.’ Frustrated With Trump, Starmer Embraces Other Allies.",
-            "link": "https://www.nytimes.com/2026/04/10/world/europe/trump-starmer-fed-up-iran-war.html",
-            "source": "nytimes",
+            "title": "트럼프 \"한중일 등 전세계 위해 우리가 호르무즈 정리 작업 중\"(종합)",
+            "link": "https://www.yna.co.kr/view/AKR20260411054752071",
+            "source": "yonhap",
             "sources": [
-              "nytimes"
+              "yonhap"
             ],
-            "pubDate": "Fri, 10 Apr 2026 16:32:01 +0000",
-            "snippet": "Prime Minister Keir Starmer of Britain is strengthening ties in Europe and the Middle East as the once-special relationship with America sours.",
+            "pubDate": "Sat, 11 Apr 2026 23:20:59 +0900",
+            "snippet": "(워싱턴=연합뉴스) 백나리 특파원 = 도널드 트럼프 미국 대통령은 미국과 이란이 파��스탄에서 협상에 돌입한 11일(현지시간) 미국이 한국과 일본...",
             "isNew": true
           }
         ]
@@ -780,9 +899,31 @@
         "category_id": "other",
         "category_name": "기타",
         "category_icon": "📰",
-        "count": 4,
-        "new_count": 4,
+        "count": 3,
+        "new_count": 3,
         "articles": [
+          {
+            "title": "May 30, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-30-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "The war in Gaza will likely continue until at least the end of the year, an Israeli official warned.",
+            "isNew": true
+          },
+          {
+            "title": "May 22, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/iran-israel-hamas-war-gaza-news-05-22-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "Spain, Norway and Ireland announced plans to formally recognize a Palestinian state, in a move that is likely to bolster the global Palestinian cause but strain relations with Israel.",
+            "isNew": true
+          },
           {
             "title": "Christians return to Jerusalem’s Holy Sepulchre as Israel eases restriction",
             "link": "https://www.aljazeera.com/video/newsfeed/2026/4/11/christians-return-to-jerusalems-holy-sepulchre-as-israel-eases-restriction?traffic_source=rss",
@@ -792,90 +933,6 @@
             ],
             "pubDate": "Sat, 11 Apr 2026 15:04:39 +0000",
             "snippet": "Orthodox Christians celebrated Easter’s Holy Fire ceremony at Jerusalem’s Holy Sepulchre.",
-            "isNew": true
-          },
-          {
-            "title": "Makeshift Gaza university offers chance to resurrect academic studies",
-            "link": "https://www.aljazeera.com/features/2026/4/11/makeshift-gaza-university-offers-chance-to-resurrect-academic-studies?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sat, 11 Apr 2026 12:15:32 +0000",
-            "snippet": "Solar-powered halls create academic lifelines for Gaza students battling war&#039;s aftermath and scarce resources.",
-            "isNew": true
-          },
-          {
-            "title": "Iran War Drives Deeper Oil Shock Than Prices Reveal",
-            "link": "https://www.nytimes.com/2026/04/10/business/energy-environment/iran-oil-prices.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Fri, 10 Apr 2026 17:15:55 +0000",
-            "snippet": "The war with Iran is preventing huge amounts of oil from flowing out of the Persian Gulf, but the prices that many people track don’t fully capture the scale of the disruption.",
-            "isNew": true
-          },
-          {
-            "title": "Netanyahu-ism has achieved nothing for Israelis – and come at a monstrously high price | Jonathan Freedland",
-            "link": "https://www.theguardian.com/commentisfree/2026/apr/10/benjamin-netanyahu-israel-voting-public-total-victory",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Fri, 10 Apr 2026 17:03:14 GMT",
-            "snippet": "It is the voting public in Israel that will settle their PM’s fate later this year. But all they have heard are promises of ‘total victory’ that prove to be hollowIt is a record of abject failure. I a",
-            "isNew": true
-          }
-        ]
-      },
-      {
-        "category_id": "humanitarian",
-        "category_name": "인도주의/피해",
-        "category_icon": "🏥",
-        "count": 2,
-        "new_count": 2,
-        "articles": [
-          {
-            "title": "Is Iran Trump’s Suez crisis, or just a passing thunderstorm?",
-            "link": "https://www.theguardian.com/world/2026/apr/11/iran-trump-suez-crisis-strait-of-hormuz",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Sat, 11 Apr 2026 08:00:42 GMT",
-            "snippet": "Britain’s standing in the world was never the same after its assault on Egypt in 1956. Now the US risks repeating history in the Middle EastMiddle East crisis – live updatesDonald Trump’s addiction to",
-            "isNew": true
-          },
-          {
-            "title": "The week around the world in 20 pictures",
-            "link": "https://www.theguardian.com/artanddesign/gallery/2026/apr/10/the-week-around-the-world-in-20-pictures",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Fri, 10 Apr 2026 18:26:58 GMT",
-            "snippet": "Crisis in the Middle East, Russian shelling in Ukraine, Artemis’s lunar flyby and World Press Photo winners – the past seven days as captured by the world’s leading photojournalistsWarning: this galle",
-            "isNew": true
-          }
-        ]
-      },
-      {
-        "category_id": "economy",
-        "category_name": "경제 영향",
-        "category_icon": "📊",
-        "count": 1,
-        "new_count": 1,
-        "articles": [
-          {
-            "title": "Why Opening the Strait of Hormuz Won’t Immediately Lower Gas Prices",
-            "link": "https://www.nytimes.com/video/world/middleeast/100000010830114/why-opening-the-hormuz-wont-lower-gas-prices.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Fri, 10 Apr 2026 20:26:59 +0000",
-            "snippet": "Our energy reporter Rebecca F. Elliott explains why, even if the flow of energy is restored through the Persian Gulf, it will take months to carry out repairs across dozens of energy sites in the regi",
             "isNew": true
           }
         ]
@@ -888,144 +945,169 @@
         "new_count": 1,
         "articles": [
           {
-            "title": "Facing Many Crises, Pakistan Tries to End a Big One — in Iran",
-            "link": "https://www.nytimes.com/2026/04/10/world/middleeast/pakistan-iran-talks-islamabad.html",
-            "source": "nytimes",
+            "title": "June 5, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-05-24/index.html",
+            "source": "cnn",
             "sources": [
-              "nytimes"
+              "cnn"
             ],
-            "pubDate": "Sat, 11 Apr 2026 05:16:41 +0000",
-            "snippet": "A nation with a stalled economy, a terrorism problem and two hostile neighbors is set to host the first formal U.S.-Iranian talks since the war began.",
+            "pubDate": "",
+            "snippet": "Tensions are ramping up at the Israel-Lebanon border, with Hezbollah claiming responsibility for a Wednesday evening attack in northern Israel that left multiple people injured.",
             "isNew": true
           }
         ]
       }
     ],
     "recent_30min": {
-      "total_new": 50,
+      "total_new": 49,
       "by_category": {
-        "diplomacy": {
-          "count": 24,
+        "military": {
+          "count": 10,
           "titles": [
             {
-              "title": "U.S.-Iran Talks Timeline: Key Moments Between Two Adversaries",
-              "link": "https://www.nytimes.com/2026/04/11/world/middleeast/us-iran-talks-timeline-key-moments.html",
-              "source": "nytimes"
+              "title": "US state department revokes green cards of three Iranian nationals it links to regime",
+              "link": "https://www.theguardian.com/us-news/2026/apr/11/state-department-revokes-green-cards-iran-arrests",
+              "source": "guardian"
             },
             {
-              "title": "US-Iran ceasefire: Can pressure, incentives, and risks deliver a final deal",
-              "link": "https://www.aljazeera.com/video/this-is-america/2026/4/11/us-iran-ceasefire-can-pressure-incentives-and-risks-deliver-a-final-deal?traffic_source=rss",
-              "source": "aljazeera"
+              "title": "AI got the blame for the Iran school bombing. The truth is far more worrying – podcast",
+              "link": "https://www.theguardian.com/news/audio/2026/apr/10/ai-got-the-blame-for-the-iran-school-bombing-the-truth-is-far-more-worrying-podcast",
+              "source": "guardian"
             },
             {
-              "title": "What We Know About the U.S.-Iran Cease-Fire Talks in Pakistan",
-              "link": "https://www.nytimes.com/2026/04/09/world/middleeast/iran-us-ceasefire-talks-negotiations.html",
-              "source": "nytimes"
+              "title": "Greens say Australia should step up pressure on Israel over ‘disastrous, illegal, immoral war’ on Lebanon",
+              "link": "https://www.theguardian.com/world/2026/apr/10/australia-pressure-israel-war-lebanon-greens",
+              "source": "guardian"
             },
             {
-              "title": "Iran Has Been Consistent in War. Will It Be Consistent in Peace Talks?",
-              "link": "https://www.nytimes.com/2026/04/11/world/middleeast/iran-peace-talks-demands.html",
-              "source": "nytimes"
+              "title": "June 12, 2024 Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-12-24-intl/index.html",
+              "source": "cnn"
             },
             {
-              "title": "US-Iran direct talks on ending war under way in Pakistan",
-              "link": "https://www.aljazeera.com/news/2026/4/11/us-iran-talks-on-ending-war-begin-in-pakistan?traffic_source=rss",
-              "source": "aljazeera"
+              "title": "June 6, 2024 Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-06-24/index.html",
+              "source": "cnn"
+            }
+          ]
+        },
+        "diplomacy": {
+          "count": 16,
+          "titles": [
+            {
+              "title": "美·이란, 종전협상 담판…\"파키스탄 포함 3자 대면 회담\"(종합2보)",
+              "link": "https://www.yna.co.kr/view/AKR20260411054153108",
+              "source": "yonhap"
+            },
+            {
+              "title": "Gulf states rethink security in light of US-Israel war on Iran",
+              "link": "https://www.theguardian.com/world/2026/apr/10/gulf-states-rethink-security-us-israel-war-iran-ceasefire",
+              "source": "guardian"
+            },
+            {
+              "title": "Hezbollah launches rockets at Israel – as it happened",
+              "link": "https://www.theguardian.com/world/live/2026/apr/09/iran-war-ceasefire-live-strait-of-hormuz-israel-strikes-middle-east-crisis-latest-news",
+              "source": "guardian"
+            },
+            {
+              "title": "June 13, 2024 Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-13-24/index.html",
+              "source": "cnn"
+            },
+            {
+              "title": "June 10, 2024 Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-10-24/index.html",
+              "source": "cnn"
+            }
+          ]
+        },
+        "humanitarian": {
+          "count": 11,
+          "titles": [
+            {
+              "title": "Why is anyone surprised by the US and Israel’s latest war? It’s only what the world allowed them to do in Gaza | Owen Jones",
+              "link": "https://www.theguardian.com/commentisfree/2026/apr/10/us-israel-war-iran-lebanon-western-silence-gaza",
+              "source": "guardian"
+            },
+            {
+              "title": "Deadly Israeli strikes hit Beirut – video",
+              "link": "https://www.theguardian.com/world/video/2026/apr/10/deadly-israeli-strikes-hit-beirut-lebanon-video",
+              "source": "guardian"
+            },
+            {
+              "title": "Several dead after Israeli joint security forces raid in West Bank",
+              "link": "https://www.cnn.com/2022/10/25/middleeast/israel-forces-raid-nablus-palestine-intl-hnk/index.html",
+              "source": "cnn"
+            },
+            {
+              "title": "June 9, 2024 Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-09-24/index.html",
+              "source": "cnn"
+            },
+            {
+              "title": "June 8, 2024 - Israel-Gaza news",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-08-24/index.html",
+              "source": "cnn"
             }
           ]
         },
         "other": {
-          "count": 4,
+          "count": 5,
           "titles": [
+            {
+              "title": "Iran",
+              "link": "https://www.cnn.com/specials/middleeast/iran?utm_source=section",
+              "source": "cnn"
+            },
+            {
+              "title": "Israel",
+              "link": "https://www.cnn.com/specials/middleeast/israel?utm_source=section",
+              "source": "cnn"
+            },
+            {
+              "title": "May 30, 2024 Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-30-24/index.html",
+              "source": "cnn"
+            },
+            {
+              "title": "May 22, 2024 Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/iran-israel-hamas-war-gaza-news-05-22-24/index.html",
+              "source": "cnn"
+            },
             {
               "title": "Christians return to Jerusalem’s Holy Sepulchre as Israel eases restriction",
               "link": "https://www.aljazeera.com/video/newsfeed/2026/4/11/christians-return-to-jerusalems-holy-sepulchre-as-israel-eases-restriction?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Makeshift Gaza university offers chance to resurrect academic studies",
-              "link": "https://www.aljazeera.com/features/2026/4/11/makeshift-gaza-university-offers-chance-to-resurrect-academic-studies?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Iran War Drives Deeper Oil Shock Than Prices Reveal",
-              "link": "https://www.nytimes.com/2026/04/10/business/energy-environment/iran-oil-prices.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Netanyahu-ism has achieved nothing for Israelis – and come at a monstrously high price | Jonathan Freedland",
-              "link": "https://www.theguardian.com/commentisfree/2026/apr/10/benjamin-netanyahu-israel-voting-public-total-victory",
-              "source": "guardian"
-            }
-          ]
-        },
-        "military": {
-          "count": 13,
-          "titles": [
-            {
-              "title": "Lebanon mourns security forces killed in Israeli strike",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/4/11/lebanon-mourns-security-forces-killed-in-israeli-strike?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "‘Endless war’: inside an Israeli kibbutz near Lebanon’s volatile border",
-              "link": "https://www.theguardian.com/world/2026/apr/11/inside-israeli-kibbutz-lebanon-border",
-              "source": "guardian"
-            },
-            {
-              "title": "In New War With Israel, Hezbollah Defies Notion That It Was Crippled",
-              "link": "https://www.nytimes.com/2026/04/11/world/middleeast/hezbollah-israel.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "At least seven Palestinians killed in Israeli attacks on Gaza",
-              "link": "https://www.aljazeera.com/news/2026/4/11/at-least-seven-palestinians-killed-in-israeli-attacks-on-gaza?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Israeli drone attack kills Palestinians near Gaza mosque",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/4/11/israeli-drone-attack-kills-palestinians-near-gaza-mosque?traffic_source=rss",
               "source": "aljazeera"
             }
           ]
         },
         "politics": {
-          "count": 4,
+          "count": 6,
           "titles": [
             {
-              "title": "Israel in row with South Korean leader over Palestinian abuse concerns",
-              "link": "https://www.aljazeera.com/news/2026/4/11/israel-in-row-with-south-korea-leader-over-palestinian-abuse-concerns?traffic_source=rss",
-              "source": "aljazeera"
+              "title": "June 17, 2024 - Israel-Gaza news",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-17-24/index.html",
+              "source": "cnn"
             },
             {
-              "title": "Trump’s Iran fiasco has led him into the gravest territory | Sidney Blumenthal",
-              "link": "https://www.theguardian.com/commentisfree/2026/apr/11/trump-iran-international-law",
-              "source": "guardian"
+              "title": "June 1, 2024 - Israel-Gaza news",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-01-24/index.html",
+              "source": "cnn"
             },
             {
-              "title": "World Leaders Push to Save Iran Talks Amid Israel’s Attacks in Lebanon",
-              "link": "https://www.nytimes.com/2026/04/10/us/politics/iran-israel-lebanon-trump-talks.html",
-              "source": "nytimes"
+              "title": "May 21, 2024 Israel-Hamas war, Iran president death news",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-21-24/index.html",
+              "source": "cnn"
             },
             {
-              "title": "‘I’m Fed Up.’ Frustrated With Trump, Starmer Embraces Other Allies.",
-              "link": "https://www.nytimes.com/2026/04/10/world/europe/trump-starmer-fed-up-iran-war.html",
-              "source": "nytimes"
-            }
-          ]
-        },
-        "humanitarian": {
-          "count": 2,
-          "titles": [
-            {
-              "title": "Is Iran Trump’s Suez crisis, or just a passing thunderstorm?",
-              "link": "https://www.theguardian.com/world/2026/apr/11/iran-trump-suez-crisis-strait-of-hormuz",
-              "source": "guardian"
+              "title": "May 20, 2024 Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-20-24/index.html",
+              "source": "cnn"
             },
             {
-              "title": "The week around the world in 20 pictures",
-              "link": "https://www.theguardian.com/artanddesign/gallery/2026/apr/10/the-week-around-the-world-in-20-pictures",
-              "source": "guardian"
+              "title": "May 19, 2024 helicopter crash involving Iranian president",
+              "link": "https://www.cnn.com/middleeast/live-news/raisi-iran-president-helicopter-crash/index.html",
+              "source": "cnn"
             }
           ]
         },
@@ -1033,24 +1115,9 @@
           "count": 1,
           "titles": [
             {
-              "title": "Facing Many Crises, Pakistan Tries to End a Big One — in Iran",
-              "link": "https://www.nytimes.com/2026/04/10/world/middleeast/pakistan-iran-talks-islamabad.html",
-              "source": "nytimes"
-            }
-          ]
-        },
-        "economy": {
-          "count": 2,
-          "titles": [
-            {
-              "title": "Only two ships passed through the Strait of Hormuz on Friday.",
-              "link": "https://www.nytimes.com/live/2026/04/10/world/iran-war-trump-israel-lebanon/only-two-ships-passed-through-the-strait-of-hormuz-on-friday",
-              "source": "nytimes"
-            },
-            {
-              "title": "Why Opening the Strait of Hormuz Won’t Immediately Lower Gas Prices",
-              "link": "https://www.nytimes.com/video/world/middleeast/100000010830114/why-opening-the-hormuz-wont-lower-gas-prices.html",
-              "source": "nytimes"
+              "title": "June 5, 2024 Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-05-24/index.html",
+              "source": "cnn"
             }
           ]
         }
@@ -1150,29 +1217,11 @@
       "changePercent": -0.1,
       "prev": 4792.2
     },
-    "US2Y": {
-      "price": 3.59,
-      "change": 0,
-      "changePercent": 0,
-      "prev": 3.59
-    },
-    "DXY": {
-      "price": 98.7,
-      "change": -0.12,
-      "changePercent": -0.12,
-      "prev": 98.82
-    },
-    "US10Y": {
-      "price": 4.32,
-      "change": 0.02,
-      "changePercent": 0.47,
-      "prev": 4.29
-    },
-    "WTI": {
-      "price": 96.57,
-      "change": -1.3,
+    "VIX": {
+      "price": 19.23,
+      "change": -0.26,
       "changePercent": -1.33,
-      "prev": 97.87
+      "prev": 19.49
     },
     "BRENT": {
       "price": 95.2,
@@ -1180,11 +1229,29 @@
       "changePercent": -0.75,
       "prev": 95.92
     },
-    "VIX": {
-      "price": 19.23,
-      "change": -0.26,
+    "US2Y": {
+      "price": 3.59,
+      "change": 0,
+      "changePercent": 0,
+      "prev": 3.59
+    },
+    "WTI": {
+      "price": 96.57,
+      "change": -1.3,
       "changePercent": -1.33,
-      "prev": 19.49
+      "prev": 97.87
+    },
+    "US10Y": {
+      "price": 4.32,
+      "change": 0.02,
+      "changePercent": 0.47,
+      "prev": 4.29
+    },
+    "DXY": {
+      "price": 98.7,
+      "change": -0.12,
+      "changePercent": -0.12,
+      "prev": 98.82
     }
   },
   "critical_events": [
@@ -1193,8 +1260,24 @@
       "name": "공식 휴전/평화 합의",
       "severity": "critical",
       "confidence": 1,
-      "matchCount": 6.6,
+      "matchCount": 8,
       "direction": "shorten"
+    },
+    {
+      "id": "diplomatic_breakthrough",
+      "name": "외교적 돌파구/강대국 중재",
+      "severity": "high",
+      "confidence": 1,
+      "matchCount": 4,
+      "direction": "shorten"
+    },
+    {
+      "id": "conflict_expansion",
+      "name": "전선 확대/신규 참전국",
+      "severity": "moderate",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "lengthen"
     }
   ],
   "feeds_loaded": 7,
