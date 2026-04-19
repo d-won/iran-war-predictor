@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-04-19T10:06:25.021Z",
+  "timestamp": "2026-04-19T11:06:06.147Z",
   "war_day": 50,
   "probabilities": {
-    "1개월 내 (~3월)": 28.2,
-    "2~3개월 (4~5월)": 42.2,
-    "4~6개월 (6~8월)": 18.1,
-    "7~12개월 (9월~27/2월)": 8.8,
-    "1년 초과": 2.7
+    "1개월 내 (~3월)": 26.8,
+    "2~3개월 (4~5월)": 40,
+    "4~6개월 (6~8월)": 19.6,
+    "7~12개월 (9월~27/2월)": 10,
+    "1년 초과": 3.6
   },
   "factors": [
     {
@@ -164,11 +164,11 @@
       "decay": 1
     },
     {
-      "factor": "협상/외교 뉴스 12.2건 감지",
+      "factor": "협상/외교 뉴스 12건 감지",
       "impact": "외교적 해결 움직임 포착",
       "weight": "+0.02%p (1개월내), +0.02%p (2~3개월)",
       "direction": "shorten",
-      "detail": "실시간 뉴스에서 협상 관련 기사 12.2건이 감지되었습니다.",
+      "detail": "실시간 뉴스에서 협상 관련 기사 12건이 감지되었습니다.",
       "keywords": [
         "negotiat",
         "talks",
@@ -260,6 +260,32 @@
       "severity": "critical"
     },
     {
+      "factor": "[중대 이벤트] 전선 확대/신규 참전국",
+      "impact": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).",
+      "weight": "-1.3%p (1개월내), -2.0%p (2~3개월), +2.7%p (4~6개월), +2.0%p (7~12개월), +1.3%p (1년초과)",
+      "direction": "lengthen",
+      "detail": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: The GCC has unity, it now needs joint defence and development",
+      "keywords": [
+        "new front",
+        "war spread",
+        "conflict expand",
+        "join",
+        "war",
+        "enter",
+        "war",
+        "open",
+        "front",
+        "declare war",
+        "widen",
+        "conflict",
+        "second front",
+        "new theater"
+      ],
+      "applied": "2026-04-19",
+      "active": true,
+      "severity": "moderate"
+    },
+    {
       "factor": "금값 사상최고 ($4879.6/oz)",
       "impact": "안전자산 수요 폭증 → 글로벌 불안 심화",
       "weight": "+2%p (4-6개월)",
@@ -278,26 +304,62 @@
   "news_signals": {
     "ceasefire_mentions": 12,
     "escalation_mentions": 0,
-    "negotiation_mentions": 12.2,
+    "negotiation_mentions": 12,
     "casualty_mentions": 8,
     "peace_mentions": 14,
     "regional_spread": 22,
     "total_articles": 50,
     "new_articles": 50,
-    "unique_events": 46,
-    "duplicates_removed": 4
+    "unique_events": 47,
+    "duplicates_removed": 3
   },
   "latest_news": [
     {
-      "title": "Middle East crisis live: Iran says ‘fundamental’ issues’ still to be resolved with US amid strait of Hormuz impasse",
+      "title": "Middle East crisis live: Iran says handing over enriched uranium a ‘non-starter’ as strait of Hormuz remains shut",
       "link": "https://www.theguardian.com/world/live/2026/apr/19/middle-east-crisis-live-iran-us-strait-of-hormuz-trump-lebanon-israel",
-      "pubDate": "Sun, 19 Apr 2026 09:40:12 GMT",
+      "pubDate": "Sun, 19 Apr 2026 10:59:32 GMT",
       "source": "guardian",
       "snippet": "Iran’s top negotiator says both sides remain far apart after Tehran again closed strait of Hormuz after US said it would not end its blockadeFull report: Iran closes strait of Hormuz again ‘until US l",
       "isNew": true,
-      "_sourceCount": 2,
-      "_isDuplicated": true,
-      "_clusterSize": 2,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "The GCC has unity, it now needs joint defence and development",
+      "link": "https://www.aljazeera.com/opinions/2026/4/19/the-gcc-has-unity-it-now-needs-joint-defence-and-development?traffic_source=rss",
+      "pubDate": "Sun, 19 Apr 2026 10:32:42 +0000",
+      "source": "aljazeera",
+      "snippet": "Beyond supporting peace, GCC states need to work towards joint defence, energy security and economic development.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Israel had a bad week in Europe. Does it herald a wider shift in EU relations?",
+      "link": "https://www.theguardian.com/world/2026/apr/19/israel-europe-support-iran-war-orban-meloni",
+      "pubDate": "Sun, 19 Apr 2026 10:13:34 GMT",
+      "source": "guardian",
+      "snippet": "With Orbán gone and Meloni distancing herself, EU sanctions on trade and settlers are looking more likelyIt was a bad week for Israel in Europe: the country lost its staunchest regional ally when Vikt",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Displaced Lebanese families return home despite Israeli attacks",
+      "link": "https://www.aljazeera.com/gallery/2026/4/19/displaced-lebanese-families-return-south-despite-risks-near-israeli-border?traffic_source=rss",
+      "pubDate": "Sun, 19 Apr 2026 10:11:31 +0000",
+      "source": "aljazeera",
+      "snippet": "Families travel south to inspect destroyed homes, unsure whether to stay as concerns about renewed conflict increase.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
       "_isDuplicate": false
     },
     {
@@ -355,8 +417,10 @@
       "source": "aljazeera",
       "snippet": "Tehran is &#039;fully prepared&#039; for the US to resume hostilities at any moment, says Iran&#039;s parliament speaker Ghalibaf.",
       "isNew": true,
-      "_isDuplicate": true,
-      "_sourceCount": 1
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
     },
     {
       "title": "More Displaced Lebanese Head Home as Cease-Fire Is Tested",
@@ -429,40 +493,6 @@
       "_isDuplicated": false,
       "_clusterSize": 1,
       "_isDuplicate": false
-    },
-    {
-      "title": "More than 3,400 Iranians killed in war - as it happened",
-      "link": "https://www.theguardian.com/world/live/2026/apr/18/middle-east-crisis-live-iran-warns-it-will-close-strait-of-hormuz-if-us-blockade-continues",
-      "pubDate": "Sun, 19 Apr 2026 01:15:15 GMT",
-      "source": "guardian",
-      "snippet": "This blog is now closed. Our latest main story on the Middle East crisis is here.Separate to the Pakistani army chief’s trip to Iran (see post at 07:53), the Pakistani prime minister, Shehbaz Sharif, ",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "North Korea launches ballistic missiles towards sea off its east coast",
-      "link": "https://www.aljazeera.com/news/2026/4/19/north-korea-launches-ballistic-missiles-towards-sea-off-its-east-coast?traffic_source=rss",
-      "pubDate": "Sun, 19 Apr 2026 00:28:45 +0000",
-      "source": "aljazeera",
-      "snippet": "Multiple ballistic missiles fired from eastern Sinpo area in seventh such test this year.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Iran war live: Hormuz Strait ‘closed’ as Tehran says no date for US talks",
-      "link": "https://www.aljazeera.com/news/liveblog/2026/4/19/iran-war-live-tehran-says-no-date-set-for-us-talks-hormuz-strait-closed?traffic_source=rss",
-      "pubDate": "Sun, 19 Apr 2026 00:00:00 +0000",
-      "source": "aljazeera",
-      "snippet": "IRGC says the Strait of Hormuz will remain closed until the US stops blockading Iranian ports.",
-      "isNew": true,
-      "_isDuplicate": true,
-      "_sourceCount": 1
     }
   ],
   "news_digest": {
@@ -471,19 +501,29 @@
         "category_id": "economy",
         "category_name": "경제 영향",
         "category_icon": "📊",
-        "count": 14,
-        "new_count": 14,
+        "count": 16,
+        "new_count": 16,
         "articles": [
           {
-            "title": "Middle East crisis live: Iran says ‘fundamental’ issues’ still to be resolved with US amid strait of Hormuz impasse",
+            "title": "Middle East crisis live: Iran says handing over enriched uranium a ‘non-starter’ as strait of Hormuz remains shut",
             "link": "https://www.theguardian.com/world/live/2026/apr/19/middle-east-crisis-live-iran-us-strait-of-hormuz-trump-lebanon-israel",
             "source": "guardian",
             "sources": [
-              "guardian",
-              "aljazeera"
+              "guardian"
             ],
-            "pubDate": "Sun, 19 Apr 2026 09:40:12 GMT",
+            "pubDate": "Sun, 19 Apr 2026 10:59:32 GMT",
             "snippet": "Iran’s top negotiator says both sides remain far apart after Tehran again closed strait of Hormuz after US said it would not end its blockadeFull report: Iran closes strait of Hormuz again ‘until US l",
+            "isNew": true
+          },
+          {
+            "title": "Israel had a bad week in Europe. Does it herald a wider shift in EU relations?",
+            "link": "https://www.theguardian.com/world/2026/apr/19/israel-europe-support-iran-war-orban-meloni",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Sun, 19 Apr 2026 10:13:34 GMT",
+            "snippet": "With Orbán gone and Meloni distancing herself, EU sanctions on trade and settlers are looking more likelyIt was a bad week for Israel in Europe: the country lost its staunchest regional ally when Vikt",
             "isNew": true
           },
           {
@@ -506,6 +546,17 @@
             ],
             "pubDate": "Sun, 19 Apr 2026 09:02:20 +0000",
             "snippet": "The gas-rich Gulf nation is in a state of “strategic shock” after the war dealt a serious blow to its economy, sending ripples around the world.",
+            "isNew": true
+          },
+          {
+            "title": "Iran, US still ‘far’ from breakthrough amid Strait of Hormuz impasse",
+            "link": "https://www.aljazeera.com/news/2026/4/19/iran-us-still-far-from-breakthrough-in-strait-of-hormuz-impasse?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Sun, 19 Apr 2026 08:49:19 +0000",
+            "snippet": "Tehran is &#039;fully prepared&#039; for the US to resume hostilities at any moment, says Iran&#039;s parliament speaker Ghalibaf.",
             "isNew": true
           },
           {
@@ -562,29 +613,6 @@
             "pubDate": "Sat, 18 Apr 2026 13:11:42 +0000",
             "snippet": "Analysts said energy and shipping companies would be reluctant to fully restore operations until they were confident that hostilities were over.",
             "isNew": true
-          },
-          {
-            "title": "Iran says strait of Hormuz ‘completely open’ but sounds warning on US blockade",
-            "link": "https://www.theguardian.com/world/2026/apr/17/strait-of-hormuz-now-open-to-commercial-vessels",
-            "source": "guardian",
-            "sources": [
-              "guardian",
-              "nytimes"
-            ],
-            "pubDate": "Sat, 18 Apr 2026 03:52:14 GMT",
-            "snippet": "Iran says strait could close again if US blockade continues, but Trump says it will remain in place until ‘transaction’ with Tehran is completeMiddle East crisis live: latest news updatesIran’s foreig",
-            "isNew": true
-          },
-          {
-            "title": "The U.S. blockade on ships will continue until Trump ends it, says Central Command chief.",
-            "link": "https://www.nytimes.com/live/2026/04/17/world/iran-us-war-trump/the-us-military-blockade-on-ships-entering-or-leaving-iran-will-continue-until-trump-ends-it",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Fri, 17 Apr 2026 23:38:04 +0000",
-            "snippet": "",
-            "isNew": true
           }
         ]
       },
@@ -592,9 +620,20 @@
         "category_id": "military",
         "category_name": "군사 작전",
         "category_icon": "⚔️",
-        "count": 9,
-        "new_count": 9,
+        "count": 10,
+        "new_count": 10,
         "articles": [
+          {
+            "title": "Displaced Lebanese families return home despite Israeli attacks",
+            "link": "https://www.aljazeera.com/gallery/2026/4/19/displaced-lebanese-families-return-south-despite-risks-near-israeli-border?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Sun, 19 Apr 2026 10:11:31 +0000",
+            "snippet": "Families travel south to inspect destroyed homes, unsure whether to stay as concerns about renewed conflict increase.",
+            "isNew": true
+          },
           {
             "title": "How the Israeli military targets the people who save lives",
             "link": "https://www.aljazeera.com/video/by-the-numbers-3/2026/4/19/how-the-israeli-military-targets-the-people-who-save-lives?traffic_source=rss",
@@ -704,6 +743,17 @@
         "new_count": 6,
         "articles": [
           {
+            "title": "The GCC has unity, it now needs joint defence and development",
+            "link": "https://www.aljazeera.com/opinions/2026/4/19/the-gcc-has-unity-it-now-needs-joint-defence-and-development?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Sun, 19 Apr 2026 10:32:42 +0000",
+            "snippet": "Beyond supporting peace, GCC states need to work towards joint defence, energy security and economic development.",
+            "isNew": true
+          },
+          {
             "title": "Hezbollah is willing to cooperate with a cease-fire with Israel. For now.",
             "link": "https://www.nytimes.com/2026/04/18/world/middleeast/hezbollah-cease-fire-israel-lebanon.html",
             "source": "nytimes",
@@ -712,17 +762,6 @@
             ],
             "pubDate": "Sat, 18 Apr 2026 23:51:54 +0000",
             "snippet": "The leader of the Iran-backed militia said that a more durable peace with Israel would require the fulfillment of a list of long-standing demands.",
-            "isNew": true
-          },
-          {
-            "title": "‘No regrets’: Venezuela’s Machado defends giving Nobel medal to Trump",
-            "link": "https://www.aljazeera.com/news/2026/4/18/no-regrets-venezuelas-machado-defends-giving-nobel-medal-to-trump?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sat, 18 Apr 2026 16:08:43 +0000",
-            "snippet": "Maria Corina Machado gave Trump her Nobel Peace Prize after the US leader captured Nicolas Maduro. ",
             "isNew": true
           },
           {
@@ -767,81 +806,6 @@
             ],
             "pubDate": "Fri, 17 Apr 2026 15:31:53 +0000",
             "snippet": "The country’s leadership secured a truce through risky talks with Israel, but the government now finds itself caught between competing pressures.",
-            "isNew": true
-          }
-        ]
-      },
-      {
-        "category_id": "politics",
-        "category_name": "국내 정치",
-        "category_icon": "🏛️",
-        "count": 6,
-        "new_count": 6,
-        "articles": [
-          {
-            "title": "Syrian Billionaires Needed a Favor in Washington. They Invoked the Trump Name.",
-            "link": "https://www.nytimes.com/2026/04/19/us/politics/syrian-billionaires-needed-a-favor-in-washington-they-invoked-the-trump-name.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Sun, 19 Apr 2026 09:00:46 +0000",
-            "snippet": "The attempt by the Khayyats to influence foreign policy while discussions are underway about potential Trump family deals is an increasingly common feature of the president’s second term.",
-            "isNew": true
-          },
-          {
-            "title": "JD Vance could yet save his political skin. But it will mean turning on Trump – and soon | Simon Tisdall",
-            "link": "https://www.theguardian.com/commentisfree/2026/apr/19/jd-vance-donald-trump-vice-president-maga",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Sun, 19 Apr 2026 07:00:36 GMT",
-            "snippet": "The vice-president has endured his most humiliating – and damaging – week as his boss’s fall guy. How much more can Maga’s great hope take?   For a would-be president, JD Vance has an unfortunate habi",
-            "isNew": true
-          },
-          {
-            "title": "Will Keir Starmer resign?",
-            "link": "https://www.aljazeera.com/video/inside-story/2026/4/18/will-keir-starmer-resign?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sat, 18 Apr 2026 19:58:02 +0000",
-            "snippet": "UK PM says he was unaware Mandelson failed security clearance.",
-            "isNew": true
-          },
-          {
-            "title": "Trump joined by Joe Rogan as he signs order to speed up psychedelic review",
-            "link": "https://www.aljazeera.com/news/2026/4/18/trump-joined-by-joe-rogan-as-he-signs-order-to-speed-up-psychedelic-review?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sat, 18 Apr 2026 17:46:57 +0000",
-            "snippet": "Order calls on federal government to relax restrictions on psychedelics, including ibogaine, for potential treatments. ",
-            "isNew": true
-          },
-          {
-            "title": "Trump and Tehran’s series of mismanaged posts stall progress towards peace",
-            "link": "https://www.theguardian.com/world/2026/apr/18/donald-trump-tehran-war-mismanaged-posts-progress-peace",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Sat, 18 Apr 2026 15:04:47 GMT",
-            "snippet": "US president’s desperation for war to end has seen him trying to speed through a process he does not fully controlA set of mismanaged and premature media announcements by Donald Trump and Tehran has l",
-            "isNew": true
-          },
-          {
-            "title": "Trump Frames Iran War as All but Over in Optimistic Social Media Flurry",
-            "link": "https://www.nytimes.com/2026/04/17/world/middleeast/trump-iran-war-truth-social-posts.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Sat, 18 Apr 2026 02:04:38 +0000",
-            "snippet": "Iranian officials did not confirm most of Mr. Trump’s claims and disputed several of them.",
             "isNew": true
           }
         ]
@@ -898,7 +862,7 @@
             "isNew": true
           },
           {
-            "title": "Why Lebanon’s Government Has Struggled to Contain Hezbollah",
+            "title": "Why Lebanon��s Government Has Struggled to Contain Hezbollah",
             "link": "https://www.nytimes.com/2026/04/17/world/middleeast/lebanon-hezbollah-ceasefire.html",
             "source": "nytimes",
             "sources": [
@@ -922,11 +886,75 @@
         ]
       },
       {
+        "category_id": "politics",
+        "category_name": "국내 정치",
+        "category_icon": "🏛️",
+        "count": 5,
+        "new_count": 5,
+        "articles": [
+          {
+            "title": "Syrian Billionaires Needed a Favor in Washington. They Invoked the Trump Name.",
+            "link": "https://www.nytimes.com/2026/04/19/us/politics/syrian-billionaires-needed-a-favor-in-washington-they-invoked-the-trump-name.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Sun, 19 Apr 2026 09:00:46 +0000",
+            "snippet": "The attempt by the Khayyats to influence foreign policy while discussions are underway about potential Trump family deals is an increasingly common feature of the president’s second term.",
+            "isNew": true
+          },
+          {
+            "title": "JD Vance could yet save his political skin. But it will mean turning on Trump – and soon | Simon Tisdall",
+            "link": "https://www.theguardian.com/commentisfree/2026/apr/19/jd-vance-donald-trump-vice-president-maga",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Sun, 19 Apr 2026 07:00:36 GMT",
+            "snippet": "The vice-president has endured his most humiliating – and damaging – week as his boss’s fall guy. How much more can Maga’s great hope take?   For a would-be president, JD Vance has an unfortunate habi",
+            "isNew": true
+          },
+          {
+            "title": "Will Keir Starmer resign?",
+            "link": "https://www.aljazeera.com/video/inside-story/2026/4/18/will-keir-starmer-resign?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Sat, 18 Apr 2026 19:58:02 +0000",
+            "snippet": "UK PM says he was unaware Mandelson failed security clearance.",
+            "isNew": true
+          },
+          {
+            "title": "Trump and Tehran’s series of mismanaged posts stall progress towards peace",
+            "link": "https://www.theguardian.com/world/2026/apr/18/donald-trump-tehran-war-mismanaged-posts-progress-peace",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Sat, 18 Apr 2026 15:04:47 GMT",
+            "snippet": "US president’s desperation for war to end has seen him trying to speed through a process he does not fully controlA set of mismanaged and premature media announcements by Donald Trump and Tehran has l",
+            "isNew": true
+          },
+          {
+            "title": "Trump Frames Iran War as All but Over in Optimistic Social Media Flurry",
+            "link": "https://www.nytimes.com/2026/04/17/world/middleeast/trump-iran-war-truth-social-posts.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Sat, 18 Apr 2026 02:04:38 +0000",
+            "snippet": "Iranian officials did not confirm most of Mr. Trump’s claims and disputed several of them.",
+            "isNew": true
+          }
+        ]
+      },
+      {
         "category_id": "humanitarian",
         "category_name": "인도주의/피해",
         "category_icon": "🏥",
-        "count": 3,
-        "new_count": 3,
+        "count": 2,
+        "new_count": 2,
         "articles": [
           {
             "title": "More Displaced Lebanese Head Home as Cease-Fire Is Tested",
@@ -948,17 +976,6 @@
             ],
             "pubDate": "Sun, 19 Apr 2026 01:15:15 GMT",
             "snippet": "This blog is now closed. Our latest main story on the Middle East crisis is here.Separate to the Pakistani army chief’s trip to Iran (see post at 07:53), the Pakistani prime minister, Shehbaz Sharif, ",
-            "isNew": true
-          },
-          {
-            "title": "Sudanese refugees trapped between borders and bureaucracy in Morocco",
-            "link": "https://www.aljazeera.com/features/longform/2026/4/18/sudanese-refugees-trapped-between-borders-and-bureaucracy-in-morocco?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sat, 18 Apr 2026 18:51:05 +0000",
-            "snippet": "A growing number of Sudanese refugees are arriving into Morocco after fleeing war, but find themselves stuck.",
             "isNew": true
           }
         ]
@@ -999,11 +1016,16 @@
       "total_new": 50,
       "by_category": {
         "economy": {
-          "count": 16,
+          "count": 17,
           "titles": [
             {
-              "title": "Middle East crisis live: Iran says ‘fundamental’ issues’ still to be resolved with US amid strait of Hormuz impasse",
+              "title": "Middle East crisis live: Iran says handing over enriched uranium a ‘non-starter’ as strait of Hormuz remains shut",
               "link": "https://www.theguardian.com/world/live/2026/apr/19/middle-east-crisis-live-iran-us-strait-of-hormuz-trump-lebanon-israel",
+              "source": "guardian"
+            },
+            {
+              "title": "Israel had a bad week in Europe. Does it herald a wider shift in EU relations?",
+              "link": "https://www.theguardian.com/world/2026/apr/19/israel-europe-support-iran-war-orban-meloni",
               "source": "guardian"
             },
             {
@@ -1020,17 +1042,47 @@
               "title": "Iran, US still ‘far’ from breakthrough amid Strait of Hormuz impasse",
               "link": "https://www.aljazeera.com/news/2026/4/19/iran-us-still-far-from-breakthrough-in-strait-of-hormuz-impasse?traffic_source=rss",
               "source": "aljazeera"
+            }
+          ]
+        },
+        "diplomacy": {
+          "count": 6,
+          "titles": [
+            {
+              "title": "The GCC has unity, it now needs joint defence and development",
+              "link": "https://www.aljazeera.com/opinions/2026/4/19/the-gcc-has-unity-it-now-needs-joint-defence-and-development?traffic_source=rss",
+              "source": "aljazeera"
             },
             {
-              "title": "Iran closes strait of Hormuz again ‘until US lifts blockade’",
-              "link": "https://www.theguardian.com/world/2026/apr/18/iran-closes-strait-of-hormuz-again-until-us-lifts-blockade",
-              "source": "guardian"
+              "title": "Hezbollah is willing to cooperate with a cease-fire with Israel. For now.",
+              "link": "https://www.nytimes.com/2026/04/18/world/middleeast/hezbollah-cease-fire-israel-lebanon.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "What people in power think the impact of the Iran war will be",
+              "link": "https://www.bbc.com/news/articles/c9vl37eev7ko?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
+            },
+            {
+              "title": "Amid Conflicting Messages From Trump and Iran, Hopes for Peace Deal Emerge",
+              "link": "https://www.nytimes.com/2026/04/17/world/middleeast/trump-iran-hormuz-peace-deal.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "A moment of risk and opportunity: How two ceasefires could boost US-Iran talks",
+              "link": "https://www.bbc.com/news/articles/c0mjynzvw94o?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
             }
           ]
         },
         "military": {
-          "count": 10,
+          "count": 11,
           "titles": [
+            {
+              "title": "Displaced Lebanese families return home despite Israeli attacks",
+              "link": "https://www.aljazeera.com/gallery/2026/4/19/displaced-lebanese-families-return-south-despite-risks-near-israeli-border?traffic_source=rss",
+              "source": "aljazeera"
+            },
             {
               "title": "How the Israeli military targets the people who save lives",
               "link": "https://www.aljazeera.com/video/by-the-numbers-3/2026/4/19/how-the-israeli-military-targets-the-people-who-save-lives?traffic_source=rss",
@@ -1050,16 +1102,11 @@
               "title": "North Korea launches ballistic missiles towards sea off its east coast",
               "link": "https://www.aljazeera.com/news/2026/4/19/north-korea-launches-ballistic-missiles-towards-sea-off-its-east-coast?traffic_source=rss",
               "source": "aljazeera"
-            },
-            {
-              "title": "Iran war live: Hormuz Strait ‘closed’ as Tehran says no date for US talks",
-              "link": "https://www.aljazeera.com/news/liveblog/2026/4/19/iran-war-live-tehran-says-no-date-set-for-us-talks-hormuz-strait-closed?traffic_source=rss",
-              "source": "aljazeera"
             }
           ]
         },
         "politics": {
-          "count": 7,
+          "count": 6,
           "titles": [
             {
               "title": "Syrian Billionaires Needed a Favor in Washington. They Invoked the Trump Name.",
@@ -1077,19 +1124,19 @@
               "source": "aljazeera"
             },
             {
-              "title": "Trump joined by Joe Rogan as he signs order to speed up psychedelic review",
-              "link": "https://www.aljazeera.com/news/2026/4/18/trump-joined-by-joe-rogan-as-he-signs-order-to-speed-up-psychedelic-review?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
               "title": "Trump and Tehran’s series of mismanaged posts stall progress towards peace",
               "link": "https://www.theguardian.com/world/2026/apr/18/donald-trump-tehran-war-mismanaged-posts-progress-peace",
               "source": "guardian"
+            },
+            {
+              "title": "Trump Frames Iran War as All but Over in Optimistic Social Media Flurry",
+              "link": "https://www.nytimes.com/2026/04/17/world/middleeast/trump-iran-war-truth-social-posts.html",
+              "source": "nytimes"
             }
           ]
         },
         "humanitarian": {
-          "count": 3,
+          "count": 2,
           "titles": [
             {
               "title": "More Displaced Lebanese Head Home as Cease-Fire Is Tested",
@@ -1100,11 +1147,6 @@
               "title": "More than 3,400 Iranians killed in war - as it happened",
               "link": "https://www.theguardian.com/world/live/2026/apr/18/middle-east-crisis-live-iran-warns-it-will-close-strait-of-hormuz-if-us-blockade-continues",
               "source": "guardian"
-            },
-            {
-              "title": "Sudanese refugees trapped between borders and bureaucracy in Morocco",
-              "link": "https://www.aljazeera.com/features/longform/2026/4/18/sudanese-refugees-trapped-between-borders-and-bureaucracy-in-morocco?traffic_source=rss",
-              "source": "aljazeera"
             }
           ]
         },
@@ -1132,39 +1174,9 @@
               "source": "nytimes"
             },
             {
-              "title": "Why Lebanon’s Government Has Struggled to Contain Hezbollah",
+              "title": "Why Lebanon��s Government Has Struggled to Contain Hezbollah",
               "link": "https://www.nytimes.com/2026/04/17/world/middleeast/lebanon-hezbollah-ceasefire.html",
               "source": "nytimes"
-            }
-          ]
-        },
-        "diplomacy": {
-          "count": 6,
-          "titles": [
-            {
-              "title": "Hezbollah is willing to cooperate with a cease-fire with Israel. For now.",
-              "link": "https://www.nytimes.com/2026/04/18/world/middleeast/hezbollah-cease-fire-israel-lebanon.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "‘No regrets’: Venezuela’s Machado defends giving Nobel medal to Trump",
-              "link": "https://www.aljazeera.com/news/2026/4/18/no-regrets-venezuelas-machado-defends-giving-nobel-medal-to-trump?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "What people in power think the impact of the Iran war will be",
-              "link": "https://www.bbc.com/news/articles/c9vl37eev7ko?at_medium=RSS&at_campaign=rss",
-              "source": "bbc"
-            },
-            {
-              "title": "Amid Conflicting Messages From Trump and Iran, Hopes for Peace Deal Emerge",
-              "link": "https://www.nytimes.com/2026/04/17/world/middleeast/trump-iran-hormuz-peace-deal.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "A moment of risk and opportunity: How two ceasefires could boost US-Iran talks",
-              "link": "https://www.bbc.com/news/articles/c0mjynzvw94o?at_medium=RSS&at_campaign=rss",
-              "source": "bbc"
             }
           ]
         },
@@ -1279,29 +1291,11 @@
       "changePercent": -9.07,
       "prev": 99.39
     },
-    "GOLD": {
-      "price": 4879.6,
-      "change": 94.2,
-      "changePercent": 1.97,
-      "prev": 4785.4
-    },
     "WTI": {
       "price": 82.59,
       "change": -12.1,
       "changePercent": -12.78,
       "prev": 94.69
-    },
-    "DXY": {
-      "price": 98.23,
-      "change": 0.01,
-      "changePercent": 0.01,
-      "prev": 98.22
-    },
-    "US10Y": {
-      "price": 4.25,
-      "change": -0.06,
-      "changePercent": -1.39,
-      "prev": 4.31
     },
     "VIX": {
       "price": 17.48,
@@ -1314,6 +1308,24 @@
       "change": -0.01,
       "changePercent": -0.28,
       "prev": 3.61
+    },
+    "US10Y": {
+      "price": 4.25,
+      "change": -0.06,
+      "changePercent": -1.39,
+      "prev": 4.31
+    },
+    "DXY": {
+      "price": 98.23,
+      "change": 0.01,
+      "changePercent": 0.01,
+      "prev": 98.22
+    },
+    "GOLD": {
+      "price": 4879.6,
+      "change": 94.2,
+      "changePercent": 1.97,
+      "prev": 4785.4
     }
   },
   "critical_events": [
@@ -1324,6 +1336,14 @@
       "confidence": 1,
       "matchCount": 4,
       "direction": "shorten"
+    },
+    {
+      "id": "conflict_expansion",
+      "name": "전선 확대/신규 참전국",
+      "severity": "moderate",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "lengthen"
     }
   ],
   "feeds_loaded": 7,
