@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-04-19T23:33:18.763Z",
-  "war_day": 50,
+  "timestamp": "2026-04-20T02:26:14.654Z",
+  "war_day": 51,
   "probabilities": {
-    "1개월 내 (~3월)": 20.7,
-    "2~3개월 (4~5월)": 39.1,
-    "4~6개월 (6~8월)": 23.6,
-    "7~12개월 (9월~27/2월)": 12.2,
-    "1년 초과": 4.4
+    "1개월 내 (~3월)": 29.9,
+    "2~3개월 (4~5월)": 42.9,
+    "4~6개월 (6~8월)": 19.8,
+    "7~12개월 (9월~27/2월)": 5.9,
+    "1년 초과": 1.5
   },
   "factors": [
     {
@@ -45,7 +45,7 @@
       "decay": 0.4
     },
     {
-      "factor": "이란 미사일 능력 급감 (휴전16:확전4)",
+      "factor": "이란 미사일 능력 급감 (휴전12:확전2)",
       "impact": "전쟁 지속 능력 약화로 단기 종전 가능성 증가",
       "weight": "+0.0%p (1개월내), +0.0%p (2~3개월) (잔존40%)",
       "direction": "shorten",
@@ -164,11 +164,11 @@
       "decay": 1
     },
     {
-      "factor": "협상/외교 뉴스 16건 감지",
+      "factor": "협상/외교 뉴스 6건 감지",
       "impact": "외교적 해결 움직임 포착",
-      "weight": "+0.03%p (1개월내), +0.02%p (2~3개월)",
+      "weight": "+0.01%p (1개월내), +0.01%p (2~3개월)",
       "direction": "shorten",
-      "detail": "실시간 뉴스에서 협상 관련 기사 16건이 감지되었습니다.",
+      "detail": "실시간 뉴스에서 협상 관련 기사 6건이 감지되었습니다.",
       "keywords": [
         "negotiat",
         "talks",
@@ -181,11 +181,11 @@
       "decay": 1
     },
     {
-      "factor": "지역 확산 뉴스 14건 감지",
+      "factor": "지역 확산 뉴스 8건 감지",
       "impact": "주변국 연루 확대로 장기화 위험",
       "weight": "+0.01%p (4~6개월), +0.01%p (7~12개월)",
       "direction": "lengthen",
-      "detail": "주변국을 언급하는 기사 14건이 감지되었습니다.",
+      "detail": "주변국을 언급하는 기사 8건이 감지되었습니다.",
       "keywords": [
         "saudi",
         "uae",
@@ -234,43 +234,121 @@
       "decay": 0.3
     },
     {
-      "factor": "[중대 이벤트] 수도 직접 공격/포위",
-      "impact": "수도 직접 공격. 베오그라드(1999): 78일 폭격 후 항복. 바그다드(2003): 21일만에 함락. 수도 타격은 전쟁 지속 의지를 급격히 약화.",
-      "weight": "+2.7%p (1개월내), +4.0%p (2~3개월), -1.3%p (4~6개월), -1.3%p (7~12개월), -0.7%p (1년초과)",
+      "factor": "[중대 이벤트] 공식 휴전/평화 합의",
+      "impact": "공식 휴전 또는 평화 합의 체결. 휴전 합의는 전쟁 종결의 결정적 단계이며, 합의 후 이행까지 평균 1~2주 소요.",
+      "weight": "+15.0%p (1개월내), +10.0%p (2~3개월), -8.0%p (4~6개월), -6.0%p (7~12개월), -3.0%p (1년초과)",
       "direction": "shorten",
-      "detail": "수도 직접 공격. 베오그라드(1999): 78일 폭격 후 항복. 바그다드(2003): 21일만에 함락. 수도 타격은 전쟁 지속 의지를 급격히 약화.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Met Police investigate potential Iran links to London arson attacks",
+      "detail": "공식 휴전 또는 평화 합의 체결. 휴전 합의는 전쟁 종결의 결정적 단계이며, 합의 후 이행까지 평균 1~2주 소요.\n\n신뢰도: 확실 (100%), 관련 기사 4건 감지.\n관련: Donald Trump claims to have ended a 10th war – but will the Lebanon ceasefire hold? | Celebrations and relief in Lebanon as ceasefire with Israel begins  – video",
       "keywords": [
-        "capital",
-        "bomb",
-        "capital",
-        "strike",
-        "capital",
-        "attack",
-        "capital",
-        "siege",
-        "capital",
-        "pound",
-        "capital",
-        "explosion",
-        "tehran",
-        "bomb",
-        "tehran",
-        "strike",
-        "tehran",
-        "pound",
-        "tehran",
-        "explosion"
+        "ceasefire",
+        "agree",
+        "ceasefire",
+        "deal",
+        "ceasefire",
+        "sign",
+        "truce",
+        "agree",
+        "armistice",
+        "sign",
+        "peace deal",
+        "ceasefire",
+        "accept",
+        "peace agreement"
       ],
-      "applied": "2026-04-19",
+      "applied": "2026-04-20",
+      "active": true,
+      "severity": "critical"
+    },
+    {
+      "factor": "[중대 이벤트] 교전국 정권 붕괴/쿠데타",
+      "impact": "교전국 정권 붕괴 또는 쿠데타. 이라크(2003): 바그다드 함락 후 3주 내 주요 전투 종료. 리비아(2011): 트리폴리 함락 후 2개월 내 종전.",
+      "weight": "+6.7%p (1개월내), +5.3%p (2~3개월), +1.3%p (4~6개월), -3.3%p (7~12개월), -2.7%p (1년초과)",
+      "direction": "shorten",
+      "detail": "교전국 정권 붕괴 또는 쿠데타. 이라크(2003): 바그다드 함락 후 3주 내 주요 전투 종료. 리비아(2011): 트리폴리 함락 후 2개월 내 종전.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Sanctions don’t result in regime change. Whether against Iran or Russia, western countries need shrewder tactics | Simon Jenkins",
+      "keywords": [
+        "regime",
+        "collaps",
+        "regime",
+        "fall",
+        "government",
+        "fall",
+        "capital",
+        "fall",
+        "capital",
+        "captur",
+        "coup",
+        "detat",
+        "government",
+        "overthrow",
+        "regime",
+        "change"
+      ],
+      "applied": "2026-04-20",
+      "active": true,
+      "severity": "critical"
+    },
+    {
+      "factor": "[중대 이벤트] 외교적 돌파구/강대국 중재",
+      "impact": "주요 외교적 돌파구 또는 강대국 중재. 데이턴(1995): 미국 중재 → 3주만에 합의. UN 안보리 결의는 평균 2~4주 내 휴전 이행.",
+      "weight": "+2.0%p (1개월내), +4.0%p (2~3개월), +1.3%p (4~6개월), -1.3%p (7~12개월), -0.7%p (1년초과)",
+      "direction": "shorten",
+      "detail": "주요 외교적 돌파구 또는 강대국 중재. 데이턴(1995): 미국 중재 → 3주만에 합의. UN 안보리 결의는 평균 2~4주 내 휴전 이행.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: June 10, 2024 Israel-Hamas war",
+      "keywords": [
+        "peace talk",
+        "agree",
+        "diplomatic",
+        "breakthrough",
+        "summit",
+        "peace",
+        "mediati",
+        "accept",
+        "un",
+        "resolution",
+        "ceasefire",
+        "broker",
+        "peace",
+        "negotiat",
+        "breakthrough",
+        "china",
+        "mediat",
+        "peace framework"
+      ],
+      "applied": "2026-04-20",
       "active": true,
       "severity": "high"
     },
     {
-      "factor": "금값 사상최고 ($4791.1/oz)",
+      "factor": "[중대 이벤트] 전선 확대/신규 참전국",
+      "impact": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).",
+      "weight": "-1.3%p (1개월내), -2.0%p (2~3개월), +2.7%p (4~6개월), +2.0%p (7~12개월), +1.3%p (1년초과)",
+      "direction": "lengthen",
+      "detail": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Devastation in Gaza as Israel wages war on Hamas",
+      "keywords": [
+        "new front",
+        "war spread",
+        "conflict expand",
+        "join",
+        "war",
+        "enter",
+        "war",
+        "open",
+        "front",
+        "declare war",
+        "widen",
+        "conflict",
+        "second front",
+        "new theater"
+      ],
+      "applied": "2026-04-20",
+      "active": true,
+      "severity": "moderate"
+    },
+    {
+      "factor": "금값 사상최고 ($4820.9/oz)",
       "impact": "안전자산 수요 폭증 → 글로벌 불안 심화",
       "weight": "+2%p (4-6개월)",
       "direction": "lengthen",
-      "detail": "금 가격이 온스당 $4791.1로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
+      "detail": "금 가격이 온스당 $4820.9로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
       "keywords": [
         "gold",
         "safe haven",
@@ -282,48 +360,24 @@
     }
   ],
   "news_signals": {
-    "ceasefire_mentions": 16,
-    "escalation_mentions": 4,
-    "negotiation_mentions": 16,
-    "casualty_mentions": 6,
-    "peace_mentions": 6,
-    "regional_spread": 14,
+    "ceasefire_mentions": 12,
+    "escalation_mentions": 2,
+    "negotiation_mentions": 6,
+    "casualty_mentions": 12,
+    "peace_mentions": 8,
+    "regional_spread": 8,
     "total_articles": 50,
-    "new_articles": 50,
-    "unique_events": 48,
-    "duplicates_removed": 2
+    "new_articles": 49,
+    "unique_events": 38,
+    "duplicates_removed": 12
   },
   "latest_news": [
     {
-      "title": "Middle East crisis live: Iran accuses US of ceasefire breach and vows to retaliate over seizure of ship",
-      "link": "https://www.theguardian.com/world/live/2026/apr/19/middle-east-crisis-live-iran-us-strait-of-hormuz-trump-lebanon-israel",
-      "pubDate": "Sun, 19 Apr 2026 23:30:51 GMT",
-      "source": "guardian",
-      "snippet": "Trump says US navy ship fired on vessel that tried to get past blockade; Iran has pledged to keep strait of Hormuz closed until blockade is liftedFull report: Iran closes strait of Hormuz again ‘until",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "U.S. Fires on Iranian Cargo Ship in Arabian Sea",
-      "link": "https://www.nytimes.com/live/2026/04/19/world/iran-us-war-trump-hormuz/us-military-iranian-ship",
-      "pubDate": "Sun, 19 Apr 2026 23:29:41 +0000",
-      "source": "nytimes",
-      "snippet": "The military said it had disabled the vessel after it ignored repeated warnings to stop, amid a U.S. blockade of Iranian ports. Marines boarded the ship and seized it.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "미군, 이란 화물선에 함포 쏴 나포…이란 \"휴전 위반·곧 보복\"(종합2보)",
-      "link": "https://www.yna.co.kr/view/AKR20260420003053071",
-      "pubDate": "Mon, 20 Apr 2026 08:26:02 +0900",
+      "title": "더타임스 \"이란 보면 북한엔 핵보유가 이성적 선택일 수도\"",
+      "link": "https://www.yna.co.kr/view/AKR20260420069200009",
+      "pubDate": "Mon, 20 Apr 2026 11:19:46 +0900",
       "source": "yonhap",
-      "snippet": "(워싱턴·서울=연합뉴스) 백나리 특파원 곽민서 기자 = 대이란 해상봉쇄 작전을 벌이고 있는 미군이 2주 휴전 종료를 이틀 앞둔 19일(현지시간)...",
+      "snippet": "(서울=연합뉴스) 임화섭 기자 = 중동전쟁에 따라 요동치는 국제정세 속에 북한 김정은 정권의 입장에서는 핵무기와 미사일을 유지하는 것이 이성적 ...",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -331,83 +385,11 @@
       "_isDuplicate": false
     },
     {
-      "title": "Hamas Officials Say Group Is Ready to Hand Over Some Weapons",
-      "link": "https://www.nytimes.com/2026/04/19/world/middleeast/hamas-weapons-israel.html",
-      "pubDate": "Sun, 19 Apr 2026 21:54:20 +0000",
-      "source": "nytimes",
-      "snippet": "Two senior Hamas officials in Gaza said the group was prepared to relinquish some automatic rifles and other arms, a concession that falls short of Israeli-U.S. demands.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "US forces attack and seize Iranian ship Touska near Strait of Hormuz",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/4/19/us-forces-attack-and-seize-iranian-ship-touska-near-strait-of-hormuz?traffic_source=rss",
-      "pubDate": "Sun, 19 Apr 2026 21:53:29 +0000",
-      "source": "aljazeera",
-      "snippet": "US Central Command has published a video said to show a guided-missile destroyer firing at an Iranian-flagged ship.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Can U.S. Blockade Iranian-Linked Ships Anywhere in the World? Yes, But …",
-      "link": "https://www.nytimes.com/2026/04/19/world/middleeast/us-iran-blockade-expansion.html",
-      "pubDate": "Sun, 19 Apr 2026 21:52:55 +0000",
-      "source": "nytimes",
-      "snippet": "Maritime and military law experts say an expansion of the naval blockade announced last week raises legal and practical questions but has ample historical precedent.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "US intercepts and seizes Iranian-flagged cargo ship, Trump says",
-      "link": "https://www.bbc.com/news/articles/c239500dx8ro?at_medium=RSS&at_campaign=rss",
-      "pubDate": "Sun, 19 Apr 2026 21:39:43 GMT",
-      "source": "bbc",
-      "snippet": "Tehran has not commented on the incident, which comes as the US prepares for a second round of talks.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Argentina’s Milei backs US-Israel war on Iran in Jerusalem visit",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/4/19/argentinas-milei-backs-us-israel-war-on-iran-in-jerusalem-visit?traffic_source=rss",
-      "pubDate": "Sun, 19 Apr 2026 21:23:19 +0000",
-      "source": "aljazeera",
-      "snippet": "Argentina’s president reaffirmed alignment with the US and Israel during a visit to Jerusalem, backing their war on Iran",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Schools, shops shut in northern Israel to protest the Lebanon ceasefire",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/4/19/schools-shops-shut-in-northern-israel-to-protest-the-lebanon-ceasefire?traffic_source=rss",
-      "pubDate": "Sun, 19 Apr 2026 21:21:51 +0000",
-      "source": "aljazeera",
-      "snippet": "Shops and schools shut in northern Israel as residents protested a 10-day ceasefire with Lebanon.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "US military seized Iranian-flagged container ship, Trump says",
-      "link": "https://www.theguardian.com/us-news/2026/apr/19/trump-us-seizes-iran-flagged-cargo-ship",
-      "pubDate": "Sun, 19 Apr 2026 21:05:01 GMT",
+      "title": "Israel had a bad week in Europe. Does it herald a wider shift in EU relations?",
+      "link": "https://www.theguardian.com/world/2026/apr/19/israel-europe-support-iran-war-orban-meloni",
+      "pubDate": "Sun, 19 Apr 2026 11:36:05 GMT",
       "source": "guardian",
-      "snippet": "Trump says cargo ship tried to get past US naval blockade near strait of Hormuz ‘and it did not go well for them’The US military took custody of an Iranian-flagged container ship that attempted to get",
+      "snippet": "With Orbán gone and Meloni distancing herself, EU sanctions on trade and settlers are looking more likelyIt was a bad week for Israel in Europe: the country lost its staunchest regional ally when Vikt",
       "isNew": true,
       "_sourceCount": 2,
       "_isDuplicated": true,
@@ -415,11 +397,83 @@
       "_isDuplicate": false
     },
     {
-      "title": "Protesters defy Berlin rain to call for end to global wars",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/4/19/protesters-defy-berlin-rain-to-call-for-end-to-global-wars?traffic_source=rss",
-      "pubDate": "Sun, 19 Apr 2026 21:01:15 +0000",
-      "source": "aljazeera",
-      "snippet": "Hundreds protested in Berlin against the US-Israeli aggression on Iran, and Israeli attacks on Gaza and Lebanon.",
+      "title": "JD Vance could yet save his political skin. But it will mean turning on Trump – and soon | Simon Tisdall",
+      "link": "https://www.theguardian.com/commentisfree/2026/apr/19/jd-vance-donald-trump-vice-president-maga",
+      "pubDate": "Sun, 19 Apr 2026 07:00:36 GMT",
+      "source": "guardian",
+      "snippet": "The vice-president has endured his most humiliating – and damaging – week as his boss’s fall guy. How much more can Maga’s great hope take?   For a would-be president, JD Vance has an unfortunate habi",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Stabbings, kidnap threats and arson attacks: how the Iranian regime targets UK journalists",
+      "link": "https://www.theguardian.com/global-development/2026/apr/19/arson-attacks-iranian-regime-targets-uk-journalists",
+      "pubDate": "Sun, 19 Apr 2026 06:00:34 GMT",
+      "source": "guardian",
+      "snippet": "Staff at outlets critical of Tehran have faced chilling intimidation and violence, amid calls for greater protection and supportIranian journalists working in London say they fear for their lives afte",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Iran closes strait of Hormuz again ‘until US lifts blockade’",
+      "link": "https://www.theguardian.com/world/2026/apr/18/iran-closes-strait-of-hormuz-again-until-us-lifts-blockade",
+      "pubDate": "Sun, 19 Apr 2026 04:29:09 GMT",
+      "source": "guardian",
+      "snippet": "IRGC reportedly fires on tanker as it tries to pass through strait during brief window when shipping lane had reopenedAnalysis: Trump and Tehran’s series of mismanaged posts stall progress towards pea",
+      "isNew": true,
+      "_sourceCount": 2,
+      "_isDuplicated": true,
+      "_clusterSize": 2,
+      "_isDuplicate": false
+    },
+    {
+      "title": "More than 3,400 Iranians killed in war - as it happened",
+      "link": "https://www.theguardian.com/world/live/2026/apr/18/middle-east-crisis-live-iran-warns-it-will-close-strait-of-hormuz-if-us-blockade-continues",
+      "pubDate": "Sun, 19 Apr 2026 01:15:15 GMT",
+      "source": "guardian",
+      "snippet": "This blog is now closed. Our latest main story on the Middle East crisis is here.Separate to the Pakistani army chief’s trip to Iran (see post at 07:53), the Pakistani prime minister, Shehbaz Sharif, ",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Trump and Tehran’s series of mismanaged posts stall progress towards peace",
+      "link": "https://www.theguardian.com/world/2026/apr/18/donald-trump-tehran-war-mismanaged-posts-progress-peace",
+      "pubDate": "Sat, 18 Apr 2026 15:04:47 GMT",
+      "source": "guardian",
+      "snippet": "US president’s desperation for war to end has seen him trying to speed through a process he does not fully controlA set of mismanaged and premature media announcements by Donald Trump and Tehran has l",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Six great reads: Iran’s social media memes, an abandoned department store and a 1,200-year-old record of cherry blossoms",
+      "link": "https://www.theguardian.com/news/2026/apr/18/six-great-reads-iran-social-media-memes-abandoned-department-store-cherry-blossoms",
+      "pubDate": "Sat, 18 Apr 2026 05:00:06 GMT",
+      "source": "guardian",
+      "snippet": "Need something brilliant to read this weekend? Here are six of our favourite pieces from the last seven days Continue reading...",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Iran says strait of Hormuz ‘completely open’ but sounds warning on US blockade",
+      "link": "https://www.theguardian.com/world/2026/apr/17/strait-of-hormuz-now-open-to-commercial-vessels",
+      "pubDate": "Sat, 18 Apr 2026 03:52:14 GMT",
+      "source": "guardian",
+      "snippet": "Iran says strait could close again if US blockade continues, but Trump says it will remain in place until ‘transaction’ with Tehran is completeMiddle East crisis live: latest news updatesIran’s foreig",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": true,
@@ -427,50 +481,74 @@
       "_isDuplicate": false
     },
     {
-      "title": "U.S. Attacks Iranian Cargo Ship as Both Countries Claim Cease-Fire Violations",
-      "link": "https://www.nytimes.com/2026/04/19/world/middleeast/us-iran-cease-fire-violations-strait-of-hormuz.html",
-      "pubDate": "Sun, 19 Apr 2026 20:54:46 +0000",
-      "source": "nytimes",
-      "snippet": "President Trump said the United States attacked an Iranian ship that tried to get past the U.S. blockade, hours after Iran said the blockade was a war crime that violated the cease-fire.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Energy Secretary Says Gas Prices May Stay Above $3 Until 2027",
-      "link": "https://www.nytimes.com/2026/04/19/world/middleeast/energy-secretary-gas-prices.html",
-      "pubDate": "Sun, 19 Apr 2026 20:47:33 +0000",
-      "source": "nytimes",
-      "snippet": "Secretary of Energy Chris Wright’s acknowledgment in a TV interview undercut President Trump’s earlier claim that price increases would be “short-term.”",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Tehran has ‘no plans to participate’ in talks with US, state media reports",
-      "link": "https://www.theguardian.com/world/2026/apr/19/trumps-sends-delegation-to-pakistan-for-possible-new-round-of-iran-war-talks",
-      "pubDate": "Sun, 19 Apr 2026 20:44:42 GMT",
+      "title": "Trump news at a glance: president celebrates strait of Hormuz reopening, though Iran officials warn they could close it again",
+      "link": "https://www.theguardian.com/us-news/2026/apr/17/trump-administration-news-updates-today",
+      "pubDate": "Sat, 18 Apr 2026 01:00:03 GMT",
       "source": "guardian",
-      "snippet": "Reported response comes hours after Trump announced delegation to Islamabad, having earlier threatened to raze Iran’s infrastructureMiddle East crisis – live updatesTehran is not currently planning to",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Trump says US seized Iranian ship trying to get past blockade near Hormuz",
-      "link": "https://www.aljazeera.com/news/2026/4/19/trump-says-us-seized-iran-flagged-ship-trying-to-get-past-hormuz-blockade?traffic_source=rss",
-      "pubDate": "Sun, 19 Apr 2026 19:52:20 +0000",
-      "source": "aljazeera",
-      "snippet": "Iran vows retaliation, accuses US of violating ceasefire after attack on cargo ship Touska.",
+      "snippet": "Iran’s parliamentary speaker warned it would will shut the strait again if the US blockade continues, which Trump said would remain in place until the conflict was fully concluded –  key US politics s",
       "isNew": true,
       "_isDuplicate": true,
       "_sourceCount": 1
+    },
+    {
+      "title": "The week around the world in 20 pictures",
+      "link": "https://www.theguardian.com/artanddesign/gallery/2026/apr/17/the-week-around-the-world-in-20-pictures",
+      "pubDate": "Fri, 17 Apr 2026 18:38:15 GMT",
+      "source": "guardian",
+      "snippet": "Crisis in the Middle East, Russian strikes in Kyiv, Orthodox Easter and Karol G at Coachella – the past seven days as captured by the world’s leading photojournalists Continue reading...",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Donald Trump claims to have ended a 10th war – but will the Lebanon ceasefire hold?",
+      "link": "https://www.theguardian.com/world/2026/apr/17/donald-trump-iran-war-lebanon-ceasefire",
+      "pubDate": "Fri, 17 Apr 2026 15:34:52 GMT",
+      "source": "guardian",
+      "snippet": "Lasting peace depends on resolving a border dispute dating back to 2000 and dealing with Hezbollah’s weaponsMiddle East crisis – live updatesIsrael’s security cabinet first heard about the ceasefire w",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Sanctions don’t result in regime change. Whether against Iran or Russia, western countries need shrewder tactics | Simon Jenkins",
+      "link": "https://www.theguardian.com/commentisfree/2026/apr/17/sanctions-regime-change-iran-russia-western-countries",
+      "pubDate": "Fri, 17 Apr 2026 12:19:41 GMT",
+      "source": "guardian",
+      "snippet": "Dissent cannot take hold in soil rendered barren by emigration and embargo. Political opposition needs academic and cultural exchange if it is to prosperThe chancellor of the exchequer and the IMF agr",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Celebrations and relief in Lebanon as ceasefire with Israel begins  – video",
+      "link": "https://www.theguardian.com/world/video/2026/apr/17/celebrations-and-relief-in-lebanon-ceasefire-with-israel-begins-video",
+      "pubDate": "Fri, 17 Apr 2026 09:52:02 GMT",
+      "source": "guardian",
+      "snippet": "Celebrations have taken hold across Lebanon after a 10-day truce agreed with Israel began on Friday morning. Celebratory gunfire erupted in Beirut’s southern suburbs, and people beeped their car horns",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Several dead after Israeli joint security forces raid in West Bank",
+      "link": "https://www.cnn.com/2022/10/25/middleeast/israel-forces-raid-nablus-palestine-intl-hnk/index.html",
+      "pubDate": "Tue, 25 Oct 2022 13:58:46 GMT",
+      "source": "cnn",
+      "snippet": "",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
     }
   ],
   "news_digest": {
@@ -479,62 +557,95 @@
         "category_id": "military",
         "category_name": "군사 작전",
         "category_icon": "⚔️",
-        "count": 13,
-        "new_count": 13,
+        "count": 9,
+        "new_count": 9,
         "articles": [
           {
+            "title": "Stabbings, kidnap threats and arson attacks: how the Iranian regime targets UK journalists",
+            "link": "https://www.theguardian.com/global-development/2026/apr/19/arson-attacks-iranian-regime-targets-uk-journalists",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Sun, 19 Apr 2026 06:00:34 GMT",
+            "snippet": "Staff at outlets critical of Tehran have faced chilling intimidation and violence, amid calls for greater protection and supportIranian journalists working in London say they fear for their lives afte",
+            "isNew": true
+          },
+          {
+            "title": "The week around the world in 20 pictures",
+            "link": "https://www.theguardian.com/artanddesign/gallery/2026/apr/17/the-week-around-the-world-in-20-pictures",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Fri, 17 Apr 2026 18:38:15 GMT",
+            "snippet": "Crisis in the Middle East, Russian strikes in Kyiv, Orthodox Easter and Karol G at Coachella – the past seven days as captured by the world’s leading photojournalists Continue reading...",
+            "isNew": true
+          },
+          {
+            "title": "June 12, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-12-24-intl/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "Israel launched strikes on Al-Mawasi in southern Gaza early Thursday, bombarding an area it had previously designated as a \"safe zone\" by land, sea and air, according to the official Palestinian news ",
+            "isNew": true
+          },
+          {
+            "title": "June 6, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-06-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "Dozens of people were killed in an Israeli airstrike on a United Nations-run school in central Gaza, authorities said, in an attack that CNN analysis found was conducted with a US-made weapon.",
+            "isNew": true
+          },
+          {
+            "title": "May 29, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-29-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "The Israeli military says it established \"operational control\" over the Philadelphi Corridor, a 14-kilometer (8.7 miles) strip of land along the border between Gaza and Egypt.",
+            "isNew": true
+          },
+          {
+            "title": "May 24, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-24-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "The United Nations' top court has ordered Israel to immediately halt its controversial military operation in the southern Gaza city of Rafah, further increasing international pressure on Israel over i",
+            "isNew": true
+          },
+          {
             "title": "U.S. Fires on Iranian Cargo Ship in Arabian Sea",
-            "link": "https://www.nytimes.com/live/2026/04/19/world/iran-us-war-trump-hormuz/us-military-iranian-ship",
+            "link": "https://www.nytimes.com/2026/04/19/us/us-military-iranian-ship.html",
             "source": "nytimes",
             "sources": [
               "nytimes"
             ],
-            "pubDate": "Sun, 19 Apr 2026 23:29:41 +0000",
+            "pubDate": "Mon, 20 Apr 2026 02:04:42 +0000",
             "snippet": "The military said it had disabled the vessel after it ignored repeated warnings to stop, amid a U.S. blockade of Iranian ports. Marines boarded the ship and seized it.",
             "isNew": true
           },
           {
-            "title": "미군, 이란 화물선에 함포 쏴 나포…이란 \"휴전 위반·곧 보복\"(종합2보)",
-            "link": "https://www.yna.co.kr/view/AKR20260420003053071",
-            "source": "yonhap",
+            "title": "IDF map shows its advance into southern Lebanon – as it happened",
+            "link": "https://www.theguardian.com/world/live/2026/apr/19/middle-east-crisis-live-iran-us-strait-of-hormuz-trump-lebanon-israel",
+            "source": "guardian",
             "sources": [
-              "yonhap"
+              "guardian"
             ],
-            "pubDate": "Mon, 20 Apr 2026 08:26:02 +0900",
-            "snippet": "(워싱턴·서울=연합뉴스) 백나리 특파원 곽민서 기자 = 대이란 해상봉쇄 작전을 벌이고 있는 미군이 2주 휴전 종료를 이틀 앞둔 19일(현지시간)...",
-            "isNew": true
-          },
-          {
-            "title": "Hamas Officials Say Group Is Ready to Hand Over Some Weapons",
-            "link": "https://www.nytimes.com/2026/04/19/world/middleeast/hamas-weapons-israel.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Sun, 19 Apr 2026 21:54:20 +0000",
-            "snippet": "Two senior Hamas officials in Gaza said the group was prepared to relinquish some automatic rifles and other arms, a concession that falls short of Israeli-U.S. demands.",
-            "isNew": true
-          },
-          {
-            "title": "US forces attack and seize Iranian ship Touska near Strait of Hormuz",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/4/19/us-forces-attack-and-seize-iranian-ship-touska-near-strait-of-hormuz?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sun, 19 Apr 2026 21:53:29 +0000",
-            "snippet": "US Central Command has published a video said to show a guided-missile destroyer firing at an Iranian-flagged ship.",
-            "isNew": true
-          },
-          {
-            "title": "Can U.S. Blockade Iranian-Linked Ships Anywhere in the World? Yes, But …",
-            "link": "https://www.nytimes.com/2026/04/19/world/middleeast/us-iran-blockade-expansion.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Sun, 19 Apr 2026 21:52:55 +0000",
-            "snippet": "Maritime and military law experts say an expansion of the naval blockade announced last week raises legal and practical questions but has ample historical precedent.",
+            "pubDate": "Mon, 20 Apr 2026 02:03:28 GMT",
+            "snippet": "This blog is now closed.UN secretary-general António Guterres has strongly condemned the killing of a French peacekeeper and the wounding of three others in an attack in southern Lebanon, spokesman St",
             "isNew": true
           },
           {
@@ -544,291 +655,94 @@
             "sources": [
               "bbc"
             ],
-            "pubDate": "Sun, 19 Apr 2026 21:39:43 GMT",
-            "snippet": "Tehran has not commented on the incident, which comes as the US prepares for a second round of talks.",
-            "isNew": true
-          },
-          {
-            "title": "Protesters defy Berlin rain to call for end to global wars",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/4/19/protesters-defy-berlin-rain-to-call-for-end-to-global-wars?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sun, 19 Apr 2026 21:01:15 +0000",
-            "snippet": "Hundreds protested in Berlin against the US-Israeli aggression on Iran, and Israeli attacks on Gaza and Lebanon.",
-            "isNew": true
-          },
-          {
-            "title": "Did the US misjudge Iran? A military strategist answers",
-            "link": "https://www.aljazeera.com/video/talk-to-al-jazeera/2026/4/19/did-the-us-misjudge-iran-a-military-strategist-answers-2?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sun, 19 Apr 2026 19:06:46 +0000",
-            "snippet": "Strategist Bryan Clark examines shifting war aims, escalation traps, and whether Iran is now more dangerous to the US.",
-            "isNew": true
-          },
-          {
-            "title": "Met Police investigate potential Iran links to London arson attacks",
-            "link": "https://www.aljazeera.com/news/2026/4/19/met-police-investigate-potential-iran-links-to-london-arson-attacks?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sun, 19 Apr 2026 17:00:24 +0000",
-            "snippet": "The latest attack at a Jewish site in the UK capital occurs at Kenton United Synagogue and causes minor damage.",
-            "isNew": true
-          },
-          {
-            "title": "Satellite images reveal Israel expanding Gaza military sites",
-            "link": "https://www.aljazeera.com/news/2026/4/19/satellite-images-reveal-israel-expanding-gaza-military-sites?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sun, 19 Apr 2026 15:38:52 +0000",
-            "snippet": "Images show Israel building permanent military bases in Gaza as US-backed reconstruction plans stall.",
+            "pubDate": "Mon, 20 Apr 2026 01:38:17 GMT",
+            "snippet": "Tehran vows retaliation soon for what it calls an \"act of armed piracy\", which comes as the US prepares for a second round of talks.",
             "isNew": true
           }
         ]
       },
       {
-        "category_id": "diplomacy",
-        "category_name": "외교/협상",
-        "category_icon": "🤝",
-        "count": 10,
-        "new_count": 10,
+        "category_id": "humanitarian",
+        "category_name": "인도주의/피해",
+        "category_icon": "🏥",
+        "count": 7,
+        "new_count": 7,
         "articles": [
           {
-            "title": "Schools, shops shut in northern Israel to protest the Lebanon ceasefire",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/4/19/schools-shops-shut-in-northern-israel-to-protest-the-lebanon-ceasefire?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sun, 19 Apr 2026 21:21:51 +0000",
-            "snippet": "Shops and schools shut in northern Israel as residents protested a 10-day ceasefire with Lebanon.",
-            "isNew": true
-          },
-          {
-            "title": "Tehran has ‘no plans to participate’ in talks with US, state media reports",
-            "link": "https://www.theguardian.com/world/2026/apr/19/trumps-sends-delegation-to-pakistan-for-possible-new-round-of-iran-war-talks",
+            "title": "More than 3,400 Iranians killed in war - as it happened",
+            "link": "https://www.theguardian.com/world/live/2026/apr/18/middle-east-crisis-live-iran-warns-it-will-close-strait-of-hormuz-if-us-blockade-continues",
             "source": "guardian",
             "sources": [
               "guardian"
             ],
-            "pubDate": "Sun, 19 Apr 2026 20:44:42 GMT",
-            "snippet": "Reported response comes hours after Trump announced delegation to Islamabad, having earlier threatened to raze Iran’s infrastructureMiddle East crisis – live updatesTehran is not currently planning to",
+            "pubDate": "Sun, 19 Apr 2026 01:15:15 GMT",
+            "snippet": "This blog is now closed. Our latest main story on the Middle East crisis is here.Separate to the Pakistani army chief’s trip to Iran (see post at 07:53), the Pakistani prime minister, Shehbaz Sharif, ",
             "isNew": true
           },
           {
-            "title": "Intemperate Trump brings chaos and confusion to Iran talks",
-            "link": "https://www.theguardian.com/world/2026/apr/19/intemperate-trump-brings-chaos-and-confusion-to-iran-talks",
-            "source": "guardian",
+            "title": "Several dead after Israeli joint security forces raid in West Bank",
+            "link": "https://www.cnn.com/2022/10/25/middleeast/israel-forces-raid-nablus-palestine-intl-hnk/index.html",
+            "source": "cnn",
             "sources": [
-              "guardian"
+              "cnn"
             ],
-            "pubDate": "Sun, 19 Apr 2026 17:54:09 GMT",
-            "snippet": "US president’s unreliable style sows diplomatic confusion but leaves Tehran clear on strategic value of strait of HormuzDonald Trump’s decision to send US officials to Islamabad for further talks on M",
+            "pubDate": "Tue, 25 Oct 2022 13:58:46 GMT",
+            "snippet": "",
             "isNew": true
           },
           {
-            "title": "What would it take for the Iran-US talks to succeed?",
-            "link": "https://www.aljazeera.com/video/the-bottom-line/2026/4/19/what-would-it-take-for-the-iran-us-talks-to-succeed?traffic_source=rss",
-            "source": "aljazeera",
+            "title": "June 9, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-09-24/index.html",
+            "source": "cnn",
             "sources": [
-              "aljazeera"
+              "cnn"
             ],
-            "pubDate": "Sun, 19 Apr 2026 17:20:17 +0000",
-            "snippet": "Political scientist Mohsen Milani and former White House official Elisa Ewers discuss the options in Iran-US talks.",
+            "pubDate": "",
+            "snippet": "Key Israeli war cabinet member Benny Gantz quit Prime Minister Benjamin Netanyahu's government Sunday. Meanwhile, the death toll from Israel's hostage rescue in central Gaza keeps rising. Follow for l",
             "isNew": true
           },
           {
-            "title": "DRC government, M23 rebels commit to protect civilians, aid deliveries",
-            "link": "https://www.aljazeera.com/news/2026/4/19/drc-government-m23-rebels-commit-to-protect-civilians-aid-deliveries?traffic_source=rss",
-            "source": "aljazeera",
+            "title": "June 8, 2024 - Israel-Gaza news",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-08-24/index.html",
+            "source": "cnn",
             "sources": [
-              "aljazeera"
+              "cnn"
             ],
-            "pubDate": "Sun, 19 Apr 2026 14:30:54 +0000",
-            "snippet": "After talks in Switzerland, the two sides also made progress on a protocol for ceasefire oversight. ",
+            "pubDate": "",
+            "snippet": "The Israeli military says it rescued four hostages from central Gaza on Saturday. Palestinians report scenes of horror on the ground, and Gaza hospital officials say more than 200 people were killed.",
             "isNew": true
           },
           {
-            "title": "What to know about US-Iran standoff over the Strait of Hormuz",
-            "link": "https://www.aljazeera.com/news/2026/4/19/what-to-know-about-us-iran-standoff-over-the-strait-of-hormuz?traffic_source=rss",
-            "source": "aljazeera",
+            "title": "May 19, 2024 - Israel-Gaza news",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-19-24/index.html",
+            "source": "cnn",
             "sources": [
-              "aljazeera"
+              "cnn"
             ],
-            "pubDate": "Sun, 19 Apr 2026 14:08:20 +0000",
-            "snippet": "Trump accuses Iran of violating the ceasefire as he announces plans to send US negotiators to Pakistan for more talks.",
+            "pubDate": "",
+            "snippet": "An Israeli airstrike on a refugee camp in central Gaza has killed at least 35 people, including seven children, according to hospital officials. Meanwhile, Israeli war cabinet divisions are spilling i",
             "isNew": true
           },
           {
-            "title": "Displaced Lebanese woman returns to find home destroyed after ceasefire",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/4/19/displaced-lebanese-woman-returns-to-find-home-destroyed-after-ceasefire?traffic_source=rss",
-            "source": "aljazeera",
+            "title": "Devastation in Gaza as Israel wages war on Hamas",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-18-24/index.html",
+            "source": "cnn",
             "sources": [
-              "aljazeera"
+              "cnn"
             ],
-            "pubDate": "Sun, 19 Apr 2026 13:23:36 +0000",
-            "snippet": "A displaced woman returned to  southern Lebanon after a ceasefire to find her house reduced to rubble.",
+            "pubDate": "",
+            "snippet": "Gaza faces a \"dire\" food situation as barely more than 300 aid trucks have entered the strip since Israel began its offensive in Rafah, a UN agency said in a report published Friday. Follow live updat",
             "isNew": true
           },
           {
-            "title": "Trump to send US delegation to Pakistan for possible Iran talks",
-            "link": "https://www.aljazeera.com/news/2026/4/19/trump-says-us-negotiators-will-head-to-pakistan-for-iran-ceasefire-talks?traffic_source=rss",
-            "source": "aljazeera",
+            "title": "May 14, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-14-24/index.html",
+            "source": "cnn",
             "sources": [
-              "aljazeera"
+              "cnn"
             ],
-            "pubDate": "Sun, 19 Apr 2026 12:38:11 +0000",
-            "snippet": "No ⁠decision has been taken ​by Tehran on sending ​a delegation for talks in Pakistan, Iran&#039;s Tasnim outlet says.",
-            "isNew": true
-          },
-          {
-            "title": "Bittersweet emotions as Lebanese return south to scenes of destruction",
-            "link": "https://www.theguardian.com/world/2026/apr/19/lebanese-return-south-ceasefire-flattened-neighbourhoods-israel",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Sun, 19 Apr 2026 11:47:16 GMT",
-            "snippet": "Determined to see their homes, displaced residents use shaky ceasefire to journey to their villages – but the mood turns sombre when they arriveMohammed Ashour was on the road at 5am, speeding towards",
-            "isNew": true
-          },
-          {
-            "title": "What people in power think the impact of the Iran war will be",
-            "link": "https://www.bbc.com/news/articles/c9vl37eev7ko?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
-            "sources": [
-              "bbc"
-            ],
-            "pubDate": "Sat, 18 Apr 2026 05:00:15 GMT",
-            "snippet": "Faisal Islam talks to some of the world's most powerful people about the conflict and the economy.",
-            "isNew": true
-          }
-        ]
-      },
-      {
-        "category_id": "economy",
-        "category_name": "경제 영향",
-        "category_icon": "📊",
-        "count": 10,
-        "new_count": 10,
-        "articles": [
-          {
-            "title": "Middle East crisis live: Iran accuses US of ceasefire breach and vows to retaliate over seizure of ship",
-            "link": "https://www.theguardian.com/world/live/2026/apr/19/middle-east-crisis-live-iran-us-strait-of-hormuz-trump-lebanon-israel",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Sun, 19 Apr 2026 23:30:51 GMT",
-            "snippet": "Trump says US navy ship fired on vessel that tried to get past blockade; Iran has pledged to keep strait of Hormuz closed until blockade is liftedFull report: Iran closes strait of Hormuz again ‘until",
-            "isNew": true
-          },
-          {
-            "title": "US military seized Iranian-flagged container ship, Trump says",
-            "link": "https://www.theguardian.com/us-news/2026/apr/19/trump-us-seizes-iran-flagged-cargo-ship",
-            "source": "guardian",
-            "sources": [
-              "guardian",
-              "aljazeera"
-            ],
-            "pubDate": "Sun, 19 Apr 2026 21:05:01 GMT",
-            "snippet": "Trump says cargo ship tried to get past US naval blockade near strait of Hormuz ‘and it did not go well for them’The US military took custody of an Iranian-flagged container ship that attempted to get",
-            "isNew": true
-          },
-          {
-            "title": "Energy Secretary Says Gas Prices May Stay Above $3 Until 2027",
-            "link": "https://www.nytimes.com/2026/04/19/world/middleeast/energy-secretary-gas-prices.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Sun, 19 Apr 2026 20:47:33 +0000",
-            "snippet": "Secretary of Energy Chris Wright’s acknowledgment in a TV interview undercut President Trump’s earlier claim that price increases would be “short-term.”",
-            "isNew": true
-          },
-          {
-            "title": "Israel had a bad week in Europe. Does it herald a wider shift in EU relations?",
-            "link": "https://www.theguardian.com/world/2026/apr/19/israel-europe-support-iran-war-orban-meloni",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Sun, 19 Apr 2026 11:36:05 GMT",
-            "snippet": "With Orbán gone and Meloni distancing herself, EU sanctions on trade and settlers are looking more likelyIt was a bad week for Israel in Europe: the country lost its staunchest regional ally when Vikt",
-            "isNew": true
-          },
-          {
-            "title": "In Qatar, Trapped Between the U.S. and Iran, War Forced a Reckoning",
-            "link": "https://www.nytimes.com/2026/04/19/world/middleeast/qatar-iran-us-war.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Sun, 19 Apr 2026 09:02:20 +0000",
-            "snippet": "The gas-rich Gulf nation is in a state of “strategic shock” after the war dealt a serious blow to its economy, sending ripples around the world.",
-            "isNew": true
-          },
-          {
-            "title": "Iran closes strait of Hormuz again ‘until US lifts blockade’",
-            "link": "https://www.theguardian.com/world/2026/apr/18/iran-closes-strait-of-hormuz-again-until-us-lifts-blockade",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Sun, 19 Apr 2026 04:29:09 GMT",
-            "snippet": "IRGC reportedly fires on tanker as it tries to pass through strait during brief window when shipping lane had reopenedAnalysis: Trump and Tehran’s series of mismanaged posts stall progress towards pea",
-            "isNew": true
-          },
-          {
-            "title": "Ships Attacked in Strait of Hormuz as Iran Declares Strict Control of Vital Shipping Route",
-            "link": "https://www.nytimes.com/2026/04/18/world/middleeast/iran-tanker-strait-of-hormuz.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Sat, 18 Apr 2026 20:50:45 +0000",
-            "snippet": "The day after Iran declared the vital waterway open, it reversed course, injecting new peril into navigation there.",
-            "isNew": true
-          },
-          {
-            "title": "Trump Extends Sanctions Exemption on Some Russian Oil as High Gas Prices Persist",
-            "link": "https://www.nytimes.com/2026/04/17/world/middleeast/russia-us-oil-sanctions.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Sat, 18 Apr 2026 20:42:21 +0000",
-            "snippet": "The Trump administration has loosened restrictions on Russian oil exports since the war in the Middle East began to rattle energy markets in March.",
-            "isNew": true
-          },
-          {
-            "title": "Reopening Strait of Hormuz Would Ease Oil Crisis but Only So Much",
-            "link": "https://www.nytimes.com/2026/04/18/business/energy-environment/starit-hormuz-oil-natural-gas-supplies-prices.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Sat, 18 Apr 2026 13:11:42 +0000",
-            "snippet": "Analysts said energy and shipping companies would be reluctant to fully restore operations until they were confident that hostilities were over.",
-            "isNew": true
-          },
-          {
-            "title": "Iran says strait of Hormuz ‘completely open’ but sounds warning on US blockade",
-            "link": "https://www.theguardian.com/world/2026/apr/17/strait-of-hormuz-now-open-to-commercial-vessels",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Sat, 18 Apr 2026 03:52:14 GMT",
-            "snippet": "Iran says strait could close again if US blockade continues, but Trump says it will remain in place until ‘transaction’ with Tehran is completeMiddle East crisis live: latest news updatesIran’s foreig",
+            "pubDate": "",
+            "snippet": "Amid signs that Israel may launch a full-scale incursion in Rafah, aid agencies are warning any escalation in the southern Gaza city risks exacerbating the already deteriorating humanitarian situation",
             "isNew": true
           }
         ]
@@ -837,64 +751,9 @@
         "category_id": "politics",
         "category_name": "국내 정치",
         "category_icon": "🏛️",
-        "count": 7,
-        "new_count": 7,
+        "count": 6,
+        "new_count": 6,
         "articles": [
-          {
-            "title": "Argentina’s Milei backs US-Israel war on Iran in Jerusalem visit",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/4/19/argentinas-milei-backs-us-israel-war-on-iran-in-jerusalem-visit?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sun, 19 Apr 2026 21:23:19 +0000",
-            "snippet": "Argentina’s president reaffirmed alignment with the US and Israel during a visit to Jerusalem, backing their war on Iran",
-            "isNew": true
-          },
-          {
-            "title": "U.S. Attacks Iranian Cargo Ship as Both Countries Claim Cease-Fire Violations",
-            "link": "https://www.nytimes.com/2026/04/19/world/middleeast/us-iran-cease-fire-violations-strait-of-hormuz.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Sun, 19 Apr 2026 20:54:46 +0000",
-            "snippet": "President Trump said the United States attacked an Iranian ship that tried to get past the U.S. blockade, hours after Iran said the blockade was a war crime that violated the cease-fire.",
-            "isNew": true
-          },
-          {
-            "title": "Israeli ministers celebrate re-establishment of Sa-Nur West Bank settlement",
-            "link": "https://www.aljazeera.com/news/2026/4/19/israeli-ministers-celebrate-re-establishment-of-sa-nur-west-bank-settlement?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sun, 19 Apr 2026 19:13:55 +0000",
-            "snippet": "Sa-Nur is one of four former West Bank settlements approved by the government two decades after settlers were evicted. ",
-            "isNew": true
-          },
-          {
-            "title": "Iran Eases Some Internet Restrictions, as Wider Blackout Passes 50th Day",
-            "link": "https://www.nytimes.com/2026/04/19/world/middleeast/iran-internet-blackout-50th-day.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Sun, 19 Apr 2026 14:58:05 +0000",
-            "snippet": "Critics say Iran may be creating a “tiered internet” model, where access is limited to the politically and economically privileged.",
-            "isNew": true
-          },
-          {
-            "title": "Syrian Billionaires Needed a Favor in Washington. They Invoked the Trump Name.",
-            "link": "https://www.nytimes.com/2026/04/19/us/politics/trump-syria-khayyat.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Sun, 19 Apr 2026 14:20:20 +0000",
-            "snippet": "The attempt by the Khayyats to influence foreign policy while discussions are underway about potential Trump family deals is an increasingly common feature of the president’s second term.",
-            "isNew": true
-          },
           {
             "title": "JD Vance could yet save his political skin. But it will mean turning on Trump – and soon | Simon Tisdall",
             "link": "https://www.theguardian.com/commentisfree/2026/apr/19/jd-vance-donald-trump-vice-president-maga",
@@ -916,47 +775,221 @@
             "pubDate": "Sat, 18 Apr 2026 15:04:47 GMT",
             "snippet": "US president’s desperation for war to end has seen him trying to speed through a process he does not fully controlA set of mismanaged and premature media announcements by Donald Trump and Tehran has l",
             "isNew": true
-          }
-        ]
-      },
-      {
-        "category_id": "humanitarian",
-        "category_name": "인도주의/피해",
-        "category_icon": "🏥",
-        "count": 3,
-        "new_count": 3,
-        "articles": [
-          {
-            "title": "Hezbollah Is Willing to Cooperate With a Cease-Fire With Israel. For Now.",
-            "link": "https://www.nytimes.com/2026/04/18/world/middleeast/hezbollah-cease-fire-israel-lebanon.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Sun, 19 Apr 2026 12:28:27 +0000",
-            "snippet": "The leader of the Iran-backed militia said that a more durable cease-fire with Israel would require the fulfillment of a list of longstanding demands.",
-            "isNew": true
           },
           {
-            "title": "More Displaced Lebanese Head Home as Cease-Fire Is Tested",
-            "link": "https://www.nytimes.com/2026/04/18/world/middleeast/lebanon-israel-cease-fire-hezbollah-un.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Sun, 19 Apr 2026 08:20:20 +0000",
-            "snippet": "The truce appeared to mostly hold even as Israel said it had carried out strikes on what it called “terrorists” approaching its forces in southern Lebanon. Separately, a U.N. peacekeeper was killed.",
-            "isNew": true
-          },
-          {
-            "title": "More than 3,400 Iranians killed in war - as it happened",
-            "link": "https://www.theguardian.com/world/live/2026/apr/18/middle-east-crisis-live-iran-warns-it-will-close-strait-of-hormuz-if-us-blockade-continues",
+            "title": "Sanctions don’t result in regime change. Whether against Iran or Russia, western countries need shrewder tactics | Simon Jenkins",
+            "link": "https://www.theguardian.com/commentisfree/2026/apr/17/sanctions-regime-change-iran-russia-western-countries",
             "source": "guardian",
             "sources": [
               "guardian"
             ],
-            "pubDate": "Sun, 19 Apr 2026 01:15:15 GMT",
-            "snippet": "This blog is now closed. Our latest main story on the Middle East crisis is here.Separate to the Pakistani army chief’s trip to Iran (see post at 07:53), the Pakistani prime minister, Shehbaz Sharif, ",
+            "pubDate": "Fri, 17 Apr 2026 12:19:41 GMT",
+            "snippet": "Dissent cannot take hold in soil rendered barren by emigration and embargo. Political opposition needs academic and cultural exchange if it is to prosperThe chancellor of the exchequer and the IMF agr",
+            "isNew": true
+          },
+          {
+            "title": "June 1, 2024 - Israel-Gaza news",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-01-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "President Joe Biden has laid out a three-phase proposal to end the conflict in Gaza, as global condemnation of Israel's offensive in Rafah grows.",
+            "isNew": true
+          },
+          {
+            "title": "May 21, 2024 Israel-Hamas war, Iran president death news",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-21-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "Prime Minister Benjamin Netanyahu blasted the charges brought by the International Criminal Court against himself and Israel's defense minister as \"beyond outrageous\" in an interview Tuesday with CNN'",
+            "isNew": true
+          },
+          {
+            "title": "May 19, 2024 helicopter crash involving Iranian president",
+            "link": "https://www.cnn.com/middleeast/live-news/raisi-iran-president-helicopter-crash/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "A helicopter carrying Iranian President Ebrahim Raisi crashed while he was visiting a northern region in the country Sunday, according to the Iranian state news agency IRNA.",
+            "isNew": true
+          }
+        ]
+      },
+      {
+        "category_id": "diplomacy",
+        "category_name": "외교/협상",
+        "category_icon": "🤝",
+        "count": 5,
+        "new_count": 5,
+        "articles": [
+          {
+            "title": "Celebrations and relief in Lebanon as ceasefire with Israel begins  – video",
+            "link": "https://www.theguardian.com/world/video/2026/apr/17/celebrations-and-relief-in-lebanon-ceasefire-with-israel-begins-video",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Fri, 17 Apr 2026 09:52:02 GMT",
+            "snippet": "Celebrations have taken hold across Lebanon after a 10-day truce agreed with Israel began on Friday morning. Celebratory gunfire erupted in Beirut’s southern suburbs, and people beeped their car horns",
+            "isNew": true
+          },
+          {
+            "title": "June 13, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-13-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "The US-backed Gaza ceasefire proposal doesn't meet Hamas' demands for an end to the war, a senior official has told CNN. Osama Hamdan also said that \"no one has an idea\" how many of the hostages held ",
+            "isNew": true
+          },
+          {
+            "title": "June 10, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-10-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "The UN Security Council adopted a resolution proposed by the United States for a permanent ceasefire and release of the hostages in Gaza.",
+            "isNew": true
+          },
+          {
+            "title": "US navy seizes Iranian ship after it breaches blockade",
+            "link": "https://www.ft.com/content/0e51cdea-99df-4913-8c71-03396c4a6faf",
+            "source": "ft",
+            "sources": [
+              "ft"
+            ],
+            "pubDate": "Mon, 20 Apr 2026 02:10:12 GMT",
+            "snippet": "Oil price jumps as Washington and Tehran give conflicting accounts of whether new peace talks are set to begin",
+            "isNew": true
+          },
+          {
+            "title": "Middle East crisis live: ceasefire under pressure and talks in doubt as Iran threatens to ‘retaliate’ to US seizure of ship",
+            "link": "https://www.theguardian.com/world/live/2026/apr/20/iran-war-latest-news-updates-live-hormuz-trump-us-iranian-ship-ceasefire-doubt",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Mon, 20 Apr 2026 02:08:37 GMT",
+            "snippet": "Donald Trump said on Sunday that US marines had taken custody of a vessel that tried to get past the American blockade on Iranian portsTehran has ‘no plans to participate’ in new talks, state media re",
+            "isNew": true
+          }
+        ]
+      },
+      {
+        "category_id": "regional",
+        "category_name": "지역 정세",
+        "category_icon": "🌍",
+        "count": 5,
+        "new_count": 5,
+        "articles": [
+          {
+            "title": "더타임스 \"이란 보면 북한엔 핵보유가 이성적 선택일 수도\"",
+            "link": "https://www.yna.co.kr/view/AKR20260420069200009",
+            "source": "yonhap",
+            "sources": [
+              "yonhap"
+            ],
+            "pubDate": "Mon, 20 Apr 2026 11:19:46 +0900",
+            "snippet": "(서울=연합뉴스) 임화섭 기자 = 중동전쟁에 따라 요동치는 국제정세 속에 북한 김정은 정권의 입장에서는 핵무기와 미사일을 유지하는 것이 이성적 ...",
+            "isNew": true
+          },
+          {
+            "title": "Donald Trump claims to have ended a 10th war – but will the Lebanon ceasefire hold?",
+            "link": "https://www.theguardian.com/world/2026/apr/17/donald-trump-iran-war-lebanon-ceasefire",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Fri, 17 Apr 2026 15:34:52 GMT",
+            "snippet": "Lasting peace depends on resolving a border dispute dating back to 2000 and dealing with Hezbollah’s weaponsMiddle East crisis – live updatesIsrael’s security cabinet first heard about the ceasefire w",
+            "isNew": true
+          },
+          {
+            "title": "June 5, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-05-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "Tensions are ramping up at the Israel-Lebanon border, with Hezbollah claiming responsibility for a Wednesday evening attack in northern Israel that left multiple people injured.",
+            "isNew": true
+          },
+          {
+            "title": "인도·스리랑카, 중동전에 역내 에너지 허브 구축 가속 합의",
+            "link": "https://www.yna.co.kr/view/AKR20260420055500009",
+            "source": "yonhap",
+            "sources": [
+              "yonhap"
+            ],
+            "pubDate": "Mon, 20 Apr 2026 10:47:33 +0900",
+            "snippet": "(서울=연합뉴스) 유창엽 기자 = 인도가 이웃 스리랑카와 지난해 합의한 역내 에너지 허브 구축 사업에 속도를 내기로 합의했다. 중동전쟁에 따른 ...",
+            "isNew": true
+          },
+          {
+            "title": "중동발 공급난, 日의류업계로 파급 전망…기저귀·생리대도 영향",
+            "link": "https://www.yna.co.kr/view/AKR20260420052600009",
+            "source": "yonhap",
+            "sources": [
+              "yonhap"
+            ],
+            "pubDate": "Mon, 20 Apr 2026 10:35:07 +0900",
+            "snippet": "(서울=연합뉴스) 이도연 기자 = 일본 산업계 전반이 중동 정세로 인한 석유 원료 제품 공급난 영향을 받는 가운데, 그 여파가 의류·패션업계 등...",
+            "isNew": true
+          }
+        ]
+      },
+      {
+        "category_id": "economy",
+        "category_name": "경제 영향",
+        "category_icon": "📊",
+        "count": 3,
+        "new_count": 3,
+        "articles": [
+          {
+            "title": "Israel had a bad week in Europe. Does it herald a wider shift in EU relations?",
+            "link": "https://www.theguardian.com/world/2026/apr/19/israel-europe-support-iran-war-orban-meloni",
+            "source": "guardian",
+            "sources": [
+              "guardian",
+              "cnn"
+            ],
+            "pubDate": "Sun, 19 Apr 2026 11:36:05 GMT",
+            "snippet": "With Orbán gone and Meloni distancing herself, EU sanctions on trade and settlers are looking more likelyIt was a bad week for Israel in Europe: the country lost its staunchest regional ally when Vikt",
+            "isNew": true
+          },
+          {
+            "title": "Iran closes strait of Hormuz again ‘until US lifts blockade’",
+            "link": "https://www.theguardian.com/world/2026/apr/18/iran-closes-strait-of-hormuz-again-until-us-lifts-blockade",
+            "source": "guardian",
+            "sources": [
+              "guardian",
+              "cnn"
+            ],
+            "pubDate": "Sun, 19 Apr 2026 04:29:09 GMT",
+            "snippet": "IRGC reportedly fires on tanker as it tries to pass through strait during brief window when shipping lane had reopenedAnalysis: Trump and Tehran’s series of mismanaged posts stall progress towards pea",
+            "isNew": true
+          },
+          {
+            "title": "Iran says strait of Hormuz ‘completely open’ but sounds warning on US blockade",
+            "link": "https://www.theguardian.com/world/2026/apr/17/strait-of-hormuz-now-open-to-commercial-vessels",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Sat, 18 Apr 2026 03:52:14 GMT",
+            "snippet": "Iran says strait could close again if US blockade continues, but Trump says it will remain in place until ‘transaction’ with Tehran is completeMiddle East crisis live: latest news updatesIran’s foreig",
             "isNew": true
           }
         ]
@@ -969,28 +1002,6 @@
         "new_count": 3,
         "articles": [
           {
-            "title": "Iran and Israel: From friends to enemies",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/4/19/iran-and-israel-from-friends-to-enemies?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sun, 19 Apr 2026 18:02:17 +0000",
-            "snippet": "Israel and the US have been at war with Iran since Feb 28th. All sides have suffered, but it wasn’t always this way.",
-            "isNew": true
-          },
-          {
-            "title": "Pope Leo tells Angola during huge Mass to ‘build hope’",
-            "link": "https://www.aljazeera.com/news/2026/4/19/pope-leo-tells-angola-during-huge-mass-to-build-hope?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sun, 19 Apr 2026 11:45:48 +0000",
-            "snippet": "On the third leg of his Africa tour, Leo urges Angola to move beyond &quot;divisions&quot; created by its war-scarred past.",
-            "isNew": true
-          },
-          {
             "title": "Six great reads: Iran’s social media memes, an abandoned department store and a 1,200-year-old record of cherry blossoms",
             "link": "https://www.theguardian.com/news/2026/apr/18/six-great-reads-iran-social-media-memes-abandoned-department-store-cherry-blossoms",
             "source": "guardian",
@@ -1000,216 +1011,232 @@
             "pubDate": "Sat, 18 Apr 2026 05:00:06 GMT",
             "snippet": "Need something brilliant to read this weekend? Here are six of our favourite pieces from the last seven days Continue reading...",
             "isNew": true
-          }
-        ]
-      },
-      {
-        "category_id": "regional",
-        "category_name": "지역 정세",
-        "category_icon": "🌍",
-        "count": 2,
-        "new_count": 2,
-        "articles": [
+          },
           {
-            "title": "French peacekeeper killed in southern Lebanon",
-            "link": "https://www.bbc.com/news/articles/cvg4mrm2vm0o?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
+            "title": "May 30, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-30-24/index.html",
+            "source": "cnn",
             "sources": [
-              "bbc"
+              "cnn"
             ],
-            "pubDate": "Sun, 19 Apr 2026 11:39:47 GMT",
-            "snippet": "President Macron blames the attack on Hezbollah. The Iran-backed armed group denies \"any connection\" to the incident.",
+            "pubDate": "",
+            "snippet": "The war in Gaza will likely continue until at least the end of the year, an Israeli official warned.",
             "isNew": true
           },
           {
-            "title": "BBC reports from Lebanese border town as residents try to return home",
-            "link": "https://www.bbc.com/news/videos/cly90z9g5q3o?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
+            "title": "May 22, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/iran-israel-hamas-war-gaza-news-05-22-24/index.html",
+            "source": "cnn",
             "sources": [
-              "bbc"
+              "cnn"
             ],
-            "pubDate": "Sat, 18 Apr 2026 11:47:11 GMT",
-            "snippet": "BBC Arabic's correspondent Carine Torbey reports from the border town of Khiam, as the ceasefire between Israel and Hezbollah in southern Lebanon goes into its second day.",
+            "pubDate": "",
+            "snippet": "Spain, Norway and Ireland announced plans to formally recognize a Palestinian state, in a move that is likely to bolster the global Palestinian cause but strain relations with Israel.",
             "isNew": true
           }
         ]
       }
     ],
     "recent_30min": {
-      "total_new": 50,
+      "total_new": 49,
       "by_category": {
-        "economy": {
-          "count": 11,
+        "regional": {
+          "count": 5,
           "titles": [
             {
-              "title": "Middle East crisis live: Iran accuses US of ceasefire breach and vows to retaliate over seizure of ship",
-              "link": "https://www.theguardian.com/world/live/2026/apr/19/middle-east-crisis-live-iran-us-strait-of-hormuz-trump-lebanon-israel",
+              "title": "더타임스 \"이란 보면 북한엔 핵보유가 이성적 선택일 수도\"",
+              "link": "https://www.yna.co.kr/view/AKR20260420069200009",
+              "source": "yonhap"
+            },
+            {
+              "title": "Donald Trump claims to have ended a 10th war – but will the Lebanon ceasefire hold?",
+              "link": "https://www.theguardian.com/world/2026/apr/17/donald-trump-iran-war-lebanon-ceasefire",
               "source": "guardian"
             },
             {
-              "title": "US military seized Iranian-flagged container ship, Trump says",
-              "link": "https://www.theguardian.com/us-news/2026/apr/19/trump-us-seizes-iran-flagged-cargo-ship",
-              "source": "guardian"
+              "title": "June 5, 2024 Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-05-24/index.html",
+              "source": "cnn"
             },
             {
-              "title": "Energy Secretary Says Gas Prices May Stay Above $3 Until 2027",
-              "link": "https://www.nytimes.com/2026/04/19/world/middleeast/energy-secretary-gas-prices.html",
-              "source": "nytimes"
+              "title": "인도·스리랑카, 중동전에 역내 에너지 허브 구축 가속 합의",
+              "link": "https://www.yna.co.kr/view/AKR20260420055500009",
+              "source": "yonhap"
             },
             {
-              "title": "Trump says US seized Iranian ship trying to get past blockade near Hormuz",
-              "link": "https://www.aljazeera.com/news/2026/4/19/trump-says-us-seized-iran-flagged-ship-trying-to-get-past-hormuz-blockade?traffic_source=rss",
-              "source": "aljazeera"
-            },
+              "title": "중동발 공급난, 日의류업계로 파급 전망…기저귀·생리대도 영향",
+              "link": "https://www.yna.co.kr/view/AKR20260420052600009",
+              "source": "yonhap"
+            }
+          ]
+        },
+        "economy": {
+          "count": 3,
+          "titles": [
             {
               "title": "Israel had a bad week in Europe. Does it herald a wider shift in EU relations?",
               "link": "https://www.theguardian.com/world/2026/apr/19/israel-europe-support-iran-war-orban-meloni",
               "source": "guardian"
-            }
-          ]
-        },
-        "military": {
-          "count": 14,
-          "titles": [
-            {
-              "title": "U.S. Fires on Iranian Cargo Ship in Arabian Sea",
-              "link": "https://www.nytimes.com/live/2026/04/19/world/iran-us-war-trump-hormuz/us-military-iranian-ship",
-              "source": "nytimes"
             },
             {
-              "title": "미군, 이란 화물선에 함포 쏴 나포…이란 \"휴전 위반·곧 보복\"(종합2보)",
-              "link": "https://www.yna.co.kr/view/AKR20260420003053071",
-              "source": "yonhap"
+              "title": "Iran closes strait of Hormuz again ‘until US lifts blockade’",
+              "link": "https://www.theguardian.com/world/2026/apr/18/iran-closes-strait-of-hormuz-again-until-us-lifts-blockade",
+              "source": "guardian"
             },
             {
-              "title": "Hamas Officials Say Group Is Ready to Hand Over Some Weapons",
-              "link": "https://www.nytimes.com/2026/04/19/world/middleeast/hamas-weapons-israel.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "US forces attack and seize Iranian ship Touska near Strait of Hormuz",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/4/19/us-forces-attack-and-seize-iranian-ship-touska-near-strait-of-hormuz?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Can U.S. Blockade Iranian-Linked Ships Anywhere in the World? Yes, But …",
-              "link": "https://www.nytimes.com/2026/04/19/world/middleeast/us-iran-blockade-expansion.html",
-              "source": "nytimes"
+              "title": "Iran says strait of Hormuz ‘completely open’ but sounds warning on US blockade",
+              "link": "https://www.theguardian.com/world/2026/apr/17/strait-of-hormuz-now-open-to-commercial-vessels",
+              "source": "guardian"
             }
           ]
         },
         "politics": {
-          "count": 7,
+          "count": 9,
           "titles": [
             {
-              "title": "Argentina’s Milei backs US-Israel war on Iran in Jerusalem visit",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/4/19/argentinas-milei-backs-us-israel-war-on-iran-in-jerusalem-visit?traffic_source=rss",
-              "source": "aljazeera"
+              "title": "JD Vance could yet save his political skin. But it will mean turning on Trump – and soon | Simon Tisdall",
+              "link": "https://www.theguardian.com/commentisfree/2026/apr/19/jd-vance-donald-trump-vice-president-maga",
+              "source": "guardian"
             },
             {
-              "title": "U.S. Attacks Iranian Cargo Ship as Both Countries Claim Cease-Fire Violations",
-              "link": "https://www.nytimes.com/2026/04/19/world/middleeast/us-iran-cease-fire-violations-strait-of-hormuz.html",
-              "source": "nytimes"
+              "title": "Trump and Tehran’s series of mismanaged posts stall progress towards peace",
+              "link": "https://www.theguardian.com/world/2026/apr/18/donald-trump-tehran-war-mismanaged-posts-progress-peace",
+              "source": "guardian"
             },
             {
-              "title": "Israeli ministers celebrate re-establishment of Sa-Nur West Bank settlement",
-              "link": "https://www.aljazeera.com/news/2026/4/19/israeli-ministers-celebrate-re-establishment-of-sa-nur-west-bank-settlement?traffic_source=rss",
-              "source": "aljazeera"
+              "title": "Trump news at a glance: president celebrates strait of Hormuz reopening, though Iran officials warn they could close it again",
+              "link": "https://www.theguardian.com/us-news/2026/apr/17/trump-administration-news-updates-today",
+              "source": "guardian"
             },
             {
-              "title": "Iran Eases Some Internet Restrictions, as Wider Blackout Passes 50th Day",
-              "link": "https://www.nytimes.com/2026/04/19/world/middleeast/iran-internet-blackout-50th-day.html",
-              "source": "nytimes"
+              "title": "Sanctions don’t result in regime change. Whether against Iran or Russia, western countries need shrewder tactics | Simon Jenkins",
+              "link": "https://www.theguardian.com/commentisfree/2026/apr/17/sanctions-regime-change-iran-russia-western-countries",
+              "source": "guardian"
             },
             {
-              "title": "Syrian Billionaires Needed a Favor in Washington. They Invoked the Trump Name.",
-              "link": "https://www.nytimes.com/2026/04/19/us/politics/trump-syria-khayyat.html",
-              "source": "nytimes"
+              "title": "June 17, 2024 - Israel-Gaza news",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-17-24/index.html",
+              "source": "cnn"
             }
           ]
         },
-        "diplomacy": {
-          "count": 10,
+        "military": {
+          "count": 12,
           "titles": [
             {
-              "title": "Schools, shops shut in northern Israel to protest the Lebanon ceasefire",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/4/19/schools-shops-shut-in-northern-israel-to-protest-the-lebanon-ceasefire?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Tehran has ‘no plans to participate’ in talks with US, state media reports",
-              "link": "https://www.theguardian.com/world/2026/apr/19/trumps-sends-delegation-to-pakistan-for-possible-new-round-of-iran-war-talks",
+              "title": "Stabbings, kidnap threats and arson attacks: how the Iranian regime targets UK journalists",
+              "link": "https://www.theguardian.com/global-development/2026/apr/19/arson-attacks-iranian-regime-targets-uk-journalists",
               "source": "guardian"
             },
             {
-              "title": "Intemperate Trump brings chaos and confusion to Iran talks",
-              "link": "https://www.theguardian.com/world/2026/apr/19/intemperate-trump-brings-chaos-and-confusion-to-iran-talks",
+              "title": "The week around the world in 20 pictures",
+              "link": "https://www.theguardian.com/artanddesign/gallery/2026/apr/17/the-week-around-the-world-in-20-pictures",
               "source": "guardian"
             },
             {
-              "title": "What would it take for the Iran-US talks to succeed?",
-              "link": "https://www.aljazeera.com/video/the-bottom-line/2026/4/19/what-would-it-take-for-the-iran-us-talks-to-succeed?traffic_source=rss",
-              "source": "aljazeera"
+              "title": "June 12, 2024 Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-12-24-intl/index.html",
+              "source": "cnn"
             },
             {
-              "title": "DRC government, M23 rebels commit to protect civilians, aid deliveries",
-              "link": "https://www.aljazeera.com/news/2026/4/19/drc-government-m23-rebels-commit-to-protect-civilians-aid-deliveries?traffic_source=rss",
-              "source": "aljazeera"
-            }
-          ]
-        },
-        "other": {
-          "count": 3,
-          "titles": [
-            {
-              "title": "Iran and Israel: From friends to enemies",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/4/19/iran-and-israel-from-friends-to-enemies?traffic_source=rss",
-              "source": "aljazeera"
+              "title": "June 6, 2024 Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-06-24/index.html",
+              "source": "cnn"
             },
             {
-              "title": "Pope Leo tells Angola during huge Mass to ‘build hope’",
-              "link": "https://www.aljazeera.com/news/2026/4/19/pope-leo-tells-angola-during-huge-mass-to-build-hope?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Six great reads: Iran’s social media memes, an abandoned department store and a 1,200-year-old record of cherry blossoms",
-              "link": "https://www.theguardian.com/news/2026/apr/18/six-great-reads-iran-social-media-memes-abandoned-department-store-cherry-blossoms",
-              "source": "guardian"
+              "title": "May 29, 2024 Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-29-24/index.html",
+              "source": "cnn"
             }
           ]
         },
         "humanitarian": {
-          "count": 3,
+          "count": 10,
           "titles": [
-            {
-              "title": "Hezbollah Is Willing to Cooperate With a Cease-Fire With Israel. For Now.",
-              "link": "https://www.nytimes.com/2026/04/18/world/middleeast/hezbollah-cease-fire-israel-lebanon.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "More Displaced Lebanese Head Home as Cease-Fire Is Tested",
-              "link": "https://www.nytimes.com/2026/04/18/world/middleeast/lebanon-israel-cease-fire-hezbollah-un.html",
-              "source": "nytimes"
-            },
             {
               "title": "More than 3,400 Iranians killed in war - as it happened",
               "link": "https://www.theguardian.com/world/live/2026/apr/18/middle-east-crisis-live-iran-warns-it-will-close-strait-of-hormuz-if-us-blockade-continues",
               "source": "guardian"
+            },
+            {
+              "title": "Several dead after Israeli joint security forces raid in West Bank",
+              "link": "https://www.cnn.com/2022/10/25/middleeast/israel-forces-raid-nablus-palestine-intl-hnk/index.html",
+              "source": "cnn"
+            },
+            {
+              "title": "June 9, 2024 Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-09-24/index.html",
+              "source": "cnn"
+            },
+            {
+              "title": "June 8, 2024 - Israel-Gaza news",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-08-24/index.html",
+              "source": "cnn"
+            },
+            {
+              "title": "May 27, 2024 - Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-27-24/index.html",
+              "source": "cnn"
             }
           ]
         },
-        "regional": {
-          "count": 2,
+        "other": {
+          "count": 5,
           "titles": [
             {
-              "title": "French peacekeeper killed in southern Lebanon",
-              "link": "https://www.bbc.com/news/articles/cvg4mrm2vm0o?at_medium=RSS&at_campaign=rss",
-              "source": "bbc"
+              "title": "Six great reads: Iran’s social media memes, an abandoned department store and a 1,200-year-old record of cherry blossoms",
+              "link": "https://www.theguardian.com/news/2026/apr/18/six-great-reads-iran-social-media-memes-abandoned-department-store-cherry-blossoms",
+              "source": "guardian"
             },
             {
-              "title": "BBC reports from Lebanese border town as residents try to return home",
-              "link": "https://www.bbc.com/news/videos/cly90z9g5q3o?at_medium=RSS&at_campaign=rss",
-              "source": "bbc"
+              "title": "Iran",
+              "link": "https://www.cnn.com/specials/middleeast/iran?utm_source=section",
+              "source": "cnn"
+            },
+            {
+              "title": "Israel",
+              "link": "https://www.cnn.com/specials/middleeast/israel?utm_source=section",
+              "source": "cnn"
+            },
+            {
+              "title": "May 30, 2024 Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-30-24/index.html",
+              "source": "cnn"
+            },
+            {
+              "title": "May 22, 2024 Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/iran-israel-hamas-war-gaza-news-05-22-24/index.html",
+              "source": "cnn"
+            }
+          ]
+        },
+        "diplomacy": {
+          "count": 5,
+          "titles": [
+            {
+              "title": "Celebrations and relief in Lebanon as ceasefire with Israel begins  – video",
+              "link": "https://www.theguardian.com/world/video/2026/apr/17/celebrations-and-relief-in-lebanon-ceasefire-with-israel-begins-video",
+              "source": "guardian"
+            },
+            {
+              "title": "June 13, 2024 Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-13-24/index.html",
+              "source": "cnn"
+            },
+            {
+              "title": "June 10, 2024 Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-10-24/index.html",
+              "source": "cnn"
+            },
+            {
+              "title": "US navy seizes Iranian ship after it breaches blockade",
+              "link": "https://www.ft.com/content/0e51cdea-99df-4913-8c71-03396c4a6faf",
+              "source": "ft"
+            },
+            {
+              "title": "Middle East crisis live: ceasefire under pressure and talks in doubt as Iran threatens to ‘retaliate’ to US seizure of ship",
+              "link": "https://www.theguardian.com/world/live/2026/apr/20/iran-war-latest-news-updates-live-hormuz-trump-us-iranian-ship-ceasefire-doubt",
+              "source": "guardian"
             }
           ]
         }
@@ -1303,23 +1330,17 @@
     }
   ],
   "economic_indicators": {
+    "GOLD": {
+      "price": 4820.9,
+      "change": -36.7,
+      "changePercent": -0.76,
+      "prev": 4857.6
+    },
     "US2Y": {
       "price": 3.6,
       "change": -0.01,
       "changePercent": -0.28,
       "prev": 3.61
-    },
-    "VIX": {
-      "price": 17.48,
-      "change": -0.46,
-      "changePercent": -2.56,
-      "prev": 17.94
-    },
-    "DXY": {
-      "price": 98.29,
-      "change": 0.19,
-      "changePercent": 0.19,
-      "prev": 98.1
     },
     "WTI": {
       "price": 82.59,
@@ -1327,11 +1348,17 @@
       "changePercent": -12.78,
       "prev": 94.69
     },
-    "GOLD": {
-      "price": 4791.1,
-      "change": -66.5,
-      "changePercent": -1.37,
-      "prev": 4857.6
+    "DXY": {
+      "price": 98.3,
+      "change": 0.2,
+      "changePercent": 0.2,
+      "prev": 98.1
+    },
+    "BRENT": {
+      "price": 90.38,
+      "change": -9.01,
+      "changePercent": -9.07,
+      "prev": 99.39
     },
     "US10Y": {
       "price": 4.25,
@@ -1339,21 +1366,45 @@
       "changePercent": -1.39,
       "prev": 4.31
     },
-    "BRENT": {
-      "price": 90.38,
-      "change": -9.01,
-      "changePercent": -9.07,
-      "prev": 99.39
+    "VIX": {
+      "price": 17.48,
+      "change": -0.46,
+      "changePercent": -2.56,
+      "prev": 17.94
     }
   },
   "critical_events": [
     {
-      "id": "capital_attack",
-      "name": "수도 직접 공격/포위",
+      "id": "ceasefire_agreement",
+      "name": "공식 휴전/평화 합의",
+      "severity": "critical",
+      "confidence": 1,
+      "matchCount": 4,
+      "direction": "shorten"
+    },
+    {
+      "id": "regime_collapse",
+      "name": "교전국 정권 붕괴/쿠데타",
+      "severity": "critical",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "shorten"
+    },
+    {
+      "id": "diplomatic_breakthrough",
+      "name": "외교적 돌파구/강대국 중재",
       "severity": "high",
       "confidence": 0.6666666666666666,
       "matchCount": 2,
       "direction": "shorten"
+    },
+    {
+      "id": "conflict_expansion",
+      "name": "전선 확대/신규 참전국",
+      "severity": "moderate",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "lengthen"
     }
   ],
   "feeds_loaded": 7,
