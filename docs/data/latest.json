@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-04-25T05:46:23.220Z",
+  "timestamp": "2026-04-25T07:10:35.428Z",
   "war_day": 56,
   "probabilities": {
-    "1개월 내 (~3월)": 21,
-    "2~3개월 (4~5월)": 40.1,
-    "4~6개월 (6~8월)": 23.7,
-    "7~12개월 (9월~27/2월)": 11.4,
-    "1년 초과": 3.8
+    "1개월 내 (~3월)": 19.6,
+    "2~3개월 (4~5월)": 37.6,
+    "4~6개월 (6~8월)": 25.5,
+    "7~12개월 (9월~27/2월)": 12.8,
+    "1년 초과": 4.5
   },
   "factors": [
     {
@@ -45,20 +45,20 @@
       "decay": 0.4
     },
     {
-      "factor": "이란 미사일 능력 급감 (휴전8:확전6)",
-      "impact": "전쟁 지속 능력 약화로 단기 종전 가능성 증가",
-      "weight": "+0.0%p (1개월내), +0.0%p (2~3개월) (잔존40%)",
-      "direction": "shorten",
-      "detail": "이란의 보복 미사일 타격 능력이 약 90% 감소했습니다.",
+      "factor": "확전 뉴스 우세 (확전8:휴전8)",
+      "impact": "전쟁 장기화 가능성 (확전비율 50%)",
+      "weight": "+0.02%p (4~6개월)",
+      "direction": "lengthen",
+      "detail": "언론에서 휴전보다 확전을 더 많이 보도하고 있습니다.",
       "keywords": [
-        "missile",
-        "ballistic",
-        "launch",
-        "strike capab"
+        "escalat",
+        "intensif",
+        "expand",
+        "widen"
       ],
-      "applied": "2026-03-02",
+      "applied": "실시간",
       "active": true,
-      "decay": 0.4
+      "decay": 1
     },
     {
       "factor": "호르무즈 해협 봉쇄 → 국제 경제 압력",
@@ -181,11 +181,11 @@
       "decay": 1
     },
     {
-      "factor": "지역 확산 뉴스 14건 감지",
-      "impact": "주변국 연루 확대로 장기화 위험",
-      "weight": "+0.01%p (4~6개월), +0.01%p (7~12개월)",
+      "factor": "지역 확산 뉴스 16건 감지",
+      "impact": "주변국 대규모 연루 → 장기화 위험 높음",
+      "weight": "+0.02%p (4~6개월), +0.02%p (7~12개월)",
       "direction": "lengthen",
-      "detail": "주변국을 언급하는 기사 14건이 감지되었습니다.",
+      "detail": "주변국을 언급하는 기사 16건이 감지되었습니다.",
       "keywords": [
         "saudi",
         "uae",
@@ -294,6 +294,32 @@
       "severity": "high"
     },
     {
+      "factor": "[중대 이벤트] 전선 확대/신규 참전국",
+      "impact": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).",
+      "weight": "-1.3%p (1개월내), -2.0%p (2~3개월), +2.7%p (4~6개월), +2.0%p (7~12개월), +1.3%p (1년초과)",
+      "direction": "lengthen",
+      "detail": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: UK prepared to deploy RAF Typhoons to keep strait of Hormuz open after Iran war",
+      "keywords": [
+        "new front",
+        "war spread",
+        "conflict expand",
+        "join",
+        "war",
+        "enter",
+        "war",
+        "open",
+        "front",
+        "declare war",
+        "widen",
+        "conflict",
+        "second front",
+        "new theater"
+      ],
+      "applied": "2026-04-25",
+      "active": true,
+      "severity": "moderate"
+    },
+    {
       "factor": "유가 급등 (WTI $94.4/배럴)",
       "impact": "중간 수준 경제 압력",
       "weight": "+2%p (1-2개월)",
@@ -328,17 +354,29 @@
   ],
   "news_signals": {
     "ceasefire_mentions": 8,
-    "escalation_mentions": 6,
+    "escalation_mentions": 8,
     "negotiation_mentions": 16.4,
-    "casualty_mentions": 6.2,
+    "casualty_mentions": 6,
     "peace_mentions": 4,
-    "regional_spread": 14,
+    "regional_spread": 16,
     "total_articles": 50,
     "new_articles": 50,
-    "unique_events": 44,
-    "duplicates_removed": 6
+    "unique_events": 45,
+    "duplicates_removed": 5
   },
   "latest_news": [
+    {
+      "title": "Capture of ships by US, Iran violates international law, shipping body says",
+      "link": "https://www.aljazeera.com/economy/2026/4/25/capture-of-ships-by-us-iran-violates-international-law-shipping-body-says?traffic_source=rss",
+      "pubDate": "Sat, 25 Apr 2026 06:27:56 +0000",
+      "source": "aljazeera",
+      "snippet": "US and Iran should immediately release crews of captured vessels, says International Chamber of Shipping director.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
     {
       "title": "Rubio’s Absence From Iran Talks Highlights Stay-at-Home Role",
       "link": "https://www.nytimes.com/2026/04/24/us/politics/marco-rubio-absence-iran-talks.html",
@@ -372,18 +410,6 @@
       "isNew": true,
       "_isDuplicate": true,
       "_sourceCount": 1
-    },
-    {
-      "title": "남대서양 외딴섬에 트럼프 불똥…아르헨-英 영유권 신경전",
-      "link": "https://www.yna.co.kr/view/AKR20260425029200009",
-      "pubDate": "Sat, 25 Apr 2026 13:12:08 +0900",
-      "source": "yonhap",
-      "snippet": "(서울=연합뉴스) 임화섭 기자 = 남대서양의 외딴섬 포클랜드 제도를 놓고 난데없이 지구 반대편 중동 전쟁과 맞물린 강대국 간 신경전이 거세지고 ...",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
     },
     {
       "title": "Israel escalates attacks in Gaza, killing 12 people",
@@ -517,6 +543,114 @@
   "news_digest": {
     "categories": [
       {
+        "category_id": "military",
+        "category_name": "군사 작전",
+        "category_icon": "⚔️",
+        "count": 9,
+        "new_count": 9,
+        "articles": [
+          {
+            "title": "Israel escalates attacks in Gaza, killing 12 people",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/4/25/israel-escalates-attacks-in-gaza-killing-12-people?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Sat, 25 Apr 2026 03:23:14 +0000",
+            "snippet": "Israeli forces have killed 12 Palestinians, including six police officers, in multiple attacks across Gaza.",
+            "isNew": true
+          },
+          {
+            "title": "Israel continues attacks on Lebanon despite extension of ceasefire",
+            "link": "https://www.aljazeera.com/news/2026/4/24/israel-continues-attacks-on-lebanon-despite-extension-of-ceasefire?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Fri, 24 Apr 2026 20:46:38 +0000",
+            "snippet": "Israeli forces killed six Hezbollah fighters in an exchange of fire in the area of Bint Jbeil, southern Lebanon.",
+            "isNew": true
+          },
+          {
+            "title": "The week around the world in 20 pictures",
+            "link": "https://www.theguardian.com/artanddesign/gallery/2026/apr/24/the-week-around-the-world-in-20-pictures",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Fri, 24 Apr 2026 17:59:31 GMT",
+            "snippet": "Crisis in the Middle East, Russian strikes in Dnipro, blackouts in Karachi and Manchester City’s Erling Haaland – the past seven days as captured by the world’s leading photojournalists Continue readi",
+            "isNew": true
+          },
+          {
+            "title": "Could Trump withdraw US support for UK sovereignty of Falklands?",
+            "link": "https://www.theguardian.com/us-news/2026/apr/24/could-donald-trump-withdraw-us-support-uk-sovereignty-falklands",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Fri, 24 Apr 2026 16:37:12 GMT",
+            "snippet": "Proposal said to be contained in internal Pentagon email is thought to be bid to punish European countries for failing to assist in war in IranThe White House is considering punishing European countri",
+            "isNew": true
+          },
+          {
+            "title": "Rubio Says Iran’s Soccer Team Can Attend World Cup",
+            "link": "https://www.nytimes.com/2026/04/24/us/politics/trump-rubio-iran-world-cup.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Fri, 24 Apr 2026 07:26:37 +0000",
+            "snippet": "Secretary of State Marco Rubio said that while the players were welcome, anyone accompanying them who has links to the Iranian military would be denied entry.",
+            "isNew": true
+          },
+          {
+            "title": "Iran War Has Drained U.S. Supplies of Critical, Costly Weapons",
+            "link": "https://www.nytimes.com/2026/04/23/us/politics/iran-war-cost-military.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Fri, 24 Apr 2026 01:04:32 +0000",
+            "snippet": "The Pentagon’s rush to rearm its Mideast forces makes it less ready to confront potential adversaries like Russia and China, administration and congressional officials say.",
+            "isNew": true
+          },
+          {
+            "title": "Trump Keeps Talking About Iran’s ‘Nuclear Dust.’ What Is It?",
+            "link": "https://www.nytimes.com/2026/04/23/us/politics/trump-iran-nuclear-dust-uranium.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Thu, 23 Apr 2026 22:13:49 +0000",
+            "snippet": "First of all, it isn’t dust. It’s Iran’s stockpile of near-bomb-grade uranium, which is stored in large canisters about the size of scuba tanks.",
+            "isNew": true
+          },
+          {
+            "title": "Extended naval blockade is admission US military escalation poses even greater risk",
+            "link": "https://www.theguardian.com/world/2026/apr/23/extended-naval-blockade-is-an-admission-us-military-escalation-poses-even-greater-risk",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Thu, 23 Apr 2026 18:15:27 GMT",
+            "snippet": "Battle of the blockades may still have more time to run as the US and Iran try to assert control over the strait of HormuzMiddle East crisis – live updatesDonald Trump’s decision to extend the naval b",
+            "isNew": true
+          },
+          {
+            "title": "UK prepared to deploy RAF Typhoons to keep strait of Hormuz open after Iran war",
+            "link": "https://www.theguardian.com/uk-news/2026/apr/23/uk-raf-typhoons-strait-of-hormuz-iran-war",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Thu, 23 Apr 2026 18:08:41 GMT",
+            "snippet": "Proposal at heart of offer made during a 30-country two-day meeting jointly organised by FranceMiddle East crisis – live updatesBritain is prepared to deploy a squadron of RAF Typhoons based in Qatar ",
+            "isNew": true
+          }
+        ]
+      },
+      {
         "category_id": "diplomacy",
         "category_name": "외교/협상",
         "category_icon": "🤝",
@@ -616,98 +750,23 @@
         ]
       },
       {
-        "category_id": "military",
-        "category_name": "군사 작전",
-        "category_icon": "⚔️",
-        "count": 7,
-        "new_count": 7,
-        "articles": [
-          {
-            "title": "Israel escalates attacks in Gaza, killing 12 people",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/4/25/israel-escalates-attacks-in-gaza-killing-12-people?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sat, 25 Apr 2026 03:23:14 +0000",
-            "snippet": "Israeli forces have killed 12 Palestinians, including six police officers, in multiple attacks across Gaza.",
-            "isNew": true
-          },
-          {
-            "title": "Israel continues attacks on Lebanon despite extension of ceasefire",
-            "link": "https://www.aljazeera.com/news/2026/4/24/israel-continues-attacks-on-lebanon-despite-extension-of-ceasefire?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Fri, 24 Apr 2026 20:46:38 +0000",
-            "snippet": "Israeli forces killed six Hezbollah fighters in an exchange of fire in the area of Bint Jbeil, southern Lebanon.",
-            "isNew": true
-          },
-          {
-            "title": "The week around the world in 20 pictures",
-            "link": "https://www.theguardian.com/artanddesign/gallery/2026/apr/24/the-week-around-the-world-in-20-pictures",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Fri, 24 Apr 2026 17:59:31 GMT",
-            "snippet": "Crisis in the Middle East, Russian strikes in Dnipro, blackouts in Karachi and Manchester City’s Erling Haaland – the past seven days as captured by the world’s leading photojournalists Continue readi",
-            "isNew": true
-          },
-          {
-            "title": "Could Trump withdraw US support for UK sovereignty of Falklands?",
-            "link": "https://www.theguardian.com/us-news/2026/apr/24/could-donald-trump-withdraw-us-support-uk-sovereignty-falklands",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Fri, 24 Apr 2026 16:37:12 GMT",
-            "snippet": "Proposal said to be contained in internal Pentagon email is thought to be bid to punish European countries for failing to assist in war in IranThe White House is considering punishing European countri",
-            "isNew": true
-          },
-          {
-            "title": "Rubio Says Iran’s Soccer Team Can Attend World Cup",
-            "link": "https://www.nytimes.com/2026/04/24/us/politics/trump-rubio-iran-world-cup.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Fri, 24 Apr 2026 07:26:37 +0000",
-            "snippet": "Secretary of State Marco Rubio said that while the players were welcome, anyone accompanying them who has links to the Iranian military would be denied entry.",
-            "isNew": true
-          },
-          {
-            "title": "Iran War Has Drained U.S. Supplies of Critical, Costly Weapons",
-            "link": "https://www.nytimes.com/2026/04/23/us/politics/iran-war-cost-military.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Fri, 24 Apr 2026 01:04:32 +0000",
-            "snippet": "The Pentagon’s rush to rearm its Mideast forces makes it less ready to confront potential adversaries like Russia and China, administration and congressional officials say.",
-            "isNew": true
-          },
-          {
-            "title": "Trump Keeps Talking About Iran’s ‘Nuclear Dust.’ What Is It?",
-            "link": "https://www.nytimes.com/2026/04/23/us/politics/trump-iran-nuclear-dust-uranium.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Thu, 23 Apr 2026 22:13:49 +0000",
-            "snippet": "First of all, it isn’t dust. It’s Iran’s stockpile of near-bomb-grade uranium, which is stored in large canisters about the size of scuba tanks.",
-            "isNew": true
-          }
-        ]
-      },
-      {
         "category_id": "economy",
         "category_name": "경제 영향",
         "category_icon": "📊",
         "count": 7,
         "new_count": 7,
         "articles": [
+          {
+            "title": "Capture of ships by US, Iran violates international law, shipping body says",
+            "link": "https://www.aljazeera.com/economy/2026/4/25/capture-of-ships-by-us-iran-violates-international-law-shipping-body-says?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Sat, 25 Apr 2026 06:27:56 +0000",
+            "snippet": "US and Iran should immediately release crews of captured vessels, says International Chamber of Shipping director.",
+            "isNew": true
+          },
           {
             "title": "Iran and U.S. Blockades in the Strait of Hormuz: What to Know",
             "link": "https://www.nytimes.com/2026/04/24/world/middleeast/iran-us-strait-of-hormuz-blockade.html",
@@ -728,17 +787,6 @@
             ],
             "pubDate": "Fri, 24 Apr 2026 22:24:33 +0000",
             "snippet": "The Treasury Department also targeted a top independent Chinese refinery that it said was a major buyer of Iranian petroleum.",
-            "isNew": true
-          },
-          {
-            "title": "Russian oil exports slump as Ukraine hammers ports and refineries",
-            "link": "https://www.aljazeera.com/features/2026/4/24/russian-oil-exports-slump-as-ukraine-hammers-ports-and-refineries?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Fri, 24 Apr 2026 16:52:48 +0000",
-            "snippet": "Despite US sanctions waiver, Russian oil exports could fall to lowest levels since 2023, sources say.",
             "isNew": true
           },
           {
@@ -874,23 +922,89 @@
         ]
       },
       {
+        "category_id": "humanitarian",
+        "category_name": "인도주의/피해",
+        "category_icon": "🏥",
+        "count": 6,
+        "new_count": 6,
+        "articles": [
+          {
+            "title": "Hanged under the cover of war: letters and videos tell stories of Iran’s death row victims",
+            "link": "https://www.theguardian.com/world/2026/apr/25/hanged-under-the-cover-of-war-letters-and-videos-tell-stories-of-iran-death-row-victims",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Sat, 25 Apr 2026 05:00:36 GMT",
+            "snippet": "Testimony emerges from Babak Alipour, who spent three years on death row before being taken to gallows in March Writing from his cell in the Rajai Shahr prison in the northern Iranian city of Karaj, B",
+            "isNew": true
+          },
+          {
+            "title": "Venice Biennale jury ‘will not award artists from countries facing war crimes charges’",
+            "link": "https://www.theguardian.com/artanddesign/2026/apr/24/venice-biennale-jury-not-award-artists-countries-face-war-crimes-israel-russia",
+            "source": "guardian",
+            "sources": [
+              "guardian",
+              "nytimes"
+            ],
+            "pubDate": "Fri, 24 Apr 2026 12:04:26 GMT",
+            "snippet": "Statement, apparently aimed at Russia and Israel, makes clear it is committed to the defence of human rightsThe jury of the Venice Biennale has said it would not give awards to artists from countries ",
+            "isNew": true
+          },
+          {
+            "title": "Netanyahu says he was successfully treated for prostate cancer",
+            "link": "https://www.theguardian.com/world/2026/apr/24/benjamin-netanyahu-successfully-treated-for-prostate-cancer-israel",
+            "source": "guardian",
+            "sources": [
+              "guardian",
+              "bbc"
+            ],
+            "pubDate": "Fri, 24 Apr 2026 13:40:18 GMT",
+            "snippet": "Israeli prime minister says early-stage malignant tumour was discovered during a routine check-upMiddle East crisis – live updatesBenjamin Netanyahu has revealed that he received successful treatment ",
+            "isNew": true
+          },
+          {
+            "title": "Key suspect in notorious Tadamon massacre during Syria civil war arrested",
+            "link": "https://www.bbc.com/news/articles/cvglxgq1p2jo?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc"
+            ],
+            "pubDate": "Fri, 24 Apr 2026 10:41:32 GMT",
+            "snippet": "Amjad Youssef was wanted over the mass killing of blindfolded civilians in April 2013 in the district of Damascus.",
+            "isNew": true
+          },
+          {
+            "title": "Lebanese Journalist Killed in Israeli Strike Was Known for Being Intrepid",
+            "link": "https://www.nytimes.com/2026/04/23/world/middleeast/lebanese-journalist-amal-khalil-killed-israeli-strike.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Fri, 24 Apr 2026 09:53:44 +0000",
+            "snippet": "Mourners paid respects to Amal Khalil, who remained trapped under rubble for hours before emergency medics recovered her body.",
+            "isNew": true
+          },
+          {
+            "title": "Trump claims US has total control over strait of Hormuz after Iran seizes two container ships",
+            "link": "https://www.theguardian.com/us-news/2026/apr/23/trump-claims-us-has-total-control-over-strait-of-hormuz-as-iran-seizes-two-container-ships",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Fri, 24 Apr 2026 02:22:28 GMT",
+            "snippet": "US president says Tehran hobbled by infighting as Pentagon reportedly briefs mine clearance may take six monthsMiddle East crisis – live updatesDonald Trump has again said that the US has “total contr",
+            "isNew": true
+          }
+        ]
+      },
+      {
         "category_id": "regional",
         "category_name": "지역 정세",
         "category_icon": "🌍",
-        "count": 7,
-        "new_count": 7,
+        "count": 6,
+        "new_count": 6,
         "articles": [
-          {
-            "title": "남대서양 외딴섬에 트럼프 불똥…아르헨-英 영유권 신경전",
-            "link": "https://www.yna.co.kr/view/AKR20260425029200009",
-            "source": "yonhap",
-            "sources": [
-              "yonhap"
-            ],
-            "pubDate": "Sat, 25 Apr 2026 13:12:08 +0900",
-            "snippet": "(서울=연합뉴스) 임화섭 기자 = 남대서양의 외딴섬 포클랜드 제도를 놓고 난데없이 지구 반대편 중동 전쟁과 맞물린 강대국 간 신경전이 거세지고 ...",
-            "isNew": true
-          },
           {
             "title": "Ukraine war briefing: Zelenskyy holds talks in Azerbaijan, Saudi Arabia on ‘security and energy’",
             "link": "https://www.theguardian.com/world/2026/apr/25/ukraine-war-briefing-zelenskyy-holds-talks-in-azerbaijan-saudi-arabia-on-security-and-energy",
@@ -960,84 +1074,6 @@
         ]
       },
       {
-        "category_id": "humanitarian",
-        "category_name": "인도주의/피해",
-        "category_icon": "🏥",
-        "count": 6,
-        "new_count": 6,
-        "articles": [
-          {
-            "title": "Hanged under the cover of war: letters and videos tell stories of Iran’s death row victims",
-            "link": "https://www.theguardian.com/world/2026/apr/25/hanged-under-the-cover-of-war-letters-and-videos-tell-stories-of-iran-death-row-victims",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Sat, 25 Apr 2026 05:00:36 GMT",
-            "snippet": "Testimony emerges from Babak Alipour, who spent three years on death row before being taken to gallows in March Writing from his cell in the Rajai Shahr prison in the northern Iranian city of Karaj, B",
-            "isNew": true
-          },
-          {
-            "title": "Venice Biennale jury ‘will not award artists from countries facing war crimes charges’",
-            "link": "https://www.theguardian.com/artanddesign/2026/apr/24/venice-biennale-jury-not-award-artists-countries-face-war-crimes-israel-russia",
-            "source": "guardian",
-            "sources": [
-              "guardian",
-              "nytimes"
-            ],
-            "pubDate": "Fri, 24 Apr 2026 12:04:26 GMT",
-            "snippet": "Statement, apparently aimed at Russia and Israel, makes clear it is committed to the defence of human rightsThe jury of the Venice Biennale has said it would not give awards to artists from countries ",
-            "isNew": true
-          },
-          {
-            "title": "Lebanese Journalist Killed in Israeli Strike Was Known for Being Intrepid",
-            "link": "https://www.nytimes.com/2026/04/23/world/middleeast/lebanese-journalist-amal-khalil-killed-israeli-strike.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes",
-              "aljazeera"
-            ],
-            "pubDate": "Fri, 24 Apr 2026 09:53:44 +0000",
-            "snippet": "Mourners paid respects to Amal Khalil, who remained trapped under rubble for hours before emergency medics recovered her body.",
-            "isNew": true
-          },
-          {
-            "title": "Netanyahu says he was successfully treated for prostate cancer",
-            "link": "https://www.theguardian.com/world/2026/apr/24/benjamin-netanyahu-successfully-treated-for-prostate-cancer-israel",
-            "source": "guardian",
-            "sources": [
-              "guardian",
-              "bbc"
-            ],
-            "pubDate": "Fri, 24 Apr 2026 13:40:18 GMT",
-            "snippet": "Israeli prime minister says early-stage malignant tumour was discovered during a routine check-upMiddle East crisis – live updatesBenjamin Netanyahu has revealed that he received successful treatment ",
-            "isNew": true
-          },
-          {
-            "title": "Key suspect in notorious Tadamon massacre during Syria civil war arrested",
-            "link": "https://www.bbc.com/news/articles/cvglxgq1p2jo?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
-            "sources": [
-              "bbc"
-            ],
-            "pubDate": "Fri, 24 Apr 2026 10:41:32 GMT",
-            "snippet": "Amjad Youssef was wanted over the mass killing of blindfolded civilians in April 2013 in the district of Damascus.",
-            "isNew": true
-          },
-          {
-            "title": "Trump claims US has total control over strait of Hormuz after Iran seizes two container ships",
-            "link": "https://www.theguardian.com/us-news/2026/apr/23/trump-claims-us-has-total-control-over-strait-of-hormuz-as-iran-seizes-two-container-ships",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Fri, 24 Apr 2026 02:22:28 GMT",
-            "snippet": "US president says Tehran hobbled by infighting as Pentagon reportedly briefs mine clearance may take six monthsMiddle East crisis – live updatesDonald Trump has again said that the US has “total contr",
-            "isNew": true
-          }
-        ]
-      },
-      {
         "category_id": "other",
         "category_name": "기타",
         "category_icon": "📰",
@@ -1072,6 +1108,36 @@
     "recent_30min": {
       "total_new": 50,
       "by_category": {
+        "economy": {
+          "count": 7,
+          "titles": [
+            {
+              "title": "Capture of ships by US, Iran violates international law, shipping body says",
+              "link": "https://www.aljazeera.com/economy/2026/4/25/capture-of-ships-by-us-iran-violates-international-law-shipping-body-says?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Iran and U.S. Blockades in the Strait of Hormuz: What to Know",
+              "link": "https://www.nytimes.com/2026/04/24/world/middleeast/iran-us-strait-of-hormuz-blockade.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "U.S. Unveils More Sanctions Targeting Iran’s Shadow Fleet",
+              "link": "https://www.nytimes.com/2026/04/24/world/middleeast/iran-sanctions-oil-tankers-shadow-fleet.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "The Guardian view on Germany, Japan and the end of the postwar order: as US alliances crumble, a new world emerges | Editorial",
+              "link": "https://www.theguardian.com/commentisfree/2026/apr/24/the-guardian-view-on-germany-japan-and-the-end-of-the-postwar-order-as-us-alliances-crumble-a-new-world-emerges",
+              "source": "guardian"
+            },
+            {
+              "title": "Trump Extends Waiver Allowing Foreign Ships to Move Goods Between U.S. Ports",
+              "link": "https://www.nytimes.com/2026/04/24/world/middleeast/trump-extends-waiver-allowing-foreign-ships-to-move-goods-between-us-ports.html",
+              "source": "nytimes"
+            }
+          ]
+        },
         "politics": {
           "count": 8,
           "titles": [
@@ -1162,38 +1228,8 @@
             }
           ]
         },
-        "regional": {
-          "count": 7,
-          "titles": [
-            {
-              "title": "남대서양 외딴섬에 트럼프 불똥…아르헨-英 영유권 신경전",
-              "link": "https://www.yna.co.kr/view/AKR20260425029200009",
-              "source": "yonhap"
-            },
-            {
-              "title": "Ukraine war briefing: Zelenskyy holds talks in Azerbaijan, Saudi Arabia on ‘security and energy’",
-              "link": "https://www.theguardian.com/world/2026/apr/25/ukraine-war-briefing-zelenskyy-holds-talks-in-azerbaijan-saudi-arabia-on-security-and-energy",
-              "source": "guardian"
-            },
-            {
-              "title": "Israel-Lebanon Cease-Fire Tested by Escalating Clashes",
-              "link": "https://www.nytimes.com/2026/04/24/world/middleeast/israel-lebanon-fighting-ceasefire.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Israeli attacks on Lebanon may violate international law, UN warns",
-              "link": "https://www.aljazeera.com/news/2026/4/24/israeli-attacks-on-lebanon-may-violate-international-law-un-warns?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Is this what war looks like now? | Mohamad Bazzi",
-              "link": "https://www.theguardian.com/us-news/ng-interactive/2026/apr/24/gaza-israel-lebanon-war",
-              "source": "guardian"
-            }
-          ]
-        },
         "military": {
-          "count": 9,
+          "count": 10,
           "titles": [
             {
               "title": "Israel escalates attacks in Gaza, killing 12 people",
@@ -1216,38 +1252,38 @@
               "source": "guardian"
             },
             {
-              "title": "How Israel targeted and killed Lebanese journalist Amal Khalil",
-              "link": "https://www.aljazeera.com/video/the-take-2/2026/4/24/how-israel-targeted-and-killed-lebanese-journalist-amal-khalil?traffic_source=rss",
-              "source": "aljazeera"
+              "title": "Could Trump withdraw US support for UK sovereignty of Falklands?",
+              "link": "https://www.theguardian.com/us-news/2026/apr/24/could-donald-trump-withdraw-us-support-uk-sovereignty-falklands",
+              "source": "guardian"
             }
           ]
         },
-        "economy": {
-          "count": 7,
+        "regional": {
+          "count": 6,
           "titles": [
             {
-              "title": "Iran and U.S. Blockades in the Strait of Hormuz: What to Know",
-              "link": "https://www.nytimes.com/2026/04/24/world/middleeast/iran-us-strait-of-hormuz-blockade.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "U.S. Unveils More Sanctions Targeting Iran’s Shadow Fleet",
-              "link": "https://www.nytimes.com/2026/04/24/world/middleeast/iran-sanctions-oil-tankers-shadow-fleet.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Russian oil exports slump as Ukraine hammers ports and refineries",
-              "link": "https://www.aljazeera.com/features/2026/4/24/russian-oil-exports-slump-as-ukraine-hammers-ports-and-refineries?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "The Guardian view on Germany, Japan and the end of the postwar order: as US alliances crumble, a new world emerges | Editorial",
-              "link": "https://www.theguardian.com/commentisfree/2026/apr/24/the-guardian-view-on-germany-japan-and-the-end-of-the-postwar-order-as-us-alliances-crumble-a-new-world-emerges",
+              "title": "Ukraine war briefing: Zelenskyy holds talks in Azerbaijan, Saudi Arabia on ‘security and energy’",
+              "link": "https://www.theguardian.com/world/2026/apr/25/ukraine-war-briefing-zelenskyy-holds-talks-in-azerbaijan-saudi-arabia-on-security-and-energy",
               "source": "guardian"
             },
             {
-              "title": "Trump Extends Waiver Allowing Foreign Ships to Move Goods Between U.S. Ports",
-              "link": "https://www.nytimes.com/2026/04/24/world/middleeast/trump-extends-waiver-allowing-foreign-ships-to-move-goods-between-us-ports.html",
+              "title": "Israel-Lebanon Cease-Fire Tested by Escalating Clashes",
+              "link": "https://www.nytimes.com/2026/04/24/world/middleeast/israel-lebanon-fighting-ceasefire.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Israeli attacks on Lebanon may violate international law, UN warns",
+              "link": "https://www.aljazeera.com/news/2026/4/24/israeli-attacks-on-lebanon-may-violate-international-law-un-warns?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Is this what war looks like now? | Mohamad Bazzi",
+              "link": "https://www.theguardian.com/us-news/ng-interactive/2026/apr/24/gaza-israel-lebanon-war",
+              "source": "guardian"
+            },
+            {
+              "title": "A Lost Tribe in India Makes Its Exodus to Israel",
+              "link": "https://www.nytimes.com/2026/04/23/world/asia/india-jewish-tribe-israel-bnei-menashe.html",
               "source": "nytimes"
             }
           ]
@@ -1357,6 +1393,18 @@
     }
   ],
   "economic_indicators": {
+    "VIX": {
+      "price": 18.71,
+      "change": -0.6,
+      "changePercent": -3.11,
+      "prev": 19.31
+    },
+    "DXY": {
+      "price": 98.51,
+      "change": -0.29,
+      "changePercent": -0.29,
+      "prev": 98.8
+    },
     "WTI": {
       "price": 94.4,
       "change": -1.45,
@@ -1369,35 +1417,23 @@
       "changePercent": -5.65,
       "prev": 105.07
     },
-    "VIX": {
-      "price": 18.71,
-      "change": -0.6,
-      "changePercent": -3.11,
-      "prev": 19.31
-    },
     "US2Y": {
       "price": 3.59,
       "change": 0,
       "changePercent": 0,
       "prev": 3.6
     },
-    "GOLD": {
-      "price": 4740.9,
-      "change": 35.8,
-      "changePercent": 0.76,
-      "prev": 4705.1
-    },
-    "DXY": {
-      "price": 98.51,
-      "change": -0.29,
-      "changePercent": -0.29,
-      "prev": 98.8
-    },
     "US10Y": {
       "price": 4.31,
       "change": -0.01,
       "changePercent": -0.23,
       "prev": 4.32
+    },
+    "GOLD": {
+      "price": 4740.9,
+      "change": 35.8,
+      "changePercent": 0.76,
+      "prev": 4705.1
     }
   },
   "critical_events": [
@@ -1416,6 +1452,14 @@
       "confidence": 0.6666666666666666,
       "matchCount": 2,
       "direction": "shorten"
+    },
+    {
+      "id": "conflict_expansion",
+      "name": "전선 확대/신규 참전국",
+      "severity": "moderate",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "lengthen"
     }
   ],
   "feeds_loaded": 7,
