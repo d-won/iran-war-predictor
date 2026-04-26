@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-04-26T11:36:51.365Z",
+  "timestamp": "2026-04-26T12:59:48.782Z",
   "war_day": 57,
   "probabilities": {
-    "1개월 내 (~3월)": 21.1,
-    "2~3개월 (4~5월)": 38.1,
-    "4~6개월 (6~8월)": 23.2,
-    "7~12개월 (9월~27/2월)": 12.3,
-    "1년 초과": 5.3
+    "1개월 내 (~3월)": 17.7,
+    "2~3개월 (4~5월)": 35.4,
+    "4~6개월 (6~8월)": 27,
+    "7~12개월 (9월~27/2월)": 13.8,
+    "1년 초과": 6.1
   },
   "factors": [
     {
@@ -45,7 +45,7 @@
       "decay": 0.4
     },
     {
-      "factor": "이란 미사일 능력 급감 (휴전14.2:확전4)",
+      "factor": "이란 미사일 능력 급감 (휴전10:확전4)",
       "impact": "전쟁 지속 능력 약화로 단기 종전 가능성 증가",
       "weight": "+0.0%p (1개월내), +0.0%p (2~3개월) (잔존40%)",
       "direction": "shorten",
@@ -164,11 +164,11 @@
       "decay": 1
     },
     {
-      "factor": "협상/외교 뉴스 28.4건 감지",
+      "factor": "협상/외교 뉴스 4건 감지",
       "impact": "외교적 해결 움직임 포착",
-      "weight": "+0.03%p (1개월내), +0.02%p (2~3개월)",
+      "weight": "+0.01%p (1개월내), +0.01%p (2~3개월)",
       "direction": "shorten",
-      "detail": "실시간 뉴스에서 협상 관련 기사 28.4건이 감지되었습니다.",
+      "detail": "실시간 뉴스에서 협상 관련 기사 4건이 감지되었습니다.",
       "keywords": [
         "negotiat",
         "talks",
@@ -181,11 +181,11 @@
       "decay": 1
     },
     {
-      "factor": "지역 확산 뉴스 10.2건 감지",
+      "factor": "지역 확산 뉴스 6건 감지",
       "impact": "주변국 연루 확대로 장기화 위험",
       "weight": "+0.01%p (4~6개월), +0.01%p (7~12개월)",
       "direction": "lengthen",
-      "detail": "주변국을 언급하는 기사 10.2건이 감지되었습니다.",
+      "detail": "주변국을 언급하는 기사 6건이 감지되었습니다.",
       "keywords": [
         "saudi",
         "uae",
@@ -234,38 +234,60 @@
       "decay": 0.3
     },
     {
-      "factor": "[중대 이벤트] 일방적 전투 축소/자제 선언",
-      "impact": "교전국의 일방적 전투 축소 또는 자제 선언. 역사적으로 패전국의 자발적 전선 축소는 80% 이상 공식 항복의 전조.",
-      "weight": "+3.3%p (1개월내), +4.7%p (2~3개월), -2.0%p (4~6개월), -2.0%p (7~12개월), -0.7%p (1년초과)",
+      "factor": "[중대 이벤트] 외교적 돌파구/강대국 중재",
+      "impact": "주요 외교적 돌파구 또는 강대국 중재. 데이턴(1995): 미국 중재 → 3주만에 합의. UN 안보리 결의는 평균 2~4주 내 휴전 이행.",
+      "weight": "+2.0%p (1개월내), +4.0%p (2~3개월), +1.3%p (4~6개월), -1.3%p (7~12개월), -0.7%p (1년초과)",
       "direction": "shorten",
-      "detail": "교전국의 일방적 전투 축소 또는 자제 선언. 역사적으로 패전국의 자발적 전선 축소는 80% 이상 공식 항복의 전조.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Israel-Lebanon Cease-Fire Tested by Escalating Clashes",
+      "detail": "주요 외교적 돌파구 또는 강대국 중재. 데이턴(1995): 미국 중재 → 3주만에 합의. UN 안보리 결의는 평균 2~4주 내 휴전 이행.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: June 10, 2024 Israel-Hamas war",
       "keywords": [
-        "halt",
-        "attack",
-        "stop",
-        "attack",
-        "neighb",
-        "no more",
-        "attack",
-        "withdraw",
-        "forces",
-        "pull back",
-        "troops",
-        "unilateral",
+        "peace talk",
+        "agree",
+        "diplomatic",
+        "breakthrough",
+        "summit",
+        "peace",
+        "mediati",
+        "accept",
+        "un",
+        "resolution",
         "ceasefire",
-        "reduce",
-        "operation",
-        "de-escalat",
-        "announc",
-        "restrain",
-        "attack",
-        "not attack",
-        "suspend",
-        "operation"
+        "broker",
+        "peace",
+        "negotiat",
+        "breakthrough",
+        "china",
+        "mediat",
+        "peace framework"
       ],
       "applied": "2026-04-26",
       "active": true,
       "severity": "high"
+    },
+    {
+      "factor": "[중대 이벤트] 전선 확대/신규 참전국",
+      "impact": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).",
+      "weight": "-1.3%p (1개월내), -2.0%p (2~3개월), +2.7%p (4~6개월), +2.0%p (7~12개월), +1.3%p (1년초과)",
+      "direction": "lengthen",
+      "detail": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Devastation in Gaza as Israel wages war on Hamas",
+      "keywords": [
+        "new front",
+        "war spread",
+        "conflict expand",
+        "join",
+        "war",
+        "enter",
+        "war",
+        "open",
+        "front",
+        "declare war",
+        "widen",
+        "conflict",
+        "second front",
+        "new theater"
+      ],
+      "applied": "2026-04-26",
+      "active": true,
+      "severity": "moderate"
     },
     {
       "factor": "[중대 이벤트] 대량살상무기(WMD)/핵 위협",
@@ -331,48 +353,24 @@
     }
   ],
   "news_signals": {
-    "ceasefire_mentions": 14.2,
+    "ceasefire_mentions": 10,
     "escalation_mentions": 4,
-    "negotiation_mentions": 28.4,
-    "casualty_mentions": 4,
-    "peace_mentions": 8,
-    "regional_spread": 10.2,
+    "negotiation_mentions": 4,
+    "casualty_mentions": 12,
+    "peace_mentions": 2,
+    "regional_spread": 6,
     "total_articles": 50,
-    "new_articles": 50,
-    "unique_events": 43,
-    "duplicates_removed": 7
+    "new_articles": 49,
+    "unique_events": 39,
+    "duplicates_removed": 11
   },
   "latest_news": [
     {
-      "title": "Timeline: Trump assassination attempts and security incidents",
-      "link": "https://www.aljazeera.com/news/2026/4/26/timeline-trump-assassination-attempts-and-security-incidents?traffic_source=rss",
-      "pubDate": "Sun, 26 Apr 2026 11:24:37 +0000",
-      "source": "aljazeera",
-      "snippet": "Timeline reveals assassination attempts on Trump, including incidents during his presidency and campaign rallies.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "What we know about the suspected ‘assassination attempt’ on Donald Trump",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/4/26/what-we-know-about-the-suspected-assassination-attempt-on-donald-trump?traffic_source=rss",
-      "pubDate": "Sun, 26 Apr 2026 10:50:04 +0000",
-      "source": "aljazeera",
-      "snippet": "A man armed is in custody after trying to rush the White House Correspondents&#039; Dinner, which Trump was attending.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "\"성실한 동창이었는데\" 트럼프 만찬장 총격범 명문대 조교 출신(종합)",
-      "link": "https://www.yna.co.kr/view/AKR20260426036751009",
-      "pubDate": "Sun, 26 Apr 2026 19:32:02 +0900",
+      "title": "이스라엘-레바논 휴전 사실상 무력화…드론 공격에 공습 맞불",
+      "link": "https://www.yna.co.kr/view/AKR20260426058400079",
+      "pubDate": "Sun, 26 Apr 2026 21:36:23 +0900",
       "source": "yonhap",
-      "snippet": "(서울=연합뉴스) 신재우 기자 = 25일(현지시간) 도널드 트럼프 미국 대통령이 참석한 행사장에서 총격을 가한 혐의로 체포된 용의자는 미국 명문...",
+      "snippet": "(카이로=연합뉴스) 김상훈 특파원 = 이스라엘과 레바논 무장 정파 헤즈볼라 사이의 휴전이 서로 휴전 위반을 주장하는 양측의 무력 공방으로 사실상...",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -380,11 +378,11 @@
       "_isDuplicate": false
     },
     {
-      "title": "Iran didn’t have a nuclear weapon before this war. But you can see why it would want one now | Simon Tisdall",
-      "link": "https://www.theguardian.com/commentisfree/2026/apr/26/iran-nuclear-weapon-war-develop-one-now",
-      "pubDate": "Sun, 26 Apr 2026 10:30:23 GMT",
+      "title": "The week around the world in 20 pictures",
+      "link": "https://www.theguardian.com/artanddesign/gallery/2026/apr/24/the-week-around-the-world-in-20-pictures",
+      "pubDate": "Fri, 24 Apr 2026 17:59:31 GMT",
       "source": "guardian",
-      "snippet": "If lawless aggression by ‘might is right’ nuclear-armed powers spreads unchecked, what other option do middle-ranking countries have?With every bomb dropped, ship seized and blood-curdling threat of a",
+      "snippet": "Crisis in the Middle East, Russian strikes in Dnipro, blackouts in Karachi and Manchester City’s Erling Haaland – the past seven days as captured by the world’s leading photojournalists Continue readi",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -392,11 +390,11 @@
       "_isDuplicate": false
     },
     {
-      "title": "At least four people killed in Israeli attacks in Gaza despite ‘ceasefire’",
-      "link": "https://www.aljazeera.com/news/2026/4/26/israeli-attacks-kill-at-least-four-palestinians-in-gaza?traffic_source=rss",
-      "pubDate": "Sun, 26 Apr 2026 10:20:31 +0000",
-      "source": "aljazeera",
-      "snippet": "Israeli forces keep advancing further into western Gaza, slowly expanding the area of their control in the east.",
+      "title": "The Guardian view on Germany, Japan and the end of the postwar order: as US alliances crumble, a new world emerges | Editorial",
+      "link": "https://www.theguardian.com/commentisfree/2026/apr/24/the-guardian-view-on-germany-japan-and-the-end-of-the-postwar-order-as-us-alliances-crumble-a-new-world-emerges",
+      "pubDate": "Fri, 24 Apr 2026 16:48:26 GMT",
+      "source": "guardian",
+      "snippet": "Developments in Berlin and Tokyo show how far the strategic environment has shifted in response to authoritarian threat and American unpredictabilityWhen Donald Trump hosted Sanae Takaichi, the Japane",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -404,115 +402,137 @@
       "_isDuplicate": false
     },
     {
-      "title": "Israel destroys solar panels in south Lebanon",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/4/26/israel-destroys-solar-panels-in-south-lebanon?traffic_source=rss",
-      "pubDate": "Sun, 26 Apr 2026 10:17:53 +0000",
-      "source": "aljazeera",
-      "snippet": "Israel destroys solar panels in south Lebanon",
+      "title": "Could Trump withdraw US support for UK sovereignty of Falklands?",
+      "link": "https://www.theguardian.com/us-news/2026/apr/24/could-donald-trump-withdraw-us-support-uk-sovereignty-falklands",
+      "pubDate": "Fri, 24 Apr 2026 16:37:12 GMT",
+      "source": "guardian",
+      "snippet": "Proposal said to be contained in internal Pentagon email is thought to be bid to punish European countries for failing to assist in war in IranThe White House is considering punishing European countri",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Netanyahu says he was successfully treated for prostate cancer",
+      "link": "https://www.theguardian.com/world/2026/apr/24/benjamin-netanyahu-successfully-treated-for-prostate-cancer-israel",
+      "pubDate": "Fri, 24 Apr 2026 13:40:18 GMT",
+      "source": "guardian",
+      "snippet": "Israeli prime minister says early-stage malignant tumour was discovered during a routine check-upMiddle East crisis – live updatesBenjamin Netanyahu has revealed that he received successful treatment ",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Venice Biennale jury ‘will not award artists from countries facing war crimes charges’",
+      "link": "https://www.theguardian.com/artanddesign/2026/apr/24/venice-biennale-jury-not-award-artists-countries-face-war-crimes-israel-russia",
+      "pubDate": "Fri, 24 Apr 2026 12:04:26 GMT",
+      "source": "guardian",
+      "snippet": "Statement, apparently aimed at Russia and Israel, makes clear it is committed to the defence of human rightsThe jury of the Venice Biennale has said it would not give awards to artists from countries ",
+      "isNew": true,
+      "_sourceCount": 2,
+      "_isDuplicated": true,
+      "_clusterSize": 2,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Pope Leo condemns the killing of protesters in Iran – video",
+      "link": "https://www.theguardian.com/world/video/2026/apr/24/pope-leo-condemns-protester-killing-iran-video",
+      "pubDate": "Fri, 24 Apr 2026 11:15:22 GMT",
+      "source": "guardian",
+      "snippet": "Pope Leo XIV has condemned the killing of protesters in Iran, after the US president, Donald Trump, criticised the Catholic leader last week for not doing so. The pontiff, during a press conference af",
+      "isNew": true,
+      "_sourceCount": 2,
+      "_isDuplicated": true,
+      "_clusterSize": 2,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Is this what war looks like now? | Mohamad Bazzi",
+      "link": "https://www.theguardian.com/us-news/ng-interactive/2026/apr/24/gaza-israel-lebanon-war",
+      "pubDate": "Fri, 24 Apr 2026 11:00:39 GMT",
+      "source": "guardian",
+      "snippet": "Before the war on Gaza, the seed of Israel’s strategy of wholesale destruction was planted in a 2006 war on Lebanon. Today, the playbook repeats itselfShortly after 2pm on 8 April, it seemed that Beir",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Trump claims US has total control over strait of Hormuz after Iran seizes two container ships",
+      "link": "https://www.theguardian.com/us-news/2026/apr/23/trump-claims-us-has-total-control-over-strait-of-hormuz-as-iran-seizes-two-container-ships",
+      "pubDate": "Fri, 24 Apr 2026 02:22:28 GMT",
+      "source": "guardian",
+      "snippet": "US president says Tehran hobbled by infighting as Pentagon reportedly briefs mine clearance may take six monthsMiddle East crisis – live updatesDonald Trump has again said that the US has “total contr",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Trump may talk of regime infighting, but Iran seems united by strategy born of war",
+      "link": "https://www.theguardian.com/world/2026/apr/23/trump-may-talk-of-regime-infighting-but-iran-seems-united-by-strategy-born-of-war",
+      "pubDate": "Thu, 23 Apr 2026 19:18:13 GMT",
+      "source": "guardian",
+      "snippet": "Tensions around US negotiations may reflect mistake of assassinating more pragmatic and experienced figuresMiddle East crisis – live updatesDonald Trump has claimed that the infighting between moderat",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Several dead after Israeli joint security forces raid in West Bank",
+      "link": "https://www.cnn.com/2022/10/25/middleeast/israel-forces-raid-nablus-palestine-intl-hnk/index.html",
+      "pubDate": "Tue, 25 Oct 2022 13:58:46 GMT",
+      "source": "cnn",
+      "snippet": "",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Iran",
+      "link": "https://www.cnn.com/specials/middleeast/iran?utm_source=section",
+      "pubDate": "",
+      "source": "cnn",
+      "snippet": "",
       "isNew": true,
       "_isDuplicate": true,
       "_sourceCount": 1
     },
     {
-      "title": "Iranian Negotiators Set to Return to Pakistan to Try to Revive Truce Talks",
-      "link": "https://www.nytimes.com/2026/04/26/world/middleeast/iranian-negotiators-set-to-return-to-pakistan-to-try-to-revive-truce-talks.html",
-      "pubDate": "Sun, 26 Apr 2026 10:08:49 +0000",
-      "source": "nytimes",
-      "snippet": "It was not clear whether President Trump would send his negotiators for a new round of discussions after abruptly calling off a trip by his top advisers on Saturday.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Yemen’s landmine crisis endures despite truce and de-mining efforts",
-      "link": "https://www.aljazeera.com/features/2026/4/26/yemens-landmine-crisis-endures-despite-truce-and-de-mining-efforts?traffic_source=rss",
-      "pubDate": "Sun, 26 Apr 2026 09:43:42 +0000",
-      "source": "aljazeera",
-      "snippet": "Landmines in Yemen continue to kill and maim, even amid ceasefire efforts and ongoing de-mining initiatives.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Israel’s President, Putting Off Decision on Pardon for Netanyahu, Will Push for Plea Deal",
-      "link": "https://www.nytimes.com/2026/04/26/world/middleeast/israel-netanyahu-pardon-herzog.html",
-      "pubDate": "Sun, 26 Apr 2026 09:20:11 +0000",
-      "source": "nytimes",
-      "snippet": "President Isaac Herzog of Israel has decided not to issue a pardon to Prime Minister Benjamin Netanyahu in his corruption case at this time, and instead will seek mediation, officials say.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "What to know about Cole Allen, alleged WH correspondents’ dinner shooter",
-      "link": "https://www.aljazeera.com/news/2026/4/26/who-is-the-suspected-correspondent-dinner-shooter-cole-tomas-allen?traffic_source=rss",
-      "pubDate": "Sun, 26 Apr 2026 09:08:56 +0000",
-      "source": "aljazeera",
-      "snippet": "Donald Trump evacuated from stage after firing at media gala; suspect Cole Tomas Allen in custody.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Why Fashion Designer Elie Saab Will Never Leave Lebanon, Despite the War",
-      "link": "https://www.nytimes.com/2026/04/26/style/elie-saab-lebanon-middle-east-war.html",
-      "pubDate": "Sun, 26 Apr 2026 09:01:03 +0000",
-      "source": "nytimes",
-      "snippet": "The designer and his son discuss making couture during a bombing and the reason it matters.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Chornobyl’s surviving ‘liquidators’ return 40 years after nuclear disaster",
-      "link": "https://www.aljazeera.com/gallery/2026/4/26/survivors-return-to-chernobyl-40-years-after-devastating-explosion?traffic_source=rss",
-      "pubDate": "Sun, 26 Apr 2026 08:52:51 +0000",
-      "source": "aljazeera",
-      "snippet": "About 600,000 soldiers, firefighters, engineers, miners and medics cleaned up after the nuclear plant explosion.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "How American taxpayers fund Trump’s wars",
-      "link": "https://www.aljazeera.com/video/by-the-numbers-3/2026/4/26/how-american-taxpayers-fund-trumps-wars-3?traffic_source=rss",
-      "pubDate": "Sun, 26 Apr 2026 07:57:42 +0000",
-      "source": "aljazeera",
-      "snippet": "Americans worked 50 days in 2025 to fund war. Contractors got twice the tax money that US troops did.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "World reacts to shooting at White House correspondents’ dinner",
-      "link": "https://www.aljazeera.com/news/2026/4/26/world-reacts-to-shooting-at-white-house-correspondents-dinner?traffic_source=rss",
-      "pubDate": "Sun, 26 Apr 2026 07:57:13 +0000",
-      "source": "aljazeera",
-      "snippet": "US politicians from across the aisle, world leaders condemn the attack and express relief that Trump is safe. ",
+      "title": "Israel",
+      "link": "https://www.cnn.com/specials/middleeast/israel?utm_source=section",
+      "pubDate": "",
+      "source": "cnn",
+      "snippet": "",
       "isNew": true,
       "_isDuplicate": true,
       "_sourceCount": 1
     },
     {
-      "title": "Anthony Edwards injures knee in Timberwolves’ Game 4 win against Nuggets",
-      "link": "https://www.aljazeera.com/sports/2026/4/26/anthony-edwards-injures-knee-in-timberwolves-game-4-win-against-nuggets?traffic_source=rss",
-      "pubDate": "Sun, 26 Apr 2026 07:42:38 +0000",
-      "source": "aljazeera",
-      "snippet": "Edward&#039;s teammate Donte DiVincenzo was also hurt as Minnesota rallied to beat Denver and take a 3-1 playoff series lead.",
+      "title": "June 17, 2024 - Israel-Gaza news",
+      "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-17-24/index.html",
+      "pubDate": "",
+      "source": "cnn",
+      "snippet": "Israeli Prime Minister Benjamin Netanyahu has disbanded the country's war cabinet, an Israeli official says, just over a week after opposition leader Benny Gantz withdrew from the body.",
+      "isNew": true,
+      "_isDuplicate": true,
+      "_sourceCount": 1
+    },
+    {
+      "title": "June 13, 2024 Israel-Hamas war",
+      "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-13-24/index.html",
+      "pubDate": "",
+      "source": "cnn",
+      "snippet": "The US-backed Gaza ceasefire proposal doesn't meet Hamas' demands for an end to the war, a senior official has told CNN. Osama Hamdan also said that \"no one has an idea\" how many of the hostages held ",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -523,121 +543,218 @@
   "news_digest": {
     "categories": [
       {
-        "category_id": "diplomacy",
-        "category_name": "외교/협상",
-        "category_icon": "🤝",
-        "count": 12,
-        "new_count": 12,
+        "category_id": "military",
+        "category_name": "군사 작전",
+        "category_icon": "⚔️",
+        "count": 9,
+        "new_count": 9,
         "articles": [
           {
-            "title": "Lebanese Ask, ‘What Cease-Fire?’ as Israel and Hezbollah Trade Attacks in the South",
-            "link": "https://www.nytimes.com/2026/04/25/world/middleeast/lebanon-israel-cease-fire.html",
-            "source": "nytimes",
+            "title": "이스라엘-레바논 휴전 사실상 무력화…드론 공격에 공습 맞불",
+            "link": "https://www.yna.co.kr/view/AKR20260426058400079",
+            "source": "yonhap",
             "sources": [
-              "nytimes",
-              "aljazeera"
+              "yonhap"
             ],
-            "pubDate": "Sat, 25 Apr 2026 14:18:53 +0000",
-            "snippet": "The fragile truce in Lebanon was extended after talks in Washington this week but has come under threat as Israel and Hezbollah have traded attacks.",
+            "pubDate": "Sun, 26 Apr 2026 21:36:23 +0900",
+            "snippet": "(카이로=연합뉴스) 김상훈 특파원 = 이스라엘과 레바논 무장 정파 헤즈볼라 사이의 휴전이 서로 휴전 위반을 주장하는 양측의 무력 공방으로 사실상...",
             "isNew": true
           },
           {
-            "title": "Iranian Negotiators Set to Return to Pakistan to Try to Revive Truce Talks",
-            "link": "https://www.nytimes.com/2026/04/26/world/middleeast/iranian-negotiators-set-to-return-to-pakistan-to-try-to-revive-truce-talks.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Sun, 26 Apr 2026 10:08:49 +0000",
-            "snippet": "It was not clear whether President Trump would send his negotiators for a new round of discussions after abruptly calling off a trip by his top advisers on Saturday.",
-            "isNew": true
-          },
-          {
-            "title": "Yemen’s landmine crisis endures despite truce and de-mining efforts",
-            "link": "https://www.aljazeera.com/features/2026/4/26/yemens-landmine-crisis-endures-despite-truce-and-de-mining-efforts?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sun, 26 Apr 2026 09:43:42 +0000",
-            "snippet": "Landmines in Yemen continue to kill and maim, even amid ceasefire efforts and ongoing de-mining initiatives.",
-            "isNew": true
-          },
-          {
-            "title": "We can make sure another Chornobyl disaster does not happen, here is how",
-            "link": "https://www.aljazeera.com/opinions/2026/4/26/we-can-make-sure-another-chornobyl-disaster-does-not-happen-here-is-how?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sun, 26 Apr 2026 07:16:05 +0000",
-            "snippet": "In war and peace, decentralised renewable energy systems provide a safe and resilient alternative.",
-            "isNew": true
-          },
-          {
-            "title": "Iran war: What’s happening on day 58 as Tehran-Washington talks stall?",
-            "link": "https://www.aljazeera.com/news/2026/4/26/iran-war-whats-happening-on-day-58-as-tehran-washington-talks-stall?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sun, 26 Apr 2026 06:29:14 +0000",
-            "snippet": "Trump calls off planned trip to Pakistan by his envoys, in the latest setback to efforts to end the war with Iran.",
-            "isNew": true
-          },
-          {
-            "title": "Hundreds of Israelis rally as US-Iran peace talks stall",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/4/26/hundreds-of-israelis-rally-as-us-iran-peace-talks-stall?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sun, 26 Apr 2026 02:00:32 +0000",
-            "snippet": "Crowds of protesters took to the streets of Tel Aviv on Sunday, amid fears the US-Israeli war on Iran will resume.",
-            "isNew": true
-          },
-          {
-            "title": "US president cancels envoy trip to Pakistan for ceasefire talks – as it happened",
-            "link": "https://www.theguardian.com/world/live/2026/apr/25/middle-east-crisis-live-witkoff-and-kushner-head-to-pakistan-for-iran-negotiations",
+            "title": "The week around the world in 20 pictures",
+            "link": "https://www.theguardian.com/artanddesign/gallery/2026/apr/24/the-week-around-the-world-in-20-pictures",
             "source": "guardian",
             "sources": [
               "guardian"
             ],
-            "pubDate": "Sun, 26 Apr 2026 01:13:59 GMT",
-            "snippet": "This blog is now closedWe have some images coming through the newswires of Iran’s foreign minister, Abbas Araghchi, speaking with Pakistan’s army chief, Asim Munir, and other officials in Islamabad th",
+            "pubDate": "Fri, 24 Apr 2026 17:59:31 GMT",
+            "snippet": "Crisis in the Middle East, Russian strikes in Dnipro, blackouts in Karachi and Manchester City’s Erling Haaland – the past seven days as captured by the world’s leading photojournalists Continue readi",
             "isNew": true
           },
           {
-            "title": "Trump Cancels Witkoff and Kushner’s Trip for Iran Talks, Saying, ‘We Have All the Cards.’",
-            "link": "https://www.nytimes.com/2026/04/25/world/middleeast/trump-witkoff-kushner-pakistan-trip-canceled.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Sun, 26 Apr 2026 00:33:39 +0000",
-            "snippet": "The last-minute scuttling of the trip to Pakistan was the latest sign of how far apart the two sides are on reaching a deal to end the Iran war.",
-            "isNew": true
-          },
-          {
-            "title": "Trump cancels US envoys' trip to Pakistan for talks on Iran war",
-            "link": "https://www.bbc.com/news/articles/c4g6nyvl29po?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
-            "sources": [
-              "bbc"
-            ],
-            "pubDate": "Sat, 25 Apr 2026 21:34:12 GMT",
-            "snippet": "Iran had earlier said there were no plans for a direct meeting with a US delegation led by Steve Witkoff and Jared Kushner.",
-            "isNew": true
-          },
-          {
-            "title": "Trump cancels his envoys’ Pakistan trip for Iran ceasefire negotiations",
-            "link": "https://www.theguardian.com/world/2026/apr/25/trump-cancels-envoys-pakistan-trip-iran-talks",
+            "title": "Could Trump withdraw US support for UK sovereignty of Falklands?",
+            "link": "https://www.theguardian.com/us-news/2026/apr/24/could-donald-trump-withdraw-us-support-uk-sovereignty-falklands",
             "source": "guardian",
             "sources": [
               "guardian"
             ],
-            "pubDate": "Sat, 25 Apr 2026 17:02:43 GMT",
-            "snippet": "Steve Witkoff and Jared Kushner were to travel to Islamabad to attempt to revive ceasefire negotiationsDonald Trump said he has told US envoys not to go to Pakistan for more talks with Iran, shortly a",
+            "pubDate": "Fri, 24 Apr 2026 16:37:12 GMT",
+            "snippet": "Proposal said to be contained in internal Pentagon email is thought to be bid to punish European countries for failing to assist in war in IranThe White House is considering punishing European countri",
+            "isNew": true
+          },
+          {
+            "title": "June 12, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-12-24-intl/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "Israel launched strikes on Al-Mawasi in southern Gaza early Thursday, bombarding an area it had previously designated as a \"safe zone\" by land, sea and air, according to the official Palestinian news ",
+            "isNew": true
+          },
+          {
+            "title": "June 6, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-06-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "Dozens of people were killed in an Israeli airstrike on a United Nations-run school in central Gaza, authorities said, in an attack that CNN analysis found was conducted with a US-made weapon.",
+            "isNew": true
+          },
+          {
+            "title": "May 29, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-29-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "The Israeli military says it established \"operational control\" over the Philadelphi Corridor, a 14-kilometer (8.7 miles) strip of land along the border between Gaza and Egypt.",
+            "isNew": true
+          },
+          {
+            "title": "May 24, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-24-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "The United Nations' top court has ordered Israel to immediately halt its controversial military operation in the southern Gaza city of Rafah, further increasing international pressure on Israel over i",
+            "isNew": true
+          },
+          {
+            "title": "Iran didn’t have a nuclear weapon before this war. But you can see why it would want one now | Simon Tisdall",
+            "link": "https://www.theguardian.com/commentisfree/2026/apr/26/iran-nuclear-weapon-war-develop-one-now",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Sun, 26 Apr 2026 10:30:23 GMT",
+            "snippet": "If lawless aggression by ‘might is right’ nuclear-armed powers spreads unchecked, what other option do middle-ranking countries have?With every bomb dropped, ship seized and blood-curdling threat of a",
+            "isNew": true
+          },
+          {
+            "title": "At least four people killed in Israeli attacks in Gaza despite ‘ceasefire’",
+            "link": "https://www.aljazeera.com/news/2026/4/26/israeli-attacks-kill-at-least-four-palestinians-in-gaza?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Sun, 26 Apr 2026 10:20:31 +0000",
+            "snippet": "Israeli forces keep advancing further into western Gaza, slowly expanding the area of their control in the east.",
+            "isNew": true
+          }
+        ]
+      },
+      {
+        "category_id": "humanitarian",
+        "category_name": "인도주의/피해",
+        "category_icon": "🏥",
+        "count": 9,
+        "new_count": 9,
+        "articles": [
+          {
+            "title": "Netanyahu says he was successfully treated for prostate cancer",
+            "link": "https://www.theguardian.com/world/2026/apr/24/benjamin-netanyahu-successfully-treated-for-prostate-cancer-israel",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Fri, 24 Apr 2026 13:40:18 GMT",
+            "snippet": "Israeli prime minister says early-stage malignant tumour was discovered during a routine check-upMiddle East crisis – live updatesBenjamin Netanyahu has revealed that he received successful treatment ",
+            "isNew": true
+          },
+          {
+            "title": "Venice Biennale jury ‘will not award artists from countries facing war crimes charges’",
+            "link": "https://www.theguardian.com/artanddesign/2026/apr/24/venice-biennale-jury-not-award-artists-countries-face-war-crimes-israel-russia",
+            "source": "guardian",
+            "sources": [
+              "guardian",
+              "cnn"
+            ],
+            "pubDate": "Fri, 24 Apr 2026 12:04:26 GMT",
+            "snippet": "Statement, apparently aimed at Russia and Israel, makes clear it is committed to the defence of human rightsThe jury of the Venice Biennale has said it would not give awards to artists from countries ",
+            "isNew": true
+          },
+          {
+            "title": "Trump claims US has total control over strait of Hormuz after Iran seizes two container ships",
+            "link": "https://www.theguardian.com/us-news/2026/apr/23/trump-claims-us-has-total-control-over-strait-of-hormuz-as-iran-seizes-two-container-ships",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Fri, 24 Apr 2026 02:22:28 GMT",
+            "snippet": "US president says Tehran hobbled by infighting as Pentagon reportedly briefs mine clearance may take six monthsMiddle East crisis – live updatesDonald Trump has again said that the US has “total contr",
+            "isNew": true
+          },
+          {
+            "title": "Several dead after Israeli joint security forces raid in West Bank",
+            "link": "https://www.cnn.com/2022/10/25/middleeast/israel-forces-raid-nablus-palestine-intl-hnk/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "Tue, 25 Oct 2022 13:58:46 GMT",
+            "snippet": "",
+            "isNew": true
+          },
+          {
+            "title": "June 9, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-09-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "Key Israeli war cabinet member Benny Gantz quit Prime Minister Benjamin Netanyahu's government Sunday. Meanwhile, the death toll from Israel's hostage rescue in central Gaza keeps rising. Follow for l",
+            "isNew": true
+          },
+          {
+            "title": "June 8, 2024 - Israel-Gaza news",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-08-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "The Israeli military says it rescued four hostages from central Gaza on Saturday. Palestinians report scenes of horror on the ground, and Gaza hospital officials say more than 200 people were killed.",
+            "isNew": true
+          },
+          {
+            "title": "May 19, 2024 - Israel-Gaza news",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-19-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "An Israeli airstrike on a refugee camp in central Gaza has killed at least 35 people, including seven children, according to hospital officials. Meanwhile, Israeli war cabinet divisions are spilling i",
+            "isNew": true
+          },
+          {
+            "title": "Devastation in Gaza as Israel wages war on Hamas",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-18-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "Gaza faces a \"dire\" food situation as barely more than 300 aid trucks have entered the strip since Israel began its offensive in Rafah, a UN agency said in a report published Friday. Follow live updat",
+            "isNew": true
+          },
+          {
+            "title": "May 14, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-14-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "Amid signs that Israel may launch a full-scale incursion in Rafah, aid agencies are warning any escalation in the southern Gaza city risks exacerbating the already deteriorating humanitarian situation",
             "isNew": true
           }
         ]
@@ -646,9 +763,65 @@
         "category_id": "politics",
         "category_name": "국내 정치",
         "category_icon": "🏛️",
-        "count": 10,
-        "new_count": 10,
+        "count": 9,
+        "new_count": 9,
         "articles": [
+          {
+            "title": "Pope Leo condemns the killing of protesters in Iran – video",
+            "link": "https://www.theguardian.com/world/video/2026/apr/24/pope-leo-condemns-protester-killing-iran-video",
+            "source": "guardian",
+            "sources": [
+              "guardian",
+              "cnn"
+            ],
+            "pubDate": "Fri, 24 Apr 2026 11:15:22 GMT",
+            "snippet": "Pope Leo XIV has condemned the killing of protesters in Iran, after the US president, Donald Trump, criticised the Catholic leader last week for not doing so. The pontiff, during a press conference af",
+            "isNew": true
+          },
+          {
+            "title": "June 1, 2024 - Israel-Gaza news",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-01-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "President Joe Biden has laid out a three-phase proposal to end the conflict in Gaza, as global condemnation of Israel's offensive in Rafah grows.",
+            "isNew": true
+          },
+          {
+            "title": "May 21, 2024 Israel-Hamas war, Iran president death news",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-21-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "Prime Minister Benjamin Netanyahu blasted the charges brought by the International Criminal Court against himself and Israel's defense minister as \"beyond outrageous\" in an interview Tuesday with CNN'",
+            "isNew": true
+          },
+          {
+            "title": "May 19, 2024 helicopter crash involving Iranian president",
+            "link": "https://www.cnn.com/middleeast/live-news/raisi-iran-president-helicopter-crash/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "A helicopter carrying Iranian President Ebrahim Raisi crashed while he was visiting a northern region in the country Sunday, according to the Iranian state news agency IRNA.",
+            "isNew": true
+          },
+          {
+            "title": "트럼프 집권 후 첫 피격 위기…2년 만에 벌써 3번째(종합)",
+            "link": "https://www.yna.co.kr/view/AKR20260426031751075",
+            "source": "yonhap",
+            "sources": [
+              "yonhap"
+            ],
+            "pubDate": "Sun, 26 Apr 2026 21:05:08 +0900",
+            "snippet": "(로스앤젤레스·서울=연합뉴스) 김경윤 특파원 신재우 기자 = 25일(현지시간) 미국 백악관 출입기자단 만찬 행사장에서 벌어진 총격 사건은 이 행...",
+            "isNew": true
+          },
           {
             "title": "Timeline: Trump assassination attempts and security incidents",
             "link": "https://www.aljazeera.com/news/2026/4/26/timeline-trump-assassination-attempts-and-security-incidents?traffic_source=rss",
@@ -683,274 +856,78 @@
             "isNew": true
           },
           {
-            "title": "Israel’s President, Putting Off Decision on Pardon for Netanyahu, Will Push for Plea Deal",
-            "link": "https://www.nytimes.com/2026/04/26/world/middleeast/israel-netanyahu-pardon-herzog.html",
-            "source": "nytimes",
+            "title": "각국 지도자들 \"정치적 폭력 규탄…트럼프 등 무사해 다행\"(종합)",
+            "link": "https://www.yna.co.kr/view/AKR20260426049800009",
+            "source": "yonhap",
             "sources": [
-              "nytimes"
+              "yonhap"
             ],
-            "pubDate": "Sun, 26 Apr 2026 09:20:11 +0000",
-            "snippet": "President Isaac Herzog of Israel has decided not to issue a pardon to Prime Minister Benjamin Netanyahu in his corruption case at this time, and instead will seek mediation, officials say.",
-            "isNew": true
-          },
-          {
-            "title": "What to know about Cole Allen, alleged WH correspondents’ dinner shooter",
-            "link": "https://www.aljazeera.com/news/2026/4/26/who-is-the-suspected-correspondent-dinner-shooter-cole-tomas-allen?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sun, 26 Apr 2026 09:08:56 +0000",
-            "snippet": "Donald Trump evacuated from stage after firing at media gala; suspect Cole Tomas Allen in custody.",
-            "isNew": true
-          },
-          {
-            "title": "Trump updates: Suspect arrested after shooting at correspondents’ dinner",
-            "link": "https://www.aljazeera.com/news/liveblog/2026/4/26/trump-live-us-president-safe-after-shots-fired-at-correspondents-dinner?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sun, 26 Apr 2026 02:10:00 +0000",
-            "snippet": "These were the updates from the shooting at the White House correspondents dinner in Washington, DC, on April 25, 2026.",
-            "isNew": true
-          },
-          {
-            "title": "Trump confirms officer shot at White House Correspondents’ gala",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/4/26/trump-confirms-officer-shot-at-white-house-correspondents-gala?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sun, 26 Apr 2026 03:57:41 +0000",
-            "snippet": "US President Donald Trump has called a shooter who tried to rush the White House Correspondents’ gala, ‘a sick person.’",
-            "isNew": true
-          },
-          {
-            "title": "Trump Seeks to Abolish Iran’s Nuclear Stockpile, a Problem He Helped Create",
-            "link": "https://www.nytimes.com/2026/04/25/us/politics/trump-iran-nuclear.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Sun, 26 Apr 2026 02:20:18 +0000",
-            "snippet": "President Trump withdrew from the Obama-era nuclear accord in 2018, saying it was the worst deal ever. But Iran responded with an enrichment spree that haunts the negotiations to this day.",
-            "isNew": true
-          },
-          {
-            "title": "Under Trump, Green Card Seekers Face New Scrutiny for Views on Israel",
-            "link": "https://www.nytimes.com/2026/04/25/us/politics/trump-green-cards-scrutiny.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Sat, 25 Apr 2026 09:02:37 +0000",
-            "snippet": "In guidance to immigration officers, the administration describes participating in pro-Palestinian protests and criticizing Israel as “overwhelmingly negative” factors.",
-            "isNew": true
-          },
-          {
-            "title": "Rubio’s Absence From Iran Talks Highlights Stay-at-Home Role",
-            "link": "https://www.nytimes.com/2026/04/24/us/politics/marco-rubio-absence-iran-talks.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Sat, 25 Apr 2026 05:20:04 +0000",
-            "snippet": "President Trump has outsourced much of his diplomacy to others, while Mr. Rubio focuses on his second job as national security adviser.",
+            "pubDate": "Sun, 26 Apr 2026 19:12:59 +0900",
+            "snippet": "(파리·서울=연합뉴스) 송진원 특파원 고일환 기자 = 도널드 트럼프 미국 대통령이 참석한 백악관 출입기자단 만찬 행사장에서 총격 사건이 발생했다...",
             "isNew": true
           }
         ]
       },
       {
-        "category_id": "military",
-        "category_name": "군사 작전",
-        "category_icon": "⚔️",
-        "count": 8,
-        "new_count": 8,
+        "category_id": "diplomacy",
+        "category_name": "외교/협상",
+        "category_icon": "🤝",
+        "count": 5,
+        "new_count": 5,
         "articles": [
           {
-            "title": "Iran didn’t have a nuclear weapon before this war. But you can see why it would want one now | Simon Tisdall",
-            "link": "https://www.theguardian.com/commentisfree/2026/apr/26/iran-nuclear-weapon-war-develop-one-now",
+            "title": "Trump may talk of regime infighting, but Iran seems united by strategy born of war",
+            "link": "https://www.theguardian.com/world/2026/apr/23/trump-may-talk-of-regime-infighting-but-iran-seems-united-by-strategy-born-of-war",
             "source": "guardian",
             "sources": [
               "guardian"
             ],
-            "pubDate": "Sun, 26 Apr 2026 10:30:23 GMT",
-            "snippet": "If lawless aggression by ‘might is right’ nuclear-armed powers spreads unchecked, what other option do middle-ranking countries have?With every bomb dropped, ship seized and blood-curdling threat of a",
+            "pubDate": "Thu, 23 Apr 2026 19:18:13 GMT",
+            "snippet": "Tensions around US negotiations may reflect mistake of assassinating more pragmatic and experienced figuresMiddle East crisis – live updatesDonald Trump has claimed that the infighting between moderat",
             "isNew": true
           },
           {
-            "title": "At least four people killed in Israeli attacks in Gaza despite ‘ceasefire’",
-            "link": "https://www.aljazeera.com/news/2026/4/26/israeli-attacks-kill-at-least-four-palestinians-in-gaza?traffic_source=rss",
-            "source": "aljazeera",
+            "title": "June 13, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-13-24/index.html",
+            "source": "cnn",
             "sources": [
-              "aljazeera"
+              "cnn"
             ],
-            "pubDate": "Sun, 26 Apr 2026 10:20:31 +0000",
-            "snippet": "Israeli forces keep advancing further into western Gaza, slowly expanding the area of their control in the east.",
+            "pubDate": "",
+            "snippet": "The US-backed Gaza ceasefire proposal doesn't meet Hamas' demands for an end to the war, a senior official has told CNN. Osama Hamdan also said that \"no one has an idea\" how many of the hostages held ",
             "isNew": true
           },
           {
-            "title": "Why Fashion Designer Elie Saab Will Never Leave Lebanon, Despite the War",
-            "link": "https://www.nytimes.com/2026/04/26/style/elie-saab-lebanon-middle-east-war.html",
+            "title": "June 10, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-10-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "The UN Security Council adopted a resolution proposed by the United States for a permanent ceasefire and release of the hostages in Gaza.",
+            "isNew": true
+          },
+          {
+            "title": "이란 외무, 오만 술탄 예방…\"호르무즈 안전 항행 등 논의\"",
+            "link": "https://www.yna.co.kr/view/AKR20260426057100079",
+            "source": "yonhap",
+            "sources": [
+              "yonhap"
+            ],
+            "pubDate": "Sun, 26 Apr 2026 20:42:07 +0900",
+            "snippet": "(카이로=연합뉴스) 김상훈 특파원 = 아바스 아라그치 이란 외무장관이 미국과의 종전 협상 중재국 파키스탄에 이어 오만을 방문해 술탄을 예방하고 ...",
+            "isNew": true
+          },
+          {
+            "title": "Iranian Negotiators Set to Return to Pakistan to Try to Revive Truce Talks",
+            "link": "https://www.nytimes.com/2026/04/26/world/middleeast/iranian-negotiators-set-to-return-to-pakistan-to-try-to-revive-truce-talks.html",
             "source": "nytimes",
             "sources": [
               "nytimes"
             ],
-            "pubDate": "Sun, 26 Apr 2026 09:01:03 +0000",
-            "snippet": "The designer and his son discuss making couture during a bombing and the reason it matters.",
-            "isNew": true
-          },
-          {
-            "title": "Chornobyl’s surviving ‘liquidators’ return 40 years after nuclear disaster",
-            "link": "https://www.aljazeera.com/gallery/2026/4/26/survivors-return-to-chernobyl-40-years-after-devastating-explosion?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sun, 26 Apr 2026 08:52:51 +0000",
-            "snippet": "About 600,000 soldiers, firefighters, engineers, miners and medics cleaned up after the nuclear plant explosion.",
-            "isNew": true
-          },
-          {
-            "title": "How American taxpayers fund Trump’s wars",
-            "link": "https://www.aljazeera.com/video/by-the-numbers-3/2026/4/26/how-american-taxpayers-fund-trumps-wars-3?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sun, 26 Apr 2026 07:57:42 +0000",
-            "snippet": "Americans worked 50 days in 2025 to fund war. Contractors got twice the tax money that US troops did.",
-            "isNew": true
-          },
-          {
-            "title": "Families of Iranian Children Killed in School Airstrike Pen Letter to Pope",
-            "link": "https://www.nytimes.com/2026/04/25/world/middleeast/families-of-iranian-children-killed-in-school-airstrike-pen-letter-to-pope.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Sat, 25 Apr 2026 21:55:18 +0000",
-            "snippet": "Pope Leo said he has seen the letter from the parents of more than 100 children killed in the strike, which a preliminary inquiry found resulted from a mistake by the U.S. military.",
-            "isNew": true
-          },
-          {
-            "title": "The week around the world in 20 pictures",
-            "link": "https://www.theguardian.com/artanddesign/gallery/2026/apr/24/the-week-around-the-world-in-20-pictures",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Fri, 24 Apr 2026 17:59:31 GMT",
-            "snippet": "Crisis in the Middle East, Russian strikes in Dnipro, blackouts in Karachi and Manchester City’s Erling Haaland – the past seven days as captured by the world’s leading photojournalists Continue readi",
-            "isNew": true
-          },
-          {
-            "title": "Could Trump withdraw US support for UK sovereignty of Falklands?",
-            "link": "https://www.theguardian.com/us-news/2026/apr/24/could-donald-trump-withdraw-us-support-uk-sovereignty-falklands",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Fri, 24 Apr 2026 16:37:12 GMT",
-            "snippet": "Proposal said to be contained in internal Pentagon email is thought to be bid to punish European countries for failing to assist in war in IranThe White House is considering punishing European countri",
-            "isNew": true
-          }
-        ]
-      },
-      {
-        "category_id": "economy",
-        "category_name": "경제 영향",
-        "category_icon": "📊",
-        "count": 4,
-        "new_count": 4,
-        "articles": [
-          {
-            "title": "Iran and U.S. Blockades in the Strait of Hormuz: What to Know",
-            "link": "https://www.nytimes.com/2026/04/24/world/middleeast/iran-us-strait-of-hormuz-blockade.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Sat, 25 Apr 2026 00:28:36 +0000",
-            "snippet": "The foes are trying to exert control over the narrow passageway. Most ships aren’t moving. Here’s what to know.",
-            "isNew": true
-          },
-          {
-            "title": "U.S. Unveils More Sanctions Targeting Iran’s Shadow Fleet",
-            "link": "https://www.nytimes.com/2026/04/24/world/middleeast/iran-sanctions-oil-tankers-shadow-fleet.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Fri, 24 Apr 2026 22:24:33 +0000",
-            "snippet": "The Treasury Department also targeted a top independent Chinese refinery that it said was a major buyer of Iranian petroleum.",
-            "isNew": true
-          },
-          {
-            "title": "The Guardian view on Germany, Japan and the end of the postwar order: as US alliances crumble, a new world emerges | Editorial",
-            "link": "https://www.theguardian.com/commentisfree/2026/apr/24/the-guardian-view-on-germany-japan-and-the-end-of-the-postwar-order-as-us-alliances-crumble-a-new-world-emerges",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Fri, 24 Apr 2026 16:48:26 GMT",
-            "snippet": "Developments in Berlin and Tokyo show how far the strategic environment has shifted in response to authoritarian threat and American unpredictabilityWhen Donald Trump hosted Sanae Takaichi, the Japane",
-            "isNew": true
-          },
-          {
-            "title": "Trump Extends Waiver Allowing Foreign Ships to Move Goods Between U.S. Ports",
-            "link": "https://www.nytimes.com/2026/04/24/world/middleeast/trump-extends-waiver-allowing-foreign-ships-to-move-goods-between-us-ports.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Fri, 24 Apr 2026 16:05:08 +0000",
-            "snippet": "The move was intended to ensure the flow of fuel in the United States, but some economists say it might reduce gas prices for consumers only a small amount.",
-            "isNew": true
-          }
-        ]
-      },
-      {
-        "category_id": "humanitarian",
-        "category_name": "인도주의/피해",
-        "category_icon": "🏥",
-        "count": 3,
-        "new_count": 3,
-        "articles": [
-          {
-            "title": "Hanged under the cover of war: letters and videos tell stories of Iran’s death row victims",
-            "link": "https://www.theguardian.com/world/2026/apr/25/hanged-under-the-cover-of-war-letters-and-videos-tell-stories-of-iran-death-row-victims",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Sat, 25 Apr 2026 05:00:36 GMT",
-            "snippet": "Testimony emerges from Babak Alipour, who spent three years on death row before being taken to gallows in March Writing from his cell in the Rajai Shahr prison in the northern Iranian city of Karaj, B",
-            "isNew": true
-          },
-          {
-            "title": "Venice Biennale jury ‘will not award artists from countries facing war crimes charges’",
-            "link": "https://www.theguardian.com/artanddesign/2026/apr/24/venice-biennale-jury-not-award-artists-countries-face-war-crimes-israel-russia",
-            "source": "guardian",
-            "sources": [
-              "guardian",
-              "nytimes"
-            ],
-            "pubDate": "Fri, 24 Apr 2026 12:04:26 GMT",
-            "snippet": "Statement, apparently aimed at Russia and Israel, makes clear it is committed to the defence of human rightsThe jury of the Venice Biennale has said it would not give awards to artists from countries ",
-            "isNew": true
-          },
-          {
-            "title": "Netanyahu says he was successfully treated for prostate cancer",
-            "link": "https://www.theguardian.com/world/2026/apr/24/benjamin-netanyahu-successfully-treated-for-prostate-cancer-israel",
-            "source": "guardian",
-            "sources": [
-              "guardian",
-              "bbc"
-            ],
-            "pubDate": "Fri, 24 Apr 2026 13:40:18 GMT",
-            "snippet": "Israeli prime minister says early-stage malignant tumour was discovered during a routine check-upMiddle East crisis – live updatesBenjamin Netanyahu has revealed that he received successful treatment ",
+            "pubDate": "Sun, 26 Apr 2026 10:08:49 +0000",
+            "snippet": "It was not clear whether President Trump would send his negotiators for a new round of discussions after abruptly calling off a trip by his top advisers on Saturday.",
             "isNew": true
           }
         ]
@@ -963,36 +940,36 @@
         "new_count": 3,
         "articles": [
           {
-            "title": "On Iran’s Border, Cooking Oil Trade Is a Snapshot of the Country’s Struggles",
-            "link": "https://www.nytimes.com/2026/04/25/world/middleeast/iran-turkey-cooking-oil.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Sat, 25 Apr 2026 08:26:54 +0000",
-            "snippet": "The war has exacerbated Iran’s economic crisis, forcing many to cross the border into Turkey to buy the most basic goods.",
-            "isNew": true
-          },
-          {
-            "title": "Ukraine war briefing: Zelenskyy holds talks in Azerbaijan, Saudi Arabia on ‘security and energy’",
-            "link": "https://www.theguardian.com/world/2026/apr/25/ukraine-war-briefing-zelenskyy-holds-talks-in-azerbaijan-saudi-arabia-on-security-and-energy",
+            "title": "Is this what war looks like now? | Mohamad Bazzi",
+            "link": "https://www.theguardian.com/us-news/ng-interactive/2026/apr/24/gaza-israel-lebanon-war",
             "source": "guardian",
             "sources": [
               "guardian"
             ],
-            "pubDate": "Sat, 25 Apr 2026 01:02:52 GMT",
-            "snippet": "Ukraine ‘actively developing’ regional security arrangements for defence, food and energy, Zelenskyy says; Russia and Ukraine swap prisoners. What we know on day 1,522Ukrainian President Volodymyr Zel",
+            "pubDate": "Fri, 24 Apr 2026 11:00:39 GMT",
+            "snippet": "Before the war on Gaza, the seed of Israel’s strategy of wholesale destruction was planted in a 2006 war on Lebanon. Today, the playbook repeats itselfShortly after 2pm on 8 April, it seemed that Beir",
             "isNew": true
           },
           {
-            "title": "Israel-Lebanon Cease-Fire Tested by Escalating Clashes",
-            "link": "https://www.nytimes.com/2026/04/24/world/middleeast/israel-lebanon-fighting-ceasefire.html",
-            "source": "nytimes",
+            "title": "June 5, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-05-24/index.html",
+            "source": "cnn",
             "sources": [
-              "nytimes"
+              "cnn"
             ],
-            "pubDate": "Fri, 24 Apr 2026 18:56:29 +0000",
-            "snippet": "The U.S.-mediated cease-fire halted an all-out war between Israel and Hezbollah, but their intensifying attacks on each other could put the truce at risk.",
+            "pubDate": "",
+            "snippet": "Tensions are ramping up at the Israel-Lebanon border, with Hezbollah claiming responsibility for a Wednesday evening attack in northern Israel that left multiple people injured.",
+            "isNew": true
+          },
+          {
+            "title": "Israel destroys solar panels in south Lebanon",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/4/26/israel-destroys-solar-panels-in-south-lebanon?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Sun, 26 Apr 2026 10:17:53 +0000",
+            "snippet": "Israel destroys solar panels in south Lebanon",
             "isNew": true
           }
         ]
@@ -1005,192 +982,107 @@
         "new_count": 3,
         "articles": [
           {
-            "title": "Anthony Edwards injures knee in Timberwolves’ Game 4 win against Nuggets",
-            "link": "https://www.aljazeera.com/sports/2026/4/26/anthony-edwards-injures-knee-in-timberwolves-game-4-win-against-nuggets?traffic_source=rss",
-            "source": "aljazeera",
+            "title": "May 30, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-30-24/index.html",
+            "source": "cnn",
             "sources": [
-              "aljazeera"
+              "cnn"
             ],
-            "pubDate": "Sun, 26 Apr 2026 07:42:38 +0000",
-            "snippet": "Edward&#039;s teammate Donte DiVincenzo was also hurt as Minnesota rallied to beat Denver and take a 3-1 playoff series lead.",
+            "pubDate": "",
+            "snippet": "The war in Gaza will likely continue until at least the end of the year, an Israeli official warned.",
             "isNew": true
           },
           {
-            "title": "Israeli police investigate after officers 'cut Palestinian flag' from skullcap",
-            "link": "https://www.bbc.com/news/articles/cz67qjn48eqo?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
+            "title": "May 22, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/iran-israel-hamas-war-gaza-news-05-22-24/index.html",
+            "source": "cnn",
             "sources": [
-              "bbc"
+              "cnn"
             ],
-            "pubDate": "Fri, 24 Apr 2026 16:20:10 GMT",
-            "snippet": "The British Israeli man says he was detained after someone took offence at his kippah embroidered with Israeli and Palestinian flags.",
+            "pubDate": "",
+            "snippet": "Spain, Norway and Ireland announced plans to formally recognize a Palestinian state, in a move that is likely to bolster the global Palestinian cause but strain relations with Israel.",
             "isNew": true
           },
           {
-            "title": "Netanyahu Reveals He Had Prostate Cancer and Underwent Radiation Therapy",
-            "link": "https://www.nytimes.com/2026/04/24/world/middleeast/netanyahu-cancer-treatment.html",
-            "source": "nytimes",
+            "title": "Pete Hegseth’s Iran war messaging echoes sermons from his extremist church",
+            "link": "https://www.theguardian.com/us-news/2026/apr/26/pete-hegseth-iran-war-christian-extremism",
+            "source": "guardian",
             "sources": [
-              "nytimes"
+              "guardian"
             ],
-            "pubDate": "Fri, 24 Apr 2026 15:51:10 +0000",
-            "snippet": "The Israeli leader had surgery in 2024 for an enlarged prostate. More recently, follow-up care detected a tumor, his office disclosed on Friday.",
+            "pubDate": "Sun, 26 Apr 2026 12:00:13 GMT",
+            "snippet": "US defense secretary’s openly Christian nationalist church continues to have growing influence in the White HouseOn 17 April, at a briefing on the Iran war, secretary of defense Pete Hegseth told repo",
+            "isNew": true
+          }
+        ]
+      },
+      {
+        "category_id": "economy",
+        "category_name": "경제 영향",
+        "category_icon": "📊",
+        "count": 1,
+        "new_count": 1,
+        "articles": [
+          {
+            "title": "The Guardian view on Germany, Japan and the end of the postwar order: as US alliances crumble, a new world emerges | Editorial",
+            "link": "https://www.theguardian.com/commentisfree/2026/apr/24/the-guardian-view-on-germany-japan-and-the-end-of-the-postwar-order-as-us-alliances-crumble-a-new-world-emerges",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Fri, 24 Apr 2026 16:48:26 GMT",
+            "snippet": "Developments in Berlin and Tokyo show how far the strategic environment has shifted in response to authoritarian threat and American unpredictabilityWhen Donald Trump hosted Sanae Takaichi, the Japane",
             "isNew": true
           }
         ]
       }
     ],
     "recent_30min": {
-      "total_new": 50,
+      "total_new": 49,
       "by_category": {
-        "politics": {
-          "count": 13,
+        "military": {
+          "count": 12,
           "titles": [
             {
-              "title": "Timeline: Trump assassination attempts and security incidents",
-              "link": "https://www.aljazeera.com/news/2026/4/26/timeline-trump-assassination-attempts-and-security-incidents?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "What we know about the suspected ‘assassination attempt’ on Donald Trump",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/4/26/what-we-know-about-the-suspected-assassination-attempt-on-donald-trump?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "\"성실한 동창이었는데\" 트럼프 만찬장 총격범 명문대 조교 출신(종합)",
-              "link": "https://www.yna.co.kr/view/AKR20260426036751009",
+              "title": "이스라엘-레바논 휴전 사실상 무력화…드론 공격에 공습 맞불",
+              "link": "https://www.yna.co.kr/view/AKR20260426058400079",
               "source": "yonhap"
             },
             {
-              "title": "Israel’s President, Putting Off Decision on Pardon for Netanyahu, Will Push for Plea Deal",
-              "link": "https://www.nytimes.com/2026/04/26/world/middleeast/israel-netanyahu-pardon-herzog.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "What to know about Cole Allen, alleged WH correspondents’ dinner shooter",
-              "link": "https://www.aljazeera.com/news/2026/4/26/who-is-the-suspected-correspondent-dinner-shooter-cole-tomas-allen?traffic_source=rss",
-              "source": "aljazeera"
-            }
-          ]
-        },
-        "military": {
-          "count": 9,
-          "titles": [
-            {
-              "title": "Iran didn’t have a nuclear weapon before this war. But you can see why it would want one now | Simon Tisdall",
-              "link": "https://www.theguardian.com/commentisfree/2026/apr/26/iran-nuclear-weapon-war-develop-one-now",
+              "title": "The week around the world in 20 pictures",
+              "link": "https://www.theguardian.com/artanddesign/gallery/2026/apr/24/the-week-around-the-world-in-20-pictures",
               "source": "guardian"
             },
             {
-              "title": "At least four people killed in Israeli attacks in Gaza despite ‘ceasefire’",
-              "link": "https://www.aljazeera.com/news/2026/4/26/israeli-attacks-kill-at-least-four-palestinians-in-gaza?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Why Fashion Designer Elie Saab Will Never Leave Lebanon, Despite the War",
-              "link": "https://www.nytimes.com/2026/04/26/style/elie-saab-lebanon-middle-east-war.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Chornobyl’s surviving ‘liquidators’ return 40 years after nuclear disaster",
-              "link": "https://www.aljazeera.com/gallery/2026/4/26/survivors-return-to-chernobyl-40-years-after-devastating-explosion?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "How American taxpayers fund Trump’s wars",
-              "link": "https://www.aljazeera.com/video/by-the-numbers-3/2026/4/26/how-american-taxpayers-fund-trumps-wars-3?traffic_source=rss",
-              "source": "aljazeera"
-            }
-          ]
-        },
-        "regional": {
-          "count": 4,
-          "titles": [
-            {
-              "title": "Israel destroys solar panels in south Lebanon",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/4/26/israel-destroys-solar-panels-in-south-lebanon?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "On Iran’s Border, Cooking Oil Trade Is a Snapshot of the Country’s Struggles",
-              "link": "https://www.nytimes.com/2026/04/25/world/middleeast/iran-turkey-cooking-oil.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Ukraine war briefing: Zelenskyy holds talks in Azerbaijan, Saudi Arabia on ‘security and energy’",
-              "link": "https://www.theguardian.com/world/2026/apr/25/ukraine-war-briefing-zelenskyy-holds-talks-in-azerbaijan-saudi-arabia-on-security-and-energy",
+              "title": "Could Trump withdraw US support for UK sovereignty of Falklands?",
+              "link": "https://www.theguardian.com/us-news/2026/apr/24/could-donald-trump-withdraw-us-support-uk-sovereignty-falklands",
               "source": "guardian"
             },
             {
-              "title": "Israel-Lebanon Cease-Fire Tested by Escalating Clashes",
-              "link": "https://www.nytimes.com/2026/04/24/world/middleeast/israel-lebanon-fighting-ceasefire.html",
-              "source": "nytimes"
+              "title": "June 12, 2024 Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-12-24-intl/index.html",
+              "source": "cnn"
+            },
+            {
+              "title": "June 6, 2024 Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-06-24/index.html",
+              "source": "cnn"
             }
           ]
         },
-        "diplomacy": {
-          "count": 13,
+        "economy": {
+          "count": 1,
           "titles": [
             {
-              "title": "Iranian Negotiators Set to Return to Pakistan to Try to Revive Truce Talks",
-              "link": "https://www.nytimes.com/2026/04/26/world/middleeast/iranian-negotiators-set-to-return-to-pakistan-to-try-to-revive-truce-talks.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Yemen’s landmine crisis endures despite truce and de-mining efforts",
-              "link": "https://www.aljazeera.com/features/2026/4/26/yemens-landmine-crisis-endures-despite-truce-and-de-mining-efforts?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "We can make sure another Chornobyl disaster does not happen, here is how",
-              "link": "https://www.aljazeera.com/opinions/2026/4/26/we-can-make-sure-another-chornobyl-disaster-does-not-happen-here-is-how?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Iran war: What’s happening on day 58 as Tehran-Washington talks stall?",
-              "link": "https://www.aljazeera.com/news/2026/4/26/iran-war-whats-happening-on-day-58-as-tehran-washington-talks-stall?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Hundreds of Israelis rally as US-Iran peace talks stall",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/4/26/hundreds-of-israelis-rally-as-us-iran-peace-talks-stall?traffic_source=rss",
-              "source": "aljazeera"
-            }
-          ]
-        },
-        "other": {
-          "count": 3,
-          "titles": [
-            {
-              "title": "Anthony Edwards injures knee in Timberwolves’ Game 4 win against Nuggets",
-              "link": "https://www.aljazeera.com/sports/2026/4/26/anthony-edwards-injures-knee-in-timberwolves-game-4-win-against-nuggets?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Israeli police investigate after officers 'cut Palestinian flag' from skullcap",
-              "link": "https://www.bbc.com/news/articles/cz67qjn48eqo?at_medium=RSS&at_campaign=rss",
-              "source": "bbc"
-            },
-            {
-              "title": "Netanyahu Reveals He Had Prostate Cancer and Underwent Radiation Therapy",
-              "link": "https://www.nytimes.com/2026/04/24/world/middleeast/netanyahu-cancer-treatment.html",
-              "source": "nytimes"
+              "title": "The Guardian view on Germany, Japan and the end of the postwar order: as US alliances crumble, a new world emerges | Editorial",
+              "link": "https://www.theguardian.com/commentisfree/2026/apr/24/the-guardian-view-on-germany-japan-and-the-end-of-the-postwar-order-as-us-alliances-crumble-a-new-world-emerges",
+              "source": "guardian"
             }
           ]
         },
         "humanitarian": {
-          "count": 4,
+          "count": 12,
           "titles": [
-            {
-              "title": "Hanged under the cover of war: letters and videos tell stories of Iran’s death row victims",
-              "link": "https://www.theguardian.com/world/2026/apr/25/hanged-under-the-cover-of-war-letters-and-videos-tell-stories-of-iran-death-row-victims",
-              "source": "guardian"
-            },
-            {
-              "title": "Venice Biennale Bars Awards for Countries Facing Crimes Against Humanity Charges",
-              "link": "https://www.nytimes.com/2026/04/24/arts/venice-biennale-russia-israel.html",
-              "source": "nytimes"
-            },
             {
               "title": "Netanyahu says he was successfully treated for prostate cancer",
               "link": "https://www.theguardian.com/world/2026/apr/24/benjamin-netanyahu-successfully-treated-for-prostate-cancer-israel",
@@ -1200,31 +1092,131 @@
               "title": "Venice Biennale jury ‘will not award artists from countries facing war crimes charges’",
               "link": "https://www.theguardian.com/artanddesign/2026/apr/24/venice-biennale-jury-not-award-artists-countries-face-war-crimes-israel-russia",
               "source": "guardian"
-            }
-          ]
-        },
-        "economy": {
-          "count": 4,
-          "titles": [
-            {
-              "title": "Iran and U.S. Blockades in the Strait of Hormuz: What to Know",
-              "link": "https://www.nytimes.com/2026/04/24/world/middleeast/iran-us-strait-of-hormuz-blockade.html",
-              "source": "nytimes"
             },
             {
-              "title": "U.S. Unveils More Sanctions Targeting Iran’s Shadow Fleet",
-              "link": "https://www.nytimes.com/2026/04/24/world/middleeast/iran-sanctions-oil-tankers-shadow-fleet.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "The Guardian view on Germany, Japan and the end of the postwar order: as US alliances crumble, a new world emerges | Editorial",
-              "link": "https://www.theguardian.com/commentisfree/2026/apr/24/the-guardian-view-on-germany-japan-and-the-end-of-the-postwar-order-as-us-alliances-crumble-a-new-world-emerges",
+              "title": "Trump claims US has total control over strait of Hormuz after Iran seizes two container ships",
+              "link": "https://www.theguardian.com/us-news/2026/apr/23/trump-claims-us-has-total-control-over-strait-of-hormuz-as-iran-seizes-two-container-ships",
               "source": "guardian"
             },
             {
-              "title": "Trump Extends Waiver Allowing Foreign Ships to Move Goods Between U.S. Ports",
-              "link": "https://www.nytimes.com/2026/04/24/world/middleeast/trump-extends-waiver-allowing-foreign-ships-to-move-goods-between-us-ports.html",
+              "title": "Several dead after Israeli joint security forces raid in West Bank",
+              "link": "https://www.cnn.com/2022/10/25/middleeast/israel-forces-raid-nablus-palestine-intl-hnk/index.html",
+              "source": "cnn"
+            },
+            {
+              "title": "June 9, 2024 Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-09-24/index.html",
+              "source": "cnn"
+            }
+          ]
+        },
+        "politics": {
+          "count": 11,
+          "titles": [
+            {
+              "title": "Pope Leo condemns the killing of protesters in Iran – video",
+              "link": "https://www.theguardian.com/world/video/2026/apr/24/pope-leo-condemns-protester-killing-iran-video",
+              "source": "guardian"
+            },
+            {
+              "title": "June 17, 2024 - Israel-Gaza news",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-17-24/index.html",
+              "source": "cnn"
+            },
+            {
+              "title": "June 1, 2024 - Israel-Gaza news",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-01-24/index.html",
+              "source": "cnn"
+            },
+            {
+              "title": "May 21, 2024 Israel-Hamas war, Iran president death news",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-21-24/index.html",
+              "source": "cnn"
+            },
+            {
+              "title": "May 20, 2024 Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-20-24/index.html",
+              "source": "cnn"
+            }
+          ]
+        },
+        "regional": {
+          "count": 3,
+          "titles": [
+            {
+              "title": "Is this what war looks like now? | Mohamad Bazzi",
+              "link": "https://www.theguardian.com/us-news/ng-interactive/2026/apr/24/gaza-israel-lebanon-war",
+              "source": "guardian"
+            },
+            {
+              "title": "June 5, 2024 Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-05-24/index.html",
+              "source": "cnn"
+            },
+            {
+              "title": "Israel destroys solar panels in south Lebanon",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/4/26/israel-destroys-solar-panels-in-south-lebanon?traffic_source=rss",
+              "source": "aljazeera"
+            }
+          ]
+        },
+        "diplomacy": {
+          "count": 5,
+          "titles": [
+            {
+              "title": "Trump may talk of regime infighting, but Iran seems united by strategy born of war",
+              "link": "https://www.theguardian.com/world/2026/apr/23/trump-may-talk-of-regime-infighting-but-iran-seems-united-by-strategy-born-of-war",
+              "source": "guardian"
+            },
+            {
+              "title": "June 13, 2024 Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-13-24/index.html",
+              "source": "cnn"
+            },
+            {
+              "title": "June 10, 2024 Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-10-24/index.html",
+              "source": "cnn"
+            },
+            {
+              "title": "이란 외무, 오만 술탄 예방…\"호르무즈 안전 항행 등 논의\"",
+              "link": "https://www.yna.co.kr/view/AKR20260426057100079",
+              "source": "yonhap"
+            },
+            {
+              "title": "Iranian Negotiators Set to Return to Pakistan to Try to Revive Truce Talks",
+              "link": "https://www.nytimes.com/2026/04/26/world/middleeast/iranian-negotiators-set-to-return-to-pakistan-to-try-to-revive-truce-talks.html",
               "source": "nytimes"
+            }
+          ]
+        },
+        "other": {
+          "count": 5,
+          "titles": [
+            {
+              "title": "Iran",
+              "link": "https://www.cnn.com/specials/middleeast/iran?utm_source=section",
+              "source": "cnn"
+            },
+            {
+              "title": "Israel",
+              "link": "https://www.cnn.com/specials/middleeast/israel?utm_source=section",
+              "source": "cnn"
+            },
+            {
+              "title": "May 30, 2024 Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-30-24/index.html",
+              "source": "cnn"
+            },
+            {
+              "title": "May 22, 2024 Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/iran-israel-hamas-war-gaza-news-05-22-24/index.html",
+              "source": "cnn"
+            },
+            {
+              "title": "Pete Hegseth’s Iran war messaging echoes sermons from his extremist church",
+              "link": "https://www.theguardian.com/us-news/2026/apr/26/pete-hegseth-iran-war-christian-extremism",
+              "source": "guardian"
             }
           ]
         }
@@ -1318,29 +1310,17 @@
     }
   ],
   "economic_indicators": {
-    "VIX": {
-      "price": 18.71,
-      "change": -0.6,
-      "changePercent": -3.11,
-      "prev": 19.31
+    "GOLD": {
+      "price": 4740.9,
+      "change": 35.8,
+      "changePercent": 0.76,
+      "prev": 4705.1
     },
     "US2Y": {
       "price": 3.59,
       "change": 0,
       "changePercent": 0,
       "prev": 3.6
-    },
-    "US10Y": {
-      "price": 4.31,
-      "change": -0.01,
-      "changePercent": -0.23,
-      "prev": 4.32
-    },
-    "GOLD": {
-      "price": 4740.9,
-      "change": 35.8,
-      "changePercent": 0.76,
-      "prev": 4705.1
     },
     "WTI": {
       "price": 94.4,
@@ -1354,21 +1334,41 @@
       "changePercent": -5.65,
       "prev": 105.07
     },
+    "US10Y": {
+      "price": 4.31,
+      "change": -0.01,
+      "changePercent": -0.23,
+      "prev": 4.32
+    },
     "DXY": {
       "price": 98.51,
       "change": -0.29,
       "changePercent": -0.29,
       "prev": 98.8
+    },
+    "VIX": {
+      "price": 18.71,
+      "change": -0.6,
+      "changePercent": -3.11,
+      "prev": 19.31
     }
   },
   "critical_events": [
     {
-      "id": "unilateral_deescalation",
-      "name": "일방적 전투 축소/자제 선언",
+      "id": "diplomatic_breakthrough",
+      "name": "외교적 돌파구/강대국 중재",
       "severity": "high",
       "confidence": 0.6666666666666666,
       "matchCount": 2,
       "direction": "shorten"
+    },
+    {
+      "id": "conflict_expansion",
+      "name": "전선 확대/신규 참전국",
+      "severity": "moderate",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "lengthen"
     },
     {
       "id": "wmd_threat",
