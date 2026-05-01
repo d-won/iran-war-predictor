@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-05-01T16:54:35.032Z",
+  "timestamp": "2026-05-01T17:57:23.566Z",
   "war_day": 62,
   "probabilities": {
-    "1개월 내 (~3월)": 18.2,
-    "2~3개월 (4~5월)": 37.3,
-    "4~6개월 (6~8월)": 25.7,
-    "7~12개월 (9월~27/2월)": 13.8,
-    "1년 초과": 5
+    "1개월 내 (~3월)": 17.4,
+    "2~3개월 (4~5월)": 36,
+    "4~6개월 (6~8월)": 26.7,
+    "7~12개월 (9월~27/2월)": 13.6,
+    "1년 초과": 6.3
   },
   "factors": [
     {
@@ -45,7 +45,7 @@
       "decay": 0.4
     },
     {
-      "factor": "이란 미사일 능력 급감 (휴전10:확전4)",
+      "factor": "이란 미사일 능력 급감 (휴전6:확전2)",
       "impact": "전쟁 지속 능력 약화로 단기 종전 가능성 증가",
       "weight": "+0.0%p (1개월내), +0.0%p (2~3개월) (잔존40%)",
       "direction": "shorten",
@@ -164,11 +164,11 @@
       "decay": 1
     },
     {
-      "factor": "협상/외교 뉴스 2건 감지",
-      "impact": "외교 움직임 미약",
+      "factor": "협상/외교 뉴스 0건 감지",
+      "impact": "외교 움직임 부재",
       "weight": "+0.00%p (1개월내), +0.00%p (2~3개월)",
       "direction": "shorten",
-      "detail": "실시간 뉴스에서 협상 관련 기사 2건이 감지되었습니다.",
+      "detail": "실시간 뉴스에서 협상 관련 기사 0건이 감지되었습니다.",
       "keywords": [
         "negotiat",
         "talks",
@@ -181,11 +181,11 @@
       "decay": 1
     },
     {
-      "factor": "지역 확산 뉴스 16건 감지",
-      "impact": "주변국 대규모 연루 → 장기화 위험 높음",
-      "weight": "+0.02%p (4~6개월), +0.02%p (7~12개월)",
+      "factor": "지역 확산 뉴스 4건 감지",
+      "impact": "주변국 연루 제한적",
+      "weight": "+0.00%p (4~6개월), +0.00%p (7~12개월)",
       "direction": "lengthen",
-      "detail": "주변국을 언급하는 기사 16건이 감지되었습니다.",
+      "detail": "주변국을 언급하는 기사 4건이 감지되었습니다.",
       "keywords": [
         "saudi",
         "uae",
@@ -234,11 +234,97 @@
       "decay": 0.3
     },
     {
-      "factor": "유가 급등 (WTI $101.78/배럴)",
+      "factor": "[중대 이벤트] 외교적 돌파구/강대국 중재",
+      "impact": "주요 외교적 돌파구 또는 강대국 중재. 데이턴(1995): 미국 중재 → 3주만에 합의. UN 안보리 결의는 평균 2~4주 내 휴전 이행.",
+      "weight": "+2.0%p (1개월내), +4.0%p (2~3개월), +1.3%p (4~6개월), -1.3%p (7~12개월), -0.7%p (1년초과)",
+      "direction": "shorten",
+      "detail": "주요 외교적 돌파구 또는 강대국 중재. 데이턴(1995): 미국 중재 → 3주만에 합의. UN 안보리 결의는 평균 2~4주 내 휴전 이행.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: June 10, 2024 Israel-Hamas war",
+      "keywords": [
+        "peace talk",
+        "agree",
+        "diplomatic",
+        "breakthrough",
+        "summit",
+        "peace",
+        "mediati",
+        "accept",
+        "un",
+        "resolution",
+        "ceasefire",
+        "broker",
+        "peace",
+        "negotiat",
+        "breakthrough",
+        "china",
+        "mediat",
+        "peace framework"
+      ],
+      "applied": "2026-05-01",
+      "active": true,
+      "severity": "high"
+    },
+    {
+      "factor": "[중대 이벤트] 전선 확대/신규 참전국",
+      "impact": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).",
+      "weight": "-1.3%p (1개월내), -2.0%p (2~3개월), +2.7%p (4~6개월), +2.0%p (7~12개월), +1.3%p (1년초과)",
+      "direction": "lengthen",
+      "detail": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Devastation in Gaza as Israel wages war on Hamas",
+      "keywords": [
+        "new front",
+        "war spread",
+        "conflict expand",
+        "join",
+        "war",
+        "enter",
+        "war",
+        "open",
+        "front",
+        "declare war",
+        "widen",
+        "conflict",
+        "second front",
+        "new theater"
+      ],
+      "applied": "2026-05-01",
+      "active": true,
+      "severity": "moderate"
+    },
+    {
+      "factor": "[중대 이벤트] 대량살상무기(WMD)/핵 위협",
+      "impact": "WMD/핵 위협 감지. 핵 위협은 분쟁의 성격을 근본적으로 변화시키며, 국제사회 전체의 개입을 촉발하여 예측 불확실성이 극대화.",
+      "weight": "+2.0%p (1개월내), +2.0%p (2~3개월), +3.3%p (4~6개월), +2.7%p (7~12개월), +2.0%p (1년초과)",
+      "direction": "lengthen",
+      "detail": "WMD/핵 위협 감지. 핵 위협은 분쟁의 성격을 근본적으로 변화시키며, 국제사회 전체의 개입을 촉발하여 예측 불확실성이 극대화.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: King Charles agrees with me on Iran nuclear weapon ban, claims Trump",
+      "keywords": [
+        "nuclear",
+        "strike",
+        "nuclear",
+        "weapon",
+        "use",
+        "nuclear",
+        "threat",
+        "chemical",
+        "weapon",
+        "use",
+        "biological",
+        "weapon",
+        "wmd",
+        "deploy",
+        "nuclear",
+        "option",
+        "atomic",
+        "bomb"
+      ],
+      "applied": "2026-05-01",
+      "active": true,
+      "severity": "critical"
+    },
+    {
+      "factor": "유가 급등 (WTI $101.9/배럴)",
       "impact": "높은 경제 압력 → 빠른 해결 요구 증가",
       "weight": "+4%p (1-2개월)",
       "direction": "shorten",
-      "detail": "WTI 유가가 $101.78/배럴로 100달러 돌파입니다. 호르무즈 해협 봉쇄와 맞물려 글로벌 에너지 시장에 큰 충격을 주고 있으며, 주요국들의 조기 종전 압력이 강화되고 있습니다.",
+      "detail": "WTI 유가가 $101.9/배럴로 100달러 돌파입니다. 호르무즈 해협 봉쇄와 맞물려 글로벌 에너지 시장에 큰 충격을 주고 있으며, 주요국들의 조기 종전 압력이 강화되고 있습니다.",
       "keywords": [
         "oil",
         "crude",
@@ -251,11 +337,11 @@
       "active": true
     },
     {
-      "factor": "금값 사상최고 ($4651/oz)",
+      "factor": "금값 사상최고 ($4640.1/oz)",
       "impact": "안전자산 수요 폭증 → 글로벌 불안 심화",
       "weight": "+2%p (4-6개월)",
       "direction": "lengthen",
-      "detail": "금 가격이 온스당 $4651로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
+      "detail": "금 가격이 온스당 $4640.1로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
       "keywords": [
         "gold",
         "safe haven",
@@ -267,452 +353,226 @@
     }
   ],
   "news_signals": {
-    "ceasefire_mentions": 10,
-    "escalation_mentions": 4,
-    "negotiation_mentions": 2,
-    "casualty_mentions": 20,
-    "peace_mentions": 6,
-    "regional_spread": 16,
+    "ceasefire_mentions": 6,
+    "escalation_mentions": 2,
+    "negotiation_mentions": 0,
+    "casualty_mentions": 12,
+    "peace_mentions": 4,
+    "regional_spread": 4,
     "total_articles": 50,
-    "new_articles": 50,
-    "unique_events": 47,
-    "duplicates_removed": 3
+    "new_articles": 49,
+    "unique_events": 37,
+    "duplicates_removed": 13
   },
   "latest_news": [
     {
-      "title": "Video of attack on French nun in Jerusalem causes widespread condemnation",
-      "link": "https://www.theguardian.com/world/2026/may/01/video-attack-french-nun-jerusalem",
-      "pubDate": "Fri, 01 May 2026 16:38:40 GMT",
-      "source": "guardian",
-      "snippet": "Israeli foreign ministry denounce ‘shameful act’ after footage shows man pushing woman to the ground and kicking herA video of an attack on a French Catholic nun and archeological researcher in Jerusa",
+      "title": "Trump ‘Not Satisfied’ With Iran’s New Proposal on Ending War",
+      "link": "https://www.nytimes.com/2026/05/01/world/middleeast/iran-new-proposal-peace-talks.html",
+      "pubDate": "Fri, 01 May 2026 17:54:37 +0000",
+      "source": "nytimes",
+      "snippet": "The details of the latest plan were unclear, and President Trump did not specify his objections.",
       "isNew": true,
       "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "로이터 \"트럼프, 쿠바정부 겨냥 제재 확대 행정명령\"",
+      "link": "https://www.yna.co.kr/view/AKR20260502000900071",
+      "pubDate": "Sat, 2 May 2026 02:21:22 +0900",
+      "source": "yonhap",
+      "snippet": "(워싱턴=연합뉴스) 조준형 특파원 = 도널드 트럼프 미국 대통령이 1일(현지시간) 쿠바 정부를 겨냥한 제재를 확대하는 행정명령에 서명했다고 로이...",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "US warns shippers against paying Strait of Hormuz tolls, ‘donations’",
+      "link": "https://www.aljazeera.com/news/2026/5/1/us-warns-shippers-against-paying-strait-of-hormuz-tolls-donations?traffic_source=rss",
+      "pubDate": "Fri, 01 May 2026 17:18:43 +0000",
+      "source": "aljazeera",
+      "snippet": "Latest warning comes as Iranian state media reports Tehran has presented new peace proposal to US. ",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Iran supreme leader issues defiant statement on strait of Hormuz",
+      "link": "https://www.theguardian.com/world/2026/apr/30/iran-supreme-leader-issues-defiant-statement-on-strait-of-hormuz",
+      "pubDate": "Thu, 30 Apr 2026 13:34:21 GMT",
+      "source": "guardian",
+      "snippet": "Mojtaba Khamenei says Tehran will eliminate ‘enemy’s abuses of the waterway’ and guard its nuclear and missile programmesUS politics live – latest updatesIran’s supreme leader has broken his recent si",
+      "isNew": true,
+      "_sourceCount": 2,
       "_isDuplicated": true,
       "_clusterSize": 2,
       "_isDuplicate": false
     },
     {
-      "title": "CCTV captures moment man attacks nun in Jerusalem – video",
-      "link": "https://www.theguardian.com/world/video/2026/may/01/cctv-captures-moment-man-attacks-nun-in-jerusalem-video",
-      "pubDate": "Fri, 01 May 2026 16:36:02 GMT",
+      "title": "Syrian commission prepares war crimes case against notorious Assad official",
+      "link": "https://www.theguardian.com/world/2026/apr/30/fadi-saqr-tadamon-damascus-syria",
+      "pubDate": "Thu, 30 Apr 2026 06:00:11 GMT",
       "source": "guardian",
-      "snippet": "Israeli police released a video on Thursday showing an attack on a French Catholic nun in Jerusalem. The footage shows the man running up behind the nun and pushing her to the ground. After briefly wa",
+      "snippet": "Fadi Saqr is accused of mass killings of civilians in Tadamon, Damascus, where people say he must face justiceA Syrian rights commission is preparing a case accusing Fadi Saqr, a militia leader within",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Iran’s wartime executions - podcast",
+      "link": "https://www.theguardian.com/news/audio/2026/apr/30/irans-wartime-executions-podcast",
+      "pubDate": "Thu, 30 Apr 2026 02:00:04 GMT",
+      "source": "guardian",
+      "snippet": "Over the last six weeks, the Iranian regime has carried out a spate of executions of political prisoners. The Guardian journalist Daniel Boffey reportsIran has hanged 18 political prisoners during the",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "The Guardian view on the UAE quitting Opec: whatever importers pay, the price of fossil fuels is too high | Editorial",
+      "link": "https://www.theguardian.com/commentisfree/2026/apr/29/the-guardian-view-on-the-uae-quitting-opec-whatever-importers-pay-the-price-of-fossil-fuels-is-too-high",
+      "pubDate": "Wed, 29 Apr 2026 18:00:49 GMT",
+      "source": "guardian",
+      "snippet": "The world must accelerate the shift to renewables, regardless of the economic effects of Abu Dhabi’s decisionOpec appears to be the latest casualty of the Iran war. On Tuesday, the United Arab Emirate",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Family of ailing Iranian Nobel laureate say keeping her in jail is a death sentence",
+      "link": "https://www.theguardian.com/global-development/2026/apr/29/family-jailed-iranian-nobel-laureate-suspected-heart-attack-narges-mohammadi",
+      "pubDate": "Wed, 29 Apr 2026 17:21:34 GMT",
+      "source": "guardian",
+      "snippet": "Narges Mohammadi denied medical leave from prison in spite of sharp decline in health and drastic weight loss, say lawyersThe family of the jailed Iranian Nobel laureate Narges Mohammadi say they fear",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "The pope’s African tour shows the continent is vital to the future of Catholicism",
+      "link": "https://www.theguardian.com/news/2026/apr/29/the-popes-african-tour-shows-the-continent-is-vital-to-the-future-of-catholicism",
+      "pubDate": "Wed, 29 Apr 2026 11:44:49 GMT",
+      "source": "guardian",
+      "snippet": "Amid the US far right’s hijacking of Christianity and his very public row with Trump, Pope Leo XIV’s visit is symbolic of the ‘growing centrality of Africa and its Black diaspora’• Don’t get The Long ",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "King Charles agrees with me on Iran nuclear weapon ban, claims Trump",
+      "link": "https://www.theguardian.com/us-news/2026/apr/29/king-charles-agrees-with-me-on-iran-nuclear-weapon-ban-says-trump",
+      "pubDate": "Wed, 29 Apr 2026 07:48:45 GMT",
+      "source": "guardian",
+      "snippet": "Remarks by US president likely to cause embarrassment for aides of UK monarch, who usually remains neutralUK politics live – latest updatesDonald Trump has claimed King Charles agrees with him that Ir",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Calls for humanitarian corridor through strait of Hormuz as Iran war hits vital aid",
+      "link": "https://www.theguardian.com/global-development/2026/apr/29/humanitarian-corridor-strait-of-hormuz-iran-war-hits-vital-aid",
+      "pubDate": "Wed, 29 Apr 2026 07:00:48 GMT",
+      "source": "guardian",
+      "snippet": "Soaring oil prices and the blockade are preventing food, fuel and medicine being delivered to millions of people in desperate need, say NGOsThe volatility of global oil prices caused by the US and Isr",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Marxists and monarchists: the group hoping to unite Iran’s exiled opposition",
+      "link": "https://www.theguardian.com/world/2026/apr/29/iran-freedom-congress-exiled-opposition",
+      "pubDate": "Wed, 29 Apr 2026 04:00:44 GMT",
+      "source": "guardian",
+      "snippet": "Iran Freedom Congress, which has met in London, aims to be a ‘pluralist movement’ supporting those inside country“It’s an exercise that is necessary and frankly has been missing for the past 47 years,",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Middle East crisis: Trump hits back at German chancellor after Merz said Iran was ‘humiliating’ US – as it happened",
+      "link": "https://www.theguardian.com/world/live/2026/apr/28/middle-east-crisis-live-iran-us-israel-lebanon-hormuz-nuclear-oil-latest-news-updates",
+      "pubDate": "Tue, 28 Apr 2026 19:34:18 GMT",
+      "source": "guardian",
+      "snippet": "US president claims Friedrich Merz ‘doesn’t know what he’s talking about’ after German leader criticised US strategy in IranUS is being ‘humiliated’ by Iran’s leadership, says Friedrich MerzHezbollah ",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Several dead after Israeli joint security forces raid in West Bank",
+      "link": "https://www.cnn.com/2022/10/25/middleeast/israel-forces-raid-nablus-palestine-intl-hnk/index.html",
+      "pubDate": "Tue, 25 Oct 2022 13:58:46 GMT",
+      "source": "cnn",
+      "snippet": "",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Iran",
+      "link": "https://www.cnn.com/specials/middleeast/iran?utm_source=section",
+      "pubDate": "",
+      "source": "cnn",
+      "snippet": "",
       "isNew": true,
       "_isDuplicate": true,
       "_sourceCount": 1
-    },
-    {
-      "title": "Iran offers new peace proposal to US in attempt to end deadlock",
-      "link": "https://www.theguardian.com/world/2026/may/01/pakistan-backchannel-us-iran-deal-peace",
-      "pubDate": "Fri, 01 May 2026 16:00:50 GMT",
-      "source": "guardian",
-      "snippet": "Tehran reportedly passed proposal to mediators in Pakistan on Thursday night, though its contents are not yet clearIran has passed a new proposal to Pakistani mediators to end the war with the United ",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Pentagon announces deal with seven AI companies for classified systems",
-      "link": "https://www.aljazeera.com/news/2026/5/1/pentagon-announces-deal-with-seven-ai-companies-for-classified-systems?traffic_source=rss",
-      "pubDate": "Fri, 01 May 2026 15:57:09 +0000",
-      "source": "aljazeera",
-      "snippet": "Most recent instance of department integrating with AI comes amid Anthropic standoff, concern over use in Iran war. ",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Why has the world lost sight of the suffering of Palestinians? – The Latest",
-      "link": "https://www.theguardian.com/news/audio/2026/may/01/why-has-the-world-lost-sight-of-the-suffering-of-palestinians-the-latest",
-      "pubDate": "Fri, 01 May 2026 15:54:02 GMT",
-      "source": "guardian",
-      "snippet": "In the six months since a ceasefire was announced in Gaza, more than 800 civilians have been killed and living conditions have remained dire. Meanwhile, Palestinians in the West Bank face a surge in v",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Israeli police arrest man after nun attacked in Jerusalem",
-      "link": "https://www.bbc.com/news/articles/cy02gnzlvkko?at_medium=RSS&at_campaign=rss",
-      "pubDate": "Fri, 01 May 2026 15:51:58 GMT",
-      "source": "bbc",
-      "snippet": "The French nun was pushed over and kicked in the apparently unprovoked assault, amid a rise in harassment of Christians in the city by Jewish extremists.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Iran Sends New Proposal for Peace Talks with U.S., State Media Says",
-      "link": "https://www.nytimes.com/2026/05/01/world/middleeast/iran-new-proposal-peace-talks.html",
-      "pubDate": "Fri, 01 May 2026 15:25:30 +0000",
-      "source": "nytimes",
-      "snippet": "The details of the latest plan were unclear. President Trump had expressed dissatisfaction over a previous Iranian proposal to end the war and reopen the Strait of Hormuz.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Woman killed, children injured as Israel attacks Lebanon",
-      "link": "https://www.aljazeera.com/news/2026/5/1/woman-killed-children-injured-as-israel-attacks-lebanon?traffic_source=rss",
-      "pubDate": "Fri, 01 May 2026 13:26:44 +0000",
-      "source": "aljazeera",
-      "snippet": "Israel&#039;s assault, which has displaced more than one people in Lebanon, escalates despite US brokered &#039;ceasefire&#039;.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Trump’s threat: Why cutting US troops in Europe won’t be easy",
-      "link": "https://www.aljazeera.com/news/2026/5/1/trumps-threat-why-cutting-us-troops-in-europe-wont-be-easy?traffic_source=rss",
-      "pubDate": "Fri, 01 May 2026 13:25:46 +0000",
-      "source": "aljazeera",
-      "snippet": "Amid transatlantic tensions over the Iran war, Trump has threatened to reduce troops in Germany. ",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "‘Turbulent and dangerous’: How shipping is the new global battleground",
-      "link": "https://www.aljazeera.com/news/2026/5/1/turbulent-and-dangerous-how-shipping-is-the-new-global-battleground?traffic_source=rss",
-      "pubDate": "Fri, 01 May 2026 13:18:33 +0000",
-      "source": "aljazeera",
-      "snippet": "From Hormuz to Panama, the South China Sea to the Black Sea, geopolitics is rewriting the rules of global shipping. ",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "As Israel Entrenches, Frustration With Hezbollah Turns to Support",
-      "link": "https://www.nytimes.com/2026/05/01/world/middleeast/lebanon-hezbollah-ceasefire-israel.html",
-      "pubDate": "Fri, 01 May 2026 12:58:51 +0000",
-      "source": "nytimes",
-      "snippet": "With the cease-fire fraying and Israel demolishing villages in the south, many Hezbollah supporters in Lebanon are putting aside their annoyance with the group and turning to it for protection.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Giorgia Meloni’s moral retreat on Gaza",
-      "link": "https://www.aljazeera.com/opinions/2026/5/1/giorgia-melonis-moral-retreat-on-gaza?traffic_source=rss",
-      "pubDate": "Fri, 01 May 2026 12:33:00 +0000",
-      "source": "aljazeera",
-      "snippet": "The Italian PM’s response to Israel’s genocidal war on Gaza reflects not moral conviction, but political calculation.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Greek Orthodox Church sounds alarm over attacks on Christians in Jerusalem",
-      "link": "https://www.aljazeera.com/news/2026/5/1/greek-orthodox-church-sounds-alarm-over-attacks-on-christians-in-jerusalem?traffic_source=rss",
-      "pubDate": "Fri, 01 May 2026 12:22:26 +0000",
-      "source": "aljazeera",
-      "snippet": "Warning follows Jewish man&#039;s arrest over brutal attack on nun in Jerusalem this week.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Gaza aid flotilla vessels taken to Crete after Israeli interception",
-      "link": "https://www.aljazeera.com/news/2026/5/1/gaza-aid-flotilla-vessels-taken-to-crete-after-israeli-interception?traffic_source=rss",
-      "pubDate": "Fri, 01 May 2026 11:31:33 +0000",
-      "source": "aljazeera",
-      "snippet": "Israel’s military reportedly seized 22 vessels sailing among the Global Sumud Flotilla.",
-      "isNew": true,
-      "_isDuplicate": true,
-      "_sourceCount": 1
-    },
-    {
-      "title": "Has the US-Iran ceasefire reset the clock on War Powers Act deadline?",
-      "link": "https://www.aljazeera.com/news/2026/5/1/has-the-us-iran-ceasefire-reset-the-clock-on-war-powers-act-deadline?traffic_source=rss",
-      "pubDate": "Fri, 01 May 2026 10:56:21 +0000",
-      "source": "aljazeera",
-      "snippet": "Defence secretary claims hostilities have ceased, but lawmakers say US forces remain active despite halted air raids.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
     }
   ],
   "news_digest": {
     "categories": [
       {
-        "category_id": "military",
-        "category_name": "군사 작전",
-        "category_icon": "⚔️",
-        "count": 17,
-        "new_count": 17,
-        "articles": [
-          {
-            "title": "Video of attack on French nun in Jerusalem causes widespread condemnation",
-            "link": "https://www.theguardian.com/world/2026/may/01/video-attack-french-nun-jerusalem",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Fri, 01 May 2026 16:38:40 GMT",
-            "snippet": "Israeli foreign ministry denounce ‘shameful act’ after footage shows man pushing woman to the ground and kicking herA video of an attack on a French Catholic nun and archeological researcher in Jerusa",
-            "isNew": true
-          },
-          {
-            "title": "Pentagon announces deal with seven AI companies for classified systems",
-            "link": "https://www.aljazeera.com/news/2026/5/1/pentagon-announces-deal-with-seven-ai-companies-for-classified-systems?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Fri, 01 May 2026 15:57:09 +0000",
-            "snippet": "Most recent instance of department integrating with AI comes amid Anthropic standoff, concern over use in Iran war. ",
-            "isNew": true
-          },
-          {
-            "title": "Israeli police arrest man after nun attacked in Jerusalem",
-            "link": "https://www.bbc.com/news/articles/cy02gnzlvkko?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
-            "sources": [
-              "bbc"
-            ],
-            "pubDate": "Fri, 01 May 2026 15:51:58 GMT",
-            "snippet": "The French nun was pushed over and kicked in the apparently unprovoked assault, amid a rise in harassment of Christians in the city by Jewish extremists.",
-            "isNew": true
-          },
-          {
-            "title": "Trump’s threat: Why cutting US troops in Europe won’t be easy",
-            "link": "https://www.aljazeera.com/news/2026/5/1/trumps-threat-why-cutting-us-troops-in-europe-wont-be-easy?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Fri, 01 May 2026 13:25:46 +0000",
-            "snippet": "Amid transatlantic tensions over the Iran war, Trump has threatened to reduce troops in Germany. ",
-            "isNew": true
-          },
-          {
-            "title": "‘Turbulent and dangerous’: How shipping is the new global battleground",
-            "link": "https://www.aljazeera.com/news/2026/5/1/turbulent-and-dangerous-how-shipping-is-the-new-global-battleground?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Fri, 01 May 2026 13:18:33 +0000",
-            "snippet": "From Hormuz to Panama, the South China Sea to the Black Sea, geopolitics is rewriting the rules of global shipping. ",
-            "isNew": true
-          },
-          {
-            "title": "Giorgia Meloni’s moral retreat on Gaza",
-            "link": "https://www.aljazeera.com/opinions/2026/5/1/giorgia-melonis-moral-retreat-on-gaza?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Fri, 01 May 2026 12:33:00 +0000",
-            "snippet": "The Italian PM’s response to Israel’s genocidal war on Gaza reflects not moral conviction, but political calculation.",
-            "isNew": true
-          },
-          {
-            "title": "Greek Orthodox Church sounds alarm over attacks on Christians in Jerusalem",
-            "link": "https://www.aljazeera.com/news/2026/5/1/greek-orthodox-church-sounds-alarm-over-attacks-on-christians-in-jerusalem?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Fri, 01 May 2026 12:22:26 +0000",
-            "snippet": "Warning follows Jewish man&#039;s arrest over brutal attack on nun in Jerusalem this week.",
-            "isNew": true
-          },
-          {
-            "title": "Israel releases all but two activists in Greece after intercepting Gaza aid flotilla",
-            "link": "https://www.bbc.com/news/articles/c0m2z0k1gngo?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
-            "sources": [
-              "bbc",
-              "aljazeera"
-            ],
-            "pubDate": "Fri, 01 May 2026 10:12:57 GMT",
-            "snippet": "The Global Sumud Flotilla denounced the interception as \"piracy\", while Israel's foreign ministry called the flotilla a \"PR stunt\".",
-            "isNew": true
-          },
-          {
-            "title": "More than 40 Iranian seafarers killed during US-Israeli war: Union leader",
-            "link": "https://www.aljazeera.com/news/2026/5/1/more-than-40-iranian-seafarers-killed-during-us-israeli-war-union?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Fri, 01 May 2026 09:49:28 +0000",
-            "snippet": "The Iranian Merchant Mariners Syndicate blamed US and Israeli attacks on Iran&#039;s ports and commercial fleet for deaths.",
-            "isNew": true
-          },
-          {
-            "title": "Commercial flights from Tehran’s main airport resume amid cautious normalcy",
-            "link": "https://www.aljazeera.com/news/2026/5/1/commercial-flights-from-tehrans-main-airport-resume-amid-cautious-normalcy?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Fri, 01 May 2026 08:47:09 +0000",
-            "snippet": "Flights are gradually back in the air, but uncertainty on the ground still lingers.",
-            "isNew": true
-          }
-        ]
-      },
-      {
-        "category_id": "economy",
-        "category_name": "경제 영향",
-        "category_icon": "📊",
-        "count": 9,
-        "new_count": 9,
-        "articles": [
-          {
-            "title": "Why U.S. Oil Companies Are Not Plugging the World’s Energy Gap",
-            "link": "https://www.nytimes.com/2026/05/01/business/energy-environment/exxon-mobile-chevron-oil-iran-war.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Fri, 01 May 2026 10:31:34 +0000",
-            "snippet": "American producers are under pressure from investors to keep spending in check, and they are wary of drilling more wells because they are not sure oil prices will stay high.",
-            "isNew": true
-          },
-          {
-            "title": "Oil prices rise again with little sign of war on Iran ending",
-            "link": "https://www.aljazeera.com/news/2026/5/1/oil-prices-rise-again-with-little-sign-of-war-on-iran-ending?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Fri, 01 May 2026 10:11:39 +0000",
-            "snippet": "Brent crude futures hit $126.41 on Thursday - a 5 percent rise for the week.",
-            "isNew": true
-          },
-          {
-            "title": "Rallies under way as workers gather for International Labour Day",
-            "link": "https://www.aljazeera.com/economy/2026/5/1/rallies-under-way-as-workers-gather-for-international-labour-day?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Fri, 01 May 2026 09:33:21 +0000",
-            "snippet": "Labour Day marches are being held as Iran war and rising energy prices threaten the global economy.",
-            "isNew": true
-          },
-          {
-            "title": "Venice Biennale Jury Resigns Amid Tension Over Awards Ban",
-            "link": "https://www.nytimes.com/2026/04/30/arts/design/israel-artist-venice-biennale.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Thu, 30 Apr 2026 17:14:36 +0000",
-            "snippet": "The jury of the world’s most important art exhibition had said it wouldn’t consider artists from countries whose leaders are accused of crimes against humanity.",
-            "isNew": true
-          },
-          {
-            "title": "How the War in Iran is Affecting Africa’s Economy and Fuel Supply",
-            "link": "https://www.nytimes.com/2026/04/30/world/africa/iran-war-africa-economic-consequences.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Thu, 30 Apr 2026 17:12:09 +0000",
-            "snippet": "Despite the fragile cease-fire in the Middle East, many Africans say they are bracing for tougher times ahead and making difficult decisions about the future.",
-            "isNew": true
-          },
-          {
-            "title": "Why and how is US blockading Iranian ports in Strait of Hormuz?",
-            "link": "https://www.bbc.com/news/articles/c5yv6xr6me3o?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
-            "sources": [
-              "bbc"
-            ],
-            "pubDate": "Thu, 30 Apr 2026 14:29:30 GMT",
-            "snippet": "Donald Trump says that the US is blockading the Strait of Hormuz. What does this mean in practice? ",
-            "isNew": true
-          },
-          {
-            "title": "Could the UAE’s shock exit from Opec cause an oil price war?",
-            "link": "https://www.theguardian.com/business/2026/apr/30/uae-saudi-arabia-opec-gulf-oil-price-war",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Thu, 30 Apr 2026 14:00:19 GMT",
-            "snippet": "A standoff between Gulf oil giants Saudi Arabia and the UAE could cause greater market volatility for years to comeThe conflict in the Middle East has claimed Opec as the latest casualty of war. The U",
-            "isNew": true
-          },
-          {
-            "title": "Oil price tops $126 a barrel after Trump warns Iran blockade could last ‘months’",
-            "link": "https://www.theguardian.com/world/2026/apr/30/oil-price-news-highest-since-2022-us-iran-ceasefire-strait-of-hormuz",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Thu, 30 Apr 2026 13:38:54 GMT",
-            "snippet": "Markets spooked as US president appears willing to keep up naval blockade and Iran keeps strait of Hormuz all but shutBusiness live – latest updatesThe global oil price hit $126 a barrel on Thursday, ",
-            "isNew": true
-          },
-          {
-            "title": "The Guardian view on the UAE quitting Opec: whatever importers pay, the price of fossil fuels is too high | Editorial",
-            "link": "https://www.theguardian.com/commentisfree/2026/apr/29/the-guardian-view-on-the-uae-quitting-opec-whatever-importers-pay-the-price-of-fossil-fuels-is-too-high",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Wed, 29 Apr 2026 18:00:49 GMT",
-            "snippet": "The world must accelerate the shift to renewables, regardless of the economic effects of Abu Dhabi’s decisionOpec appears to be the latest casualty of the Iran war. On Tuesday, the United Arab Emirate",
-            "isNew": true
-          }
-        ]
-      },
-      {
         "category_id": "politics",
         "category_name": "국내 정치",
         "category_icon": "🏛️",
-        "count": 6,
-        "new_count": 6,
+        "count": 10,
+        "new_count": 10,
         "articles": [
           {
-            "title": "Falklands claim: Can Argentina’s Milei use Trump ties to challenge the UK?",
-            "link": "https://www.aljazeera.com/news/2026/5/1/falklands-claim-can-argentinas-milei-use-trump-ties-to-challenge-the-uk?traffic_source=rss",
-            "source": "aljazeera",
+            "title": "Trump ‘Not Satisfied’ With Iran’s New Proposal on Ending War",
+            "link": "https://www.nytimes.com/2026/05/01/world/middleeast/iran-new-proposal-peace-talks.html",
+            "source": "nytimes",
             "sources": [
-              "aljazeera"
+              "nytimes"
             ],
-            "pubDate": "Fri, 01 May 2026 10:35:20 +0000",
-            "snippet": "As US-UK relations nosedive, questions are mounting over whether Trump might shift Washington&#039;s position on the islands.",
+            "pubDate": "Fri, 01 May 2026 17:54:37 +0000",
+            "snippet": "The details of the latest plan were unclear, and President Trump did not specify his objections.",
             "isNew": true
           },
           {
-            "title": "Trump administration says hostilities in Iran ‘terminated’ ahead of war powers deadline",
-            "link": "https://www.theguardian.com/world/2026/apr/30/senate-republicans-block-trump-iran-war-halt",
-            "source": "guardian",
+            "title": "로이터 \"트럼프, 쿠바정부 겨냥 제재 확대 행정명령\"",
+            "link": "https://www.yna.co.kr/view/AKR20260502000900071",
+            "source": "yonhap",
             "sources": [
-              "guardian"
+              "yonhap"
             ],
-            "pubDate": "Fri, 01 May 2026 03:10:49 GMT",
-            "snippet": "US president faced a 60-day deadline on Friday to end the Iran war or make the case to Congress for extending itA US-Iran ceasefire that began in early April has “terminated” hostilities between the t",
+            "pubDate": "Sat, 2 May 2026 02:21:22 +0900",
+            "snippet": "(워싱턴=연합뉴스) 조준형 특파원 = 도널드 트럼프 미국 대통령이 1일(현지시간) 쿠바 정부를 겨냥한 제재를 확대하는 행정명령에 서명했다고 로이...",
             "isNew": true
           },
           {
@@ -721,32 +581,10 @@
             "source": "guardian",
             "sources": [
               "guardian",
-              "nytimes"
+              "cnn"
             ],
             "pubDate": "Thu, 30 Apr 2026 13:34:21 GMT",
             "snippet": "Mojtaba Khamenei says Tehran will eliminate ‘enemy’s abuses of the waterway’ and guard its nuclear and missile programmesUS politics live – latest updatesIran’s supreme leader has broken his recent si",
-            "isNew": true
-          },
-          {
-            "title": "Iraq’s Prime Minister-Designate Thrust Into U.S.-Iran Power Struggle",
-            "link": "https://www.nytimes.com/2026/04/28/world/middleeast/iraq-ali-al-zaidi.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Thu, 30 Apr 2026 16:28:26 +0000",
-            "snippet": "Ali al-Zaidi, a political unknown, has been tasked with forming a new coalition government. Now, he must grapple with growing U.S. pressure to curb Iranian influence over Iraq.",
-            "isNew": true
-          },
-          {
-            "title": "How Trump’s Iran Blockade Is Complicating a High-Stakes Trip to China",
-            "link": "https://www.nytimes.com/2026/04/30/us/politics/trump-china-iran.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Thu, 30 Apr 2026 16:23:27 +0000",
-            "snippet": "If President Trump flies to China as planned in May, the primary topic will clearly be the rippling economic effects of a war that Beijing has made clear it viewed as unnecessary.",
             "isNew": true
           },
           {
@@ -759,69 +597,71 @@
             "pubDate": "Thu, 30 Apr 2026 02:00:04 GMT",
             "snippet": "Over the last six weeks, the Iranian regime has carried out a spate of executions of political prisoners. The Guardian journalist Daniel Boffey reportsIran has hanged 18 political prisoners during the",
             "isNew": true
-          }
-        ]
-      },
-      {
-        "category_id": "other",
-        "category_name": "기타",
-        "category_icon": "📰",
-        "count": 6,
-        "new_count": 6,
-        "articles": [
+          },
           {
-            "title": "Who profits big from the war on Iran?",
-            "link": "https://www.aljazeera.com/video/money-works/2026/5/1/who-profits-big-from-the-war-on-iran?traffic_source=rss",
-            "source": "aljazeera",
+            "title": "The pope’s African tour shows the continent is vital to the future of Catholicism",
+            "link": "https://www.theguardian.com/news/2026/apr/29/the-popes-african-tour-shows-the-continent-is-vital-to-the-future-of-catholicism",
+            "source": "guardian",
             "sources": [
-              "aljazeera"
+              "guardian"
             ],
-            "pubDate": "Fri, 01 May 2026 10:13:05 +0000",
-            "snippet": "Who profits big from the war on Iran?",
+            "pubDate": "Wed, 29 Apr 2026 11:44:49 GMT",
+            "snippet": "Amid the US far right’s hijacking of Christianity and his very public row with Trump, Pope Leo XIV’s visit is symbolic of the ‘growing centrality of Africa and its Black diaspora’• Don’t get The Long ",
             "isNew": true
           },
           {
-            "title": "May Day in the age of AI: The new war on workers",
-            "link": "https://www.aljazeera.com/opinions/2026/5/1/may-day-in-the-age-of-ai-the-new-war-on-workers?traffic_source=rss",
-            "source": "aljazeera",
+            "title": "King Charles agrees with me on Iran nuclear weapon ban, claims Trump",
+            "link": "https://www.theguardian.com/us-news/2026/apr/29/king-charles-agrees-with-me-on-iran-nuclear-weapon-ban-says-trump",
+            "source": "guardian",
             "sources": [
-              "aljazeera"
+              "guardian"
             ],
-            "pubDate": "Fri, 01 May 2026 09:54:12 +0000",
-            "snippet": "As companies pour billions into AI, the fight for workers’ rights is being rewritten as a fight for the right to work.",
+            "pubDate": "Wed, 29 Apr 2026 07:48:45 GMT",
+            "snippet": "Remarks by US president likely to cause embarrassment for aides of UK monarch, who usually remains neutralUK politics live – latest updatesDonald Trump has claimed King Charles agrees with him that Ir",
             "isNew": true
           },
           {
-            "title": "As Iranians Face War, There’s Still Solace in a Cafe",
-            "link": "https://www.nytimes.com/2026/05/01/world/middleeast/iran-war-cafes.html",
-            "source": "nytimes",
+            "title": "Marxists and monarchists: the group hoping to unite Iran’s exiled opposition",
+            "link": "https://www.theguardian.com/world/2026/apr/29/iran-freedom-congress-exiled-opposition",
+            "source": "guardian",
             "sources": [
-              "nytimes"
+              "guardian"
             ],
-            "pubDate": "Fri, 01 May 2026 09:07:14 +0000",
-            "snippet": "Cafes and coffee shops give Iranians affordable places to talk about their hopes, fears and the cost of living as well as to seek company in uncertain times.",
+            "pubDate": "Wed, 29 Apr 2026 04:00:44 GMT",
+            "snippet": "Iran Freedom Congress, which has met in London, aims to be a ‘pluralist movement’ supporting those inside country“It’s an exercise that is necessary and frankly has been missing for the past 47 years,",
             "isNew": true
           },
           {
-            "title": "British couple jailed in Iran: 'We're likely to be here for a long time'",
-            "link": "https://www.bbc.com/news/articles/c202pl60kv9o?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
+            "title": "June 1, 2024 - Israel-Gaza news",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-01-24/index.html",
+            "source": "cnn",
             "sources": [
-              "bbc"
+              "cnn"
             ],
-            "pubDate": "Fri, 01 May 2026 05:04:08 GMT",
-            "snippet": "Lindsay and Craig Foreman are facing the reality of a 10-year prison sentence following their arrest in Iran while on a motorcycle tour last year. ",
+            "pubDate": "",
+            "snippet": "President Joe Biden has laid out a three-phase proposal to end the conflict in Gaza, as global condemnation of Israel's offensive in Rafah grows.",
             "isNew": true
           },
           {
-            "title": "Iranians Live With Pain and Powerlessness, Beneath a Smooth Veneer",
-            "link": "https://www.nytimes.com/2026/04/30/world/middleeast/iranian-mood-after-war.html",
-            "source": "nytimes",
+            "title": "May 21, 2024 Israel-Hamas war, Iran president death news",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-21-24/index.html",
+            "source": "cnn",
             "sources": [
-              "nytimes"
+              "cnn"
             ],
-            "pubDate": "Thu, 30 Apr 2026 18:57:30 +0000",
-            "snippet": "After months of upheaval, many are attempting to get on with their lives while quietly grappling with grief, economic stress and a loss of hope.",
+            "pubDate": "",
+            "snippet": "Prime Minister Benjamin Netanyahu blasted the charges brought by the International Criminal Court against himself and Israel's defense minister as \"beyond outrageous\" in an interview Tuesday with CNN'",
+            "isNew": true
+          },
+          {
+            "title": "May 19, 2024 helicopter crash involving Iranian president",
+            "link": "https://www.cnn.com/middleeast/live-news/raisi-iran-president-helicopter-crash/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "A helicopter carrying Iranian President Ebrahim Raisi crashed while he was visiting a northern region in the country Sunday, according to the Iranian state news agency IRNA.",
             "isNew": true
           }
         ]
@@ -830,42 +670,9 @@
         "category_id": "humanitarian",
         "category_name": "인도주의/피해",
         "category_icon": "🏥",
-        "count": 4,
-        "new_count": 4,
+        "count": 8,
+        "new_count": 8,
         "articles": [
-          {
-            "title": "Why has the world lost sight of the suffering of Palestinians? – The Latest",
-            "link": "https://www.theguardian.com/news/audio/2026/may/01/why-has-the-world-lost-sight-of-the-suffering-of-palestinians-the-latest",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Fri, 01 May 2026 15:54:02 GMT",
-            "snippet": "In the six months since a ceasefire was announced in Gaza, more than 800 civilians have been killed and living conditions have remained dire. Meanwhile, Palestinians in the West Bank face a surge in v",
-            "isNew": true
-          },
-          {
-            "title": "Has the US-Iran ceasefire reset the clock on War Powers Act deadline?",
-            "link": "https://www.aljazeera.com/news/2026/5/1/has-the-us-iran-ceasefire-reset-the-clock-on-war-powers-act-deadline?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Fri, 01 May 2026 10:56:21 +0000",
-            "snippet": "Defence secretary claims hostilities have ceased, but lawmakers say US forces remain active despite halted air raids.",
-            "isNew": true
-          },
-          {
-            "title": "Deadly Israeli strikes on southern Lebanon despite ceasefire",
-            "link": "https://www.bbc.com/news/articles/cq5pepj21g8o?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
-            "sources": [
-              "bbc"
-            ],
-            "pubDate": "Fri, 01 May 2026 08:12:04 GMT",
-            "snippet": "Seventeen people - including two children - were killed, according to Lebanon's health ministry. ",
-            "isNew": true
-          },
           {
             "title": "Syrian commission prepares war crimes case against notorious Assad official",
             "link": "https://www.theguardian.com/world/2026/apr/30/fadi-saqr-tadamon-damascus-syria",
@@ -876,6 +683,158 @@
             "pubDate": "Thu, 30 Apr 2026 06:00:11 GMT",
             "snippet": "Fadi Saqr is accused of mass killings of civilians in Tadamon, Damascus, where people say he must face justiceA Syrian rights commission is preparing a case accusing Fadi Saqr, a militia leader within",
             "isNew": true
+          },
+          {
+            "title": "Middle East crisis: Trump hits back at German chancellor after Merz said Iran was ‘humiliating’ US – as it happened",
+            "link": "https://www.theguardian.com/world/live/2026/apr/28/middle-east-crisis-live-iran-us-israel-lebanon-hormuz-nuclear-oil-latest-news-updates",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Tue, 28 Apr 2026 19:34:18 GMT",
+            "snippet": "US president claims Friedrich Merz ‘doesn’t know what he’s talking about’ after German leader criticised US strategy in IranUS is being ‘humiliated’ by Iran’s leadership, says Friedrich MerzHezbollah ",
+            "isNew": true
+          },
+          {
+            "title": "Several dead after Israeli joint security forces raid in West Bank",
+            "link": "https://www.cnn.com/2022/10/25/middleeast/israel-forces-raid-nablus-palestine-intl-hnk/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "Tue, 25 Oct 2022 13:58:46 GMT",
+            "snippet": "",
+            "isNew": true
+          },
+          {
+            "title": "June 9, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-09-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "Key Israeli war cabinet member Benny Gantz quit Prime Minister Benjamin Netanyahu's government Sunday. Meanwhile, the death toll from Israel's hostage rescue in central Gaza keeps rising. Follow for l",
+            "isNew": true
+          },
+          {
+            "title": "June 8, 2024 - Israel-Gaza news",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-08-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "The Israeli military says it rescued four hostages from central Gaza on Saturday. Palestinians report scenes of horror on the ground, and Gaza hospital officials say more than 200 people were killed.",
+            "isNew": true
+          },
+          {
+            "title": "May 19, 2024 - Israel-Gaza news",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-19-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "An Israeli airstrike on a refugee camp in central Gaza has killed at least 35 people, including seven children, according to hospital officials. Meanwhile, Israeli war cabinet divisions are spilling i",
+            "isNew": true
+          },
+          {
+            "title": "Devastation in Gaza as Israel wages war on Hamas",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-18-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "Gaza faces a \"dire\" food situation as barely more than 300 aid trucks have entered the strip since Israel began its offensive in Rafah, a UN agency said in a report published Friday. Follow live updat",
+            "isNew": true
+          },
+          {
+            "title": "May 14, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-14-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "Amid signs that Israel may launch a full-scale incursion in Rafah, aid agencies are warning any escalation in the southern Gaza city risks exacerbating the already deteriorating humanitarian situation",
+            "isNew": true
+          }
+        ]
+      },
+      {
+        "category_id": "military",
+        "category_name": "군사 작전",
+        "category_icon": "⚔️",
+        "count": 6,
+        "new_count": 6,
+        "articles": [
+          {
+            "title": "June 12, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-12-24-intl/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "Israel launched strikes on Al-Mawasi in southern Gaza early Thursday, bombarding an area it had previously designated as a \"safe zone\" by land, sea and air, according to the official Palestinian news ",
+            "isNew": true
+          },
+          {
+            "title": "June 6, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-06-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "Dozens of people were killed in an Israeli airstrike on a United Nations-run school in central Gaza, authorities said, in an attack that CNN analysis found was conducted with a US-made weapon.",
+            "isNew": true
+          },
+          {
+            "title": "May 29, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-29-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "The Israeli military says it established \"operational control\" over the Philadelphi Corridor, a 14-kilometer (8.7 miles) strip of land along the border between Gaza and Egypt.",
+            "isNew": true
+          },
+          {
+            "title": "May 24, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-24-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "The United Nations' top court has ordered Israel to immediately halt its controversial military operation in the southern Gaza city of Rafah, further increasing international pressure on Israel over i",
+            "isNew": true
+          },
+          {
+            "title": "Israeli police arrest man after nun attacked in Jerusalem",
+            "link": "https://www.bbc.com/news/articles/cy02gnzlvkko?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc"
+            ],
+            "pubDate": "Fri, 01 May 2026 17:03:11 GMT",
+            "snippet": "The French nun was pushed over and kicked in the apparently unprovoked assault, amid a rise in harassment of Christians in the city by Jewish extremists.",
+            "isNew": true
+          },
+          {
+            "title": "Video of attack on French nun in Jerusalem causes widespread condemnation",
+            "link": "https://www.theguardian.com/world/2026/may/01/video-attack-french-nun-jerusalem",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Fri, 01 May 2026 16:38:40 GMT",
+            "snippet": "Israeli foreign ministry denounces ‘shameful act’ after footage shows man pushing woman to ground and kicking herA video of an attack on a French Catholic nun and archeological researcher in Jerusalem",
+            "isNew": true
           }
         ]
       },
@@ -883,40 +842,157 @@
         "category_id": "diplomacy",
         "category_name": "외교/협상",
         "category_icon": "🤝",
-        "count": 3,
-        "new_count": 3,
+        "count": 6,
+        "new_count": 6,
         "articles": [
           {
-            "title": "Iran offers new peace proposal to US in attempt to end deadlock",
+            "title": "US warns shippers against paying Strait of Hormuz tolls, ‘donations’",
+            "link": "https://www.aljazeera.com/news/2026/5/1/us-warns-shippers-against-paying-strait-of-hormuz-tolls-donations?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Fri, 01 May 2026 17:18:43 +0000",
+            "snippet": "Latest warning comes as Iranian state media reports Tehran has presented new peace proposal to US. ",
+            "isNew": true
+          },
+          {
+            "title": "June 13, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-13-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "The US-backed Gaza ceasefire proposal doesn't meet Hamas' demands for an end to the war, a senior official has told CNN. Osama Hamdan also said that \"no one has an idea\" how many of the hostages held ",
+            "isNew": true
+          },
+          {
+            "title": "June 10, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-10-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "The UN Security Council adopted a resolution proposed by the United States for a permanent ceasefire and release of the hostages in Gaza.",
+            "isNew": true
+          },
+          {
+            "title": "트럼프 \"이란의 새 제안 만족스럽지 않아…지도부 엄청난 분열\"",
+            "link": "https://www.yna.co.kr/view/AKR20260502001500071",
+            "source": "yonhap",
+            "sources": [
+              "yonhap"
+            ],
+            "pubDate": "Sat, 2 May 2026 02:11:43 +0900",
+            "snippet": "(워싱턴=연합뉴스) 박성민 특파원 = 도널드 트럼프 미국 대통령은 1일(현지시간) 이란 측이 중재국 파키스탄을 통해 전달해온 새로운 협상안에 대...",
+            "isNew": true
+          },
+          {
+            "title": "Iran offers new peace proposal to US but Trump ‘not satisfied’",
             "link": "https://www.theguardian.com/world/2026/may/01/pakistan-backchannel-us-iran-deal-peace",
             "source": "guardian",
             "sources": [
               "guardian"
             ],
-            "pubDate": "Fri, 01 May 2026 16:00:50 GMT",
-            "snippet": "Tehran reportedly passed proposal to mediators in Pakistan on Thursday night, though its contents are not yet clearIran has passed a new proposal to Pakistani mediators to end the war with the United ",
+            "pubDate": "Fri, 01 May 2026 16:58:11 GMT",
+            "snippet": "Tehran reportedly passed proposal to mediators in Pakistan on Thursday night, though its contents are not yet clearIran has passed a new proposal to Pakistani mediators in the latest effort to end the",
             "isNew": true
           },
           {
-            "title": "Iran Sends New Proposal for Peace Talks with U.S., State Media Says",
-            "link": "https://www.nytimes.com/2026/05/01/world/middleeast/iran-new-proposal-peace-talks.html",
-            "source": "nytimes",
+            "title": "이란, 파키스탄 통해 새 종전안…\"美도발 멈춰야 외교\"(종합2보)",
+            "link": "https://www.yna.co.kr/view/AKR20260501063452108",
+            "source": "yonhap",
             "sources": [
-              "nytimes"
+              "yonhap"
             ],
-            "pubDate": "Fri, 01 May 2026 15:25:30 +0000",
-            "snippet": "The details of the latest plan were unclear. President Trump had expressed dissatisfaction over a previous Iranian proposal to end the war and reopen the Strait of Hormuz.",
+            "pubDate": "Sat, 2 May 2026 01:36:29 +0900",
+            "snippet": "(이스탄불=연합뉴스) 김동호 특파원 = 이란이 미국과의 전쟁을 종식하기 위한 새 협상안을 중재국 파키스탄에 전달했다고 이란 국영 IRNA 통신이...",
+            "isNew": true
+          }
+        ]
+      },
+      {
+        "category_id": "economy",
+        "category_name": "경제 영향",
+        "category_icon": "📊",
+        "count": 3,
+        "new_count": 3,
+        "articles": [
+          {
+            "title": "The Guardian view on the UAE quitting Opec: whatever importers pay, the price of fossil fuels is too high | Editorial",
+            "link": "https://www.theguardian.com/commentisfree/2026/apr/29/the-guardian-view-on-the-uae-quitting-opec-whatever-importers-pay-the-price-of-fossil-fuels-is-too-high",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Wed, 29 Apr 2026 18:00:49 GMT",
+            "snippet": "The world must accelerate the shift to renewables, regardless of the economic effects of Abu Dhabi’s decisionOpec appears to be the latest casualty of the Iran war. On Tuesday, the United Arab Emirate",
             "isNew": true
           },
           {
-            "title": "Woman killed, children injured as Israel attacks Lebanon",
-            "link": "https://www.aljazeera.com/news/2026/5/1/woman-killed-children-injured-as-israel-attacks-lebanon?traffic_source=rss",
-            "source": "aljazeera",
+            "title": "Calls for humanitarian corridor through strait of Hormuz as Iran war hits vital aid",
+            "link": "https://www.theguardian.com/global-development/2026/apr/29/humanitarian-corridor-strait-of-hormuz-iran-war-hits-vital-aid",
+            "source": "guardian",
             "sources": [
-              "aljazeera"
+              "guardian"
             ],
-            "pubDate": "Fri, 01 May 2026 13:26:44 +0000",
-            "snippet": "Israel&#039;s assault, which has displaced more than one people in Lebanon, escalates despite US brokered &#039;ceasefire&#039;.",
+            "pubDate": "Wed, 29 Apr 2026 07:00:48 GMT",
+            "snippet": "Soaring oil prices and the blockade are preventing food, fuel and medicine being delivered to millions of people in desperate need, say NGOsThe volatility of global oil prices caused by the US and Isr",
+            "isNew": true
+          },
+          {
+            "title": "Submit your questions to Alan Beattie: What will Trump’s war on Iran mean for global trade?",
+            "link": "https://www.ft.com/content/c8af039b-fb0a-409e-a7e7-a1b5b7b5f6b9",
+            "source": "ft",
+            "sources": [
+              "ft"
+            ],
+            "pubDate": "Fri, 01 May 2026 16:57:35 GMT",
+            "snippet": "Take part in a live Ask an Expert Q&A with our trade columnist on Thursday May 7 at 1pm (BST) ",
+            "isNew": true
+          }
+        ]
+      },
+      {
+        "category_id": "other",
+        "category_name": "기타",
+        "category_icon": "📰",
+        "count": 3,
+        "new_count": 3,
+        "articles": [
+          {
+            "title": "Family of ailing Iranian Nobel laureate say keeping her in jail is a death sentence",
+            "link": "https://www.theguardian.com/global-development/2026/apr/29/family-jailed-iranian-nobel-laureate-suspected-heart-attack-narges-mohammadi",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Wed, 29 Apr 2026 17:21:34 GMT",
+            "snippet": "Narges Mohammadi denied medical leave from prison in spite of sharp decline in health and drastic weight loss, say lawyersThe family of the jailed Iranian Nobel laureate Narges Mohammadi say they fear",
+            "isNew": true
+          },
+          {
+            "title": "May 30, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-30-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "The war in Gaza will likely continue until at least the end of the year, an Israeli official warned.",
+            "isNew": true
+          },
+          {
+            "title": "May 22, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/iran-israel-hamas-war-gaza-news-05-22-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "Spain, Norway and Ireland announced plans to formally recognize a Palestinian state, in a move that is likely to bolster the global Palestinian cause but strain relations with Israel.",
             "isNew": true
           }
         ]
@@ -925,214 +1001,203 @@
         "category_id": "regional",
         "category_name": "지역 정세",
         "category_icon": "🌍",
-        "count": 2,
-        "new_count": 2,
+        "count": 1,
+        "new_count": 1,
         "articles": [
           {
-            "title": "As Israel Entrenches, Frustration With Hezbollah Turns to Support",
-            "link": "https://www.nytimes.com/2026/05/01/world/middleeast/lebanon-hezbollah-ceasefire-israel.html",
-            "source": "nytimes",
+            "title": "June 5, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-05-24/index.html",
+            "source": "cnn",
             "sources": [
-              "nytimes"
+              "cnn"
             ],
-            "pubDate": "Fri, 01 May 2026 12:58:51 +0000",
-            "snippet": "With the cease-fire fraying and Israel demolishing villages in the south, many Hezbollah supporters in Lebanon are putting aside their annoyance with the group and turning to it for protection.",
-            "isNew": true
-          },
-          {
-            "title": "Journalist Detained in Kuwait Says He Was Stripped of Citizenship",
-            "link": "https://www.nytimes.com/2026/04/30/world/middleeast/ahmed-shihab-eldin-citizenship.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Thu, 30 Apr 2026 19:49:10 +0000",
-            "snippet": "Ahmed Shihab-Eldin, a Kuwaiti-American, was held for several weeks after posting about the Iran war. Kuwait does not appear to have commented publicly on his case.",
+            "pubDate": "",
+            "snippet": "Tensions are ramping up at the Israel-Lebanon border, with Hezbollah claiming responsibility for a Wednesday evening attack in northern Israel that left multiple people injured.",
             "isNew": true
           }
         ]
       }
     ],
     "recent_30min": {
-      "total_new": 50,
+      "total_new": 49,
       "by_category": {
-        "military": {
-          "count": 19,
+        "politics": {
+          "count": 13,
           "titles": [
             {
-              "title": "Video of attack on French nun in Jerusalem causes widespread condemnation",
-              "link": "https://www.theguardian.com/world/2026/may/01/video-attack-french-nun-jerusalem",
-              "source": "guardian"
-            },
-            {
-              "title": "CCTV captures moment man attacks nun in Jerusalem – video",
-              "link": "https://www.theguardian.com/world/video/2026/may/01/cctv-captures-moment-man-attacks-nun-in-jerusalem-video",
-              "source": "guardian"
-            },
-            {
-              "title": "Pentagon announces deal with seven AI companies for classified systems",
-              "link": "https://www.aljazeera.com/news/2026/5/1/pentagon-announces-deal-with-seven-ai-companies-for-classified-systems?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Israeli police arrest man after nun attacked in Jerusalem",
-              "link": "https://www.bbc.com/news/articles/cy02gnzlvkko?at_medium=RSS&at_campaign=rss",
-              "source": "bbc"
-            },
-            {
-              "title": "Trump’s threat: Why cutting US troops in Europe won’t be easy",
-              "link": "https://www.aljazeera.com/news/2026/5/1/trumps-threat-why-cutting-us-troops-in-europe-wont-be-easy?traffic_source=rss",
-              "source": "aljazeera"
-            }
-          ]
-        },
-        "diplomacy": {
-          "count": 3,
-          "titles": [
-            {
-              "title": "Iran offers new peace proposal to US in attempt to end deadlock",
-              "link": "https://www.theguardian.com/world/2026/may/01/pakistan-backchannel-us-iran-deal-peace",
-              "source": "guardian"
-            },
-            {
-              "title": "Iran Sends New Proposal for Peace Talks with U.S., State Media Says",
+              "title": "Trump ‘Not Satisfied’ With Iran’s New Proposal on Ending War",
               "link": "https://www.nytimes.com/2026/05/01/world/middleeast/iran-new-proposal-peace-talks.html",
               "source": "nytimes"
             },
             {
-              "title": "Woman killed, children injured as Israel attacks Lebanon",
-              "link": "https://www.aljazeera.com/news/2026/5/1/woman-killed-children-injured-as-israel-attacks-lebanon?traffic_source=rss",
+              "title": "로이터 \"트럼프, 쿠바정부 겨냥 제재 확대 행정명령\"",
+              "link": "https://www.yna.co.kr/view/AKR20260502000900071",
+              "source": "yonhap"
+            },
+            {
+              "title": "Iran supreme leader issues defiant statement on strait of Hormuz",
+              "link": "https://www.theguardian.com/world/2026/apr/30/iran-supreme-leader-issues-defiant-statement-on-strait-of-hormuz",
+              "source": "guardian"
+            },
+            {
+              "title": "Iran’s wartime executions - podcast",
+              "link": "https://www.theguardian.com/news/audio/2026/apr/30/irans-wartime-executions-podcast",
+              "source": "guardian"
+            },
+            {
+              "title": "The pope’s African tour shows the continent is vital to the future of Catholicism",
+              "link": "https://www.theguardian.com/news/2026/apr/29/the-popes-african-tour-shows-the-continent-is-vital-to-the-future-of-catholicism",
+              "source": "guardian"
+            }
+          ]
+        },
+        "diplomacy": {
+          "count": 6,
+          "titles": [
+            {
+              "title": "US warns shippers against paying Strait of Hormuz tolls, ‘donations’",
+              "link": "https://www.aljazeera.com/news/2026/5/1/us-warns-shippers-against-paying-strait-of-hormuz-tolls-donations?traffic_source=rss",
               "source": "aljazeera"
+            },
+            {
+              "title": "June 13, 2024 Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-13-24/index.html",
+              "source": "cnn"
+            },
+            {
+              "title": "June 10, 2024 Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-10-24/index.html",
+              "source": "cnn"
+            },
+            {
+              "title": "트럼프 \"이란의 새 제안 만족스럽지 않아…지도부 엄청난 분열\"",
+              "link": "https://www.yna.co.kr/view/AKR20260502001500071",
+              "source": "yonhap"
+            },
+            {
+              "title": "Iran offers new peace proposal to US but Trump ‘not satisfied’",
+              "link": "https://www.theguardian.com/world/2026/may/01/pakistan-backchannel-us-iran-deal-peace",
+              "source": "guardian"
             }
           ]
         },
         "humanitarian": {
-          "count": 4,
+          "count": 11,
           "titles": [
-            {
-              "title": "Why has the world lost sight of the suffering of Palestinians? – The Latest",
-              "link": "https://www.theguardian.com/news/audio/2026/may/01/why-has-the-world-lost-sight-of-the-suffering-of-palestinians-the-latest",
-              "source": "guardian"
-            },
-            {
-              "title": "Has the US-Iran ceasefire reset the clock on War Powers Act deadline?",
-              "link": "https://www.aljazeera.com/news/2026/5/1/has-the-us-iran-ceasefire-reset-the-clock-on-war-powers-act-deadline?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Deadly Israeli strikes on southern Lebanon despite ceasefire",
-              "link": "https://www.bbc.com/news/articles/cq5pepj21g8o?at_medium=RSS&at_campaign=rss",
-              "source": "bbc"
-            },
             {
               "title": "Syrian commission prepares war crimes case against notorious Assad official",
               "link": "https://www.theguardian.com/world/2026/apr/30/fadi-saqr-tadamon-damascus-syria",
               "source": "guardian"
-            }
-          ]
-        },
-        "regional": {
-          "count": 2,
-          "titles": [
-            {
-              "title": "As Israel Entrenches, Frustration With Hezbollah Turns to Support",
-              "link": "https://www.nytimes.com/2026/05/01/world/middleeast/lebanon-hezbollah-ceasefire-israel.html",
-              "source": "nytimes"
             },
             {
-              "title": "Journalist Detained in Kuwait Says He Was Stripped of Citizenship",
-              "link": "https://www.nytimes.com/2026/04/30/world/middleeast/ahmed-shihab-eldin-citizenship.html",
-              "source": "nytimes"
-            }
-          ]
-        },
-        "politics": {
-          "count": 7,
-          "titles": [
-            {
-              "title": "Falklands claim: Can Argentina’s Milei use Trump ties to challenge the UK?",
-              "link": "https://www.aljazeera.com/news/2026/5/1/falklands-claim-can-argentinas-milei-use-trump-ties-to-challenge-the-uk?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Trump administration says hostilities in Iran ‘terminated’ ahead of war powers deadline",
-              "link": "https://www.theguardian.com/world/2026/apr/30/senate-republicans-block-trump-iran-war-halt",
+              "title": "Middle East crisis: Trump hits back at German chancellor after Merz said Iran was ‘humiliating’ US – as it happened",
+              "link": "https://www.theguardian.com/world/live/2026/apr/28/middle-east-crisis-live-iran-us-israel-lebanon-hormuz-nuclear-oil-latest-news-updates",
               "source": "guardian"
             },
             {
-              "title": "Iran’s Supreme Leader Signals Plan to Maintain Control Over Strait of Hormuz",
-              "link": "https://www.nytimes.com/2026/04/30/world/middleeast/iran-war-supreme-leader-mojtaba-khamenei-strait-hormuz.html",
-              "source": "nytimes"
+              "title": "Several dead after Israeli joint security forces raid in West Bank",
+              "link": "https://www.cnn.com/2022/10/25/middleeast/israel-forces-raid-nablus-palestine-intl-hnk/index.html",
+              "source": "cnn"
             },
             {
-              "title": "Iraq’s Prime Minister-Designate Thrust Into U.S.-Iran Power Struggle",
-              "link": "https://www.nytimes.com/2026/04/28/world/middleeast/iraq-ali-al-zaidi.html",
-              "source": "nytimes"
+              "title": "June 9, 2024 Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-09-24/index.html",
+              "source": "cnn"
             },
             {
-              "title": "How Trump’s Iran Blockade Is Complicating a High-Stakes Trip to China",
-              "link": "https://www.nytimes.com/2026/04/30/us/politics/trump-china-iran.html",
-              "source": "nytimes"
+              "title": "June 8, 2024 - Israel-Gaza news",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-08-24/index.html",
+              "source": "cnn"
             }
           ]
         },
         "economy": {
-          "count": 9,
+          "count": 3,
           "titles": [
             {
-              "title": "Why U.S. Oil Companies Are Not Plugging the World’s Energy Gap",
-              "link": "https://www.nytimes.com/2026/05/01/business/energy-environment/exxon-mobile-chevron-oil-iran-war.html",
-              "source": "nytimes"
+              "title": "The Guardian view on the UAE quitting Opec: whatever importers pay, the price of fossil fuels is too high | Editorial",
+              "link": "https://www.theguardian.com/commentisfree/2026/apr/29/the-guardian-view-on-the-uae-quitting-opec-whatever-importers-pay-the-price-of-fossil-fuels-is-too-high",
+              "source": "guardian"
             },
             {
-              "title": "Oil prices rise again with little sign of war on Iran ending",
-              "link": "https://www.aljazeera.com/news/2026/5/1/oil-prices-rise-again-with-little-sign-of-war-on-iran-ending?traffic_source=rss",
-              "source": "aljazeera"
+              "title": "Calls for humanitarian corridor through strait of Hormuz as Iran war hits vital aid",
+              "link": "https://www.theguardian.com/global-development/2026/apr/29/humanitarian-corridor-strait-of-hormuz-iran-war-hits-vital-aid",
+              "source": "guardian"
             },
             {
-              "title": "Rallies under way as workers gather for International Labour Day",
-              "link": "https://www.aljazeera.com/economy/2026/5/1/rallies-under-way-as-workers-gather-for-international-labour-day?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Venice Biennale Jury Resigns Amid Tension Over Awards Ban",
-              "link": "https://www.nytimes.com/2026/04/30/arts/design/israel-artist-venice-biennale.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "How the War in Iran is Affecting Africa’s Economy and Fuel Supply",
-              "link": "https://www.nytimes.com/2026/04/30/world/africa/iran-war-africa-economic-consequences.html",
-              "source": "nytimes"
+              "title": "Submit your questions to Alan Beattie: What will Trump’s war on Iran mean for global trade?",
+              "link": "https://www.ft.com/content/c8af039b-fb0a-409e-a7e7-a1b5b7b5f6b9",
+              "source": "ft"
             }
           ]
         },
         "other": {
-          "count": 6,
+          "count": 5,
           "titles": [
             {
-              "title": "Who profits big from the war on Iran?",
-              "link": "https://www.aljazeera.com/video/money-works/2026/5/1/who-profits-big-from-the-war-on-iran?traffic_source=rss",
-              "source": "aljazeera"
+              "title": "Family of ailing Iranian Nobel laureate say keeping her in jail is a death sentence",
+              "link": "https://www.theguardian.com/global-development/2026/apr/29/family-jailed-iranian-nobel-laureate-suspected-heart-attack-narges-mohammadi",
+              "source": "guardian"
             },
             {
-              "title": "May Day in the age of AI: The new war on workers",
-              "link": "https://www.aljazeera.com/opinions/2026/5/1/may-day-in-the-age-of-ai-the-new-war-on-workers?traffic_source=rss",
-              "source": "aljazeera"
+              "title": "Iran",
+              "link": "https://www.cnn.com/specials/middleeast/iran?utm_source=section",
+              "source": "cnn"
             },
             {
-              "title": "As Iranians Face War, There’s Still Solace in a Cafe",
-              "link": "https://www.nytimes.com/2026/05/01/world/middleeast/iran-war-cafes.html",
-              "source": "nytimes"
+              "title": "Israel",
+              "link": "https://www.cnn.com/specials/middleeast/israel?utm_source=section",
+              "source": "cnn"
             },
             {
-              "title": "British couple jailed in Iran: 'We're likely to be here for a long time'",
-              "link": "https://www.bbc.com/news/articles/c202pl60kv9o?at_medium=RSS&at_campaign=rss",
-              "source": "bbc"
+              "title": "May 30, 2024 Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-30-24/index.html",
+              "source": "cnn"
             },
             {
-              "title": "Iranians Live With Pain and Powerlessness, Beneath a Smooth Veneer",
-              "link": "https://www.nytimes.com/2026/04/30/world/middleeast/iranian-mood-after-war.html",
-              "source": "nytimes"
+              "title": "May 22, 2024 Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/iran-israel-hamas-war-gaza-news-05-22-24/index.html",
+              "source": "cnn"
+            }
+          ]
+        },
+        "military": {
+          "count": 10,
+          "titles": [
+            {
+              "title": "June 12, 2024 Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-12-24-intl/index.html",
+              "source": "cnn"
+            },
+            {
+              "title": "June 6, 2024 Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-06-24/index.html",
+              "source": "cnn"
+            },
+            {
+              "title": "May 29, 2024 Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-29-24/index.html",
+              "source": "cnn"
+            },
+            {
+              "title": "May 28, 2024 - Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-28-24/index.html",
+              "source": "cnn"
+            },
+            {
+              "title": "May 24, 2024 Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-24-24/index.html",
+              "source": "cnn"
+            }
+          ]
+        },
+        "regional": {
+          "count": 1,
+          "titles": [
+            {
+              "title": "June 5, 2024 Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-05-24/index.html",
+              "source": "cnn"
             }
           ]
         }
@@ -1226,50 +1291,75 @@
     }
   ],
   "economic_indicators": {
+    "WTI": {
+      "price": 101.9,
+      "change": -3.17,
+      "changePercent": -3.02,
+      "prev": 105.07
+    },
+    "GOLD": {
+      "price": 4640.1,
+      "change": 25.4,
+      "changePercent": 0.55,
+      "prev": 4614.7
+    },
+    "DXY": {
+      "price": 98.13,
+      "change": 0.05,
+      "changePercent": 0.05,
+      "prev": 98.08
+    },
+    "VIX": {
+      "price": 16.78,
+      "change": -0.11,
+      "changePercent": -0.65,
+      "prev": 16.89
+    },
+    "BRENT": {
+      "price": 108.11,
+      "change": -5.9,
+      "changePercent": -5.17,
+      "prev": 114.01
+    },
+    "US10Y": {
+      "price": 4.38,
+      "change": -0.01,
+      "changePercent": -0.23,
+      "prev": 4.39
+    },
     "US2Y": {
       "price": 3.58,
       "change": -0.01,
       "changePercent": -0.28,
       "prev": 3.59
-    },
-    "US10Y": {
-      "price": 4.37,
-      "change": -0.02,
-      "changePercent": -0.46,
-      "prev": 4.39
-    },
-    "WTI": {
-      "price": 101.78,
-      "change": -3.29,
-      "changePercent": -3.13,
-      "prev": 105.07
-    },
-    "VIX": {
-      "price": 16.92,
-      "change": 0.03,
-      "changePercent": 0.18,
-      "prev": 16.89
-    },
-    "DXY": {
-      "price": 98.02,
-      "change": -0.06,
-      "changePercent": -0.06,
-      "prev": 98.08
-    },
-    "GOLD": {
-      "price": 4651,
-      "change": 36.3,
-      "changePercent": 0.79,
-      "prev": 4614.7
-    },
-    "BRENT": {
-      "price": 107.99,
-      "change": -6.02,
-      "changePercent": -5.28,
-      "prev": 114.01
     }
   },
-  "critical_events": [],
+  "critical_events": [
+    {
+      "id": "diplomatic_breakthrough",
+      "name": "외교적 돌파구/강대국 중재",
+      "severity": "high",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "shorten"
+    },
+    {
+      "id": "conflict_expansion",
+      "name": "전선 확대/신규 참전국",
+      "severity": "moderate",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "lengthen"
+    },
+    {
+      "id": "wmd_threat",
+      "name": "대량살상무기(WMD)/핵 위협",
+      "severity": "critical",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "lengthen"
+    }
+  ],
   "feeds_loaded": 7,
   "feeds_total": 8
 }
