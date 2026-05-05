@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-05-05T11:46:54.716Z",
+  "timestamp": "2026-05-05T15:50:49.386Z",
   "war_day": 66,
   "probabilities": {
-    "1개월 내 (~3월)": 24,
-    "2~3개월 (4~5월)": 39.5,
-    "4~6개월 (6~8월)": 22.1,
-    "7~12개월 (9월~27/2월)": 11.1,
-    "1년 초과": 3.3
+    "1개월 내 (~3월)": 27.5,
+    "2~3개월 (4~5월)": 43.8,
+    "4~6개월 (6~8월)": 18.2,
+    "7~12개월 (9월~27/2월)": 8.2,
+    "1년 초과": 2.3
   },
   "factors": [
     {
@@ -45,20 +45,20 @@
       "decay": 0.4
     },
     {
-      "factor": "확전 뉴스 우세 (확전10:휴전8)",
-      "impact": "전쟁 장기화 가능성 (확전비율 56%)",
-      "weight": "+0.02%p (4~6개월)",
-      "direction": "lengthen",
-      "detail": "언론에서 휴전보다 확전을 더 많이 보도하고 있습니다.",
+      "factor": "이란 미사일 능력 급감 (휴전16:확전8)",
+      "impact": "전쟁 지속 능력 약화로 단기 종전 가능성 증가",
+      "weight": "+0.0%p (1개월내), +0.0%p (2~3개월) (잔존40%)",
+      "direction": "shorten",
+      "detail": "이란의 보복 미사일 타격 능력이 약 90% 감소했습니다.",
       "keywords": [
-        "escalat",
-        "intensif",
-        "expand",
-        "widen"
+        "missile",
+        "ballistic",
+        "launch",
+        "strike capab"
       ],
-      "applied": "실시간",
+      "applied": "2026-03-02",
       "active": true,
-      "decay": 1
+      "decay": 0.4
     },
     {
       "factor": "호르무즈 해협 봉쇄 → 국제 경제 압력",
@@ -164,11 +164,11 @@
       "decay": 1
     },
     {
-      "factor": "협상/외교 뉴스 8건 감지",
+      "factor": "협상/외교 뉴스 12건 감지",
       "impact": "외교적 해결 움직임 포착",
-      "weight": "+0.02%p (1개월내), +0.01%p (2~3개월)",
+      "weight": "+0.02%p (1개월내), +0.02%p (2~3개월)",
       "direction": "shorten",
-      "detail": "실시간 뉴스에서 협상 관련 기사 8건이 감지되었습니다.",
+      "detail": "실시간 뉴스에서 협상 관련 기사 12건이 감지되었습니다.",
       "keywords": [
         "negotiat",
         "talks",
@@ -181,11 +181,11 @@
       "decay": 1
     },
     {
-      "factor": "지역 확산 뉴스 16건 감지",
+      "factor": "지역 확산 뉴스 20건 감지",
       "impact": "주변국 대규모 연루 → 장기화 위험 높음",
       "weight": "+0.02%p (4~6개월), +0.02%p (7~12개월)",
       "direction": "lengthen",
-      "detail": "주변국을 언급하는 기사 16건이 감지되었습니다.",
+      "detail": "주변국을 언급하는 기사 20건이 감지되었습니다.",
       "keywords": [
         "saudi",
         "uae",
@@ -234,11 +234,41 @@
       "decay": 0.3
     },
     {
+      "factor": "[중대 이벤트] 교전국 항복/사과/공식 양보",
+      "impact": "교전국이 공식적으로 사과/양보/항복 의사를 표명. 역사적으로 패전국의 공식 양보 후 평균 2~4주 내 종전 (걸프전 48시간, 포클랜드 3일, 코소보 11일).",
+      "weight": "+5.3%p (1개월내), +8.0%p (2~3개월), -3.3%p (4~6개월), -3.3%p (7~12개월), -1.3%p (1년초과)",
+      "direction": "shorten",
+      "detail": "교전국이 공식적으로 사과/양보/항복 의사를 표명. 역사적으로 패전국의 공식 양보 후 평균 2~4주 내 종전 (걸프전 48시간, 포클랜드 3일, 코소보 11일).\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Hegseth says US ‘hasn’t capitulated on anything’ regarding Iran",
+      "keywords": [
+        "apolog",
+        "war",
+        "surrender",
+        "offer",
+        "capitulat",
+        "unconditional",
+        "term",
+        "accept",
+        "defeat",
+        "admit",
+        "defeat",
+        "white flag",
+        "lay down",
+        "arm",
+        "apolog",
+        "neighb",
+        "apolog",
+        "attack"
+      ],
+      "applied": "2026-05-05",
+      "active": true,
+      "severity": "critical"
+    },
+    {
       "factor": "[중대 이벤트] 공식 휴전/평화 합의",
       "impact": "공식 휴전 또는 평화 합의 체결. 휴전 합의는 전쟁 종결의 결정적 단계이며, 합의 후 이행까지 평균 1~2주 소요.",
       "weight": "+10.0%p (1개월내), +6.7%p (2~3개월), -5.3%p (4~6개월), -4.0%p (7~12개월), -2.0%p (1년초과)",
       "direction": "shorten",
-      "detail": "공식 휴전 또는 평화 합의 체결. 휴전 합의는 전쟁 종결의 결정적 단계이며, 합의 후 이행까지 평균 1~2주 소요.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Afghanistan accuses Pakistan of killing three civilians in ‘war crime’",
+      "detail": "공식 휴전 또는 평화 합의 체결. 휴전 합의는 전쟁 종결의 결정적 단계이며, 합의 후 이행까지 평균 1~2주 소요.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: What’s the significance of UAE’s Fujairah, hit on Monday?",
       "keywords": [
         "ceasefire",
         "agree",
@@ -260,11 +290,11 @@
       "severity": "critical"
     },
     {
-      "factor": "유가 급등 (WTI $103.93/배럴)",
+      "factor": "유가 급등 (WTI $101.76/배럴)",
       "impact": "높은 경제 압력 → 빠른 해결 요구 증가",
       "weight": "+4%p (1-2개월)",
       "direction": "shorten",
-      "detail": "WTI 유가가 $103.93/배럴로 100달러 돌파입니다. 호르무즈 해협 봉쇄와 맞물려 글로벌 에너지 시장에 큰 충격을 주고 있으며, 주요국들의 조기 종전 압력이 강화되고 있습니다.",
+      "detail": "WTI 유가가 $101.76/배럴로 100달러 돌파입니다. 호르무즈 해협 봉쇄와 맞물려 글로벌 에너지 시장에 큰 충격을 주고 있으며, 주요국들의 조기 종전 압력이 강화되고 있습니다.",
       "keywords": [
         "oil",
         "crude",
@@ -277,11 +307,11 @@
       "active": true
     },
     {
-      "factor": "금값 사상최고 ($4570/oz)",
+      "factor": "금값 사상최고 ($4586/oz)",
       "impact": "안전자산 수요 폭증 → 글로벌 불안 심화",
       "weight": "+2%p (4-6개월)",
       "direction": "lengthen",
-      "detail": "금 가격이 온스당 $4570로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
+      "detail": "금 가격이 온스당 $4586로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
       "keywords": [
         "gold",
         "safe haven",
@@ -293,24 +323,24 @@
     }
   ],
   "news_signals": {
-    "ceasefire_mentions": 8,
-    "escalation_mentions": 10,
-    "negotiation_mentions": 8,
-    "casualty_mentions": 8,
-    "peace_mentions": 8,
-    "regional_spread": 16,
+    "ceasefire_mentions": 16,
+    "escalation_mentions": 8,
+    "negotiation_mentions": 12,
+    "casualty_mentions": 4,
+    "peace_mentions": 6,
+    "regional_spread": 20,
     "total_articles": 50,
     "new_articles": 50,
-    "unique_events": 48,
-    "duplicates_removed": 2
+    "unique_events": 47,
+    "duplicates_removed": 3
   },
   "latest_news": [
     {
-      "title": "Middle East crisis live: ‘We have not even begun’, Iran warns US amid escalation in strait of Hormuz",
-      "link": "https://www.theguardian.com/world/live/2026/may/05/iran-us-israel-lebanon-strait-of-hormuz-ships-oil-uae-latest-news-updates",
-      "pubDate": "Tue, 05 May 2026 11:33:37 GMT",
+      "title": "Has Trump’s ‘Project Freedom’ reignited war with Iran? – The Latest",
+      "link": "https://www.theguardian.com/news/audio/2026/may/05/has-trumps-project-freedom-reignited-war-with-iran-the-latest",
+      "pubDate": "Tue, 05 May 2026 15:50:43 GMT",
       "source": "guardian",
-      "snippet": "Iranian speaker says ‘new equation of the strait of Hormuz is in the process of being solidified’Donald Trump sends warships to break Iran’s strait of Hormuz blockadeIran’s foreign minister, Abbas Ara",
+      "snippet": "Donald Trump has launched a new operation, which he called ‘Project Freedom’, to try to open the strait of Hormuz. Could it spark a re-escalation of the war with Iran and bring an end to the ceasefire",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -318,11 +348,11 @@
       "_isDuplicate": false
     },
     {
-      "title": "NBA semifinal series: Timberwolves stun Spurs in Game 1; Knicks beat 76ers",
-      "link": "https://www.aljazeera.com/sports/2026/5/5/nba-semifinal-series-timberwolves-stun-spurs-in-game-1-knicks-beat-76ers?traffic_source=rss",
-      "pubDate": "Tue, 05 May 2026 08:44:22 +0000",
-      "source": "aljazeera",
-      "snippet": "Anthony Edwards returned from injury to score 18 points as the visitors beat San Antonio Spurs 104-102. ",
+      "title": "Middle East crisis live: Hegseth says US-Iran ceasefire ‘is not over’ despite growing tensions in strait of Hormuz",
+      "link": "https://www.theguardian.com/world/live/2026/may/05/iran-us-israel-lebanon-strait-of-hormuz-ships-oil-uae-latest-news-updates",
+      "pubDate": "Tue, 05 May 2026 15:28:07 GMT",
+      "source": "guardian",
+      "snippet": "US defence secretary tells press Iran is attempting ‘international extortion’ but the ceasefire remains in placeDonald Trump sends warships to break Iran’s strait of Hormuz blockadeIran’s foreign mini",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -330,21 +360,105 @@
       "_isDuplicate": false
     },
     {
-      "title": "What Iran is saying about attack on UAE",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/5/5/what-iran-is-saying-about-attack-on-uae?traffic_source=rss",
-      "pubDate": "Tue, 05 May 2026 08:29:51 +0000",
+      "title": "What’s the significance of UAE’s Fujairah, hit on Monday?",
+      "link": "https://www.aljazeera.com/news/2026/5/5/whats-the-significance-of-uaes-fujairah-hit-on-monday?traffic_source=rss",
+      "pubDate": "Tue, 05 May 2026 15:27:36 +0000",
       "source": "aljazeera",
-      "snippet": "What Iran is saying about attack on UAE",
+      "snippet": "If confirmed, it would be Iran’s first attack on the UAE since the US-Iran ceasefire took effect on April 8.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Hegseth says US ‘hasn’t capitulated on anything’ regarding Iran",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/5/5/hegseth-says-us-hasnt-capitulated-on-anything-regarding-iran?traffic_source=rss",
+      "pubDate": "Tue, 05 May 2026 15:21:42 +0000",
+      "source": "aljazeera",
+      "snippet": "US Defense Secretary Pete Hegseth told a reporter the US had not capitulated on its demands from Iran.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "What We Know About ‘Project Freedom’ in the Strait of Hormuz",
+      "link": "https://www.nytimes.com/2026/05/05/world/middleeast/trump-strait-hormuz-plan-project-freedom-iran.html",
+      "pubDate": "Tue, 05 May 2026 15:14:26 +0000",
+      "source": "nytimes",
+      "snippet": "Violence flared in the waterway on Monday after President Trump said the United States would help guide stranded ships. It’s not clear exactly how the plan is working.",
+      "isNew": true,
+      "_sourceCount": 2,
+      "_isDuplicated": true,
+      "_clusterSize": 3,
+      "_isDuplicate": false
+    },
+    {
+      "title": "US-Iran ceasefire holds despite Hormuz standoff: Pentagon chief Hegseth",
+      "link": "https://www.aljazeera.com/news/2026/5/5/us-iran-ceasefire-holds-despite-hormuz-standoff-pentagon-chief-hegseth?traffic_source=rss",
+      "pubDate": "Tue, 05 May 2026 14:46:45 +0000",
+      "source": "aljazeera",
+      "snippet": "Trump aide says the US has established a security &#039;dome&#039; for ships over Hormuz, but traffic in strait remains stalled.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Why Europe’s car industry is at the centre of a new US trade war",
+      "link": "https://www.aljazeera.com/news/2026/5/5/why-europes-car-industry-is-at-the-centre-of-a-new-us-trade-war?traffic_source=rss",
+      "pubDate": "Tue, 05 May 2026 14:22:55 +0000",
+      "source": "aljazeera",
+      "snippet": "Trump has threatened to increase tariffs on EU cars and trucks exported to the US from 15 percent to 25 percent.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Map of dominance: Why Iran can’t afford to give up Hormuz control",
+      "link": "https://www.aljazeera.com/news/2026/5/5/map-of-dominance-why-iran-cant-afford-to-give-up-hormuz-control?traffic_source=rss",
+      "pubDate": "Tue, 05 May 2026 14:19:39 +0000",
+      "source": "aljazeera",
+      "snippet": "The vital passageway is key for Tehran as it seeks to leverage in negotiations with Washington. ",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Smotrich says he promised his son ‘more destruction’ in Lebanon",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/5/5/smotrich-says-he-promised-his-son-more-destruction-in-lebanon?traffic_source=rss",
+      "pubDate": "Tue, 05 May 2026 14:12:40 +0000",
+      "source": "aljazeera",
+      "snippet": "Israeli Finance Minister Bezalel Smotrich said he promised his son there would be ‘more destruction’ in Lebanon.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "What we know about Trump's 'Project Freedom' in Strait of Hormuz",
+      "link": "https://www.bbc.com/news/articles/c4g437depzpo?at_medium=RSS&at_campaign=rss",
+      "pubDate": "Tue, 05 May 2026 13:47:30 GMT",
+      "source": "bbc",
+      "snippet": "What does the operation entail and could it lead to a resumption of hostilities? ",
       "isNew": true,
       "_isDuplicate": true,
       "_sourceCount": 1
     },
     {
-      "title": "Afghanistan accuses Pakistan of killing three civilians in ‘war crime’",
-      "link": "https://www.aljazeera.com/news/2026/5/5/afghanistan-accuses-pakistan-of-killing-three-civilians-in-war-crime?traffic_source=rss",
-      "pubDate": "Tue, 05 May 2026 08:15:42 +0000",
+      "title": "DRC protest in support of US sanctions against former president",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/5/5/drc-protest-in-support-of-us-sanctions-against-former-president?traffic_source=rss",
+      "pubDate": "Tue, 05 May 2026 13:19:12 +0000",
       "source": "aljazeera",
-      "snippet": "The incident is the latest test of a fragile ceasefire agreed between the two countries last month.",
+      "snippet": "DRC protest in support of US sanctions against former president ",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -352,11 +466,11 @@
       "_isDuplicate": false
     },
     {
-      "title": "Palestine weekly wrap: Israeli security agencies sound alarm on settlers",
-      "link": "https://www.aljazeera.com/news/2026/5/5/palestine-weekly-wrap-israeli-security-agencies-sound-alarm-on-settlers?traffic_source=rss",
-      "pubDate": "Tue, 05 May 2026 07:44:04 +0000",
+      "title": "Hegseth says US blockade on Iran ‘gift to the world’",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/5/5/hegseth-says-us-blockade-on-iran-gift-to-the?traffic_source=rss",
+      "pubDate": "Tue, 05 May 2026 13:12:43 +0000",
       "source": "aljazeera",
-      "snippet": "Israeli officials warn that violence threatens state, but attacks, land seizures and blockades continue in West Bank.",
+      "snippet": "US Defense Secretary Pete Hegseth says the US has gifted the world a ‘powerful red, white, and blue dome’.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -364,11 +478,11 @@
       "_isDuplicate": false
     },
     {
-      "title": "Nine workers killed in Colombia coal mine explosion",
-      "link": "https://www.aljazeera.com/news/2026/5/5/nine-workers-killed-in-colombia-coal-mine-explosion?traffic_source=rss",
-      "pubDate": "Tue, 05 May 2026 07:04:02 +0000",
+      "title": "Released Flotilla activists describe‘torture’ in Israeli prison",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/5/5/released-flotilla-activists-describetorture-in-israeli-prison?traffic_source=rss",
+      "pubDate": "Tue, 05 May 2026 13:11:23 +0000",
       "source": "aljazeera",
-      "snippet": "The national mining ​agency had warned weeks earlier that a buildup of gases at the mine could become dangerous.",
+      "snippet": "Flotilla activists returning home to Argentina say they were subjected to ‘torture’ by Israeli forces who detained them.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -376,11 +490,11 @@
       "_isDuplicate": false
     },
     {
-      "title": "Thiago Ávila’s letter from Israeli prison to his daughter",
-      "link": "https://www.aljazeera.com/opinions/2026/5/5/thiago-avilas-letter-from-israeli-prison-to-his-daughter?traffic_source=rss",
-      "pubDate": "Tue, 05 May 2026 06:48:20 +0000",
+      "title": "Iran’s football team shows World Cup readiness with social media posts",
+      "link": "https://www.aljazeera.com/sports/2026/5/5/irans-football-team-shows-world-cup-readiness-with-social-media-posts?traffic_source=rss",
+      "pubDate": "Tue, 05 May 2026 13:08:58 +0000",
       "source": "aljazeera",
-      "snippet": "The Brazilian activist explains to his little girl his motivation to join the Gaza-bound humanitarian flotilla.",
+      "snippet": "Videos from tournament kit reveal photo shoot and images from training sessions highlighting Team Melli&#039;s preparations.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -388,95 +502,11 @@
       "_isDuplicate": false
     },
     {
-      "title": "Iran war: What’s happening on day 67 as Hormuz crisis deepens?",
-      "link": "https://www.aljazeera.com/news/2026/5/5/iran-war-whats-happening-on-day-67-as-hormuz-crisis-deepens?traffic_source=rss",
-      "pubDate": "Tue, 05 May 2026 06:31:34 +0000",
+      "title": "US, Iran, UAE trade Hormuz attack claims: What we know",
+      "link": "https://www.aljazeera.com/news/2026/5/5/us-iran-uae-trade-hormuz-attack-claims-what-we-know?traffic_source=rss",
+      "pubDate": "Tue, 05 May 2026 13:00:23 +0000",
       "source": "aljazeera",
-      "snippet": "The UAE says it intercepted Iranian missiles after a suspected drone attack, with no comment from Iran.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": true,
-      "_clusterSize": 2,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Concierge firm co-founded by queen’s nephew went on ‘ill-timed’ hiring spree before Iran war",
-      "link": "https://www.theguardian.com/business/2026/may/05/concierge-firm-quintessentially-queen-nephew-ben-elliot-hiring-spree-iran-war-middle-east-gulf",
-      "pubDate": "Tue, 05 May 2026 05:00:44 GMT",
-      "source": "guardian",
-      "snippet": "Quintessentially almost quadrupled staff in Middle East and Asia less than year before wealthy began to flee GulfThe embattled luxury concierge service co-founded by Queen Camilla’s nephew Ben Elliot ",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "US strikes Iranian fast boats as Iran attacks UAE oil facility ",
-      "link": "https://www.bbc.com/news/articles/cjwp432d0v5o?at_medium=RSS&at_campaign=rss",
-      "pubDate": "Tue, 05 May 2026 04:34:15 GMT",
-      "source": "bbc",
-      "snippet": "Shipping company Maersk says one of its US-flagged commercial vessels has successfully exited the Strait of Hormuz under US military protection.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "First Russian oil reportedly arrives in Japan since Iran war – as it happened",
-      "link": "https://www.theguardian.com/world/live/2026/may/04/iran-war-live-updates-trump-hormuz-us-operation-tanker-strikes",
-      "pubDate": "Tue, 05 May 2026 04:03:12 GMT",
-      "source": "guardian",
-      "snippet": "This blog is now closed Trump threatens to blow Iran ‘off the face of the earth’ if it attacks US vesselsTrump sends warships to break Iran’s strait of Hormuz blockadeWe have a bit more of the stateme",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Pakistan Says It Helped Iranian Crew From Ship That U.S. Seized",
-      "link": "https://www.nytimes.com/2026/05/04/world/middleeast/iran-ship-crew-pakistan.html",
-      "pubDate": "Mon, 04 May 2026 22:15:33 +0000",
-      "source": "nytimes",
-      "snippet": "Describing the transfer of the crew from the MV Touska cargo ship back to Iran as a ‘confidence-building measure’ between U.S. and Iranian officials, Pakistan again plays a mediating role.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "China Seeks an Advantage With Both Trump and Iran as War Evolves",
-      "link": "https://www.nytimes.com/2026/05/03/us/politics/trump-china-iran-war.html",
-      "pubDate": "Mon, 04 May 2026 21:33:45 +0000",
-      "source": "nytimes",
-      "snippet": "With President Trump’s visit to Beijing looming, China is pushing Iran to negotiate even as its companies export material that could be used by Iran’s military.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Strikes in U.A.E., Oman and at Sea Strain Iran Truce to the Breaking Point",
-      "link": "https://www.nytimes.com/2026/05/04/world/middleeast/iran-trump-ships-hormuz-strait.html",
-      "pubDate": "Mon, 04 May 2026 19:43:05 +0000",
-      "source": "nytimes",
-      "snippet": "The drone and missile attacks were the first of their kind since the U.S.-Iranian cease-fire began last month. They coincided with reported clashes between American and Iranian vessels in the Strait o",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Venice Biennale Jury Resigns Amid Tension Over Awards Ban",
-      "link": "https://www.nytimes.com/2026/04/30/arts/design/israel-artist-venice-biennale.html",
-      "pubDate": "Mon, 04 May 2026 19:39:09 +0000",
-      "source": "nytimes",
-      "snippet": "The jury of the world’s most important art exhibition had said it wouldn’t consider artists from countries whose leaders are accused of crimes against humanity.",
+      "snippet": "Experts say claims and counterclaims threaten the diplomatic route to end the US-Israel war on Iran.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -490,29 +520,52 @@
         "category_id": "military",
         "category_name": "군사 작전",
         "category_icon": "⚔️",
-        "count": 19,
-        "new_count": 19,
+        "count": 17,
+        "new_count": 17,
         "articles": [
           {
-            "title": "Iran war: What’s happening on day 67 as Hormuz crisis deepens?",
-            "link": "https://www.aljazeera.com/news/2026/5/5/iran-war-whats-happening-on-day-67-as-hormuz-crisis-deepens?traffic_source=rss",
-            "source": "aljazeera",
+            "title": "Has Trump’s ‘Project Freedom’ reignited war with Iran? – The Latest",
+            "link": "https://www.theguardian.com/news/audio/2026/may/05/has-trumps-project-freedom-reignited-war-with-iran-the-latest",
+            "source": "guardian",
             "sources": [
-              "aljazeera"
+              "guardian"
             ],
-            "pubDate": "Tue, 05 May 2026 06:31:34 +0000",
-            "snippet": "The UAE says it intercepted Iranian missiles after a suspected drone attack, with no comment from Iran.",
+            "pubDate": "Tue, 05 May 2026 15:50:43 GMT",
+            "snippet": "Donald Trump has launched a new operation, which he called ‘Project Freedom’, to try to open the strait of Hormuz. Could it spark a re-escalation of the war with Iran and bring an end to the ceasefire",
             "isNew": true
           },
           {
-            "title": "Palestine weekly wrap: Israeli security agencies sound alarm on settlers",
-            "link": "https://www.aljazeera.com/news/2026/5/5/palestine-weekly-wrap-israeli-security-agencies-sound-alarm-on-settlers?traffic_source=rss",
+            "title": "What’s the significance of UAE’s Fujairah, hit on Monday?",
+            "link": "https://www.aljazeera.com/news/2026/5/5/whats-the-significance-of-uaes-fujairah-hit-on-monday?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Tue, 05 May 2026 07:44:04 +0000",
-            "snippet": "Israeli officials warn that violence threatens state, but attacks, land seizures and blockades continue in West Bank.",
+            "pubDate": "Tue, 05 May 2026 15:27:36 +0000",
+            "snippet": "If confirmed, it would be Iran’s first attack on the UAE since the US-Iran ceasefire took effect on April 8.",
+            "isNew": true
+          },
+          {
+            "title": "US-Iran ceasefire holds despite Hormuz standoff: Pentagon chief Hegseth",
+            "link": "https://www.aljazeera.com/news/2026/5/5/us-iran-ceasefire-holds-despite-hormuz-standoff-pentagon-chief-hegseth?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Tue, 05 May 2026 14:46:45 +0000",
+            "snippet": "Trump aide says the US has established a security &#039;dome&#039; for ships over Hormuz, but traffic in strait remains stalled.",
+            "isNew": true
+          },
+          {
+            "title": "Spain demands release of Gaza flotilla activists ‘held illegally’ by Israel",
+            "link": "https://www.theguardian.com/world/2026/may/03/gaza-flotilla-activists-spain-brazil-appear-israel-court",
+            "source": "guardian",
+            "sources": [
+              "guardian",
+              "aljazeera"
+            ],
+            "pubDate": "Sun, 03 May 2026 14:18:42 GMT",
+            "snippet": "Israeli court extends detention of two men who were among 175 people intercepted near Crete on ThursdaySpain’s foreign ministry has demanded the immediate release of a Spanish national it said was bei",
             "isNew": true
           },
           {
@@ -580,28 +633,6 @@
             "pubDate": "Mon, 04 May 2026 16:49:42 GMT",
             "snippet": "After banging his battle drum, Trump is back in Nobel peace prize mode. But the move has dramatically raised the stakes“Project Freedom” has all the trappings of a classic episode of the Trump Show, t",
             "isNew": true
-          },
-          {
-            "title": "Israel Said to Have Helped Defend Emirates in Iran War With Iron Dome",
-            "link": "https://www.nytimes.com/2026/05/01/world/middleeast/israel-emirates-iron-dome.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Mon, 04 May 2026 16:32:04 +0000",
-            "snippet": "It appeared to be the first time the missile defense system was sent to an Arab country. The Emirates bore the brunt of Iran’s retaliatory attacks on Gulf countries during the war.",
-            "isNew": true
-          },
-          {
-            "title": "With World Distracted by Iran War, Israeli Settlers Intensify Attacks in West Bank",
-            "link": "https://www.nytimes.com/2026/05/04/world/middleeast/israel-palestinians-west-bank-settler-violence-iran-war.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Mon, 04 May 2026 09:08:33 +0000",
-            "snippet": "Israel has failed to arrest a wave of violence against Palestinians, prompting military officials to urge the government to intervene.",
-            "isNew": true
           }
         ]
       },
@@ -609,18 +640,51 @@
         "category_id": "economy",
         "category_name": "경제 영향",
         "category_icon": "📊",
-        "count": 7,
-        "new_count": 7,
+        "count": 9,
+        "new_count": 9,
         "articles": [
           {
-            "title": "Middle East crisis live: ‘We have not even begun’, Iran warns US amid escalation in strait of Hormuz",
+            "title": "Middle East crisis live: Hegseth says US-Iran ceasefire ‘is not over’ despite growing tensions in strait of Hormuz",
             "link": "https://www.theguardian.com/world/live/2026/may/05/iran-us-israel-lebanon-strait-of-hormuz-ships-oil-uae-latest-news-updates",
             "source": "guardian",
             "sources": [
               "guardian"
             ],
-            "pubDate": "Tue, 05 May 2026 11:33:37 GMT",
-            "snippet": "Iranian speaker says ‘new equation of the strait of Hormuz is in the process of being solidified’Donald Trump sends warships to break Iran’s strait of Hormuz blockadeIran’s foreign minister, Abbas Ara",
+            "pubDate": "Tue, 05 May 2026 15:28:07 GMT",
+            "snippet": "US defence secretary tells press Iran is attempting ‘international extortion’ but the ceasefire remains in placeDonald Trump sends warships to break Iran’s strait of Hormuz blockadeIran’s foreign mini",
+            "isNew": true
+          },
+          {
+            "title": "Why Europe’s car industry is at the centre of a new US trade war",
+            "link": "https://www.aljazeera.com/news/2026/5/5/why-europes-car-industry-is-at-the-centre-of-a-new-us-trade-war?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Tue, 05 May 2026 14:22:55 +0000",
+            "snippet": "Trump has threatened to increase tariffs on EU cars and trucks exported to the US from 15 percent to 25 percent.",
+            "isNew": true
+          },
+          {
+            "title": "Hegseth says US blockade on Iran ‘gift to the world’",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/5/5/hegseth-says-us-blockade-on-iran-gift-to-the?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Tue, 05 May 2026 13:12:43 +0000",
+            "snippet": "US Defense Secretary Pete Hegseth says the US has gifted the world a ‘powerful red, white, and blue dome’.",
+            "isNew": true
+          },
+          {
+            "title": "US, Iran, UAE trade Hormuz attack claims: What we know",
+            "link": "https://www.aljazeera.com/news/2026/5/5/us-iran-uae-trade-hormuz-attack-claims-what-we-know?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Tue, 05 May 2026 13:00:23 +0000",
+            "snippet": "Experts say claims and counterclaims threaten the diplomatic route to end the US-Israel war on Iran.",
             "isNew": true
           },
           {
@@ -677,17 +741,6 @@
             "pubDate": "Mon, 04 May 2026 17:32:17 +0000",
             "snippet": "China told its independent refineries to disregard U.S. sanctions over their purchases of Iranian crude.",
             "isNew": true
-          },
-          {
-            "title": "Why U.S. Oil Companies Are Not Plugging the World’s Energy Gap",
-            "link": "https://www.nytimes.com/2026/05/01/business/energy-environment/exxon-mobile-chevron-oil-iran-war.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Fri, 01 May 2026 10:31:34 +0000",
-            "snippet": "American producers are under pressure from investors to keep spending in check, and they are wary of drilling more wells because they are not sure oil prices will stay high.",
-            "isNew": true
           }
         ]
       },
@@ -698,6 +751,29 @@
         "count": 6,
         "new_count": 6,
         "articles": [
+          {
+            "title": "What We Know About ‘Project Freedom’ in the Strait of Hormuz",
+            "link": "https://www.nytimes.com/2026/05/05/world/middleeast/trump-strait-hormuz-plan-project-freedom-iran.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes",
+              "bbc"
+            ],
+            "pubDate": "Tue, 05 May 2026 15:14:26 +0000",
+            "snippet": "Violence flared in the waterway on Monday after President Trump said the United States would help guide stranded ships. It’s not clear exactly how the plan is working.",
+            "isNew": true
+          },
+          {
+            "title": "DRC protest in support of US sanctions against former president",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/5/5/drc-protest-in-support-of-us-sanctions-against-former-president?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Tue, 05 May 2026 13:19:12 +0000",
+            "snippet": "DRC protest in support of US sanctions against former president ",
+            "isNew": true
+          },
           {
             "title": "Iran executes three men in relation to January anti-regime protests",
             "link": "https://www.theguardian.com/world/2026/may/04/iran-executes-men-january-anti-regime-protests",
@@ -721,17 +797,6 @@
             "isNew": true
           },
           {
-            "title": "Trump Says U.S. Will Help Stranded Ships Leave Strait of Hormuz",
-            "link": "https://www.nytimes.com/2026/05/03/us/politics/strait-hormuz-stranded-ships.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Mon, 04 May 2026 02:10:15 +0000",
-            "snippet": "President Trump offered few details on how the new program, which he called Project Freedom, would work, but said interference would be dealt with “forcefully.”",
-            "isNew": true
-          },
-          {
             "title": "Trump says US navy will ‘guide’ trapped ships from strait of Hormuz amid ‘very positive’ talks with Iran",
             "link": "https://www.theguardian.com/world/2026/may/03/trump-says-iran-has-not-yet-paid-a-big-enough-price-as-he-reviews-new-peace-proposal",
             "source": "guardian",
@@ -752,80 +817,69 @@
             "pubDate": "Sat, 02 May 2026 19:53:55 +0000",
             "snippet": "The details of the latest plan were unclear, and President Trump did not specify his objections.",
             "isNew": true
-          },
-          {
-            "title": "Trump claims hostilities have ended in Iran in letter to congressional leaders",
-            "link": "https://www.theguardian.com/world/2026/may/01/trump-iran-war-hostilities-letter",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Fri, 01 May 2026 22:25:17 GMT",
-            "snippet": "President seemed to suggest that legislative deadline to approve war no longer applies as Democrats push backSign up for the Breaking News US newsletter emailDonald Trump said in a letter sent to cong",
-            "isNew": true
           }
         ]
       },
       {
-        "category_id": "humanitarian",
-        "category_name": "인도주의/피해",
-        "category_icon": "🏥",
+        "category_id": "other",
+        "category_name": "기타",
+        "category_icon": "📰",
         "count": 5,
         "new_count": 5,
         "articles": [
           {
-            "title": "Nine workers killed in Colombia coal mine explosion",
-            "link": "https://www.aljazeera.com/news/2026/5/5/nine-workers-killed-in-colombia-coal-mine-explosion?traffic_source=rss",
+            "title": "Hegseth says US ‘hasn’t capitulated on anything’ regarding Iran",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/5/5/hegseth-says-us-hasnt-capitulated-on-anything-regarding-iran?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Tue, 05 May 2026 07:04:02 +0000",
-            "snippet": "The national mining ​agency had warned weeks earlier that a buildup of gases at the mine could become dangerous.",
+            "pubDate": "Tue, 05 May 2026 15:21:42 +0000",
+            "snippet": "US Defense Secretary Pete Hegseth told a reporter the US had not capitulated on its demands from Iran.",
             "isNew": true
           },
           {
-            "title": "Thiago Ávila’s letter from Israeli prison to his daughter",
-            "link": "https://www.aljazeera.com/opinions/2026/5/5/thiago-avilas-letter-from-israeli-prison-to-his-daughter?traffic_source=rss",
+            "title": "Released Flotilla activists describe‘torture’ in Israeli prison",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/5/5/released-flotilla-activists-describetorture-in-israeli-prison?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Tue, 05 May 2026 06:48:20 +0000",
-            "snippet": "The Brazilian activist explains to his little girl his motivation to join the Gaza-bound humanitarian flotilla.",
+            "pubDate": "Tue, 05 May 2026 13:11:23 +0000",
+            "snippet": "Flotilla activists returning home to Argentina say they were subjected to ‘torture’ by Israeli forces who detained them.",
             "isNew": true
           },
           {
-            "title": "British Gaza flotilla activists say they needed hospital care after Israeli forces’ abuse",
-            "link": "https://www.theguardian.com/world/2026/may/04/gaza-flotilla-britons-say-they-needed-hospital-care-after-israeli-forces-abuse",
-            "source": "guardian",
+            "title": "Iran’s football team shows World Cup readiness with social media posts",
+            "link": "https://www.aljazeera.com/sports/2026/5/5/irans-football-team-shows-world-cup-readiness-with-social-media-posts?traffic_source=rss",
+            "source": "aljazeera",
             "sources": [
-              "guardian"
+              "aljazeera"
             ],
-            "pubDate": "Mon, 04 May 2026 16:00:27 GMT",
-            "snippet": "Alice Chapman and Zak Khan say they were beaten, kicked and spat on after detention near Crete last weekTwo British activists have said they were admitted to hospital after being beaten by Israeli for",
+            "pubDate": "Tue, 05 May 2026 13:08:58 +0000",
+            "snippet": "Videos from tournament kit reveal photo shoot and images from training sessions highlighting Team Melli&#039;s preparations.",
             "isNew": true
           },
           {
-            "title": "Thirteen killed in Israeli strikes on southern Lebanon, health ministry says ",
-            "link": "https://www.bbc.com/news/articles/cd7pn0zywggo?at_medium=RSS&at_campaign=rss",
+            "title": "Some Iranians fear the regime is now more entrenched - and ready for revenge",
+            "link": "https://www.bbc.com/news/articles/clyp6xxyvzyo?at_medium=RSS&at_campaign=rss",
             "source": "bbc",
             "sources": [
               "bbc"
             ],
-            "pubDate": "Sat, 02 May 2026 16:51:18 GMT",
-            "snippet": "Four women and a child are among the dead, as fighting between Israel and Iran-backed Hezbollah continues despite a ceasefire.",
+            "pubDate": "Sun, 03 May 2026 23:19:57 GMT",
+            "snippet": "Ordinary Iranians tell of worry about increased repression by authorities after the war is over.",
             "isNew": true
           },
           {
-            "title": "Narges Mohammadi, Iranian Nobel Laureate, Is Hospitalized",
-            "link": "https://www.nytimes.com/2026/05/01/world/middleeast/narges-mohammadi-iran-hospialized.html",
-            "source": "nytimes",
+            "title": "The clandestine network smuggling Starlink tech into Iran to beat internet blackout",
+            "link": "https://www.bbc.com/news/articles/cvgzk91leweo?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
             "sources": [
-              "nytimes"
+              "bbc"
             ],
-            "pubDate": "Sat, 02 May 2026 02:46:36 +0000",
-            "snippet": "Narges Mohammadi, a prominent human rights activist, was taken to a hospital after collapsing following a heart problem in prison.",
+            "pubDate": "Sat, 02 May 2026 23:17:17 GMT",
+            "snippet": "Sahand tells the BBC World Service he sends satellite internet terminals into Iran to help show \"the real picture\".",
             "isNew": true
           }
         ]
@@ -838,14 +892,25 @@
         "new_count": 4,
         "articles": [
           {
-            "title": "Afghanistan accuses Pakistan of killing three civilians in ‘war crime’",
-            "link": "https://www.aljazeera.com/news/2026/5/5/afghanistan-accuses-pakistan-of-killing-three-civilians-in-war-crime?traffic_source=rss",
+            "title": "Map of dominance: Why Iran can’t afford to give up Hormuz control",
+            "link": "https://www.aljazeera.com/news/2026/5/5/map-of-dominance-why-iran-cant-afford-to-give-up-hormuz-control?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Tue, 05 May 2026 08:15:42 +0000",
-            "snippet": "The incident is the latest test of a fragile ceasefire agreed between the two countries last month.",
+            "pubDate": "Tue, 05 May 2026 14:19:39 +0000",
+            "snippet": "The vital passageway is key for Tehran as it seeks to leverage in negotiations with Washington. ",
+            "isNew": true
+          },
+          {
+            "title": "Bowen: Strait of Hormuz standoff raises risk of sliding back into all-out war",
+            "link": "https://www.bbc.com/news/articles/cgrpnq00j5vo?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc"
+            ],
+            "pubDate": "Tue, 05 May 2026 11:38:03 GMT",
+            "snippet": " The US and Iran's determination to keep the pressure on each other has put the fragile Gulf ceasefire in serious jeopardy. ",
             "isNew": true
           },
           {
@@ -869,69 +934,58 @@
             "pubDate": "Mon, 04 May 2026 05:00:15 GMT",
             "snippet": "War has combined with battered economy to leave Tehran wondering how hardline it can afford to beIran may not be choking like a stuffed pig as Donald Trump predicted, but its economy is in serious dif",
             "isNew": true
-          },
-          {
-            "title": "Iran offers new peace proposal to US but Trump ‘not satisfied’",
-            "link": "https://www.theguardian.com/world/2026/may/01/pakistan-backchannel-us-iran-deal-peace",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Fri, 01 May 2026 21:27:45 GMT",
-            "snippet": "Tehran reportedly passed proposal to mediators in Pakistan on Thursday night, though its contents are not yet clearIran has passed a new proposal to Pakistani mediators in the latest effort to end the",
-            "isNew": true
           }
         ]
       },
       {
-        "category_id": "other",
-        "category_name": "기타",
-        "category_icon": "📰",
+        "category_id": "humanitarian",
+        "category_name": "인도주의/피해",
+        "category_icon": "🏥",
         "count": 4,
         "new_count": 4,
         "articles": [
           {
-            "title": "NBA semifinal series: Timberwolves stun Spurs in Game 1; Knicks beat 76ers",
-            "link": "https://www.aljazeera.com/sports/2026/5/5/nba-semifinal-series-timberwolves-stun-spurs-in-game-1-knicks-beat-76ers?traffic_source=rss",
+            "title": "Smotrich says he promised his son ‘more destruction’ in Lebanon",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/5/5/smotrich-says-he-promised-his-son-more-destruction-in-lebanon?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Tue, 05 May 2026 08:44:22 +0000",
-            "snippet": "Anthony Edwards returned from injury to score 18 points as the visitors beat San Antonio Spurs 104-102. ",
+            "pubDate": "Tue, 05 May 2026 14:12:40 +0000",
+            "snippet": "Israeli Finance Minister Bezalel Smotrich said he promised his son there would be ‘more destruction’ in Lebanon.",
             "isNew": true
           },
           {
-            "title": "Some Iranians fear the regime is now more entrenched - and ready for revenge",
-            "link": "https://www.bbc.com/news/articles/clyp6xxyvzyo?at_medium=RSS&at_campaign=rss",
+            "title": "British Gaza flotilla activists say they needed hospital care after Israeli forces’ abuse",
+            "link": "https://www.theguardian.com/world/2026/may/04/gaza-flotilla-britons-say-they-needed-hospital-care-after-israeli-forces-abuse",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Mon, 04 May 2026 16:00:27 GMT",
+            "snippet": "Alice Chapman and Zak Khan say they were beaten, kicked and spat on after detention near Crete last weekTwo British activists have said they were admitted to hospital after being beaten by Israeli for",
+            "isNew": true
+          },
+          {
+            "title": "Concern for jailed Iranian Nobel laureate as brother fears she is dying",
+            "link": "https://www.bbc.com/news/articles/c362pd8epw9o?at_medium=RSS&at_campaign=rss",
             "source": "bbc",
             "sources": [
               "bbc"
             ],
-            "pubDate": "Sun, 03 May 2026 23:19:57 GMT",
-            "snippet": "Ordinary Iranians tell of worry about increased repression by authorities after the war is over.",
+            "pubDate": "Sun, 03 May 2026 14:44:04 GMT",
+            "snippet": "Her family said the 54-year-old had been taken from prison to a local hospital after a sharp deterioration in her health. ",
             "isNew": true
           },
           {
-            "title": "In Packed Cafes, Iranians Yearn to Escape War’s Wreckage",
-            "link": "https://www.nytimes.com/2026/05/01/world/middleeast/iran-war-cafes.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Fri, 01 May 2026 18:47:23 +0000",
-            "snippet": "Cafes and coffee shops give Iranians affordable places to talk about their hopes, fears and the cost of living as well as to seek company in uncertain times.",
-            "isNew": true
-          },
-          {
-            "title": "British couple jailed in Iran: 'We're likely to be here for a long time'",
-            "link": "https://www.bbc.com/news/articles/c202pl60kv9o?at_medium=RSS&at_campaign=rss",
+            "title": "Thirteen killed in Israeli strikes on southern Lebanon, health ministry says ",
+            "link": "https://www.bbc.com/news/articles/cd7pn0zywggo?at_medium=RSS&at_campaign=rss",
             "source": "bbc",
             "sources": [
               "bbc"
             ],
-            "pubDate": "Fri, 01 May 2026 05:04:08 GMT",
-            "snippet": "Lindsay and Craig Foreman are facing the reality of a 10-year prison sentence following their arrest in Iran while on a motorcycle tour last year. ",
+            "pubDate": "Sat, 02 May 2026 16:51:18 GMT",
+            "snippet": "Four women and a child are among the dead, as fighting between Israel and Iran-backed Hezbollah continues despite a ceasefire.",
             "isNew": true
           }
         ]
@@ -940,8 +994,8 @@
         "category_id": "regional",
         "category_name": "지역 정세",
         "category_icon": "🌍",
-        "count": 3,
-        "new_count": 3,
+        "count": 2,
+        "new_count": 2,
         "articles": [
           {
             "title": "As Israel Entrenches, Frustration With Hezbollah Turns to Support",
@@ -964,17 +1018,6 @@
             "pubDate": "Sat, 02 May 2026 09:02:06 +0000",
             "snippet": "The defense secretary and Representative Seth Moulton, a Democrat, debated the Iran war through the prism of their shared experiences fighting Iraq.",
             "isNew": true
-          },
-          {
-            "title": "Jordanians Struggle as Mideast Wars Scare Tourists Away",
-            "link": "https://www.nytimes.com/2026/05/02/world/middleeast/jordan-travel-tourists-war.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Sat, 02 May 2026 09:00:56 +0000",
-            "snippet": "Though Jordan mostly sat out the conflicts, its tourism high season was nearly wiped out at popular sites. Visitors canceled flights, hotels and tours.",
-            "isNew": true
           }
         ]
       }
@@ -982,149 +1025,109 @@
     "recent_30min": {
       "total_new": 50,
       "by_category": {
-        "economy": {
-          "count": 7,
+        "military": {
+          "count": 18,
           "titles": [
             {
-              "title": "Middle East crisis live: ‘We have not even begun’, Iran warns US amid escalation in strait of Hormuz",
+              "title": "Has Trump’s ‘Project Freedom’ reignited war with Iran? – The Latest",
+              "link": "https://www.theguardian.com/news/audio/2026/may/05/has-trumps-project-freedom-reignited-war-with-iran-the-latest",
+              "source": "guardian"
+            },
+            {
+              "title": "What’s the significance of UAE’s Fujairah, hit on Monday?",
+              "link": "https://www.aljazeera.com/news/2026/5/5/whats-the-significance-of-uaes-fujairah-hit-on-monday?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "US-Iran ceasefire holds despite Hormuz standoff: Pentagon chief Hegseth",
+              "link": "https://www.aljazeera.com/news/2026/5/5/us-iran-ceasefire-holds-despite-hormuz-standoff-pentagon-chief-hegseth?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "What we know about Trump's 'Project Freedom' in Strait of Hormuz",
+              "link": "https://www.bbc.com/news/articles/c4g437depzpo?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
+            },
+            {
+              "title": "Concierge firm co-founded by queen’s nephew went on ‘ill-timed’ hiring spree before Iran war",
+              "link": "https://www.theguardian.com/business/2026/may/05/concierge-firm-quintessentially-queen-nephew-ben-elliot-hiring-spree-iran-war-middle-east-gulf",
+              "source": "guardian"
+            }
+          ]
+        },
+        "economy": {
+          "count": 9,
+          "titles": [
+            {
+              "title": "Middle East crisis live: Hegseth says US-Iran ceasefire ‘is not over’ despite growing tensions in strait of Hormuz",
               "link": "https://www.theguardian.com/world/live/2026/may/05/iran-us-israel-lebanon-strait-of-hormuz-ships-oil-uae-latest-news-updates",
               "source": "guardian"
+            },
+            {
+              "title": "Why Europe’s car industry is at the centre of a new US trade war",
+              "link": "https://www.aljazeera.com/news/2026/5/5/why-europes-car-industry-is-at-the-centre-of-a-new-us-trade-war?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Hegseth says US blockade on Iran ‘gift to the world’",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/5/5/hegseth-says-us-blockade-on-iran-gift-to-the?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "US, Iran, UAE trade Hormuz attack claims: What we know",
+              "link": "https://www.aljazeera.com/news/2026/5/5/us-iran-uae-trade-hormuz-attack-claims-what-we-know?traffic_source=rss",
+              "source": "aljazeera"
             },
             {
               "title": "First Russian oil reportedly arrives in Japan since Iran war – as it happened",
               "link": "https://www.theguardian.com/world/live/2026/may/04/iran-war-live-updates-trump-hormuz-us-operation-tanker-strikes",
               "source": "guardian"
-            },
-            {
-              "title": "China Seeks an Advantage With Both Trump and Iran as War Evolves",
-              "link": "https://www.nytimes.com/2026/05/03/us/politics/trump-china-iran-war.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Venice Biennale Jury Resigns Amid Tension Over Awards Ban",
-              "link": "https://www.nytimes.com/2026/04/30/arts/design/israel-artist-venice-biennale.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Donald Trump sends warships to break Iran’s strait of Hormuz blockade",
-              "link": "https://www.theguardian.com/world/2026/may/04/shipping-bosses-nervous-trump-plan-to-guide-vessels-strait-of-hormuz-iran",
-              "source": "guardian"
             }
           ]
         },
         "other": {
-          "count": 4,
+          "count": 6,
           "titles": [
             {
-              "title": "NBA semifinal series: Timberwolves stun Spurs in Game 1; Knicks beat 76ers",
-              "link": "https://www.aljazeera.com/sports/2026/5/5/nba-semifinal-series-timberwolves-stun-spurs-in-game-1-knicks-beat-76ers?traffic_source=rss",
+              "title": "Hegseth says US ‘hasn’t capitulated on anything’ regarding Iran",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/5/5/hegseth-says-us-hasnt-capitulated-on-anything-regarding-iran?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Released Flotilla activists describe‘torture’ in Israeli prison",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/5/5/released-flotilla-activists-describetorture-in-israeli-prison?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Iran’s football team shows World Cup readiness with social media posts",
+              "link": "https://www.aljazeera.com/sports/2026/5/5/irans-football-team-shows-world-cup-readiness-with-social-media-posts?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Israel extends detention of Gaza flotilla activists, lawyers say",
+              "link": "https://www.aljazeera.com/news/2026/5/5/israel-extends-detention-of-gaza-flotilla-activists-say-lawyers?traffic_source=rss",
               "source": "aljazeera"
             },
             {
               "title": "Some Iranians fear the regime is now more entrenched - and ready for revenge",
               "link": "https://www.bbc.com/news/articles/clyp6xxyvzyo?at_medium=RSS&at_campaign=rss",
               "source": "bbc"
-            },
-            {
-              "title": "In Packed Cafes, Iranians Yearn to Escape War’s Wreckage",
-              "link": "https://www.nytimes.com/2026/05/01/world/middleeast/iran-war-cafes.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "British couple jailed in Iran: 'We're likely to be here for a long time'",
-              "link": "https://www.bbc.com/news/articles/c202pl60kv9o?at_medium=RSS&at_campaign=rss",
-              "source": "bbc"
-            }
-          ]
-        },
-        "military": {
-          "count": 21,
-          "titles": [
-            {
-              "title": "What Iran is saying about attack on UAE",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/5/5/what-iran-is-saying-about-attack-on-uae?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Palestine weekly wrap: Israeli security agencies sound alarm on settlers",
-              "link": "https://www.aljazeera.com/news/2026/5/5/palestine-weekly-wrap-israeli-security-agencies-sound-alarm-on-settlers?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Iran war: What’s happening on day 67 as Hormuz crisis deepens?",
-              "link": "https://www.aljazeera.com/news/2026/5/5/iran-war-whats-happening-on-day-67-as-hormuz-crisis-deepens?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Concierge firm co-founded by queen’s nephew went on ‘ill-timed’ hiring spree before Iran war",
-              "link": "https://www.theguardian.com/business/2026/may/05/concierge-firm-quintessentially-queen-nephew-ben-elliot-hiring-spree-iran-war-middle-east-gulf",
-              "source": "guardian"
-            },
-            {
-              "title": "US strikes Iranian fast boats as Iran attacks UAE oil facility ",
-              "link": "https://www.bbc.com/news/articles/cjwp432d0v5o?at_medium=RSS&at_campaign=rss",
-              "source": "bbc"
-            }
-          ]
-        },
-        "diplomacy": {
-          "count": 4,
-          "titles": [
-            {
-              "title": "Afghanistan accuses Pakistan of killing three civilians in ‘war crime’",
-              "link": "https://www.aljazeera.com/news/2026/5/5/afghanistan-accuses-pakistan-of-killing-three-civilians-in-war-crime?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Pakistan Says It Helped Iranian Crew From Ship That U.S. Seized",
-              "link": "https://www.nytimes.com/2026/05/04/world/middleeast/iran-ship-crew-pakistan.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Could Iran’s escalating economic crisis weaken negotiating position with US?",
-              "link": "https://www.theguardian.com/world/2026/may/04/could-irans-escalating-economic-crisis-weaken-negotiating-position-with-us",
-              "source": "guardian"
-            },
-            {
-              "title": "Iran offers new peace proposal to US but Trump ‘not satisfied’",
-              "link": "https://www.theguardian.com/world/2026/may/01/pakistan-backchannel-us-iran-deal-peace",
-              "source": "guardian"
-            }
-          ]
-        },
-        "humanitarian": {
-          "count": 5,
-          "titles": [
-            {
-              "title": "Nine workers killed in Colombia coal mine explosion",
-              "link": "https://www.aljazeera.com/news/2026/5/5/nine-workers-killed-in-colombia-coal-mine-explosion?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Thiago Ávila’s letter from Israeli prison to his daughter",
-              "link": "https://www.aljazeera.com/opinions/2026/5/5/thiago-avilas-letter-from-israeli-prison-to-his-daughter?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "British Gaza flotilla activists say they needed hospital care after Israeli forces’ abuse",
-              "link": "https://www.theguardian.com/world/2026/may/04/gaza-flotilla-britons-say-they-needed-hospital-care-after-israeli-forces-abuse",
-              "source": "guardian"
-            },
-            {
-              "title": "Thirteen killed in Israeli strikes on southern Lebanon, health ministry says ",
-              "link": "https://www.bbc.com/news/articles/cd7pn0zywggo?at_medium=RSS&at_campaign=rss",
-              "source": "bbc"
-            },
-            {
-              "title": "Narges Mohammadi, Iranian Nobel Laureate, Is Hospitalized",
-              "link": "https://www.nytimes.com/2026/05/01/world/middleeast/narges-mohammadi-iran-hospialized.html",
-              "source": "nytimes"
             }
           ]
         },
         "politics": {
-          "count": 6,
+          "count": 7,
           "titles": [
+            {
+              "title": "What We Know About ‘Project Freedom’ in the Strait of Hormuz",
+              "link": "https://www.nytimes.com/2026/05/05/world/middleeast/trump-strait-hormuz-plan-project-freedom-iran.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "DRC protest in support of US sanctions against former president",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/5/5/drc-protest-in-support-of-us-sanctions-against-former-president?traffic_source=rss",
+              "source": "aljazeera"
+            },
             {
               "title": "Iran executes three men in relation to January anti-regime protests",
               "link": "https://www.theguardian.com/world/2026/may/04/iran-executes-men-january-anti-regime-protests",
@@ -1139,21 +1142,61 @@
               "title": "Trump Says U.S. Will Help Stranded Ships Leave Strait of Hormuz",
               "link": "https://www.nytimes.com/2026/05/03/us/politics/strait-hormuz-stranded-ships.html",
               "source": "nytimes"
+            }
+          ]
+        },
+        "diplomacy": {
+          "count": 4,
+          "titles": [
+            {
+              "title": "Map of dominance: Why Iran can’t afford to give up Hormuz control",
+              "link": "https://www.aljazeera.com/news/2026/5/5/map-of-dominance-why-iran-cant-afford-to-give-up-hormuz-control?traffic_source=rss",
+              "source": "aljazeera"
             },
             {
-              "title": "Trump says US navy will ‘guide’ trapped ships from strait of Hormuz amid ‘very positive’ talks with Iran",
-              "link": "https://www.theguardian.com/world/2026/may/03/trump-says-iran-has-not-yet-paid-a-big-enough-price-as-he-reviews-new-peace-proposal",
+              "title": "Bowen: Strait of Hormuz standoff raises risk of sliding back into all-out war",
+              "link": "https://www.bbc.com/news/articles/cgrpnq00j5vo?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
+            },
+            {
+              "title": "Pakistan Says It Helped Iranian Crew From Ship That U.S. Seized",
+              "link": "https://www.nytimes.com/2026/05/04/world/middleeast/iran-ship-crew-pakistan.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Could Iran’s escalating economic crisis weaken negotiating position with US?",
+              "link": "https://www.theguardian.com/world/2026/may/04/could-irans-escalating-economic-crisis-weaken-negotiating-position-with-us",
+              "source": "guardian"
+            }
+          ]
+        },
+        "humanitarian": {
+          "count": 4,
+          "titles": [
+            {
+              "title": "Smotrich says he promised his son ‘more destruction’ in Lebanon",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/5/5/smotrich-says-he-promised-his-son-more-destruction-in-lebanon?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "British Gaza flotilla activists say they needed hospital care after Israeli forces’ abuse",
+              "link": "https://www.theguardian.com/world/2026/may/04/gaza-flotilla-britons-say-they-needed-hospital-care-after-israeli-forces-abuse",
               "source": "guardian"
             },
             {
-              "title": "Trump ‘Not Satisfied’ With Iran’s Proposal on Ending War",
-              "link": "https://www.nytimes.com/2026/05/01/world/middleeast/iran-new-proposal-peace-talks.html",
-              "source": "nytimes"
+              "title": "Concern for jailed Iranian Nobel laureate as brother fears she is dying",
+              "link": "https://www.bbc.com/news/articles/c362pd8epw9o?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
+            },
+            {
+              "title": "Thirteen killed in Israeli strikes on southern Lebanon, health ministry says ",
+              "link": "https://www.bbc.com/news/articles/cd7pn0zywggo?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
             }
           ]
         },
         "regional": {
-          "count": 3,
+          "count": 2,
           "titles": [
             {
               "title": "As Israel Entrenches, Frustration With Hezbollah Turns to Support",
@@ -1163,11 +1206,6 @@
             {
               "title": "Hegseth’s and Moulton’s Parallel Lives Collide Over Iran",
               "link": "https://www.nytimes.com/2026/05/02/us/politics/hegseth-moulton-iran-war.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Jordanians Struggle as Mideast Wars Scare Tourists Away",
-              "link": "https://www.nytimes.com/2026/05/02/world/middleeast/jordan-travel-tourists-war.html",
               "source": "nytimes"
             }
           ]
@@ -1262,50 +1300,58 @@
     }
   ],
   "economic_indicators": {
-    "WTI": {
-      "price": 103.93,
-      "change": -2.49,
-      "changePercent": -2.34,
-      "prev": 106.42
-    },
-    "VIX": {
-      "price": 17.67,
-      "change": -0.62,
-      "changePercent": -3.39,
-      "prev": 18.29
-    },
-    "DXY": {
-      "price": 98.47,
-      "change": 0,
-      "changePercent": 0,
-      "prev": 98.47
-    },
-    "BRENT": {
-      "price": 112.58,
-      "change": -1.86,
-      "changePercent": -1.63,
-      "prev": 114.44
-    },
     "GOLD": {
-      "price": 4570,
-      "change": 50.5,
-      "changePercent": 1.12,
+      "price": 4586,
+      "change": 66.5,
+      "changePercent": 1.47,
       "prev": 4519.5
     },
+    "VIX": {
+      "price": 17.54,
+      "change": -0.75,
+      "changePercent": -4.1,
+      "prev": 18.29
+    },
     "US10Y": {
-      "price": 4.45,
-      "change": 0.07,
-      "changePercent": 1.6,
-      "prev": 4.38
+      "price": 4.41,
+      "change": -0.03,
+      "changePercent": -0.67,
+      "prev": 4.45
+    },
+    "BRENT": {
+      "price": 110.35,
+      "change": -4.09,
+      "changePercent": -3.57,
+      "prev": 114.44
+    },
+    "WTI": {
+      "price": 101.76,
+      "change": -4.66,
+      "changePercent": -4.38,
+      "prev": 106.42
+    },
+    "DXY": {
+      "price": 98.34,
+      "change": -0.13,
+      "changePercent": -0.13,
+      "prev": 98.47
     },
     "US2Y": {
-      "price": 3.59,
+      "price": 3.6,
       "change": 0.01,
       "changePercent": 0.28,
-      "prev": 3.58
+      "prev": 3.59
     }
   },
   "critical_events": [
+    {
+      "id": "capitulation_signal",
+      "name": "교전국 항복/사과/공식 양보",
+      "severity": "critical",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "shorten"
+    },
     {
       "id": "ceasefire_agreement",
       "name": "공식 휴전/평화 합의",
