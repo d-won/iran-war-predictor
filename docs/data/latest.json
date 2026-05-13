@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-05-13T12:27:03.455Z",
+  "timestamp": "2026-05-13T15:24:18.652Z",
   "war_day": 74,
   "probabilities": {
-    "1개월 내 (~3월)": 24.7,
-    "2~3개월 (4~5월)": 40.5,
-    "4~6개월 (6~8월)": 20.9,
-    "7~12개월 (9월~27/2월)": 10.5,
-    "1년 초과": 3.4
+    "1개월 내 (~3월)": 23.9,
+    "2~3개월 (4~5월)": 39,
+    "4~6개월 (6~8월)": 21.6,
+    "7~12개월 (9월~27/2월)": 11.2,
+    "1년 초과": 4.3
   },
   "factors": [
     {
@@ -45,7 +45,7 @@
       "decay": 0.4
     },
     {
-      "factor": "이란 미사일 능력 급감 (휴전8.2:확전4)",
+      "factor": "이란 미사일 능력 급감 (휴전10.2:확전2)",
       "impact": "전쟁 지속 능력 약화로 단기 종전 가능성 증가",
       "weight": "+0.0%p (1개월내), +0.0%p (2~3개월) (잔존40%)",
       "direction": "shorten",
@@ -181,11 +181,11 @@
       "decay": 1
     },
     {
-      "factor": "지역 확산 뉴스 16건 감지",
-      "impact": "주변국 대규모 연루 → 장기화 위험 높음",
-      "weight": "+0.02%p (4~6개월), +0.02%p (7~12개월)",
+      "factor": "지역 확산 뉴스 14건 감지",
+      "impact": "주변국 연루 확대로 장기화 위험",
+      "weight": "+0.01%p (4~6개월), +0.01%p (7~12개월)",
       "direction": "lengthen",
-      "detail": "주변국을 언급하는 기사 16건이 감지되었습니다.",
+      "detail": "주변국을 언급하는 기사 14건이 감지되었습니다.",
       "keywords": [
         "saudi",
         "uae",
@@ -260,11 +260,37 @@
       "severity": "critical"
     },
     {
-      "factor": "유가 급등 (WTI $101.85/배럴)",
+      "factor": "[중대 이벤트] 전선 확대/신규 참전국",
+      "impact": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).",
+      "weight": "-1.3%p (1개월내), -2.0%p (2~3개월), +2.7%p (4~6개월), +2.0%p (7~12개월), +1.3%p (1년초과)",
+      "direction": "lengthen",
+      "detail": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Trump needs Xi much more than Xi needs Trump",
+      "keywords": [
+        "new front",
+        "war spread",
+        "conflict expand",
+        "join",
+        "war",
+        "enter",
+        "war",
+        "open",
+        "front",
+        "declare war",
+        "widen",
+        "conflict",
+        "second front",
+        "new theater"
+      ],
+      "applied": "2026-05-13",
+      "active": true,
+      "severity": "moderate"
+    },
+    {
+      "factor": "유가 급등 (WTI $102.91/배럴)",
       "impact": "높은 경제 압력 → 빠른 해결 요구 증가",
       "weight": "+4%p (1-2개월)",
       "direction": "shorten",
-      "detail": "WTI 유가가 $101.85/배럴로 100달러 돌파입니다. 호르무즈 해협 봉쇄와 맞물려 글로벌 에너지 시장에 큰 충격을 주고 있으며, 주요국들의 조기 종전 압력이 강화되고 있습니다.",
+      "detail": "WTI 유가가 $102.91/배럴로 100달러 돌파입니다. 호르무즈 해협 봉쇄와 맞물려 글로벌 에너지 시장에 큰 충격을 주고 있으며, 주요국들의 조기 종전 압력이 강화되고 있습니다.",
       "keywords": [
         "oil",
         "crude",
@@ -277,11 +303,11 @@
       "active": true
     },
     {
-      "factor": "금값 사상최고 ($4699.4/oz)",
+      "factor": "금값 사상최고 ($4695/oz)",
       "impact": "안전자산 수요 폭증 → 글로벌 불안 심화",
       "weight": "+2%p (4-6개월)",
       "direction": "lengthen",
-      "detail": "금 가격이 온스당 $4699.4로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
+      "detail": "금 가격이 온스당 $4695로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
       "keywords": [
         "gold",
         "safe haven",
@@ -293,18 +319,170 @@
     }
   ],
   "news_signals": {
-    "ceasefire_mentions": 8.2,
-    "escalation_mentions": 4,
+    "ceasefire_mentions": 10.2,
+    "escalation_mentions": 2,
     "negotiation_mentions": 8,
     "casualty_mentions": 6,
     "peace_mentions": 6,
-    "regional_spread": 16,
+    "regional_spread": 14,
     "total_articles": 50,
     "new_articles": 50,
-    "unique_events": 45,
-    "duplicates_removed": 5
+    "unique_events": 46,
+    "duplicates_removed": 4
   },
   "latest_news": [
+    {
+      "title": "Trump arrives in China for two-day summit with Xi",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/5/13/trump-arrives-in-china-for-two-day-summit-with-xi?traffic_source=rss",
+      "pubDate": "Wed, 13 May 2026 15:06:05 +0000",
+      "source": "aljazeera",
+      "snippet": "US President Donald Trump has landed in Beijing to meet China’s President Xi Jinping.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Trump Is in China as Iran War Continues With No End in Sight",
+      "link": "https://www.nytimes.com/2026/05/13/world/middleeast/trump-china-iran-war.html",
+      "pubDate": "Wed, 13 May 2026 15:04:52 +0000",
+      "source": "nytimes",
+      "snippet": "Before leaving Washington on Tuesday, the president reiterated threats to decimate Iran if it doesn’t agree to a deal to resolve the conflict.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "12 killed by a series of Israeli strikes on cars in Lebanon",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/5/13/12-killed-by-a-series-of-israeli-strikes-on-cars-in-lebanon?traffic_source=rss",
+      "pubDate": "Wed, 13 May 2026 14:59:19 +0000",
+      "source": "aljazeera",
+      "snippet": "A series of Israeli  strikes on vehicles in Lebanon killed at least 12 people, including a woman and her two children.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": true,
+      "_clusterSize": 2,
+      "_isDuplicate": false
+    },
+    {
+      "title": "What Trump and Xi want from China visit",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/5/13/what-trump-and-xi-want-from-china-visit?traffic_source=rss",
+      "pubDate": "Wed, 13 May 2026 14:55:57 +0000",
+      "source": "aljazeera",
+      "snippet": "Tensions over trade, technology, Taiwan, and the war on Iran are set to dominate high-stakes talks between Trump and Xi.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "‘Most powerful’: What’s the Sarmat missile Russia has test-launched?",
+      "link": "https://www.aljazeera.com/news/2026/5/13/most-powerful-whats-the-sarmat-missile-russia-has-test-launched?traffic_source=rss",
+      "pubDate": "Wed, 13 May 2026 14:25:53 +0000",
+      "source": "aljazeera",
+      "snippet": "President Vladimir Putin claims the RS-28 Sarmat&#039;s range is far beyond Western estimates.",
+      "isNew": true,
+      "_isDuplicate": true,
+      "_sourceCount": 1
+    },
+    {
+      "title": "Amid US-Israel war on Iran, Arizona awaits Iranian team before World Cup",
+      "link": "https://www.aljazeera.com/sports/2026/5/13/amid-us-israel-war-on-iran-arizona-awaits-iranian-team-before-world-cup?traffic_source=rss",
+      "pubDate": "Wed, 13 May 2026 14:05:49 +0000",
+      "source": "aljazeera",
+      "snippet": "Sports facility and football fans in the city of Tucson want Iran&#039;s players to feel &#039;safe and welcome&#039;.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Israeli strikes on cars in southern Lebanon kill 12, health ministry says",
+      "link": "https://www.bbc.com/news/articles/c1k2zekj8y9o?at_medium=RSS&at_campaign=rss",
+      "pubDate": "Wed, 13 May 2026 13:52:11 GMT",
+      "source": "bbc",
+      "snippet": "Two children are among those reported dead after seven cars were struck in separate attacks south of Beirut.",
+      "isNew": true,
+      "_isDuplicate": true,
+      "_sourceCount": 1
+    },
+    {
+      "title": "The UAE tries hard to keep its reputation spotless. But with the war in Sudan, how can it? | Nesrine Malik",
+      "link": "https://www.theguardian.com/commentisfree/2026/may/13/uae-sudan-civil-war-gulf-country",
+      "pubDate": "Wed, 13 May 2026 13:51:12 GMT",
+      "source": "guardian",
+      "snippet": "Outrage is mounting about the Gulf country’s complicity in Sudan’s catastrophic civil war – and it might be starting to hit them where it hurtsThere are certain states whose reputations in the global ",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Trump needs Xi much more than Xi needs Trump",
+      "link": "https://www.aljazeera.com/opinions/2026/5/13/trump-needs-xi-much-more-than-xi-needs-trump?traffic_source=rss",
+      "pubDate": "Wed, 13 May 2026 13:08:38 +0000",
+      "source": "aljazeera",
+      "snippet": "As the Iran war reshapes global power dynamics, Beijing enters the Trump-Xi summit with more leverage over Washington.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Why Trump decided to back Iraq’s prime minister-designate, Ali al-Zaidi",
+      "link": "https://www.aljazeera.com/opinions/2026/5/13/why-trump-decided-to-back-iraqs-prime-minister-designate-ali-al-zaidi?traffic_source=rss",
+      "pubDate": "Wed, 13 May 2026 12:59:48 +0000",
+      "source": "aljazeera",
+      "snippet": "Support from Washington is conditional on clear progress in curbing pro-Iran militia activity.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Gunshots ring out at Philippine Senate where lawmaker is holed up",
+      "link": "https://www.aljazeera.com/news/2026/5/13/gunshots-ring-out-at-philippine-senate-where-lawmaker-is-holed-up?traffic_source=rss",
+      "pubDate": "Wed, 13 May 2026 12:44:12 +0000",
+      "source": "aljazeera",
+      "snippet": "Ronald dela Rosa, former police chief under ex-President Rodrigo Duterte, faces an ICC arrest warrant.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Activist confronts Iran’s former crown prince over war on Iran",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/5/13/activist-confronts-irans-former-crown-prince-over-war-on-iran?traffic_source=rss",
+      "pubDate": "Wed, 13 May 2026 12:42:49 +0000",
+      "source": "aljazeera",
+      "snippet": "Activist confronts Iran’s former crown prince over war on Iran",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Israeli attacks on Gaza increased by 35% since Iran ceasefire: Report",
+      "link": "https://www.aljazeera.com/news/2026/5/13/israeli-attacks-on-gaza-increased-by-35-since-iran-ceasefire-report?traffic_source=rss",
+      "pubDate": "Wed, 13 May 2026 12:39:17 +0000",
+      "source": "aljazeera",
+      "snippet": "Conflict monitor ACLED notes the increase in Israeli attacks on Gaza in April in its latest report.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
     {
       "title": "Trump faces slew of ‘bad options’ on Iran as diplomacy falters",
       "link": "https://www.aljazeera.com/news/2026/5/13/trump-faces-slew-of-bad-options-on-iran-as-diplomacy-falters?traffic_source=rss",
@@ -328,158 +506,6 @@
       "_isDuplicated": false,
       "_clusterSize": 1,
       "_isDuplicate": false
-    },
-    {
-      "title": "Video: Putin hails test launch of ‘world’s most powerful missile’",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/5/13/video-putin-hails-test-launch-of-worlds-most-powerful?traffic_source=rss",
-      "pubDate": "Wed, 13 May 2026 10:57:44 +0000",
-      "source": "aljazeera",
-      "snippet": "Russia has test-fired a new weapon that President Putin has described as the world’s ‘most powerful’ missile.\n",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": true,
-      "_clusterSize": 2,
-      "_isDuplicate": false
-    },
-    {
-      "title": "At least eight killed in Israeli drone strikes on Lebanon highway",
-      "link": "https://www.aljazeera.com/news/2026/5/13/at-least-eight-killed-in-israeli-drone-strikes-on-highway-south-of-beirut?traffic_source=rss",
-      "pubDate": "Wed, 13 May 2026 09:53:02 +0000",
-      "source": "aljazeera",
-      "snippet": "Two children among those killed after three strikes hit cars on the highway in Jiyeh, south of Beirut.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Series of tremors near Tehran renews concerns over major quake risk",
-      "link": "https://www.aljazeera.com/news/2026/5/13/series-of-tremors-near-tehran-renews-concerns-over-major-quake-risk?traffic_source=rss",
-      "pubDate": "Wed, 13 May 2026 09:35:51 +0000",
-      "source": "aljazeera",
-      "snippet": "The tremors have been felt in an area close to the Mosha fault, one of Iran’s most active seismic zones.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "UN resolution calls for freedom of navigation in the Strait of Hormuz",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/5/13/un-resolution-calls-for-freedom-of-navigation-in-the-strait-of-hormuz?traffic_source=rss",
-      "pubDate": "Wed, 13 May 2026 09:33:41 +0000",
-      "source": "aljazeera",
-      "snippet": "UN resolution calls for freedom of navigation in the Strait of Hormuz ",
-      "isNew": true,
-      "_isDuplicate": true,
-      "_sourceCount": 1
-    },
-    {
-      "title": "Gulf Countries Arrest Shiite ‘Traitors’ Amid War With Iran",
-      "link": "https://www.nytimes.com/2026/05/13/world/middleeast/gulf-countries-arrest-shiite.html",
-      "pubDate": "Wed, 13 May 2026 08:55:35 +0000",
-      "source": "nytimes",
-      "snippet": "Dozens of Gulf citizens have been accused of belonging to Iran-linked terrorism cells as the war accelerates a shift toward deeper authoritarianism in the region.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "How Silicon Valley giants are turning into war contractors",
-      "link": "https://www.aljazeera.com/video/all-hail/2026/5/13/how-silicon-valley-giants-are-turning-into-war-contractors?traffic_source=rss",
-      "pubDate": "Wed, 13 May 2026 08:41:45 +0000",
-      "source": "aljazeera",
-      "snippet": "Palantir, Anduril, Google and other tech giants are selling AI-powered, computer-guided weapons systems.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "China’s Xi expected to press Trump on Taiwan, tariffs during summit",
-      "link": "https://www.aljazeera.com/news/2026/5/13/chinas-xi-to-press-trump-on-taiwan-tariffs-during-summit?traffic_source=rss",
-      "pubDate": "Wed, 13 May 2026 07:48:54 +0000",
-      "source": "aljazeera",
-      "snippet": "Chinese President Xi Jinping likely to seek concessions on arms sales to Taiwan, analysts say.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Iran war day 75: Trump-Xi talks loom in Beijing as tensions rise in Gulf",
-      "link": "https://www.aljazeera.com/news/2026/5/13/iran-war-day-75-trump-xi-talks-loom-in-beijing-as-tensions-rise-in-gulf?traffic_source=rss",
-      "pubDate": "Wed, 13 May 2026 07:45:44 +0000",
-      "source": "aljazeera",
-      "snippet": "Trump heads to Beijing for high-stakes talks with Xi Jinping as tensions over the Iran war continue to escalate.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Trump and Xi to meet in Beijing: The key issues shaping the China summit",
-      "link": "https://www.aljazeera.com/economy/2026/5/13/trump-and-xi-to-meet-in-beijing-the-key-issues-shaping-the-china-summit?traffic_source=rss",
-      "pubDate": "Wed, 13 May 2026 07:08:18 +0000",
-      "source": "aljazeera",
-      "snippet": "Trump and Xi meet as trade, Taiwan and the Iran war dominate a high-stakes US-China summit.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "US-China head-to-head: Explained in 11 maps and charts",
-      "link": "https://www.aljazeera.com/news/2026/5/13/us-china-head-to-head-explained-in-11-maps-and-charts?traffic_source=rss",
-      "pubDate": "Wed, 13 May 2026 06:47:45 +0000",
-      "source": "aljazeera",
-      "snippet": "Before President Trump’s visit to Beijing, Al Jazeera compares the US and China on economics, military and resources. ",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Bahrain-led UN resolution on Strait of Hormuz gains support of 112 nations",
-      "link": "https://www.aljazeera.com/news/2026/5/13/bahrain-led-un-resolution-on-strait-of-hormuz-gains-support-of-112-nations?traffic_source=rss",
-      "pubDate": "Wed, 13 May 2026 06:02:08 +0000",
-      "source": "aljazeera",
-      "snippet": "The resolution calls for free navigation through the strait and an end to Iranian attacks on its Gulf neighbours.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": true,
-      "_clusterSize": 2,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Putin hails Russia’s test launch of ‘most powerful missile in the world’",
-      "link": "https://www.aljazeera.com/news/2026/5/13/putin-hails-russias-test-launch-of-most-powerful-missile-in-the-world?traffic_source=rss",
-      "pubDate": "Wed, 13 May 2026 04:27:51 +0000",
-      "source": "aljazeera",
-      "snippet": "Russian leader says the nuclear-capable Sarmat missile will enter combat service at the end of the year.",
-      "isNew": true,
-      "_isDuplicate": true,
-      "_sourceCount": 1
-    },
-    {
-      "title": "Public health at risk across Asia as Iran crisis sends price of cooking gas soaring",
-      "link": "https://www.theguardian.com/world/2026/may/13/public-health-risk-asia-firewood-cooking-gas-price-air-pollution",
-      "pubDate": "Wed, 13 May 2026 03:00:17 GMT",
-      "source": "guardian",
-      "snippet": "Families turn to dirty fuels such as firewood, bringing fears over air pollution and fragility of energy transitionIn the ramshackle lanes of a south Delhi slum, Afshana Khatoon crouched wearily on he",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
     }
   ],
   "news_digest": {
@@ -488,9 +514,20 @@
         "category_id": "military",
         "category_name": "군사 작전",
         "category_icon": "⚔️",
-        "count": 19,
-        "new_count": 19,
+        "count": 18,
+        "new_count": 18,
         "articles": [
+          {
+            "title": "12 killed by a series of Israeli strikes on cars in Lebanon",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/5/13/12-killed-by-a-series-of-israeli-strikes-on-cars-in-lebanon?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Wed, 13 May 2026 14:59:19 +0000",
+            "snippet": "A series of Israeli  strikes on vehicles in Lebanon killed at least 12 people, including a woman and her two children.",
+            "isNew": true
+          },
           {
             "title": "Video: Putin hails test launch of ‘world’s most powerful missile’",
             "link": "https://www.aljazeera.com/video/newsfeed/2026/5/13/video-putin-hails-test-launch-of-worlds-most-powerful?traffic_source=rss",
@@ -503,36 +540,36 @@
             "isNew": true
           },
           {
-            "title": "At least eight killed in Israeli drone strikes on Lebanon highway",
-            "link": "https://www.aljazeera.com/news/2026/5/13/at-least-eight-killed-in-israeli-drone-strikes-on-highway-south-of-beirut?traffic_source=rss",
-            "source": "aljazeera",
+            "title": "Lebanon says two paramedics among 13 killed in Israeli strikes",
+            "link": "https://www.bbc.com/news/articles/cx21j3xl72zo?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
             "sources": [
-              "aljazeera"
+              "bbc"
             ],
-            "pubDate": "Wed, 13 May 2026 09:53:02 +0000",
-            "snippet": "Two children among those killed after three strikes hit cars on the highway in Jiyeh, south of Beirut.",
+            "pubDate": "Tue, 12 May 2026 20:00:05 GMT",
+            "snippet": "Lebanon's health ministry says the paramedics were carrying out a rescue mission in Nabatieh in response to an earlier attack that killed one person.",
             "isNew": true
           },
           {
-            "title": "Bahrain-led UN resolution on Strait of Hormuz gains support of 112 nations",
-            "link": "https://www.aljazeera.com/news/2026/5/13/bahrain-led-un-resolution-on-strait-of-hormuz-gains-support-of-112-nations?traffic_source=rss",
+            "title": "Activist confronts Iran’s former crown prince over war on Iran",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/5/13/activist-confronts-irans-former-crown-prince-over-war-on-iran?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Wed, 13 May 2026 06:02:08 +0000",
-            "snippet": "The resolution calls for free navigation through the strait and an end to Iranian attacks on its Gulf neighbours.",
+            "pubDate": "Wed, 13 May 2026 12:42:49 +0000",
+            "snippet": "Activist confronts Iran’s former crown prince over war on Iran",
             "isNew": true
           },
           {
-            "title": "How Silicon Valley giants are turning into war contractors",
-            "link": "https://www.aljazeera.com/video/all-hail/2026/5/13/how-silicon-valley-giants-are-turning-into-war-contractors?traffic_source=rss",
+            "title": "Israeli attacks on Gaza increased by 35% since Iran ceasefire: Report",
+            "link": "https://www.aljazeera.com/news/2026/5/13/israeli-attacks-on-gaza-increased-by-35-since-iran-ceasefire-report?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Wed, 13 May 2026 08:41:45 +0000",
-            "snippet": "Palantir, Anduril, Google and other tech giants are selling AI-powered, computer-guided weapons systems.",
+            "pubDate": "Wed, 13 May 2026 12:39:17 +0000",
+            "snippet": "Conflict monitor ACLED notes the increase in Israeli attacks on Gaza in April in its latest report.",
             "isNew": true
           },
           {
@@ -589,17 +626,6 @@
             "pubDate": "Tue, 12 May 2026 22:08:43 +0000",
             "snippet": "The estimate from the Defense Department’s top budget official was $4 billion higher than two weeks ago. Secretary Pete Hegseth declined to say when the administration would request extra money for th",
             "isNew": true
-          },
-          {
-            "title": "Lebanon says two paramedics among 13 killed in Israeli strikes",
-            "link": "https://www.bbc.com/news/articles/cx21j3xl72zo?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
-            "sources": [
-              "bbc"
-            ],
-            "pubDate": "Tue, 12 May 2026 20:00:05 GMT",
-            "snippet": "Lebanon's health ministry says the paramedics were carrying out a rescue mission in Nabatieh in response to an earlier attack that killed one person.",
-            "isNew": true
           }
         ]
       },
@@ -610,6 +636,28 @@
         "count": 7,
         "new_count": 7,
         "articles": [
+          {
+            "title": "What Trump and Xi want from China visit",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/5/13/what-trump-and-xi-want-from-china-visit?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Wed, 13 May 2026 14:55:57 +0000",
+            "snippet": "Tensions over trade, technology, Taiwan, and the war on Iran are set to dominate high-stakes talks between Trump and Xi.",
+            "isNew": true
+          },
+          {
+            "title": "Trump needs Xi much more than Xi needs Trump",
+            "link": "https://www.aljazeera.com/opinions/2026/5/13/trump-needs-xi-much-more-than-xi-needs-trump?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Wed, 13 May 2026 13:08:38 +0000",
+            "snippet": "As the Iran war reshapes global power dynamics, Beijing enters the Trump-Xi summit with more leverage over Washington.",
+            "isNew": true
+          },
           {
             "title": "Trump faces slew of ‘bad options’ on Iran as diplomacy falters",
             "link": "https://www.aljazeera.com/news/2026/5/13/trump-faces-slew-of-bad-options-on-iran-as-diplomacy-falters?traffic_source=rss",
@@ -622,25 +670,14 @@
             "isNew": true
           },
           {
-            "title": "Iran war day 75: Trump-Xi talks loom in Beijing as tensions rise in Gulf",
-            "link": "https://www.aljazeera.com/news/2026/5/13/iran-war-day-75-trump-xi-talks-loom-in-beijing-as-tensions-rise-in-gulf?traffic_source=rss",
+            "title": "UN resolution calls for freedom of navigation in the Strait of Hormuz",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/5/13/un-resolution-calls-for-freedom-of-navigation-in-the-strait-of-hormuz?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Wed, 13 May 2026 07:45:44 +0000",
-            "snippet": "Trump heads to Beijing for high-stakes talks with Xi Jinping as tensions over the Iran war continue to escalate.",
-            "isNew": true
-          },
-          {
-            "title": "Trump and Xi to meet in Beijing: The key issues shaping the China summit",
-            "link": "https://www.aljazeera.com/economy/2026/5/13/trump-and-xi-to-meet-in-beijing-the-key-issues-shaping-the-china-summit?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Wed, 13 May 2026 07:08:18 +0000",
-            "snippet": "Trump and Xi meet as trade, Taiwan and the Iran war dominate a high-stakes US-China summit.",
+            "pubDate": "Wed, 13 May 2026 09:33:41 +0000",
+            "snippet": "UN resolution calls for freedom of navigation in the Strait of Hormuz ",
             "isNew": true
           },
           {
@@ -675,16 +712,92 @@
             "pubDate": "Mon, 11 May 2026 18:13:40 GMT",
             "snippet": "US president says he is considering restarting naval escorts in strait of Hormuz in attempt to end Iranian blockadeDonald Trump has said the ceasefire with Iran is on “life support” and that he is con",
             "isNew": true
+          }
+        ]
+      },
+      {
+        "category_id": "politics",
+        "category_name": "국내 정치",
+        "category_icon": "🏛️",
+        "count": 7,
+        "new_count": 7,
+        "articles": [
+          {
+            "title": "Trump arrives in China for two-day summit with Xi",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/5/13/trump-arrives-in-china-for-two-day-summit-with-xi?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Wed, 13 May 2026 15:06:05 +0000",
+            "snippet": "US President Donald Trump has landed in Beijing to meet China’s President Xi Jinping.",
+            "isNew": true
           },
           {
-            "title": "Trump Says Iran’s Response to Latest U.S. Proposal ‘Totally Unacceptable’",
-            "link": "https://www.nytimes.com/2026/05/10/us/politics/iran-war-us-peace-proposal-response.html",
+            "title": "Trump Is in China as Iran War Continues With No End in Sight",
+            "link": "https://www.nytimes.com/2026/05/13/world/middleeast/trump-china-iran-war.html",
             "source": "nytimes",
             "sources": [
               "nytimes"
             ],
-            "pubDate": "Mon, 11 May 2026 00:48:30 +0000",
-            "snippet": "The United States and Iran have been discussing a 30-day extension to their cease-fire and a reopening of the Strait of Hormuz.",
+            "pubDate": "Wed, 13 May 2026 15:04:52 +0000",
+            "snippet": "Before leaving Washington on Tuesday, the president reiterated threats to decimate Iran if it doesn’t agree to a deal to resolve the conflict.",
+            "isNew": true
+          },
+          {
+            "title": "Why Trump decided to back Iraq’s prime minister-designate, Ali al-Zaidi",
+            "link": "https://www.aljazeera.com/opinions/2026/5/13/why-trump-decided-to-back-iraqs-prime-minister-designate-ali-al-zaidi?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Wed, 13 May 2026 12:59:48 +0000",
+            "snippet": "Support from Washington is conditional on clear progress in curbing pro-Iran militia activity.",
+            "isNew": true
+          },
+          {
+            "title": "Gunshots ring out at Philippine Senate where lawmaker is holed up",
+            "link": "https://www.aljazeera.com/news/2026/5/13/gunshots-ring-out-at-philippine-senate-where-lawmaker-is-holed-up?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Wed, 13 May 2026 12:44:12 +0000",
+            "snippet": "Ronald dela Rosa, former police chief under ex-President Rodrigo Duterte, faces an ICC arrest warrant.",
+            "isNew": true
+          },
+          {
+            "title": "As Trump Dismisses Iran Truce Plan, World Braces for Lasting Economic Pain",
+            "link": "https://www.nytimes.com/2026/05/11/world/middleeast/economic-woes-trump-iran-truce.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes",
+              "bbc"
+            ],
+            "pubDate": "Tue, 12 May 2026 11:58:15 +0000",
+            "snippet": "President Trump said the fragile cease-fire was on “life support,” and India’s leader urged residents to cut back on purchases and travel.",
+            "isNew": true
+          },
+          {
+            "title": "Iran defends its demands after Trump’s rejection.",
+            "link": "https://www.nytimes.com/live/2026/05/11/world/iran-war-trump-hormuz/iran-defends-its-demands-after-trumps-rejection",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Mon, 11 May 2026 22:37:39 +0000",
+            "snippet": "",
+            "isNew": true
+          },
+          {
+            "title": "Trump Proposes Suspending Federal Gas Tax Until Prices Fall",
+            "link": "https://www.nytimes.com/2026/05/11/us/politics/trump-gas-tax.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Mon, 11 May 2026 19:02:54 +0000",
+            "snippet": "Congress would have to agree to any suspension, and dropping federal taxes would not make up for the steep increase in prices since the war began.",
             "isNew": true
           }
         ]
@@ -693,8 +806,8 @@
         "category_id": "economy",
         "category_name": "경제 영향",
         "category_icon": "📊",
-        "count": 6,
-        "new_count": 6,
+        "count": 5,
+        "new_count": 5,
         "articles": [
           {
             "title": "Public health at risk across Asia as Iran crisis sends price of cooking gas soaring",
@@ -750,17 +863,6 @@
             "pubDate": "Mon, 11 May 2026 17:54:21 GMT",
             "snippet": "Bloc breaks its lengthy deadlock on the issue but falls short of imposing full-scale trade sanctionsMiddle East crisis – live updatesThe EU has agreed sanctions on violent Israeli settlers, ending a y",
             "isNew": true
-          },
-          {
-            "title": "Trump calls Iran response to US proposal to end war 'totally unacceptable' ",
-            "link": "https://www.bbc.com/news/articles/clypgz9e5pmo?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
-            "sources": [
-              "bbc"
-            ],
-            "pubDate": "Mon, 11 May 2026 01:55:13 GMT",
-            "snippet": "Iran is reported to want lifting of the US naval blockade, recognition of Iranian sovereignty over the Strait of Hormuz and compensation for war damage.",
-            "isNew": true
           }
         ]
       },
@@ -768,8 +870,8 @@
         "category_id": "humanitarian",
         "category_name": "인도주의/피해",
         "category_icon": "🏥",
-        "count": 5,
-        "new_count": 5,
+        "count": 4,
+        "new_count": 4,
         "articles": [
           {
             "title": "Earthquake Shakes Tehran, Where Nerves Are Already Strained by Iran War",
@@ -798,9 +900,7 @@
             "link": "https://www.theguardian.com/global-development/2026/may/12/nobel-laureates-call-iran-release-gravely-ill-activist-human-rights-activist-narges-mohammadi",
             "source": "guardian",
             "sources": [
-              "guardian",
-              "nytimes",
-              "bbc"
+              "guardian"
             ],
             "pubDate": "Tue, 12 May 2026 10:37:49 GMT",
             "snippet": "As human rights advocate is treated in Tehran hospital after transfer from Zanjan prison, prize winners demand her freedomMore than 110 Nobel laureates have called for the immediate and unconditional ",
@@ -816,82 +916,6 @@
             "pubDate": "Tue, 12 May 2026 00:22:09 +0000",
             "snippet": "Rom Braslavski, who said he had endured starvation, torture and sexual abuse during two-year captivity, demanded that members “take responsibility and get out of our lives.”",
             "isNew": true
-          },
-          {
-            "title": "Vision of destruction: Israel’s assault on southern Lebanon in video, maps and charts",
-            "link": "https://www.theguardian.com/world/2026/may/11/vision-destruction-israel-assault-southern-lebanon-video-maps-charts",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Mon, 11 May 2026 12:16:41 GMT",
-            "snippet": "More than 1.2 million people have been forced to flee their homes amid bombings, evacuation orders and demolitionsMiddle East crisis – live updatesIsrael’s destruction in southern Lebanon happened in ",
-            "isNew": true
-          }
-        ]
-      },
-      {
-        "category_id": "politics",
-        "category_name": "국내 정치",
-        "category_icon": "🏛️",
-        "count": 5,
-        "new_count": 5,
-        "articles": [
-          {
-            "title": "China’s Xi expected to press Trump on Taiwan, tariffs during summit",
-            "link": "https://www.aljazeera.com/news/2026/5/13/chinas-xi-to-press-trump-on-taiwan-tariffs-during-summit?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Wed, 13 May 2026 07:48:54 +0000",
-            "snippet": "Chinese President Xi Jinping likely to seek concessions on arms sales to Taiwan, analysts say.",
-            "isNew": true
-          },
-          {
-            "title": "US-China head-to-head: Explained in 11 maps and charts",
-            "link": "https://www.aljazeera.com/news/2026/5/13/us-china-head-to-head-explained-in-11-maps-and-charts?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Wed, 13 May 2026 06:47:45 +0000",
-            "snippet": "Before President Trump’s visit to Beijing, Al Jazeera compares the US and China on economics, military and resources. ",
-            "isNew": true
-          },
-          {
-            "title": "As Trump Dismisses Iran Truce Plan, World Braces for Lasting Economic Pain",
-            "link": "https://www.nytimes.com/2026/05/11/world/middleeast/economic-woes-trump-iran-truce.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes",
-              "bbc"
-            ],
-            "pubDate": "Tue, 12 May 2026 11:58:15 +0000",
-            "snippet": "President Trump said the fragile cease-fire was on “life support,” and India’s leader urged residents to cut back on purchases and travel.",
-            "isNew": true
-          },
-          {
-            "title": "Iran defends its demands after Trump’s rejection.",
-            "link": "https://www.nytimes.com/live/2026/05/11/world/iran-war-trump-hormuz/iran-defends-its-demands-after-trumps-rejection",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Mon, 11 May 2026 22:37:39 +0000",
-            "snippet": "",
-            "isNew": true
-          },
-          {
-            "title": "Trump Proposes Suspending Federal Gas Tax Until Prices Fall",
-            "link": "https://www.nytimes.com/2026/05/11/us/politics/trump-gas-tax.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Mon, 11 May 2026 19:02:54 +0000",
-            "snippet": "Congress would have to agree to any suspension, and dropping federal taxes would not make up for the steep increase in prices since the war began.",
-            "isNew": true
           }
         ]
       },
@@ -899,9 +923,20 @@
         "category_id": "other",
         "category_name": "기타",
         "category_icon": "📰",
-        "count": 3,
-        "new_count": 3,
+        "count": 4,
+        "new_count": 4,
         "articles": [
+          {
+            "title": "Amid US-Israel war on Iran, Arizona awaits Iranian team before World Cup",
+            "link": "https://www.aljazeera.com/sports/2026/5/13/amid-us-israel-war-on-iran-arizona-awaits-iranian-team-before-world-cup?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Wed, 13 May 2026 14:05:49 +0000",
+            "snippet": "Sports facility and football fans in the city of Tucson want Iran&#039;s players to feel &#039;safe and welcome&#039;.",
+            "isNew": true
+          },
           {
             "title": "Israel bulldozes Palestinian shops to make way for settlement-linked road",
             "link": "https://www.aljazeera.com/video/newsfeed/2026/5/13/israel-bulldozes-palestinian-shops-to-make-way-for-settlement-linked-road?traffic_source=rss",
@@ -936,14 +971,104 @@
             "isNew": true
           }
         ]
+      },
+      {
+        "category_id": "regional",
+        "category_name": "지역 정세",
+        "category_icon": "🌍",
+        "count": 1,
+        "new_count": 1,
+        "articles": [
+          {
+            "title": "The UAE tries hard to keep its reputation spotless. But with the war in Sudan, how can it? | Nesrine Malik",
+            "link": "https://www.theguardian.com/commentisfree/2026/may/13/uae-sudan-civil-war-gulf-country",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Wed, 13 May 2026 13:51:12 GMT",
+            "snippet": "Outrage is mounting about the Gulf country’s complicity in Sudan’s catastrophic civil war – and it might be starting to hit them where it hurtsThere are certain states whose reputations in the global ",
+            "isNew": true
+          }
+        ]
       }
     ],
     "recent_30min": {
       "total_new": 50,
       "by_category": {
-        "diplomacy": {
+        "politics": {
           "count": 8,
           "titles": [
+            {
+              "title": "Trump arrives in China for two-day summit with Xi",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/5/13/trump-arrives-in-china-for-two-day-summit-with-xi?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Trump Is in China as Iran War Continues With No End in Sight",
+              "link": "https://www.nytimes.com/2026/05/13/world/middleeast/trump-china-iran-war.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Why Trump decided to back Iraq’s prime minister-designate, Ali al-Zaidi",
+              "link": "https://www.aljazeera.com/opinions/2026/5/13/why-trump-decided-to-back-iraqs-prime-minister-designate-ali-al-zaidi?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Gunshots ring out at Philippine Senate where lawmaker is holed up",
+              "link": "https://www.aljazeera.com/news/2026/5/13/gunshots-ring-out-at-philippine-senate-where-lawmaker-is-holed-up?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "As Trump Dismisses Iran Truce Plan, World Braces for Lasting Economic Pain",
+              "link": "https://www.nytimes.com/2026/05/11/world/middleeast/economic-woes-trump-iran-truce.html",
+              "source": "nytimes"
+            }
+          ]
+        },
+        "military": {
+          "count": 21,
+          "titles": [
+            {
+              "title": "12 killed by a series of Israeli strikes on cars in Lebanon",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/5/13/12-killed-by-a-series-of-israeli-strikes-on-cars-in-lebanon?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "‘Most powerful’: What’s the Sarmat missile Russia has test-launched?",
+              "link": "https://www.aljazeera.com/news/2026/5/13/most-powerful-whats-the-sarmat-missile-russia-has-test-launched?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Israeli strikes on cars in southern Lebanon kill 12, health ministry says",
+              "link": "https://www.bbc.com/news/articles/c1k2zekj8y9o?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
+            },
+            {
+              "title": "Activist confronts Iran’s former crown prince over war on Iran",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/5/13/activist-confronts-irans-former-crown-prince-over-war-on-iran?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Israeli attacks on Gaza increased by 35% since Iran ceasefire: Report",
+              "link": "https://www.aljazeera.com/news/2026/5/13/israeli-attacks-on-gaza-increased-by-35-since-iran-ceasefire-report?traffic_source=rss",
+              "source": "aljazeera"
+            }
+          ]
+        },
+        "diplomacy": {
+          "count": 7,
+          "titles": [
+            {
+              "title": "What Trump and Xi want from China visit",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/5/13/what-trump-and-xi-want-from-china-visit?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Trump needs Xi much more than Xi needs Trump",
+              "link": "https://www.aljazeera.com/opinions/2026/5/13/trump-needs-xi-much-more-than-xi-needs-trump?traffic_source=rss",
+              "source": "aljazeera"
+            },
             {
               "title": "Trump faces slew of ‘bad options’ on Iran as diplomacy falters",
               "link": "https://www.aljazeera.com/news/2026/5/13/trump-faces-slew-of-bad-options-on-iran-as-diplomacy-falters?traffic_source=rss",
@@ -955,16 +1080,6 @@
               "source": "aljazeera"
             },
             {
-              "title": "Iran war day 75: Trump-Xi talks loom in Beijing as tensions rise in Gulf",
-              "link": "https://www.aljazeera.com/news/2026/5/13/iran-war-day-75-trump-xi-talks-loom-in-beijing-as-tensions-rise-in-gulf?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Trump and Xi to meet in Beijing: The key issues shaping the China summit",
-              "link": "https://www.aljazeera.com/economy/2026/5/13/trump-and-xi-to-meet-in-beijing-the-key-issues-shaping-the-china-summit?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
               "title": "In the 1979 hostage crisis, why did Iran free 10 Black Americans before the others?",
               "link": "https://www.theguardian.com/world/2026/may/12/black-american-iran-solidarity-war",
               "source": "guardian"
@@ -972,8 +1087,13 @@
           ]
         },
         "other": {
-          "count": 3,
+          "count": 4,
           "titles": [
+            {
+              "title": "Amid US-Israel war on Iran, Arizona awaits Iranian team before World Cup",
+              "link": "https://www.aljazeera.com/sports/2026/5/13/amid-us-israel-war-on-iran-arizona-awaits-iranian-team-before-world-cup?traffic_source=rss",
+              "source": "aljazeera"
+            },
             {
               "title": "Israel bulldozes Palestinian shops to make way for settlement-linked road",
               "link": "https://www.aljazeera.com/video/newsfeed/2026/5/13/israel-bulldozes-palestinian-shops-to-make-way-for-settlement-linked-road?traffic_source=rss",
@@ -991,68 +1111,18 @@
             }
           ]
         },
-        "military": {
-          "count": 20,
+        "regional": {
+          "count": 1,
           "titles": [
             {
-              "title": "Video: Putin hails test launch of ‘world’s most powerful missile’",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/5/13/video-putin-hails-test-launch-of-worlds-most-powerful?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "At least eight killed in Israeli drone strikes on Lebanon highway",
-              "link": "https://www.aljazeera.com/news/2026/5/13/at-least-eight-killed-in-israeli-drone-strikes-on-highway-south-of-beirut?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "How Silicon Valley giants are turning into war contractors",
-              "link": "https://www.aljazeera.com/video/all-hail/2026/5/13/how-silicon-valley-giants-are-turning-into-war-contractors?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Bahrain-led UN resolution on Strait of Hormuz gains support of 112 nations",
-              "link": "https://www.aljazeera.com/news/2026/5/13/bahrain-led-un-resolution-on-strait-of-hormuz-gains-support-of-112-nations?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Putin hails Russia’s test launch of ‘most powerful missile in the world’",
-              "link": "https://www.aljazeera.com/news/2026/5/13/putin-hails-russias-test-launch-of-most-powerful-missile-in-the-world?traffic_source=rss",
-              "source": "aljazeera"
-            }
-          ]
-        },
-        "politics": {
-          "count": 6,
-          "titles": [
-            {
-              "title": "China’s Xi expected to press Trump on Taiwan, tariffs during summit",
-              "link": "https://www.aljazeera.com/news/2026/5/13/chinas-xi-to-press-trump-on-taiwan-tariffs-during-summit?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "US-China head-to-head: Explained in 11 maps and charts",
-              "link": "https://www.aljazeera.com/news/2026/5/13/us-china-head-to-head-explained-in-11-maps-and-charts?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "As Trump Dismisses Iran Truce Plan, World Braces for Lasting Economic Pain",
-              "link": "https://www.nytimes.com/2026/05/11/world/middleeast/economic-woes-trump-iran-truce.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Trump says Iran ceasefire is on 'massive life support'",
-              "link": "https://www.bbc.com/news/articles/cvgznxn18zgo?at_medium=RSS&at_campaign=rss",
-              "source": "bbc"
-            },
-            {
-              "title": "Iran defends its demands after Trump’s rejection.",
-              "link": "https://www.nytimes.com/live/2026/05/11/world/iran-war-trump-hormuz/iran-defends-its-demands-after-trumps-rejection",
-              "source": "nytimes"
+              "title": "The UAE tries hard to keep its reputation spotless. But with the war in Sudan, how can it? | Nesrine Malik",
+              "link": "https://www.theguardian.com/commentisfree/2026/may/13/uae-sudan-civil-war-gulf-country",
+              "source": "guardian"
             }
           ]
         },
         "economy": {
-          "count": 6,
+          "count": 5,
           "titles": [
             {
               "title": "Public health at risk across Asia as Iran crisis sends price of cooking gas soaring",
@@ -1082,7 +1152,7 @@
           ]
         },
         "humanitarian": {
-          "count": 7,
+          "count": 4,
           "titles": [
             {
               "title": "Earthquake Shakes Tehran, Where Nerves Are Already Strained by Iran War",
@@ -1102,11 +1172,6 @@
             {
               "title": "Former Hostage Calls on All of Israel’s Government to Resign",
               "link": "https://www.nytimes.com/2026/05/11/world/middleeast/israel-hostage-demands-government-resign.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Narges Mohammadi, Jailed Iranian Nobel Prize Winner Is Transferred to Tehran Hospital",
-              "link": "https://www.nytimes.com/2026/05/11/world/middleeast/narges-mohammadi-iran-nobel-hospital-tehran.html",
               "source": "nytimes"
             }
           ]
@@ -1201,47 +1266,47 @@
     }
   ],
   "economic_indicators": {
+    "DXY": {
+      "price": 98.5,
+      "change": 0.21,
+      "changePercent": 0.21,
+      "prev": 98.29
+    },
     "WTI": {
-      "price": 101.85,
-      "change": -0.33,
-      "changePercent": -0.32,
+      "price": 102.91,
+      "change": 0.73,
+      "changePercent": 0.71,
       "prev": 102.18
     },
-    "VIX": {
-      "price": 17.86,
-      "change": -0.13,
-      "changePercent": -0.72,
-      "prev": 17.99
+    "US10Y": {
+      "price": 4.49,
+      "change": 0.02,
+      "changePercent": 0.45,
+      "prev": 4.46
     },
     "BRENT": {
-      "price": 107.34,
-      "change": -0.43,
-      "changePercent": -0.4,
+      "price": 107.4,
+      "change": -0.37,
+      "changePercent": -0.34,
       "prev": 107.77
     },
-    "US10Y": {
-      "price": 4.46,
-      "change": 0.05,
-      "changePercent": 1.13,
-      "prev": 4.41
+    "GOLD": {
+      "price": 4695,
+      "change": 17.4,
+      "changePercent": 0.37,
+      "prev": 4677.6
+    },
+    "VIX": {
+      "price": 17.96,
+      "change": -0.03,
+      "changePercent": -0.17,
+      "prev": 17.99
     },
     "US2Y": {
-      "price": 3.6,
+      "price": 3.61,
       "change": 0,
       "changePercent": 0,
       "prev": 3.6
-    },
-    "GOLD": {
-      "price": 4699.4,
-      "change": 21.8,
-      "changePercent": 0.47,
-      "prev": 4677.6
-    },
-    "DXY": {
-      "price": 98.51,
-      "change": 0.22,
-      "changePercent": 0.22,
-      "prev": 98.29
     }
   },
   "critical_events": [
@@ -1252,6 +1317,14 @@
       "confidence": 0.6666666666666666,
       "matchCount": 2,
       "direction": "shorten"
+    },
+    {
+      "id": "conflict_expansion",
+      "name": "전선 확대/신규 참전국",
+      "severity": "moderate",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "lengthen"
     }
   ],
   "feeds_loaded": 7,
