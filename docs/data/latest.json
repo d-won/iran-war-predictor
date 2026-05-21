@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-05-21T14:12:40.519Z",
+  "timestamp": "2026-05-21T17:11:26.706Z",
   "war_day": 82,
   "probabilities": {
-    "1개월 내 (~3월)": 18.9,
-    "2~3개월 (4~5월)": 36.2,
-    "4~6개월 (6~8월)": 25.8,
-    "7~12개월 (9월~27/2월)": 13.1,
-    "1년 초과": 6
+    "1개월 내 (~3월)": 23.6,
+    "2~3개월 (4~5월)": 38.5,
+    "4~6개월 (6~8월)": 22.2,
+    "7~12개월 (9월~27/2월)": 10.7,
+    "1년 초과": 5
   },
   "factors": [
     {
@@ -45,8 +45,8 @@
       "decay": 0.4
     },
     {
-      "factor": "확전 뉴스 우세 (확전6:휴전2.2)",
-      "impact": "전쟁 장기화 가능성 (확전비율 73%)",
+      "factor": "확전 뉴스 우세 (확전4:휴전2.2)",
+      "impact": "전쟁 장기화 가능성 (확전비율 65%)",
       "weight": "+0.03%p (4~6개월)",
       "direction": "lengthen",
       "detail": "언론에서 휴전보다 확전을 더 많이 보도하고 있습니다.",
@@ -164,11 +164,11 @@
       "decay": 1
     },
     {
-      "factor": "협상/외교 뉴스 12건 감지",
+      "factor": "협상/외교 뉴스 10건 감지",
       "impact": "외교적 해결 움직임 포착",
-      "weight": "+0.02%p (1개월내), +0.02%p (2~3개월)",
+      "weight": "+0.02%p (1개월내), +0.01%p (2~3개월)",
       "direction": "shorten",
-      "detail": "실시간 뉴스에서 협상 관련 기사 12건이 감지되었습니다.",
+      "detail": "실시간 뉴스에서 협상 관련 기사 10건이 감지되었습니다.",
       "keywords": [
         "negotiat",
         "talks",
@@ -181,11 +181,11 @@
       "decay": 1
     },
     {
-      "factor": "지역 확산 뉴스 6.2건 감지",
-      "impact": "주변국 연루 확대로 장기화 위험",
-      "weight": "+0.01%p (4~6개월), +0.01%p (7~12개월)",
+      "factor": "지역 확산 뉴스 4.2건 감지",
+      "impact": "주변국 연루 제한적",
+      "weight": "+0.00%p (4~6개월), +0.00%p (7~12개월)",
       "direction": "lengthen",
-      "detail": "주변국을 언급하는 기사 6.2건이 감지되었습니다.",
+      "detail": "주변국을 언급하는 기사 4.2건이 감지되었습니다.",
       "keywords": [
         "saudi",
         "uae",
@@ -234,6 +234,32 @@
       "decay": 0.3
     },
     {
+      "factor": "[중대 이벤트] 공식 휴전/평화 합의",
+      "impact": "공식 휴전 또는 평화 합의 체결. 휴전 합의는 전쟁 종결의 결정적 단계이며, 합의 후 이행까지 평균 1~2주 소요.",
+      "weight": "+10.0%p (1개월내), +6.7%p (2~3개월), -5.3%p (4~6개월), -4.0%p (7~12개월), -2.0%p (1년초과)",
+      "direction": "shorten",
+      "detail": "공식 휴전 또는 평화 합의 체결. 휴전 합의는 전쟁 종결의 결정적 단계이며, 합의 후 이행까지 평균 1~2주 소요.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: US-Iran diplomacy picks up: What’s the latest?",
+      "keywords": [
+        "ceasefire",
+        "agree",
+        "ceasefire",
+        "deal",
+        "ceasefire",
+        "sign",
+        "truce",
+        "agree",
+        "armistice",
+        "sign",
+        "peace deal",
+        "ceasefire",
+        "accept",
+        "peace agreement"
+      ],
+      "applied": "2026-05-21",
+      "active": true,
+      "severity": "critical"
+    },
+    {
       "factor": "[중대 이벤트] 외교적 돌파구/강대국 중재",
       "impact": "주요 외교적 돌파구 또는 강대국 중재. 데이턴(1995): 미국 중재 → 3주만에 합의. UN 안보리 결의는 평균 2~4주 내 휴전 이행.",
       "weight": "+2.0%p (1개월내), +4.0%p (2~3개월), +1.3%p (4~6개월), -1.3%p (7~12개월), -0.7%p (1년초과)",
@@ -266,9 +292,9 @@
     {
       "factor": "[중대 이벤트] 수도 직접 공격/포위",
       "impact": "수도 직접 공격. 베오그라드(1999): 78일 폭격 후 항복. 바그다드(2003): 21일만에 함락. 수도 타격은 전쟁 지속 의지를 급격히 약화.",
-      "weight": "+4.0%p (1개월내), +6.0%p (2~3개월), -2.0%p (4~6개월), -2.0%p (7~12개월), -1.0%p (1년초과)",
+      "weight": "+2.7%p (1개월내), +4.0%p (2~3개월), -1.3%p (4~6개월), -1.3%p (7~12개월), -0.7%p (1년초과)",
       "direction": "shorten",
-      "detail": "수도 직접 공격. 베오그라드(1999): 78일 폭격 후 항복. 바그다드(2003): 21일만에 함락. 수도 타격은 전쟁 지속 의지를 급격히 약화.\n\n신뢰도: 확실 (100%), 관련 기사 4건 감지.\n관련: Trump threatens ‘a big hit’ if Tehran does not make deal soon | UAE restores power to Barakah nuclear plant after drone strike, says IAEA – as it happened",
+      "detail": "수도 직접 공격. 베오그라드(1999): 78일 폭격 후 항복. 바그다드(2003): 21일만에 함락. 수도 타격은 전쟁 지속 의지를 급격히 약화.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Trump threatens ‘a big hit’ if Tehran does not make deal soon",
       "keywords": [
         "capital",
         "bomb",
@@ -300,7 +326,7 @@
       "impact": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).",
       "weight": "-2.0%p (1개월내), -3.0%p (2~3개월), +4.0%p (4~6개월), +3.0%p (7~12개월), +2.0%p (1년초과)",
       "direction": "lengthen",
-      "detail": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).\n\n신뢰도: 확실 (100%), 관련 기사 4건 감지.\n관련: Sadio Mane, Kalidou Koulibaly star picks in Senegal’s World Cup squad | JD Vance says US remains ‘locked and loaded’ to restart military campaign as Iran warns of ‘new fronts’ – as it happened",
+      "detail": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).\n\n신뢰도: 확실 (100%), 관련 기사 6건 감지.\n관련: Oil markets nearing ‘red zone’ as Iran crisis continues, warns IEA chief | Sadio Mane, Kalidou Koulibaly star picks in Senegal’s World Cup squad | JD Vance says US remains ‘locked and loaded’ to restart military campaign as Iran warns of ‘new fronts’ – as it happened",
       "keywords": [
         "new front",
         "war spread",
@@ -326,7 +352,7 @@
       "impact": "WMD/핵 위협 감지. 핵 위협은 분쟁의 성격을 근본적으로 변화시키며, 국제사회 전체의 개입을 촉발하여 예측 불확실성이 극대화.",
       "weight": "+3.0%p (1개월내), +3.0%p (2~3개월), +5.0%p (4~6개월), +4.0%p (7~12개월), +3.0%p (1년초과)",
       "direction": "lengthen",
-      "detail": "WMD/핵 위협 감지. 핵 위협은 분쟁의 성격을 근본적으로 변화시키며, 국제사회 전체의 개입을 촉발하여 예측 불확실성이 극대화.\n\n신뢰도: 확실 (100%), 관련 기사 6건 감지.\n관련: JD Vance says US remains ‘locked and loaded’ to restart military campaign as Iran warns of ‘new fronts’ – as it happened | Strike near UAE reactor revives concerns over nuclear plant safety in wartime | UAE restores power to Barakah nuclear plant after drone strike, says IAEA – as it happened",
+      "detail": "WMD/핵 위협 감지. 핵 위협은 분쟁의 성격을 근본적으로 변화시키며, 국제사회 전체의 개입을 촉발하여 예측 불확실성이 극대화.\n\n신뢰도: 확실 (100%), 관련 기사 4건 감지.\n관련: JD Vance says US remains ‘locked and loaded’ to restart military campaign as Iran warns of ‘new fronts’ – as it happened | Strike near UAE reactor revives concerns over nuclear plant safety in wartime",
       "keywords": [
         "nuclear",
         "strike",
@@ -352,11 +378,11 @@
       "severity": "critical"
     },
     {
-      "factor": "유가 급등 (WTI $100.47/배럴)",
+      "factor": "유가 급등 (WTI $100.07/배럴)",
       "impact": "높은 경제 압력 → 빠른 해결 요구 증가",
       "weight": "+4%p (1-2개월)",
       "direction": "shorten",
-      "detail": "WTI 유가가 $100.47/배럴로 100달러 돌파입니다. 호르무즈 해협 봉쇄와 맞물려 글로벌 에너지 시장에 큰 충격을 주고 있으며, 주요국들의 조기 종전 압력이 강화되고 있습니다.",
+      "detail": "WTI 유가가 $100.07/배럴로 100달러 돌파입니다. 호르무즈 해협 봉쇄와 맞물려 글로벌 에너지 시장에 큰 충격을 주고 있으며, 주요국들의 조기 종전 압력이 강화되고 있습니다.",
       "keywords": [
         "oil",
         "crude",
@@ -369,11 +395,11 @@
       "active": true
     },
     {
-      "factor": "금값 사상최고 ($4510/oz)",
+      "factor": "금값 사상최고 ($4520.8/oz)",
       "impact": "안전자산 수요 폭증 → 글로벌 불안 심화",
       "weight": "+2%p (4-6개월)",
       "direction": "lengthen",
-      "detail": "금 가격이 온스당 $4510로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
+      "detail": "금 가격이 온스당 $4520.8로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
       "keywords": [
         "gold",
         "safe haven",
@@ -384,11 +410,11 @@
       "active": true
     },
     {
-      "factor": "미국 10년 국채금리 4.61% (고금리 지속)",
+      "factor": "미국 10년 국채금리 4.6% (고금리 지속)",
       "impact": "전쟁 자금 조달 비용 증가",
       "weight": "+1%p (4-6개월)",
       "direction": "mixed",
-      "detail": "미국 10년물 국채금리가 4.61%로 높은 수준을 유지하고 있습니다. 전쟁 자금 조달 비용이 증가하며, 장기전의 경제적 부담이 커지고 있습니다.",
+      "detail": "미국 10년물 국채금리가 4.6%로 높은 수준을 유지하고 있습니다. 전쟁 자금 조달 비용이 증가하며, 장기전의 경제적 부담이 커지고 있습니다.",
       "keywords": [
         "treasury",
         "yield",
@@ -402,17 +428,147 @@
   ],
   "news_signals": {
     "ceasefire_mentions": 2.2,
-    "escalation_mentions": 6,
-    "negotiation_mentions": 12,
+    "escalation_mentions": 4,
+    "negotiation_mentions": 10,
     "casualty_mentions": 2.2,
-    "peace_mentions": 6,
-    "regional_spread": 6.2,
+    "peace_mentions": 8,
+    "regional_spread": 4.2,
     "total_articles": 50,
     "new_articles": 50,
-    "unique_events": 47,
-    "duplicates_removed": 3
+    "unique_events": 45,
+    "duplicates_removed": 5
   },
   "latest_news": [
+    {
+      "title": "Far-right Israeli minister condemned for taunting detained Gaza activists - The Latest",
+      "link": "https://www.theguardian.com/news/video/2026/may/21/far-right-israeli-minister-condemned-for-taunting-detained-gaza-activists-the-latest",
+      "pubDate": "Thu, 21 May 2026 16:53:07 GMT",
+      "source": "guardian",
+      "snippet": "Israel’s far-right national security minister, Itamar Ben-Gvir, has triggered global outrage after sharing footage of himself taunting bound activists who had been detained as they tried to sail to Ga",
+      "isNew": true,
+      "_sourceCount": 2,
+      "_isDuplicated": true,
+      "_clusterSize": 4,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Israel deports foreign Gaza-bound flotilla activists after global outcry",
+      "link": "https://www.theguardian.com/world/2026/may/21/uk-israel-video-itama-ben-gvir",
+      "pubDate": "Thu, 21 May 2026 16:52:53 GMT",
+      "source": "guardian",
+      "snippet": "Move comes amid condemnation of Itamar Ben-Gvir after video posted showing detained protesters being tauntedIsrael has said it has deported all the foreign activists it seized from a Gaza-bound flotil",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Trump says he’ll speak to Taiwan’s leader: Why that is significant",
+      "link": "https://www.aljazeera.com/news/2026/5/21/trump-says-hell-speak-to-taiwans-leader-why-that-is-significant?traffic_source=rss",
+      "pubDate": "Thu, 21 May 2026 16:31:40 +0000",
+      "source": "aljazeera",
+      "snippet": "Analysts say the remarks are less a sign of closer US-Taiwan ties than another example of Trump’s unpredictability.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Oil markets nearing ‘red zone’ as Iran crisis continues, warns IEA chief",
+      "link": "https://www.theguardian.com/world/2026/may/21/oil-markets-nearing-red-zone-as-holiday-season-nears-warns-iea-chief",
+      "pubDate": "Thu, 21 May 2026 16:10:13 GMT",
+      "source": "guardian",
+      "snippet": "Surging demand, low reserves and reduced Middle East exports predicted to cause global crunch by AugustOil markets will enter the “red zone” by July and August as stocks dwindle before the summer trav",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Gaza flotilla activists deported from Israel as backlash over treatment grows ",
+      "link": "https://www.bbc.com/news/articles/c9d3v2d6p1eo?at_medium=RSS&at_campaign=rss",
+      "pubDate": "Thu, 21 May 2026 16:08:34 GMT",
+      "source": "bbc",
+      "snippet": "On Thursday, the UK confirmed it had summoned Israel's top diplomat in Britain to express its \"condemnation\" of the incident. ",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Putin and Lukashenko monitor joint Russia-Belarus nuclear exercises",
+      "link": "https://www.aljazeera.com/news/2026/5/21/putin-and-lukashenko-monitor-joint-russia-belarus-nuclear-exercises?traffic_source=rss",
+      "pubDate": "Thu, 21 May 2026 16:07:02 +0000",
+      "source": "aljazeera",
+      "snippet": "Moscow and Minsk hold strategic nuclear drills with the two countries&#039; leaders participating via video conference.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "The far-right Israeli minister taunting detained Gaza activists – The Latest",
+      "link": "https://www.theguardian.com/news/audio/2026/may/21/the-far-right-israeli-minister-taunting-detained-gaza-activists-the-latest",
+      "pubDate": "Thu, 21 May 2026 15:49:54 GMT",
+      "source": "guardian",
+      "snippet": "Israel’s far-right national security minister, Itamar Ben-Gvir, has triggered global outrage after sharing footage of himself taunting bound activists who had been detained as they tried to sail to Ga",
+      "isNew": true,
+      "_isDuplicate": true,
+      "_sourceCount": 1
+    },
+    {
+      "title": "Russia rehearses ‘use of nuclear forces’ in drills with Belarus",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/5/21/russia-rehearses-use-of-nuclear-forces-in-drills-with-belarus?traffic_source=rss",
+      "pubDate": "Thu, 21 May 2026 15:32:26 +0000",
+      "source": "aljazeera",
+      "snippet": "Russia delivered nuclear warheads to sites in Belarus as part of a three-day military exercise involving both countries.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Ecuador’s Disappeared",
+      "link": "https://www.aljazeera.com/video/fault-lines/2026/5/21/ecuadors-disappeared?traffic_source=rss",
+      "pubDate": "Thu, 21 May 2026 15:30:00 +0000",
+      "source": "aljazeera",
+      "snippet": "Fault Lines investigates forced disappearances conducted by Ecuador’s military while waging a war against drug cartels.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "US-Iran diplomacy picks up: What’s the latest?",
+      "link": "https://www.aljazeera.com/news/2026/5/21/us-iran-diplomacy-picks-up-whats-the-latest?traffic_source=rss",
+      "pubDate": "Thu, 21 May 2026 15:10:12 +0000",
+      "source": "aljazeera",
+      "snippet": "Iranian media reported that the Pakistani interior minister is in Iran to help the US and Iran reach a peace deal.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Israel’s arrogance is becoming the evidence in the case against it",
+      "link": "https://www.aljazeera.com/opinions/2026/5/21/israels-arrogance-is-becoming-the-evidence-in-the-case-against-it?traffic_source=rss",
+      "pubDate": "Thu, 21 May 2026 14:44:09 +0000",
+      "source": "aljazeera",
+      "snippet": "Ben-Gvir’s video of flotilla activists reveals a state so accustomed to impunity that it documents its own cruelty.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
     {
       "title": "The Hard-Line Military Fraternity Running Iran",
       "link": "https://www.nytimes.com/2026/05/21/world/middleeast/iran-revolutionary-guards.html",
@@ -460,138 +616,6 @@
       "_isDuplicated": false,
       "_clusterSize": 1,
       "_isDuplicate": false
-    },
-    {
-      "title": "Gaza flotilla activists set for deportation from Israel as backlash over treatment grows ",
-      "link": "https://www.bbc.com/news/articles/c9d3v2d6p1eo?at_medium=RSS&at_campaign=rss",
-      "pubDate": "Thu, 21 May 2026 13:08:42 GMT",
-      "source": "bbc",
-      "snippet": "Activists have begun to leave Israel after international outrage over their treatment in detention. ",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Iran World Cup squad members apply for US, Canada visas in Turkiye",
-      "link": "https://www.aljazeera.com/sports/2026/5/21/iran-world-cup-squad-members-apply-for-us-canada-visas-in-turkiye?traffic_source=rss",
-      "pubDate": "Thu, 21 May 2026 13:01:38 +0000",
-      "source": "aljazeera",
-      "snippet": "A number of players submitted visa applications in person at the US embassy in Ankara ahead of their training camp.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "How Ben-Gvir’s flotilla video shattered Israel’s multimillion ‘Hasbara’",
-      "link": "https://www.aljazeera.com/news/2026/5/21/how-ben-gvirs-flotilla-video-shattered-israels-multimillion-hasbara?traffic_source=rss",
-      "pubDate": "Thu, 21 May 2026 12:25:46 +0000",
-      "source": "aljazeera",
-      "snippet": "The Israeli minister’s taunting of abducted activists triggers a global condemnation forcing Israel into damage control.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "UK summons Israel’s chargé d’affaires over video of minister taunting activists",
-      "link": "https://www.theguardian.com/world/2026/may/21/uk-israel-video-itama-ben-gvir",
-      "pubDate": "Thu, 21 May 2026 12:18:11 GMT",
-      "source": "guardian",
-      "snippet": "Foreign Office denounces treatment of Gaza flotilla activists as outcry over Itamar Ben-Gvir’s video escalatesThe UK has summoned Israel’s chargé d’affaires as international outrage escalates over a v",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Israel begins deporting Gaza aid flotilla activists amid global outcry",
-      "link": "https://www.aljazeera.com/news/2026/5/21/israel-begins-deporting-gaza-aid-flotilla-activists-amid-global-outcry?traffic_source=rss",
-      "pubDate": "Thu, 21 May 2026 12:12:32 +0000",
-      "source": "aljazeera",
-      "snippet": "Israel’s treatment of the hundreds of abductees has been condemned by several countries, including key allies.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "This is the face of Israel",
-      "link": "https://www.aljazeera.com/opinions/2026/5/21/this-is-the-face-of-israel?traffic_source=rss",
-      "pubDate": "Thu, 21 May 2026 12:11:00 +0000",
-      "source": "aljazeera",
-      "snippet": "Ben Gvir’s video of bound flotilla activists showed Israel without the mask.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Gaza sisters win Earth Prize for turning war rubble into bricks",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/5/21/gaza-sisters-win-earth-prize-for-turning-war-rubble-into-bricks?traffic_source=rss",
-      "pubDate": "Thu, 21 May 2026 12:05:03 +0000",
-      "source": "aljazeera",
-      "snippet": "Palestinian sisters Tala and Farah Mousa turned the rubble of their bombed Gaza home into reusable bricks.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Outrage over Israel’s Ben-Gvir flotilla abuse video: What we know",
-      "link": "https://www.aljazeera.com/news/2026/5/21/outrage-over-israels-ben-gvir-flotilla-abuse-video-what-we-know?traffic_source=rss",
-      "pubDate": "Thu, 21 May 2026 11:28:39 +0000",
-      "source": "aljazeera",
-      "snippet": "In a video released by his office, National Security Minister Ben-Gvir taunts zip-tied activists, causing condemnation.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Canada is using its borders to police Palestine solidarity",
-      "link": "https://www.aljazeera.com/opinions/2026/5/21/canada-is-using-its-borders-to-police-palestine-solidarity?traffic_source=rss",
-      "pubDate": "Thu, 21 May 2026 11:02:41 +0000",
-      "source": "aljazeera",
-      "snippet": "Critics of Israel’s war on Gaza are increasingly facing interrogations, visa revocations and denials of entry.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "How Chinese, Iranian companies profit in Russia-occupied Ukrainian regions",
-      "link": "https://www.aljazeera.com/news/2026/5/21/how-chinese-iranian-companies-profit-in-russia-occupied-ukrainian-regions?traffic_source=rss",
-      "pubDate": "Thu, 21 May 2026 10:52:18 +0000",
-      "source": "aljazeera",
-      "snippet": "More than a dozen Chinese companies operate in Donetsk and Luhansk, according to a Ukrainian monitor.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Dropped Sardar Azmoun asserts his love for Iran, backs World Cup squad",
-      "link": "https://www.aljazeera.com/sports/2026/5/21/dropped-sardar-azmoun-asserts-his-love-for-iran-backs-world-cup-squad?traffic_source=rss",
-      "pubDate": "Thu, 21 May 2026 10:03:57 +0000",
-      "source": "aljazeera",
-      "snippet": "Forward wishes &#039;success and pride&#039; to the Iranian team after being excluded from the squad for the 2026 tournament.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
     }
   ],
   "news_digest": {
@@ -600,9 +624,20 @@
         "category_id": "military",
         "category_name": "군사 작전",
         "category_icon": "⚔️",
-        "count": 17,
-        "new_count": 17,
+        "count": 16,
+        "new_count": 16,
         "articles": [
+          {
+            "title": "Ecuador’s Disappeared",
+            "link": "https://www.aljazeera.com/video/fault-lines/2026/5/21/ecuadors-disappeared?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Thu, 21 May 2026 15:30:00 +0000",
+            "snippet": "Fault Lines investigates forced disappearances conducted by Ecuador’s military while waging a war against drug cartels.",
+            "isNew": true
+          },
           {
             "title": "The Hard-Line Military Fraternity Running Iran",
             "link": "https://www.nytimes.com/2026/05/21/world/middleeast/iran-revolutionary-guards.html",
@@ -623,17 +658,6 @@
             ],
             "pubDate": "Thu, 21 May 2026 13:28:06 +0000",
             "snippet": "Democrats argue that the fund will be used to compensate January 6 rioters pardoned by Trump.",
-            "isNew": true
-          },
-          {
-            "title": "Gaza sisters win Earth Prize for turning war rubble into bricks",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/5/21/gaza-sisters-win-earth-prize-for-turning-war-rubble-into-bricks?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Thu, 21 May 2026 12:05:03 +0000",
-            "snippet": "Palestinian sisters Tala and Farah Mousa turned the rubble of their bombed Gaza home into reusable bricks.",
             "isNew": true
           },
           {
@@ -721,9 +745,32 @@
         "category_id": "politics",
         "category_name": "국내 정치",
         "category_icon": "🏛️",
-        "count": 10,
-        "new_count": 10,
+        "count": 9,
+        "new_count": 9,
         "articles": [
+          {
+            "title": "Far-right Israeli minister condemned for taunting detained Gaza activists - The Latest",
+            "link": "https://www.theguardian.com/news/video/2026/may/21/far-right-israeli-minister-condemned-for-taunting-detained-gaza-activists-the-latest",
+            "source": "guardian",
+            "sources": [
+              "guardian",
+              "bbc"
+            ],
+            "pubDate": "Thu, 21 May 2026 16:53:07 GMT",
+            "snippet": "Israel’s far-right national security minister, Itamar Ben-Gvir, has triggered global outrage after sharing footage of himself taunting bound activists who had been detained as they tried to sail to Ga",
+            "isNew": true
+          },
+          {
+            "title": "Trump says he’ll speak to Taiwan’s leader: Why that is significant",
+            "link": "https://www.aljazeera.com/news/2026/5/21/trump-says-hell-speak-to-taiwans-leader-why-that-is-significant?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Thu, 21 May 2026 16:31:40 +0000",
+            "snippet": "Analysts say the remarks are less a sign of closer US-Taiwan ties than another example of Trump’s unpredictability.",
+            "isNew": true
+          },
           {
             "title": "How Ben-Gvir’s flotilla video shattered Israel’s multimillion ‘Hasbara’",
             "link": "https://www.aljazeera.com/news/2026/5/21/how-ben-gvirs-flotilla-video-shattered-israels-multimillion-hasbara?traffic_source=rss",
@@ -733,39 +780,6 @@
             ],
             "pubDate": "Thu, 21 May 2026 12:25:46 +0000",
             "snippet": "The Israeli minister’s taunting of abducted activists triggers a global condemnation forcing Israel into damage control.",
-            "isNew": true
-          },
-          {
-            "title": "UK summons Israel’s chargé d’affaires over video of minister taunting activists",
-            "link": "https://www.theguardian.com/world/2026/may/21/uk-israel-video-itama-ben-gvir",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Thu, 21 May 2026 12:18:11 GMT",
-            "snippet": "Foreign Office denounces treatment of Gaza flotilla activists as outcry over Itamar Ben-Gvir’s video escalatesThe UK has summoned Israel’s chargé d’affaires as international outrage escalates over a v",
-            "isNew": true
-          },
-          {
-            "title": "Outrage over Israel’s Ben-Gvir flotilla abuse video: What we know",
-            "link": "https://www.aljazeera.com/news/2026/5/21/outrage-over-israels-ben-gvir-flotilla-abuse-video-what-we-know?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Thu, 21 May 2026 11:28:39 +0000",
-            "snippet": "In a video released by his office, National Security Minister Ben-Gvir taunts zip-tied activists, causing condemnation.",
-            "isNew": true
-          },
-          {
-            "title": "Far-right Israeli minister condemned for taunting handcuffed Gaza flotilla activists",
-            "link": "https://www.bbc.com/news/articles/clyp32weyn8o?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
-            "sources": [
-              "bbc"
-            ],
-            "pubDate": "Thu, 21 May 2026 08:48:00 GMT",
-            "snippet": "France and Italy are among the countries that have criticised a video showing Itamar Ben-Gvir taunting dozens of activists detained at an Israeli port.",
             "isNew": true
           },
           {
@@ -837,70 +851,6 @@
         ]
       },
       {
-        "category_id": "other",
-        "category_name": "기타",
-        "category_icon": "📰",
-        "count": 6,
-        "new_count": 6,
-        "articles": [
-          {
-            "title": "Sadio Mane, Kalidou Koulibaly star picks in Senegal’s World Cup squad",
-            "link": "https://www.aljazeera.com/sports/2026/5/21/sadio-mane-kalidou-koulibaly-star-picks-in-senegals-world-cup-squad?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Thu, 21 May 2026 13:43:21 +0000",
-            "snippet": "Iliman Ndiaye, Nicolas Jackson and Ismaila Sarr are other key players joining Mane in Senegal&#039;s World Cup forward line.",
-            "isNew": true
-          },
-          {
-            "title": "Gaza flotilla activists set for deportation from Israel as backlash over treatment grows ",
-            "link": "https://www.bbc.com/news/articles/c9d3v2d6p1eo?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
-            "sources": [
-              "bbc"
-            ],
-            "pubDate": "Thu, 21 May 2026 13:08:42 GMT",
-            "snippet": "Activists have begun to leave Israel after international outrage over their treatment in detention. ",
-            "isNew": true
-          },
-          {
-            "title": "Iran World Cup squad members apply for US, Canada visas in Turkiye",
-            "link": "https://www.aljazeera.com/sports/2026/5/21/iran-world-cup-squad-members-apply-for-us-canada-visas-in-turkiye?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Thu, 21 May 2026 13:01:38 +0000",
-            "snippet": "A number of players submitted visa applications in person at the US embassy in Ankara ahead of their training camp.",
-            "isNew": true
-          },
-          {
-            "title": "This is the face of Israel",
-            "link": "https://www.aljazeera.com/opinions/2026/5/21/this-is-the-face-of-israel?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Thu, 21 May 2026 12:11:00 +0000",
-            "snippet": "Ben Gvir’s video of bound flotilla activists showed Israel without the mask.",
-            "isNew": true
-          },
-          {
-            "title": "Dropped Sardar Azmoun asserts his love for Iran, backs World Cup squad",
-            "link": "https://www.aljazeera.com/sports/2026/5/21/dropped-sardar-azmoun-asserts-his-love-for-iran-backs-world-cup-squad?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Thu, 21 May 2026 10:03:57 +0000",
-            "snippet": "Forward wishes &#039;success and pride&#039; to the Iranian team after being excluded from the squad for the 2026 tournament.",
-            "isNew": true
-          }
-        ]
-      },
-      {
         "category_id": "diplomacy",
         "category_name": "외교/협상",
         "category_icon": "🤝",
@@ -908,25 +858,25 @@
         "new_count": 5,
         "articles": [
           {
-            "title": "Iran reviews US proposal to end war as Pakistan steps up mediation efforts",
-            "link": "https://www.aljazeera.com/news/2026/5/21/iran-reviews-us-proposal-to-end-war-as-pakistan-steps-up-mediation-efforts?traffic_source=rss",
+            "title": "Gaza flotilla activists deported from Israel as backlash over treatment grows ",
+            "link": "https://www.bbc.com/news/articles/c9d3v2d6p1eo?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc"
+            ],
+            "pubDate": "Thu, 21 May 2026 16:08:34 GMT",
+            "snippet": "On Thursday, the UK confirmed it had summoned Israel's top diplomat in Britain to express its \"condemnation\" of the incident. ",
+            "isNew": true
+          },
+          {
+            "title": "US-Iran diplomacy picks up: What’s the latest?",
+            "link": "https://www.aljazeera.com/news/2026/5/21/us-iran-diplomacy-picks-up-whats-the-latest?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Thu, 21 May 2026 09:26:51 +0000",
-            "snippet": "Pakistan military chief Asim Munir to travel to Tehran for talks, according to Iranian media reports.",
-            "isNew": true
-          },
-          {
-            "title": "Israeli security minister stirs diplomatic outrage with flotilla activist abuse video",
-            "link": "https://www.theguardian.com/world/2026/may/20/israeli-security-minister-itamar-ben-gvir-stirs-diplomatic-outrage-with-flotilla-activist-abuse-video",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Wed, 20 May 2026 23:45:10 GMT",
-            "snippet": "Far-right figure Itamar Ben-Gvir shares footage of himself taunting bound international detaineesIsrael’s far-right national security minister, Itamar Ben-Gvir, has sparked a diplomatic crisis by publ",
+            "pubDate": "Thu, 21 May 2026 15:10:12 +0000",
+            "snippet": "Iranian media reported that the Pakistani interior minister is in Iran to help the US and Iran reach a peace deal.",
             "isNew": true
           },
           {
@@ -972,6 +922,17 @@
         "new_count": 5,
         "articles": [
           {
+            "title": "Israel deports foreign Gaza-bound flotilla activists after global outcry",
+            "link": "https://www.theguardian.com/world/2026/may/21/uk-israel-video-itama-ben-gvir",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Thu, 21 May 2026 16:52:53 GMT",
+            "snippet": "Move comes amid condemnation of Itamar Ben-Gvir after video posted showing detained protesters being tauntedIsrael has said it has deported all the foreign activists it seized from a Gaza-bound flotil",
+            "isNew": true
+          },
+          {
             "title": "Israel begins deporting Gaza aid flotilla activists amid global outcry",
             "link": "https://www.aljazeera.com/news/2026/5/21/israel-begins-deporting-gaza-aid-flotilla-activists-amid-global-outcry?traffic_source=rss",
             "source": "aljazeera",
@@ -1014,16 +975,69 @@
             "pubDate": "Tue, 19 May 2026 14:02:26 GMT",
             "snippet": "Smotrich vows to retaliate by waging ‘war’ on Palestinian Authority and orders evacuation of a West Bank villageMiddle East crisis – live updatesIsrael’s far-right finance minister, Bezalel Smotrich, ",
             "isNew": true
+          }
+        ]
+      },
+      {
+        "category_id": "other",
+        "category_name": "기타",
+        "category_icon": "📰",
+        "count": 5,
+        "new_count": 5,
+        "articles": [
+          {
+            "title": "Israel’s arrogance is becoming the evidence in the case against it",
+            "link": "https://www.aljazeera.com/opinions/2026/5/21/israels-arrogance-is-becoming-the-evidence-in-the-case-against-it?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Thu, 21 May 2026 14:44:09 +0000",
+            "snippet": "Ben-Gvir’s video of flotilla activists reveals a state so accustomed to impunity that it documents its own cruelty.",
+            "isNew": true
           },
           {
-            "title": "‘Huge milestone’ as Libyan militia commander accused of torture appears at ICC",
-            "link": "https://www.theguardian.com/world/2026/may/19/libya-militia-commander-refugees-international-criminal-court",
+            "title": "Sadio Mane, Kalidou Koulibaly star picks in Senegal’s World Cup squad",
+            "link": "https://www.aljazeera.com/sports/2026/5/21/sadio-mane-kalidou-koulibaly-star-picks-in-senegals-world-cup-squad?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Thu, 21 May 2026 13:43:21 +0000",
+            "snippet": "Iliman Ndiaye, Nicolas Jackson and Ismaila Sarr are other key players joining Mane in Senegal&#039;s World Cup forward line.",
+            "isNew": true
+          },
+          {
+            "title": "Iran World Cup squad members apply for US, Canada visas in Turkiye",
+            "link": "https://www.aljazeera.com/sports/2026/5/21/iran-world-cup-squad-members-apply-for-us-canada-visas-in-turkiye?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Thu, 21 May 2026 13:01:38 +0000",
+            "snippet": "A number of players submitted visa applications in person at the US embassy in Ankara ahead of their training camp.",
+            "isNew": true
+          },
+          {
+            "title": "This is the face of Israel",
+            "link": "https://www.aljazeera.com/opinions/2026/5/21/this-is-the-face-of-israel?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Thu, 21 May 2026 12:11:00 +0000",
+            "snippet": "Ben Gvir’s video of bound flotilla activists showed Israel without the mask.",
+            "isNew": true
+          },
+          {
+            "title": "Sally Rooney on a new Hebrew translation of Intermezzo: ‘The Israeli culture sector is complicit in apartheid’",
+            "link": "https://www.theguardian.com/world/ng-interactive/2026/may/19/sally-rooney-new-hebrew-translation-intermezzo",
             "source": "guardian",
             "sources": [
               "guardian"
             ],
-            "pubDate": "Tue, 19 May 2026 04:00:02 GMT",
-            "snippet": "Prosecution is seen as landmark step towards justice over abuses of refugees trying to reach Europe from AfricaA former militia commander accused of overseeing murder, rape, enslavement and torture in",
+            "pubDate": "Tue, 19 May 2026 14:00:06 GMT",
+            "snippet": "Four years after Rooney cited BDS in declining a different Israeli publisher, she speaks with activist Samir Eskanda about the artist’s role in the boycott movementSally Rooney to publish Hebrew trans",
             "isNew": true
           }
         ]
@@ -1032,9 +1046,20 @@
         "category_id": "economy",
         "category_name": "경제 영향",
         "category_icon": "📊",
-        "count": 2,
-        "new_count": 2,
+        "count": 3,
+        "new_count": 3,
         "articles": [
+          {
+            "title": "Oil markets nearing ‘red zone’ as Iran crisis continues, warns IEA chief",
+            "link": "https://www.theguardian.com/world/2026/may/21/oil-markets-nearing-red-zone-as-holiday-season-nears-warns-iea-chief",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Thu, 21 May 2026 16:10:13 GMT",
+            "snippet": "Surging demand, low reserves and reduced Middle East exports predicted to cause global crunch by AugustOil markets will enter the “red zone” by July and August as stocks dwindle before the summer trav",
+            "isNew": true
+          },
           {
             "title": "Maths behind Hormuz toll: Is paying Iran for transit cheaper than blockade?",
             "link": "https://www.aljazeera.com/features/2026/5/21/maths-behind-hormuz-toll-is-paying-iran-for-transit-cheaper-than-blockade?traffic_source=rss",
@@ -1063,29 +1088,38 @@
         "category_id": "regional",
         "category_name": "지역 정세",
         "category_icon": "🌍",
-        "count": 2,
-        "new_count": 2,
+        "count": 1,
+        "new_count": 1,
         "articles": [
           {
-            "title": "Canada is using its borders to police Palestine solidarity",
-            "link": "https://www.aljazeera.com/opinions/2026/5/21/canada-is-using-its-borders-to-police-palestine-solidarity?traffic_source=rss",
+            "title": "Putin and Lukashenko monitor joint Russia-Belarus nuclear exercises",
+            "link": "https://www.aljazeera.com/news/2026/5/21/putin-and-lukashenko-monitor-joint-russia-belarus-nuclear-exercises?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Thu, 21 May 2026 11:02:41 +0000",
-            "snippet": "Critics of Israel’s war on Gaza are increasingly facing interrogations, visa revocations and denials of entry.",
+            "pubDate": "Thu, 21 May 2026 16:07:02 +0000",
+            "snippet": "Moscow and Minsk hold strategic nuclear drills with the two countries&#039; leaders participating via video conference.",
             "isNew": true
-          },
+          }
+        ]
+      },
+      {
+        "category_id": "nuclear",
+        "category_name": "핵/WMD",
+        "category_icon": "☢️",
+        "count": 1,
+        "new_count": 1,
+        "articles": [
           {
-            "title": "How Chinese, Iranian companies profit in Russia-occupied Ukrainian regions",
-            "link": "https://www.aljazeera.com/news/2026/5/21/how-chinese-iranian-companies-profit-in-russia-occupied-ukrainian-regions?traffic_source=rss",
+            "title": "Russia rehearses ‘use of nuclear forces’ in drills with Belarus",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/5/21/russia-rehearses-use-of-nuclear-forces-in-drills-with-belarus?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Thu, 21 May 2026 10:52:18 +0000",
-            "snippet": "More than a dozen Chinese companies operate in Donetsk and Luhansk, according to a Ukrainian monitor.",
+            "pubDate": "Thu, 21 May 2026 15:32:26 +0000",
+            "snippet": "Russia delivered nuclear warheads to sites in Belarus as part of a three-day military exercise involving both countries.",
             "isNew": true
           }
         ]
@@ -1094,114 +1128,44 @@
     "recent_30min": {
       "total_new": 50,
       "by_category": {
-        "military": {
-          "count": 19,
-          "titles": [
-            {
-              "title": "The Hard-Line Military Fraternity Running Iran",
-              "link": "https://www.nytimes.com/2026/05/21/world/middleeast/iran-revolutionary-guards.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "What’s Trump’s ‘anti-weaponisation fund’ and why are legal experts alarmed?",
-              "link": "https://www.aljazeera.com/news/2026/5/21/whats-trumps-anti-weaponisation-fund-and-why-are-legal-experts-alarmed?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Gaza sisters win Earth Prize for turning war rubble into bricks",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/5/21/gaza-sisters-win-earth-prize-for-turning-war-rubble-into-bricks?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Early War Goal Was to Install Hard-Line Former President as Iran’s Leader",
-              "link": "https://www.nytimes.com/2026/05/19/us/politics/iran-israel-us-leader-ahmadinejad.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Hezbollah drone strike videos show evolving tactics against Israel",
-              "link": "https://www.bbc.com/news/articles/c1j2zwe9g5no?at_medium=RSS&at_campaign=rss",
-              "source": "bbc"
-            }
-          ]
-        },
-        "other": {
-          "count": 7,
-          "titles": [
-            {
-              "title": "Sadio Mane, Kalidou Koulibaly star picks in Senegal’s World Cup squad",
-              "link": "https://www.aljazeera.com/sports/2026/5/21/sadio-mane-kalidou-koulibaly-star-picks-in-senegals-world-cup-squad?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Gaza flotilla activists set for deportation from Israel as backlash over treatment grows ",
-              "link": "https://www.bbc.com/news/articles/c9d3v2d6p1eo?at_medium=RSS&at_campaign=rss",
-              "source": "bbc"
-            },
-            {
-              "title": "Iran World Cup squad members apply for US, Canada visas in Turkiye",
-              "link": "https://www.aljazeera.com/sports/2026/5/21/iran-world-cup-squad-members-apply-for-us-canada-visas-in-turkiye?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "This is the face of Israel",
-              "link": "https://www.aljazeera.com/opinions/2026/5/21/this-is-the-face-of-israel?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Dropped Sardar Azmoun asserts his love for Iran, backs World Cup squad",
-              "link": "https://www.aljazeera.com/sports/2026/5/21/dropped-sardar-azmoun-asserts-his-love-for-iran-backs-world-cup-squad?traffic_source=rss",
-              "source": "aljazeera"
-            }
-          ]
-        },
-        "economy": {
-          "count": 2,
-          "titles": [
-            {
-              "title": "Maths behind Hormuz toll: Is paying Iran for transit cheaper than blockade?",
-              "link": "https://www.aljazeera.com/features/2026/5/21/maths-behind-hormuz-toll-is-paying-iran-for-transit-cheaper-than-blockade?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Inflation Fears Cloud G7 Economic Agenda as Iran War Persists",
-              "link": "https://www.nytimes.com/2026/05/19/business/inflation-g7-economic-agenda-iran-war.html",
-              "source": "nytimes"
-            }
-          ]
-        },
         "politics": {
-          "count": 10,
+          "count": 11,
           "titles": [
+            {
+              "title": "Far-right Israeli minister condemned for taunting detained Gaza activists - The Latest",
+              "link": "https://www.theguardian.com/news/video/2026/may/21/far-right-israeli-minister-condemned-for-taunting-detained-gaza-activists-the-latest",
+              "source": "guardian"
+            },
+            {
+              "title": "Trump says he’ll speak to Taiwan’s leader: Why that is significant",
+              "link": "https://www.aljazeera.com/news/2026/5/21/trump-says-hell-speak-to-taiwans-leader-why-that-is-significant?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "The far-right Israeli minister taunting detained Gaza activists – The Latest",
+              "link": "https://www.theguardian.com/news/audio/2026/may/21/the-far-right-israeli-minister-taunting-detained-gaza-activists-the-latest",
+              "source": "guardian"
+            },
             {
               "title": "How Ben-Gvir’s flotilla video shattered Israel’s multimillion ‘Hasbara’",
               "link": "https://www.aljazeera.com/news/2026/5/21/how-ben-gvirs-flotilla-video-shattered-israels-multimillion-hasbara?traffic_source=rss",
               "source": "aljazeera"
             },
             {
-              "title": "UK summons Israel’s chargé d’affaires over video of minister taunting activists",
-              "link": "https://www.theguardian.com/world/2026/may/21/uk-israel-video-itama-ben-gvir",
-              "source": "guardian"
-            },
-            {
-              "title": "Outrage over Israel’s Ben-Gvir flotilla abuse video: What we know",
-              "link": "https://www.aljazeera.com/news/2026/5/21/outrage-over-israels-ben-gvir-flotilla-abuse-video-what-we-know?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
               "title": "Far-right Israeli minister condemned for taunting handcuffed Gaza flotilla activists",
               "link": "https://www.bbc.com/news/articles/clyp32weyn8o?at_medium=RSS&at_campaign=rss",
               "source": "bbc"
-            },
-            {
-              "title": "Trump may see himself in Ahmadinejad but having him lead Iran was a perplexing idea",
-              "link": "https://www.theguardian.com/world/2026/may/20/mahmoud-ahmadinejad-the-us-and-israels-unlikely-choice-to-lead-iran",
-              "source": "guardian"
             }
           ]
         },
         "humanitarian": {
           "count": 5,
           "titles": [
+            {
+              "title": "Israel deports foreign Gaza-bound flotilla activists after global outcry",
+              "link": "https://www.theguardian.com/world/2026/may/21/uk-israel-video-itama-ben-gvir",
+              "source": "guardian"
+            },
             {
               "title": "Israel begins deporting Gaza aid flotilla activists amid global outcry",
               "link": "https://www.aljazeera.com/news/2026/5/21/israel-begins-deporting-gaza-aid-flotilla-activists-amid-global-outcry?traffic_source=rss",
@@ -1221,35 +1185,40 @@
               "title": "Far-right Israeli minister Bezalel Smotrich says ICC is seeking his arrest",
               "link": "https://www.theguardian.com/law/2026/may/19/far-right-israeli-minister-bezalel-smotrich-icc-seeking-arrest",
               "source": "guardian"
-            },
-            {
-              "title": "‘Huge milestone’ as Libyan militia commander accused of torture appears at ICC",
-              "link": "https://www.theguardian.com/world/2026/may/19/libya-militia-commander-refugees-international-criminal-court",
-              "source": "guardian"
             }
           ]
         },
-        "regional": {
-          "count": 2,
+        "economy": {
+          "count": 3,
           "titles": [
             {
-              "title": "Canada is using its borders to police Palestine solidarity",
-              "link": "https://www.aljazeera.com/opinions/2026/5/21/canada-is-using-its-borders-to-police-palestine-solidarity?traffic_source=rss",
+              "title": "Oil markets nearing ‘red zone’ as Iran crisis continues, warns IEA chief",
+              "link": "https://www.theguardian.com/world/2026/may/21/oil-markets-nearing-red-zone-as-holiday-season-nears-warns-iea-chief",
+              "source": "guardian"
+            },
+            {
+              "title": "Maths behind Hormuz toll: Is paying Iran for transit cheaper than blockade?",
+              "link": "https://www.aljazeera.com/features/2026/5/21/maths-behind-hormuz-toll-is-paying-iran-for-transit-cheaper-than-blockade?traffic_source=rss",
               "source": "aljazeera"
             },
             {
-              "title": "How Chinese, Iranian companies profit in Russia-occupied Ukrainian regions",
-              "link": "https://www.aljazeera.com/news/2026/5/21/how-chinese-iranian-companies-profit-in-russia-occupied-ukrainian-regions?traffic_source=rss",
-              "source": "aljazeera"
+              "title": "Inflation Fears Cloud G7 Economic Agenda as Iran War Persists",
+              "link": "https://www.nytimes.com/2026/05/19/business/inflation-g7-economic-agenda-iran-war.html",
+              "source": "nytimes"
             }
           ]
         },
         "diplomacy": {
-          "count": 5,
+          "count": 6,
           "titles": [
             {
-              "title": "Iran reviews US proposal to end war as Pakistan steps up mediation efforts",
-              "link": "https://www.aljazeera.com/news/2026/5/21/iran-reviews-us-proposal-to-end-war-as-pakistan-steps-up-mediation-efforts?traffic_source=rss",
+              "title": "Gaza flotilla activists deported from Israel as backlash over treatment grows ",
+              "link": "https://www.bbc.com/news/articles/c9d3v2d6p1eo?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
+            },
+            {
+              "title": "US-Iran diplomacy picks up: What’s the latest?",
+              "link": "https://www.aljazeera.com/news/2026/5/21/us-iran-diplomacy-picks-up-whats-the-latest?traffic_source=rss",
               "source": "aljazeera"
             },
             {
@@ -1266,11 +1235,86 @@
               "title": "Trump turns to Middle East allies as deal to end Iran war proves elusive",
               "link": "https://www.theguardian.com/world/2026/may/19/trump-iran-analysis",
               "source": "guardian"
+            }
+          ]
+        },
+        "regional": {
+          "count": 1,
+          "titles": [
+            {
+              "title": "Putin and Lukashenko monitor joint Russia-Belarus nuclear exercises",
+              "link": "https://www.aljazeera.com/news/2026/5/21/putin-and-lukashenko-monitor-joint-russia-belarus-nuclear-exercises?traffic_source=rss",
+              "source": "aljazeera"
+            }
+          ]
+        },
+        "nuclear": {
+          "count": 1,
+          "titles": [
+            {
+              "title": "Russia rehearses ‘use of nuclear forces’ in drills with Belarus",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/5/21/russia-rehearses-use-of-nuclear-forces-in-drills-with-belarus?traffic_source=rss",
+              "source": "aljazeera"
+            }
+          ]
+        },
+        "military": {
+          "count": 18,
+          "titles": [
+            {
+              "title": "Ecuador’s Disappeared",
+              "link": "https://www.aljazeera.com/video/fault-lines/2026/5/21/ecuadors-disappeared?traffic_source=rss",
+              "source": "aljazeera"
             },
             {
-              "title": "Trump Says He Postponed a ‘Very Major Attack’ on Iran, Leaving Mideast on Edge",
-              "link": "https://www.nytimes.com/2026/05/19/world/middleeast/iran-trump-tension.html",
+              "title": "The Hard-Line Military Fraternity Running Iran",
+              "link": "https://www.nytimes.com/2026/05/21/world/middleeast/iran-revolutionary-guards.html",
               "source": "nytimes"
+            },
+            {
+              "title": "What’s Trump’s ‘anti-weaponisation fund’ and why are legal experts alarmed?",
+              "link": "https://www.aljazeera.com/news/2026/5/21/whats-trumps-anti-weaponisation-fund-and-why-are-legal-experts-alarmed?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Early War Goal Was to Install Hard-Line Former President as Iran’s Leader",
+              "link": "https://www.nytimes.com/2026/05/19/us/politics/iran-israel-us-leader-ahmadinejad.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Hezbollah drone strike videos show evolving tactics against Israel",
+              "link": "https://www.bbc.com/news/articles/c1j2zwe9g5no?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
+            }
+          ]
+        },
+        "other": {
+          "count": 5,
+          "titles": [
+            {
+              "title": "Israel’s arrogance is becoming the evidence in the case against it",
+              "link": "https://www.aljazeera.com/opinions/2026/5/21/israels-arrogance-is-becoming-the-evidence-in-the-case-against-it?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Sadio Mane, Kalidou Koulibaly star picks in Senegal’s World Cup squad",
+              "link": "https://www.aljazeera.com/sports/2026/5/21/sadio-mane-kalidou-koulibaly-star-picks-in-senegals-world-cup-squad?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Iran World Cup squad members apply for US, Canada visas in Turkiye",
+              "link": "https://www.aljazeera.com/sports/2026/5/21/iran-world-cup-squad-members-apply-for-us-canada-visas-in-turkiye?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "This is the face of Israel",
+              "link": "https://www.aljazeera.com/opinions/2026/5/21/this-is-the-face-of-israel?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Sally Rooney on a new Hebrew translation of Intermezzo: ‘The Israeli culture sector is complicit in apartheid’",
+              "link": "https://www.theguardian.com/world/ng-interactive/2026/may/19/sally-rooney-new-hebrew-translation-intermezzo",
+              "source": "guardian"
             }
           ]
         }
@@ -1364,50 +1408,58 @@
     }
   ],
   "economic_indicators": {
+    "BRENT": {
+      "price": 106.45,
+      "change": 1.43,
+      "changePercent": 1.36,
+      "prev": 105.02
+    },
+    "WTI": {
+      "price": 100.07,
+      "change": 1.81,
+      "changePercent": 1.84,
+      "prev": 98.26
+    },
     "GOLD": {
-      "price": 4510,
-      "change": -21.3,
-      "changePercent": -0.47,
+      "price": 4520.8,
+      "change": -10.5,
+      "changePercent": -0.23,
       "prev": 4531.3
     },
+    "VIX": {
+      "price": 17.15,
+      "change": -0.29,
+      "changePercent": -1.66,
+      "prev": 17.44
+    },
     "US10Y": {
-      "price": 4.61,
-      "change": 0.03,
-      "changePercent": 0.66,
+      "price": 4.6,
+      "change": 0.02,
+      "changePercent": 0.44,
       "prev": 4.57
     },
     "DXY": {
-      "price": 99.38,
-      "change": 0.27,
-      "changePercent": 0.27,
+      "price": 99.37,
+      "change": 0.26,
+      "changePercent": 0.26,
       "prev": 99.11
-    },
-    "WTI": {
-      "price": 100.47,
-      "change": 2.21,
-      "changePercent": 2.25,
-      "prev": 98.26
     },
     "US2Y": {
       "price": 3.57,
-      "change": 0.01,
-      "changePercent": 0.28,
+      "change": 0.02,
+      "changePercent": 0.56,
       "prev": 3.56
-    },
-    "VIX": {
-      "price": 17.42,
-      "change": -0.02,
-      "changePercent": -0.11,
-      "prev": 17.44
-    },
-    "BRENT": {
-      "price": 106.82,
-      "change": 1.8,
-      "changePercent": 1.71,
-      "prev": 105.02
     }
   },
   "critical_events": [
+    {
+      "id": "ceasefire_agreement",
+      "name": "공식 휴전/평화 합의",
+      "severity": "critical",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "shorten"
+    },
     {
       "id": "diplomatic_breakthrough",
       "name": "외교적 돌파구/강대국 중재",
@@ -1420,8 +1472,8 @@
       "id": "capital_attack",
       "name": "수도 직접 공격/포위",
       "severity": "high",
-      "confidence": 1,
-      "matchCount": 4,
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
       "direction": "shorten"
     },
     {
@@ -1429,7 +1481,7 @@
       "name": "전선 확대/신규 참전국",
       "severity": "moderate",
       "confidence": 1,
-      "matchCount": 4,
+      "matchCount": 6,
       "direction": "lengthen"
     },
     {
@@ -1437,7 +1489,7 @@
       "name": "대량살상무기(WMD)/핵 위협",
       "severity": "critical",
       "confidence": 1,
-      "matchCount": 6,
+      "matchCount": 4,
       "direction": "lengthen"
     }
   ],
