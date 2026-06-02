@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-06-02T08:25:57.592Z",
+  "timestamp": "2026-06-02T12:24:32.600Z",
   "war_day": 94,
   "probabilities": {
-    "1개월 내 (~3월)": 30.1,
-    "2~3개월 (4~5월)": 43.7,
-    "4~6개월 (6~8월)": 19.1,
-    "7~12개월 (9월~27/2월)": 5.6,
-    "1년 초과": 1.5
+    "1개월 내 (~3월)": 30.8,
+    "2~3개월 (4~5월)": 47,
+    "4~6개월 (6~8월)": 15.8,
+    "7~12개월 (9월~27/2월)": 5.2,
+    "1년 초과": 1.2
   },
   "factors": [
     {
@@ -45,8 +45,8 @@
       "decay": 0.4
     },
     {
-      "factor": "확전 뉴스 우세 (확전14:휴전12)",
-      "impact": "전쟁 장기화 가능성 (확전비율 54%)",
+      "factor": "확전 뉴스 우세 (확전14:휴전10)",
+      "impact": "전쟁 장기화 가능성 (확전비율 58%)",
       "weight": "+0.02%p (4~6개월)",
       "direction": "lengthen",
       "detail": "언론에서 휴전보다 확전을 더 많이 보도하고 있습니다.",
@@ -164,11 +164,11 @@
       "decay": 1
     },
     {
-      "factor": "협상/외교 뉴스 18건 감지",
+      "factor": "협상/외교 뉴스 12건 감지",
       "impact": "외교적 해결 움직임 포착",
-      "weight": "+0.03%p (1개월내), +0.02%p (2~3개월)",
+      "weight": "+0.02%p (1개월내), +0.02%p (2~3개월)",
       "direction": "shorten",
-      "detail": "실시간 뉴스에서 협상 관련 기사 18건이 감지되었습니다.",
+      "detail": "실시간 뉴스에서 협상 관련 기사 12건이 감지되었습니다.",
       "keywords": [
         "negotiat",
         "talks",
@@ -181,11 +181,11 @@
       "decay": 1
     },
     {
-      "factor": "지역 확산 뉴스 32.2건 감지",
+      "factor": "지역 확산 뉴스 30.2건 감지",
       "impact": "주변국 대규모 연루 → 장기화 위험 높음",
       "weight": "+0.03%p (4~6개월), +0.03%p (7~12개월)",
       "direction": "lengthen",
-      "detail": "주변국을 언급하는 기사 32.2건이 감지되었습니다.",
+      "detail": "주변국을 언급하는 기사 30.2건이 감지되었습니다.",
       "keywords": [
         "saudi",
         "uae",
@@ -234,11 +234,41 @@
       "decay": 0.3
     },
     {
+      "factor": "[중대 이벤트] 교전국 항복/사과/공식 양보",
+      "impact": "교전국이 공식적으로 사과/양보/항복 의사를 표명. 역사적으로 패전국의 공식 양보 후 평균 2~4주 내 종전 (걸프전 48시간, 포클랜드 3일, 코소보 11일).",
+      "weight": "+5.3%p (1개월내), +8.0%p (2~3개월), -3.3%p (4~6개월), -3.3%p (7~12개월), -1.3%p (1년초과)",
+      "direction": "shorten",
+      "detail": "교전국이 공식적으로 사과/양보/항복 의사를 표명. 역사적으로 패전국의 공식 양보 후 평균 2~4주 내 종전 (걸프전 48시간, 포클랜드 3일, 코소보 11일).\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: How does Iran’s leadership view the emerging deal with the US?",
+      "keywords": [
+        "apolog",
+        "war",
+        "surrender",
+        "offer",
+        "capitulat",
+        "unconditional",
+        "term",
+        "accept",
+        "defeat",
+        "admit",
+        "defeat",
+        "white flag",
+        "lay down",
+        "arm",
+        "apolog",
+        "neighb",
+        "apolog",
+        "attack"
+      ],
+      "applied": "2026-06-02",
+      "active": true,
+      "severity": "critical"
+    },
+    {
       "factor": "[중대 이벤트] 공식 휴전/평화 합의",
       "impact": "공식 휴전 또는 평화 합의 체결. 휴전 합의는 전쟁 종결의 결정적 단계이며, 합의 후 이행까지 평균 1~2주 소요.",
       "weight": "+15.0%p (1개월내), +10.0%p (2~3개월), -8.0%p (4~6개월), -6.0%p (7~12개월), -3.0%p (1년초과)",
       "direction": "shorten",
-      "detail": "공식 휴전 또는 평화 합의 체결. 휴전 합의는 전쟁 종결의 결정적 단계이며, 합의 후 이행까지 평균 1~2주 소요.\n\n신뢰도: 확실 (100%), 관련 기사 4건 감지.\n관련: Clashes continue in Lebanon despite Israel and Hezbollah accepting US partial ceasefire plan | Looming Iran peace deal shows how Trump’s maximalist goals have shrunk",
+      "detail": "공식 휴전 또는 평화 합의 체결. 휴전 합의는 전쟁 종결의 결정적 단계이며, 합의 후 이행까지 평균 1~2주 소요.\n\n신뢰도: 확실 (100%), 관련 기사 4건 감지.\n관련: Trump says Israel, Hezbollah to stop fighting: What we know | Clashes continue in Lebanon despite Israel and Hezbollah accepting US partial ceasefire plan",
       "keywords": [
         "ceasefire",
         "agree",
@@ -260,39 +290,11 @@
       "severity": "critical"
     },
     {
-      "factor": "[중대 이벤트] 교전국 정권 붕괴/쿠데타",
-      "impact": "교전국 정권 붕괴 또는 쿠데타. 이라크(2003): 바그다드 함락 후 3주 내 주요 전투 종료. 리비아(2011): 트리폴리 함락 후 2개월 내 종전.",
-      "weight": "+6.7%p (1개월내), +5.3%p (2~3개월), +1.3%p (4~6개월), -3.3%p (7~12개월), -2.7%p (1년초과)",
-      "direction": "shorten",
-      "detail": "교전국 정권 붕괴 또는 쿠데타. 이라크(2003): 바그다드 함락 후 3주 내 주요 전투 종료. 리비아(2011): 트리폴리 함락 후 2개월 내 종전.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: A broken economy and an emboldened regime: Iranians abandoned to endure fallout from war",
-      "keywords": [
-        "regime",
-        "collaps",
-        "regime",
-        "fall",
-        "government",
-        "fall",
-        "capital",
-        "fall",
-        "capital",
-        "captur",
-        "coup",
-        "detat",
-        "government",
-        "overthrow",
-        "regime",
-        "change"
-      ],
-      "applied": "2026-06-02",
-      "active": true,
-      "severity": "critical"
-    },
-    {
       "factor": "[중대 이벤트] 일방적 전투 축소/자제 선언",
       "impact": "교전국의 일방적 전투 축소 또는 자제 선언. 역사적으로 패전국의 자발적 전선 축소는 80% 이상 공식 항복의 전조.",
-      "weight": "+3.3%p (1개월내), +4.7%p (2~3개월), -2.0%p (4~6개월), -2.0%p (7~12개월), -0.7%p (1년초과)",
+      "weight": "+5.0%p (1개월내), +7.0%p (2~3개월), -3.0%p (4~6개월), -3.0%p (7~12개월), -1.0%p (1년초과)",
       "direction": "shorten",
-      "detail": "교전국의 일방적 전투 축소 또는 자제 선언. 역사적으로 패전국의 자발적 전선 축소는 80% 이상 공식 항복의 전조.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Iran war day 95: Trump pushes Lebanon truce after Tehran vows to end talks",
+      "detail": "교전국의 일방적 전투 축소 또는 자제 선언. 역사적으로 패전국의 자발적 전선 축소는 80% 이상 공식 항복의 전조.\n\n신뢰도: 확실 (100%), 관련 기사 4건 감지.\n관련: Israel kills five in attacks on Lebanon after Trump announces de-escalation | Trump says Israel, Hezbollah to stop fighting: What we know",
       "keywords": [
         "halt",
         "attack",
@@ -324,9 +326,9 @@
     {
       "factor": "[중대 이벤트] 외교적 돌파구/강대국 중재",
       "impact": "주요 외교적 돌파구 또는 강대국 중재. 데이턴(1995): 미국 중재 → 3주만에 합의. UN 안보리 결의는 평균 2~4주 내 휴전 이행.",
-      "weight": "+3.0%p (1개월내), +6.0%p (2~3개월), +2.0%p (4~6개월), -2.0%p (7~12개월), -1.0%p (1년초과)",
+      "weight": "+2.0%p (1개월내), +4.0%p (2~3개월), +1.3%p (4~6개월), -1.3%p (7~12개월), -0.7%p (1년초과)",
       "direction": "shorten",
-      "detail": "주요 외교적 돌파구 또는 강대국 중재. 데이턴(1995): 미국 중재 → 3주만에 합의. UN 안보리 결의는 평균 2~4주 내 휴전 이행.\n\n신뢰도: 확실 (100%), 관련 기사 4건 감지.\n관련: President Trump attempts to end hostilities in Lebanon | Trump says Hezbollah and Israel have agreed to ‘stop all shooting’",
+      "detail": "주요 외교적 돌파구 또는 강대국 중재. 데이턴(1995): 미국 중재 → 3주만에 합의. UN 안보리 결의는 평균 2~4주 내 휴전 이행.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Trump says Hezbollah and Israel have agreed to ‘stop all shooting’",
       "keywords": [
         "peace talk",
         "agree",
@@ -386,9 +388,9 @@
     {
       "factor": "[중대 이벤트] 전선 확대/신규 참전국",
       "impact": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).",
-      "weight": "-2.0%p (1개월내), -3.0%p (2~3개월), +4.0%p (4~6개월), +3.0%p (7~12개월), +2.0%p (1년초과)",
+      "weight": "-1.3%p (1개월내), -2.0%p (2~3개월), +2.7%p (4~6개월), +2.0%p (7~12개월), +1.3%p (1년초과)",
       "direction": "lengthen",
-      "detail": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).\n\n신뢰도: 확실 (100%), 관련 기사 4건 감지.\n관련: Who attended this year’s Israel Day Parade in New York? | Israel Captures Crusader Castle That Symbolized Its Long Lebanon Occupation",
+      "detail": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Israel Captures Crusader Castle That Symbolized Its Long Lebanon Occupation",
       "keywords": [
         "new front",
         "war spread",
@@ -433,11 +435,11 @@
       "severity": "high"
     },
     {
-      "factor": "유가 급등 (WTI $90.77/배럴)",
+      "factor": "유가 급등 (WTI $90.8/배럴)",
       "impact": "중간 수준 경제 압력",
       "weight": "+2%p (1-2개월)",
       "direction": "shorten",
-      "detail": "WTI 유가가 $90.77/배럴로 90달러 이상입니다. 호르무즈 해협 봉쇄와 맞물려 글로벌 에너지 시장에 큰 충격을 주고 있으며, 주요국들의 조기 종전 압력이 강화되고 있습니다.",
+      "detail": "WTI 유가가 $90.8/배럴로 90달러 이상입니다. 호르무즈 해협 봉쇄와 맞물려 글로벌 에너지 시장에 큰 충격을 주고 있으며, 주요국들의 조기 종전 압력이 강화되고 있습니다.",
       "keywords": [
         "oil",
         "crude",
@@ -450,11 +452,11 @@
       "active": true
     },
     {
-      "factor": "금값 사상최고 ($4564.7/oz)",
+      "factor": "금값 사상최고 ($4556.1/oz)",
       "impact": "안전자산 수요 폭증 → 글로벌 불안 심화",
       "weight": "+2%p (4-6개월)",
       "direction": "lengthen",
-      "detail": "금 가격이 온스당 $4564.7로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
+      "detail": "금 가격이 온스당 $4556.1로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
       "keywords": [
         "gold",
         "safe haven",
@@ -466,14 +468,14 @@
     }
   ],
   "news_signals": {
-    "ceasefire_mentions": 12,
+    "ceasefire_mentions": 10,
     "escalation_mentions": 14,
-    "negotiation_mentions": 18,
-    "casualty_mentions": 4,
+    "negotiation_mentions": 12,
+    "casualty_mentions": 2,
     "peace_mentions": 16,
-    "regional_spread": 32.2,
+    "regional_spread": 30.2,
     "total_articles": 50,
-    "new_articles": 49,
+    "new_articles": 50,
     "unique_events": 48,
     "duplicates_removed": 2
   },
@@ -481,9 +483,165 @@
     {
       "title": "Middle East crisis live: Conflict continues in Lebanon despite Trump hailing Israeli-Hezbollah de-escalation",
       "link": "https://www.theguardian.com/world/live/2026/jun/02/iran-us-israel-lebanon-trump-netanyahu-hezbollah-beirut-hormuz-talks-oil-latest-news-updates",
-      "pubDate": "Tue, 02 Jun 2026 07:54:23 GMT",
+      "pubDate": "Tue, 02 Jun 2026 12:09:57 GMT",
       "source": "guardian",
       "snippet": "Israeli military says it intercepted missiles from Lebanon this morning while Netanyahu says his forces will continue operating in the south of the countryTrump says Hezbollah and Israel have agreed t",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Peace fails if it is not defended. The UN’s peacekeepers cannot do this alone | Jean-Pierre Lacroix",
+      "link": "https://www.theguardian.com/global-development/2026/jun/02/united-nations-un-peacekeepers-south-sudan-drc-lebanon-golan-car",
+      "pubDate": "Tue, 02 Jun 2026 12:00:21 GMT",
+      "source": "guardian",
+      "snippet": "Cuts in international support threaten the work of the women and men bringing hope to the world’s most vulnerable peopleJean-Pierre Lacroix is UN under-secretary general for peace operationsAt a time ",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "러, 우크라 대공습 직후 \"오늘이라도 종전 가능\"",
+      "link": "https://www.yna.co.kr/view/AKR20260602159900108",
+      "pubDate": "Tue, 2 Jun 2026 20:36:06 +0900",
+      "source": "yonhap",
+      "snippet": "(이스탄불=연합뉴스) 김동호 특파원 = 드미트리 페스코프 러시아 크렘린궁 대변인은 2일(현지시간) 자국군이 우크라이나 수도 키이우 등을 대규모로...",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Israel kills five in attacks on Lebanon after Trump announces de-escalation",
+      "link": "https://www.aljazeera.com/news/2026/6/2/israel-kills-five-in-attacks-on-lebanon-after-trump-announces-de-escalation?traffic_source=rss",
+      "pubDate": "Tue, 02 Jun 2026 11:25:22 +0000",
+      "source": "aljazeera",
+      "snippet": "The deadly attacks raise concerns about the reported agreement on the cessation of hostilities.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Trump says Israel, Hezbollah to stop fighting: What we know",
+      "link": "https://www.aljazeera.com/news/2026/6/2/trump-says-israel-hezbollah-to-stop-fighting-what-we-know?traffic_source=rss",
+      "pubDate": "Tue, 02 Jun 2026 11:21:29 +0000",
+      "source": "aljazeera",
+      "snippet": "Netanyahu agrees to halt operations near Beirut; Hezbollah to stop attacks on Israel under new truce arrangement.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "How the war has made Iran’s water crisis worse",
+      "link": "https://www.aljazeera.com/news/2026/6/2/how-the-war-has-made-irans-water-crisis-worse?traffic_source=rss",
+      "pubDate": "Tue, 02 Jun 2026 11:13:00 +0000",
+      "source": "aljazeera",
+      "snippet": "Attacks on desalination plants and other water infrastructure by US and Israel have further added to the water woes.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Aipac affiliate has funded lavish trips to Israel for dozens of Congress members since 7 October, filings reveal",
+      "link": "https://www.theguardian.com/us-news/2026/jun/02/aipac-aief-congress-israel-travel",
+      "pubDate": "Tue, 02 Jun 2026 11:00:03 GMT",
+      "source": "guardian",
+      "snippet": "Revealed: AIEF, a charitable affiliate of pro-Israel lobby Aipac, has spent millions on travel for lawmakers from both parties, even as voters’ support for Israel plummetsDozens of members of Congress",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "World Cup: No ICE deployment; extra security for Iran games in Los Angeles",
+      "link": "https://www.aljazeera.com/sports/2026/6/2/world-cup-no-ice-deployment-extra-security-for-iran-games-in-los-angeles?traffic_source=rss",
+      "pubDate": "Tue, 02 Jun 2026 10:32:11 +0000",
+      "source": "aljazeera",
+      "snippet": "Federal agents will be present during the World Cup, but immigration enforcement will not occur, county sheriff says.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Australia, don’t conflate anti-Semitism with criticism of Israel",
+      "link": "https://www.aljazeera.com/opinions/2026/6/2/australia-dont-conflate-anti-semitism-with-criticism-of-israel?traffic_source=rss",
+      "pubDate": "Tue, 02 Jun 2026 10:02:31 +0000",
+      "source": "aljazeera",
+      "snippet": "The anti-Semitism commission should protect Jewish Australians from hatred, not shield Israel from accountability.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Planet Israel review – valuable personal documentary about Israel/Palestine conflict",
+      "link": "https://www.theguardian.com/film/2026/jun/02/planet-israel-review-gillian-mosely-documentary-palestine",
+      "pubDate": "Tue, 02 Jun 2026 10:00:03 GMT",
+      "source": "guardian",
+      "snippet": "Gillian Mosely’s film argues that Israelis are asked to accept a ‘forever war’ in part motivated by Netanyahu’s desire to defer investigation into corruption allegationsGillian Mosely has produced a f",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "How does Iran’s leadership view the emerging deal with the US?",
+      "link": "https://www.aljazeera.com/news/2026/6/2/how-does-irans-leadership-view-the-emerging-deal-with-the-us-2?traffic_source=rss",
+      "pubDate": "Tue, 02 Jun 2026 09:59:46 +0000",
+      "source": "aljazeera",
+      "snippet": "Iranian authorities reject capitulation, but there are subtle differences between various factions.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "How Hezbollah Drones Changed Israel’s Strategy in Lebanon",
+      "link": "https://www.nytimes.com/2026/06/02/world/middleeast/israel-lebanon-hezbollah.html",
+      "pubDate": "Tue, 02 Jun 2026 09:25:13 +0000",
+      "source": "nytimes",
+      "snippet": "An Israeli campaign that started with high hopes has devolved into a kind of impasse, with Hezbollah looking more capable than it did when the war began.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "France World Cup 2026 preview: Players to watch, group matches and squad",
+      "link": "https://www.aljazeera.com/sports/2026/6/2/france-world-cup-2026-preview-players-to-watch-group-matches-and-squad?traffic_source=rss",
+      "pubDate": "Tue, 02 Jun 2026 08:39:07 +0000",
+      "source": "aljazeera",
+      "snippet": "Departing Deschamps looks to win second title with side led by superstar forwards Kylian Mbappe and Ousmane Dembele.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "UK government has failed Palestinian people, says senior Labour MP",
+      "link": "https://www.theguardian.com/politics/2026/jun/02/uk-government-failed-palestinian-people-emily-thornberry",
+      "pubDate": "Tue, 02 Jun 2026 08:27:29 GMT",
+      "source": "guardian",
+      "snippet": "Emily Thornberry criticises Israel’s ‘staggering’ sense of impunity and rebukes Donald Trump for abandoning GazaThe UK government has let down Palestinian people and failed to make it economically imp",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -501,162 +659,6 @@
       "_isDuplicated": false,
       "_clusterSize": 1,
       "_isDuplicate": false
-    },
-    {
-      "title": "At least 12 people killed, dozens wounded in Russian attacks on Ukraine",
-      "link": "https://www.aljazeera.com/news/2026/6/2/at-least-nine-people-killed-dozens-wounded-in-russian-attacks-on-ukraine?traffic_source=rss",
-      "pubDate": "Tue, 02 Jun 2026 07:07:21 +0000",
-      "source": "aljazeera",
-      "snippet": "Russia launches 656 drones and 73 missiles at Ukraine overnight, according to Ukraine&#039;s air force.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Iran war day 95: Trump pushes Lebanon truce after Tehran vows to end talks",
-      "link": "https://www.aljazeera.com/news/2026/6/2/iran-war-day-95-trump-pushes-lebanon-truce-after-tehran-vows-to-end-talks?traffic_source=rss",
-      "pubDate": "Tue, 02 Jun 2026 06:55:14 +0000",
-      "source": "aljazeera",
-      "snippet": "Trump says he persuaded Israel and Hezbollah to halt attacks, seeking to prevent a wider war in Lebanon.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "I will never forget the teacher who negotiated to be gang-raped instead of her daughter. These war crimes against women must be addressed | Hala Alkarib",
-      "link": "https://www.theguardian.com/global-development/2026/jun/02/sudan-rape-torture-rsf-saf-war-crimes-against-women",
-      "pubDate": "Tue, 02 Jun 2026 05:00:38 GMT",
-      "source": "guardian",
-      "snippet": "Since April 2023, Sudan’s women and girls have been subjected to systematic rape and sexual torture. Specialised support and justice for them is key to the country’s recovery and futureIn a village in",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Rafael Grossi: the next Iran nuclear deal will look very different",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/6/2/aje-onl-nf_qt_grossi-on-new-iran-nuclear-deal-020626?traffic_source=rss",
-      "pubDate": "Tue, 02 Jun 2026 04:45:56 +0000",
-      "source": "aljazeera",
-      "snippet": "IAEA Director General Rafael Grossi says the 2015 Iran nuclear deal is no longer a workable model.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Trump Finds High-Wire Iran Negotiations ‘Very Boring’",
-      "link": "https://www.nytimes.com/2026/06/01/us/politics/trump-iran-negotiations-boring.html",
-      "pubDate": "Tue, 02 Jun 2026 04:35:29 +0000",
-      "source": "nytimes",
-      "snippet": "President Trump told CNBC that he “couldn’t care less” if the negotiations with Iran break down.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Mexican protesters clash with police ahead of the 2026 World Cup",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/6/2/mexican-protesters-clash-with-police-ahead-of-the-2026-world-cup?traffic_source=rss",
-      "pubDate": "Tue, 02 Jun 2026 04:34:19 +0000",
-      "source": "aljazeera",
-      "snippet": "Teachers marched in Mexico demanding better pay and pensions, warning of further protests ahead of the 2026 World Cup.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "UN experts warn against ‘surging Israeli settler terror’ – as it happened",
-      "link": "https://www.theguardian.com/world/live/2026/jun/01/iran-war-live-news-updates-kuwait-missile-drone-attack-us-strikes-iran-radar-sites",
-      "pubDate": "Tue, 02 Jun 2026 02:48:20 GMT",
-      "source": "guardian",
-      "snippet": "This blog is now closed. See our full report: Trump says Hezbollah and Israel have agreed to ‘stop all shooting’The exchange of strikes between the US and Iran reflects the fragility of the current ce",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Security Council Members Call for Israel to Withdraw From Southern Lebanon",
-      "link": "https://www.nytimes.com/2026/06/01/world/middleeast/un-security-council-lebanon.html",
-      "pubDate": "Tue, 02 Jun 2026 02:18:30 +0000",
-      "source": "nytimes",
-      "snippet": "The U.N. panel met after Israel had threatened to attack southern Beirut. President Trump said later that Israel and Hezbollah had agreed not to attack each other.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "President Trump attempts to end hostilities in Lebanon",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/6/2/president-trump-attempts-to-end-hostilities-in-lebanon?traffic_source=rss",
-      "pubDate": "Tue, 02 Jun 2026 01:48:49 +0000",
-      "source": "aljazeera",
-      "snippet": "US President Trump claims a diplomatic breakthrough after speaking with Israeli PM to halt escalation toward Beirut. ",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Trump Says Israel and Hezbollah Will Hold Off on New Military Action",
-      "link": "https://www.nytimes.com/2026/06/01/world/middleeast/trump-iran-israel-hezbollah.html",
-      "pubDate": "Tue, 02 Jun 2026 01:21:18 +0000",
-      "source": "nytimes",
-      "snippet": "A statement from Prime Minister Benjamin Netanyahu of Israel did not mention a new cease-fire, but the Lebanese government said one was taking shape.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Iran war live: Trump talks to Hezbollah, Israel as Lebanon fighting surges",
-      "link": "https://www.aljazeera.com/news/liveblog/2026/6/2/iran-war-live-trump-talks-to-hezbollah-israel-as-lebanon-fighting-surges?traffic_source=rss",
-      "pubDate": "Tue, 02 Jun 2026 00:00:00 +0000",
-      "source": "aljazeera",
-      "snippet": "Israeli National Security Minister Ben-Gvir says &#039;time&#039; to say &#039;no&#039; to Trump and continue striking Hezbollah in Lebanon.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Ultra-Orthodox protesters clash with Israeli police over army draft",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/6/1/ultra-orthodox-protesters-clash-with-israeli-police-over-army-draft?traffic_source=rss",
-      "pubDate": "Mon, 01 Jun 2026 23:36:03 +0000",
-      "source": "aljazeera",
-      "snippet": "Police seen dragging ultra-Orthodox protesters from under a bus after they blocked roads in Jerusalem over conscription.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "US court upholds injunction against Trump policy banning transgender troops",
-      "link": "https://www.aljazeera.com/news/2026/6/1/us-court-upholds-injunction-against-trump-policy-banning-transgender-troops?traffic_source=rss",
-      "pubDate": "Mon, 01 Jun 2026 23:22:10 +0000",
-      "source": "aljazeera",
-      "snippet": "The decision was split, allowing the Trump administration to continue barring transgender people from enlisting.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
     }
   ],
   "news_digest": {
@@ -665,8 +667,8 @@
         "category_id": "military",
         "category_name": "군사 작전",
         "category_icon": "⚔️",
-        "count": 14,
-        "new_count": 14,
+        "count": 17,
+        "new_count": 17,
         "articles": [
           {
             "title": "Middle East crisis live: Conflict continues in Lebanon despite Trump hailing Israeli-Hezbollah de-escalation",
@@ -675,19 +677,74 @@
             "sources": [
               "guardian"
             ],
-            "pubDate": "Tue, 02 Jun 2026 07:54:23 GMT",
+            "pubDate": "Tue, 02 Jun 2026 12:09:57 GMT",
             "snippet": "Israeli military says it intercepted missiles from Lebanon this morning while Netanyahu says his forces will continue operating in the south of the countryTrump says Hezbollah and Israel have agreed t",
             "isNew": true
           },
           {
-            "title": "At least 12 people killed, dozens wounded in Russian attacks on Ukraine",
-            "link": "https://www.aljazeera.com/news/2026/6/2/at-least-nine-people-killed-dozens-wounded-in-russian-attacks-on-ukraine?traffic_source=rss",
+            "title": "Peace fails if it is not defended. The UN’s peacekeepers cannot do this alone | Jean-Pierre Lacroix",
+            "link": "https://www.theguardian.com/global-development/2026/jun/02/united-nations-un-peacekeepers-south-sudan-drc-lebanon-golan-car",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Tue, 02 Jun 2026 12:00:21 GMT",
+            "snippet": "Cuts in international support threaten the work of the women and men bringing hope to the world’s most vulnerable peopleJean-Pierre Lacroix is UN under-secretary general for peace operationsAt a time ",
+            "isNew": true
+          },
+          {
+            "title": "러, 우크라 대공습 직후 \"오늘이라도 종전 가능\"",
+            "link": "https://www.yna.co.kr/view/AKR20260602159900108",
+            "source": "yonhap",
+            "sources": [
+              "yonhap"
+            ],
+            "pubDate": "Tue, 2 Jun 2026 20:36:06 +0900",
+            "snippet": "(이스탄불=연합뉴스) 김동호 특파원 = 드미트리 페스코프 러시아 크렘린궁 대변인은 2일(현지시간) 자국군이 우크라이나 수도 키이우 등을 대규모로...",
+            "isNew": true
+          },
+          {
+            "title": "Israel kills five in attacks on Lebanon after Trump announces de-escalation",
+            "link": "https://www.aljazeera.com/news/2026/6/2/israel-kills-five-in-attacks-on-lebanon-after-trump-announces-de-escalation?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Tue, 02 Jun 2026 07:07:21 +0000",
-            "snippet": "Russia launches 656 drones and 73 missiles at Ukraine overnight, according to Ukraine&#039;s air force.",
+            "pubDate": "Tue, 02 Jun 2026 11:25:22 +0000",
+            "snippet": "The deadly attacks raise concerns about the reported agreement on the cessation of hostilities.",
+            "isNew": true
+          },
+          {
+            "title": "Trump says Israel, Hezbollah to stop fighting: What we know",
+            "link": "https://www.aljazeera.com/news/2026/6/2/trump-says-israel-hezbollah-to-stop-fighting-what-we-know?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Tue, 02 Jun 2026 11:21:29 +0000",
+            "snippet": "Netanyahu agrees to halt operations near Beirut; Hezbollah to stop attacks on Israel under new truce arrangement.",
+            "isNew": true
+          },
+          {
+            "title": "How the war has made Iran’s water crisis worse",
+            "link": "https://www.aljazeera.com/news/2026/6/2/how-the-war-has-made-irans-water-crisis-worse?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Tue, 02 Jun 2026 11:13:00 +0000",
+            "snippet": "Attacks on desalination plants and other water infrastructure by US and Israel have further added to the water woes.",
+            "isNew": true
+          },
+          {
+            "title": "World Cup: No ICE deployment; extra security for Iran games in Los Angeles",
+            "link": "https://www.aljazeera.com/sports/2026/6/2/world-cup-no-ice-deployment-extra-security-for-iran-games-in-los-angeles?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Tue, 02 Jun 2026 10:32:11 +0000",
+            "snippet": "Federal agents will be present during the World Cup, but immigration enforcement will not occur, county sheriff says.",
             "isNew": true
           },
           {
@@ -699,28 +756,6 @@
             ],
             "pubDate": "Tue, 02 Jun 2026 02:48:20 GMT",
             "snippet": "This blog is now closed. See our full report: Trump says Hezbollah and Israel have agreed to ‘stop all shooting’The exchange of strikes between the US and Iran reflects the fragility of the current ce",
-            "isNew": true
-          },
-          {
-            "title": "Ultra-Orthodox protesters clash with Israeli police over army draft",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/6/1/ultra-orthodox-protesters-clash-with-israeli-police-over-army-draft?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Mon, 01 Jun 2026 23:36:03 +0000",
-            "snippet": "Police seen dragging ultra-Orthodox protesters from under a bus after they blocked roads in Jerusalem over conscription.",
-            "isNew": true
-          },
-          {
-            "title": "US court upholds injunction against Trump policy banning transgender troops",
-            "link": "https://www.aljazeera.com/news/2026/6/1/us-court-upholds-injunction-against-trump-policy-banning-transgender-troops?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Mon, 01 Jun 2026 23:22:10 +0000",
-            "snippet": "The decision was split, allowing the Trump administration to continue barring transgender people from enlisting.",
             "isNew": true
           },
           {
@@ -744,39 +779,6 @@
             "pubDate": "Mon, 01 Jun 2026 17:13:03 GMT",
             "snippet": "As Israel threatens to bomb Beirut and the US and Iran trade missile strikes, Donald Trump insists it will ‘all work out well in the end’ and urges his critics to ‘sit back and relax’. So are we any c",
             "isNew": true
-          },
-          {
-            "title": "Ben Jennings on Israel’s strikes on Lebanon – cartoon",
-            "link": "https://www.theguardian.com/commentisfree/picture/2026/jun/01/ben-jennings-israel-strikes-lebanon-cartoon",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Mon, 01 Jun 2026 17:05:06 GMT",
-            "snippet": "Continue reading...",
-            "isNew": true
-          },
-          {
-            "title": "Israel PM orders strikes on Beirut suburbs as Hezbollah conflict escalates",
-            "link": "https://www.bbc.com/news/articles/c4g419e2xlvo?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
-            "sources": [
-              "bbc"
-            ],
-            "pubDate": "Mon, 01 Jun 2026 17:04:36 GMT",
-            "snippet": "Thousands flee the Hezbollah stronghold of Dahieh after Benjamin Netanyahu says it will be targeted in response to attacks on Israeli civilians.",
-            "isNew": true
-          },
-          {
-            "title": "Netanyahu Orders Israeli Military to Attack Beirut Suburbs",
-            "link": "https://www.nytimes.com/2026/06/01/world/middleeast/netanyahu-israel-attack-beirut-lebanon.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Mon, 01 Jun 2026 14:11:36 +0000",
-            "snippet": "Thousands fled the southern suburbs of Lebanon’s capital after Prime Minister Benjamin Netanyahu of Israel announced the widening of the military campaign against Hezbollah.",
-            "isNew": true
           }
         ]
       },
@@ -784,9 +786,31 @@
         "category_id": "politics",
         "category_name": "국내 정치",
         "category_icon": "🏛️",
-        "count": 11,
-        "new_count": 11,
+        "count": 9,
+        "new_count": 9,
         "articles": [
+          {
+            "title": "Aipac affiliate has funded lavish trips to Israel for dozens of Congress members since 7 October, filings reveal",
+            "link": "https://www.theguardian.com/us-news/2026/jun/02/aipac-aief-congress-israel-travel",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Tue, 02 Jun 2026 11:00:03 GMT",
+            "snippet": "Revealed: AIEF, a charitable affiliate of pro-Israel lobby Aipac, has spent millions on travel for lawmakers from both parties, even as voters’ support for Israel plummetsDozens of members of Congress",
+            "isNew": true
+          },
+          {
+            "title": "UK government has failed Palestinian people, says senior Labour MP",
+            "link": "https://www.theguardian.com/politics/2026/jun/02/uk-government-failed-palestinian-people-emily-thornberry",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Tue, 02 Jun 2026 08:27:29 GMT",
+            "snippet": "Emily Thornberry criticises Israel’s ‘staggering’ sense of impunity and rebukes Donald Trump for abandoning GazaThe UK government has let down Palestinian people and failed to make it economically imp",
+            "isNew": true
+          },
           {
             "title": "Trump Finds High-Wire Iran Negotiations ‘Very Boring’",
             "link": "https://www.nytimes.com/2026/06/01/us/politics/trump-iran-negotiations-boring.html",
@@ -796,17 +820,6 @@
             ],
             "pubDate": "Tue, 02 Jun 2026 04:35:29 +0000",
             "snippet": "President Trump told CNBC that he “couldn’t care less” if the negotiations with Iran break down.",
-            "isNew": true
-          },
-          {
-            "title": "Mexican protesters clash with police ahead of the 2026 World Cup",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/6/2/mexican-protesters-clash-with-police-ahead-of-the-2026-world-cup?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Tue, 02 Jun 2026 04:34:19 +0000",
-            "snippet": "Teachers marched in Mexico demanding better pay and pensions, warning of further protests ahead of the 2026 World Cup.",
             "isNew": true
           },
           {
@@ -821,17 +834,6 @@
             "isNew": true
           },
           {
-            "title": "President Trump attempts to end hostilities in Lebanon",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/6/2/president-trump-attempts-to-end-hostilities-in-lebanon?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Tue, 02 Jun 2026 01:48:49 +0000",
-            "snippet": "US President Trump claims a diplomatic breakthrough after speaking with Israeli PM to halt escalation toward Beirut. ",
-            "isNew": true
-          },
-          {
             "title": "Trump Says Israel and Hezbollah Will Hold Off on New Military Action",
             "link": "https://www.nytimes.com/2026/06/01/world/middleeast/trump-iran-israel-hezbollah.html",
             "source": "nytimes",
@@ -840,17 +842,6 @@
             ],
             "pubDate": "Tue, 02 Jun 2026 01:21:18 +0000",
             "snippet": "A statement from Prime Minister Benjamin Netanyahu of Israel did not mention a new cease-fire, but the Lebanese government said one was taking shape.",
-            "isNew": true
-          },
-          {
-            "title": "Iran war live: Trump talks to Hezbollah, Israel as Lebanon fighting surges",
-            "link": "https://www.aljazeera.com/news/liveblog/2026/6/2/iran-war-live-trump-talks-to-hezbollah-israel-as-lebanon-fighting-surges?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Tue, 02 Jun 2026 00:00:00 +0000",
-            "snippet": "Israeli National Security Minister Ben-Gvir says &#039;time&#039; to say &#039;no&#039; to Trump and continue striking Hezbollah in Lebanon.",
             "isNew": true
           },
           {
@@ -903,8 +894,8 @@
         "category_id": "diplomacy",
         "category_name": "외교/협상",
         "category_icon": "🤝",
-        "count": 9,
-        "new_count": 9,
+        "count": 7,
+        "new_count": 7,
         "articles": [
           {
             "title": "Clashes continue in Lebanon despite Israel and Hezbollah accepting US partial ceasefire plan",
@@ -915,17 +906,6 @@
             ],
             "pubDate": "Tue, 02 Jun 2026 07:31:10 GMT",
             "snippet": "A cessation of hostilities between Israel and Hezbollah is seen as crucial to the peace process with Iran.",
-            "isNew": true
-          },
-          {
-            "title": "Iran war day 95: Trump pushes Lebanon truce after Tehran vows to end talks",
-            "link": "https://www.aljazeera.com/news/2026/6/2/iran-war-day-95-trump-pushes-lebanon-truce-after-tehran-vows-to-end-talks?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Tue, 02 Jun 2026 06:55:14 +0000",
-            "snippet": "Trump says he persuaded Israel and Hezbollah to halt attacks, seeking to prevent a wider war in Lebanon.",
             "isNew": true
           },
           {
@@ -948,17 +928,6 @@
             ],
             "pubDate": "Mon, 01 Jun 2026 20:59:29 +0000",
             "snippet": "In an interview with The Times, Nabih Berri, an influential Lebanese lawmaker close to Hezbollah, called on President Trump to broker a new cease-fire.",
-            "isNew": true
-          },
-          {
-            "title": "Is the US-backed Gaza peace process in serious danger?",
-            "link": "https://www.aljazeera.com/video/inside-story/2026/6/1/is-the-u-s-backed-gaza-peace-process-in-serious-danger?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Mon, 01 Jun 2026 20:14:11 +0000",
-            "snippet": "Israel killing more Palestinians, moves to seize 70 percent of Gaza Strip",
             "isNew": true
           },
           {
@@ -1008,11 +977,139 @@
         ]
       },
       {
+        "category_id": "other",
+        "category_name": "기타",
+        "category_icon": "📰",
+        "count": 6,
+        "new_count": 6,
+        "articles": [
+          {
+            "title": "Australia, don’t conflate anti-Semitism with criticism of Israel",
+            "link": "https://www.aljazeera.com/opinions/2026/6/2/australia-dont-conflate-anti-semitism-with-criticism-of-israel?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Tue, 02 Jun 2026 10:02:31 +0000",
+            "snippet": "The anti-Semitism commission should protect Jewish Australians from hatred, not shield Israel from accountability.",
+            "isNew": true
+          },
+          {
+            "title": "Planet Israel review – valuable personal documentary about Israel/Palestine conflict",
+            "link": "https://www.theguardian.com/film/2026/jun/02/planet-israel-review-gillian-mosely-documentary-palestine",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Tue, 02 Jun 2026 10:00:03 GMT",
+            "snippet": "Gillian Mosely’s film argues that Israelis are asked to accept a ‘forever war’ in part motivated by Netanyahu’s desire to defer investigation into corruption allegationsGillian Mosely has produced a f",
+            "isNew": true
+          },
+          {
+            "title": "How does Iran’s leadership view the emerging deal with the US?",
+            "link": "https://www.aljazeera.com/news/2026/6/2/how-does-irans-leadership-view-the-emerging-deal-with-the-us-2?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Tue, 02 Jun 2026 09:59:46 +0000",
+            "snippet": "Iranian authorities reject capitulation, but there are subtle differences between various factions.",
+            "isNew": true
+          },
+          {
+            "title": "France World Cup 2026 preview: Players to watch, group matches and squad",
+            "link": "https://www.aljazeera.com/sports/2026/6/2/france-world-cup-2026-preview-players-to-watch-group-matches-and-squad?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Tue, 02 Jun 2026 08:39:07 +0000",
+            "snippet": "Departing Deschamps looks to win second title with side led by superstar forwards Kylian Mbappe and Ousmane Dembele.",
+            "isNew": true
+          },
+          {
+            "title": "‘A shock to all Lebanese’: Israel sends a message as it takes ancient fort",
+            "link": "https://www.theguardian.com/world/2026/jun/01/israel-sends-message-beaufort-castle-lebanon",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Mon, 01 Jun 2026 15:54:18 GMT",
+            "snippet": "Conquering of Beaufort Castle for first time in 26 years brings back memories of occupation of southWhen Hussain Alawieh used to take tourists to Beaufort Castle, they would marvel at the view. The an",
+            "isNew": true
+          }
+        ]
+      },
+      {
+        "category_id": "regional",
+        "category_name": "지역 정세",
+        "category_icon": "🌍",
+        "count": 5,
+        "new_count": 5,
+        "articles": [
+          {
+            "title": "How Hezbollah Drones Changed Israel’s Strategy in Lebanon",
+            "link": "https://www.nytimes.com/2026/06/02/world/middleeast/israel-lebanon-hezbollah.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Tue, 02 Jun 2026 09:25:13 +0000",
+            "snippet": "An Israeli campaign that started with high hopes has devolved into a kind of impasse, with Hezbollah looking more capable than it did when the war began.",
+            "isNew": true
+          },
+          {
+            "title": "Israel Captures Crusader Castle That Symbolized Its Long Lebanon Occupation",
+            "link": "https://www.nytimes.com/2026/05/31/world/middleeast/israel-lebanon-beaufort-iran.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Mon, 01 Jun 2026 16:16:36 +0000",
+            "snippet": "The seizure of Beaufort in southern Lebanon called up bitter memories in both countries amid a widening Israeli conflict with Hezbollah that seems far from over.",
+            "isNew": true
+          },
+          {
+            "title": "How Lebanon’s Best Chance to Disarm Hezbollah Failed",
+            "link": "https://www.nytimes.com/2026/06/01/world/middleeast/lebanon-hezbollah-disarm.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Mon, 01 Jun 2026 14:04:13 +0000",
+            "snippet": "Lebanon’s government has long wanted the powerful militia to give up its weapons. Before the Iran war began, there were signs of progress toward that goal.",
+            "isNew": true
+          },
+          {
+            "title": "Iran’s Team Trains in Limbo for World Cup Overshadowed by War",
+            "link": "https://www.nytimes.com/2026/05/30/world/middleeast/iran-mens-soccer-team-world-cup.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Sat, 30 May 2026 20:12:03 +0000",
+            "snippet": "The Iranian soccer players, still awaiting visas to the U.S., are practicing in Turkey and making backup plans.",
+            "isNew": true
+          },
+          {
+            "title": "U.N. Adds Israeli and Russian Forces to Sexual Violence List",
+            "link": "https://www.nytimes.com/2026/05/29/world/middleeast/israel-russia-un-sexual-violence.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Fri, 29 May 2026 19:46:27 +0000",
+            "snippet": "Israel has denied the accusations and condemned the report, which listed dozens of countries and nonstate groups as “credibly suspected” of patterns of rape and sexual violence.",
+            "isNew": true
+          }
+        ]
+      },
+      {
         "category_id": "economy",
         "category_name": "경제 영향",
         "category_icon": "📊",
-        "count": 4,
-        "new_count": 4,
+        "count": 3,
+        "new_count": 3,
         "articles": [
           {
             "title": "Oil Prices Jump as Middle East Tensions Build",
@@ -1046,112 +1143,6 @@
             "pubDate": "Sun, 31 May 2026 16:29:52 GMT",
             "snippet": "Authoritarian states are increasingly shutting off or throttling access to the internet, creating separate spheres in a realm built on connectionChina boasts of having the world’s largest population o",
             "isNew": true
-          },
-          {
-            "title": "A broken economy and an emboldened regime: Iranians abandoned to endure fallout from war",
-            "link": "https://www.theguardian.com/news/ng-interactive/2026/may/30/iran-broken-economy-emboldened-regime-iranians-abandoned-fallout-of-war",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Sat, 30 May 2026 05:00:10 GMT",
-            "snippet": "Some Iranians hoped foreign intervention would unseat the regime but instead the US-Israel war has damaged livelihoods and strengthened those in powerAs Donald Trump swung this week between threats of",
-            "isNew": true
-          }
-        ]
-      },
-      {
-        "category_id": "other",
-        "category_name": "기타",
-        "category_icon": "📰",
-        "count": 4,
-        "new_count": 4,
-        "articles": [
-          {
-            "title": "Who attended this year’s Israel Day Parade in New York?",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/6/1/who-attended-this-years-israel-day-parade-in-new-york?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Mon, 01 Jun 2026 21:15:08 +0000",
-            "snippet": "Al Jazeera’s Ava Warriner takes a look at the Israeli and US officials who joined the annual Israel Day parade.",
-            "isNew": true
-          },
-          {
-            "title": "Foreign Christians ask for forgiveness over failure to support Israel at Knesset",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/6/1/foreign-christians-ask-for-forgiveness-over-failure-to-support-israel-at-knesset?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Mon, 01 Jun 2026 21:01:11 +0000",
-            "snippet": " ‘Lord, please forgive us for all the things that we did that we did not support Israel.’ \n",
-            "isNew": true
-          },
-          {
-            "title": "‘A shock to all Lebanese’: Israel sends a message as it takes ancient fort",
-            "link": "https://www.theguardian.com/world/2026/jun/01/israel-sends-message-beaufort-castle-lebanon",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Mon, 01 Jun 2026 15:54:18 GMT",
-            "snippet": "Conquering of Beaufort Castle for first time in 26 years brings back memories of occupation of southWhen Hussain Alawieh used to take tourists to Beaufort Castle, they would marvel at the view. The an",
-            "isNew": true
-          },
-          {
-            "title": "Israel to Cut Ties With U.N. Chief Over Its Inclusion on Sexual Violence Blacklist",
-            "link": "https://www.nytimes.com/2026/05/28/world/middleeast/israel-un-abuse-report.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Sat, 30 May 2026 13:11:01 +0000",
-            "snippet": "The United Nations secretary general, António Guterres, told Israel there had been an “increasing number of cases” of sexual violence against Palestinian detainees, according to a letter shared by Isr",
-            "isNew": true
-          }
-        ]
-      },
-      {
-        "category_id": "regional",
-        "category_name": "지역 정세",
-        "category_icon": "🌍",
-        "count": 3,
-        "new_count": 3,
-        "articles": [
-          {
-            "title": "Israel Captures Crusader Castle That Symbolized Its Long Lebanon Occupation",
-            "link": "https://www.nytimes.com/2026/05/31/world/middleeast/israel-lebanon-beaufort-iran.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Mon, 01 Jun 2026 16:16:36 +0000",
-            "snippet": "The seizure of Beaufort in southern Lebanon called up bitter memories in both countries amid a widening Israeli conflict with Hezbollah that seems far from over.",
-            "isNew": true
-          },
-          {
-            "title": "How Lebanon’s Best Chance to Disarm Hezbollah Failed",
-            "link": "https://www.nytimes.com/2026/06/01/world/middleeast/lebanon-hezbollah-disarm.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Mon, 01 Jun 2026 14:04:13 +0000",
-            "snippet": "Lebanon’s government has long wanted the powerful militia to give up its weapons. Before the Iran war began, there were signs of progress toward that goal.",
-            "isNew": true
-          },
-          {
-            "title": "Iran’s Team Trains in Limbo for World Cup Overshadowed by War",
-            "link": "https://www.nytimes.com/2026/05/30/world/middleeast/iran-mens-soccer-team-world-cup.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Sat, 30 May 2026 20:12:03 +0000",
-            "snippet": "The Iranian soccer players, still awaiting visas to the U.S., are practicing in Turkey and making backup plans.",
-            "isNew": true
           }
         ]
       },
@@ -1159,20 +1150,9 @@
         "category_id": "humanitarian",
         "category_name": "인도주의/피해",
         "category_icon": "🏥",
-        "count": 2,
-        "new_count": 2,
+        "count": 1,
+        "new_count": 1,
         "articles": [
-          {
-            "title": "Denmark gets new government as Greenland crisis persists",
-            "link": "https://www.aljazeera.com/news/2026/6/1/denmark-gets-new-government-as-greenland-crisis-persists?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Mon, 01 Jun 2026 20:56:39 +0000",
-            "snippet": "End of election deadlock will see PM Frederiksen continue her stewardship of response to Trump&#039;s Greenland lust.",
-            "isNew": true
-          },
           {
             "title": "Across the Middle East, Muslims Mark Eid Amid War and Crisis",
             "link": "https://www.nytimes.com/2026/05/30/world/middleeast/eid-al-adha-iran-gaza-lebanon.html",
@@ -1185,33 +1165,13 @@
             "isNew": true
           }
         ]
-      },
-      {
-        "category_id": "nuclear",
-        "category_name": "핵/WMD",
-        "category_icon": "☢️",
-        "count": 1,
-        "new_count": 1,
-        "articles": [
-          {
-            "title": "Rafael Grossi: the next Iran nuclear deal will look very different",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/6/2/aje-onl-nf_qt_grossi-on-new-iran-nuclear-deal-020626?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Tue, 02 Jun 2026 04:45:56 +0000",
-            "snippet": "IAEA Director General Rafael Grossi says the 2015 Iran nuclear deal is no longer a workable model.",
-            "isNew": true
-          }
-        ]
       }
     ],
     "recent_30min": {
-      "total_new": 49,
+      "total_new": 50,
       "by_category": {
         "military": {
-          "count": 15,
+          "count": 19,
           "titles": [
             {
               "title": "Middle East crisis live: Conflict continues in Lebanon despite Trump hailing Israeli-Hezbollah de-escalation",
@@ -1219,39 +1179,124 @@
               "source": "guardian"
             },
             {
-              "title": "At least 12 people killed, dozens wounded in Russian attacks on Ukraine",
-              "link": "https://www.aljazeera.com/news/2026/6/2/at-least-nine-people-killed-dozens-wounded-in-russian-attacks-on-ukraine?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "UN experts warn against ‘surging Israeli settler terror’ – as it happened",
-              "link": "https://www.theguardian.com/world/live/2026/jun/01/iran-war-live-news-updates-kuwait-missile-drone-attack-us-strikes-iran-radar-sites",
+              "title": "Peace fails if it is not defended. The UN’s peacekeepers cannot do this alone | Jean-Pierre Lacroix",
+              "link": "https://www.theguardian.com/global-development/2026/jun/02/united-nations-un-peacekeepers-south-sudan-drc-lebanon-golan-car",
               "source": "guardian"
             },
             {
-              "title": "Ultra-Orthodox protesters clash with Israeli police over army draft",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/6/1/ultra-orthodox-protesters-clash-with-israeli-police-over-army-draft?traffic_source=rss",
+              "title": "러, 우크라 대공습 직후 \"오늘이라도 종전 가능\"",
+              "link": "https://www.yna.co.kr/view/AKR20260602159900108",
+              "source": "yonhap"
+            },
+            {
+              "title": "Israel kills five in attacks on Lebanon after Trump announces de-escalation",
+              "link": "https://www.aljazeera.com/news/2026/6/2/israel-kills-five-in-attacks-on-lebanon-after-trump-announces-de-escalation?traffic_source=rss",
               "source": "aljazeera"
             },
             {
-              "title": "US court upholds injunction against Trump policy banning transgender troops",
-              "link": "https://www.aljazeera.com/news/2026/6/1/us-court-upholds-injunction-against-trump-policy-banning-transgender-troops?traffic_source=rss",
+              "title": "Trump says Israel, Hezbollah to stop fighting: What we know",
+              "link": "https://www.aljazeera.com/news/2026/6/2/trump-says-israel-hezbollah-to-stop-fighting-what-we-know?traffic_source=rss",
               "source": "aljazeera"
             }
           ]
         },
-        "diplomacy": {
+        "politics": {
           "count": 9,
+          "titles": [
+            {
+              "title": "Aipac affiliate has funded lavish trips to Israel for dozens of Congress members since 7 October, filings reveal",
+              "link": "https://www.theguardian.com/us-news/2026/jun/02/aipac-aief-congress-israel-travel",
+              "source": "guardian"
+            },
+            {
+              "title": "UK government has failed Palestinian people, says senior Labour MP",
+              "link": "https://www.theguardian.com/politics/2026/jun/02/uk-government-failed-palestinian-people-emily-thornberry",
+              "source": "guardian"
+            },
+            {
+              "title": "Trump Finds High-Wire Iran Negotiations ‘Very Boring’",
+              "link": "https://www.nytimes.com/2026/06/01/us/politics/trump-iran-negotiations-boring.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Security Council Members Call for Israel to Withdraw From Southern Lebanon",
+              "link": "https://www.nytimes.com/2026/06/01/world/middleeast/un-security-council-lebanon.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Trump Says Israel and Hezbollah Will Hold Off on New Military Action",
+              "link": "https://www.nytimes.com/2026/06/01/world/middleeast/trump-iran-israel-hezbollah.html",
+              "source": "nytimes"
+            }
+          ]
+        },
+        "other": {
+          "count": 6,
+          "titles": [
+            {
+              "title": "Australia, don’t conflate anti-Semitism with criticism of Israel",
+              "link": "https://www.aljazeera.com/opinions/2026/6/2/australia-dont-conflate-anti-semitism-with-criticism-of-israel?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Planet Israel review – valuable personal documentary about Israel/Palestine conflict",
+              "link": "https://www.theguardian.com/film/2026/jun/02/planet-israel-review-gillian-mosely-documentary-palestine",
+              "source": "guardian"
+            },
+            {
+              "title": "How does Iran’s leadership view the emerging deal with the US?",
+              "link": "https://www.aljazeera.com/news/2026/6/2/how-does-irans-leadership-view-the-emerging-deal-with-the-us-2?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "France World Cup 2026 preview: Players to watch, group matches and squad",
+              "link": "https://www.aljazeera.com/sports/2026/6/2/france-world-cup-2026-preview-players-to-watch-group-matches-and-squad?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "‘A shock to all Lebanese’: Israel sends a message as it takes ancient fort",
+              "link": "https://www.theguardian.com/world/2026/jun/01/israel-sends-message-beaufort-castle-lebanon",
+              "source": "guardian"
+            }
+          ]
+        },
+        "regional": {
+          "count": 5,
+          "titles": [
+            {
+              "title": "How Hezbollah Drones Changed Israel’s Strategy in Lebanon",
+              "link": "https://www.nytimes.com/2026/06/02/world/middleeast/israel-lebanon-hezbollah.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Israel Captures Crusader Castle That Symbolized Its Long Lebanon Occupation",
+              "link": "https://www.nytimes.com/2026/05/31/world/middleeast/israel-lebanon-beaufort-iran.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "How Lebanon’s Best Chance to Disarm Hezbollah Failed",
+              "link": "https://www.nytimes.com/2026/06/01/world/middleeast/lebanon-hezbollah-disarm.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Iran’s Team Trains in Limbo for World Cup Overshadowed by War",
+              "link": "https://www.nytimes.com/2026/05/30/world/middleeast/iran-mens-soccer-team-world-cup.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "U.N. Adds Israeli and Russian Forces to Sexual Violence List",
+              "link": "https://www.nytimes.com/2026/05/29/world/middleeast/israel-russia-un-sexual-violence.html",
+              "source": "nytimes"
+            }
+          ]
+        },
+        "diplomacy": {
+          "count": 7,
           "titles": [
             {
               "title": "Clashes continue in Lebanon despite Israel and Hezbollah accepting US partial ceasefire plan",
               "link": "https://www.bbc.com/news/articles/c202rxp1z15o?at_medium=RSS&at_campaign=rss",
               "source": "bbc"
-            },
-            {
-              "title": "Iran war day 95: Trump pushes Lebanon truce after Tehran vows to end talks",
-              "link": "https://www.aljazeera.com/news/2026/6/2/iran-war-day-95-trump-pushes-lebanon-truce-after-tehran-vows-to-end-talks?traffic_source=rss",
-              "source": "aljazeera"
             },
             {
               "title": "I will never forget the teacher who negotiated to be gang-raped instead of her daughter. These war crimes against women must be addressed | Hala Alkarib",
@@ -1264,94 +1309,19 @@
               "source": "nytimes"
             },
             {
-              "title": "Is the US-backed Gaza peace process in serious danger?",
-              "link": "https://www.aljazeera.com/video/inside-story/2026/6/1/is-the-u-s-backed-gaza-peace-process-in-serious-danger?traffic_source=rss",
-              "source": "aljazeera"
-            }
-          ]
-        },
-        "nuclear": {
-          "count": 1,
-          "titles": [
-            {
-              "title": "Rafael Grossi: the next Iran nuclear deal will look very different",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/6/2/aje-onl-nf_qt_grossi-on-new-iran-nuclear-deal-020626?traffic_source=rss",
-              "source": "aljazeera"
-            }
-          ]
-        },
-        "politics": {
-          "count": 11,
-          "titles": [
-            {
-              "title": "Trump Finds High-Wire Iran Negotiations ‘Very Boring’",
-              "link": "https://www.nytimes.com/2026/06/01/us/politics/trump-iran-negotiations-boring.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Mexican protesters clash with police ahead of the 2026 World Cup",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/6/2/mexican-protesters-clash-with-police-ahead-of-the-2026-world-cup?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Security Council Members Call for Israel to Withdraw From Southern Lebanon",
-              "link": "https://www.nytimes.com/2026/06/01/world/middleeast/un-security-council-lebanon.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "President Trump attempts to end hostilities in Lebanon",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/6/2/president-trump-attempts-to-end-hostilities-in-lebanon?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Trump Says Israel and Hezbollah Will Hold Off on New Military Action",
-              "link": "https://www.nytimes.com/2026/06/01/world/middleeast/trump-iran-israel-hezbollah.html",
-              "source": "nytimes"
-            }
-          ]
-        },
-        "other": {
-          "count": 4,
-          "titles": [
-            {
-              "title": "Who attended this year’s Israel Day Parade in New York?",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/6/1/who-attended-this-years-israel-day-parade-in-new-york?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Foreign Christians ask for forgiveness over failure to support Israel at Knesset",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/6/1/foreign-christians-ask-for-forgiveness-over-failure-to-support-israel-at-knesset?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "‘A shock to all Lebanese’: Israel sends a message as it takes ancient fort",
-              "link": "https://www.theguardian.com/world/2026/jun/01/israel-sends-message-beaufort-castle-lebanon",
+              "title": "Trump says Hezbollah and Israel have agreed to ‘stop all shooting’",
+              "link": "https://www.theguardian.com/world/2026/jun/01/european-leaders-condemn-israel-incursion-into-lebanon",
               "source": "guardian"
             },
             {
-              "title": "Israel to Cut Ties With U.N. Chief Over Its Inclusion on Sexual Violence Blacklist",
-              "link": "https://www.nytimes.com/2026/05/28/world/middleeast/israel-un-abuse-report.html",
-              "source": "nytimes"
-            }
-          ]
-        },
-        "humanitarian": {
-          "count": 2,
-          "titles": [
-            {
-              "title": "Denmark gets new government as Greenland crisis persists",
-              "link": "https://www.aljazeera.com/news/2026/6/1/denmark-gets-new-government-as-greenland-crisis-persists?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Across the Middle East, Muslims Mark Eid Amid War and Crisis",
-              "link": "https://www.nytimes.com/2026/05/30/world/middleeast/eid-al-adha-iran-gaza-lebanon.html",
-              "source": "nytimes"
+              "title": "Iran threatens to suspend peace talks after ‘violation of ceasefire’ in Lebanon",
+              "link": "https://www.theguardian.com/world/2026/jun/01/iran-strikes-us-military-base-kuwait-iranian-air-defences",
+              "source": "guardian"
             }
           ]
         },
         "economy": {
-          "count": 4,
+          "count": 3,
           "titles": [
             {
               "title": "Oil Prices Jump as Middle East Tensions Build",
@@ -1367,30 +1337,15 @@
               "title": "The Guardian view on the splinternet: where China led, Iran and others are eagerly following | Editorial",
               "link": "https://www.theguardian.com/commentisfree/2026/may/31/the-guardian-view-on-the-splinternet-where-china-led-iran-and-others-are-eagerly-following",
               "source": "guardian"
-            },
-            {
-              "title": "A broken economy and an emboldened regime: Iranians abandoned to endure fallout from war",
-              "link": "https://www.theguardian.com/news/ng-interactive/2026/may/30/iran-broken-economy-emboldened-regime-iranians-abandoned-fallout-of-war",
-              "source": "guardian"
             }
           ]
         },
-        "regional": {
-          "count": 3,
+        "humanitarian": {
+          "count": 1,
           "titles": [
             {
-              "title": "Israel Captures Crusader Castle That Symbolized Its Long Lebanon Occupation",
-              "link": "https://www.nytimes.com/2026/05/31/world/middleeast/israel-lebanon-beaufort-iran.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "How Lebanon’s Best Chance to Disarm Hezbollah Failed",
-              "link": "https://www.nytimes.com/2026/06/01/world/middleeast/lebanon-hezbollah-disarm.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Iran’s Team Trains in Limbo for World Cup Overshadowed by War",
-              "link": "https://www.nytimes.com/2026/05/30/world/middleeast/iran-mens-soccer-team-world-cup.html",
+              "title": "Across the Middle East, Muslims Mark Eid Amid War and Crisis",
+              "link": "https://www.nytimes.com/2026/05/30/world/middleeast/eid-al-adha-iran-gaza-lebanon.html",
               "source": "nytimes"
             }
           ]
@@ -1485,29 +1440,35 @@
     }
   ],
   "economic_indicators": {
-    "WTI": {
-      "price": 90.77,
-      "change": -1.39,
-      "changePercent": -1.51,
-      "prev": 92.16
-    },
     "US10Y": {
       "price": 4.47,
       "change": 0.02,
       "changePercent": 0.45,
       "prev": 4.45
     },
-    "BRENT": {
-      "price": 93.44,
-      "change": -1.54,
-      "changePercent": -1.62,
-      "prev": 94.98
+    "US2Y": {
+      "price": 3.62,
+      "change": 0.03,
+      "changePercent": 0.84,
+      "prev": 3.59
+    },
+    "VIX": {
+      "price": 16.15,
+      "change": 0.1,
+      "changePercent": 0.62,
+      "prev": 16.05
     },
     "GOLD": {
-      "price": 4564.7,
-      "change": 89.5,
-      "changePercent": 2,
+      "price": 4556.1,
+      "change": 80.9,
+      "changePercent": 1.81,
       "prev": 4475.2
+    },
+    "WTI": {
+      "price": 90.8,
+      "change": -1.36,
+      "changePercent": -1.48,
+      "prev": 92.16
     },
     "DXY": {
       "price": 99.09,
@@ -1515,20 +1476,22 @@
       "changePercent": -0.11,
       "prev": 99.2
     },
-    "VIX": {
-      "price": 16.21,
-      "change": 0.16,
-      "changePercent": 1,
-      "prev": 16.05
-    },
-    "US2Y": {
-      "price": 3.62,
-      "change": 0.03,
-      "changePercent": 0.84,
-      "prev": 3.59
+    "BRENT": {
+      "price": 93.61,
+      "change": -1.37,
+      "changePercent": -1.44,
+      "prev": 94.98
     }
   },
   "critical_events": [
+    {
+      "id": "capitulation_signal",
+      "name": "교전국 항복/사과/공식 양보",
+      "severity": "critical",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "shorten"
+    },
     {
       "id": "ceasefire_agreement",
       "name": "공식 휴전/평화 합의",
@@ -1538,27 +1501,19 @@
       "direction": "shorten"
     },
     {
-      "id": "regime_collapse",
-      "name": "교전국 정권 붕괴/쿠데타",
-      "severity": "critical",
-      "confidence": 0.6666666666666666,
-      "matchCount": 2,
-      "direction": "shorten"
-    },
-    {
       "id": "unilateral_deescalation",
       "name": "일방적 전투 축소/자제 선언",
       "severity": "high",
-      "confidence": 0.6666666666666666,
-      "matchCount": 2,
+      "confidence": 1,
+      "matchCount": 4,
       "direction": "shorten"
     },
     {
       "id": "diplomatic_breakthrough",
       "name": "외교적 돌파구/강대국 중재",
       "severity": "high",
-      "confidence": 1,
-      "matchCount": 4,
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
       "direction": "shorten"
     },
     {
@@ -1573,8 +1528,8 @@
       "id": "conflict_expansion",
       "name": "전선 확대/신규 참전국",
       "severity": "moderate",
-      "confidence": 1,
-      "matchCount": 4,
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
       "direction": "lengthen"
     },
     {
