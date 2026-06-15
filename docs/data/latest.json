@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-06-15T07:26:32.251Z",
+  "timestamp": "2026-06-15T13:29:46.734Z",
   "war_day": 107,
   "probabilities": {
-    "1개월 내 (~3월)": 33.1,
-    "2~3개월 (4~5월)": 47.1,
-    "4~6개월 (6~8월)": 15.6,
-    "7~12개월 (9월~27/2월)": 3.6,
-    "1년 초과": 0.6
+    "1개월 내 (~3월)": 29.3,
+    "2~3개월 (4~5월)": 45.2,
+    "4~6개월 (6~8월)": 16.6,
+    "7~12개월 (9월~27/2월)": 6.5,
+    "1년 초과": 2.4
   },
   "factors": [
     {
@@ -45,20 +45,20 @@
       "decay": 0.4
     },
     {
-      "factor": "이란 미사일 능력 급감 (휴전8:확전2)",
-      "impact": "전쟁 지속 능력 약화로 단기 종전 가능성 증가",
-      "weight": "+0.0%p (1개월내), +0.0%p (2~3개월) (잔존40%)",
-      "direction": "shorten",
-      "detail": "이란의 보복 미사일 타격 능력이 약 90% 감소했습니다.",
+      "factor": "확전 뉴스 우세 (확전4:휴전4)",
+      "impact": "전쟁 장기화 가능성 (확전비율 50%)",
+      "weight": "+0.02%p (4~6개월)",
+      "direction": "lengthen",
+      "detail": "언론에서 휴전보다 확전을 더 많이 보도하고 있습니다.",
       "keywords": [
-        "missile",
-        "ballistic",
-        "launch",
-        "strike capab"
+        "escalat",
+        "intensif",
+        "expand",
+        "widen"
       ],
-      "applied": "2026-03-02",
+      "applied": "실시간",
       "active": true,
-      "decay": 0.4
+      "decay": 1
     },
     {
       "factor": "호르무즈 해협 봉쇄 → 국제 경제 압력",
@@ -164,11 +164,11 @@
       "decay": 1
     },
     {
-      "factor": "협상/외교 뉴스 10건 감지",
+      "factor": "협상/외교 뉴스 6건 감지",
       "impact": "외교적 해결 움직임 포착",
-      "weight": "+0.02%p (1개월내), +0.01%p (2~3개월)",
+      "weight": "+0.01%p (1개월내), +0.01%p (2~3개월)",
       "direction": "shorten",
-      "detail": "실시간 뉴스에서 협상 관련 기사 10건이 감지되었습니다.",
+      "detail": "실시간 뉴스에서 협상 관련 기사 6건이 감지되었습니다.",
       "keywords": [
         "negotiat",
         "talks",
@@ -181,11 +181,11 @@
       "decay": 1
     },
     {
-      "factor": "지역 확산 뉴스 10건 감지",
+      "factor": "지역 확산 뉴스 10.2건 감지",
       "impact": "주변국 연루 확대로 장기화 위험",
       "weight": "+0.01%p (4~6개월), +0.01%p (7~12개월)",
       "direction": "lengthen",
-      "detail": "주변국을 언급하는 기사 10건이 감지되었습니다.",
+      "detail": "주변국을 언급하는 기사 10.2건이 감지되었습니다.",
       "keywords": [
         "saudi",
         "uae",
@@ -268,7 +268,7 @@
       "impact": "공식 휴전 또는 평화 합의 체결. 휴전 합의는 전쟁 종결의 결정적 단계이며, 합의 후 이행까지 평균 1~2주 소요.",
       "weight": "+15.0%p (1개월내), +10.0%p (2~3개월), -8.0%p (4~6개월), -6.0%p (7~12개월), -3.0%p (1년초과)",
       "direction": "shorten",
-      "detail": "공식 휴전 또는 평화 합의 체결. 휴전 합의는 전쟁 종결의 결정적 단계이며, 합의 후 이행까지 평균 1~2주 소요.\n\n신뢰도: 확실 (100%), 관련 기사 25.2건 감지.\n관련: Trump says Iran peace deal could be signed by Sunday, with strait of Hormuz to open shortly after | Oil prices tumble amid hopes strait of Hormuz will soon reopen | Monday briefing: Trump’s late-night deal with Iran",
+      "detail": "공식 휴전 또는 평화 합의 체결. 휴전 합의는 전쟁 종결의 결정적 단계이며, 합의 후 이행까지 평균 1~2주 소요.\n\n신뢰도: 확실 (100%), 관련 기사 16건 감지.\n관련: Oil prices hit three-month low and markets rally amid Iran deal breakthrough | What still needs to be negotiated in US-Iran ‘peace deal’? | US and Iran reach framework peace deal to end war",
       "keywords": [
         "ceasefire",
         "agree",
@@ -290,39 +290,71 @@
       "severity": "critical"
     },
     {
-      "factor": "[중대 이벤트] 교전국 정권 붕괴/쿠데타",
-      "impact": "교전국 정권 붕괴 또는 쿠데타. 이라크(2003): 바그다드 함락 후 3주 내 주요 전투 종료. 리비아(2011): 트리폴리 함락 후 2개월 내 종전.",
-      "weight": "+6.7%p (1개월내), +5.3%p (2~3개월), +1.3%p (4~6개월), -3.3%p (7~12개월), -2.7%p (1년초과)",
+      "factor": "[중대 이벤트] 일방적 전투 축소/자제 선언",
+      "impact": "교전국의 일방적 전투 축소 또는 자제 선언. 역사적으로 패전국의 자발적 전선 축소는 80% 이상 공식 항복의 전조.",
+      "weight": "+3.3%p (1개월내), +4.7%p (2~3개월), -2.0%p (4~6개월), -2.0%p (7~12개월), -0.7%p (1년초과)",
       "direction": "shorten",
-      "detail": "교전국 정권 붕괴 또는 쿠데타. 이라크(2003): 바그다드 함락 후 3주 내 주요 전투 종료. 리비아(2011): 트리폴리 함락 후 2개월 내 종전.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: The World Is Draining Oil Reserves, Raising Pressure for a Peace Deal",
+      "detail": "교전국의 일방적 전투 축소 또는 자제 선언. 역사적으로 패전국의 자발적 전선 축소는 80% 이상 공식 항복의 전조.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Israel will not withdraw from territory in Lebanon, defence minister says",
       "keywords": [
-        "regime",
-        "collaps",
-        "regime",
-        "fall",
-        "government",
-        "fall",
-        "capital",
-        "fall",
-        "capital",
-        "captur",
-        "coup",
-        "detat",
-        "government",
-        "overthrow",
-        "regime",
-        "change"
+        "halt",
+        "attack",
+        "stop",
+        "attack",
+        "neighb",
+        "no more",
+        "attack",
+        "withdraw",
+        "forces",
+        "pull back",
+        "troops",
+        "unilateral",
+        "ceasefire",
+        "reduce",
+        "operation",
+        "de-escalat",
+        "announc",
+        "restrain",
+        "attack",
+        "not attack",
+        "suspend",
+        "operation"
       ],
       "applied": "2026-06-15",
       "active": true,
-      "severity": "critical"
+      "severity": "high"
     },
     {
-      "factor": "금값 사상최고 ($4334.9/oz)",
+      "factor": "[중대 이벤트] 전선 확대/신규 참전국",
+      "impact": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).",
+      "weight": "-1.7%p (1개월내), -2.6%p (2~3개월), +3.5%p (4~6개월), +2.6%p (7~12개월), +1.7%p (1년초과)",
+      "direction": "lengthen",
+      "detail": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).\n\n신뢰도: 확실 (87%), 관련 기사 2.6건 감지.\n관련: US and Iran agree deal to end war as Trump says Strait of Hormuz to reopen",
+      "keywords": [
+        "new front",
+        "war spread",
+        "conflict expand",
+        "join",
+        "war",
+        "enter",
+        "war",
+        "open",
+        "front",
+        "declare war",
+        "widen",
+        "conflict",
+        "second front",
+        "new theater"
+      ],
+      "applied": "2026-06-15",
+      "active": true,
+      "severity": "moderate"
+    },
+    {
+      "factor": "금값 사상최고 ($4374.3/oz)",
       "impact": "안전자산 수요 폭증 → 글로벌 불안 심화",
       "weight": "+2%p (4-6개월)",
       "direction": "lengthen",
-      "detail": "금 가격이 온스당 $4334.9로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
+      "detail": "금 가격이 온스당 $4374.3로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
       "keywords": [
         "gold",
         "safe haven",
@@ -334,80 +366,36 @@
     }
   ],
   "news_signals": {
-    "ceasefire_mentions": 8,
-    "escalation_mentions": 2,
-    "negotiation_mentions": 10,
+    "ceasefire_mentions": 4,
+    "escalation_mentions": 4,
+    "negotiation_mentions": 6,
     "casualty_mentions": 0,
-    "peace_mentions": 24.6,
-    "regional_spread": 10,
+    "peace_mentions": 16,
+    "regional_spread": 10.2,
     "total_articles": 50,
     "new_articles": 50,
-    "unique_events": 44,
-    "duplicates_removed": 6
+    "unique_events": 48,
+    "duplicates_removed": 2
   },
   "latest_news": [
     {
-      "title": "World reacts as Iran and US reach deal",
-      "link": "https://www.aljazeera.com/news/2026/6/15/global-relief-as-iran-us-sign-deal-to-end-war?traffic_source=rss",
-      "pubDate": "Mon, 15 Jun 2026 07:05:57 +0000",
-      "source": "aljazeera",
-      "snippet": "Pakistan, Qatar applaud agreement as a step towards peace and lasting tranquillity in the region.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Starbucks Korea to shut stores for history lessons after ‘Tank Day’ furore",
-      "link": "https://www.aljazeera.com/economy/2026/6/15/starbucks-korea-to-shut-stores-for-history-lessons-after-tank-day-furore?traffic_source=rss",
-      "pubDate": "Mon, 15 Jun 2026 07:00:43 +0000",
-      "source": "aljazeera",
-      "snippet": "Coffee chain to hold &#039;historical awareness&#039; training after backlash to ad campaign that evoked 1980 military crackdown.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Iran war live: Tehran says ‘peace deal’ ends US blockade, war on all fronts",
-      "link": "https://www.aljazeera.com/news/liveblog/2026/6/15/iran-war-live-tehran-says-peace-deal-ends-us-blockade-war-on-all-fronts?traffic_source=rss",
-      "pubDate": "Mon, 15 Jun 2026 07:00:00 +0000",
-      "source": "aljazeera",
-      "snippet": "World welcomes US-Iran agreement as Trump says Strait of Hormuz to reopen on Friday when deal is signed.",
-      "isNew": true,
-      "_isDuplicate": true,
-      "_sourceCount": 1
-    },
-    {
-      "title": "World leaders welcome news that the Strait of Hormuz could soon reopen.",
-      "link": "https://www.nytimes.com/live/2026/06/15/world/iran-war-trump-us-deal/world-leaders-welcome-news-the-strait-of-hormuz-could-soon-reopen",
-      "pubDate": "Mon, 15 Jun 2026 06:49:56 +0000",
-      "source": "nytimes",
-      "snippet": "",
-      "isNew": true,
-      "_isDuplicate": true,
-      "_sourceCount": 1
-    },
-    {
-      "title": "World Cup: Iranians in Los Angeles divided on whether to cheer or jeer Iran",
-      "link": "https://www.aljazeera.com/news/2026/6/15/world-cup-iranians-in-los-angeles-divided-on-whether-to-cheer-or-jeer-iran?traffic_source=rss",
-      "pubDate": "Mon, 15 Jun 2026 06:46:35 +0000",
-      "source": "aljazeera",
-      "snippet": "US host city braces for protests near stadium as Iran prepares to start its World Cup campaign against New Zealand.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Oil prices tumble amid hopes strait of Hormuz will soon reopen",
-      "link": "https://www.theguardian.com/business/2026/jun/15/oil-prices-fall-strait-of-hormuz-reopening-hopes-iran-us-peace-deal",
-      "pubDate": "Mon, 15 Jun 2026 06:33:19 GMT",
+      "title": "Fighter at Donald Trump’s White House UFC event smears Michelle Obama during interview – US politics live",
+      "link": "https://www.theguardian.com/us-news/live/2026/jun/15/donald-trump-ufc-white-house-michelle-obama-g7-iran-peace-deal-us-politics-latest-news-updates",
+      "pubDate": "Mon, 15 Jun 2026 13:26:06 GMT",
       "source": "guardian",
-      "snippet": "Donald Trump posts ‘Let the oil flow’ as US-Iran peace deal sparks immediate drop for Brent crudeMiddle East crisis: live updatesPeace deal between US and Iran announced, with strait of Hormuz expecte",
+      "snippet": "Josh Hokit gave rambling post-fight interview veering from praising the president to religion and repeating false conspiracy claim about former first ladySign up for the Breaking News US emailIn an in",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Israel Counts the Ways That Netanyahu’s Iran Strategy Failed",
+      "link": "https://www.nytimes.com/2026/06/15/world/middleeast/israel-counts-the-ways-that-netanyahus-iran-strategy-failed.html",
+      "pubDate": "Mon, 15 Jun 2026 13:21:49 +0000",
+      "source": "nytimes",
+      "snippet": "The U.S.-Iran framework agreement appears to omit some of the most important provisions that Israel wanted.",
       "isNew": true,
       "_sourceCount": 2,
       "_isDuplicated": true,
@@ -415,105 +403,153 @@
       "_isDuplicate": false
     },
     {
-      "title": "Oil prices slide after US-Iran deal announced",
+      "title": "Israel will not withdraw from territory in Lebanon, defence minister says",
+      "link": "https://www.theguardian.com/world/2026/jun/15/israel-territory-lebanon-defence-minister-israel-katz",
+      "pubDate": "Mon, 15 Jun 2026 13:20:55 GMT",
+      "source": "guardian",
+      "snippet": "Comments by Israel Katz come after announcement of interim deal between Washington and TehranMiddle East crisis – live updatesIsraeli military forces will not withdraw from a vast swathe of territory ",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Settler products from occupied Palestine sold to Europe as Israeli, investigation finds",
+      "link": "https://www.theguardian.com/world/2026/jun/15/settler-products-from-occupied-palestine-sold-to-europe-as-israeli-investigation-finds",
+      "pubDate": "Mon, 15 Jun 2026 13:17:38 GMT",
+      "source": "guardian",
+      "snippet": "Shipments deliberately mislabelled to bolster settler economy, says non-profit Global EchoIsraeli exporters to Europe regularly hide the origin of produce grown in occupied Palestine to qualify for un",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "트럼프, 美건국 250주년 행사에도 '트럼프 집회' 이름붙여",
+      "link": "https://www.yna.co.kr/view/AKR20260615168400071",
+      "pubDate": "Mon, 15 Jun 2026 22:14:56 +0900",
+      "source": "yonhap",
+      "snippet": "(워싱턴=연합뉴스) 이유미 특파원 = 도널드 트럼프 미국 대통령이 다음달 4일 미국의 독립·건국 250주년을 기념해 워싱턴DC 일대에서 &apos;트럼프...",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "U.S.-Iran Agreement Leaves Lebanon’s Fate Murky",
+      "link": "https://www.nytimes.com/2026/06/15/world/middleeast/us-iran-agreement-leaves-lebanons-fate-murky.html",
+      "pubDate": "Mon, 15 Jun 2026 13:13:34 +0000",
+      "source": "nytimes",
+      "snippet": "Iran claimed the deal would extend to fighting in Lebanon but no details of the agreement were made public and Israel said its forces would remain there.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Deal to Reopen Hormuz Kicks Off Long Effort to Ease Energy Crisis",
+      "link": "https://www.nytimes.com/2026/06/15/business/energy-environment/iran-deal-oil-natural-gas.html",
+      "pubDate": "Mon, 15 Jun 2026 13:03:50 +0000",
+      "source": "nytimes",
+      "snippet": "The pace of the recovery will depend on how confident companies are that the deal between the United States and Iran will hold and be extended.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Oil prices hit three-month low and markets rally amid Iran deal breakthrough",
+      "link": "https://www.theguardian.com/business/2026/jun/15/oil-prices-fall-strait-of-hormuz-reopening-hopes-iran-us-peace-deal",
+      "pubDate": "Mon, 15 Jun 2026 12:55:45 GMT",
+      "source": "guardian",
+      "snippet": "Donald Trump posts ‘Let the oil flow’ as US-Iran peace deal sparks immediate drop for Brent crudeBusiness live – latest updatesMiddle East crisis: live updatesGlobal oil prices have tumbled to a three",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Trump Claims Strait Will Be ‘Permanently Toll-Free’ Under Agreement With Iran",
+      "link": "https://www.nytimes.com/2026/06/14/us/politics/trump-iran-deal-strait-of-hormuz.html",
+      "pubDate": "Mon, 15 Jun 2026 12:32:07 +0000",
+      "source": "nytimes",
+      "snippet": "In a call to The New York Times, President Trump praised Russia’s and China’s leaders and described Israel’s prime minister as “a very difficult guy.”",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Ebola risk for World Cup is ‘extremely low’, but US is ready, experts say",
+      "link": "https://www.aljazeera.com/sports/2026/6/15/ebola-risk-for-world-cup-is-extremely-low-but-us-is-ready-experts-say?traffic_source=rss",
+      "pubDate": "Mon, 15 Jun 2026 12:20:27 +0000",
+      "source": "aljazeera",
+      "snippet": "US hospitals and agencies have enhanced preparedness for Ebola, but some experts warn of public health system strains.\n",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Oil prices fall and shares jump after US-Iran deal announced",
       "link": "https://www.bbc.com/news/articles/c6217106px6o?at_medium=RSS&at_campaign=rss",
-      "pubDate": "Mon, 15 Jun 2026 06:31:32 GMT",
+      "pubDate": "Mon, 15 Jun 2026 11:54:26 GMT",
       "source": "bbc",
       "snippet": "Under the agreement, the key Strait of Hormuz waterway will be reopened, US President Donald Trump said.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "U.S. and Iran Find Ways to Claim Victory on the Nuclear Issue",
+      "link": "https://www.nytimes.com/2026/06/15/world/middleeast/nuclear-iran-united-states.html",
+      "pubDate": "Mon, 15 Jun 2026 11:47:04 +0000",
+      "source": "nytimes",
+      "snippet": "President Trump said Iran had promised to suspend enriching uranium, but it is unclear for how long.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "‘Island surrounded by war’: Crimeans panic amid Ukrainian attacks",
+      "link": "https://www.aljazeera.com/news/2026/6/15/island-surrounded-by-war-crimeans-panic-amid-ukrainian-strikes?traffic_source=rss",
+      "pubDate": "Mon, 15 Jun 2026 11:38:27 +0000",
+      "source": "aljazeera",
+      "snippet": "Fuel shortages and fears rise in Crimea as Kyiv attacks the annexed peninsula.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "‘Netanyahu’s life project failed with US-Iran deal’",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/6/15/netanyahus-life-project-failed-with-us-iran?traffic_source=rss",
+      "pubDate": "Mon, 15 Jun 2026 11:27:55 +0000",
+      "source": "aljazeera",
+      "snippet": "‘Netanyahu’s life project failed with US-Iran deal’",
       "isNew": true,
       "_isDuplicate": true,
       "_sourceCount": 1
     },
     {
-      "title": "Monday briefing: Trump’s late-night deal with Iran",
-      "link": "https://www.theguardian.com/world/2026/jun/15/switzerland-anti-immigration-referendum-vote-rejected-population-cap-10-million",
-      "pubDate": "Mon, 15 Jun 2026 05:54:32 GMT",
-      "source": "guardian",
-      "snippet": "In today’s newsletter: A peace deal between the US and Iran has been announced, but what it contains, and what could happen next, remain unclearGood morning. A war which had no clear objectives and no",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Many Iranians Express Relief Over Agreement to End the War",
-      "link": "https://www.nytimes.com/2026/06/15/world/middleeast/iran-reaction-cease-fire-deal.html",
-      "pubDate": "Mon, 15 Jun 2026 05:26:28 +0000",
-      "source": "nytimes",
-      "snippet": "After enduring months of conflict, ordinary people in Iran were relieved to hear about the deal. Opposition groups were disappointed.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "The Iran war has reached a tragic new phase: the fear, killing and upheaval are all normalised | Nesrine Malik",
-      "link": "https://www.theguardian.com/commentisfree/2026/jun/15/iran-war-new-phase-fear-killing-upheaval-normalised",
-      "pubDate": "Mon, 15 Jun 2026 05:00:04 GMT",
-      "source": "guardian",
-      "snippet": "As the world waits for rational outcomes from irrational players, the people being bombed will adjust to the fact that terror is now part of daily life“Humans take a lot of killing,” wrote Frank McCou",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Pakistan PM says signing of agreement confirmed – as it happened",
-      "link": "https://www.theguardian.com/world/live/2026/jun/14/iran-us-middle-east-crisis-donald-trump-peace-deal-strait-hormuz-open-pakistan-latest-news-updates",
-      "pubDate": "Mon, 15 Jun 2026 03:06:49 GMT",
-      "source": "guardian",
-      "snippet": "This liveblog is closed – follow our new liveblog hereIsrael says it has struck Beirut’s south suburbs, with explosions heard in the city. The Israeli military claimed the attacks on the Lebanese capi",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Trump heralds Iran deal but questions - and risks - remain",
-      "link": "https://www.bbc.com/news/articles/c9824e0rz75o?at_medium=RSS&at_campaign=rss",
-      "pubDate": "Mon, 15 Jun 2026 02:41:25 GMT",
-      "source": "bbc",
-      "snippet": "The announcement of an Iran deal was a welcome birthday gift for the president – but its success or failure may hinge on the details. ",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "What do we know about the US-Iran peace deal – and what questions remain?",
-      "link": "https://www.theguardian.com/world/2026/jun/15/us-iran-peace-deal-terms-details-conditions-explained-what-do-we-know-hormuz-lebanon-israel-nuclear",
-      "pubDate": "Mon, 15 Jun 2026 02:29:07 GMT",
-      "source": "guardian",
-      "snippet": "Access to the strait of Hormuz and the future of Iran’s nuclear program are among the issues that remain unclear amid a lack of detail on the agreementMiddle East crisis: live updatesFull report: Peac",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Lebanese remain sceptical despite US-Iran ceasefire announcement",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/6/15/lebanese-remain-sceptical-despite-us-iran-ceasefire-announcement?traffic_source=rss",
-      "pubDate": "Mon, 15 Jun 2026 02:26:06 +0000",
+      "title": "Iran, US agree tentative deal to ‘end war’: Your questions answered",
+      "link": "https://www.aljazeera.com/news/2026/6/15/iran-us-agree-tentative-deal-to-end-war-your-questions-answered?traffic_source=rss",
+      "pubDate": "Mon, 15 Jun 2026 11:21:46 +0000",
       "source": "aljazeera",
-      "snippet": "The US-Iran ceasefire announcement has raised hopes in Lebanon.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "U.S. and Iran Reach Agreement to Reopen Strait and Begin Nuclear Talks",
-      "link": "https://www.nytimes.com/2026/06/14/world/middleeast/us-iran-deal-strait-of-hormuz.html",
-      "pubDate": "Mon, 15 Jun 2026 02:13:26 +0000",
-      "source": "nytimes",
-      "snippet": "The accord halts hostilities in the war that began in February but leaves unresolved the critical issue of Iran’s nuclear program.",
+      "snippet": "Uncertainty remains over whether Israel will honour the agreement.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -527,31 +563,63 @@
         "category_id": "diplomacy",
         "category_name": "외교/협상",
         "category_icon": "🤝",
-        "count": 17,
-        "new_count": 17,
+        "count": 13,
+        "new_count": 13,
         "articles": [
           {
-            "title": "World reacts as Iran and US reach deal",
-            "link": "https://www.aljazeera.com/news/2026/6/15/global-relief-as-iran-us-sign-deal-to-end-war?traffic_source=rss",
+            "title": "Israel Counts the Ways That Netanyahu’s Iran Strategy Failed",
+            "link": "https://www.nytimes.com/2026/06/15/world/middleeast/israel-counts-the-ways-that-netanyahus-iran-strategy-failed.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes",
+              "aljazeera"
+            ],
+            "pubDate": "Mon, 15 Jun 2026 13:21:49 +0000",
+            "snippet": "The U.S.-Iran framework agreement appears to omit some of the most important provisions that Israel wanted.",
+            "isNew": true
+          },
+          {
+            "title": "U.S.-Iran Agreement Leaves Lebanon’s Fate Murky",
+            "link": "https://www.nytimes.com/2026/06/15/world/middleeast/us-iran-agreement-leaves-lebanons-fate-murky.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Mon, 15 Jun 2026 13:13:34 +0000",
+            "snippet": "Iran claimed the deal would extend to fighting in Lebanon but no details of the agreement were made public and Israel said its forces would remain there.",
+            "isNew": true
+          },
+          {
+            "title": "Iran, US agree tentative deal to ‘end war’: Your questions answered",
+            "link": "https://www.aljazeera.com/news/2026/6/15/iran-us-agree-tentative-deal-to-end-war-your-questions-answered?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Mon, 15 Jun 2026 07:05:57 +0000",
-            "snippet": "Pakistan, Qatar applaud agreement as a step towards peace and lasting tranquillity in the region.",
+            "pubDate": "Mon, 15 Jun 2026 11:21:46 +0000",
+            "snippet": "Uncertainty remains over whether Israel will honour the agreement.",
             "isNew": true
           },
           {
-            "title": "Trump says Iran peace deal could be signed by Sunday, with strait of Hormuz to open shortly after",
-            "link": "https://www.theguardian.com/world/2026/jun/13/preliminary-peace-deal-could-be-signed-within-days-says-us-iran-and-mediators",
+            "title": "What still needs to be negotiated in US-Iran ‘peace deal’?",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/6/15/what-still-needs-to-be-negotiated-in-us-iran-peace?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Mon, 15 Jun 2026 08:10:54 +0000",
+            "snippet": "The US and Iran say they have reached a deal. Al Jazeera’s Osama Bin Javaid explains how both sides are claiming victory",
+            "isNew": true
+          },
+          {
+            "title": "US and Iran reach framework peace deal to end war",
+            "link": "https://www.theguardian.com/world/2026/jun/14/trump-calls-for-restraint-israel-airstrikes-beirut-us-iran-peace-deal",
             "source": "guardian",
             "sources": [
-              "guardian",
-              "aljazeera",
-              "nytimes"
+              "guardian"
             ],
-            "pubDate": "Sat, 13 Jun 2026 17:50:27 GMT",
-            "snippet": "US president says in online post he reserves ‘ultimate alternative’ if Tehran refuses to sign agreementDonald Trump said on Saturday that the US is set to sign a new agreement with Iran the following ",
+            "pubDate": "Mon, 15 Jun 2026 07:41:00 GMT",
+            "snippet": "Precise terms remain unclear amid conflicting claims over when access to vital global shipping route will be restoredMiddle East crisis – live updatesBusiness live – latest updatesA framework peace de",
             "isNew": true
           },
           {
@@ -588,17 +656,6 @@
             "isNew": true
           },
           {
-            "title": "Lebanese remain sceptical despite US-Iran ceasefire announcement",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/6/15/lebanese-remain-sceptical-despite-us-iran-ceasefire-announcement?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Mon, 15 Jun 2026 02:26:06 +0000",
-            "snippet": "The US-Iran ceasefire announcement has raised hopes in Lebanon.",
-            "isNew": true
-          },
-          {
             "title": "U.S. and Iran Reach Agreement to Reopen Strait and Begin Nuclear Talks",
             "link": "https://www.nytimes.com/2026/06/14/world/middleeast/us-iran-deal-strait-of-hormuz.html",
             "source": "nytimes",
@@ -619,28 +676,6 @@
             "pubDate": "Mon, 15 Jun 2026 01:37:47 GMT",
             "snippet": "Pakistan says the deal includes Lebanon, but recent ceasefires there have failed to take hold.",
             "isNew": true
-          },
-          {
-            "title": "Trump allies cheer Iran ‘peace deal’ announcement as Democrats seek clarity",
-            "link": "https://www.aljazeera.com/news/2026/6/15/trump-allies-cheer-iran-deal-announcement-as-democrats-call-for-clarity?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Mon, 15 Jun 2026 01:13:29 +0000",
-            "snippet": "US and Iran say memorandum of understanding to be signed on Friday, but no official terms yet released. ",
-            "isNew": true
-          },
-          {
-            "title": "Claims Israel’s Beirut strike pushed Trump on Iran announcement",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/6/15/claims-israels-beirut-strike-pushed-trump-on-iran-announcement?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Mon, 15 Jun 2026 00:15:27 +0000",
-            "snippet": "US diplomat Alan Eyre says despite the US-Iran ceasefire announcement, there is no deal until it has been formalised.",
-            "isNew": true
           }
         ]
       },
@@ -648,29 +683,74 @@
         "category_id": "military",
         "category_name": "군사 작전",
         "category_icon": "⚔️",
-        "count": 10,
-        "new_count": 10,
+        "count": 9,
+        "new_count": 9,
         "articles": [
           {
-            "title": "Starbucks Korea to shut stores for history lessons after ‘Tank Day’ furore",
-            "link": "https://www.aljazeera.com/economy/2026/6/15/starbucks-korea-to-shut-stores-for-history-lessons-after-tank-day-furore?traffic_source=rss",
+            "title": "Israel will not withdraw from territory in Lebanon, defence minister says",
+            "link": "https://www.theguardian.com/world/2026/jun/15/israel-territory-lebanon-defence-minister-israel-katz",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Mon, 15 Jun 2026 13:20:55 GMT",
+            "snippet": "Comments by Israel Katz come after announcement of interim deal between Washington and TehranMiddle East crisis – live updatesIsraeli military forces will not withdraw from a vast swathe of territory ",
+            "isNew": true
+          },
+          {
+            "title": "‘Island surrounded by war’: Crimeans panic amid Ukrainian attacks",
+            "link": "https://www.aljazeera.com/news/2026/6/15/island-surrounded-by-war-crimeans-panic-amid-ukrainian-strikes?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Mon, 15 Jun 2026 07:00:43 +0000",
-            "snippet": "Coffee chain to hold &#039;historical awareness&#039; training after backlash to ad campaign that evoked 1980 military crackdown.",
+            "pubDate": "Mon, 15 Jun 2026 11:38:27 +0000",
+            "snippet": "Fuel shortages and fears rise in Crimea as Kyiv attacks the annexed peninsula.",
             "isNew": true
           },
           {
-            "title": "The Iran war has reached a tragic new phase: the fear, killing and upheaval are all normalised | Nesrine Malik",
+            "title": "Video shows man shot by Israeli drone while sitting with others in Gaza",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/6/15/video-shows-man-shot-by-israeli-drone-while-sitting-with-others-in-gaza?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Mon, 15 Jun 2026 11:11:46 +0000",
+            "snippet": "Video shows man shot by Israeli drone while sitting with others in Gaza.",
+            "isNew": true
+          },
+          {
+            "title": "US and Iran agree deal to end war as Trump says Strait of Hormuz to reopen",
+            "link": "https://www.bbc.com/news/articles/c39yvvy273ko?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc",
+              "nytimes"
+            ],
+            "pubDate": "Mon, 15 Jun 2026 10:10:09 GMT",
+            "snippet": "Both sides declare \"the immediate and permanent termination of military operations on all fronts, including in Lebanon\", Pakistan says.",
+            "isNew": true
+          },
+          {
+            "title": "Political tension has undermined World Cup joy, says Iran striker",
+            "link": "https://www.bbc.com/sport/football/articles/c9d2ep375nzo?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc"
+            ],
+            "pubDate": "Mon, 15 Jun 2026 06:50:46 GMT",
+            "snippet": "Iran's striker Mehdi Taremi said the country's political predicament \"undermines the joy of the World Cup\".",
+            "isNew": true
+          },
+          {
+            "title": "Even if the Iran war is over, it made its mark: the fear, killing and upheaval were all normalised | Nesrine Malik",
             "link": "https://www.theguardian.com/commentisfree/2026/jun/15/iran-war-new-phase-fear-killing-upheaval-normalised",
             "source": "guardian",
             "sources": [
               "guardian"
             ],
             "pubDate": "Mon, 15 Jun 2026 05:00:04 GMT",
-            "snippet": "As the world waits for rational outcomes from irrational players, the people being bombed will adjust to the fact that terror is now part of daily life“Humans take a lot of killing,” wrote Frank McCou",
+            "snippet": "As the world waited for rational outcomes from irrational players, the people being bombed were forced to  adjust to the fact of terror as part of daily life“Humans take a lot of killing,” wrote Frank",
             "isNew": true
           },
           {
@@ -682,17 +762,6 @@
             ],
             "pubDate": "Mon, 15 Jun 2026 03:06:49 GMT",
             "snippet": "This liveblog is closed – follow our new liveblog hereIsrael says it has struck Beirut’s south suburbs, with explosions heard in the city. The Israeli military claimed the attacks on the Lebanese capi",
-            "isNew": true
-          },
-          {
-            "title": "Iran’s Ghalenoei, Taremi decry US treatment before first World Cup game",
-            "link": "https://www.aljazeera.com/sports/2026/6/15/irans-ghalenoei-taremi-decry-us-treatment-before-first-world-cup-game?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Mon, 15 Jun 2026 00:42:08 +0000",
-            "snippet": "Striker Mehdi Taremi says US travel policies are dampening the usual joy the football tournament ignites.",
             "isNew": true
           },
           {
@@ -716,50 +785,6 @@
             "pubDate": "Sat, 13 Jun 2026 11:15:18 GMT",
             "snippet": "The strikes come as Iran's foreign minister says a deal to end fighting with the US is close.",
             "isNew": true
-          },
-          {
-            "title": "US military says it downed Iranian attack drones – as it happened",
-            "link": "https://www.theguardian.com/world/live/2026/jun/12/middle-east-crisis-live-us-iran-israel-lebanon-trump-hormuz-oil-peace-deal-doubt-latest-news-updates",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Sat, 13 Jun 2026 03:42:30 GMT",
-            "snippet": "This blog is now closed – see our latest full report on the Middle East crisisIran’s official Islamic Republic News Agency (IRNA) has cautioned against media speculation about a potential memorandum o",
-            "isNew": true
-          },
-          {
-            "title": "Israel Is Building Army Base in Jenin, Flouting 1990s Pact With Palestinians",
-            "link": "https://www.nytimes.com/2026/06/12/world/middleeast/israel-base-jenin-oslo.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Fri, 12 Jun 2026 18:00:03 +0000",
-            "snippet": "Critics say the move would help the Israeli military protect increased settlement activity near Palestinian population centers in the West Bank.",
-            "isNew": true
-          },
-          {
-            "title": "The week around the world in 20 pictures",
-            "link": "https://www.theguardian.com/artanddesign/gallery/2026/jun/12/the-week-around-the-world-in-20-pictures",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Fri, 12 Jun 2026 17:16:38 GMT",
-            "snippet": "Disorder in Belfast, Israeli airstrikes in Gaza, the Ebola outbreak, and the New York Knicks and San Antonio Spurs in the NBA finals – the past seven days as captured by the world’s leading photojourn",
-            "isNew": true
-          },
-          {
-            "title": "Despite Talk of an Iran Peace Deal, Lebanon’s War Grinds On",
-            "link": "https://www.nytimes.com/2026/06/12/world/middleeast/lebanon-israel-war-trump-iran.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Fri, 12 Jun 2026 16:17:51 +0000",
-            "snippet": "Israeli strikes on Friday left Lebanon out of sync with a cautious optimism taking hold elsewhere in the Middle East.",
-            "isNew": true
           }
         ]
       },
@@ -767,18 +792,73 @@
         "category_id": "politics",
         "category_name": "국내 정치",
         "category_icon": "🏛️",
-        "count": 5,
-        "new_count": 5,
+        "count": 8,
+        "new_count": 8,
         "articles": [
           {
-            "title": "World Cup: Iranians in Los Angeles divided on whether to cheer or jeer Iran",
-            "link": "https://www.aljazeera.com/news/2026/6/15/world-cup-iranians-in-los-angeles-divided-on-whether-to-cheer-or-jeer-iran?traffic_source=rss",
+            "title": "Fighter at Donald Trump’s White House UFC event smears Michelle Obama during interview – US politics live",
+            "link": "https://www.theguardian.com/us-news/live/2026/jun/15/donald-trump-ufc-white-house-michelle-obama-g7-iran-peace-deal-us-politics-latest-news-updates",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Mon, 15 Jun 2026 13:26:06 GMT",
+            "snippet": "Josh Hokit gave rambling post-fight interview veering from praising the president to religion and repeating false conspiracy claim about former first ladySign up for the Breaking News US emailIn an in",
+            "isNew": true
+          },
+          {
+            "title": "트럼프, 美건국 250주년 행사에도 '트럼프 집회' 이름붙여",
+            "link": "https://www.yna.co.kr/view/AKR20260615168400071",
+            "source": "yonhap",
+            "sources": [
+              "yonhap"
+            ],
+            "pubDate": "Mon, 15 Jun 2026 22:14:56 +0900",
+            "snippet": "(워싱턴=연합뉴스) 이유미 특파원 = 도널드 트럼프 미국 대통령이 다음달 4일 미국의 독립·건국 250주년을 기념해 워싱턴DC 일대에서 &apos;트럼프...",
+            "isNew": true
+          },
+          {
+            "title": "Trump Claims Strait Will Be ‘Permanently Toll-Free’ Under Agreement With Iran",
+            "link": "https://www.nytimes.com/2026/06/14/us/politics/trump-iran-deal-strait-of-hormuz.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Mon, 15 Jun 2026 12:32:07 +0000",
+            "snippet": "In a call to The New York Times, President Trump praised Russia’s and China’s leaders and described Israel’s prime minister as “a very difficult guy.”",
+            "isNew": true
+          },
+          {
+            "title": "U.S. and Iran Find Ways to Claim Victory on the Nuclear Issue",
+            "link": "https://www.nytimes.com/2026/06/15/world/middleeast/nuclear-iran-united-states.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Mon, 15 Jun 2026 11:47:04 +0000",
+            "snippet": "President Trump said Iran had promised to suspend enriching uranium, but it is unclear for how long.",
+            "isNew": true
+          },
+          {
+            "title": "Geneva police use force as G7 protest escalates into violence",
+            "link": "https://www.aljazeera.com/gallery/2026/6/15/geneva-police-use-force-as-g7-protest-escalates-into-violence?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Mon, 15 Jun 2026 06:46:35 +0000",
-            "snippet": "US host city braces for protests near stadium as Iran prepares to start its World Cup campaign against New Zealand.",
+            "pubDate": "Mon, 15 Jun 2026 10:05:09 +0000",
+            "snippet": "Demonstrators denounce G7 amid escalating clashes, which lead to damaged buildings and burning cars.",
+            "isNew": true
+          },
+          {
+            "title": "Trump hails MoU with Iran despite misgivings from some Republicans",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/6/15/trump-hails-mou-with-iran-despite-misgivings-from-some-republicans?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Mon, 15 Jun 2026 08:21:36 +0000",
+            "snippet": "Trump hails MoU with Iran despite misgivings from some Republicans.",
             "isNew": true
           },
           {
@@ -793,18 +873,6 @@
             "isNew": true
           },
           {
-            "title": "Trump Claims Strait Will Be ‘Permanently Toll-Free’ Under Agreement With Iran",
-            "link": "https://www.nytimes.com/2026/06/14/us/politics/trump-iran-deal-strait-of-hormuz.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes",
-              "aljazeera"
-            ],
-            "pubDate": "Mon, 15 Jun 2026 01:41:17 +0000",
-            "snippet": "In a call to The New York Times, President Trump praised Russia’s and China’s leaders and described Israel’s prime minister as “a very difficult guy.”",
-            "isNew": true
-          },
-          {
             "title": "Trump says US-Iran deal to be signed on Sunday as Tehran casts doubt on timing",
             "link": "https://www.bbc.com/news/articles/cvglmn49xz0o?at_medium=RSS&at_campaign=rss",
             "source": "bbc",
@@ -814,16 +882,91 @@
             "pubDate": "Sun, 14 Jun 2026 11:23:36 GMT",
             "snippet": "The US president's comments come as Iran says an exact date has not been decided.",
             "isNew": true
+          }
+        ]
+      },
+      {
+        "category_id": "economy",
+        "category_name": "경제 영향",
+        "category_icon": "📊",
+        "count": 7,
+        "new_count": 7,
+        "articles": [
+          {
+            "title": "Settler products from occupied Palestine sold to Europe as Israeli, investigation finds",
+            "link": "https://www.theguardian.com/world/2026/jun/15/settler-products-from-occupied-palestine-sold-to-europe-as-israeli-investigation-finds",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Mon, 15 Jun 2026 13:17:38 GMT",
+            "snippet": "Shipments deliberately mislabelled to bolster settler economy, says non-profit Global EchoIsraeli exporters to Europe regularly hide the origin of produce grown in occupied Palestine to qualify for un",
+            "isNew": true
           },
           {
-            "title": "Israeli tech firm accused of targeting First Minister in election",
-            "link": "https://www.bbc.com/news/articles/c77yje7n287o?at_medium=RSS&at_campaign=rss",
+            "title": "Deal to Reopen Hormuz Kicks Off Long Effort to Ease Energy Crisis",
+            "link": "https://www.nytimes.com/2026/06/15/business/energy-environment/iran-deal-oil-natural-gas.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Mon, 15 Jun 2026 13:03:50 +0000",
+            "snippet": "The pace of the recovery will depend on how confident companies are that the deal between the United States and Iran will hold and be extended.",
+            "isNew": true
+          },
+          {
+            "title": "Oil prices hit three-month low and markets rally amid Iran deal breakthrough",
+            "link": "https://www.theguardian.com/business/2026/jun/15/oil-prices-fall-strait-of-hormuz-reopening-hopes-iran-us-peace-deal",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Mon, 15 Jun 2026 12:55:45 GMT",
+            "snippet": "Donald Trump posts ‘Let the oil flow’ as US-Iran peace deal sparks immediate drop for Brent crudeBusiness live – latest updatesMiddle East crisis: live updatesGlobal oil prices have tumbled to a three",
+            "isNew": true
+          },
+          {
+            "title": "Oil prices fall and shares jump after US-Iran deal announced",
+            "link": "https://www.bbc.com/news/articles/c6217106px6o?at_medium=RSS&at_campaign=rss",
             "source": "bbc",
             "sources": [
               "bbc"
             ],
-            "pubDate": "Fri, 12 Jun 2026 13:18:09 GMT",
-            "snippet": "Accounts linked to tech firm BlackCore are alleged to have carried out 'digital interference operations' against John Swinney. ",
+            "pubDate": "Mon, 15 Jun 2026 11:54:26 GMT",
+            "snippet": "Under the agreement, the key Strait of Hormuz waterway will be reopened, US President Donald Trump said.",
+            "isNew": true
+          },
+          {
+            "title": "The slow death of Goldsmiths is a warning to British universities",
+            "link": "https://www.aljazeera.com/opinions/2026/6/15/the-slow-death-of-goldsmiths-is-a-warning-to-british-universities?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Mon, 15 Jun 2026 09:54:50 +0000",
+            "snippet": "The crisis at the London university shows how marketisation has pushed UK higher education to the brink.",
+            "isNew": true
+          },
+          {
+            "title": "Seafarers’ advocates welcome US-Iran deal after months-long limbo in Gulf",
+            "link": "https://www.aljazeera.com/economy/2026/6/15/seafarers-advocates-welcome-us-iran-deal-after-months-long-limbo-in-gulf?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Mon, 15 Jun 2026 09:13:34 +0000",
+            "snippet": "Some 20,000 crew members have been stranded for months amid the closure of the Strait of Hormuz.",
+            "isNew": true
+          },
+          {
+            "title": "How Trump is relaunching a tariff war citing ‘forced labour’ concerns",
+            "link": "https://www.aljazeera.com/news/2026/6/15/how-trump-is-relaunching-a-tariff-war-citing-forced-labour-concerns?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Mon, 15 Jun 2026 08:43:28 +0000",
+            "snippet": "Trade analysts predict Trump’s latest push could accelerate the &#039;reorientation&#039; of global trade away from the US.",
             "isNew": true
           }
         ]
@@ -832,116 +975,62 @@
         "category_id": "other",
         "category_name": "기타",
         "category_icon": "📰",
-        "count": 5,
-        "new_count": 5,
+        "count": 7,
+        "new_count": 7,
         "articles": [
           {
-            "title": "With a Deal Seemingly Close, the U.S. Faces an Iran More Willing to Withstand Pressure",
-            "link": "https://www.nytimes.com/2026/06/13/world/middleeast/iran-united-states-israel-lebanon.html",
+            "title": "Iran’s World Cup Team Arrives in U.S. After Months of Uncertainty",
+            "link": "https://www.nytimes.com/2026/06/15/sports/world-cup/iran-world-cup-arrives-los-angeles.html",
             "source": "nytimes",
             "sources": [
               "nytimes"
             ],
-            "pubDate": "Sat, 13 Jun 2026 18:29:46 +0000",
-            "snippet": "Iran’s new, more militaristic leaders have already survived the worst that America and Israel can deliver, and seem readier to take risks.",
+            "pubDate": "Mon, 15 Jun 2026 10:59:15 +0000",
+            "snippet": "The war had stirred doubts about the team’s participation in the tournament. It is set to play New Zealand in a Los Angeles area stadium on Monday.",
             "isNew": true
           },
           {
-            "title": "MPs call for end to real estate event over fear it pushes sale of Israeli settlements",
-            "link": "https://www.theguardian.com/uk-news/2026/jun/13/uk-london-real-estate-west-bank-israel-settlements",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Sat, 13 Jun 2026 16:06:00 GMT",
-            "snippet": "More than 100 UK lawmakers urge government to cancel London event, warning it is linked to land ‘stolen from Palestinians’More than 100 UK lawmakers have called for the cancellation of an Israeli real",
-            "isNew": true
-          },
-          {
-            "title": "As Speculation Swirls About the Emerging Iran Deal, Here’s What We Know",
-            "link": "https://www.nytimes.com/2026/06/12/world/middleeast/iran-peace-deal-what-to-know.html",
+            "title": "The U.S.-Iran Deal: What to Know",
+            "link": "https://www.nytimes.com/2026/06/15/world/middleeast/us-iran-deal.html",
             "source": "nytimes",
             "sources": [
               "nytimes"
             ],
-            "pubDate": "Fri, 12 Jun 2026 19:46:16 +0000",
-            "snippet": "A “memorandum of understanding” between the two sides is under discussion. Both sides are keen to frame it as a victory.",
+            "pubDate": "Mon, 15 Jun 2026 10:51:20 +0000",
+            "snippet": "The full text of the deal that could pave the way to ending the war has not been published. Initial details suggest that it defers the most contentious issues.",
             "isNew": true
           },
           {
-            "title": "An ideological tug-of-war: the pressures facing Iran’s World Cup squad in US",
-            "link": "https://www.theguardian.com/world/2026/jun/12/iran-first-play-war-world-cup-fifa",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Fri, 12 Jun 2026 13:00:45 GMT",
-            "snippet": "Flag bans, travel headaches and a religious regime video among bumps in road, as team prepares to be first to play in country with which it is at warIran will present a major challenge to Fifa’s “foot",
-            "isNew": true
-          },
-          {
-            "title": "AIPAC Wants Democrats to Back Israel. Instead, They’re Turning on AIPAC.",
-            "link": "https://www.nytimes.com/2026/06/12/magazine/aipac-democrats-israel.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Fri, 12 Jun 2026 09:01:02 +0000",
-            "snippet": "Once the guardian of the bipartisan pro-Israel consensus, it is now a polarizing force in the party.",
-            "isNew": true
-          }
-        ]
-      },
-      {
-        "category_id": "economy",
-        "category_name": "경제 영향",
-        "category_icon": "📊",
-        "count": 4,
-        "new_count": 4,
-        "articles": [
-          {
-            "title": "Oil prices tumble amid hopes strait of Hormuz will soon reopen",
-            "link": "https://www.theguardian.com/business/2026/jun/15/oil-prices-fall-strait-of-hormuz-reopening-hopes-iran-us-peace-deal",
-            "source": "guardian",
-            "sources": [
-              "guardian",
-              "bbc"
-            ],
-            "pubDate": "Mon, 15 Jun 2026 06:33:19 GMT",
-            "snippet": "Donald Trump posts ‘Let the oil flow’ as US-Iran peace deal sparks immediate drop for Brent crudeMiddle East crisis: live updatesPeace deal between US and Iran announced, with strait of Hormuz expecte",
-            "isNew": true
-          },
-          {
-            "title": "Stock markets soar, oil falls as US and Iran announce framework to end war",
-            "link": "https://www.aljazeera.com/economy/2026/6/15/stock-markets-soar-oil-falls-as-us-iran-confirm-deal-to-end-war?traffic_source=rss",
+            "title": "World Cup 2026: Spain vs Cape Verde prediction, schedules, latest news",
+            "link": "https://www.aljazeera.com/sports/2026/6/15/world-cup-2026-spain-vs-cape-verde-prediction-schedules-latest-news?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Mon, 15 Jun 2026 00:37:07 +0000",
-            "snippet": "Asian stock markets surge as Washington and Tehran announce breakthrough in talks to reopen Strait of Hormuz.",
+            "pubDate": "Mon, 15 Jun 2026 10:44:14 +0000",
+            "snippet": "Spain, Belgium, Uruguay and Iran begin their campaigns as off-field stories also shape the World Cup.",
             "isNew": true
           },
           {
-            "title": "Peace deal between US and Iran announced, with strait of Hormuz expected to reopen",
-            "link": "https://www.theguardian.com/world/2026/jun/14/trump-calls-for-restraint-israel-airstrikes-beirut-us-iran-peace-deal",
-            "source": "guardian",
+            "title": "Britain announces sweeping social media ban for under-16s",
+            "link": "https://www.aljazeera.com/news/2026/6/15/britain-announces-sweeping-social-media-ban-for-under-16s?traffic_source=rss",
+            "source": "aljazeera",
             "sources": [
-              "guardian"
+              "aljazeera"
             ],
-            "pubDate": "Sun, 14 Jun 2026 23:06:18 GMT",
-            "snippet": "Exact terms of the deal not clear amid differing claims from both sides on when access to the global shipping route would be restored Middle East crisis – live updatesA peace deal between the US and I",
+            "pubDate": "Mon, 15 Jun 2026 10:01:31 +0000",
+            "snippet": "PM warns social media platforms are exposing children to content that is &#039;dangerous&#039; and &#039;designed to be addictive&#039;.",
             "isNew": true
           },
           {
-            "title": "Risk Strait of Hormuz or Wait? Shipping Companies Face a Costly Dilemma.",
-            "link": "https://www.nytimes.com/2026/06/12/business/strait-hormuz-ships-iran.html",
-            "source": "nytimes",
+            "title": "G7 meeting in France: What’s on agenda, who is attending?",
+            "link": "https://www.aljazeera.com/news/2026/6/15/g7-meeting-in-france-whats-on-agenda-who-is-attending?traffic_source=rss",
+            "source": "aljazeera",
             "sources": [
-              "nytimes"
+              "aljazeera"
             ],
-            "pubDate": "Fri, 12 Jun 2026 13:07:49 +0000",
-            "snippet": "With more than 500 ships still stranded in the Persian Gulf, pressure on the shipowners and sailors is growing by the day.",
+            "pubDate": "Mon, 15 Jun 2026 08:40:37 +0000",
+            "snippet": "The war in Iran, Ukraine and economic challenges are expected to be a key part of the agenda.",
             "isNew": true
           }
         ]
@@ -950,9 +1039,31 @@
         "category_id": "humanitarian",
         "category_name": "인도주의/피해",
         "category_icon": "🏥",
-        "count": 2,
-        "new_count": 2,
+        "count": 3,
+        "new_count": 3,
         "articles": [
+          {
+            "title": "Ebola risk for World Cup is ‘extremely low’, but US is ready, experts say",
+            "link": "https://www.aljazeera.com/sports/2026/6/15/ebola-risk-for-world-cup-is-extremely-low-but-us-is-ready-experts-say?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Mon, 15 Jun 2026 12:20:27 +0000",
+            "snippet": "US hospitals and agencies have enhanced preparedness for Ebola, but some experts warn of public health system strains.\n",
+            "isNew": true
+          },
+          {
+            "title": "El-Geneina’s struggle: Life amid Sudan war and humanitarian challenges",
+            "link": "https://www.aljazeera.com/features/2026/6/15/el-geneinas-struggle-life-amid-sudan-war-and-humanitarian-challenges?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Mon, 15 Jun 2026 08:43:00 +0000",
+            "snippet": "El-Geneina residents face soaring food and water costs as aid struggles to meet the needs of displaced families.",
+            "isNew": true
+          },
           {
             "title": "Anger among Iranian hardliners at terms of deal agreed with US",
             "link": "https://www.theguardian.com/world/2026/jun/14/iranian-hardliners-in-vociferous-push-to-reject-proposed-peace-deal-with-us",
@@ -962,17 +1073,6 @@
             ],
             "pubDate": "Sun, 14 Jun 2026 22:34:54 GMT",
             "snippet": "Those in favour forced to defend themselves against claims the terms amount to capitulationMiddle East crisis – live updatesIranian hardliners have mounted a rearguard rejection of a deal with the US ",
-            "isNew": true
-          },
-          {
-            "title": "U.S. Says Iran Cease-Fire Deal ‘Very Close’",
-            "link": "https://www.nytimes.com/2026/06/12/world/middleeast/us-iran-ceasefire-deal-white-house.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Fri, 12 Jun 2026 22:43:33 +0000",
-            "snippet": "A senior administration official said the two sides were “not quite at the finish line yet.”",
             "isNew": true
           }
         ]
@@ -1001,108 +1101,18 @@
     "recent_30min": {
       "total_new": 50,
       "by_category": {
-        "diplomacy": {
-          "count": 21,
-          "titles": [
-            {
-              "title": "World reacts as Iran and US reach deal",
-              "link": "https://www.aljazeera.com/news/2026/6/15/global-relief-as-iran-us-sign-deal-to-end-war?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Iran war live: Tehran says ‘peace deal’ ends US blockade, war on all fronts",
-              "link": "https://www.aljazeera.com/news/liveblog/2026/6/15/iran-war-live-tehran-says-peace-deal-ends-us-blockade-war-on-all-fronts?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Monday briefing: Trump’s late-night deal with Iran",
-              "link": "https://www.theguardian.com/world/2026/jun/15/switzerland-anti-immigration-referendum-vote-rejected-population-cap-10-million",
-              "source": "guardian"
-            },
-            {
-              "title": "Many Iranians Express Relief Over Agreement to End the War",
-              "link": "https://www.nytimes.com/2026/06/15/world/middleeast/iran-reaction-cease-fire-deal.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "What do we know about the US-Iran peace deal – and what questions remain?",
-              "link": "https://www.theguardian.com/world/2026/jun/15/us-iran-peace-deal-terms-details-conditions-explained-what-do-we-know-hormuz-lebanon-israel-nuclear",
-              "source": "guardian"
-            }
-          ]
-        },
-        "military": {
-          "count": 10,
-          "titles": [
-            {
-              "title": "Starbucks Korea to shut stores for history lessons after ‘Tank Day’ furore",
-              "link": "https://www.aljazeera.com/economy/2026/6/15/starbucks-korea-to-shut-stores-for-history-lessons-after-tank-day-furore?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "The Iran war has reached a tragic new phase: the fear, killing and upheaval are all normalised | Nesrine Malik",
-              "link": "https://www.theguardian.com/commentisfree/2026/jun/15/iran-war-new-phase-fear-killing-upheaval-normalised",
-              "source": "guardian"
-            },
-            {
-              "title": "Pakistan PM says signing of agreement confirmed – as it happened",
-              "link": "https://www.theguardian.com/world/live/2026/jun/14/iran-us-middle-east-crisis-donald-trump-peace-deal-strait-hormuz-open-pakistan-latest-news-updates",
-              "source": "guardian"
-            },
-            {
-              "title": "Iran’s Ghalenoei, Taremi decry US treatment before first World Cup game",
-              "link": "https://www.aljazeera.com/sports/2026/6/15/irans-ghalenoei-taremi-decry-us-treatment-before-first-world-cup-game?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Israeli military says Hezbollah targets struck in Beirut",
-              "link": "https://www.bbc.com/news/articles/czj83zlx1vjo?at_medium=RSS&at_campaign=rss",
-              "source": "bbc"
-            }
-          ]
-        },
-        "economy": {
-          "count": 6,
-          "titles": [
-            {
-              "title": "World leaders welcome news that the Strait of Hormuz could soon reopen.",
-              "link": "https://www.nytimes.com/live/2026/06/15/world/iran-war-trump-us-deal/world-leaders-welcome-news-the-strait-of-hormuz-could-soon-reopen",
-              "source": "nytimes"
-            },
-            {
-              "title": "Oil prices tumble amid hopes strait of Hormuz will soon reopen",
-              "link": "https://www.theguardian.com/business/2026/jun/15/oil-prices-fall-strait-of-hormuz-reopening-hopes-iran-us-peace-deal",
-              "source": "guardian"
-            },
-            {
-              "title": "Oil prices slide after US-Iran deal announced",
-              "link": "https://www.bbc.com/news/articles/c6217106px6o?at_medium=RSS&at_campaign=rss",
-              "source": "bbc"
-            },
-            {
-              "title": "Stock markets soar, oil falls as US and Iran announce framework to end war",
-              "link": "https://www.aljazeera.com/economy/2026/6/15/stock-markets-soar-oil-falls-as-us-iran-confirm-deal-to-end-war?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Peace deal between US and Iran announced, with strait of Hormuz expected to reopen",
-              "link": "https://www.theguardian.com/world/2026/jun/14/trump-calls-for-restraint-israel-airstrikes-beirut-us-iran-peace-deal",
-              "source": "guardian"
-            }
-          ]
-        },
         "politics": {
-          "count": 5,
+          "count": 8,
           "titles": [
             {
-              "title": "World Cup: Iranians in Los Angeles divided on whether to cheer or jeer Iran",
-              "link": "https://www.aljazeera.com/news/2026/6/15/world-cup-iranians-in-los-angeles-divided-on-whether-to-cheer-or-jeer-iran?traffic_source=rss",
-              "source": "aljazeera"
+              "title": "Fighter at Donald Trump’s White House UFC event smears Michelle Obama during interview – US politics live",
+              "link": "https://www.theguardian.com/us-news/live/2026/jun/15/donald-trump-ufc-white-house-michelle-obama-g7-iran-peace-deal-us-politics-latest-news-updates",
+              "source": "guardian"
             },
             {
-              "title": "Trump heralds Iran deal but questions - and risks - remain",
-              "link": "https://www.bbc.com/news/articles/c9824e0rz75o?at_medium=RSS&at_campaign=rss",
-              "source": "bbc"
+              "title": "트럼프, 美건국 250주년 행사에도 '트럼프 집회' 이름붙여",
+              "link": "https://www.yna.co.kr/view/AKR20260615168400071",
+              "source": "yonhap"
             },
             {
               "title": "Trump Claims Strait Will Be ‘Permanently Toll-Free’ Under Agreement With Iran",
@@ -1110,29 +1120,154 @@
               "source": "nytimes"
             },
             {
-              "title": "Trump says US-Iran deal to be signed on Sunday as Tehran casts doubt on timing",
-              "link": "https://www.bbc.com/news/articles/cvglmn49xz0o?at_medium=RSS&at_campaign=rss",
+              "title": "U.S. and Iran Find Ways to Claim Victory on the Nuclear Issue",
+              "link": "https://www.nytimes.com/2026/06/15/world/middleeast/nuclear-iran-united-states.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Geneva police use force as G7 protest escalates into violence",
+              "link": "https://www.aljazeera.com/gallery/2026/6/15/geneva-police-use-force-as-g7-protest-escalates-into-violence?traffic_source=rss",
+              "source": "aljazeera"
+            }
+          ]
+        },
+        "diplomacy": {
+          "count": 13,
+          "titles": [
+            {
+              "title": "Israel Counts the Ways That Netanyahu’s Iran Strategy Failed",
+              "link": "https://www.nytimes.com/2026/06/15/world/middleeast/israel-counts-the-ways-that-netanyahus-iran-strategy-failed.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "U.S.-Iran Agreement Leaves Lebanon’s Fate Murky",
+              "link": "https://www.nytimes.com/2026/06/15/world/middleeast/us-iran-agreement-leaves-lebanons-fate-murky.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Iran, US agree tentative deal to ‘end war’: Your questions answered",
+              "link": "https://www.aljazeera.com/news/2026/6/15/iran-us-agree-tentative-deal-to-end-war-your-questions-answered?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "What still needs to be negotiated in US-Iran ‘peace deal’?",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/6/15/what-still-needs-to-be-negotiated-in-us-iran-peace?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "US and Iran reach framework peace deal to end war",
+              "link": "https://www.theguardian.com/world/2026/jun/14/trump-calls-for-restraint-israel-airstrikes-beirut-us-iran-peace-deal",
+              "source": "guardian"
+            }
+          ]
+        },
+        "military": {
+          "count": 9,
+          "titles": [
+            {
+              "title": "Israel will not withdraw from territory in Lebanon, defence minister says",
+              "link": "https://www.theguardian.com/world/2026/jun/15/israel-territory-lebanon-defence-minister-israel-katz",
+              "source": "guardian"
+            },
+            {
+              "title": "‘Island surrounded by war’: Crimeans panic amid Ukrainian attacks",
+              "link": "https://www.aljazeera.com/news/2026/6/15/island-surrounded-by-war-crimeans-panic-amid-ukrainian-strikes?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Video shows man shot by Israeli drone while sitting with others in Gaza",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/6/15/video-shows-man-shot-by-israeli-drone-while-sitting-with-others-in-gaza?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "US and Iran agree deal to end war as Trump says Strait of Hormuz to reopen",
+              "link": "https://www.bbc.com/news/articles/c39yvvy273ko?at_medium=RSS&at_campaign=rss",
               "source": "bbc"
             },
             {
-              "title": "Israeli tech firm accused of targeting First Minister in election",
-              "link": "https://www.bbc.com/news/articles/c77yje7n287o?at_medium=RSS&at_campaign=rss",
+              "title": "Political tension has undermined World Cup joy, says Iran striker",
+              "link": "https://www.bbc.com/sport/football/articles/c9d2ep375nzo?at_medium=RSS&at_campaign=rss",
               "source": "bbc"
             }
           ]
         },
-        "humanitarian": {
-          "count": 2,
+        "economy": {
+          "count": 8,
           "titles": [
+            {
+              "title": "Settler products from occupied Palestine sold to Europe as Israeli, investigation finds",
+              "link": "https://www.theguardian.com/world/2026/jun/15/settler-products-from-occupied-palestine-sold-to-europe-as-israeli-investigation-finds",
+              "source": "guardian"
+            },
+            {
+              "title": "Deal to Reopen Hormuz Kicks Off Long Effort to Ease Energy Crisis",
+              "link": "https://www.nytimes.com/2026/06/15/business/energy-environment/iran-deal-oil-natural-gas.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Oil prices hit three-month low and markets rally amid Iran deal breakthrough",
+              "link": "https://www.theguardian.com/business/2026/jun/15/oil-prices-fall-strait-of-hormuz-reopening-hopes-iran-us-peace-deal",
+              "source": "guardian"
+            },
+            {
+              "title": "Oil prices fall and shares jump after US-Iran deal announced",
+              "link": "https://www.bbc.com/news/articles/c6217106px6o?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
+            },
+            {
+              "title": "The slow death of Goldsmiths is a warning to British universities",
+              "link": "https://www.aljazeera.com/opinions/2026/6/15/the-slow-death-of-goldsmiths-is-a-warning-to-british-universities?traffic_source=rss",
+              "source": "aljazeera"
+            }
+          ]
+        },
+        "humanitarian": {
+          "count": 3,
+          "titles": [
+            {
+              "title": "Ebola risk for World Cup is ‘extremely low’, but US is ready, experts say",
+              "link": "https://www.aljazeera.com/sports/2026/6/15/ebola-risk-for-world-cup-is-extremely-low-but-us-is-ready-experts-say?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "El-Geneina’s struggle: Life amid Sudan war and humanitarian challenges",
+              "link": "https://www.aljazeera.com/features/2026/6/15/el-geneinas-struggle-life-amid-sudan-war-and-humanitarian-challenges?traffic_source=rss",
+              "source": "aljazeera"
+            },
             {
               "title": "Anger among Iranian hardliners at terms of deal agreed with US",
               "link": "https://www.theguardian.com/world/2026/jun/14/iranian-hardliners-in-vociferous-push-to-reject-proposed-peace-deal-with-us",
               "source": "guardian"
+            }
+          ]
+        },
+        "other": {
+          "count": 8,
+          "titles": [
+            {
+              "title": "‘Netanyahu’s life project failed with US-Iran deal’",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/6/15/netanyahus-life-project-failed-with-us-iran?traffic_source=rss",
+              "source": "aljazeera"
             },
             {
-              "title": "U.S. Says Iran Cease-Fire Deal ‘Very Close’",
-              "link": "https://www.nytimes.com/2026/06/12/world/middleeast/us-iran-ceasefire-deal-white-house.html",
+              "title": "Iran’s World Cup Team Arrives in U.S. After Months of Uncertainty",
+              "link": "https://www.nytimes.com/2026/06/15/sports/world-cup/iran-world-cup-arrives-los-angeles.html",
               "source": "nytimes"
+            },
+            {
+              "title": "The U.S.-Iran Deal: What to Know",
+              "link": "https://www.nytimes.com/2026/06/15/world/middleeast/us-iran-deal.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "World Cup 2026: Spain vs Cape Verde prediction, schedules, latest news",
+              "link": "https://www.aljazeera.com/sports/2026/6/15/world-cup-2026-spain-vs-cape-verde-prediction-schedules-latest-news?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Britain announces sweeping social media ban for under-16s",
+              "link": "https://www.aljazeera.com/news/2026/6/15/britain-announces-sweeping-social-media-ban-for-under-16s?traffic_source=rss",
+              "source": "aljazeera"
             }
           ]
         },
@@ -1143,36 +1278,6 @@
               "title": "The nuclear challenge at the heart of Trump's Iran negotiations",
               "link": "https://www.bbc.com/news/articles/cqj1zxv1jyeo?at_medium=RSS&at_campaign=rss",
               "source": "bbc"
-            }
-          ]
-        },
-        "other": {
-          "count": 5,
-          "titles": [
-            {
-              "title": "With a Deal Seemingly Close, the U.S. Faces an Iran More Willing to Withstand Pressure",
-              "link": "https://www.nytimes.com/2026/06/13/world/middleeast/iran-united-states-israel-lebanon.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "MPs call for end to real estate event over fear it pushes sale of Israeli settlements",
-              "link": "https://www.theguardian.com/uk-news/2026/jun/13/uk-london-real-estate-west-bank-israel-settlements",
-              "source": "guardian"
-            },
-            {
-              "title": "As Speculation Swirls About the Emerging Iran Deal, Here’s What We Know",
-              "link": "https://www.nytimes.com/2026/06/12/world/middleeast/iran-peace-deal-what-to-know.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "An ideological tug-of-war: the pressures facing Iran’s World Cup squad in US",
-              "link": "https://www.theguardian.com/world/2026/jun/12/iran-first-play-war-world-cup-fifa",
-              "source": "guardian"
-            },
-            {
-              "title": "AIPAC Wants Democrats to Back Israel. Instead, They’re Turning on AIPAC.",
-              "link": "https://www.nytimes.com/2026/06/12/magazine/aipac-democrats-israel.html",
-              "source": "nytimes"
             }
           ]
         }
@@ -1266,23 +1371,17 @@
     }
   ],
   "economic_indicators": {
-    "WTI": {
-      "price": 80.36,
-      "change": -4.52,
-      "changePercent": -5.33,
-      "prev": 84.88
-    },
-    "DXY": {
-      "price": 99.51,
-      "change": -0.24,
-      "changePercent": -0.24,
-      "prev": 99.75
-    },
     "US10Y": {
-      "price": 4.49,
-      "change": 0.02,
-      "changePercent": 0.45,
-      "prev": 4.46
+      "price": 4.45,
+      "change": -0.04,
+      "changePercent": -0.89,
+      "prev": 4.49
+    },
+    "VIX": {
+      "price": 16.3,
+      "change": -1.38,
+      "changePercent": -7.81,
+      "prev": 17.68
     },
     "US2Y": {
       "price": 3.62,
@@ -1290,23 +1389,29 @@
       "changePercent": 0,
       "prev": 3.62
     },
-    "GOLD": {
-      "price": 4334.9,
-      "change": 119.9,
-      "changePercent": 2.84,
-      "prev": 4215
-    },
-    "VIX": {
-      "price": 17.68,
-      "change": -1.76,
-      "changePercent": -9.05,
-      "prev": 19.44
-    },
     "BRENT": {
-      "price": 83.18,
-      "change": -4.15,
-      "changePercent": -4.75,
+      "price": 83.19,
+      "change": -4.14,
+      "changePercent": -4.74,
       "prev": 87.33
+    },
+    "WTI": {
+      "price": 80.4,
+      "change": -4.48,
+      "changePercent": -5.28,
+      "prev": 84.88
+    },
+    "DXY": {
+      "price": 99.47,
+      "change": -0.28,
+      "changePercent": -0.28,
+      "prev": 99.75
+    },
+    "GOLD": {
+      "price": 4374.3,
+      "change": 159.3,
+      "changePercent": 3.78,
+      "prev": 4215
     }
   },
   "critical_events": [
@@ -1323,16 +1428,24 @@
       "name": "공식 휴전/평화 합의",
       "severity": "critical",
       "confidence": 1,
-      "matchCount": 25.2,
+      "matchCount": 16,
       "direction": "shorten"
     },
     {
-      "id": "regime_collapse",
-      "name": "교전국 정권 붕괴/쿠데타",
-      "severity": "critical",
+      "id": "unilateral_deescalation",
+      "name": "일방적 전투 축소/자제 선언",
+      "severity": "high",
       "confidence": 0.6666666666666666,
       "matchCount": 2,
       "direction": "shorten"
+    },
+    {
+      "id": "conflict_expansion",
+      "name": "전선 확대/신규 참전국",
+      "severity": "moderate",
+      "confidence": 0.8666666666666667,
+      "matchCount": 2.6,
+      "direction": "lengthen"
     }
   ],
   "feeds_loaded": 7,
