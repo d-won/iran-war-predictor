@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-06-23T23:05:53.186Z",
-  "war_day": 115,
+  "timestamp": "2026-06-24T01:23:41.262Z",
+  "war_day": 116,
   "probabilities": {
-    "1개월 내 (~3월)": 18.9,
-    "2~3개월 (4~5월)": 38.1,
-    "4~6개월 (6~8월)": 26.2,
-    "7~12개월 (9월~27/2월)": 12.1,
-    "1년 초과": 4.7
+    "1개월 내 (~3월)": 31.4,
+    "2~3개월 (4~5월)": 48.1,
+    "4~6개월 (6~8월)": 15.6,
+    "7~12개월 (9월~27/2월)": 4.3,
+    "1년 초과": 0.6
   },
   "factors": [
     {
@@ -45,9 +45,9 @@
       "decay": 0.4
     },
     {
-      "factor": "이란 미사일 능력 급감 (휴전8.2:확전2)",
+      "factor": "이란 미사일 능력 급감 (휴전10:확전0)",
       "impact": "전쟁 지속 능력 약화로 단기 종전 가능성 증가",
-      "weight": "+0.0%p (1개월내), +0.0%p (2~3개월) (잔존40%)",
+      "weight": "+0.1%p (1개월내), +0.0%p (2~3개월) (잔존40%)",
       "direction": "shorten",
       "detail": "이란의 보복 미사일 타격 능력이 약 90% 감소했습니다.",
       "keywords": [
@@ -164,11 +164,11 @@
       "decay": 1
     },
     {
-      "factor": "협상/외교 뉴스 14건 감지",
+      "factor": "협상/외교 뉴스 26.2건 감지",
       "impact": "외교적 해결 움직임 포착",
       "weight": "+0.03%p (1개월내), +0.02%p (2~3개월)",
       "direction": "shorten",
-      "detail": "실시간 뉴스에서 협상 관련 기사 14건이 감지되었습니다.",
+      "detail": "실시간 뉴스에서 협상 관련 기사 26.2건이 감지되었습니다.",
       "keywords": [
         "negotiat",
         "talks",
@@ -181,11 +181,11 @@
       "decay": 1
     },
     {
-      "factor": "지역 확산 뉴스 6건 감지",
-      "impact": "주변국 연루 확대로 장기화 위험",
-      "weight": "+0.01%p (4~6개월), +0.01%p (7~12개월)",
+      "factor": "지역 확산 뉴스 18건 감지",
+      "impact": "주변국 대규모 연루 → 장기화 위험 높음",
+      "weight": "+0.02%p (4~6개월), +0.02%p (7~12개월)",
       "direction": "lengthen",
-      "detail": "주변국을 언급하는 기사 6건이 감지되었습니다.",
+      "detail": "주변국을 언급하는 기사 18건이 감지되었습니다.",
       "keywords": [
         "saudi",
         "uae",
@@ -234,11 +234,67 @@
       "decay": 0.3
     },
     {
+      "factor": "[중대 이벤트] 교전국 항복/사과/공식 양보",
+      "impact": "교전국이 공식적으로 사과/양보/항복 의사를 표명. 역사적으로 패전국의 공식 양보 후 평균 2~4주 내 종전 (걸프전 48시간, 포클랜드 3일, 코소보 11일).",
+      "weight": "+5.3%p (1개월내), +8.0%p (2~3개월), -3.3%p (4~6개월), -3.3%p (7~12개월), -1.3%p (1년초과)",
+      "direction": "shorten",
+      "detail": "교전국이 공식적으로 사과/양보/항복 의사를 표명. 역사적으로 패전국의 공식 양보 후 평균 2~4주 내 종전 (걸프전 48시간, 포클랜드 3일, 코소보 11일).\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: In Iran, Trump’s victory claims only deepened a self-made catastrophe | Sidney Blumenthal",
+      "keywords": [
+        "apolog",
+        "war",
+        "surrender",
+        "offer",
+        "capitulat",
+        "unconditional",
+        "term",
+        "accept",
+        "defeat",
+        "admit",
+        "defeat",
+        "white flag",
+        "lay down",
+        "arm",
+        "apolog",
+        "neighb",
+        "apolog",
+        "attack"
+      ],
+      "applied": "2026-06-24",
+      "active": true,
+      "severity": "critical"
+    },
+    {
+      "factor": "[중대 이벤트] 공식 휴전/평화 합의",
+      "impact": "공식 휴전 또는 평화 합의 체결. 휴전 합의는 전쟁 종결의 결정적 단계이며, 합의 후 이행까지 평균 1~2주 소요.",
+      "weight": "+15.0%p (1개월내), +10.0%p (2~3개월), -8.0%p (4~6개월), -6.0%p (7~12개월), -3.0%p (1년초과)",
+      "direction": "shorten",
+      "detail": "공식 휴전 또는 평화 합의 체결. 휴전 합의는 전쟁 종결의 결정적 단계이며, 합의 후 이행까지 평균 1~2주 소요.\n\n신뢰도: 확실 (100%), 관련 기사 8건 감지.\n관련: Rubio begins Gulf visit in the UAE to advance US-Iran peace deal | Displaced Lebanese return south under fragile ceasefire deal | Rubio insists strait of Hormuz will be toll-free as he arrives for Gulf meeting",
+      "keywords": [
+        "ceasefire",
+        "agree",
+        "ceasefire",
+        "deal",
+        "ceasefire",
+        "sign",
+        "truce",
+        "agree",
+        "armistice",
+        "sign",
+        "peace deal",
+        "ceasefire",
+        "accept",
+        "peace agreement"
+      ],
+      "applied": "2026-06-24",
+      "active": true,
+      "severity": "critical"
+    },
+    {
       "factor": "[중대 이벤트] 외교적 돌파구/강대국 중재",
       "impact": "주요 외교적 돌파구 또는 강대국 중재. 데이턴(1995): 미국 중재 → 3주만에 합의. UN 안보리 결의는 평균 2~4주 내 휴전 이행.",
       "weight": "+2.0%p (1개월내), +4.0%p (2~3개월), +1.3%p (4~6개월), -1.3%p (7~12개월), -0.7%p (1년초과)",
       "direction": "shorten",
-      "detail": "주요 외교적 돌파구 또는 강대국 중재. 데이턴(1995): 미국 중재 → 3주만에 합의. UN 안보리 결의는 평균 2~4주 내 휴전 이행.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: June 10, 2024 Israel-Hamas war",
+      "detail": "주요 외교적 돌파구 또는 강대국 중재. 데이턴(1995): 미국 중재 → 3주만에 합의. UN 안보리 결의는 평균 2~4주 내 휴전 이행.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: U.S. and Iran’s Conflicting Claims on Nuclear Inspection Show Challenge Ahead",
       "keywords": [
         "peace talk",
         "agree",
@@ -259,16 +315,16 @@
         "mediat",
         "peace framework"
       ],
-      "applied": "2026-06-23",
+      "applied": "2026-06-24",
       "active": true,
       "severity": "high"
     },
     {
       "factor": "[중대 이벤트] 대규모 인도주의 위기",
       "impact": "대규모 인도주의 위기. 국제사회 개입 압력 증가. 코소보(1999): 난민 위기가 NATO 작전 가속화. 인도적 위기는 국제 종전 압력을 2~3배 강화.",
-      "weight": "+1.3%p (1개월내), +2.7%p (2~3개월), +0.7%p (4~6개월), -0.7%p (7~12개월), -0.7%p (1년초과)",
+      "weight": "+2.0%p (1개월내), +4.0%p (2~3개월), +1.0%p (4~6개월), -1.0%p (7~12개월), -1.0%p (1년초과)",
       "direction": "shorten",
-      "detail": "대규모 인도주의 위기. 국제사회 개입 압력 증가. 코소보(1999): 난민 위기가 NATO 작전 가속화. 인도적 위기는 국제 종전 압력을 2~3배 강화.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: UN: Israel committed genocide by targeting Gaza children",
+      "detail": "대규모 인도주의 위기. 국제사회 개입 압력 증가. 코소보(1999): 난민 위기가 NATO 작전 가속화. 인도적 위기는 국제 종전 압력을 2~3배 강화.\n\n신뢰도: 확실 (100%), 관련 기사 8.6건 감지.\n관련: Israel continues to commit genocide by targeting children in Gaza, UN inquiry finds | U.N. Report Says Israeli Killings of Gaza Children Post-Truce Amount to Genocide | UK prioritised ties with UAE over averting mass atrocities in Sudan, MPs to be told",
       "keywords": [
         "humanitarian",
         "catastroph",
@@ -285,42 +341,16 @@
         "thousand",
         "ethnic cleansing"
       ],
-      "applied": "2026-06-23",
+      "applied": "2026-06-24",
       "active": true,
       "severity": "high"
     },
     {
-      "factor": "[중대 이벤트] 전선 확대/신규 참전국",
-      "impact": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).",
-      "weight": "-1.3%p (1개월내), -2.0%p (2~3개월), +2.7%p (4~6개월), +2.0%p (7~12개월), +1.3%p (1년초과)",
-      "direction": "lengthen",
-      "detail": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Devastation in Gaza as Israel wages war on Hamas",
-      "keywords": [
-        "new front",
-        "war spread",
-        "conflict expand",
-        "join",
-        "war",
-        "enter",
-        "war",
-        "open",
-        "front",
-        "declare war",
-        "widen",
-        "conflict",
-        "second front",
-        "new theater"
-      ],
-      "applied": "2026-06-23",
-      "active": true,
-      "severity": "moderate"
-    },
-    {
-      "factor": "금값 사상최고 ($4121.2/oz)",
+      "factor": "금값 사상최고 ($4106.6/oz)",
       "impact": "안전자산 수요 폭증 → 글로벌 불안 심화",
       "weight": "+2%p (4-6개월)",
       "direction": "lengthen",
-      "detail": "금 가격이 온스당 $4121.2로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
+      "detail": "금 가격이 온스당 $4106.6로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
       "keywords": [
         "gold",
         "safe haven",
@@ -332,18 +362,54 @@
     }
   ],
   "news_signals": {
-    "ceasefire_mentions": 8.2,
-    "escalation_mentions": 2,
-    "negotiation_mentions": 14,
-    "casualty_mentions": 16.2,
-    "peace_mentions": 6,
-    "regional_spread": 6,
+    "ceasefire_mentions": 10,
+    "escalation_mentions": 0,
+    "negotiation_mentions": 26.2,
+    "casualty_mentions": 4,
+    "peace_mentions": 10,
+    "regional_spread": 18,
     "total_articles": 50,
-    "new_articles": 49,
-    "unique_events": 39,
-    "duplicates_removed": 11
+    "new_articles": 50,
+    "unique_events": 48,
+    "duplicates_removed": 2
   },
   "latest_news": [
+    {
+      "title": "Trump Is Making Big Claims About the Iran Talks. Iran Keeps Contradicting Him.",
+      "link": "https://www.nytimes.com/2026/06/23/us/politics/trump-iran-talks-contradictions.html",
+      "pubDate": "Wed, 24 Jun 2026 00:38:49 +0000",
+      "source": "nytimes",
+      "snippet": "President Trump appears to be describing his preferences as fully negotiated deals, in hopes of locking the Iranians in. The question is whether a succession of such disputes will sink the whole ventu",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Iran war live: Trump, Tehran at odds over nuclear inspections, Hormuz",
+      "link": "https://www.aljazeera.com/news/liveblog/2026/6/24/iran-war-live-trump-tehran-at-odds-over-nuclear-inspections-hormuz?traffic_source=rss",
+      "pubDate": "Wed, 24 Jun 2026 00:00:00 +0000",
+      "source": "aljazeera",
+      "snippet": "US and Iran offer conflicting statements as negotiators push towards reaching a final, comprehensive deal.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "UN begins evacuation of 11,000 sailors stranded in Strait of Hormuz",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/6/23/un-begins-evacuation-of-11000-sailors-stranded-in-strait-of-hormuz?traffic_source=rss",
+      "pubDate": "Tue, 23 Jun 2026 23:49:00 +0000",
+      "source": "aljazeera",
+      "snippet": "The UN&#039;s maritime agency launched an operation to evacuate more than 11,000 sailors stranded in the Strait of Hormuz.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
     {
       "title": "Israel’s deliberate targeting of Palestinian children",
       "link": "https://www.aljazeera.com/video/newsfeed/2026/6/23/aje-onl-nf_israels-targeting-of-palestinian-children-230626?traffic_source=rss",
@@ -357,11 +423,11 @@
       "_isDuplicate": false
     },
     {
-      "title": "국제해사기구, 호르무즈 발묶인 선원 1만여명 구출작전 착수(종합)",
-      "link": "https://www.yna.co.kr/view/AKR20260624001951085",
-      "pubDate": "Wed, 24 Jun 2026 07:28:47 +0900",
-      "source": "yonhap",
-      "snippet": "(런던·서울=연합뉴스) 김지연 특파원 김아람 기자 = 유엔 산하 국제해사기구(IMO)가 미국과 이란의 전쟁으로 걸프해역(페르시아만)에 발이 묶인...",
+      "title": "U.S. Eases Travel Restrictions on Iran’s World Cup Team",
+      "link": "https://www.nytimes.com/2026/06/23/us/iran-world-cup-travel-restrictions.html",
+      "pubDate": "Tue, 23 Jun 2026 22:19:05 +0000",
+      "source": "nytimes",
+      "snippet": "The Iranians will be allowed to enter the United States two days, instead of one, before a pivotal game in Seattle on Friday, officials said.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -369,23 +435,11 @@
       "_isDuplicate": false
     },
     {
-      "title": "Iran agrees to UN nuclear inspectors’ return as part of agreement with US",
-      "link": "https://www.theguardian.com/world/2026/jun/22/iran-us-talks-progress-pakistan-qatar-lebanon-israel",
-      "pubDate": "Mon, 22 Jun 2026 16:42:35 GMT",
-      "source": "guardian",
-      "snippet": "Other measures include Washington lifting sanctions on Tehran’s oil exports and reopening the strait of HormuzIran has agreed to allow UN nuclear inspectors back into the country as part of an agreeme",
-      "isNew": true,
-      "_sourceCount": 2,
-      "_isDuplicated": true,
-      "_clusterSize": 2,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Iran’s regime survived the war. Can it make peace with its own people?",
-      "link": "https://www.theguardian.com/world/2026/jun/22/iran-regime-survived-war-make-peace-with-own-people",
-      "pubDate": "Mon, 22 Jun 2026 07:18:43 GMT",
-      "source": "guardian",
-      "snippet": "If war triggered a rare moment of solidarity in the divided country, many doubt it will be used for reformThe Islamic Republic regime in Iran may have survived the war, but it now faces an even greate",
+      "title": "Donald Trump to attend World Cup final, present trophy: Infantino",
+      "link": "https://www.aljazeera.com/sports/2026/6/23/donald-trump-to-attend-world-cup-final-present-trophy-infantino?traffic_source=rss",
+      "pubDate": "Tue, 23 Jun 2026 21:44:47 +0000",
+      "source": "aljazeera",
+      "snippet": "FIFA president Gianni Infantino will be &#039;enjoying the final&#039; with Trump and present the trophy together on July 19.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -393,11 +447,21 @@
       "_isDuplicate": false
     },
     {
-      "title": "US-Iran talks strained as Trump threats spark Iranian walkout",
-      "link": "https://www.theguardian.com/world/2026/jun/21/us-iran-talks-jd-vance-switzerland-strait-of-hormuz-lebanon",
-      "pubDate": "Mon, 22 Jun 2026 01:57:50 GMT",
-      "source": "guardian",
-      "snippet": "Talks expected to continue for rest of the week despite disruption caused by US president’s threat to bomb Iran and kidnap negotiating teamHigh-stakes talks between the US and Iran are expected to con",
+      "title": "UN: Israel committed genocide by targeting Gaza children",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/6/23/un-israel-committed-genocide-by-targeting-gaza-children?traffic_source=rss",
+      "pubDate": "Tue, 23 Jun 2026 21:38:23 +0000",
+      "source": "aljazeera",
+      "snippet": "Israel deliberately targeted Palestinian children in Gaza, resulting in genocide.",
+      "isNew": true,
+      "_isDuplicate": true,
+      "_sourceCount": 1
+    },
+    {
+      "title": "U.N. Report Says Israeli Killings of Gaza Children Post-Truce Amount to Genocide",
+      "link": "https://www.nytimes.com/2026/06/23/world/middleeast/un-report-israel-palestinian-children.html",
+      "pubDate": "Tue, 23 Jun 2026 21:29:17 +0000",
+      "source": "nytimes",
+      "snippet": "Israel’s U.N. mission dismissed the report as a “libelous sham,” and called the investigating commission a “fundamentally flawed mechanism.”",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -405,11 +469,11 @@
       "_isDuplicate": false
     },
     {
-      "title": "Trump faces fresh bipartisan criticism on Iran deal as Vance hails peace talks",
-      "link": "https://www.theguardian.com/world/2026/jun/21/trump-iran-deal-bipartisan-criticism",
-      "pubDate": "Sun, 21 Jun 2026 22:07:57 GMT",
-      "source": "guardian",
-      "snippet": "Objections come as Trump threatens to renew attacks on Iran if it doesn’t rein in its proxy in LebanonUS political figures from left and right voiced fresh objections on Sunday to Donald Trump’s provi",
+      "title": "Trump allies reassure Israelis amid tensions on US-Iran deal",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/6/23/trump-allies-reassure-israelis-amid-tensions-on-us-iran-deal?traffic_source=rss",
+      "pubDate": "Tue, 23 Jun 2026 21:19:35 +0000",
+      "source": "aljazeera",
+      "snippet": "Trump allies reassure Israelis amid tensions on US-Iran deal\n",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -417,11 +481,11 @@
       "_isDuplicate": false
     },
     {
-      "title": "Middle East live: US-Iran peace talks underway as strait of Hormuz remains closed",
-      "link": "https://www.theguardian.com/world/live/2026/jun/21/iran-us-israel-war-middle-east-lebanon-peace-talks-switzerland-vance-trump-strait-of-hormuz-latest-news-updates",
-      "pubDate": "Sun, 21 Jun 2026 17:52:33 GMT",
-      "source": "guardian",
-      "snippet": "This live blog is now closed.Trump threatens fresh attacks on Iran as peace talks take place in SwitzerlandThere ⁠was and is ‘no restriction’ on ⁠Israeli ⁠soldiers ​to act to eliminate ⁠threats in Leb",
+      "title": "UN starts evacuating 11,000 stranded sailors from Strait of Hormuz",
+      "link": "https://www.aljazeera.com/news/2026/6/23/un-starts-evacuating-11000-stranded-sailors-from-strait-of-hormuz?traffic_source=rss",
+      "pubDate": "Tue, 23 Jun 2026 21:00:32 +0000",
+      "source": "aljazeera",
+      "snippet": "Following the start of the US-Israel war on Iran on February 28, Tehran had effectively closed off the vital waterway.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -429,23 +493,11 @@
       "_isDuplicate": false
     },
     {
-      "title": "The Guardian view on Israel and the West Bank: allies must protect Palestinian lives and livelihoods | Editorial",
-      "link": "https://www.theguardian.com/commentisfree/2026/jun/21/the-guardian-view-on-israel-and-the-west-bank-allies-must-protect-palestinian-lives-and-livelihoods",
-      "pubDate": "Sun, 21 Jun 2026 16:30:35 GMT",
-      "source": "guardian",
-      "snippet": "Rocketing violence and an economic chokehold have been overshadowed by conflict elsewhere, but the UK and others must stop looking awayThe “ceasefire” in Gaza is a “cruel and deadly illusion”, warned ",
-      "isNew": true,
-      "_sourceCount": 2,
-      "_isDuplicated": true,
-      "_clusterSize": 2,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Secret correspondence claims suggest tensions at top of Iranian government",
-      "link": "https://www.theguardian.com/world/2026/jun/21/secret-correspondence-iranian-government-tensions-supreme-leader",
-      "pubDate": "Sun, 21 Jun 2026 15:56:15 GMT",
-      "source": "guardian",
-      "snippet": "Former negotiating team member gives shock interview claiming supreme leader’s instructions were not followedMiddle East crisis – live updatesA former member of Iran’s negotiating team in the previous",
+      "title": "Trump disputes Iran’s rejection of nuclear inspectors",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/6/23/trump-disputes-irans-rejection-of-nuclear-inspectors?traffic_source=rss",
+      "pubDate": "Tue, 23 Jun 2026 20:11:28 +0000",
+      "source": "aljazeera",
+      "snippet": "President Trump pushed back on Iran’s foreign ministry claim that there are no plans to allow IAEA nuclear inspectors.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -453,11 +505,11 @@
       "_isDuplicate": false
     },
     {
-      "title": "‘A hunting ground for foreign regimes’: why violent attacks on dissidents are on the rise in Britain",
-      "link": "https://www.theguardian.com/global-development/ng-interactive/2026/jun/21/a-hunting-ground-for-foreign-regimes-why-violent-attacks-on-dissidents-are-on-the-rise-in-britain",
-      "pubDate": "Sun, 21 Jun 2026 12:00:29 GMT",
-      "source": "guardian",
-      "snippet": "Iran and China among those accused of targeting critics living in the UK, as arson attack on prime minister Keir Starmer’s properties linked to RussiaAs Pouria Zeraati was crossing the street between ",
+      "title": "Rubio begins Gulf visit in the UAE to advance US-Iran peace deal",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/6/23/rubio-begins-gulf-visit-in-the-uae-to-advance-us-iran-peace-deal?traffic_source=rss",
+      "pubDate": "Tue, 23 Jun 2026 20:06:02 +0000",
+      "source": "aljazeera",
+      "snippet": "Arriving in the UAE at the start of a Gulf tour, Rubio is seeking to advance the US-Iran deal with regional partners. ",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -465,11 +517,11 @@
       "_isDuplicate": false
     },
     {
-      "title": "JD Vance meets Pakistan delegation before Iran talks in Switzerland – video",
-      "link": "https://www.theguardian.com/world/video/2026/jun/21/jd-vance-meets-pakistan-delegation-before-iran-talks-in-switzerland-video",
-      "pubDate": "Sun, 21 Jun 2026 11:19:18 GMT",
-      "source": "guardian",
-      "snippet": "The US vice-president and special envoys Steve Witkoff and Jared Kushner met Pakistan's prime minister, Shehbaz Sharif, and the head of the country's army, Field Marshal Asim Munir, at the Bürgenstock",
+      "title": "Sanchez warns he ‘will not recognise’ Fujimori victory in Peru election",
+      "link": "https://www.aljazeera.com/news/2026/6/23/sanchez-warns-he-will-not-recognise-fujimori-victory-in-peru-election?traffic_source=rss",
+      "pubDate": "Tue, 23 Jun 2026 20:03:56 +0000",
+      "source": "aljazeera",
+      "snippet": "The left-wing candidate has called for voting results from 119 consular offices to be nullified over a procedure change.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -477,47 +529,21 @@
       "_isDuplicate": false
     },
     {
-      "title": "Four months after the horrific Iran school bombing, fears grow that Trump and Hegseth will bury the truth",
-      "link": "https://www.theguardian.com/world/2026/jun/21/iran-school-bombing-minab-fears-trump-hegseth-bury-truth-investigation-findings",
-      "pubDate": "Sun, 21 Jun 2026 11:04:00 GMT",
-      "source": "guardian",
-      "snippet": "A secretive investigation into the attack that killed at least 175 has concluded, reports suggest. Will its findings ever see the light of day?The attack on a girls’ elementary school in the Iranian t",
+      "title": "Iran’s president arrives in Pakistan for peace talks",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/6/23/irans-president-arrives-in-pakistan-for-peace-talks?traffic_source=rss",
+      "pubDate": "Tue, 23 Jun 2026 19:57:01 +0000",
+      "source": "aljazeera",
+      "snippet": "Iran’s president arrives in Pakistan for peace talks",
       "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
+      "_isDuplicate": true,
+      "_sourceCount": 1
     },
     {
-      "title": "‘They didn’t know or care, or wouldn’t say’: how we investigated the casualties of a covert US war",
-      "link": "https://www.theguardian.com/membership/2026/jun/21/they-didnt-know-or-care-or-wouldnt-say-how-we-investigated-the-casualties-of-a-covert-us-war",
-      "pubDate": "Sun, 21 Jun 2026 09:00:26 GMT",
-      "source": "guardian",
-      "snippet": "When a large number of children were killed during a US drone strike in Somalia last year, two reporters collaborated to piece together what happenedThere are many reasons why some military conflicts ",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Iran says it is closing strait of Hormuz over Israeli strikes in Lebanon",
-      "link": "https://www.theguardian.com/world/2026/jun/20/israeli-strikes-southern-lebanon-reports-renewed-ceasefire",
-      "pubDate": "Sun, 21 Jun 2026 04:44:04 GMT",
-      "source": "guardian",
-      "snippet": "Unclear if threat has been carried out or if move will jeopardise talks with US scheduled for SundayMiddle East latest updatesIran has said it is closing the strait of Hormuz after waves of Israeli st",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Several dead after Israeli joint security forces raid in West Bank",
-      "link": "https://www.cnn.com/2022/10/25/middleeast/israel-forces-raid-nablus-palestine-intl-hnk/index.html",
-      "pubDate": "Tue, 25 Oct 2022 13:58:46 GMT",
-      "source": "cnn",
-      "snippet": "",
+      "title": "Iranian Singer Sentenced to 74 Lashes for Performing Without Hijab",
+      "link": "https://www.nytimes.com/2026/06/23/world/middleeast/iranian-singer-lashing-sentence.html",
+      "pubDate": "Tue, 23 Jun 2026 19:52:15 +0000",
+      "source": "nytimes",
+      "snippet": "Parastoo Ahmadi and her band will also be barred from leaving the country or performing for two years, making clear to Iranians that their new leaders may be just as severe as those killed in the war.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -528,120 +554,89 @@
   "news_digest": {
     "categories": [
       {
-        "category_id": "military",
-        "category_name": "군사 작전",
-        "category_icon": "⚔️",
-        "count": 9,
-        "new_count": 9,
-        "articles": [
-          {
-            "title": "국제해사기구, 호르무즈 발묶인 선원 1만여명 구출작전 착수(종합)",
-            "link": "https://www.yna.co.kr/view/AKR20260624001951085",
-            "source": "yonhap",
-            "sources": [
-              "yonhap"
-            ],
-            "pubDate": "Wed, 24 Jun 2026 07:28:47 +0900",
-            "snippet": "(런던·서울=연합뉴스) 김지연 특파원 김아람 기자 = 유엔 산하 국제해사기구(IMO)가 미국과 이란의 전쟁으로 걸프해역(페르시아만)에 발이 묶인...",
-            "isNew": true
-          },
-          {
-            "title": "‘A hunting ground for foreign regimes’: why violent attacks on dissidents are on the rise in Britain",
-            "link": "https://www.theguardian.com/global-development/ng-interactive/2026/jun/21/a-hunting-ground-for-foreign-regimes-why-violent-attacks-on-dissidents-are-on-the-rise-in-britain",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Sun, 21 Jun 2026 12:00:29 GMT",
-            "snippet": "Iran and China among those accused of targeting critics living in the UK, as arson attack on prime minister Keir Starmer’s properties linked to RussiaAs Pouria Zeraati was crossing the street between ",
-            "isNew": true
-          },
-          {
-            "title": "Four months after the horrific Iran school bombing, fears grow that Trump and Hegseth will bury the truth",
-            "link": "https://www.theguardian.com/world/2026/jun/21/iran-school-bombing-minab-fears-trump-hegseth-bury-truth-investigation-findings",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Sun, 21 Jun 2026 11:04:00 GMT",
-            "snippet": "A secretive investigation into the attack that killed at least 175 has concluded, reports suggest. Will its findings ever see the light of day?The attack on a girls’ elementary school in the Iranian t",
-            "isNew": true
-          },
-          {
-            "title": "‘They didn’t know or care, or wouldn’t say’: how we investigated the casualties of a covert US war",
-            "link": "https://www.theguardian.com/membership/2026/jun/21/they-didnt-know-or-care-or-wouldnt-say-how-we-investigated-the-casualties-of-a-covert-us-war",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Sun, 21 Jun 2026 09:00:26 GMT",
-            "snippet": "When a large number of children were killed during a US drone strike in Somalia last year, two reporters collaborated to piece together what happenedThere are many reasons why some military conflicts ",
-            "isNew": true
-          },
-          {
-            "title": "Iran says it is closing strait of Hormuz over Israeli strikes in Lebanon",
-            "link": "https://www.theguardian.com/world/2026/jun/20/israeli-strikes-southern-lebanon-reports-renewed-ceasefire",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Sun, 21 Jun 2026 04:44:04 GMT",
-            "snippet": "Unclear if threat has been carried out or if move will jeopardise talks with US scheduled for SundayMiddle East latest updatesIran has said it is closing the strait of Hormuz after waves of Israeli st",
-            "isNew": true
-          },
-          {
-            "title": "June 12, 2024 Israel-Hamas war",
-            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-12-24-intl/index.html",
-            "source": "cnn",
-            "sources": [
-              "cnn"
-            ],
-            "pubDate": "",
-            "snippet": "Israel launched strikes on Al-Mawasi in southern Gaza early Thursday, bombarding an area it had previously designated as a \"safe zone\" by land, sea and air, according to the official Palestinian news ",
-            "isNew": true
-          },
-          {
-            "title": "June 6, 2024 Israel-Hamas war",
-            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-06-24/index.html",
-            "source": "cnn",
-            "sources": [
-              "cnn"
-            ],
-            "pubDate": "",
-            "snippet": "Dozens of people were killed in an Israeli airstrike on a United Nations-run school in central Gaza, authorities said, in an attack that CNN analysis found was conducted with a US-made weapon.",
-            "isNew": true
-          },
-          {
-            "title": "May 29, 2024 Israel-Hamas war",
-            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-29-24/index.html",
-            "source": "cnn",
-            "sources": [
-              "cnn"
-            ],
-            "pubDate": "",
-            "snippet": "The Israeli military says it established \"operational control\" over the Philadelphi Corridor, a 14-kilometer (8.7 miles) strip of land along the border between Gaza and Egypt.",
-            "isNew": true
-          },
-          {
-            "title": "May 24, 2024 Israel-Hamas war",
-            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-24-24/index.html",
-            "source": "cnn",
-            "sources": [
-              "cnn"
-            ],
-            "pubDate": "",
-            "snippet": "The United Nations' top court has ordered Israel to immediately halt its controversial military operation in the southern Gaza city of Rafah, further increasing international pressure on Israel over i",
-            "isNew": true
-          }
-        ]
-      },
-      {
         "category_id": "diplomacy",
         "category_name": "외교/협상",
         "category_icon": "🤝",
-        "count": 9,
-        "new_count": 9,
+        "count": 10,
+        "new_count": 10,
         "articles": [
+          {
+            "title": "Iran war live: Trump, Tehran at odds over nuclear inspections, Hormuz",
+            "link": "https://www.aljazeera.com/news/liveblog/2026/6/24/iran-war-live-trump-tehran-at-odds-over-nuclear-inspections-hormuz?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Wed, 24 Jun 2026 00:00:00 +0000",
+            "snippet": "US and Iran offer conflicting statements as negotiators push towards reaching a final, comprehensive deal.",
+            "isNew": true
+          },
+          {
+            "title": "U.N. Report Says Israeli Killings of Gaza Children Post-Truce Amount to Genocide",
+            "link": "https://www.nytimes.com/2026/06/23/world/middleeast/un-report-israel-palestinian-children.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Tue, 23 Jun 2026 21:29:17 +0000",
+            "snippet": "Israel’s U.N. mission dismissed the report as a “libelous sham,” and called the investigating commission a “fundamentally flawed mechanism.”",
+            "isNew": true
+          },
+          {
+            "title": "U.S. and Iran’s Conflicting Claims on Nuclear Inspection Show Challenge Ahead",
+            "link": "https://www.nytimes.com/2026/06/23/world/middleeast/diverging-accounts-iran-nuclear-inspections.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Tue, 23 Jun 2026 14:33:59 +0000",
+            "snippet": "President Trump said that in the latest round of peace talks, Iran had agreed to full inspection of its nuclear sites. Iran’s government said it had not.",
+            "isNew": true
+          },
+          {
+            "title": "After Wars and False Starts, Cautious Optimism for U.S.-Iran Talks",
+            "link": "https://www.nytimes.com/2026/06/23/world/middleeast/united-states-iran-talks-optimism.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Tue, 23 Jun 2026 14:02:39 +0000",
+            "snippet": "Tehran and Washington face myriad negotiating pitfalls. But both sides are exhausted and running out of options. They may finally need a deal.",
+            "isNew": true
+          },
+          {
+            "title": "Iran says no new commitments on nuclear sites after Vance says inspectors to be invited back",
+            "link": "https://www.bbc.co.uk/news/articles/c3vy3nr63gxo?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc"
+            ],
+            "pubDate": "Tue, 23 Jun 2026 12:14:58 GMT",
+            "snippet": "Iran's foreign ministry says it made \"no new commitments\" on nuclear inspections after talks in Switzerland.",
+            "isNew": true
+          },
+          {
+            "title": "Vance Claims Progress in First Day of Iran Talks",
+            "link": "https://www.nytimes.com/2026/06/22/world/middleeast/vance-iran-talks-progress.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Mon, 22 Jun 2026 20:47:37 +0000",
+            "snippet": "Vice President JD Vance, the lead U.S. negotiator, said the two sides had agreed on technical issues and at least one substantive one, international inspection of Iranian nuclear sites, but an Iranian",
+            "isNew": true
+          },
+          {
+            "title": "First round of US-Iran talks ends with encouraging progress, mediators say",
+            "link": "https://www.bbc.co.uk/news/articles/cwy0q41v1lzo?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc"
+            ],
+            "pubDate": "Mon, 22 Jun 2026 10:46:45 GMT",
+            "snippet": "The US-Iran talks began on Sunday in Switzerland, after last week's agreement, which includes a commitment to reach a final deal within 60 days.",
+            "isNew": true
+          },
           {
             "title": "Iran’s regime survived the war. Can it make peace with its own people?",
             "link": "https://www.theguardian.com/world/2026/jun/22/iran-regime-survived-war-make-peace-with-own-people",
@@ -674,159 +669,6 @@
             "pubDate": "Sun, 21 Jun 2026 22:07:57 GMT",
             "snippet": "Objections come as Trump threatens to renew attacks on Iran if it doesn’t rein in its proxy in LebanonUS political figures from left and right voiced fresh objections on Sunday to Donald Trump’s provi",
             "isNew": true
-          },
-          {
-            "title": "Middle East live: US-Iran peace talks underway as strait of Hormuz remains closed",
-            "link": "https://www.theguardian.com/world/live/2026/jun/21/iran-us-israel-war-middle-east-lebanon-peace-talks-switzerland-vance-trump-strait-of-hormuz-latest-news-updates",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Sun, 21 Jun 2026 17:52:33 GMT",
-            "snippet": "This live blog is now closed.Trump threatens fresh attacks on Iran as peace talks take place in SwitzerlandThere ⁠was and is ‘no restriction’ on ⁠Israeli ⁠soldiers ​to act to eliminate ⁠threats in Leb",
-            "isNew": true
-          },
-          {
-            "title": "The Guardian view on Israel and the West Bank: allies must protect Palestinian lives and livelihoods | Editorial",
-            "link": "https://www.theguardian.com/commentisfree/2026/jun/21/the-guardian-view-on-israel-and-the-west-bank-allies-must-protect-palestinian-lives-and-livelihoods",
-            "source": "guardian",
-            "sources": [
-              "guardian",
-              "cnn"
-            ],
-            "pubDate": "Sun, 21 Jun 2026 16:30:35 GMT",
-            "snippet": "Rocketing violence and an economic chokehold have been overshadowed by conflict elsewhere, but the UK and others must stop looking awayThe “ceasefire” in Gaza is a “cruel and deadly illusion”, warned ",
-            "isNew": true
-          },
-          {
-            "title": "Secret correspondence claims suggest tensions at top of Iranian government",
-            "link": "https://www.theguardian.com/world/2026/jun/21/secret-correspondence-iranian-government-tensions-supreme-leader",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Sun, 21 Jun 2026 15:56:15 GMT",
-            "snippet": "Former negotiating team member gives shock interview claiming supreme leader’s instructions were not followedMiddle East crisis – live updatesA former member of Iran’s negotiating team in the previous",
-            "isNew": true
-          },
-          {
-            "title": "JD Vance meets Pakistan delegation before Iran talks in Switzerland – video",
-            "link": "https://www.theguardian.com/world/video/2026/jun/21/jd-vance-meets-pakistan-delegation-before-iran-talks-in-switzerland-video",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Sun, 21 Jun 2026 11:19:18 GMT",
-            "snippet": "The US vice-president and special envoys Steve Witkoff and Jared Kushner met Pakistan's prime minister, Shehbaz Sharif, and the head of the country's army, Field Marshal Asim Munir, at the Bürgenstock",
-            "isNew": true
-          },
-          {
-            "title": "June 13, 2024 Israel-Hamas war",
-            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-13-24/index.html",
-            "source": "cnn",
-            "sources": [
-              "cnn"
-            ],
-            "pubDate": "",
-            "snippet": "The US-backed Gaza ceasefire proposal doesn't meet Hamas' demands for an end to the war, a senior official has told CNN. Osama Hamdan also said that \"no one has an idea\" how many of the hostages held ",
-            "isNew": true
-          },
-          {
-            "title": "June 10, 2024 Israel-Hamas war",
-            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-10-24/index.html",
-            "source": "cnn",
-            "sources": [
-              "cnn"
-            ],
-            "pubDate": "",
-            "snippet": "The UN Security Council adopted a resolution proposed by the United States for a permanent ceasefire and release of the hostages in Gaza.",
-            "isNew": true
-          }
-        ]
-      },
-      {
-        "category_id": "humanitarian",
-        "category_name": "인도주의/피해",
-        "category_icon": "🏥",
-        "count": 7,
-        "new_count": 7,
-        "articles": [
-          {
-            "title": "Several dead after Israeli joint security forces raid in West Bank",
-            "link": "https://www.cnn.com/2022/10/25/middleeast/israel-forces-raid-nablus-palestine-intl-hnk/index.html",
-            "source": "cnn",
-            "sources": [
-              "cnn"
-            ],
-            "pubDate": "Tue, 25 Oct 2022 13:58:46 GMT",
-            "snippet": "",
-            "isNew": true
-          },
-          {
-            "title": "June 9, 2024 Israel-Hamas war",
-            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-09-24/index.html",
-            "source": "cnn",
-            "sources": [
-              "cnn"
-            ],
-            "pubDate": "",
-            "snippet": "Key Israeli war cabinet member Benny Gantz quit Prime Minister Benjamin Netanyahu's government Sunday. Meanwhile, the death toll from Israel's hostage rescue in central Gaza keeps rising. Follow for l",
-            "isNew": true
-          },
-          {
-            "title": "June 8, 2024 - Israel-Gaza news",
-            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-08-24/index.html",
-            "source": "cnn",
-            "sources": [
-              "cnn"
-            ],
-            "pubDate": "",
-            "snippet": "The Israeli military says it rescued four hostages from central Gaza on Saturday. Palestinians report scenes of horror on the ground, and Gaza hospital officials say more than 200 people were killed.",
-            "isNew": true
-          },
-          {
-            "title": "May 19, 2024 - Israel-Gaza news",
-            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-19-24/index.html",
-            "source": "cnn",
-            "sources": [
-              "cnn"
-            ],
-            "pubDate": "",
-            "snippet": "An Israeli airstrike on a refugee camp in central Gaza has killed at least 35 people, including seven children, according to hospital officials. Meanwhile, Israeli war cabinet divisions are spilling i",
-            "isNew": true
-          },
-          {
-            "title": "Devastation in Gaza as Israel wages war on Hamas",
-            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-18-24/index.html",
-            "source": "cnn",
-            "sources": [
-              "cnn"
-            ],
-            "pubDate": "",
-            "snippet": "Gaza faces a \"dire\" food situation as barely more than 300 aid trucks have entered the strip since Israel began its offensive in Rafah, a UN agency said in a report published Friday. Follow live updat",
-            "isNew": true
-          },
-          {
-            "title": "May 14, 2024 Israel-Hamas war",
-            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-14-24/index.html",
-            "source": "cnn",
-            "sources": [
-              "cnn"
-            ],
-            "pubDate": "",
-            "snippet": "Amid signs that Israel may launch a full-scale incursion in Rafah, aid agencies are warning any escalation in the southern Gaza city risks exacerbating the already deteriorating humanitarian situation",
-            "isNew": true
-          },
-          {
-            "title": "U.S. Eases Travel Restrictions on Iran’s World Cup Team",
-            "link": "https://www.nytimes.com/2026/06/23/us/iran-world-cup-travel-restrictions.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Tue, 23 Jun 2026 22:19:05 +0000",
-            "snippet": "The Iranians will be allowed to enter the United States two days, instead of one, before a pivotal game in Seattle on Friday, officials said.",
-            "isNew": true
           }
         ]
       },
@@ -834,42 +676,9 @@
         "category_id": "politics",
         "category_name": "국내 정치",
         "category_icon": "🏛️",
-        "count": 6,
-        "new_count": 6,
+        "count": 10,
+        "new_count": 10,
         "articles": [
-          {
-            "title": "June 1, 2024 - Israel-Gaza news",
-            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-01-24/index.html",
-            "source": "cnn",
-            "sources": [
-              "cnn"
-            ],
-            "pubDate": "",
-            "snippet": "President Joe Biden has laid out a three-phase proposal to end the conflict in Gaza, as global condemnation of Israel's offensive in Rafah grows.",
-            "isNew": true
-          },
-          {
-            "title": "May 21, 2024 Israel-Hamas war, Iran president death news",
-            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-21-24/index.html",
-            "source": "cnn",
-            "sources": [
-              "cnn"
-            ],
-            "pubDate": "",
-            "snippet": "Prime Minister Benjamin Netanyahu blasted the charges brought by the International Criminal Court against himself and Israel's defense minister as \"beyond outrageous\" in an interview Tuesday with CNN'",
-            "isNew": true
-          },
-          {
-            "title": "May 19, 2024 helicopter crash involving Iranian president",
-            "link": "https://www.cnn.com/middleeast/live-news/raisi-iran-president-helicopter-crash/index.html",
-            "source": "cnn",
-            "sources": [
-              "cnn"
-            ],
-            "pubDate": "",
-            "snippet": "A helicopter carrying Iranian President Ebrahim Raisi crashed while he was visiting a northern region in the country Sunday, according to the Iranian state news agency IRNA.",
-            "isNew": true
-          },
           {
             "title": "Trump Is Making Big Claims About the Iran Talks. Iran Keeps Contradicting Him.",
             "link": "https://www.nytimes.com/2026/06/23/us/politics/trump-iran-talks-contradictions.html",
@@ -877,19 +686,8 @@
             "sources": [
               "nytimes"
             ],
-            "pubDate": "Tue, 23 Jun 2026 21:56:42 +0000",
+            "pubDate": "Wed, 24 Jun 2026 00:38:49 +0000",
             "snippet": "President Trump appears to be describing his preferences as fully negotiated deals, in hopes of locking the Iranians in. The question is whether a succession of such disputes will sink the whole ventu",
-            "isNew": true
-          },
-          {
-            "title": "Senate approves war powers resolution aimed at reining in Trump on Iran war",
-            "link": "https://www.ft.com/content/75fbdc7f-73a8-4a7a-a49d-738d75ad8d1a",
-            "source": "ft",
-            "sources": [
-              "ft"
-            ],
-            "pubDate": "Tue, 23 Jun 2026 21:45:50 GMT",
-            "snippet": "Largely symbolic resolution is a sign of disquiet over the US president’s handling of the conflict ",
             "isNew": true
           },
           {
@@ -902,6 +700,331 @@
             "pubDate": "Tue, 23 Jun 2026 21:44:47 +0000",
             "snippet": "FIFA president Gianni Infantino will be &#039;enjoying the final&#039; with Trump and present the trophy together on July 19.",
             "isNew": true
+          },
+          {
+            "title": "Trump allies reassure Israelis amid tensions on US-Iran deal",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/6/23/trump-allies-reassure-israelis-amid-tensions-on-us-iran-deal?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Tue, 23 Jun 2026 21:19:35 +0000",
+            "snippet": "Trump allies reassure Israelis amid tensions on US-Iran deal\n",
+            "isNew": true
+          },
+          {
+            "title": "Trump disputes Iran’s rejection of nuclear inspectors",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/6/23/trump-disputes-irans-rejection-of-nuclear-inspectors?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Tue, 23 Jun 2026 20:11:28 +0000",
+            "snippet": "President Trump pushed back on Iran’s foreign ministry claim that there are no plans to allow IAEA nuclear inspectors.",
+            "isNew": true
+          },
+          {
+            "title": "Sanchez warns he ‘will not recognise’ Fujimori victory in Peru election",
+            "link": "https://www.aljazeera.com/news/2026/6/23/sanchez-warns-he-will-not-recognise-fujimori-victory-in-peru-election?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Tue, 23 Jun 2026 20:03:56 +0000",
+            "snippet": "The left-wing candidate has called for voting results from 119 consular offices to be nullified over a procedure change.",
+            "isNew": true
+          },
+          {
+            "title": "U.S. Temporarily Lifts Oil Sanctions Against Iran, Citing ‘Productive’ Talks",
+            "link": "https://www.nytimes.com/2026/06/22/world/middleeast/us-iran-oil-sanctions.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes",
+              "aljazeera"
+            ],
+            "pubDate": "Tue, 23 Jun 2026 18:35:02 +0000",
+            "snippet": "President Trump and Vice President JD Vance pointed to progress on Iran’s nuclear program, but officials in Tehran said “no new commitments” had been made.",
+            "isNew": true
+          },
+          {
+            "title": "US Senate votes to pass Iran war powers resolution in blow to Trump",
+            "link": "https://www.aljazeera.com/news/2026/6/23/us-senate-votes-to-halt-iran-war-bucking-trump?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Tue, 23 Jun 2026 19:50:29 +0000",
+            "snippet": "The resolution is the first to pass both the Senate and the House, though it is likely to face a presidential veto.",
+            "isNew": true
+          },
+          {
+            "title": "UK prioritised ties with UAE over averting mass atrocities in Sudan, MPs to be told",
+            "link": "https://www.theguardian.com/global-development/2026/jun/23/uk-ties-uae-mass-atrocities-sudan-mps-select-committee-nathaniel-raymond",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Tue, 23 Jun 2026 13:15:28 GMT",
+            "snippet": "Foreign Office failed to act on warnings of genocide due to ‘pressure’ from emirates, Yale human rights investigator will tell a parliamentary select committeeThe British government had received intel",
+            "isNew": true
+          },
+          {
+            "title": "In Iran, Trump’s victory claims only deepened a self-made catastrophe | Sidney Blumenthal",
+            "link": "https://www.theguardian.com/commentisfree/2026/jun/23/trump-iran-victory-rationale",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Tue, 23 Jun 2026 10:00:25 GMT",
+            "snippet": "What the US president succeeded in obliterating was any rationale he offered for going to warBefore Donald Trump finally surrendered in his Iran war, he declared victory several dozen times, including",
+            "isNew": true
+          },
+          {
+            "title": "As Vance Leads Iran Negotiations, Trump Creates Disruptions in His Path",
+            "link": "https://www.nytimes.com/2026/06/22/us/politics/jd-vance-iran-negotiations.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Tue, 23 Jun 2026 09:46:32 +0000",
+            "snippet": "Vice President JD Vance is in a politically precarious spot.",
+            "isNew": true
+          }
+        ]
+      },
+      {
+        "category_id": "military",
+        "category_name": "군사 작전",
+        "category_icon": "⚔️",
+        "count": 7,
+        "new_count": 7,
+        "articles": [
+          {
+            "title": "UN begins evacuation of 11,000 sailors stranded in Strait of Hormuz",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/6/23/un-begins-evacuation-of-11000-sailors-stranded-in-strait-of-hormuz?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Tue, 23 Jun 2026 23:49:00 +0000",
+            "snippet": "The UN&#039;s maritime agency launched an operation to evacuate more than 11,000 sailors stranded in the Strait of Hormuz.",
+            "isNew": true
+          },
+          {
+            "title": "Displaced Lebanese return south under fragile ceasefire deal",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/6/23/displaced-lebanese-return-south-under-fragile-ceasefire-deal?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Tue, 23 Jun 2026 19:04:20 +0000",
+            "snippet": "Displaced Lebanese are heading back south after a US-Iran backed ceasefire halted months of Israeli bombardment.",
+            "isNew": true
+          },
+          {
+            "title": "Video: Israeli troops seen patrolling Syrian countryside",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/6/23/video-israeli-troops-seen-patrolling-syrian-countryside?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Tue, 23 Jun 2026 18:56:08 +0000",
+            "snippet": "Israeli troops and two Merkava tanks have been spotted in the Syrian countryside near Quneitra city. ",
+            "isNew": true
+          },
+          {
+            "title": "Israeli troops kill two in south Lebanon after lull in fighting, authorities say",
+            "link": "https://www.bbc.co.uk/news/articles/c36ykpw0yego?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc"
+            ],
+            "pubDate": "Tue, 23 Jun 2026 16:47:45 GMT",
+            "snippet": "Israel's military says the two men were Hezbollah operatives, but the Iran-backed group accuses it of a ceasefire violation.",
+            "isNew": true
+          },
+          {
+            "title": "Iran Makes Moves to Assert Control Over the Strait of Hormuz",
+            "link": "https://www.nytimes.com/2026/06/23/world/middleeast/iran-control-strait-of-hormuz.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Tue, 23 Jun 2026 09:01:32 +0000",
+            "snippet": "After Iran weaponized the waterway by making it too dangerous for businesses, experts say, the country is now looking to charge fees to vessels seeking to transit the vital water.",
+            "isNew": true
+          },
+          {
+            "title": "Vance Says Iran Will Allow Nuclear Watchdog to Restart Inspections",
+            "link": "https://www.nytimes.com/2026/06/22/world/middleeast/vance-iran-nuclear-inspections.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Mon, 22 Jun 2026 16:29:16 +0000",
+            "snippet": "Vice President JD Vance said Iran had agreed to invite experts from the U.N. agency to resume operations in the country. Tehran and the nuclear watchdog have not commented.",
+            "isNew": true
+          },
+          {
+            "title": "Explosion at Qatar Gas Plant Kills at Least 13 and Injures 66",
+            "link": "https://www.nytimes.com/2026/06/22/world/middleeast/qatar-explosion-gas.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Mon, 22 Jun 2026 14:09:44 +0000",
+            "snippet": "The blast happened at a key site for natural gas production. The authorities blamed a technical malfunction while operations were being restarted after the U.S.-Israeli war against Iran.",
+            "isNew": true
+          }
+        ]
+      },
+      {
+        "category_id": "economy",
+        "category_name": "경제 영향",
+        "category_icon": "📊",
+        "count": 7,
+        "new_count": 7,
+        "articles": [
+          {
+            "title": "UN starts evacuating 11,000 stranded sailors from Strait of Hormuz",
+            "link": "https://www.aljazeera.com/news/2026/6/23/un-starts-evacuating-11000-stranded-sailors-from-strait-of-hormuz?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Tue, 23 Jun 2026 21:00:32 +0000",
+            "snippet": "Following the start of the US-Israel war on Iran on February 28, Tehran had effectively closed off the vital waterway.",
+            "isNew": true
+          },
+          {
+            "title": "In Middle East, Rubio Says ‘No Country’ Can Charge for Hormuz Traffic",
+            "link": "https://www.nytimes.com/2026/06/23/world/middleeast/rubio-strait-of-hormuz-charges-traffic.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Tue, 23 Jun 2026 19:18:59 +0000",
+            "snippet": "The secretary of state dismissed Iran’s talk of charging ships to pass through the vital Persian Gulf portal as prohibited under international law.",
+            "isNew": true
+          },
+          {
+            "title": "U.N. Sets Plan to Evacuate Stranded Ships Out of Persian Gulf",
+            "link": "https://www.nytimes.com/2026/06/23/world/middleeast/imo-persian-gulf-stranded-ships.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Tue, 23 Jun 2026 17:25:01 +0000",
+            "snippet": "The International Maritime Organization, working with multiple countries, said it has ensured that vessels can sail safely through the Strait of Hormuz after months of being idled.",
+            "isNew": true
+          },
+          {
+            "title": "Dozens of ships head through Strait of Hormuz after US-Iran deal",
+            "link": "https://www.bbc.co.uk/news/articles/cx23rnzdgl8o?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc"
+            ],
+            "pubDate": "Tue, 23 Jun 2026 14:55:31 GMT",
+            "snippet": "Traffic in the waterway has risen since the US and Iran signed a deal aimed at ending the war, including 42 ships on Saturday alone.",
+            "isNew": true
+          },
+          {
+            "title": "‘Compound shock effect’: why the Middle East crisis and El Niño could spell disaster in south-east Asia",
+            "link": "https://www.theguardian.com/environment/2026/jun/23/iran-war-oil-prices-hormuz-el-nino-south-east-asia-impact",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Tue, 23 Jun 2026 04:39:55 GMT",
+            "snippet": "Millions of tonnes of the world’s food could be lost amid the uncertainties surrounding the strait of Hormuz and the dangers of a ‘Godzilla-strength’ El Niño  When the US and Israel launched the war o",
+            "isNew": true
+          },
+          {
+            "title": "U.S. Temporarily Lifts Sanctions on Iranian Oil",
+            "link": "https://www.nytimes.com/2026/06/22/world/middleeast/us-sanctions-reprieve-iran-oil.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Mon, 22 Jun 2026 17:30:35 +0000",
+            "snippet": "In a sharp reversal of American policy, the Treasury announced a 60-day reprieve, permitting the sale of Iranian crude as part of the preliminary U.S.-Iran deal toward ending the war.",
+            "isNew": true
+          },
+          {
+            "title": "Iran agrees to UN nuclear inspectors’ return as part of agreement with US",
+            "link": "https://www.theguardian.com/world/2026/jun/22/iran-us-talks-progress-pakistan-qatar-lebanon-israel",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Mon, 22 Jun 2026 16:42:35 GMT",
+            "snippet": "Other measures include Washington lifting sanctions on Tehran’s oil exports and reopening the strait of HormuzIran has agreed to allow UN nuclear inspectors back into the country as part of an agreeme",
+            "isNew": true
+          }
+        ]
+      },
+      {
+        "category_id": "regional",
+        "category_name": "지역 정세",
+        "category_icon": "🌍",
+        "count": 5,
+        "new_count": 5,
+        "articles": [
+          {
+            "title": "Rubio begins Gulf visit in the UAE to advance US-Iran peace deal",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/6/23/rubio-begins-gulf-visit-in-the-uae-to-advance-us-iran-peace-deal?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Tue, 23 Jun 2026 20:06:02 +0000",
+            "snippet": "Arriving in the UAE at the start of a Gulf tour, Rubio is seeking to advance the US-Iran deal with regional partners. ",
+            "isNew": true
+          },
+          {
+            "title": "US says Iran can stay for two days before Egypt World Cup game",
+            "link": "https://www.aljazeera.com/sports/2026/6/23/us-says-iran-can-stay-for-two-days-before-egypt-world-cup-game?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Tue, 23 Jun 2026 19:45:31 +0000",
+            "snippet": "Iran&#039;s team will still need to leave the US shortly after their third group-stage match against Egypt on Friday. ",
+            "isNew": true
+          },
+          {
+            "title": "Rubio insists strait of Hormuz will be toll-free as he arrives for Gulf meeting",
+            "link": "https://www.theguardian.com/world/2026/jun/23/marco-rubio-gulf-allies-us-iran-ceasefire-deal",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Tue, 23 Jun 2026 18:37:39 GMT",
+            "snippet": "US secretary of state seeks to reassure UAE, Kuwait and Bahrain over security and US-Iran ceasefire dealThe US secretary of state, Marco Rubio, has said no country, including Iran, would be allowed to",
+            "isNew": true
+          },
+          {
+            "title": "Israeli Soldiers Fatally Shoot 2 People in Southern Lebanon, Health Officials Say",
+            "link": "https://www.nytimes.com/2026/06/23/world/middleeast/israel-soldiers-lebanon-shooting-hezbollah.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Tue, 23 Jun 2026 15:11:37 +0000",
+            "snippet": "The shooting came a day after Israeli troops began operating under new orders intended to reduce the risk of flare-ups in its conflict with Iran-backed Hezbollah militants.",
+            "isNew": true
+          },
+          {
+            "title": "The Guardrails Designed to Protect U.S.-Iran Talks",
+            "link": "https://www.nytimes.com/2026/06/22/world/middleeast/will-do-iran-us-peace-talks-lebanon-hormuz.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Mon, 22 Jun 2026 14:45:27 +0000",
+            "snippet": "The U.S. and Iran have agreed to set up a Strait of Hormuz hotline and a “de-confliction cell” for Lebanon, according to mediators from Pakistan and Qatar.",
+            "isNew": true
           }
         ]
       },
@@ -909,8 +1032,8 @@
         "category_id": "other",
         "category_name": "기타",
         "category_icon": "📰",
-        "count": 4,
-        "new_count": 4,
+        "count": 5,
+        "new_count": 5,
         "articles": [
           {
             "title": "Israel’s deliberate targeting of Palestinian children",
@@ -924,107 +1047,199 @@
             "isNew": true
           },
           {
-            "title": "May 30, 2024 Israel-Hamas war",
-            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-30-24/index.html",
-            "source": "cnn",
-            "sources": [
-              "cnn"
-            ],
-            "pubDate": "",
-            "snippet": "The war in Gaza will likely continue until at least the end of the year, an Israeli official warned.",
-            "isNew": true
-          },
-          {
-            "title": "May 22, 2024 Israel-Hamas war",
-            "link": "https://www.cnn.com/middleeast/live-news/iran-israel-hamas-war-gaza-news-05-22-24/index.html",
-            "source": "cnn",
-            "sources": [
-              "cnn"
-            ],
-            "pubDate": "",
-            "snippet": "Spain, Norway and Ireland announced plans to formally recognize a Palestinian state, in a move that is likely to bolster the global Palestinian cause but strain relations with Israel.",
-            "isNew": true
-          },
-          {
-            "title": "UN: Israel committed genocide by targeting Gaza children",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/6/23/un-israel-committed-genocide-by-targeting-gaza-children?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Tue, 23 Jun 2026 21:38:23 +0000",
-            "snippet": "Israel deliberately targeted Palestinian children in Gaza, resulting in genocide.",
-            "isNew": true
-          }
-        ]
-      },
-      {
-        "category_id": "economy",
-        "category_name": "경제 영향",
-        "category_icon": "📊",
-        "count": 3,
-        "new_count": 3,
-        "articles": [
-          {
-            "title": "Iran agrees to UN nuclear inspectors’ return as part of agreement with US",
-            "link": "https://www.theguardian.com/world/2026/jun/22/iran-us-talks-progress-pakistan-qatar-lebanon-israel",
+            "title": "Israel continues to commit genocide by targeting children in Gaza, UN inquiry finds",
+            "link": "https://www.theguardian.com/world/2026/jun/23/israel-deliberately-targeting-gaza-children-to-commit-genocide-un-inquiry-finds",
             "source": "guardian",
             "sources": [
               "guardian",
-              "cnn"
+              "aljazeera"
             ],
-            "pubDate": "Mon, 22 Jun 2026 16:42:35 GMT",
-            "snippet": "Other measures include Washington lifting sanctions on Tehran’s oil exports and reopening the strait of HormuzIran has agreed to allow UN nuclear inspectors back into the country as part of an agreeme",
+            "pubDate": "Tue, 23 Jun 2026 18:56:11 GMT",
+            "snippet": "Independent report says by aiming at children Israel is undermining capacity of Palestinian people to existIsrael continues to commit genocide by deliberately targeting Palestinian children in Gaza, a",
             "isNew": true
           },
           {
-            "title": "Hormuz closure strands almost 1,200 cargo ships with $125bn worth of goods",
-            "link": "https://www.ft.com/content/4d3dd2b7-cb6b-410b-8c15-203904f32294",
-            "source": "ft",
+            "title": "Department of Homeland Security will allow Iran to travel to US early for World Cup match",
+            "link": "https://www.theguardian.com/football/2026/jun/23/department-of-homeland-security-will-allow-iran-to-travel-to-us-early-for-world-cup-match",
+            "source": "guardian",
             "sources": [
-              "ft"
+              "guardian"
             ],
-            "pubDate": "Tue, 23 Jun 2026 23:01:03 GMT",
-            "snippet": "‘Unprecedented’ blockade of the strait raises concerns about the future of global maritime trade, says insurer Allianz",
+            "pubDate": "Tue, 23 Jun 2026 16:57:15 GMT",
+            "snippet": "Iran will be allowed into US 48 hours before crucial gameTeam Melli have complained about travel conditionsThe US Department of Homeland Security (DHS) says it will grant Iran extra time to prepare fo",
             "isNew": true
           },
           {
-            "title": "걸프국 순방 美국무 \"호르무즈는 국제수로…통행료 부과못해\"(종합)",
-            "link": "https://www.yna.co.kr/view/AKR20260624003251071",
-            "source": "yonhap",
+            "title": "UN commission of inquiry says Israel committing genocide in Gaza by deliberately targeting children",
+            "link": "https://www.bbc.co.uk/news/articles/c0jy96w6pw2o?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
             "sources": [
-              "yonhap"
+              "bbc"
             ],
-            "pubDate": "Wed, 24 Jun 2026 07:01:50 +0900",
-            "snippet": "(워싱턴=연합뉴스) 홍정규 특파원 = 마코 루비오 미국 국무부 장관은 23일(현지시간) 호르무즈 해협에 대해 &quot;그곳은 국제수로&quot;라며 이란의 통행...",
+            "pubDate": "Tue, 23 Jun 2026 11:10:06 GMT",
+            "snippet": "Israel rejects the new report by the three-member expert panel, calling it a \"libellous sham\".",
+            "isNew": true
+          },
+          {
+            "title": "Iran Team Leaves Locker Room Note: The ‘Spirit of Iran Remains Alive and Steadfast’",
+            "link": "https://www.nytimes.com/2026/06/22/world/middleeast/iran-world-cup-locker-room-note.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Mon, 22 Jun 2026 22:47:27 +0000",
+            "snippet": "After fighting Belgium to a draw for one of Iran’s best World Cup results, the Iranians had a note for their fans and the world.",
             "isNew": true
           }
         ]
       },
       {
-        "category_id": "regional",
-        "category_name": "지역 정세",
-        "category_icon": "🌍",
-        "count": 1,
-        "new_count": 1,
+        "category_id": "humanitarian",
+        "category_name": "인도주의/피해",
+        "category_icon": "🏥",
+        "count": 4,
+        "new_count": 4,
         "articles": [
           {
-            "title": "June 5, 2024 Israel-Hamas war",
-            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-05-24/index.html",
-            "source": "cnn",
+            "title": "U.S. Eases Travel Restrictions on Iran’s World Cup Team",
+            "link": "https://www.nytimes.com/2026/06/23/us/iran-world-cup-travel-restrictions.html",
+            "source": "nytimes",
             "sources": [
-              "cnn"
+              "nytimes"
             ],
-            "pubDate": "",
-            "snippet": "Tensions are ramping up at the Israel-Lebanon border, with Hezbollah claiming responsibility for a Wednesday evening attack in northern Israel that left multiple people injured.",
+            "pubDate": "Tue, 23 Jun 2026 22:19:05 +0000",
+            "snippet": "The Iranians will be allowed to enter the United States two days, instead of one, before a pivotal game in Seattle on Friday, officials said.",
+            "isNew": true
+          },
+          {
+            "title": "Iranian Singer Sentenced to 74 Lashes for Performing Without Hijab",
+            "link": "https://www.nytimes.com/2026/06/23/world/middleeast/iranian-singer-lashing-sentence.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Tue, 23 Jun 2026 19:52:15 +0000",
+            "snippet": "Parastoo Ahmadi and her band will also be barred from leaving the country or performing for two years, making clear to Iranians that their new leaders may be just as severe as those killed in the war.",
+            "isNew": true
+          },
+          {
+            "title": "Middle East crisis: Rubio and Vance hold call with Lebanon’s president; Trump claims Iran has agreed to nuclear inspections ‘long into future’ – as it happened",
+            "link": "https://www.theguardian.com/world/live/2026/jun/23/iran-us-israel-lebanon-un-peace-deal-nuclear-iaea-frozen-assets-strait-of-hormuz-latest-news-updates",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Tue, 23 Jun 2026 15:39:40 GMT",
+            "snippet": "US secretary of state and vice-president said to have discussed ceasefire monitoring body; Trump says Tehran has committed to ‘nuclear honesty’Oman and Iran said in a statement that the two countries ",
+            "isNew": true
+          },
+          {
+            "title": "US-Iran talks laid ‘very good foundation for a successful final deal’, says Vance – as happened",
+            "link": "https://www.theguardian.com/world/live/2026/jun/22/middle-east-crisis-iran-us-peace-talks-switzerland-strait-of-hormuz-latest-news-updates",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Mon, 22 Jun 2026 16:43:23 GMT",
+            "snippet": "The vice president said the move represented a ‘major milestone’ in ending Iran’s nuclear programmeAccording to Palestinian news agency Wafa, a high school student was killed and several other civilia",
             "isNew": true
           }
         ]
       }
     ],
     "recent_30min": {
-      "total_new": 49,
+      "total_new": 50,
       "by_category": {
+        "politics": {
+          "count": 10,
+          "titles": [
+            {
+              "title": "Trump Is Making Big Claims About the Iran Talks. Iran Keeps Contradicting Him.",
+              "link": "https://www.nytimes.com/2026/06/23/us/politics/trump-iran-talks-contradictions.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Donald Trump to attend World Cup final, present trophy: Infantino",
+              "link": "https://www.aljazeera.com/sports/2026/6/23/donald-trump-to-attend-world-cup-final-present-trophy-infantino?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Trump allies reassure Israelis amid tensions on US-Iran deal",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/6/23/trump-allies-reassure-israelis-amid-tensions-on-us-iran-deal?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Trump disputes Iran’s rejection of nuclear inspectors",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/6/23/trump-disputes-irans-rejection-of-nuclear-inspectors?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Sanchez warns he ‘will not recognise’ Fujimori victory in Peru election",
+              "link": "https://www.aljazeera.com/news/2026/6/23/sanchez-warns-he-will-not-recognise-fujimori-victory-in-peru-election?traffic_source=rss",
+              "source": "aljazeera"
+            }
+          ]
+        },
+        "diplomacy": {
+          "count": 11,
+          "titles": [
+            {
+              "title": "Iran war live: Trump, Tehran at odds over nuclear inspections, Hormuz",
+              "link": "https://www.aljazeera.com/news/liveblog/2026/6/24/iran-war-live-trump-tehran-at-odds-over-nuclear-inspections-hormuz?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "U.N. Report Says Israeli Killings of Gaza Children Post-Truce Amount to Genocide",
+              "link": "https://www.nytimes.com/2026/06/23/world/middleeast/un-report-israel-palestinian-children.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Iran’s president arrives in Pakistan for peace talks",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/6/23/irans-president-arrives-in-pakistan-for-peace-talks?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "U.S. and Iran’s Conflicting Claims on Nuclear Inspection Show Challenge Ahead",
+              "link": "https://www.nytimes.com/2026/06/23/world/middleeast/diverging-accounts-iran-nuclear-inspections.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "After Wars and False Starts, Cautious Optimism for U.S.-Iran Talks",
+              "link": "https://www.nytimes.com/2026/06/23/world/middleeast/united-states-iran-talks-optimism.html",
+              "source": "nytimes"
+            }
+          ]
+        },
+        "military": {
+          "count": 7,
+          "titles": [
+            {
+              "title": "UN begins evacuation of 11,000 sailors stranded in Strait of Hormuz",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/6/23/un-begins-evacuation-of-11000-sailors-stranded-in-strait-of-hormuz?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Displaced Lebanese return south under fragile ceasefire deal",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/6/23/displaced-lebanese-return-south-under-fragile-ceasefire-deal?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Video: Israeli troops seen patrolling Syrian countryside",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/6/23/video-israeli-troops-seen-patrolling-syrian-countryside?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Israeli troops kill two in south Lebanon after lull in fighting, authorities say",
+              "link": "https://www.bbc.co.uk/news/articles/c36ykpw0yego?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
+            },
+            {
+              "title": "Iran Makes Moves to Assert Control Over the Strait of Hormuz",
+              "link": "https://www.nytimes.com/2026/06/23/world/middleeast/iran-control-strait-of-hormuz.html",
+              "source": "nytimes"
+            }
+          ]
+        },
         "other": {
           "count": 6,
           "titles": [
@@ -1034,174 +1249,109 @@
               "source": "aljazeera"
             },
             {
-              "title": "Iran",
-              "link": "https://www.cnn.com/specials/middleeast/iran?utm_source=section",
-              "source": "cnn"
+              "title": "UN: Israel committed genocide by targeting Gaza children",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/6/23/un-israel-committed-genocide-by-targeting-gaza-children?traffic_source=rss",
+              "source": "aljazeera"
             },
             {
-              "title": "Israel",
-              "link": "https://www.cnn.com/specials/middleeast/israel?utm_source=section",
-              "source": "cnn"
+              "title": "Israel continues to commit genocide by targeting children in Gaza, UN inquiry finds",
+              "link": "https://www.theguardian.com/world/2026/jun/23/israel-deliberately-targeting-gaza-children-to-commit-genocide-un-inquiry-finds",
+              "source": "guardian"
             },
             {
-              "title": "May 30, 2024 Israel-Hamas war",
-              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-30-24/index.html",
-              "source": "cnn"
+              "title": "Department of Homeland Security will allow Iran to travel to US early for World Cup match",
+              "link": "https://www.theguardian.com/football/2026/jun/23/department-of-homeland-security-will-allow-iran-to-travel-to-us-early-for-world-cup-match",
+              "source": "guardian"
             },
             {
-              "title": "May 22, 2024 Israel-Hamas war",
-              "link": "https://www.cnn.com/middleeast/live-news/iran-israel-hamas-war-gaza-news-05-22-24/index.html",
-              "source": "cnn"
+              "title": "UN commission of inquiry says Israel committing genocide in Gaza by deliberately targeting children",
+              "link": "https://www.bbc.co.uk/news/articles/c0jy96w6pw2o?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
             }
           ]
         },
-        "military": {
-          "count": 12,
+        "humanitarian": {
+          "count": 4,
           "titles": [
             {
-              "title": "국제해사기구, 호르무즈 발묶인 선원 1만여명 구출작전 착수(종합)",
-              "link": "https://www.yna.co.kr/view/AKR20260624001951085",
-              "source": "yonhap"
+              "title": "U.S. Eases Travel Restrictions on Iran’s World Cup Team",
+              "link": "https://www.nytimes.com/2026/06/23/us/iran-world-cup-travel-restrictions.html",
+              "source": "nytimes"
             },
             {
-              "title": "‘A hunting ground for foreign regimes’: why violent attacks on dissidents are on the rise in Britain",
-              "link": "https://www.theguardian.com/global-development/ng-interactive/2026/jun/21/a-hunting-ground-for-foreign-regimes-why-violent-attacks-on-dissidents-are-on-the-rise-in-britain",
+              "title": "Iranian Singer Sentenced to 74 Lashes for Performing Without Hijab",
+              "link": "https://www.nytimes.com/2026/06/23/world/middleeast/iranian-singer-lashing-sentence.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Middle East crisis: Rubio and Vance hold call with Lebanon’s president; Trump claims Iran has agreed to nuclear inspections ‘long into future’ – as it happened",
+              "link": "https://www.theguardian.com/world/live/2026/jun/23/iran-us-israel-lebanon-un-peace-deal-nuclear-iaea-frozen-assets-strait-of-hormuz-latest-news-updates",
               "source": "guardian"
             },
             {
-              "title": "Four months after the horrific Iran school bombing, fears grow that Trump and Hegseth will bury the truth",
-              "link": "https://www.theguardian.com/world/2026/jun/21/iran-school-bombing-minab-fears-trump-hegseth-bury-truth-investigation-findings",
-              "source": "guardian"
-            },
-            {
-              "title": "‘They didn’t know or care, or wouldn’t say’: how we investigated the casualties of a covert US war",
-              "link": "https://www.theguardian.com/membership/2026/jun/21/they-didnt-know-or-care-or-wouldnt-say-how-we-investigated-the-casualties-of-a-covert-us-war",
-              "source": "guardian"
-            },
-            {
-              "title": "Iran says it is closing strait of Hormuz over Israeli strikes in Lebanon",
-              "link": "https://www.theguardian.com/world/2026/jun/20/israeli-strikes-southern-lebanon-reports-renewed-ceasefire",
+              "title": "US-Iran talks laid ‘very good foundation for a successful final deal’, says Vance – as happened",
+              "link": "https://www.theguardian.com/world/live/2026/jun/22/middle-east-crisis-iran-us-peace-talks-switzerland-strait-of-hormuz-latest-news-updates",
               "source": "guardian"
             }
           ]
         },
         "economy": {
-          "count": 3,
+          "count": 7,
           "titles": [
             {
-              "title": "Iran agrees to UN nuclear inspectors’ return as part of agreement with US",
-              "link": "https://www.theguardian.com/world/2026/jun/22/iran-us-talks-progress-pakistan-qatar-lebanon-israel",
+              "title": "UN starts evacuating 11,000 stranded sailors from Strait of Hormuz",
+              "link": "https://www.aljazeera.com/news/2026/6/23/un-starts-evacuating-11000-stranded-sailors-from-strait-of-hormuz?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "In Middle East, Rubio Says ‘No Country’ Can Charge for Hormuz Traffic",
+              "link": "https://www.nytimes.com/2026/06/23/world/middleeast/rubio-strait-of-hormuz-charges-traffic.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "U.N. Sets Plan to Evacuate Stranded Ships Out of Persian Gulf",
+              "link": "https://www.nytimes.com/2026/06/23/world/middleeast/imo-persian-gulf-stranded-ships.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Dozens of ships head through Strait of Hormuz after US-Iran deal",
+              "link": "https://www.bbc.co.uk/news/articles/cx23rnzdgl8o?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
+            },
+            {
+              "title": "‘Compound shock effect’: why the Middle East crisis and El Niño could spell disaster in south-east Asia",
+              "link": "https://www.theguardian.com/environment/2026/jun/23/iran-war-oil-prices-hormuz-el-nino-south-east-asia-impact",
               "source": "guardian"
-            },
-            {
-              "title": "Hormuz closure strands almost 1,200 cargo ships with $125bn worth of goods",
-              "link": "https://www.ft.com/content/4d3dd2b7-cb6b-410b-8c15-203904f32294",
-              "source": "ft"
-            },
-            {
-              "title": "걸프국 순방 美국무 \"호르무즈는 국제수로…통행료 부과못해\"(종합)",
-              "link": "https://www.yna.co.kr/view/AKR20260624003251071",
-              "source": "yonhap"
-            }
-          ]
-        },
-        "diplomacy": {
-          "count": 9,
-          "titles": [
-            {
-              "title": "Iran’s regime survived the war. Can it make peace with its own people?",
-              "link": "https://www.theguardian.com/world/2026/jun/22/iran-regime-survived-war-make-peace-with-own-people",
-              "source": "guardian"
-            },
-            {
-              "title": "US-Iran talks strained as Trump threats spark Iranian walkout",
-              "link": "https://www.theguardian.com/world/2026/jun/21/us-iran-talks-jd-vance-switzerland-strait-of-hormuz-lebanon",
-              "source": "guardian"
-            },
-            {
-              "title": "Trump faces fresh bipartisan criticism on Iran deal as Vance hails peace talks",
-              "link": "https://www.theguardian.com/world/2026/jun/21/trump-iran-deal-bipartisan-criticism",
-              "source": "guardian"
-            },
-            {
-              "title": "Middle East live: US-Iran peace talks underway as strait of Hormuz remains closed",
-              "link": "https://www.theguardian.com/world/live/2026/jun/21/iran-us-israel-war-middle-east-lebanon-peace-talks-switzerland-vance-trump-strait-of-hormuz-latest-news-updates",
-              "source": "guardian"
-            },
-            {
-              "title": "The Guardian view on Israel and the West Bank: allies must protect Palestinian lives and livelihoods | Editorial",
-              "link": "https://www.theguardian.com/commentisfree/2026/jun/21/the-guardian-view-on-israel-and-the-west-bank-allies-must-protect-palestinian-lives-and-livelihoods",
-              "source": "guardian"
-            }
-          ]
-        },
-        "humanitarian": {
-          "count": 10,
-          "titles": [
-            {
-              "title": "Several dead after Israeli joint security forces raid in West Bank",
-              "link": "https://www.cnn.com/2022/10/25/middleeast/israel-forces-raid-nablus-palestine-intl-hnk/index.html",
-              "source": "cnn"
-            },
-            {
-              "title": "June 9, 2024 Israel-Hamas war",
-              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-09-24/index.html",
-              "source": "cnn"
-            },
-            {
-              "title": "June 8, 2024 - Israel-Gaza news",
-              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-08-24/index.html",
-              "source": "cnn"
-            },
-            {
-              "title": "May 27, 2024 - Israel-Hamas war",
-              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-27-24/index.html",
-              "source": "cnn"
-            },
-            {
-              "title": "May 26, 2024 Israel-Hamas war",
-              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-26-24/index.html",
-              "source": "cnn"
-            }
-          ]
-        },
-        "politics": {
-          "count": 8,
-          "titles": [
-            {
-              "title": "June 17, 2024 - Israel-Gaza news",
-              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-17-24/index.html",
-              "source": "cnn"
-            },
-            {
-              "title": "June 1, 2024 - Israel-Gaza news",
-              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-01-24/index.html",
-              "source": "cnn"
-            },
-            {
-              "title": "May 21, 2024 Israel-Hamas war, Iran president death news",
-              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-21-24/index.html",
-              "source": "cnn"
-            },
-            {
-              "title": "May 20, 2024 Israel-Hamas war",
-              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-20-24/index.html",
-              "source": "cnn"
-            },
-            {
-              "title": "May 19, 2024 helicopter crash involving Iranian president",
-              "link": "https://www.cnn.com/middleeast/live-news/raisi-iran-president-helicopter-crash/index.html",
-              "source": "cnn"
             }
           ]
         },
         "regional": {
-          "count": 1,
+          "count": 5,
           "titles": [
             {
-              "title": "June 5, 2024 Israel-Hamas war",
-              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-05-24/index.html",
-              "source": "cnn"
+              "title": "Rubio begins Gulf visit in the UAE to advance US-Iran peace deal",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/6/23/rubio-begins-gulf-visit-in-the-uae-to-advance-us-iran-peace-deal?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "US says Iran can stay for two days before Egypt World Cup game",
+              "link": "https://www.aljazeera.com/sports/2026/6/23/us-says-iran-can-stay-for-two-days-before-egypt-world-cup-game?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Rubio insists strait of Hormuz will be toll-free as he arrives for Gulf meeting",
+              "link": "https://www.theguardian.com/world/2026/jun/23/marco-rubio-gulf-allies-us-iran-ceasefire-deal",
+              "source": "guardian"
+            },
+            {
+              "title": "Israeli Soldiers Fatally Shoot 2 People in Southern Lebanon, Health Officials Say",
+              "link": "https://www.nytimes.com/2026/06/23/world/middleeast/israel-soldiers-lebanon-shooting-hezbollah.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "The Guardrails Designed to Protect U.S.-Iran Talks",
+              "link": "https://www.nytimes.com/2026/06/22/world/middleeast/will-do-iran-us-peace-talks-lebanon-hormuz.html",
+              "source": "nytimes"
             }
           ]
         }
@@ -1295,29 +1445,35 @@
     }
   ],
   "economic_indicators": {
-    "DXY": {
-      "price": 101.39,
-      "change": 0.37,
-      "changePercent": 0.37,
-      "prev": 101.02
-    },
     "GOLD": {
-      "price": 4121.2,
-      "change": -60.7,
-      "changePercent": -1.45,
+      "price": 4106.6,
+      "change": -75.3,
+      "changePercent": -1.8,
       "prev": 4181.9
     },
+    "US10Y": {
+      "price": 4.49,
+      "change": 0.04,
+      "changePercent": 0.9,
+      "prev": 4.45
+    },
     "BRENT": {
-      "price": 76.78,
-      "change": -1.12,
-      "changePercent": -1.44,
+      "price": 76.41,
+      "change": -1.49,
+      "changePercent": -1.91,
       "prev": 77.9
     },
     "WTI": {
-      "price": 72.94,
-      "change": -1.88,
-      "changePercent": -2.51,
+      "price": 72.54,
+      "change": -2.28,
+      "changePercent": -3.05,
       "prev": 74.82
+    },
+    "DXY": {
+      "price": 101.42,
+      "change": 0.41,
+      "changePercent": 0.41,
+      "prev": 101.02
     },
     "US2Y": {
       "price": 3.69,
@@ -1330,15 +1486,25 @@
       "change": 2.21,
       "changePercent": 12.79,
       "prev": 17.28
-    },
-    "US10Y": {
-      "price": 4.49,
-      "change": 0.04,
-      "changePercent": 0.9,
-      "prev": 4.45
     }
   },
   "critical_events": [
+    {
+      "id": "capitulation_signal",
+      "name": "교전국 항복/사과/공식 양보",
+      "severity": "critical",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "shorten"
+    },
+    {
+      "id": "ceasefire_agreement",
+      "name": "공식 휴전/평화 합의",
+      "severity": "critical",
+      "confidence": 1,
+      "matchCount": 8,
+      "direction": "shorten"
+    },
     {
       "id": "diplomatic_breakthrough",
       "name": "외교적 돌파구/강대국 중재",
@@ -1351,17 +1517,9 @@
       "id": "humanitarian_crisis",
       "name": "대규모 인도주의 위기",
       "severity": "high",
-      "confidence": 0.6666666666666666,
-      "matchCount": 2,
+      "confidence": 1,
+      "matchCount": 8.6,
       "direction": "shorten"
-    },
-    {
-      "id": "conflict_expansion",
-      "name": "전선 확대/신규 참전국",
-      "severity": "moderate",
-      "confidence": 0.6666666666666666,
-      "matchCount": 2,
-      "direction": "lengthen"
     }
   ],
   "feeds_loaded": 7,
