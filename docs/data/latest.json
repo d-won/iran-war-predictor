@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-07-07T20:27:15.042Z",
+  "timestamp": "2026-07-07T21:52:31.239Z",
   "war_day": 129,
   "probabilities": {
-    "1개월 내 (~3월)": 20.6,
-    "2~3개월 (4~5월)": 38,
-    "4~6개월 (6~8월)": 26.8,
-    "7~12개월 (9월~27/2월)": 11.6,
-    "1년 초과": 3
+    "1개월 내 (~3월)": 22.1,
+    "2~3개월 (4~5월)": 40.4,
+    "4~6개월 (6~8월)": 24.9,
+    "7~12개월 (9월~27/2월)": 10.1,
+    "1년 초과": 2.5
   },
   "factors": [
     {
@@ -45,9 +45,9 @@
       "decay": 0.4
     },
     {
-      "factor": "확전 뉴스 우세 (확전6:휴전2)",
-      "impact": "전쟁 장기화 가능성 (확전비율 75%)",
-      "weight": "+0.03%p (4~6개월)",
+      "factor": "확전 뉴스 우세 (확전4:휴전4)",
+      "impact": "전쟁 장기화 가능성 (확전비율 50%)",
+      "weight": "+0.02%p (4~6개월)",
       "direction": "lengthen",
       "detail": "언론에서 휴전보다 확전을 더 많이 보도하고 있습니다.",
       "keywords": [
@@ -164,11 +164,11 @@
       "decay": 1
     },
     {
-      "factor": "협상/외교 뉴스 6건 감지",
-      "impact": "외교적 해결 움직임 포착",
-      "weight": "+0.01%p (1개월내), +0.01%p (2~3개월)",
+      "factor": "협상/외교 뉴스 2건 감지",
+      "impact": "외교 움직임 미약",
+      "weight": "+0.00%p (1개월내), +0.00%p (2~3개월)",
       "direction": "shorten",
-      "detail": "실시간 뉴스에서 협상 관련 기사 6건이 감지되었습니다.",
+      "detail": "실시간 뉴스에서 협상 관련 기사 2건이 감지되었습니다.",
       "keywords": [
         "negotiat",
         "talks",
@@ -181,11 +181,11 @@
       "decay": 1
     },
     {
-      "factor": "지역 확산 뉴스 16건 감지",
-      "impact": "주변국 대규모 연루 → 장기화 위험 높음",
-      "weight": "+0.02%p (4~6개월), +0.02%p (7~12개월)",
+      "factor": "지역 확산 뉴스 14건 감지",
+      "impact": "주변국 연루 확대로 장기화 위험",
+      "weight": "+0.01%p (4~6개월), +0.01%p (7~12개월)",
       "direction": "lengthen",
-      "detail": "주변국을 언급하는 기사 16건이 감지되었습니다.",
+      "detail": "주변국을 언급하는 기사 14건이 감지되었습니다.",
       "keywords": [
         "saudi",
         "uae",
@@ -262,11 +262,43 @@
       "severity": "critical"
     },
     {
-      "factor": "금값 사상최고 ($4122.1/oz)",
+      "factor": "[중대 이벤트] 수도 직접 공격/포위",
+      "impact": "수도 직접 공격. 베오그라드(1999): 78일 폭격 후 항복. 바그다드(2003): 21일만에 함락. 수도 타격은 전쟁 지속 의지를 급격히 약화.",
+      "weight": "+2.7%p (1개월내), +4.0%p (2~3개월), -1.3%p (4~6개월), -1.3%p (7~12개월), -0.7%p (1년초과)",
+      "direction": "shorten",
+      "detail": "수도 직접 공격. 베오그라드(1999): 78일 폭격 후 항복. 바그다드(2003): 21일만에 함락. 수도 타격은 전쟁 지속 의지를 급격히 약화.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: US launches ​strikes against Iran after attacks on vessels in strait ​of ​Hormuz",
+      "keywords": [
+        "capital",
+        "bomb",
+        "capital",
+        "strike",
+        "capital",
+        "attack",
+        "capital",
+        "siege",
+        "capital",
+        "pound",
+        "capital",
+        "explosion",
+        "tehran",
+        "bomb",
+        "tehran",
+        "strike",
+        "tehran",
+        "pound",
+        "tehran",
+        "explosion"
+      ],
+      "applied": "2026-07-07",
+      "active": true,
+      "severity": "high"
+    },
+    {
+      "factor": "금값 사상최고 ($4116.6/oz)",
       "impact": "안전자산 수요 폭증 → 글로벌 불안 심화",
       "weight": "+2%p (4-6개월)",
       "direction": "lengthen",
-      "detail": "금 가격이 온스당 $4122.1로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
+      "detail": "금 가격이 온스당 $4116.6로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
       "keywords": [
         "gold",
         "safe haven",
@@ -294,18 +326,76 @@
     }
   ],
   "news_signals": {
-    "ceasefire_mentions": 2,
-    "escalation_mentions": 6,
-    "negotiation_mentions": 6,
+    "ceasefire_mentions": 4,
+    "escalation_mentions": 4,
+    "negotiation_mentions": 2,
     "casualty_mentions": 14,
     "peace_mentions": 0,
-    "regional_spread": 16,
+    "regional_spread": 14,
     "total_articles": 50,
     "new_articles": 50,
     "unique_events": 43,
     "duplicates_removed": 7
   },
   "latest_news": [
+    {
+      "title": "Iran’s Strikes on Ships in Strait of Hormuz Threaten Oil Flow",
+      "link": "https://www.nytimes.com/2026/07/07/world/middleeast/iran-war-oman-hormuz-tanker.html",
+      "pubDate": "Tue, 07 Jul 2026 21:41:30 +0000",
+      "source": "nytimes",
+      "snippet": "The strikes by Iran and the attacks and re-imposition of sanctions by the U.S. came weeks after the countries agreed to try to find a lasting end to their hostilities.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "US says strikes launched as explosions heard in southern Iran",
+      "link": "https://www.aljazeera.com/news/2026/7/7/us-says-strikes-launched-as-explosions-heard-in-southern-iran?traffic_source=rss",
+      "pubDate": "Tue, 07 Jul 2026 21:21:16 +0000",
+      "source": "aljazeera",
+      "snippet": "This is a breaking news story.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "The Funeral of Iran’s Supreme Leader Ayatollah Ali Khamenei",
+      "link": "https://www.nytimes.com/2026/07/04/world/middleeast/the-funeral-of-irans-supreme-leader-ali-khamenei.html",
+      "pubDate": "Tue, 07 Jul 2026 20:49:30 +0000",
+      "source": "nytimes",
+      "snippet": "Iran’s new leaders are commemorating Ayatollah Khamenei, who was killed on the first day of the U.S.-Israeli war against the country.",
+      "isNew": true,
+      "_isDuplicate": true,
+      "_sourceCount": 1
+    },
+    {
+      "title": "Canadian province sues OpenAI over alleged ChatGPT-linked shooting warnings",
+      "link": "https://www.aljazeera.com/news/2026/7/7/canadian-province-sues-openai-over-alleged-chatgpt-linked-shooting-warnings?traffic_source=rss",
+      "pubDate": "Tue, 07 Jul 2026 20:14:53 +0000",
+      "source": "aljazeera",
+      "snippet": "Lawsuit claims OpenAI ignored calls to alert authorities about violent ChatGPT prompts tied to mass shooting suspect.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Trump lashes out at NATO as first day of summit wraps in Turkiye",
+      "link": "https://www.aljazeera.com/news/2026/7/7/trump-lashes-out-at-nato-as-first-day-of-summit-wraps-in-turkiye?traffic_source=rss",
+      "pubDate": "Tue, 07 Jul 2026 20:08:40 +0000",
+      "source": "aljazeera",
+      "snippet": "Leaders have gathered in Ankara for a two-day summit slated to cover defence spending and the Russia-Ukraine war.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
     {
       "title": "Trump criticises NATO allies over Iran conflict support",
       "link": "https://www.aljazeera.com/video/newsfeed/2026/7/7/trump-criticises-nato-allies-over-iran-conflict-support?traffic_source=rss",
@@ -334,18 +424,6 @@
       "pubDate": "Tue, 07 Jul 2026 19:06:50 +0000",
       "source": "nytimes",
       "snippet": "A resolution by the country’s cabinet escalated a long-running conflict between Prime Minister Benjamin Netanyahu and the country’s judiciary. A senior government official later walked that back.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Iran’s Strikes on Ships in Strait of Hormuz Test Cease-Fire and Threaten Oil Flow",
-      "link": "https://www.nytimes.com/2026/07/07/world/middleeast/iran-war-oman-hormuz-tanker.html",
-      "pubDate": "Tue, 07 Jul 2026 18:56:17 +0000",
-      "source": "nytimes",
-      "snippet": "The latest attacks, just weeks after the United States and Iran agreed to try to negotiate a lasting end to their hostilities, highlight risks for shipping companies.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -389,11 +467,11 @@
       "_isDuplicate": false
     },
     {
-      "title": "Qatar: Iran is legally responsible for hits on three tankers in strait of Hormuz",
+      "title": "US launches ​strikes against Iran after attacks on vessels in strait ​of ​Hormuz",
       "link": "https://www.theguardian.com/world/2026/jul/07/qatar-says-iran-fully-responsible-after-tankers-struck-in-strait-of-hormuz",
       "pubDate": "Tue, 07 Jul 2026 16:52:34 GMT",
       "source": "guardian",
-      "snippet": "Vessels, including a Qatari LNG carrier, struck close to Oman as Tehran blames USQatar has warned Iran it will bear full legal responsibility after three tankers, including a Qatari LNG vessel, were s",
+      "snippet": "US Central Command says Tehran in ‘clear violation’ of ceasefire with ‘unwarranted’ ​attacks on commercial shipsThe US military launched ⁠a ⁠series of “powerful” ​strikes against Iran, it announced on",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -433,54 +511,6 @@
       "_isDuplicated": false,
       "_clusterSize": 1,
       "_isDuplicate": false
-    },
-    {
-      "title": "Christians are not united for Israel",
-      "link": "https://www.aljazeera.com/opinions/2026/7/7/christians-are-not-united-for-israel?traffic_source=rss",
-      "pubDate": "Tue, 07 Jul 2026 16:06:09 +0000",
-      "source": "aljazeera",
-      "snippet": "The Christian Zionist narrative linking faith to support for Israel is deeply flawed. Evangelicals have begun to see it.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Mass Mournings In Qom, Where Khamenei Ruled Supreme Over Iran’s Clerics",
-      "link": "https://www.nytimes.com/2026/07/07/world/middleeast/iran-khamenei-qom-funeral.html",
-      "pubDate": "Tue, 07 Jul 2026 15:33:32 +0000",
-      "source": "nytimes",
-      "snippet": "The ceremony for Ayatollah Ali Khamenei, held at a site considered sacred by many Shiites, was the latest step in a weeklong funeral organized by Iran’s government.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Netanyahu’s Christian comments ‘aimed at sowing strife’: Lebanese analysts",
-      "link": "https://www.aljazeera.com/news/2026/7/7/netanyahus-christian-comments-aimed-at-sowing-strife-lebanese-analysts?traffic_source=rss",
-      "pubDate": "Tue, 07 Jul 2026 14:53:39 +0000",
-      "source": "aljazeera",
-      "snippet": "After Netanyahu&#039;s statements on Lebanese Christians were denounced in Lebanon, analysts call Israel&#039;s PM a liar.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "What Our Reporter Saw in Tehran: A Human Tide of Mourners",
-      "link": "https://www.nytimes.com/2026/07/07/world/middleeast/tehran-khamenei-funeral-procession.html",
-      "pubDate": "Tue, 07 Jul 2026 13:02:07 +0000",
-      "source": "nytimes",
-      "snippet": "After days of public mourning ceremonies in the Iranian capital, Ayatollah Ali Khamenei’s coffin arrived in Tehran’s Azadi Square. This is what I saw covering the miles-long procession on Monday.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
     }
   ],
   "news_digest": {
@@ -489,9 +519,21 @@
         "category_id": "politics",
         "category_name": "국내 정치",
         "category_icon": "🏛️",
-        "count": 20,
-        "new_count": 20,
+        "count": 19,
+        "new_count": 19,
         "articles": [
+          {
+            "title": "Millions join funeral procession for Iran’s supreme leader Ali Khamenei",
+            "link": "https://www.theguardian.com/world/2026/jul/06/ali-khamenei-funeral-procession-iran-supreme-leader",
+            "source": "guardian",
+            "sources": [
+              "guardian",
+              "nytimes"
+            ],
+            "pubDate": "Mon, 06 Jul 2026 17:25:12 GMT",
+            "snippet": "Crowds swelled through Tehran as mourners dressed in black carried flags proclaiming: ‘We will rise’A crowd of “millions” assembled on Monday for the funeral procession of Iran’s assassinated supreme ",
+            "isNew": true
+          },
           {
             "title": "Trump criticises NATO allies over Iran conflict support",
             "link": "https://www.aljazeera.com/video/newsfeed/2026/7/7/trump-criticises-nato-allies-over-iran-conflict-support?traffic_source=rss",
@@ -590,17 +632,6 @@
             "pubDate": "Tue, 07 Jul 2026 11:10:30 GMT",
             "snippet": "Many of the millions who turned out for funeral wanted to show their opposition the killing of their leader, regardless of their broader views of the regimeAs the multipurpose, multinational funeral o",
             "isNew": true
-          },
-          {
-            "title": "Resistance and revenge - Iran wanted to send a message with its farewell to Khamenei",
-            "link": "https://www.bbc.co.uk/news/articles/c07yy3j3nljo?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
-            "sources": [
-              "bbc"
-            ],
-            "pubDate": "Tue, 07 Jul 2026 00:46:03 GMT",
-            "snippet": "Three days of public mourning in Tehran was a political spectacle Iran's leaders wanted the world to see, writes the BBC's international correspondent Lyse Doucet.",
-            "isNew": true
           }
         ]
       },
@@ -608,9 +639,20 @@
         "category_id": "other",
         "category_name": "기타",
         "category_icon": "📰",
-        "count": 6,
-        "new_count": 6,
+        "count": 7,
+        "new_count": 7,
         "articles": [
+          {
+            "title": "Canadian province sues OpenAI over alleged ChatGPT-linked shooting warnings",
+            "link": "https://www.aljazeera.com/news/2026/7/7/canadian-province-sues-openai-over-alleged-chatgpt-linked-shooting-warnings?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Tue, 07 Jul 2026 20:14:53 +0000",
+            "snippet": "Lawsuit claims OpenAI ignored calls to alert authorities about violent ChatGPT prompts tied to mass shooting suspect.",
+            "isNew": true
+          },
           {
             "title": "‘They brought me here to kill me’ says Gaza doctor in Israeli prison",
             "link": "https://www.aljazeera.com/video/newsfeed/2026/7/7/they-brought-me-here-to-kill-me-says-gaza-doctor-in-israeli-prison?traffic_source=rss",
@@ -654,17 +696,6 @@
             "pubDate": "Mon, 06 Jul 2026 21:37:11 GMT",
             "snippet": "Friends of Yeshivat Shavei Hevron sent nearly £200,000 to school in Hebron –  where Israel has been accused of imposing apartheid – between 2019 and 2024A British charity is funding a religious school",
             "isNew": true
-          },
-          {
-            "title": "Hamas offers to hand over authority in Gaza to US-backed administration",
-            "link": "https://www.theguardian.com/world/2026/jul/06/hamas-offers-hand-over-authority-gaza-us-backed-administration",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Mon, 06 Jul 2026 17:47:39 GMT",
-            "snippet": "Militant group’s statement makes no promise to disarm unilaterally as Israel and the US have demandedHamas has announced its intention to hand over governing authority in Gaza after two decades in pow",
-            "isNew": true
           }
         ]
       },
@@ -672,18 +703,40 @@
         "category_id": "military",
         "category_name": "군사 작전",
         "category_icon": "⚔️",
-        "count": 5,
-        "new_count": 5,
+        "count": 6,
+        "new_count": 6,
         "articles": [
           {
-            "title": "Iran’s Strikes on Ships in Strait of Hormuz Test Cease-Fire and Threaten Oil Flow",
+            "title": "Iran’s Strikes on Ships in Strait of Hormuz Threaten Oil Flow",
             "link": "https://www.nytimes.com/2026/07/07/world/middleeast/iran-war-oman-hormuz-tanker.html",
             "source": "nytimes",
             "sources": [
               "nytimes"
             ],
-            "pubDate": "Tue, 07 Jul 2026 18:56:17 +0000",
-            "snippet": "The latest attacks, just weeks after the United States and Iran agreed to try to negotiate a lasting end to their hostilities, highlight risks for shipping companies.",
+            "pubDate": "Tue, 07 Jul 2026 21:41:30 +0000",
+            "snippet": "The strikes by Iran and the attacks and re-imposition of sanctions by the U.S. came weeks after the countries agreed to try to find a lasting end to their hostilities.",
+            "isNew": true
+          },
+          {
+            "title": "US says strikes launched as explosions heard in southern Iran",
+            "link": "https://www.aljazeera.com/news/2026/7/7/us-says-strikes-launched-as-explosions-heard-in-southern-iran?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Tue, 07 Jul 2026 21:21:16 +0000",
+            "snippet": "This is a breaking news story.",
+            "isNew": true
+          },
+          {
+            "title": "US launches ​strikes against Iran after attacks on vessels in strait ​of ​Hormuz",
+            "link": "https://www.theguardian.com/world/2026/jul/07/qatar-says-iran-fully-responsible-after-tankers-struck-in-strait-of-hormuz",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Tue, 07 Jul 2026 16:52:34 GMT",
+            "snippet": "US Central Command says Tehran in ‘clear violation’ of ceasefire with ‘unwarranted’ ​attacks on commercial shipsThe US military launched ⁠a ⁠series of “powerful” ​strikes against Iran, it announced on",
             "isNew": true
           },
           {
@@ -719,17 +772,6 @@
             ],
             "pubDate": "Mon, 06 Jul 2026 08:00:05 GMT",
             "snippet": "Elbit Systems supplied Tzayad digital army programme to map people, vehicles and other objects in real timeIsrael identified about 1,000 potential targets a day during the first two years of the wars ",
-            "isNew": true
-          },
-          {
-            "title": "Iran seeks to tighten control over strait of Hormuz alongside Khamenei funeral",
-            "link": "https://www.theguardian.com/world/2026/jul/05/iran-control-strait-of-hormuz-ali-khamenei-funeral",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Sun, 05 Jul 2026 14:50:09 GMT",
-            "snippet": "IRGC warnings force ships to turn back as Tehran uses passages from Qur’an to send messages to Gulf delegationsThe diplomatic and military contest for control of the strait of Hormuz has intensified a",
             "isNew": true
           }
         ]
@@ -802,8 +844,8 @@
         "category_id": "economy",
         "category_name": "경제 영향",
         "category_icon": "📊",
-        "count": 4,
-        "new_count": 4,
+        "count": 3,
+        "new_count": 3,
         "articles": [
           {
             "title": "How conflict minerals fuel war in eastern DR Congo amid US sanctions",
@@ -814,17 +856,6 @@
             ],
             "pubDate": "Tue, 07 Jul 2026 17:23:21 +0000",
             "snippet": "The US has imposed sanctions on Rwandan companies it says helped finance armed groups through the illicit minerals trade",
-            "isNew": true
-          },
-          {
-            "title": "Qatar: Iran is legally responsible for hits on three tankers in strait of Hormuz",
-            "link": "https://www.theguardian.com/world/2026/jul/07/qatar-says-iran-fully-responsible-after-tankers-struck-in-strait-of-hormuz",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Tue, 07 Jul 2026 16:52:34 GMT",
-            "snippet": "Vessels, including a Qatari LNG carrier, struck close to Oman as Tehran blames USQatar has warned Iran it will bear full legal responsibility after three tankers, including a Qatari LNG vessel, were s",
             "isNew": true
           },
           {
@@ -860,14 +891,14 @@
         "new_count": 3,
         "articles": [
           {
-            "title": "Netanyahu’s Christian comments ‘aimed at sowing strife’: Lebanese analysts",
-            "link": "https://www.aljazeera.com/news/2026/7/7/netanyahus-christian-comments-aimed-at-sowing-strife-lebanese-analysts?traffic_source=rss",
+            "title": "Trump lashes out at NATO as first day of summit wraps in Turkiye",
+            "link": "https://www.aljazeera.com/news/2026/7/7/trump-lashes-out-at-nato-as-first-day-of-summit-wraps-in-turkiye?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Tue, 07 Jul 2026 14:53:39 +0000",
-            "snippet": "After Netanyahu&#039;s statements on Lebanese Christians were denounced in Lebanon, analysts call Israel&#039;s PM a liar.",
+            "pubDate": "Tue, 07 Jul 2026 20:08:40 +0000",
+            "snippet": "Leaders have gathered in Ankara for a two-day summit slated to cover defence spending and the Russia-Ukraine war.",
             "isNew": true
           },
           {
@@ -898,9 +929,44 @@
     "recent_30min": {
       "total_new": 50,
       "by_category": {
-        "politics": {
-          "count": 24,
+        "military": {
+          "count": 7,
           "titles": [
+            {
+              "title": "Iran’s Strikes on Ships in Strait of Hormuz Threaten Oil Flow",
+              "link": "https://www.nytimes.com/2026/07/07/world/middleeast/iran-war-oman-hormuz-tanker.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "US says strikes launched as explosions heard in southern Iran",
+              "link": "https://www.aljazeera.com/news/2026/7/7/us-says-strikes-launched-as-explosions-heard-in-southern-iran?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "US launches ​strikes against Iran after attacks on vessels in strait ​of ​Hormuz",
+              "link": "https://www.theguardian.com/world/2026/jul/07/qatar-says-iran-fully-responsible-after-tankers-struck-in-strait-of-hormuz",
+              "source": "guardian"
+            },
+            {
+              "title": "Israeli officer shown throwing stun grenade into car during West Bank raid",
+              "link": "https://www.theguardian.com/world/2026/jul/07/israeli-officer-stun-grenade-car-west-bank",
+              "source": "guardian"
+            },
+            {
+              "title": "‘We are Iran’s true missiles’: millions gather in Tehran for day four of Ali Khamenei’s funeral",
+              "link": "https://www.theguardian.com/world/2026/jul/06/iran-tehran-ali-khamenei-funeral-day-four",
+              "source": "guardian"
+            }
+          ]
+        },
+        "politics": {
+          "count": 23,
+          "titles": [
+            {
+              "title": "The Funeral of Iran’s Supreme Leader Ayatollah Ali Khamenei",
+              "link": "https://www.nytimes.com/2026/07/04/world/middleeast/the-funeral-of-irans-supreme-leader-ali-khamenei.html",
+              "source": "nytimes"
+            },
             {
               "title": "Trump criticises NATO allies over Iran conflict support",
               "link": "https://www.aljazeera.com/video/newsfeed/2026/7/7/trump-criticises-nato-allies-over-iran-conflict-support?traffic_source=rss",
@@ -920,47 +986,17 @@
               "title": "Lawsuit Alleges Trump Administration Gave Iran Details on Asylum Seekers",
               "link": "https://www.nytimes.com/2026/07/07/us/politics/trump-lawsuit-iran-asylum.html",
               "source": "nytimes"
-            },
-            {
-              "title": "Trump says will lift sanctions on Turkiye, ‘consider’ selling F-35s",
-              "link": "https://www.aljazeera.com/news/2026/7/7/trump-says-will-lift-sanctions-on-turkiye-consider-selling-f-35s?traffic_source=rss",
-              "source": "aljazeera"
-            }
-          ]
-        },
-        "military": {
-          "count": 6,
-          "titles": [
-            {
-              "title": "Iran’s Strikes on Ships in Strait of Hormuz Test Cease-Fire and Threaten Oil Flow",
-              "link": "https://www.nytimes.com/2026/07/07/world/middleeast/iran-war-oman-hormuz-tanker.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Israeli officer shown throwing stun grenade into car during West Bank raid",
-              "link": "https://www.theguardian.com/world/2026/jul/07/israeli-officer-stun-grenade-car-west-bank",
-              "source": "guardian"
-            },
-            {
-              "title": "‘We are Iran’s true missiles’: millions gather in Tehran for day four of Ali Khamenei’s funeral",
-              "link": "https://www.theguardian.com/world/2026/jul/06/iran-tehran-ali-khamenei-funeral-day-four",
-              "source": "guardian"
-            },
-            {
-              "title": "Middle East crisis: Funeral procession for supreme leader Ali Khamenei begins in Iran – as it happened",
-              "link": "https://www.theguardian.com/world/live/2026/jul/06/iran-middle-east-crisis-funeral-supreme-leader-ali-khamenei-tehran-latest-news-updates",
-              "source": "guardian"
-            },
-            {
-              "title": "Israeli command system identified 850,000 targets in Gaza and Lebanon wars, says supplier",
-              "link": "https://www.theguardian.com/world/2026/jul/06/israel-command-system-identified-850000-targets-gaza-lebanon-war-supplier-elbit-systems",
-              "source": "guardian"
             }
           ]
         },
         "other": {
-          "count": 8,
+          "count": 9,
           "titles": [
+            {
+              "title": "Canadian province sues OpenAI over alleged ChatGPT-linked shooting warnings",
+              "link": "https://www.aljazeera.com/news/2026/7/7/canadian-province-sues-openai-over-alleged-chatgpt-linked-shooting-warnings?traffic_source=rss",
+              "source": "aljazeera"
+            },
             {
               "title": "‘They brought me here to kill me’ says Gaza doctor in Israeli prison",
               "link": "https://www.aljazeera.com/video/newsfeed/2026/7/7/they-brought-me-here-to-kill-me-says-gaza-doctor-in-israeli-prison?traffic_source=rss",
@@ -980,36 +1016,6 @@
               "title": "Life Support review – quietly devastating medics’ eye view of the war in Gaza",
               "link": "https://www.theguardian.com/film/2026/jul/07/life-support-review-medics-gaza-documentary",
               "source": "guardian"
-            },
-            {
-              "title": "UK charity funding school at heart of illegal Israeli settlement expansion",
-              "link": "https://www.theguardian.com/world/2026/jul/06/british-charity-friends-of-yeshivat-shavei-illegal-settlement-hebron",
-              "source": "guardian"
-            }
-          ]
-        },
-        "economy": {
-          "count": 4,
-          "titles": [
-            {
-              "title": "How conflict minerals fuel war in eastern DR Congo amid US sanctions",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/7/7/how-conflict-minerals-fuel-war-in-eastern-dr-congo-amid-us-sanctions?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Qatar: Iran is legally responsible for hits on three tankers in strait of Hormuz",
-              "link": "https://www.theguardian.com/world/2026/jul/07/qatar-says-iran-fully-responsible-after-tankers-struck-in-strait-of-hormuz",
-              "source": "guardian"
-            },
-            {
-              "title": "Ships Are Moving In and Out of the Persian Gulf, Easing Oil Prices",
-              "link": "https://www.nytimes.com/2026/07/06/business/hormuz-strait-shipping-oil.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Detained Gaza doctor almost unrecognisable after injuries in Israeli jail, lawyer says",
-              "link": "https://www.theguardian.com/world/2026/jul/06/detained-gaza-doctor-almost-unrecognisable-injuries-israeli-jail-hussam-abu-safiya",
-              "source": "guardian"
             }
           ]
         },
@@ -1017,8 +1023,8 @@
           "count": 3,
           "titles": [
             {
-              "title": "Netanyahu’s Christian comments ‘aimed at sowing strife’: Lebanese analysts",
-              "link": "https://www.aljazeera.com/news/2026/7/7/netanyahus-christian-comments-aimed-at-sowing-strife-lebanese-analysts?traffic_source=rss",
+              "title": "Trump lashes out at NATO as first day of summit wraps in Turkiye",
+              "link": "https://www.aljazeera.com/news/2026/7/7/trump-lashes-out-at-nato-as-first-day-of-summit-wraps-in-turkiye?traffic_source=rss",
               "source": "aljazeera"
             },
             {
@@ -1030,6 +1036,26 @@
               "title": "As Trump Cools on NATO, Turkey Hosts Summit Meeting",
               "link": "https://www.nytimes.com/2026/07/06/world/middleeast/nato-summit-turkey-erdogan-trump.html",
               "source": "nytimes"
+            }
+          ]
+        },
+        "economy": {
+          "count": 3,
+          "titles": [
+            {
+              "title": "How conflict minerals fuel war in eastern DR Congo amid US sanctions",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/7/7/how-conflict-minerals-fuel-war-in-eastern-dr-congo-amid-us-sanctions?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Ships Are Moving In and Out of the Persian Gulf, Easing Oil Prices",
+              "link": "https://www.nytimes.com/2026/07/06/business/hormuz-strait-shipping-oil.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Detained Gaza doctor almost unrecognisable after injuries in Israeli jail, lawyer says",
+              "link": "https://www.theguardian.com/world/2026/jul/06/detained-gaza-doctor-almost-unrecognisable-injuries-israeli-jail-hussam-abu-safiya",
+              "source": "guardian"
             }
           ]
         },
@@ -1153,47 +1179,47 @@
     }
   ],
   "economic_indicators": {
-    "VIX": {
-      "price": 16.12,
-      "change": 0.55,
-      "changePercent": 3.53,
-      "prev": 15.57
-    },
     "WTI": {
-      "price": 72.02,
-      "change": 3.47,
-      "changePercent": 5.06,
+      "price": 72.2,
+      "change": 3.65,
+      "changePercent": 5.32,
       "prev": 68.55
     },
+    "GOLD": {
+      "price": 4116.6,
+      "change": -38.5,
+      "changePercent": -0.93,
+      "prev": 4155.1
+    },
     "DXY": {
-      "price": 101.08,
-      "change": 0.23,
-      "changePercent": 0.23,
+      "price": 101.12,
+      "change": 0.27,
+      "changePercent": 0.27,
       "prev": 100.85
     },
-    "US2Y": {
-      "price": 3.73,
-      "change": 0.06,
-      "changePercent": 1.64,
-      "prev": 3.67
-    },
     "BRENT": {
-      "price": 75.77,
-      "change": 3.78,
-      "changePercent": 5.25,
+      "price": 75.86,
+      "change": 3.87,
+      "changePercent": 5.38,
       "prev": 71.99
     },
-    "GOLD": {
-      "price": 4122.1,
-      "change": -33,
-      "changePercent": -0.79,
-      "prev": 4155.1
+    "VIX": {
+      "price": 16.13,
+      "change": 0.56,
+      "changePercent": 3.6,
+      "prev": 15.57
     },
     "US10Y": {
       "price": 4.53,
       "change": 0.04,
       "changePercent": 0.89,
       "prev": 4.49
+    },
+    "US2Y": {
+      "price": 3.73,
+      "change": 0.06,
+      "changePercent": 1.64,
+      "prev": 3.67
     }
   },
   "critical_events": [
@@ -1201,6 +1227,14 @@
       "id": "regime_collapse",
       "name": "교전국 정권 붕괴/쿠데타",
       "severity": "critical",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "shorten"
+    },
+    {
+      "id": "capital_attack",
+      "name": "수도 직접 공격/포위",
+      "severity": "high",
       "confidence": 0.6666666666666666,
       "matchCount": 2,
       "direction": "shorten"
