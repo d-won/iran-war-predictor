@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-07-15T05:13:15.515Z",
+  "timestamp": "2026-07-15T07:27:39.224Z",
   "war_day": 137,
   "probabilities": {
-    "1개월 내 (~3월)": 18.5,
-    "2~3개월 (4~5월)": 36.9,
-    "4~6개월 (6~8월)": 25.5,
-    "7~12개월 (9월~27/2월)": 13.9,
-    "1년 초과": 5.2
+    "1개월 내 (~3월)": 25.1,
+    "2~3개월 (4~5월)": 41.9,
+    "4~6개월 (6~8월)": 20.5,
+    "7~12개월 (9월~27/2월)": 9.8,
+    "1년 초과": 2.7
   },
   "factors": [
     {
@@ -45,9 +45,9 @@
       "decay": 0.4
     },
     {
-      "factor": "확전 뉴스 우세 (확전6:휴전2)",
-      "impact": "전쟁 장기화 가능성 (확전비율 75%)",
-      "weight": "+0.03%p (4~6개월)",
+      "factor": "확전 뉴스 우세 (확전6:휴전4)",
+      "impact": "전쟁 장기화 가능성 (확전비율 60%)",
+      "weight": "+0.02%p (4~6개월)",
       "direction": "lengthen",
       "detail": "언론에서 휴전보다 확전을 더 많이 보도하고 있습니다.",
       "keywords": [
@@ -164,11 +164,11 @@
       "decay": 1
     },
     {
-      "factor": "협상/외교 뉴스 4건 감지",
+      "factor": "협상/외교 뉴스 6건 감지",
       "impact": "외교적 해결 움직임 포착",
       "weight": "+0.01%p (1개월내), +0.01%p (2~3개월)",
       "direction": "shorten",
-      "detail": "실시간 뉴스에서 협상 관련 기사 4건이 감지되었습니다.",
+      "detail": "실시간 뉴스에서 협상 관련 기사 6건이 감지되었습니다.",
       "keywords": [
         "negotiat",
         "talks",
@@ -181,11 +181,11 @@
       "decay": 1
     },
     {
-      "factor": "지역 확산 뉴스 24건 감지",
+      "factor": "지역 확산 뉴스 22건 감지",
       "impact": "주변국 대규모 연루 → 장기화 위험 높음",
       "weight": "+0.02%p (4~6개월), +0.02%p (7~12개월)",
       "direction": "lengthen",
-      "detail": "주변국을 언급하는 기사 24건이 감지되었습니다.",
+      "detail": "주변국을 언급하는 기사 22건이 감지되었습니다.",
       "keywords": [
         "saudi",
         "uae",
@@ -234,11 +234,37 @@
       "decay": 0.3
     },
     {
+      "factor": "[중대 이벤트] 공식 휴전/평화 합의",
+      "impact": "공식 휴전 또는 평화 합의 체결. 휴전 합의는 전쟁 종결의 결정적 단계이며, 합의 후 이행까지 평균 1~2주 소요.",
+      "weight": "+10.0%p (1개월내), +6.7%p (2~3개월), -5.3%p (4~6개월), -4.0%p (7~12개월), -2.0%p (1년초과)",
+      "direction": "shorten",
+      "detail": "공식 휴전 또는 평화 합의 체결. 휴전 합의는 전쟁 종결의 결정적 단계이며, 합의 후 이행까지 평균 1~2주 소요.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Strait of Hormuz 'faultline' exposes weakness of the US-Iran deal",
+      "keywords": [
+        "ceasefire",
+        "agree",
+        "ceasefire",
+        "deal",
+        "ceasefire",
+        "sign",
+        "truce",
+        "agree",
+        "armistice",
+        "sign",
+        "peace deal",
+        "ceasefire",
+        "accept",
+        "peace agreement"
+      ],
+      "applied": "2026-07-15",
+      "active": true,
+      "severity": "critical"
+    },
+    {
       "factor": "[중대 이벤트] 수도 직접 공격/포위",
       "impact": "수도 직접 공격. 베오그라드(1999): 78일 폭격 후 항복. 바그다드(2003): 21일만에 함락. 수도 타격은 전쟁 지속 의지를 급격히 약화.",
       "weight": "+4.0%p (1개월내), +6.0%p (2~3개월), -2.0%p (4~6개월), -2.0%p (7~12개월), -1.0%p (1년초과)",
       "direction": "shorten",
-      "detail": "수도 직접 공격. 베오그라드(1999): 78일 폭격 후 항복. 바그다드(2003): 21일만에 함락. 수도 타격은 전쟁 지속 의지를 급격히 약화.\n\n신뢰도: 확실 (100%), 관련 기사 10건 감지.\n관련: Trump again threatens to strike Iran’s power plants amid impasse over strait of Hormuz | Yemen's Houthis launch missiles at Saudi Arabia after strikes on Sanaa airport | Iranian flights to Yemen are violation of sovereignty, says Yemeni official",
+      "detail": "수도 직접 공격. 베오그라드(1999): 78일 폭격 후 항복. 바그다드(2003): 21일만에 함락. 수도 타격은 전쟁 지속 의지를 급격히 약화.\n\n신뢰도: 확실 (100%), 관련 기사 10건 감지.\n관련: Trump threatens to expand strikes on Iran’s civilian infrastructure | Yemen's Houthis launch missiles at Saudi Arabia after strikes on Sanaa airport | Iranian flights to Yemen are violation of sovereignty, says Yemeni official",
       "keywords": [
         "capital",
         "bomb",
@@ -266,41 +292,11 @@
       "severity": "high"
     },
     {
-      "factor": "[중대 이벤트] 대량살상무기(WMD)/핵 위협",
-      "impact": "WMD/핵 위협 감지. 핵 위협은 분쟁의 성격을 근본적으로 변화시키며, 국제사회 전체의 개입을 촉발하여 예측 불확실성이 극대화.",
-      "weight": "+2.0%p (1개월내), +2.0%p (2~3개월), +3.3%p (4~6개월), +2.7%p (7~12개월), +2.0%p (1년초과)",
-      "direction": "lengthen",
-      "detail": "WMD/핵 위협 감지. 핵 위협은 분쟁의 성격을 근본적으로 변화시키며, 국제사회 전체의 개입을 촉발하여 예측 불확실성이 극대화.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: What is Iran’s Pickaxe Mountain?",
-      "keywords": [
-        "nuclear",
-        "strike",
-        "nuclear",
-        "weapon",
-        "use",
-        "nuclear",
-        "threat",
-        "chemical",
-        "weapon",
-        "use",
-        "biological",
-        "weapon",
-        "wmd",
-        "deploy",
-        "nuclear",
-        "option",
-        "atomic",
-        "bomb"
-      ],
-      "applied": "2026-07-15",
-      "active": true,
-      "severity": "critical"
-    },
-    {
-      "factor": "금값 사상최고 ($4039.3/oz)",
+      "factor": "금값 사상최고 ($4034.4/oz)",
       "impact": "안전자산 수요 폭증 → 글로벌 불안 심화",
       "weight": "+2%p (4-6개월)",
       "direction": "lengthen",
-      "detail": "금 가격이 온스당 $4039.3로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
+      "detail": "금 가격이 온스당 $4034.4로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
       "keywords": [
         "gold",
         "safe haven",
@@ -328,24 +324,72 @@
     }
   ],
   "news_signals": {
-    "ceasefire_mentions": 2,
+    "ceasefire_mentions": 4,
     "escalation_mentions": 6,
-    "negotiation_mentions": 4,
-    "casualty_mentions": 6,
+    "negotiation_mentions": 6,
+    "casualty_mentions": 4,
     "peace_mentions": 8,
-    "regional_spread": 24,
+    "regional_spread": 22,
     "total_articles": 50,
-    "new_articles": 49,
-    "unique_events": 48,
-    "duplicates_removed": 2
+    "new_articles": 50,
+    "unique_events": 49,
+    "duplicates_removed": 1
   },
   "latest_news": [
     {
-      "title": "Trump again threatens to strike Iran’s power plants amid impasse over strait of Hormuz",
+      "title": "Trump threatens to expand strikes on Iran’s civilian infrastructure",
       "link": "https://www.theguardian.com/world/2026/jul/15/trump-iran-power-plants-strike-threat-strait-of-hormuz",
-      "pubDate": "Wed, 15 Jul 2026 04:04:47 GMT",
+      "pubDate": "Wed, 15 Jul 2026 06:57:50 GMT",
       "source": "guardian",
-      "snippet": "US president says he will knock out all Iran’s power plants and bridges next week in bid to force Tehran to agree to a dealMiddle East crisis – live updatesDonald Trump has threatened to expand US str",
+      "snippet": "US president says he will knock out all power plants and bridges in effort to force Tehran to agree to deal amid impasse over straitMiddle East crisis – live updatesDonald Trump has threatened to expa",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Waiting for Hassan: Another Gaza doctor held by Israel without charge",
+      "link": "https://www.aljazeera.com/news/2026/7/15/waiting-for-hassan-another-gaza-doctor-held-by-israel-without-charge?traffic_source=rss",
+      "pubDate": "Wed, 15 Jul 2026 06:55:33 +0000",
+      "source": "aljazeera",
+      "snippet": "Hassan Khalil Almukayed is among at least 15 Palestinian doctors from Gaza currently in Israeli detention.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Trump threatens to bomb bridges and power plants unless Iran resumes talks",
+      "link": "https://www.bbc.co.uk/news/articles/cy0608wy8pro?at_medium=RSS&at_campaign=rss",
+      "pubDate": "Wed, 15 Jul 2026 06:47:25 GMT",
+      "source": "bbc",
+      "snippet": "Trump's comments aired as the two countries exchanged fire for the fourth day in a row and the US resumed blockading Iranian ports.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "How Iran’s southern coast is bearing the brunt of US attacks",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/7/15/how-irans-southern-coast-is-bearing-the-brunt-of-us-attacks?traffic_source=rss",
+      "pubDate": "Wed, 15 Jul 2026 05:34:12 +0000",
+      "source": "aljazeera",
+      "snippet": "Donald Trump says the US is going to bomb Iran’s civilian infrastructure if there is no deal by next week.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Briton's Iran jail sentence extended by two years, family says",
+      "link": "https://www.bbc.co.uk/news/articles/c4gygp4pk31o?at_medium=RSS&at_campaign=rss",
+      "pubDate": "Wed, 15 Jul 2026 05:02:33 GMT",
+      "source": "bbc",
+      "snippet": "Craig and Lindsay Foreman were arrested on spying charges last January while passing through Iran on a motorcycle journey.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -413,6 +457,18 @@
       "_isDuplicate": false
     },
     {
+      "title": "Trump retreat over Hormuz tolls suggests he is struggling to end Iran war",
+      "link": "https://www.bbc.co.uk/news/articles/crele3r8j19o?at_medium=RSS&at_campaign=rss",
+      "pubDate": "Tue, 14 Jul 2026 23:17:27 GMT",
+      "source": "bbc",
+      "snippet": "The abrupt about-face from the US president was the latest twist in a conflict that has now lasted more than four months.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
       "title": "At War With Iran Again, Trump Finds an Opponent He Cannot Easily Dominate",
       "link": "https://www.nytimes.com/2026/07/14/us/politics/iran-trump-war.html",
       "pubDate": "Tue, 14 Jul 2026 23:01:39 +0000",
@@ -447,71 +503,11 @@
       "_sourceCount": 1
     },
     {
-      "title": "Palestine weekly: Israel attacks children, hospitals in bloody week in Gaza",
-      "link": "https://www.aljazeera.com/features/2026/7/14/palestine-weekly-israel-attacks-children-hospitals-in-bloody-week-in-gaza?traffic_source=rss",
-      "pubDate": "Tue, 14 Jul 2026 21:05:39 +0000",
-      "source": "aljazeera",
-      "snippet": "Israel&#039;s grip on the occupied West Bank tightens through outposts, demolitions, and army-backed settler raids.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Sirens blare in Bahrain as Iran launches barrage of missiles, drones",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/7/14/sirens-blare-in-bahrain-as-iran-launches-barrage-of-missiles-drones?traffic_source=rss",
-      "pubDate": "Tue, 14 Jul 2026 21:05:12 +0000",
-      "source": "aljazeera",
-      "snippet": "Iranian state media is reporting that Tehran has targeted a US naval support base in Bahrain’s capital.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "What is Iran’s Pickaxe Mountain?",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/7/14/what-is-irans-pickaxe-mountain-2?traffic_source=rss",
-      "pubDate": "Tue, 14 Jul 2026 20:27:40 +0000",
-      "source": "aljazeera",
-      "snippet": "Donald Trump has threatened to strike Pickaxe Mountain, an underground nuclear-related complex.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Why Yemen’s long ‘no war, no peace’ deadlock may be ending",
-      "link": "https://www.aljazeera.com/features/2026/7/14/why-yemens-long-no-war-no-peace-deadlock-may-be-ending?traffic_source=rss",
-      "pubDate": "Tue, 14 Jul 2026 20:17:56 +0000",
-      "source": "aljazeera",
-      "snippet": "Mobilisation of fighters and attacks signal the collapse of Yemen&#039;s fragile peace, with regional implications looming.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Mahmoud Khalil alleges conspiracy in lawsuit against Trump officials",
-      "link": "https://www.aljazeera.com/news/2026/7/14/mahmoud-khalil-alleges-conspiracy-in-lawsuit-against-trump-officials?traffic_source=rss",
-      "pubDate": "Tue, 14 Jul 2026 20:16:52 +0000",
-      "source": "aljazeera",
-      "snippet": "Lawsuit claims conspiracy between top administrative officials and private groups to target the pro-Palestine advocate. ",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "US Senate Democrats block defence bill over Iran war, Israel integration",
-      "link": "https://www.aljazeera.com/news/2026/7/14/senate-democrats-block-defence-bill-over-iran-war-israel-provisions?traffic_source=rss",
-      "pubDate": "Tue, 14 Jul 2026 20:12:06 +0000",
-      "source": "aljazeera",
-      "snippet": "The Senate votes 50-46 to block debate on the annual defence bill over war funding and defence cooperation with Israel.",
+      "title": "Watch: The clash between US and Iran for control of the Strait of Hormuz",
+      "link": "https://www.bbc.co.uk/news/videos/cx2425dmpl3o?at_medium=RSS&at_campaign=rss",
+      "pubDate": "Tue, 14 Jul 2026 21:13:12 GMT",
+      "source": "bbc",
+      "snippet": "The BBC's Barbara Plett Usher examines the latest tensions over the key international shipping channel.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -528,6 +524,28 @@
         "count": 21,
         "new_count": 21,
         "articles": [
+          {
+            "title": "Trump threatens to bomb bridges and power plants unless Iran resumes talks",
+            "link": "https://www.bbc.co.uk/news/articles/cy0608wy8pro?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc"
+            ],
+            "pubDate": "Wed, 15 Jul 2026 06:47:25 GMT",
+            "snippet": "Trump's comments aired as the two countries exchanged fire for the fourth day in a row and the US resumed blockading Iranian ports.",
+            "isNew": true
+          },
+          {
+            "title": "How Iran’s southern coast is bearing the brunt of US attacks",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/7/15/how-irans-southern-coast-is-bearing-the-brunt-of-us-attacks?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Wed, 15 Jul 2026 05:34:12 +0000",
+            "snippet": "Donald Trump says the US is going to bomb Iran’s civilian infrastructure if there is no deal by next week.",
+            "isNew": true
+          },
           {
             "title": "US Fifth Fleet targeted in Bahrain, says Iran, in latest exchange of strikes – as it happened",
             "link": "https://www.theguardian.com/world/live/2026/jul/14/us-iran-war-live-updates-strikes-strait-of-hormuz-middle-east-crisis-trump-latest-news",
@@ -606,28 +624,6 @@
             "isNew": true
           },
           {
-            "title": "What is Iran’s Pickaxe Mountain?",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/7/14/what-is-irans-pickaxe-mountain-2?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Tue, 14 Jul 2026 20:27:40 +0000",
-            "snippet": "Donald Trump has threatened to strike Pickaxe Mountain, an underground nuclear-related complex.",
-            "isNew": true
-          },
-          {
-            "title": "Why Yemen’s long ‘no war, no peace’ deadlock may be ending",
-            "link": "https://www.aljazeera.com/features/2026/7/14/why-yemens-long-no-war-no-peace-deadlock-may-be-ending?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Tue, 14 Jul 2026 20:17:56 +0000",
-            "snippet": "Mobilisation of fighters and attacks signal the collapse of Yemen&#039;s fragile peace, with regional implications looming.",
-            "isNew": true
-          },
-          {
             "title": "Israel Strikes Police Post, Killing 7, Gaza Officials Say",
             "link": "https://www.nytimes.com/2026/07/14/world/middleeast/israel-strikes-gaza-police-force-hamas.html",
             "source": "nytimes",
@@ -644,20 +640,9 @@
         "category_id": "politics",
         "category_name": "국내 정치",
         "category_icon": "🏛️",
-        "count": 12,
-        "new_count": 12,
+        "count": 10,
+        "new_count": 10,
         "articles": [
-          {
-            "title": "Trump again threatens to strike Iran’s power plants amid impasse over strait of Hormuz",
-            "link": "https://www.theguardian.com/world/2026/jul/15/trump-iran-power-plants-strike-threat-strait-of-hormuz",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Wed, 15 Jul 2026 04:04:47 GMT",
-            "snippet": "US president says he will knock out all Iran’s power plants and bridges next week in bid to force Tehran to agree to a dealMiddle East crisis – live updatesDonald Trump has threatened to expand US str",
-            "isNew": true
-          },
           {
             "title": "Trump welcomes Iraqi PM to White House, vows ‘a lot of deals’",
             "link": "https://www.aljazeera.com/video/newsfeed/2026/7/15/aje-onl-nf_trump-welcomes-iraqi-pm-to-white-house-140726?traffic_source=rss",
@@ -667,6 +652,17 @@
             ],
             "pubDate": "Wed, 15 Jul 2026 02:46:31 +0000",
             "snippet": "US President Donald Trump and Iraqi PM Ali al-Zaidi have met at the White House pledging to deepen economic ties. ",
+            "isNew": true
+          },
+          {
+            "title": "Trump retreat over Hormuz tolls suggests he is struggling to end Iran war",
+            "link": "https://www.bbc.co.uk/news/articles/crele3r8j19o?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc"
+            ],
+            "pubDate": "Tue, 14 Jul 2026 23:17:27 GMT",
+            "snippet": "The abrupt about-face from the US president was the latest twist in a conflict that has now lasted more than four months.",
             "isNew": true
           },
           {
@@ -690,28 +686,6 @@
             ],
             "pubDate": "Mon, 13 Jul 2026 17:36:49 GMT",
             "snippet": "Mahmoud Ahmadinejad reportedly wooed by Mossad agents after distancing himself from KhameneiMiddle East crisis live – latest updatesIsrael tried to recruit Iran’s intensely anti-Zionist former preside",
-            "isNew": true
-          },
-          {
-            "title": "Mahmoud Khalil alleges conspiracy in lawsuit against Trump officials",
-            "link": "https://www.aljazeera.com/news/2026/7/14/mahmoud-khalil-alleges-conspiracy-in-lawsuit-against-trump-officials?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Tue, 14 Jul 2026 20:16:52 +0000",
-            "snippet": "Lawsuit claims conspiracy between top administrative officials and private groups to target the pro-Palestine advocate. ",
-            "isNew": true
-          },
-          {
-            "title": "US Senate Democrats block defence bill over Iran war, Israel integration",
-            "link": "https://www.aljazeera.com/news/2026/7/14/senate-democrats-block-defence-bill-over-iran-war-israel-provisions?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Tue, 14 Jul 2026 20:12:06 +0000",
-            "snippet": "The Senate votes 50-46 to block debate on the annual defence bill over war funding and defence cooperation with Israel.",
             "isNew": true
           },
           {
@@ -757,6 +731,28 @@
             "pubDate": "Mon, 13 Jul 2026 20:00:41 +0000",
             "snippet": "President Trump said the United States could collect tolls or fees, despite Vice President JD Vance and Secretary of State Marco Rubio saying no country could do so.",
             "isNew": true
+          },
+          {
+            "title": "Iranian Hard-Liners Threaten Trump as U.S.-Iran Strikes Continue",
+            "link": "https://www.nytimes.com/2026/07/13/world/middleeast/iran-hard-liners-threats-trump-us.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Mon, 13 Jul 2026 19:51:58 +0000",
+            "snippet": "Some Iranians are calling for revenge against President Trump and Prime Minister Benjamin Netanyahu of Israel for the February killing the country’s supreme leader.",
+            "isNew": true
+          },
+          {
+            "title": "Israel sets October date for first elections since Hamas attacks in 2023",
+            "link": "https://www.theguardian.com/world/2026/jul/13/israel-sets-october-date-first-elections-since-hamas-attacks-2023",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Mon, 13 Jul 2026 18:08:18 GMT",
+            "snippet": "Vote will allow Israelis to pass judgment on Benjamin Netanyahu and his handling of conflicts in Gaza and IranMiddle East crisis live – latest updatesIsrael will hold national elections on 27 October,",
+            "isNew": true
           }
         ]
       },
@@ -764,9 +760,20 @@
         "category_id": "economy",
         "category_name": "경제 영향",
         "category_icon": "📊",
-        "count": 7,
-        "new_count": 7,
+        "count": 8,
+        "new_count": 8,
         "articles": [
+          {
+            "title": "Watch: The clash between US and Iran for control of the Strait of Hormuz",
+            "link": "https://www.bbc.co.uk/news/videos/cx2425dmpl3o?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc"
+            ],
+            "pubDate": "Tue, 14 Jul 2026 21:13:12 GMT",
+            "snippet": "The BBC's Barbara Plett Usher examines the latest tensions over the key international shipping channel.",
+            "isNew": true
+          },
           {
             "title": "Trump Drops Plan to Tax Ships in Strait of Hormuz as Fighting with Iran Escalates",
             "link": "https://www.nytimes.com/2026/07/14/world/middleeast/trump-hormuz-shipping-fee-dropped.html",
@@ -850,9 +857,20 @@
         "category_id": "diplomacy",
         "category_name": "외교/협상",
         "category_icon": "🤝",
-        "count": 3,
-        "new_count": 3,
+        "count": 4,
+        "new_count": 4,
         "articles": [
+          {
+            "title": "Strait of Hormuz 'faultline' exposes weakness of the US-Iran deal",
+            "link": "https://www.bbc.co.uk/news/articles/cwy0ydn033yo?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc"
+            ],
+            "pubDate": "Tue, 14 Jul 2026 19:13:49 GMT",
+            "snippet": "Control of the waterway has become a key point of contention between the US and Iran, as a ceasefire deal falters. ",
+            "isNew": true
+          },
           {
             "title": "The UK and international law – Palestine is the test | Letter",
             "link": "https://www.theguardian.com/world/2026/jul/14/the-uk-and-international-law-palestine-is-the-test",
@@ -889,11 +907,42 @@
         ]
       },
       {
+        "category_id": "humanitarian",
+        "category_name": "인도주의/피해",
+        "category_icon": "🏥",
+        "count": 2,
+        "new_count": 2,
+        "articles": [
+          {
+            "title": "Trump threatens to expand strikes on Iran’s civilian infrastructure",
+            "link": "https://www.theguardian.com/world/2026/jul/15/trump-iran-power-plants-strike-threat-strait-of-hormuz",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Wed, 15 Jul 2026 06:57:50 GMT",
+            "snippet": "US president says he will knock out all power plants and bridges in effort to force Tehran to agree to deal amid impasse over straitMiddle East crisis – live updatesDonald Trump has threatened to expa",
+            "isNew": true
+          },
+          {
+            "title": "UK bans support for Iran’s Islamic Revolutionary Guard Corps",
+            "link": "https://www.theguardian.com/politics/2026/jul/13/uk-list-iran-islamic-revolutionary-guard-corps-irgc-terrorist-organisation",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Mon, 13 Jul 2026 16:56:05 GMT",
+            "snippet": "Home Office announces move that officials say comes close to proscribing group as a terrorist organisationThe UK will ban support for Iran’s Islamic Revolutionary Guard Corps, Keir Starmer said on Mon",
+            "isNew": true
+          }
+        ]
+      },
+      {
         "category_id": "regional",
         "category_name": "지역 정세",
         "category_icon": "🌍",
-        "count": 3,
-        "new_count": 3,
+        "count": 2,
+        "new_count": 2,
         "articles": [
           {
             "title": "Yemen’s Fragile Peace in Peril as Houthis Accuse Saudi Arabia of Bombing",
@@ -916,38 +965,6 @@
             "pubDate": "Mon, 13 Jul 2026 15:16:09 GMT",
             "snippet": "Within hours of the latest US attacks, Iran said it had struck US military assets in Kuwait, Jordan, Bahrain and Oman.",
             "isNew": true
-          },
-          {
-            "title": "Lebanese Hold Fast to Their Land Despite Threat of Long Israeli Occupation",
-            "link": "https://www.nytimes.com/2026/07/13/world/middleeast/lebanon-south-israel.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Mon, 13 Jul 2026 09:06:37 +0000",
-            "snippet": "Entire towns in southern Lebanon have been hollowed out by the war between Israel and Hezbollah. Some residents have stayed, fearing permanent displacement.",
-            "isNew": true
-          }
-        ]
-      },
-      {
-        "category_id": "humanitarian",
-        "category_name": "인도주의/피해",
-        "category_icon": "🏥",
-        "count": 1,
-        "new_count": 1,
-        "articles": [
-          {
-            "title": "UK bans support for Iran’s Islamic Revolutionary Guard Corps",
-            "link": "https://www.theguardian.com/politics/2026/jul/13/uk-list-iran-islamic-revolutionary-guard-corps-irgc-terrorist-organisation",
-            "source": "guardian",
-            "sources": [
-              "guardian",
-              "bbc"
-            ],
-            "pubDate": "Mon, 13 Jul 2026 16:56:05 GMT",
-            "snippet": "Home Office announces move that officials say comes close to proscribing group as a terrorist organisationThe UK will ban support for Iran’s Islamic Revolutionary Guard Corps, Keir Starmer said on Mon",
-            "isNew": true
           }
         ]
       },
@@ -955,59 +972,85 @@
         "category_id": "other",
         "category_name": "기타",
         "category_icon": "📰",
-        "count": 1,
-        "new_count": 1,
+        "count": 2,
+        "new_count": 2,
         "articles": [
           {
-            "title": "Zaghari-Ratcliffe condemns Iran’s ‘cruel’ rearrest of wildlife activist couple",
-            "link": "https://www.theguardian.com/world/2026/jul/13/nazanin-zaghari-ratcliffe-condemns-iran-rearrest-of-wildlife-activists-houman-jokar-sepideh-kashani",
-            "source": "guardian",
+            "title": "Waiting for Hassan: Another Gaza doctor held by Israel without charge",
+            "link": "https://www.aljazeera.com/news/2026/7/15/waiting-for-hassan-another-gaza-doctor-held-by-israel-without-charge?traffic_source=rss",
+            "source": "aljazeera",
             "sources": [
-              "guardian"
+              "aljazeera"
             ],
-            "pubDate": "Mon, 13 Jul 2026 09:59:13 GMT",
-            "snippet": "Nazanin Zaghari-Ratcliffe was in prison with Sepideh Kashani, who worked with husband Houman Jokar to save Asiatic cheetahNazanin Zaghari-Ratcliffe has described the rearrest of two Iranian environmen",
+            "pubDate": "Wed, 15 Jul 2026 06:55:33 +0000",
+            "snippet": "Hassan Khalil Almukayed is among at least 15 Palestinian doctors from Gaza currently in Israeli detention.",
+            "isNew": true
+          },
+          {
+            "title": "Briton's Iran jail sentence extended by two years, family says",
+            "link": "https://www.bbc.co.uk/news/articles/c4gygp4pk31o?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc"
+            ],
+            "pubDate": "Wed, 15 Jul 2026 05:02:33 GMT",
+            "snippet": "Craig and Lindsay Foreman were arrested on spying charges last January while passing through Iran on a motorcycle journey.",
             "isNew": true
           }
         ]
       }
     ],
     "recent_30min": {
-      "total_new": 49,
+      "total_new": 50,
       "by_category": {
-        "politics": {
-          "count": 12,
+        "humanitarian": {
+          "count": 2,
           "titles": [
             {
-              "title": "Trump again threatens to strike Iran’s power plants amid impasse over strait of Hormuz",
+              "title": "Trump threatens to expand strikes on Iran’s civilian infrastructure",
               "link": "https://www.theguardian.com/world/2026/jul/15/trump-iran-power-plants-strike-threat-strait-of-hormuz",
               "source": "guardian"
             },
             {
-              "title": "Trump welcomes Iraqi PM to White House, vows ‘a lot of deals’",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/7/15/aje-onl-nf_trump-welcomes-iraqi-pm-to-white-house-140726?traffic_source=rss",
+              "title": "UK bans support for Iran’s Islamic Revolutionary Guard Corps",
+              "link": "https://www.theguardian.com/politics/2026/jul/13/uk-list-iran-islamic-revolutionary-guard-corps-irgc-terrorist-organisation",
+              "source": "guardian"
+            }
+          ]
+        },
+        "other": {
+          "count": 3,
+          "titles": [
+            {
+              "title": "Waiting for Hassan: Another Gaza doctor held by Israel without charge",
+              "link": "https://www.aljazeera.com/news/2026/7/15/waiting-for-hassan-another-gaza-doctor-held-by-israel-without-charge?traffic_source=rss",
               "source": "aljazeera"
             },
             {
-              "title": "At War With Iran Again, Trump Finds an Opponent He Cannot Easily Dominate",
-              "link": "https://www.nytimes.com/2026/07/14/us/politics/iran-trump-war.html",
+              "title": "Briton's Iran jail sentence extended by two years, family says",
+              "link": "https://www.bbc.co.uk/news/articles/c4gygp4pk31o?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
+            },
+            {
+              "title": "Iran’s Former Leader Denies Times Report",
+              "link": "https://www.nytimes.com/2026/07/14/world/middleeast/mahmoud-ahmadinejad-iran-israeli-asset.html",
               "source": "nytimes"
-            },
-            {
-              "title": "Mahmoud Khalil alleges conspiracy in lawsuit against Trump officials",
-              "link": "https://www.aljazeera.com/news/2026/7/14/mahmoud-khalil-alleges-conspiracy-in-lawsuit-against-trump-officials?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "US Senate Democrats block defence bill over Iran war, Israel integration",
-              "link": "https://www.aljazeera.com/news/2026/7/14/senate-democrats-block-defence-bill-over-iran-war-israel-provisions?traffic_source=rss",
-              "source": "aljazeera"
             }
           ]
         },
         "military": {
           "count": 21,
           "titles": [
+            {
+              "title": "Trump threatens to bomb bridges and power plants unless Iran resumes talks",
+              "link": "https://www.bbc.co.uk/news/articles/cy0608wy8pro?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
+            },
+            {
+              "title": "How Iran’s southern coast is bearing the brunt of US attacks",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/7/15/how-irans-southern-coast-is-bearing-the-brunt-of-us-attacks?traffic_source=rss",
+              "source": "aljazeera"
+            },
             {
               "title": "US Fifth Fleet targeted in Bahrain, says Iran, in latest exchange of strikes – as it happened",
               "link": "https://www.theguardian.com/world/live/2026/jul/14/us-iran-war-live-updates-strikes-strait-of-hormuz-middle-east-crisis-trump-latest-news",
@@ -1022,37 +1065,47 @@
               "title": "US star Balogun knew red card reversal would ‘cause a lot of controversy’",
               "link": "https://www.aljazeera.com/sports/2026/7/15/us-star-balogun-knew-red-card-reversal-would-cause-a-lot-of-controversy?traffic_source=rss",
               "source": "aljazeera"
-            },
-            {
-              "title": "Iran war live: US carries out strikes, IRGC claims damage on US Gulf bases",
-              "link": "https://www.aljazeera.com/news/liveblog/2026/7/15/live-trump-says-strikes-on-iran-will-continue-until-i-say?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Iran’s Cyberattackers Tracked Phones of U.S. Military Personnel in the Mideast, Data Suggests",
-              "link": "https://www.nytimes.com/2026/07/14/world/middleeast/iran-cyberattack-us-military-phones-tracking.html",
-              "source": "nytimes"
             }
           ]
         },
-        "other": {
-          "count": 2,
+        "politics": {
+          "count": 10,
           "titles": [
             {
-              "title": "Iran’s Former Leader Denies Times Report",
-              "link": "https://www.nytimes.com/2026/07/14/world/middleeast/mahmoud-ahmadinejad-iran-israeli-asset.html",
+              "title": "Trump welcomes Iraqi PM to White House, vows ‘a lot of deals’",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/7/15/aje-onl-nf_trump-welcomes-iraqi-pm-to-white-house-140726?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Trump retreat over Hormuz tolls suggests he is struggling to end Iran war",
+              "link": "https://www.bbc.co.uk/news/articles/crele3r8j19o?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
+            },
+            {
+              "title": "At War With Iran Again, Trump Finds an Opponent He Cannot Easily Dominate",
+              "link": "https://www.nytimes.com/2026/07/14/us/politics/iran-trump-war.html",
               "source": "nytimes"
             },
             {
-              "title": "Zaghari-Ratcliffe condemns Iran’s ‘cruel’ rearrest of wildlife activist couple",
-              "link": "https://www.theguardian.com/world/2026/jul/13/nazanin-zaghari-ratcliffe-condemns-iran-rearrest-of-wildlife-activists-houman-jokar-sepideh-kashani",
-              "source": "guardian"
+              "title": "Trump’s Canceled Plan to Charge a Toll in the Strait of Hormuz: What to Know",
+              "link": "https://www.nytimes.com/2026/07/14/world/middleeast/trump-iran-strait-hormuz-toll-oil.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Europe, Flexing Muscle in Ukraine, Is Still on Sidelines in Iran",
+              "link": "https://www.nytimes.com/2026/07/14/world/europe/macron-trump-bastille-day-military-parade.html",
+              "source": "nytimes"
             }
           ]
         },
         "economy": {
-          "count": 7,
+          "count": 8,
           "titles": [
+            {
+              "title": "Watch: The clash between US and Iran for control of the Strait of Hormuz",
+              "link": "https://www.bbc.co.uk/news/videos/cx2425dmpl3o?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
+            },
             {
               "title": "Trump Drops Plan to Tax Ships in Strait of Hormuz as Fighting with Iran Escalates",
               "link": "https://www.nytimes.com/2026/07/14/world/middleeast/trump-hormuz-shipping-fee-dropped.html",
@@ -1072,17 +1125,17 @@
               "title": "Ella Baron on the US, Iran and the strait of Hormuz – cartoon",
               "link": "https://www.theguardian.com/commentisfree/picture/2026/jul/14/ella-baron-on-the-us-iran-and-the-strait-of-hormuz-cartoon",
               "source": "guardian"
-            },
-            {
-              "title": "Trump withdraws Hormuz tolls threat but says US will continue to blockade Iran",
-              "link": "https://www.theguardian.com/world/2026/jul/14/us-strikes-iran-bahrain-jordan-uae-tankers",
-              "source": "guardian"
             }
           ]
         },
         "diplomacy": {
-          "count": 3,
+          "count": 4,
           "titles": [
+            {
+              "title": "Strait of Hormuz 'faultline' exposes weakness of the US-Iran deal",
+              "link": "https://www.bbc.co.uk/news/articles/cwy0ydn033yo?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
+            },
             {
               "title": "The UK and international law – Palestine is the test | Letter",
               "link": "https://www.theguardian.com/world/2026/jul/14/the-uk-and-international-law-palestine-is-the-test",
@@ -1101,7 +1154,7 @@
           ]
         },
         "regional": {
-          "count": 3,
+          "count": 2,
           "titles": [
             {
               "title": "Yemen’s Fragile Peace in Peril as Houthis Accuse Saudi Arabia of Bombing",
@@ -1112,21 +1165,6 @@
               "title": "US and Iran trade fire as tensions rise over Strait of Hormuz",
               "link": "https://www.bbc.co.uk/news/articles/cevlr112pmgo?at_medium=RSS&at_campaign=rss",
               "source": "bbc"
-            },
-            {
-              "title": "Lebanese Hold Fast to Their Land Despite Threat of Long Israeli Occupation",
-              "link": "https://www.nytimes.com/2026/07/13/world/middleeast/lebanon-south-israel.html",
-              "source": "nytimes"
-            }
-          ]
-        },
-        "humanitarian": {
-          "count": 1,
-          "titles": [
-            {
-              "title": "UK bans support for Iran’s Islamic Revolutionary Guard Corps",
-              "link": "https://www.theguardian.com/politics/2026/jul/13/uk-list-iran-islamic-revolutionary-guard-corps-irgc-terrorist-organisation",
-              "source": "guardian"
             }
           ]
         }
@@ -1221,16 +1259,10 @@
   ],
   "economic_indicators": {
     "WTI": {
-      "price": 79.93,
-      "change": 0.59,
-      "changePercent": 0.74,
+      "price": 80.3,
+      "change": 0.96,
+      "changePercent": 1.21,
       "prev": 79.34
-    },
-    "DXY": {
-      "price": 100.82,
-      "change": -0.46,
-      "changePercent": -0.45,
-      "prev": 101.28
     },
     "US10Y": {
       "price": 4.58,
@@ -1238,32 +1270,46 @@
       "changePercent": 0.44,
       "prev": 4.57
     },
+    "GOLD": {
+      "price": 4034.4,
+      "change": -26.7,
+      "changePercent": -0.66,
+      "prev": 4061.1
+    },
     "VIX": {
       "price": 16.5,
       "change": 1.47,
       "changePercent": 9.78,
       "prev": 15.03
     },
+    "BRENT": {
+      "price": 85.89,
+      "change": 1.16,
+      "changePercent": 1.37,
+      "prev": 84.73
+    },
+    "DXY": {
+      "price": 100.85,
+      "change": -0.43,
+      "changePercent": -0.42,
+      "prev": 101.28
+    },
     "US2Y": {
       "price": 3.7,
       "change": 0.01,
       "changePercent": 0.27,
       "prev": 3.69
-    },
-    "GOLD": {
-      "price": 4039.3,
-      "change": -21.8,
-      "changePercent": -0.54,
-      "prev": 4061.1
-    },
-    "BRENT": {
-      "price": 85.61,
-      "change": 0.88,
-      "changePercent": 1.04,
-      "prev": 84.73
     }
   },
   "critical_events": [
+    {
+      "id": "ceasefire_agreement",
+      "name": "공식 휴전/평화 합의",
+      "severity": "critical",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "shorten"
+    },
     {
       "id": "capital_attack",
       "name": "수도 직접 공격/포위",
@@ -1271,14 +1317,6 @@
       "confidence": 1,
       "matchCount": 10,
       "direction": "shorten"
-    },
-    {
-      "id": "wmd_threat",
-      "name": "대량살상무기(WMD)/핵 위협",
-      "severity": "critical",
-      "confidence": 0.6666666666666666,
-      "matchCount": 2,
-      "direction": "lengthen"
     }
   ],
   "feeds_loaded": 7,
