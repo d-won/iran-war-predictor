@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-07-21T14:32:56.053Z",
+  "timestamp": "2026-07-21T16:20:30.520Z",
   "war_day": 143,
   "probabilities": {
-    "1개월 내 (~3월)": 27.8,
-    "2~3개월 (4~5월)": 43.1,
-    "4~6개월 (6~8월)": 19.2,
-    "7~12개월 (9월~27/2월)": 7.4,
-    "1년 초과": 2.5
+    "1개월 내 (~3월)": 25,
+    "2~3개월 (4~5월)": 40.8,
+    "4~6개월 (6~8월)": 21,
+    "7~12개월 (9월~27/2월)": 10,
+    "1년 초과": 3.2
   },
   "factors": [
     {
@@ -45,20 +45,20 @@
       "decay": 0.4
     },
     {
-      "factor": "이란 미사일 능력 급감 (휴전12:확전8.2)",
-      "impact": "전쟁 지속 능력 약화로 단기 종전 가능성 증가",
-      "weight": "+0.0%p (1개월내), +0.0%p (2~3개월) (잔존40%)",
-      "direction": "shorten",
-      "detail": "이란의 보복 미사일 타격 능력이 약 90% 감소했습니다.",
+      "factor": "확전 뉴스 우세 (확전8:휴전2)",
+      "impact": "전쟁 장기화 가능성 (확전비율 80%)",
+      "weight": "+0.03%p (4~6개월)",
+      "direction": "lengthen",
+      "detail": "언론에서 휴전보다 확전을 더 많이 보도하고 있습니다.",
       "keywords": [
-        "missile",
-        "ballistic",
-        "launch",
-        "strike capab"
+        "escalat",
+        "intensif",
+        "expand",
+        "widen"
       ],
-      "applied": "2026-03-02",
+      "applied": "실시간",
       "active": true,
-      "decay": 0.4
+      "decay": 1
     },
     {
       "factor": "호르무즈 해협 봉쇄 → 국제 경제 압력",
@@ -164,11 +164,11 @@
       "decay": 1
     },
     {
-      "factor": "협상/외교 뉴스 2.2건 감지",
-      "impact": "외교 움직임 미약",
-      "weight": "+0.00%p (1개월내), +0.00%p (2~3개월)",
+      "factor": "협상/외교 뉴스 12.2건 감지",
+      "impact": "외교적 해결 움직임 포착",
+      "weight": "+0.02%p (1개월내), +0.02%p (2~3개월)",
       "direction": "shorten",
-      "detail": "실시간 뉴스에서 협상 관련 기사 2.2건이 감지되었습니다.",
+      "detail": "실시간 뉴스에서 협상 관련 기사 12.2건이 감지되었습니다.",
       "keywords": [
         "negotiat",
         "talks",
@@ -181,11 +181,11 @@
       "decay": 1
     },
     {
-      "factor": "지역 확산 뉴스 12건 감지",
-      "impact": "주변국 연루 확대로 장기화 위험",
-      "weight": "+0.01%p (4~6개월), +0.01%p (7~12개월)",
+      "factor": "지역 확산 뉴스 20건 감지",
+      "impact": "주변국 대규모 연루 → 장기화 위험 높음",
+      "weight": "+0.02%p (4~6개월), +0.02%p (7~12개월)",
       "direction": "lengthen",
-      "detail": "주변국을 언급하는 기사 12건이 감지되었습니다.",
+      "detail": "주변국을 언급하는 기사 20건이 감지되었습니다.",
       "keywords": [
         "saudi",
         "uae",
@@ -236,9 +236,9 @@
     {
       "factor": "[중대 이벤트] 공식 휴전/평화 합의",
       "impact": "공식 휴전 또는 평화 합의 체결. 휴전 합의는 전쟁 종결의 결정적 단계이며, 합의 후 이행까지 평균 1~2주 소요.",
-      "weight": "+15.0%p (1개월내), +10.0%p (2~3개월), -8.0%p (4~6개월), -6.0%p (7~12개월), -3.0%p (1년초과)",
+      "weight": "+10.0%p (1개월내), +6.7%p (2~3개월), -5.3%p (4~6개월), -4.0%p (7~12개월), -2.0%p (1년초과)",
       "direction": "shorten",
-      "detail": "공식 휴전 또는 평화 합의 체결. 휴전 합의는 전쟁 종결의 결정적 단계이며, 합의 후 이행까지 평균 1~2주 소요.\n\n신뢰도: 확실 (100%), 관련 기사 6건 감지.\n관련: ‘There is ‌no safe place’: Israeli attack kills family of six in Gaza | Israeli ministers announce plans for new illegal settlements in Gaza and West Bank | Trump to meet Lebanon’s president as US pushes ahead with peace deal",
+      "detail": "공식 휴전 또는 평화 합의 체결. 휴전 합의는 전쟁 종결의 결정적 단계이며, 합의 후 이행까지 평균 1~2주 소요.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: ‘There is ‌no safe place’: Israeli attack kills family of six in Gaza",
       "keywords": [
         "ceasefire",
         "agree",
@@ -294,36 +294,6 @@
       "severity": "high"
     },
     {
-      "factor": "[중대 이벤트] 외교적 돌파구/강대국 중재",
-      "impact": "주요 외교적 돌파구 또는 강대국 중재. 데이턴(1995): 미국 중재 → 3주만에 합의. UN 안보리 결의는 평균 2~4주 내 휴전 이행.",
-      "weight": "+2.0%p (1개월내), +4.0%p (2~3개월), +1.3%p (4~6개월), -1.3%p (7~12개월), -0.7%p (1년초과)",
-      "direction": "shorten",
-      "detail": "주요 외교적 돌파구 또는 강대국 중재. 데이턴(1995): 미국 중재 → 3주만에 합의. UN 안보리 결의는 평균 2~4주 내 휴전 이행.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: June 10, 2024 Israel-Hamas war",
-      "keywords": [
-        "peace talk",
-        "agree",
-        "diplomatic",
-        "breakthrough",
-        "summit",
-        "peace",
-        "mediati",
-        "accept",
-        "un",
-        "resolution",
-        "ceasefire",
-        "broker",
-        "peace",
-        "negotiat",
-        "breakthrough",
-        "china",
-        "mediat",
-        "peace framework"
-      ],
-      "applied": "2026-07-21",
-      "active": true,
-      "severity": "high"
-    },
-    {
       "factor": "[중대 이벤트] 수도 직접 공격/포위",
       "impact": "수도 직접 공격. 베오그라드(1999): 78일 폭격 후 항복. 바그다드(2003): 21일만에 함락. 수도 타격은 전쟁 지속 의지를 급격히 약화.",
       "weight": "+2.7%p (1개월내), +4.0%p (2~3개월), -1.3%p (4~6개월), -1.3%p (7~12개월), -0.7%p (1년초과)",
@@ -358,9 +328,9 @@
     {
       "factor": "[중대 이벤트] 전선 확대/신규 참전국",
       "impact": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).",
-      "weight": "-2.0%p (1개월내), -3.0%p (2~3개월), +4.0%p (4~6개월), +3.0%p (7~12개월), +2.0%p (1년초과)",
+      "weight": "-1.3%p (1개월내), -2.0%p (2~3개월), +2.7%p (4~6개월), +2.0%p (7~12개월), +1.3%p (1년초과)",
       "direction": "lengthen",
-      "detail": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).\n\n신뢰도: 확실 (100%), 관련 기사 4건 감지.\n관련: Devastation in Gaza as Israel wages war on Hamas | Houthis in Yemen Edge Closer to Entering U.S.-Iran War",
+      "detail": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Israel has ‘no interest’ in joining US war on Iran, says Smotrich",
       "keywords": [
         "new front",
         "war spread",
@@ -382,11 +352,11 @@
       "severity": "moderate"
     },
     {
-      "factor": "금값 사상최고 ($4067/oz)",
+      "factor": "금값 사상최고 ($4081.7/oz)",
       "impact": "안전자산 수요 폭증 → 글로벌 불안 심화",
       "weight": "+2%p (4-6개월)",
       "direction": "lengthen",
-      "detail": "금 가격이 온스당 $4067로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
+      "detail": "금 가격이 온스당 $4081.7로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
       "keywords": [
         "gold",
         "safe haven",
@@ -397,11 +367,11 @@
       "active": true
     },
     {
-      "factor": "미국 10년 국채금리 4.62% (고금리 지속)",
+      "factor": "미국 10년 국채금리 4.63% (고금리 지속)",
       "impact": "전쟁 자금 조달 비용 증가",
       "weight": "+1%p (4-6개월)",
       "direction": "mixed",
-      "detail": "미국 10년물 국채금리가 4.62%로 높은 수준을 유지하고 있습니다. 전쟁 자금 조달 비용이 증가하며, 장기전의 경제적 부담이 커지고 있습니다.",
+      "detail": "미국 10년물 국채금리가 4.63%로 높은 수준을 유지하고 있습니다. 전쟁 자금 조달 비용이 증가하며, 장기전의 경제적 부담이 커지고 있습니다.",
       "keywords": [
         "treasury",
         "yield",
@@ -414,18 +384,136 @@
     }
   ],
   "news_signals": {
-    "ceasefire_mentions": 12,
-    "escalation_mentions": 8.2,
-    "negotiation_mentions": 2.2,
+    "ceasefire_mentions": 2,
+    "escalation_mentions": 8,
+    "negotiation_mentions": 12.2,
     "casualty_mentions": 12,
-    "peace_mentions": 4,
-    "regional_spread": 12,
+    "peace_mentions": 8,
+    "regional_spread": 20,
     "total_articles": 50,
-    "new_articles": 49,
-    "unique_events": 39,
-    "duplicates_removed": 11
+    "new_articles": 50,
+    "unique_events": 46,
+    "duplicates_removed": 4
   },
   "latest_news": [
+    {
+      "title": "Trump pledges to ‘take care of’ Houthis if group blocks Saudi ships – Middle East crisis live",
+      "link": "https://www.theguardian.com/world/live/2026/jul/21/us-iran-war-live-updates-strait-of-hormuz-attacks-houthis-blockade-red-sea-middle-east-crisis-latest-news",
+      "pubDate": "Tue, 21 Jul 2026 16:18:01 GMT",
+      "source": "guardian",
+      "snippet": "The Iran-based group said it plans to impose an immediate maritime blockade of Saudi Arabia in the Red SeaLebanon’s president, Joseph Aoun, is due to meet Donald Trump for the first time today as he w",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "캐나다 총리, '50% 관세'에 \"트럼프와 통화…협상 강화 합의\"",
+      "link": "https://www.yna.co.kr/view/AKR20260722002300072",
+      "pubDate": "Wed, 22 Jul 2026 01:16:38 +0900",
+      "source": "yonhap",
+      "snippet": "(뉴욕=연합뉴스) 김연숙 특파원 = 마크 카니 캐나다 총리는 21일(현지시간) 미국의 새로운 관세 부과 발표와 관련, 도널드 트럼프 미 대통령과...",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "US launches fresh strikes on Iran, as Trump warns of retaliation for deaths of soldiers",
+      "link": "https://www.bbc.co.uk/news/articles/cx25wg2x26do?at_medium=RSS&at_campaign=rss",
+      "pubDate": "Tue, 21 Jul 2026 16:10:56 GMT",
+      "source": "bbc",
+      "snippet": "Iran says it has hit two ships in the Strait of Hormuz as well as targets in Bahrain and Jordan.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Lebanese army says troops deploying in 'pilot zone' after Israeli withdrawal",
+      "link": "https://www.bbc.co.uk/news/articles/cy8mynlmn55o?at_medium=RSS&at_campaign=rss",
+      "pubDate": "Tue, 21 Jul 2026 16:03:22 GMT",
+      "source": "bbc",
+      "snippet": "A US-brokered agreement should see Israeli troops pulling out of a small part of Lebanon occupied during their conflict with Hezbollah.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Iran’s top diplomat says ‘security gap’ may have led to strikes on supreme leader.",
+      "link": "https://www.nytimes.com/live/2026/07/21/world/iran-war-strikes-trump-hormuz/abbas-aragchi-security-gap-strikes",
+      "pubDate": "Tue, 21 Jul 2026 16:00:44 +0000",
+      "source": "nytimes",
+      "snippet": "",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Israeli air strike in Gaza City kills family of six, medics say",
+      "link": "https://www.bbc.co.uk/news/articles/c0qv0pdj18go?at_medium=RSS&at_campaign=rss",
+      "pubDate": "Tue, 21 Jul 2026 15:54:11 GMT",
+      "source": "bbc",
+      "snippet": "Firas al-Masri, his wife and their four children died in the attack, which the Israeli military says targeted a Hamas operative.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Zendaya faces backlash for wearing ancient Iranian jewellery at Odyssey event",
+      "link": "https://www.theguardian.com/science/2026/jul/21/zendaya-faces-backlash-for-wearing-ancient-iranian-jewellery-at-odyssey-event",
+      "pubDate": "Tue, 21 Jul 2026 15:01:36 GMT",
+      "source": "guardian",
+      "snippet": "Film star promotes Christopher Nolan film epic wearing gold artefacts dating back almost 3,000 yearsThe Odyssey is a story about a Greek king’s long journey home. But a pair of earrings worn on the ne",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Trump Says Netanyahu Will Not Be Arrested in the U.S.",
+      "link": "https://www.nytimes.com/2026/07/20/world/middleeast/israel-un-mamdani-netanyahu-arrest.html",
+      "pubDate": "Tue, 21 Jul 2026 14:45:28 +0000",
+      "source": "nytimes",
+      "snippet": "New York’s mayor, Zohran Mamdani, told The New York Times, he was looking into whether he could arrest Prime Minister Benjamin Netanyahu when he comes to New York for the U.N. General Assembly.",
+      "isNew": true,
+      "_isDuplicate": true,
+      "_sourceCount": 1
+    },
+    {
+      "title": "Israel has ‘no interest’ in joining US war on Iran, says Smotrich",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/7/21/israel-has-no-interest-in-joining-us-war-on-iran-says-smotrich?traffic_source=rss",
+      "pubDate": "Tue, 21 Jul 2026 14:42:21 +0000",
+      "source": "aljazeera",
+      "snippet": "Israeli Finance Minister says Israel has &quot;no interest&quot; in joining the renewed US military campaign against Iran.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Why Iran is risking so much over the Strait of Hormuz",
+      "link": "https://www.bbc.co.uk/news/articles/cwymx3eevpjo?at_medium=RSS&at_campaign=rss",
+      "pubDate": "Tue, 21 Jul 2026 14:36:47 GMT",
+      "source": "bbc",
+      "snippet": "None of the choices facing Iran’s leaders offer a clear path to victory, as the conflict with the US continues.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
     {
       "title": "Lebanese Army Accuses Israeli Troops of Firing as Its Forces Deploy in ‘Pilot Zone’",
       "link": "https://www.nytimes.com/2026/07/21/world/middleeast/lebanon-israel-ceasefire-plan.html",
@@ -439,39 +527,15 @@
       "_isDuplicate": false
     },
     {
-      "title": "Lebanese army accuses Israelis of firing near troops as president prepares to meet Trump – Middle East crisis live",
-      "link": "https://www.theguardian.com/world/live/2026/jul/21/us-iran-war-live-updates-strait-of-hormuz-attacks-houthis-blockade-red-sea-middle-east-crisis-latest-news",
-      "pubDate": "Tue, 21 Jul 2026 14:18:36 GMT",
-      "source": "guardian",
-      "snippet": "Soldiers were operating in ‘pilot zone’ in southern Lebanon; Joseph Aoun to meet Trump at White HouseLebanon’s president, Joseph Aoun, is due to meet Donald Trump for the first time today as he wraps ",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "루마니아 영해까지 전쟁 그림자…러, 주택·인프라 무차별 보복",
-      "link": "https://www.yna.co.kr/view/AKR20260721186400109",
-      "pubDate": "Tue, 21 Jul 2026 23:00:12 +0900",
-      "source": "yonhap",
-      "snippet": "(로마=연합뉴스) 민경락 특파원 = 우크라이나의 에너지 시설 집중 공격으로 연료 수급 불안에 시달리는 러시아가 우크라이나 민간 시설을 위협하며 ...",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
       "title": "ASEAN diplomats voice ‘serious concern’ over Iran war and energy crisis",
       "link": "https://www.aljazeera.com/news/2026/7/21/asean-diplomats-voice-serious-concern-over-iran-war-and-energy-crisis?traffic_source=rss",
       "pubDate": "Tue, 21 Jul 2026 13:43:48 +0000",
       "source": "aljazeera",
       "snippet": "Southeast Asian countries are highly affected by oil supply shortages caused by Iran war and Strait of Hormuz closure.",
       "isNew": true,
-      "_sourceCount": 2,
-      "_isDuplicated": true,
-      "_clusterSize": 2,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
       "_isDuplicate": false
     },
     {
@@ -499,107 +563,11 @@
       "_isDuplicate": false
     },
     {
-      "title": "Israel threatens ‘full force’ response if Iran fires missiles towards it",
-      "link": "https://www.theguardian.com/world/2026/jul/19/israel-threatens-full-force-response-iran-fires-missiles",
-      "pubDate": "Sun, 19 Jul 2026 17:30:32 GMT",
-      "source": "guardian",
-      "snippet": "Return to all-out regional war grows increasingly likely as US and Iran trade strikes and Trump warns of escalationMiddle East crisis live: follow latest updatesIsrael has warned it could retaliate ag",
-      "isNew": true,
-      "_sourceCount": 2,
-      "_isDuplicated": true,
-      "_clusterSize": 2,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Israel’s brutality cannot continue in plain sight | Letters",
-      "link": "https://www.theguardian.com/world/2026/jul/19/israels-brutality-cannot-continue-in-plain-sight",
-      "pubDate": "Sun, 19 Jul 2026 15:45:45 GMT",
-      "source": "guardian",
-      "snippet": "Gwyn Daniel and Phil Gaunt respond to an article by Nesrine Malik about the horrors taking place in Israel’s prisonsNesrine Malik’s incisive piece (In Israel’s prisons, torture and death have become a",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "‘He’s a war criminal’: Mamdani exploring whether he can arrest Netanyahu if he visits New York",
-      "link": "https://www.theguardian.com/us-news/2026/jul/19/mamdani-netanyahu",
-      "pubDate": "Sun, 19 Jul 2026 15:38:11 GMT",
-      "source": "guardian",
-      "snippet": "NYC mayor says in Times interview that’s he’s in ‘active conversation’ with city’s law department about the matterNew York City’s mayor, Zohran Mamdani, has said he is reviewing whether his administra",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "‘We hear your voices’: inside the Church of England’s debate over Palestine",
-      "link": "https://www.theguardian.com/world/2026/jul/19/inside-church-of-england-debate-over-palestine-gaza",
-      "pubDate": "Sun, 19 Jul 2026 10:52:36 GMT",
-      "source": "guardian",
-      "snippet": "A General Synod vote to hear a document describing Israel’s ‘genocidal war on Gaza’ was welcomed by Palestinian Christians, but prompted warnings from Jewish groupsFather Fadi Diab, a prominent Palest",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Israel threatens to seize ancient water reservoirs near Bethlehem",
-      "link": "https://www.theguardian.com/world/2026/jul/19/israel-threatens-to-seize-ancient-water-reservoirs-near-bethlehem",
-      "pubDate": "Sun, 19 Jul 2026 06:00:19 GMT",
-      "source": "guardian",
-      "snippet": "Solomon’s Pools date back to the second century BCE, and have become a source of recreation for nearby BethlehemIsrael is threatening to seize ancient water reservoirs near Bethlehem, in what would be",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Two US troops killed and one missing in Jordan after Iranian attacks",
-      "link": "https://www.theguardian.com/world/2026/jul/18/iran-attacks-us-allies-in-middle-east-in-second-week-of-renewed-conflict",
-      "pubDate": "Sun, 19 Jul 2026 04:41:49 GMT",
-      "source": "guardian",
-      "snippet": "Sirens sound in Bahrain and Kuwait accuses Tehran of targeting civilian sites and infrastructure as Iran strikes US alliesThe US retaliated against Iran’s Revolutionary Guard (IRGC) after two American",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Why is Trump risking midterm disaster by resuming the unpopular Iran war?",
-      "link": "https://www.theguardian.com/world/2026/jul/18/trump-iran-war-political-midterm-risk",
-      "pubDate": "Sat, 18 Jul 2026 09:00:02 GMT",
-      "source": "guardian",
-      "snippet": "Less than a month after hailing a ceasefire, Trump resumed strikes on Iran, a move experts warn could prolong the war and hurt Republicans before the midtermsFor half a century, Donald Trump has perfo",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "US launches seventh night of Iran strikes as Hormuz conflict escalates",
-      "link": "https://www.theguardian.com/world/2026/jul/17/us-launches-seventh-night-of-iran-strikes-as-hormuz-conflict-escalates",
-      "pubDate": "Sat, 18 Jul 2026 06:03:13 GMT",
-      "source": "guardian",
-      "snippet": "Central Command says attacks were designed to ‘continue degrading Iranian military capabilities’The US military said it had launched a seventh consecutive night of strikes on Iran on Friday night as f",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Israeli ministers announce plans for new illegal settlements in Gaza and West Bank",
-      "link": "https://www.theguardian.com/world/2026/jul/18/israel-plan-new-illegal-settlements-gaza-west-bank-occupied-palestine",
-      "pubDate": "Sat, 18 Jul 2026 06:00:50 GMT",
-      "source": "guardian",
-      "snippet": "Defence minister seeks three ‘Nahal’ outposts in Gaza as top commander says Israel now controls 65% of the strip, violating Trump ceasefire dealIsrael’s defence and finance ministers announced plans f",
+      "title": "Iran war: Look beyond stocks to understand state of economy, experts say",
+      "link": "https://www.aljazeera.com/economy/2026/7/21/iran-war-look-beyond-stocks-to-understand-state-of-economy-experts-say?traffic_source=rss",
+      "pubDate": "Tue, 21 Jul 2026 12:34:05 +0000",
+      "source": "aljazeera",
+      "snippet": "Yields on 10-year US Treasury bills, a bellwether for inflation, are up 60 basis points since the start of the Iran war.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -613,9 +581,53 @@
         "category_id": "military",
         "category_name": "군사 작전",
         "category_icon": "⚔️",
-        "count": 13,
-        "new_count": 13,
+        "count": 23,
+        "new_count": 23,
         "articles": [
+          {
+            "title": "Lebanese army says troops deploying in 'pilot zone' after Israeli withdrawal",
+            "link": "https://www.bbc.co.uk/news/articles/cy8mynlmn55o?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc"
+            ],
+            "pubDate": "Tue, 21 Jul 2026 16:03:22 GMT",
+            "snippet": "A US-brokered agreement should see Israeli troops pulling out of a small part of Lebanon occupied during their conflict with Hezbollah.",
+            "isNew": true
+          },
+          {
+            "title": "Iran’s top diplomat says ‘security gap’ may have led to strikes on supreme leader.",
+            "link": "https://www.nytimes.com/live/2026/07/21/world/iran-war-strikes-trump-hormuz/abbas-aragchi-security-gap-strikes",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Tue, 21 Jul 2026 16:00:44 +0000",
+            "snippet": "",
+            "isNew": true
+          },
+          {
+            "title": "Israeli air strike in Gaza City kills family of six, medics say",
+            "link": "https://www.bbc.co.uk/news/articles/c0qv0pdj18go?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc"
+            ],
+            "pubDate": "Tue, 21 Jul 2026 15:54:11 GMT",
+            "snippet": "Firas al-Masri, his wife and their four children died in the attack, which the Israeli military says targeted a Hamas operative.",
+            "isNew": true
+          },
+          {
+            "title": "Israel has ‘no interest’ in joining US war on Iran, says Smotrich",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/7/21/israel-has-no-interest-in-joining-us-war-on-iran-says-smotrich?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Tue, 21 Jul 2026 14:42:21 +0000",
+            "snippet": "Israeli Finance Minister says Israel has &quot;no interest&quot; in joining the renewed US military campaign against Iran.",
+            "isNew": true
+          },
           {
             "title": "Lebanese Army Accuses Israeli Troops of Firing as Its Forces Deploy in ‘Pilot Zone’",
             "link": "https://www.nytimes.com/2026/07/21/world/middleeast/lebanon-israel-ceasefire-plan.html",
@@ -625,28 +637,6 @@
             ],
             "pubDate": "Tue, 21 Jul 2026 14:28:51 +0000",
             "snippet": "The Israeli military was withdrawing from a village under a U.S.-brokered deal to transfer control of occupied areas to Lebanon after months of war. The Israeli military did not immediately comment.",
-            "isNew": true
-          },
-          {
-            "title": "Lebanese army accuses Israelis of firing near troops as president prepares to meet Trump – Middle East crisis live",
-            "link": "https://www.theguardian.com/world/live/2026/jul/21/us-iran-war-live-updates-strait-of-hormuz-attacks-houthis-blockade-red-sea-middle-east-crisis-latest-news",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Tue, 21 Jul 2026 14:18:36 GMT",
-            "snippet": "Soldiers were operating in ‘pilot zone’ in southern Lebanon; Joseph Aoun to meet Trump at White HouseLebanon’s president, Joseph Aoun, is due to meet Donald Trump for the first time today as he wraps ",
-            "isNew": true
-          },
-          {
-            "title": "루마니아 영해까지 전쟁 그림자…러, 주택·인프라 무차별 보복",
-            "link": "https://www.yna.co.kr/view/AKR20260721186400109",
-            "source": "yonhap",
-            "sources": [
-              "yonhap"
-            ],
-            "pubDate": "Tue, 21 Jul 2026 23:00:12 +0900",
-            "snippet": "(로마=연합뉴스) 민경락 특파원 = 우크라이나의 에너지 시설 집중 공격으로 연료 수급 불안에 시달리는 러시아가 우크라이나 민간 시설을 위협하며 ...",
             "isNew": true
           },
           {
@@ -661,70 +651,47 @@
             "isNew": true
           },
           {
-            "title": "Israel threatens ‘full force’ response if Iran fires missiles towards it",
-            "link": "https://www.theguardian.com/world/2026/jul/19/israel-threatens-full-force-response-iran-fires-missiles",
-            "source": "guardian",
+            "title": "Pentagon Identifies 2 U.S. Soldiers Killed in Jordan During Iran Strike",
+            "link": "https://www.nytimes.com/2026/07/20/us/iran-war-us-soldiers-killed-jordan-identified.html",
+            "source": "nytimes",
             "sources": [
-              "guardian",
-              "cnn"
+              "nytimes"
             ],
-            "pubDate": "Sun, 19 Jul 2026 17:30:32 GMT",
-            "snippet": "Return to all-out regional war grows increasingly likely as US and Iran trade strikes and Trump warns of escalationMiddle East crisis live: follow latest updatesIsrael has warned it could retaliate ag",
+            "pubDate": "Tue, 21 Jul 2026 10:44:04 +0000",
+            "snippet": "Both were active-duty soldiers, the Defense Department said. They were killed in action after an Iranian strike on a base in Jordan on Friday.",
             "isNew": true
           },
           {
-            "title": "Two US troops killed and one missing in Jordan after Iranian attacks",
-            "link": "https://www.theguardian.com/world/2026/jul/18/iran-attacks-us-allies-in-middle-east-in-second-week-of-renewed-conflict",
-            "source": "guardian",
+            "title": "Increased Cooperation With U.S. Has Put Jordan in Iran’s Cross Hairs",
+            "link": "https://www.nytimes.com/2026/07/19/world/middleeast/iran-war-jordan-us.html",
+            "source": "nytimes",
             "sources": [
-              "guardian"
+              "nytimes"
             ],
-            "pubDate": "Sun, 19 Jul 2026 04:41:49 GMT",
-            "snippet": "Sirens sound in Bahrain and Kuwait accuses Tehran of targeting civilian sites and infrastructure as Iran strikes US alliesThe US retaliated against Iran’s Revolutionary Guard (IRGC) after two American",
+            "pubDate": "Tue, 21 Jul 2026 10:06:06 +0000",
+            "snippet": "Jordan’s role in U.S. operations against Iran has grown as other allies in the region have restricted Washington’s ability to use their bases and airspace.",
             "isNew": true
           },
           {
-            "title": "Why is Trump risking midterm disaster by resuming the unpopular Iran war?",
-            "link": "https://www.theguardian.com/world/2026/jul/18/trump-iran-war-political-midterm-risk",
-            "source": "guardian",
+            "title": "Trump Administration and Iran Officials Risk a Wider War They Cannot Afford",
+            "link": "https://www.nytimes.com/2026/07/20/world/middleeast/iran-united-states-escalation.html",
+            "source": "nytimes",
             "sources": [
-              "guardian"
+              "nytimes"
             ],
-            "pubDate": "Sat, 18 Jul 2026 09:00:02 GMT",
-            "snippet": "Less than a month after hailing a ceasefire, Trump resumed strikes on Iran, a move experts warn could prolong the war and hurt Republicans before the midtermsFor half a century, Donald Trump has perfo",
+            "pubDate": "Tue, 21 Jul 2026 09:49:42 +0000",
+            "snippet": "U.S. and Iranian attacks are unfolding in a way that risks a wider war they cannot contain, analysts warn, unless they can return to negotiations quickly.",
             "isNew": true
           },
           {
-            "title": "US launches seventh night of Iran strikes as Hormuz conflict escalates",
-            "link": "https://www.theguardian.com/world/2026/jul/17/us-launches-seventh-night-of-iran-strikes-as-hormuz-conflict-escalates",
-            "source": "guardian",
+            "title": "Suspected Iranian strikes have targeted the U.S. military in at least 4 countries.",
+            "link": "https://www.nytimes.com/live/2026/07/20/world/iran-war-strikes-trump-hormuz/suspected-iranian-strikes-have-targeted-us-military-in-at-least-four-countries",
+            "source": "nytimes",
             "sources": [
-              "guardian"
+              "nytimes"
             ],
-            "pubDate": "Sat, 18 Jul 2026 06:03:13 GMT",
-            "snippet": "Central Command says attacks were designed to ‘continue degrading Iranian military capabilities’The US military said it had launched a seventh consecutive night of strikes on Iran on Friday night as f",
-            "isNew": true
-          },
-          {
-            "title": "Trump, not Iran, is the world’s greatest danger. He’s a one-man weapon of mass destruction | Simon Tisdall",
-            "link": "https://www.theguardian.com/commentisfree/2026/jul/18/donald-trump-iran-world-danger-bombing-us",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Sat, 18 Jul 2026 05:00:50 GMT",
-            "snippet": "As the bombing starts again, it’s clear the president has dragged the US into a limitless fiasco – and the world into an economic quagmireFeckless and clueless, Donald Trump is lost in Iran, unable to",
-            "isNew": true
-          },
-          {
-            "title": "June 12, 2024 Israel-Hamas war",
-            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-12-24-intl/index.html",
-            "source": "cnn",
-            "sources": [
-              "cnn"
-            ],
-            "pubDate": "",
-            "snippet": "Israel launched strikes on Al-Mawasi in southern Gaza early Thursday, bombarding an area it had previously designated as a \"safe zone\" by land, sea and air, according to the official Palestinian news ",
+            "pubDate": "Tue, 21 Jul 2026 06:24:45 +0000",
+            "snippet": "",
             "isNew": true
           }
         ]
@@ -733,8 +700,8 @@
         "category_id": "politics",
         "category_name": "국내 정치",
         "category_icon": "🏛️",
-        "count": 8,
-        "new_count": 8,
+        "count": 6,
+        "new_count": 6,
         "articles": [
           {
             "title": "Trump’s new 50 percent Canada tariffs: What products are affected and why?",
@@ -748,6 +715,50 @@
             "isNew": true
           },
           {
+            "title": "Hamas’s new leader must bridge a movement divided over Iran",
+            "link": "https://www.aljazeera.com/opinions/2026/7/21/hamass-new-leader-must-bridge-a-movement-divided-over-iran?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Tue, 21 Jul 2026 11:24:05 +0000",
+            "snippet": "After a one-vote victory, Khalil al-Hayya must reconcile rival currents while preserving Hamas’s independence.",
+            "isNew": true
+          },
+          {
+            "title": "Lebanese president set to meet Trump as Beirut seeks Israeli withdrawal",
+            "link": "https://www.aljazeera.com/news/2026/7/21/lebanese-president-set-to-meet-trump-as-beirut-seeks-israeli-withdrawal?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Tue, 21 Jul 2026 11:10:02 +0000",
+            "snippet": "Aoun is in Washington, DC seeking US backing to end the fighting and secure an Israeli withdrawal from southern Lebanon.",
+            "isNew": true
+          },
+          {
+            "title": "Lebanon’s Joseph Aoun to meet Trump: What to expect",
+            "link": "https://www.aljazeera.com/news/2026/7/21/lebanons-joseph-aoun-to-meet-trump-what-to-expect?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Tue, 21 Jul 2026 10:27:31 +0000",
+            "snippet": "The Lebanese president is seeking Washington&#039;s support for his agenda, including diplomacy with Israel.",
+            "isNew": true
+          },
+          {
+            "title": "House Democrats are finally shifting on Israel. Party leaders must listen | Norman Solomon",
+            "link": "https://www.theguardian.com/commentisfree/2026/jul/20/house-democrats-israel-hakeem-jeffries-schumer",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Mon, 20 Jul 2026 10:00:54 GMT",
+            "snippet": "More than 100 Democratic lawmakers voted against arms for Israel. They’re listening to the people – their bosses are behindThe Democratic party is in dire need of a mutiny.Top leaders at the party’s h",
+            "isNew": true
+          },
+          {
             "title": "‘We hear your voices’: inside the Church of England’s debate over Palestine",
             "link": "https://www.theguardian.com/world/2026/jul/19/inside-church-of-england-debate-over-palestine-gaza",
             "source": "guardian",
@@ -757,157 +768,69 @@
             "pubDate": "Sun, 19 Jul 2026 10:52:36 GMT",
             "snippet": "A General Synod vote to hear a document describing Israel’s ‘genocidal war on Gaza’ was welcomed by Palestinian Christians, but prompted warnings from Jewish groupsFather Fadi Diab, a prominent Palest",
             "isNew": true
-          },
-          {
-            "title": "Israeli ministers announce plans for new illegal settlements in Gaza and West Bank",
-            "link": "https://www.theguardian.com/world/2026/jul/18/israel-plan-new-illegal-settlements-gaza-west-bank-occupied-palestine",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Sat, 18 Jul 2026 06:00:50 GMT",
-            "snippet": "Defence minister seeks three ‘Nahal’ outposts in Gaza as top commander says Israel now controls 65% of the strip, violating Trump ceasefire dealIsrael’s defence and finance ministers announced plans f",
-            "isNew": true
-          },
-          {
-            "title": "June 1, 2024 - Israel-Gaza news",
-            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-01-24/index.html",
-            "source": "cnn",
-            "sources": [
-              "cnn"
-            ],
-            "pubDate": "",
-            "snippet": "President Joe Biden has laid out a three-phase proposal to end the conflict in Gaza, as global condemnation of Israel's offensive in Rafah grows.",
-            "isNew": true
-          },
-          {
-            "title": "May 21, 2024 Israel-Hamas war, Iran president death news",
-            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-21-24/index.html",
-            "source": "cnn",
-            "sources": [
-              "cnn"
-            ],
-            "pubDate": "",
-            "snippet": "Prime Minister Benjamin Netanyahu blasted the charges brought by the International Criminal Court against himself and Israel's defense minister as \"beyond outrageous\" in an interview Tuesday with CNN'",
-            "isNew": true
-          },
-          {
-            "title": "May 19, 2024 helicopter crash involving Iranian president",
-            "link": "https://www.cnn.com/middleeast/live-news/raisi-iran-president-helicopter-crash/index.html",
-            "source": "cnn",
-            "sources": [
-              "cnn"
-            ],
-            "pubDate": "",
-            "snippet": "A helicopter carrying Iranian President Ebrahim Raisi crashed while he was visiting a northern region in the country Sunday, according to the Iranian state news agency IRNA.",
-            "isNew": true
-          },
-          {
-            "title": "Trump to meet Lebanon’s president as US pushes ahead with peace deal",
-            "link": "https://www.ft.com/content/13092f23-4b2f-4e62-8aa9-76ab465a667c?syn-25a6b1a6=1",
-            "source": "ft",
-            "sources": [
-              "ft"
-            ],
-            "pubDate": "Tue, 21 Jul 2026 13:01:06 GMT",
-            "snippet": "Lebanese army will move into ‘pilot zones’ as part of plan for Israeli withdrawal from the country",
-            "isNew": true
-          },
-          {
-            "title": "수명 다 된 10% 글로벌관세…트럼프 '301조 관세' 부과 임박(종합)",
-            "link": "https://www.yna.co.kr/view/AKR20260721011351071",
-            "source": "yonhap",
-            "sources": [
-              "yonhap"
-            ],
-            "pubDate": "Tue, 21 Jul 2026 20:54:03 +0900",
-            "snippet": "(워싱턴=연합뉴스) 백나리 특파원 = 미국 연방대법원의 상호관세 위법 판결 이후 도널드 트럼프 미국 행정부가 부과했던 &apos;10% 글로벌 관세&apos;가 ...",
-            "isNew": true
           }
         ]
       },
       {
-        "category_id": "humanitarian",
-        "category_name": "인도주의/피해",
-        "category_icon": "🏥",
-        "count": 7,
-        "new_count": 7,
+        "category_id": "economy",
+        "category_name": "경제 영향",
+        "category_icon": "📊",
+        "count": 5,
+        "new_count": 5,
         "articles": [
           {
-            "title": "‘He’s a war criminal’: Mamdani exploring whether he can arrest Netanyahu if he visits New York",
-            "link": "https://www.theguardian.com/us-news/2026/jul/19/mamdani-netanyahu",
-            "source": "guardian",
+            "title": "Why Iran is risking so much over the Strait of Hormuz",
+            "link": "https://www.bbc.co.uk/news/articles/cwymx3eevpjo?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
             "sources": [
-              "guardian"
+              "bbc"
             ],
-            "pubDate": "Sun, 19 Jul 2026 15:38:11 GMT",
-            "snippet": "NYC mayor says in Times interview that’s he’s in ‘active conversation’ with city’s law department about the matterNew York City’s mayor, Zohran Mamdani, has said he is reviewing whether his administra",
+            "pubDate": "Tue, 21 Jul 2026 14:36:47 GMT",
+            "snippet": "None of the choices facing Iran’s leaders offer a clear path to victory, as the conflict with the US continues.",
             "isNew": true
           },
           {
-            "title": "Several dead after Israeli joint security forces raid in West Bank",
-            "link": "https://www.cnn.com/2022/10/25/middleeast/israel-forces-raid-nablus-palestine-intl-hnk/index.html",
-            "source": "cnn",
+            "title": "ASEAN diplomats voice ‘serious concern’ over Iran war and energy crisis",
+            "link": "https://www.aljazeera.com/news/2026/7/21/asean-diplomats-voice-serious-concern-over-iran-war-and-energy-crisis?traffic_source=rss",
+            "source": "aljazeera",
             "sources": [
-              "cnn"
+              "aljazeera"
             ],
-            "pubDate": "Tue, 25 Oct 2022 13:58:46 GMT",
-            "snippet": "",
+            "pubDate": "Tue, 21 Jul 2026 13:43:48 +0000",
+            "snippet": "Southeast Asian countries are highly affected by oil supply shortages caused by Iran war and Strait of Hormuz closure.",
             "isNew": true
           },
           {
-            "title": "June 9, 2024 Israel-Hamas war",
-            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-09-24/index.html",
-            "source": "cnn",
+            "title": "Iran war: Look beyond stocks to understand state of economy, experts say",
+            "link": "https://www.aljazeera.com/economy/2026/7/21/iran-war-look-beyond-stocks-to-understand-state-of-economy-experts-say?traffic_source=rss",
+            "source": "aljazeera",
             "sources": [
-              "cnn"
+              "aljazeera"
             ],
-            "pubDate": "",
-            "snippet": "Key Israeli war cabinet member Benny Gantz quit Prime Minister Benjamin Netanyahu's government Sunday. Meanwhile, the death toll from Israel's hostage rescue in central Gaza keeps rising. Follow for l",
+            "pubDate": "Tue, 21 Jul 2026 12:34:05 +0000",
+            "snippet": "Yields on 10-year US Treasury bills, a bellwether for inflation, are up 60 basis points since the start of the Iran war.",
             "isNew": true
           },
           {
-            "title": "June 8, 2024 - Israel-Gaza news",
-            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-08-24/index.html",
-            "source": "cnn",
+            "title": "Houthis in Yemen Declare Red Sea Blockade on Saudi Arabia",
+            "link": "https://www.nytimes.com/2026/07/20/world/middleeast/yemen-houthis-saudi-arabia-red-sea-blockade.html",
+            "source": "nytimes",
             "sources": [
-              "cnn"
+              "nytimes"
             ],
-            "pubDate": "",
-            "snippet": "The Israeli military says it rescued four hostages from central Gaza on Saturday. Palestinians report scenes of horror on the ground, and Gaza hospital officials say more than 200 people were killed.",
+            "pubDate": "Tue, 21 Jul 2026 02:20:10 +0000",
+            "snippet": "The Iran-backed Houthi militia, which controls parts of Yemen, has in the past blockaded the Red Sea by threatening a choke point crucial to Saudi oil exports and global shipping.",
             "isNew": true
           },
           {
-            "title": "May 19, 2024 - Israel-Gaza news",
-            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-19-24/index.html",
-            "source": "cnn",
+            "title": "U.S. Average Gas Price Returns to $4 a Gallon as Iran Crisis Escalates",
+            "link": "https://www.nytimes.com/2026/07/20/business/four-dollar-gas-iran-war.html",
+            "source": "nytimes",
             "sources": [
-              "cnn"
+              "nytimes"
             ],
-            "pubDate": "",
-            "snippet": "An Israeli airstrike on a refugee camp in central Gaza has killed at least 35 people, including seven children, according to hospital officials. Meanwhile, Israeli war cabinet divisions are spilling i",
-            "isNew": true
-          },
-          {
-            "title": "Devastation in Gaza as Israel wages war on Hamas",
-            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-18-24/index.html",
-            "source": "cnn",
-            "sources": [
-              "cnn"
-            ],
-            "pubDate": "",
-            "snippet": "Gaza faces a \"dire\" food situation as barely more than 300 aid trucks have entered the strip since Israel began its offensive in Rafah, a UN agency said in a report published Friday. Follow live updat",
-            "isNew": true
-          },
-          {
-            "title": "May 14, 2024 Israel-Hamas war",
-            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-14-24/index.html",
-            "source": "cnn",
-            "sources": [
-              "cnn"
-            ],
-            "pubDate": "",
-            "snippet": "Amid signs that Israel may launch a full-scale incursion in Rafah, aid agencies are warning any escalation in the southern Gaza city risks exacerbating the already deteriorating humanitarian situation",
+            "pubDate": "Mon, 20 Jul 2026 18:47:17 +0000",
+            "snippet": "A month ago, drivers were enjoying some relief at the pump after the U.S. and Iran signed a deal intended to reopen the Strait of Hormuz. Now, prices are rising again.",
             "isNew": true
           }
         ]
@@ -916,9 +839,42 @@
         "category_id": "other",
         "category_name": "기타",
         "category_icon": "📰",
-        "count": 4,
-        "new_count": 4,
+        "count": 5,
+        "new_count": 5,
         "articles": [
+          {
+            "title": "Zendaya faces backlash for wearing ancient Iranian jewellery at Odyssey event",
+            "link": "https://www.theguardian.com/science/2026/jul/21/zendaya-faces-backlash-for-wearing-ancient-iranian-jewellery-at-odyssey-event",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Tue, 21 Jul 2026 15:01:36 GMT",
+            "snippet": "Film star promotes Christopher Nolan film epic wearing gold artefacts dating back almost 3,000 yearsThe Odyssey is a story about a Greek king’s long journey home. But a pair of earrings worn on the ne",
+            "isNew": true
+          },
+          {
+            "title": "Iran shipped billions in oil during the cease-fire.",
+            "link": "https://www.nytimes.com/live/2026/07/20/world/iran-war-strikes-trump-hormuz/iran-shipped-billions-in-oil-during-its-cease-fire-with-the-us",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Mon, 20 Jul 2026 13:11:44 +0000",
+            "snippet": "",
+            "isNew": true
+          },
+          {
+            "title": "Israel watches tensely as the U.S.-Iran fighting escalates.",
+            "link": "https://www.nytimes.com/live/2026/07/19/world/iran-war-strikes-trump-hormuz/israel-watches-tensely-as-the-fighting-between-us-and-iran-escalates",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Mon, 20 Jul 2026 02:42:47 +0000",
+            "snippet": "",
+            "isNew": true
+          },
           {
             "title": "Israel’s brutality cannot continue in plain sight | Letters",
             "link": "https://www.theguardian.com/world/2026/jul/19/israels-brutality-cannot-continue-in-plain-sight",
@@ -940,27 +896,59 @@
             "pubDate": "Sun, 19 Jul 2026 06:00:19 GMT",
             "snippet": "Solomon’s Pools date back to the second century BCE, and have become a source of recreation for nearby BethlehemIsrael is threatening to seize ancient water reservoirs near Bethlehem, in what would be",
             "isNew": true
-          },
+          }
+        ]
+      },
+      {
+        "category_id": "diplomacy",
+        "category_name": "외교/협상",
+        "category_icon": "🤝",
+        "count": 4,
+        "new_count": 4,
+        "articles": [
           {
-            "title": "May 30, 2024 Israel-Hamas war",
-            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-30-24/index.html",
-            "source": "cnn",
+            "title": "캐나다 총리, '50% 관세'에 \"트럼프와 통화…협상 강화 합의\"",
+            "link": "https://www.yna.co.kr/view/AKR20260722002300072",
+            "source": "yonhap",
             "sources": [
-              "cnn"
+              "yonhap"
             ],
-            "pubDate": "",
-            "snippet": "The war in Gaza will likely continue until at least the end of the year, an Israeli official warned.",
+            "pubDate": "Wed, 22 Jul 2026 01:16:38 +0900",
+            "snippet": "(뉴욕=연합뉴스) 김연숙 특파원 = 마크 카니 캐나다 총리는 21일(현지시간) 미국의 새로운 관세 부과 발표와 관련, 도널드 트럼프 미 대통령과...",
             "isNew": true
           },
           {
-            "title": "May 22, 2024 Israel-Hamas war",
-            "link": "https://www.cnn.com/middleeast/live-news/iran-israel-hamas-war-gaza-news-05-22-24/index.html",
-            "source": "cnn",
+            "title": "Rubio Says That U.S. Is Still Open to Diplomacy With Iran",
+            "link": "https://www.nytimes.com/2026/07/20/world/middleeast/rubio-us-iran-war-diplomacy.html",
+            "source": "nytimes",
             "sources": [
-              "cnn"
+              "nytimes"
             ],
-            "pubDate": "",
-            "snippet": "Spain, Norway and Ireland announced plans to formally recognize a Palestinian state, in a move that is likely to bolster the global Palestinian cause but strain relations with Israel.",
+            "pubDate": "Mon, 20 Jul 2026 20:36:27 +0000",
+            "snippet": "Iranian foreign ministry officials and Secretary of State Marco Rubio signaled openness to resume negotiations but declined to provide any new details.",
+            "isNew": true
+          },
+          {
+            "title": "Hamas Names Khalil al-Hayya as Its New Leader",
+            "link": "https://www.nytimes.com/2026/07/20/world/middleeast/gaza-talks-khalil-al-hayya-leader.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes",
+              "bbc"
+            ],
+            "pubDate": "Mon, 20 Jul 2026 17:22:44 +0000",
+            "snippet": "Seen as closer to Iran, Khalil al-Hayya served as the Palestinian militant group’s chief negotiator with Israel and the Trump administration during the Gaza war.",
+            "isNew": true
+          },
+          {
+            "title": "A Modest Proposal for the Strait Dispute: A Shared Pact Among Gulf States",
+            "link": "https://www.nytimes.com/2026/07/19/world/middleeast/strait-hormuz-iran.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Sun, 19 Jul 2026 08:37:19 +0000",
+            "snippet": "A London-based research group has invoked a now-defunct European pact on coal and steel to suggest forming a coalition of countries that would share control of the Strait of Hormuz.",
             "isNew": true
           }
         ]
@@ -969,189 +957,156 @@
         "category_id": "regional",
         "category_name": "지역 정세",
         "category_icon": "🌍",
-        "count": 3,
-        "new_count": 3,
+        "count": 2,
+        "new_count": 2,
         "articles": [
           {
-            "title": "June 5, 2024 Israel-Hamas war",
-            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-05-24/index.html",
-            "source": "cnn",
+            "title": "Trump pledges to ‘take care of’ Houthis if group blocks Saudi ships – Middle East crisis live",
+            "link": "https://www.theguardian.com/world/live/2026/jul/21/us-iran-war-live-updates-strait-of-hormuz-attacks-houthis-blockade-red-sea-middle-east-crisis-latest-news",
+            "source": "guardian",
             "sources": [
-              "cnn"
+              "guardian"
             ],
-            "pubDate": "",
-            "snippet": "Tensions are ramping up at the Israel-Lebanon border, with Hezbollah claiming responsibility for a Wednesday evening attack in northern Israel that left multiple people injured.",
+            "pubDate": "Tue, 21 Jul 2026 16:18:01 GMT",
+            "snippet": "The Iran-based group said it plans to impose an immediate maritime blockade of Saudi Arabia in the Red SeaLebanon’s president, Joseph Aoun, is due to meet Donald Trump for the first time today as he w",
             "isNew": true
           },
           {
-            "title": "Houthis in Yemen Edge Closer to Entering U.S.-Iran War",
-            "link": "https://www.nytimes.com/2026/07/21/world/middleeast/houthis-yemen-iran-war.html",
-            "source": "nytimes",
+            "title": "US launches fresh strikes on Iran, as Trump warns of retaliation for deaths of soldiers",
+            "link": "https://www.bbc.co.uk/news/articles/cx25wg2x26do?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
             "sources": [
+              "bbc"
+            ],
+            "pubDate": "Tue, 21 Jul 2026 16:10:56 GMT",
+            "snippet": "Iran says it has hit two ships in the Strait of Hormuz as well as targets in Bahrain and Jordan.",
+            "isNew": true
+          }
+        ]
+      },
+      {
+        "category_id": "humanitarian",
+        "category_name": "인도주의/피해",
+        "category_icon": "🏥",
+        "count": 1,
+        "new_count": 1,
+        "articles": [
+          {
+            "title": "‘He’s a war criminal’: Mamdani exploring whether he can arrest Netanyahu if he visits New York",
+            "link": "https://www.theguardian.com/us-news/2026/jul/19/mamdani-netanyahu",
+            "source": "guardian",
+            "sources": [
+              "guardian",
               "nytimes"
             ],
-            "pubDate": "Tue, 21 Jul 2026 12:26:56 +0000",
-            "snippet": "The Iran-backed Houthi militia in Yemen has declared a Red Sea blockade on Saudi Arabia, potentially opening a new front in the war rippling across the Middle East.",
-            "isNew": true
-          },
-          {
-            "title": "예멘 후티 \"사우디 항구 이용하면 어디서든 표적될 것\" 경고(종합)",
-            "link": "https://www.yna.co.kr/view/AKR20260721181151079",
-            "source": "yonhap",
-            "sources": [
-              "yonhap"
-            ],
-            "pubDate": "Tue, 21 Jul 2026 21:05:07 +0900",
-            "snippet": "(카이로=연합뉴스) 김상훈 특파원 = 사우디아라비아 해상 봉쇄를 예고한 예멘의 친이란 반군 후티가 해운사들에 사우디 항구를 이용하지 말라고 경고...",
-            "isNew": true
-          }
-        ]
-      },
-      {
-        "category_id": "diplomacy",
-        "category_name": "외교/협상",
-        "category_icon": "🤝",
-        "count": 2,
-        "new_count": 2,
-        "articles": [
-          {
-            "title": "June 13, 2024 Israel-Hamas war",
-            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-13-24/index.html",
-            "source": "cnn",
-            "sources": [
-              "cnn"
-            ],
-            "pubDate": "",
-            "snippet": "The US-backed Gaza ceasefire proposal doesn't meet Hamas' demands for an end to the war, a senior official has told CNN. Osama Hamdan also said that \"no one has an idea\" how many of the hostages held ",
-            "isNew": true
-          },
-          {
-            "title": "June 10, 2024 Israel-Hamas war",
-            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-10-24/index.html",
-            "source": "cnn",
-            "sources": [
-              "cnn"
-            ],
-            "pubDate": "",
-            "snippet": "The UN Security Council adopted a resolution proposed by the United States for a permanent ceasefire and release of the hostages in Gaza.",
-            "isNew": true
-          }
-        ]
-      },
-      {
-        "category_id": "economy",
-        "category_name": "경제 영향",
-        "category_icon": "📊",
-        "count": 2,
-        "new_count": 2,
-        "articles": [
-          {
-            "title": "ASEAN diplomats voice ‘serious concern’ over Iran war and energy crisis",
-            "link": "https://www.aljazeera.com/news/2026/7/21/asean-diplomats-voice-serious-concern-over-iran-war-and-energy-crisis?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera",
-              "cnn"
-            ],
-            "pubDate": "Tue, 21 Jul 2026 13:43:48 +0000",
-            "snippet": "Southeast Asian countries are highly affected by oil supply shortages caused by Iran war and Strait of Hormuz closure.",
-            "isNew": true
-          },
-          {
-            "title": "Iran war: Look beyond stocks to understand state of economy, experts say",
-            "link": "https://www.aljazeera.com/economy/2026/7/21/iran-war-look-beyond-stocks-to-understand-state-of-economy-experts-say?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Tue, 21 Jul 2026 12:34:05 +0000",
-            "snippet": "Yields on 10-year US Treasury bills, a bellwether for inflation, are up 60 basis points since the start of the Iran war.",
+            "pubDate": "Sun, 19 Jul 2026 15:38:11 GMT",
+            "snippet": "NYC mayor says in Times interview that’s he’s in ‘active conversation’ with city’s law department about the matterNew York City’s mayor, Zohran Mamdani, has said he is reviewing whether his administra",
             "isNew": true
           }
         ]
       }
     ],
     "recent_30min": {
-      "total_new": 49,
+      "total_new": 50,
       "by_category": {
-        "military": {
-          "count": 16,
+        "regional": {
+          "count": 3,
           "titles": [
             {
-              "title": "Lebanese Army Accuses Israeli Troops of Firing as Its Forces Deploy in ‘Pilot Zone’",
-              "link": "https://www.nytimes.com/2026/07/21/world/middleeast/lebanon-israel-ceasefire-plan.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Lebanese army accuses Israelis of firing near troops as president prepares to meet Trump – Middle East crisis live",
+              "title": "Trump pledges to ‘take care of’ Houthis if group blocks Saudi ships – Middle East crisis live",
               "link": "https://www.theguardian.com/world/live/2026/jul/21/us-iran-war-live-updates-strait-of-hormuz-attacks-houthis-blockade-red-sea-middle-east-crisis-latest-news",
               "source": "guardian"
             },
             {
-              "title": "루마니아 영해까지 전쟁 그림자…러, 주택·인프라 무차별 보복",
-              "link": "https://www.yna.co.kr/view/AKR20260721186400109",
+              "title": "US launches fresh strikes on Iran, as Trump warns of retaliation for deaths of soldiers",
+              "link": "https://www.bbc.co.uk/news/articles/cx25wg2x26do?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
+            },
+            {
+              "title": "Houthis in Yemen Edge Closer to Entering U.S.-Iran War",
+              "link": "https://www.nytimes.com/2026/07/21/world/middleeast/houthis-yemen-iran-war.html",
+              "source": "nytimes"
+            }
+          ]
+        },
+        "diplomacy": {
+          "count": 5,
+          "titles": [
+            {
+              "title": "캐나다 총리, '50% 관세'에 \"트럼프와 통화…협상 강화 합의\"",
+              "link": "https://www.yna.co.kr/view/AKR20260722002300072",
               "source": "yonhap"
             },
             {
-              "title": "‘There is ‌no safe place’: Israeli attack kills family of six in Gaza",
-              "link": "https://www.aljazeera.com/news/2026/7/21/there-is-no-safe-place-israeli-attack-kills-family-of-six-in-gaza?traffic_source=rss",
-              "source": "aljazeera"
+              "title": "Rubio Says That U.S. Is Still Open to Diplomacy With Iran",
+              "link": "https://www.nytimes.com/2026/07/20/world/middleeast/rubio-us-iran-war-diplomacy.html",
+              "source": "nytimes"
             },
             {
-              "title": "Israel threatens ‘full force’ response if Iran fires missiles towards it",
-              "link": "https://www.theguardian.com/world/2026/jul/19/israel-threatens-full-force-response-iran-fires-missiles",
-              "source": "guardian"
+              "title": "Hamas Names Khalil al-Hayya as Its New Leader",
+              "link": "https://www.nytimes.com/2026/07/20/world/middleeast/gaza-talks-khalil-al-hayya-leader.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Hamas names Khalil al-Hayya as new overall leader",
+              "link": "https://www.bbc.co.uk/news/articles/cx25nzkyj50o?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
+            },
+            {
+              "title": "A Modest Proposal for the Strait Dispute: A Shared Pact Among Gulf States",
+              "link": "https://www.nytimes.com/2026/07/19/world/middleeast/strait-hormuz-iran.html",
+              "source": "nytimes"
             }
           ]
         },
-        "economy": {
-          "count": 2,
+        "military": {
+          "count": 24,
           "titles": [
             {
-              "title": "ASEAN diplomats voice ‘serious concern’ over Iran war and energy crisis",
-              "link": "https://www.aljazeera.com/news/2026/7/21/asean-diplomats-voice-serious-concern-over-iran-war-and-energy-crisis?traffic_source=rss",
+              "title": "Lebanese army says troops deploying in 'pilot zone' after Israeli withdrawal",
+              "link": "https://www.bbc.co.uk/news/articles/cy8mynlmn55o?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
+            },
+            {
+              "title": "Iran’s top diplomat says ‘security gap’ may have led to strikes on supreme leader.",
+              "link": "https://www.nytimes.com/live/2026/07/21/world/iran-war-strikes-trump-hormuz/abbas-aragchi-security-gap-strikes",
+              "source": "nytimes"
+            },
+            {
+              "title": "Israeli air strike in Gaza City kills family of six, medics say",
+              "link": "https://www.bbc.co.uk/news/articles/c0qv0pdj18go?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
+            },
+            {
+              "title": "Israel has ‘no interest’ in joining US war on Iran, says Smotrich",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/7/21/israel-has-no-interest-in-joining-us-war-on-iran-says-smotrich?traffic_source=rss",
               "source": "aljazeera"
             },
             {
-              "title": "Iran war: Look beyond stocks to understand state of economy, experts say",
-              "link": "https://www.aljazeera.com/economy/2026/7/21/iran-war-look-beyond-stocks-to-understand-state-of-economy-experts-say?traffic_source=rss",
-              "source": "aljazeera"
-            }
-          ]
-        },
-        "politics": {
-          "count": 10,
-          "titles": [
-            {
-              "title": "Trump’s new 50 percent Canada tariffs: What products are affected and why?",
-              "link": "https://www.aljazeera.com/news/2026/7/21/trumps-new-50-percent-canada-tariffs-what-products-are-affected-and-why?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "‘We hear your voices’: inside the Church of England’s debate over Palestine",
-              "link": "https://www.theguardian.com/world/2026/jul/19/inside-church-of-england-debate-over-palestine-gaza",
-              "source": "guardian"
-            },
-            {
-              "title": "Israeli ministers announce plans for new illegal settlements in Gaza and West Bank",
-              "link": "https://www.theguardian.com/world/2026/jul/18/israel-plan-new-illegal-settlements-gaza-west-bank-occupied-palestine",
-              "source": "guardian"
-            },
-            {
-              "title": "June 17, 2024 - Israel-Gaza news",
-              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-17-24/index.html",
-              "source": "cnn"
-            },
-            {
-              "title": "June 1, 2024 - Israel-Gaza news",
-              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-01-24/index.html",
-              "source": "cnn"
+              "title": "Lebanese Army Accuses Israeli Troops of Firing as Its Forces Deploy in ‘Pilot Zone’",
+              "link": "https://www.nytimes.com/2026/07/21/world/middleeast/lebanon-israel-ceasefire-plan.html",
+              "source": "nytimes"
             }
           ]
         },
         "other": {
-          "count": 6,
+          "count": 5,
           "titles": [
+            {
+              "title": "Zendaya faces backlash for wearing ancient Iranian jewellery at Odyssey event",
+              "link": "https://www.theguardian.com/science/2026/jul/21/zendaya-faces-backlash-for-wearing-ancient-iranian-jewellery-at-odyssey-event",
+              "source": "guardian"
+            },
+            {
+              "title": "Iran shipped billions in oil during the cease-fire.",
+              "link": "https://www.nytimes.com/live/2026/07/20/world/iran-war-strikes-trump-hormuz/iran-shipped-billions-in-oil-during-its-cease-fire-with-the-us",
+              "source": "nytimes"
+            },
+            {
+              "title": "Israel watches tensely as the U.S.-Iran fighting escalates.",
+              "link": "https://www.nytimes.com/live/2026/07/19/world/iran-war-strikes-trump-hormuz/israel-watches-tensely-as-the-fighting-between-us-and-iran-escalates",
+              "source": "nytimes"
+            },
             {
               "title": "Israel’s brutality cannot continue in plain sight | Letters",
               "link": "https://www.theguardian.com/world/2026/jul/19/israels-brutality-cannot-continue-in-plain-sight",
@@ -1161,86 +1116,76 @@
               "title": "Israel threatens to seize ancient water reservoirs near Bethlehem",
               "link": "https://www.theguardian.com/world/2026/jul/19/israel-threatens-to-seize-ancient-water-reservoirs-near-bethlehem",
               "source": "guardian"
+            }
+          ]
+        },
+        "politics": {
+          "count": 7,
+          "titles": [
+            {
+              "title": "Trump Says Netanyahu Will Not Be Arrested in the U.S.",
+              "link": "https://www.nytimes.com/2026/07/20/world/middleeast/israel-un-mamdani-netanyahu-arrest.html",
+              "source": "nytimes"
             },
             {
-              "title": "Iran",
-              "link": "https://www.cnn.com/specials/middleeast/iran?utm_source=section",
-              "source": "cnn"
+              "title": "Trump’s new 50 percent Canada tariffs: What products are affected and why?",
+              "link": "https://www.aljazeera.com/news/2026/7/21/trumps-new-50-percent-canada-tariffs-what-products-are-affected-and-why?traffic_source=rss",
+              "source": "aljazeera"
             },
             {
-              "title": "Israel",
-              "link": "https://www.cnn.com/specials/middleeast/israel?utm_source=section",
-              "source": "cnn"
+              "title": "Hamas’s new leader must bridge a movement divided over Iran",
+              "link": "https://www.aljazeera.com/opinions/2026/7/21/hamass-new-leader-must-bridge-a-movement-divided-over-iran?traffic_source=rss",
+              "source": "aljazeera"
             },
             {
-              "title": "May 30, 2024 Israel-Hamas war",
-              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-30-24/index.html",
-              "source": "cnn"
+              "title": "Lebanese president set to meet Trump as Beirut seeks Israeli withdrawal",
+              "link": "https://www.aljazeera.com/news/2026/7/21/lebanese-president-set-to-meet-trump-as-beirut-seeks-israeli-withdrawal?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Lebanon’s Joseph Aoun to meet Trump: What to expect",
+              "link": "https://www.aljazeera.com/news/2026/7/21/lebanons-joseph-aoun-to-meet-trump-what-to-expect?traffic_source=rss",
+              "source": "aljazeera"
+            }
+          ]
+        },
+        "economy": {
+          "count": 5,
+          "titles": [
+            {
+              "title": "Why Iran is risking so much over the Strait of Hormuz",
+              "link": "https://www.bbc.co.uk/news/articles/cwymx3eevpjo?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
+            },
+            {
+              "title": "ASEAN diplomats voice ‘serious concern’ over Iran war and energy crisis",
+              "link": "https://www.aljazeera.com/news/2026/7/21/asean-diplomats-voice-serious-concern-over-iran-war-and-energy-crisis?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Iran war: Look beyond stocks to understand state of economy, experts say",
+              "link": "https://www.aljazeera.com/economy/2026/7/21/iran-war-look-beyond-stocks-to-understand-state-of-economy-experts-say?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Houthis in Yemen Declare Red Sea Blockade on Saudi Arabia",
+              "link": "https://www.nytimes.com/2026/07/20/world/middleeast/yemen-houthis-saudi-arabia-red-sea-blockade.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "U.S. Average Gas Price Returns to $4 a Gallon as Iran Crisis Escalates",
+              "link": "https://www.nytimes.com/2026/07/20/business/four-dollar-gas-iran-war.html",
+              "source": "nytimes"
             }
           ]
         },
         "humanitarian": {
-          "count": 10,
+          "count": 1,
           "titles": [
             {
               "title": "‘He’s a war criminal’: Mamdani exploring whether he can arrest Netanyahu if he visits New York",
               "link": "https://www.theguardian.com/us-news/2026/jul/19/mamdani-netanyahu",
               "source": "guardian"
-            },
-            {
-              "title": "Several dead after Israeli joint security forces raid in West Bank",
-              "link": "https://www.cnn.com/2022/10/25/middleeast/israel-forces-raid-nablus-palestine-intl-hnk/index.html",
-              "source": "cnn"
-            },
-            {
-              "title": "June 9, 2024 Israel-Hamas war",
-              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-09-24/index.html",
-              "source": "cnn"
-            },
-            {
-              "title": "June 8, 2024 - Israel-Gaza news",
-              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-08-24/index.html",
-              "source": "cnn"
-            },
-            {
-              "title": "May 27, 2024 - Israel-Hamas war",
-              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-27-24/index.html",
-              "source": "cnn"
-            }
-          ]
-        },
-        "diplomacy": {
-          "count": 2,
-          "titles": [
-            {
-              "title": "June 13, 2024 Israel-Hamas war",
-              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-13-24/index.html",
-              "source": "cnn"
-            },
-            {
-              "title": "June 10, 2024 Israel-Hamas war",
-              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-10-24/index.html",
-              "source": "cnn"
-            }
-          ]
-        },
-        "regional": {
-          "count": 3,
-          "titles": [
-            {
-              "title": "June 5, 2024 Israel-Hamas war",
-              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-05-24/index.html",
-              "source": "cnn"
-            },
-            {
-              "title": "Houthis in Yemen Edge Closer to Entering U.S.-Iran War",
-              "link": "https://www.nytimes.com/2026/07/21/world/middleeast/houthis-yemen-iran-war.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "예멘 후티 \"사우디 항구 이용하면 어디서든 표적될 것\" 경고(종합)",
-              "link": "https://www.yna.co.kr/view/AKR20260721181151079",
-              "source": "yonhap"
             }
           ]
         }
@@ -1334,11 +1279,17 @@
     }
   ],
   "economic_indicators": {
-    "WTI": {
-      "price": 84.24,
-      "change": 1.01,
-      "changePercent": 1.21,
-      "prev": 83.23
+    "BRENT": {
+      "price": 90.94,
+      "change": 1.72,
+      "changePercent": 1.93,
+      "prev": 89.22
+    },
+    "GOLD": {
+      "price": 4081.7,
+      "change": 71.4,
+      "changePercent": 1.78,
+      "prev": 4010.3
     },
     "US2Y": {
       "price": 3.73,
@@ -1346,35 +1297,29 @@
       "changePercent": 0.81,
       "prev": 3.7
     },
-    "DXY": {
-      "price": 101.05,
-      "change": 0.06,
-      "changePercent": 0.06,
-      "prev": 100.99
-    },
-    "BRENT": {
-      "price": 91.2,
-      "change": 1.98,
-      "changePercent": 2.22,
-      "prev": 89.22
-    },
     "VIX": {
-      "price": 17.73,
-      "change": -0.92,
-      "changePercent": -4.93,
+      "price": 17.16,
+      "change": -1.49,
+      "changePercent": -7.99,
       "prev": 18.65
     },
-    "GOLD": {
-      "price": 4067,
-      "change": 56.7,
-      "changePercent": 1.41,
-      "prev": 4010.3
-    },
     "US10Y": {
-      "price": 4.62,
+      "price": 4.63,
       "change": 0.03,
       "changePercent": 0.65,
       "prev": 4.6
+    },
+    "WTI": {
+      "price": 84.15,
+      "change": 0.92,
+      "changePercent": 1.11,
+      "prev": 83.23
+    },
+    "DXY": {
+      "price": 101.12,
+      "change": 0.13,
+      "changePercent": 0.13,
+      "prev": 100.99
     }
   },
   "critical_events": [
@@ -1382,21 +1327,13 @@
       "id": "ceasefire_agreement",
       "name": "공식 휴전/평화 합의",
       "severity": "critical",
-      "confidence": 1,
-      "matchCount": 6,
-      "direction": "shorten"
-    },
-    {
-      "id": "unilateral_deescalation",
-      "name": "일방적 전투 축소/자제 선언",
-      "severity": "high",
       "confidence": 0.6666666666666666,
       "matchCount": 2,
       "direction": "shorten"
     },
     {
-      "id": "diplomatic_breakthrough",
-      "name": "외교적 돌파구/강대국 중재",
+      "id": "unilateral_deescalation",
+      "name": "일방적 전투 축소/자제 선언",
       "severity": "high",
       "confidence": 0.6666666666666666,
       "matchCount": 2,
@@ -1414,8 +1351,8 @@
       "id": "conflict_expansion",
       "name": "전선 확대/신규 참전국",
       "severity": "moderate",
-      "confidence": 1,
-      "matchCount": 4,
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
       "direction": "lengthen"
     }
   ],
