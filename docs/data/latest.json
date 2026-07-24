@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-07-24T04:11:28.356Z",
+  "timestamp": "2026-07-24T07:04:36.199Z",
   "war_day": 146,
   "probabilities": {
-    "1개월 내 (~3월)": 15.4,
-    "2~3개월 (4~5월)": 31.5,
-    "4~6개월 (6~8월)": 29.5,
-    "7~12개월 (9월~27/2월)": 17,
-    "1년 초과": 6.6
+    "1개월 내 (~3월)": 21.5,
+    "2~3개월 (4~5월)": 35.2,
+    "4~6개월 (6~8월)": 24.6,
+    "7~12개월 (9월~27/2월)": 13.6,
+    "1년 초과": 5.1
   },
   "factors": [
     {
@@ -45,9 +45,9 @@
       "decay": 0.4
     },
     {
-      "factor": "확전 뉴스 우세 (확전18.2:휴전2)",
-      "impact": "전쟁 장기화 가능성 (확전비율 90%)",
-      "weight": "+0.04%p (4~6개월)",
+      "factor": "확전 뉴스 우세 (확전20.2:휴전4)",
+      "impact": "전쟁 장기화 가능성 (확전비율 83%)",
+      "weight": "+0.03%p (4~6개월)",
       "direction": "lengthen",
       "detail": "언론에서 휴전보다 확전을 더 많이 보도하고 있습니다.",
       "keywords": [
@@ -164,11 +164,11 @@
       "decay": 1
     },
     {
-      "factor": "협상/외교 뉴스 2건 감지",
-      "impact": "외교 움직임 미약",
-      "weight": "+0.00%p (1개월내), +0.00%p (2~3개월)",
+      "factor": "협상/외교 뉴스 4건 감지",
+      "impact": "외교적 해결 움직임 포착",
+      "weight": "+0.01%p (1개월내), +0.01%p (2~3개월)",
       "direction": "shorten",
-      "detail": "실시간 뉴스에서 협상 관련 기사 2건이 감지되었습니다.",
+      "detail": "실시간 뉴스에서 협상 관련 기사 4건이 감지되었습니다.",
       "keywords": [
         "negotiat",
         "talks",
@@ -181,11 +181,11 @@
       "decay": 1
     },
     {
-      "factor": "지역 확산 뉴스 40.599999999999994건 감지",
+      "factor": "지역 확산 뉴스 40.4건 감지",
       "impact": "주변국 대규모 연루 → 장기화 위험 높음",
       "weight": "+0.03%p (4~6개월), +0.03%p (7~12개월)",
       "direction": "lengthen",
-      "detail": "주변국을 언급하는 기사 40.599999999999994건이 감지되었습니다.",
+      "detail": "주변국을 언급하는 기사 40.4건이 감지되었습니다.",
       "keywords": [
         "saudi",
         "uae",
@@ -234,11 +234,37 @@
       "decay": 0.3
     },
     {
+      "factor": "[중대 이벤트] 공식 휴전/평화 합의",
+      "impact": "공식 휴전 또는 평화 합의 체결. 휴전 합의는 전쟁 종결의 결정적 단계이며, 합의 후 이행까지 평균 1~2주 소요.",
+      "weight": "+10.0%p (1개월내), +6.7%p (2~3개월), -5.3%p (4~6개월), -4.0%p (7~12개월), -2.0%p (1년초과)",
+      "direction": "shorten",
+      "detail": "공식 휴전 또는 평화 합의 체결. 휴전 합의는 전쟁 종결의 결정적 단계이며, 합의 후 이행까지 평균 1~2주 소요.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Israel carries out blasts across south Lebanon despite ‘ceasefire’ deal",
+      "keywords": [
+        "ceasefire",
+        "agree",
+        "ceasefire",
+        "deal",
+        "ceasefire",
+        "sign",
+        "truce",
+        "agree",
+        "armistice",
+        "sign",
+        "peace deal",
+        "ceasefire",
+        "accept",
+        "peace agreement"
+      ],
+      "applied": "2026-07-24",
+      "active": true,
+      "severity": "critical"
+    },
+    {
       "factor": "[중대 이벤트] 수도 직접 공격/포위",
       "impact": "수도 직접 공격. 베오그라드(1999): 78일 폭격 후 항복. 바그다드(2003): 21일만에 함락. 수도 타격은 전쟁 지속 의지를 급격히 약화.",
-      "weight": "+2.7%p (1개월내), +4.0%p (2~3개월), -1.3%p (4~6개월), -1.3%p (7~12개월), -0.7%p (1년초과)",
+      "weight": "+4.0%p (1개월내), +6.0%p (2~3개월), -2.0%p (4~6개월), -2.0%p (7~12개월), -1.0%p (1년초과)",
       "direction": "shorten",
-      "detail": "수도 직접 공격. 베오그라드(1999): 78일 폭격 후 항복. 바그다드(2003): 21일만에 함락. 수도 타격은 전쟁 지속 의지를 급격히 약화.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: US launches 13th night of strikes as Iran warns of escalation in the Gulf",
+      "detail": "수도 직접 공격. 베오그라드(1999): 78일 폭격 후 항복. 바그다드(2003): 21일만에 함락. 수도 타격은 전쟁 지속 의지를 급격히 약화.\n\n신뢰도: 확실 (100%), 관련 기사 4건 감지.\n관련: US launches 13th night of strikes as Iran warns of escalation in the Gulf | US attacks Iran for 13th night as Trump threatens ‘bigger’ strikes",
       "keywords": [
         "capital",
         "bomb",
@@ -322,11 +348,11 @@
       "severity": "critical"
     },
     {
-      "factor": "유가 급등 (WTI $91.95/배럴)",
+      "factor": "유가 급등 (WTI $90.86/배럴)",
       "impact": "중간 수준 경제 압력",
       "weight": "+2%p (1-2개월)",
       "direction": "shorten",
-      "detail": "WTI 유가가 $91.95/배럴로 90달러 이상입니다. 호르무즈 해협 봉쇄와 맞물려 글로벌 에너지 시장에 큰 충격을 주고 있으며, 주요국들의 조기 종전 압력이 강화되고 있습니다.",
+      "detail": "WTI 유가가 $90.86/배럴로 90달러 이상입니다. 호르무즈 해협 봉쇄와 맞물려 글로벌 에너지 시장에 큰 충격을 주고 있으며, 주요국들의 조기 종전 압력이 강화되고 있습니다.",
       "keywords": [
         "oil",
         "crude",
@@ -339,11 +365,11 @@
       "active": true
     },
     {
-      "factor": "금값 사상최고 ($4030.3/oz)",
+      "factor": "금값 사상최고 ($4037.2/oz)",
       "impact": "안전자산 수요 폭증 → 글로벌 불안 심화",
       "weight": "+2%p (4-6개월)",
       "direction": "lengthen",
-      "detail": "금 가격이 온스당 $4030.3로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
+      "detail": "금 가격이 온스당 $4037.2로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
       "keywords": [
         "gold",
         "safe haven",
@@ -371,18 +397,54 @@
     }
   ],
   "news_signals": {
-    "ceasefire_mentions": 2,
-    "escalation_mentions": 18.2,
-    "negotiation_mentions": 2,
-    "casualty_mentions": 8,
-    "peace_mentions": 4,
-    "regional_spread": 40.599999999999994,
+    "ceasefire_mentions": 4,
+    "escalation_mentions": 20.2,
+    "negotiation_mentions": 4,
+    "casualty_mentions": 10,
+    "peace_mentions": 6,
+    "regional_spread": 40.4,
     "total_articles": 50,
     "new_articles": 50,
-    "unique_events": 46,
-    "duplicates_removed": 4
+    "unique_events": 47,
+    "duplicates_removed": 3
   },
   "latest_news": [
+    {
+      "title": "Mykhailo Drapatyi: Can new Ukraine army chief alter Russia war’s direction?",
+      "link": "https://www.aljazeera.com/news/2026/7/24/mykhailo-drapatyi-can-new-ukraine-army-chief-alter-russia-wars-direction?traffic_source=rss",
+      "pubDate": "Fri, 24 Jul 2026 05:56:31 +0000",
+      "source": "aljazeera",
+      "snippet": "In 2014, a young Drapatyi became an icon for his daredevilry in Mariupol. Can he lead his military to victory?  ",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Trillion dollar US defence bill would deepen military ties with Israel",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/7/24/aje-onl-nf_us-defence-bill-deepen-military-ties-with-israel-240726?traffic_source=rss",
+      "pubDate": "Fri, 24 Jul 2026 05:01:43 +0000",
+      "source": "aljazeera",
+      "snippet": "A $1.15 trillion US defence bill passed by the House includes plans to expand military cooperation with Israel.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Israel carries out blasts across south Lebanon despite ‘ceasefire’ deal",
+      "link": "https://www.aljazeera.com/news/2026/7/24/israel-carries-out-blasts-across-south-lebanon-despite-ceasefire-deal?traffic_source=rss",
+      "pubDate": "Fri, 24 Jul 2026 04:39:50 +0000",
+      "source": "aljazeera",
+      "snippet": "Israeli attacks come amid ongoing talks with Lebanese officials to implement framework for peace between two countries.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
     {
       "title": "Why did Trump just gift Saudi Arabia a nuclear win? – podcast",
       "link": "https://www.theguardian.com/politics/audio/2026/jul/24/why-did-trump-just-gift-saudi-arabia-a-nuclear-win-podcast",
@@ -524,42 +586,6 @@
       "_isDuplicated": false,
       "_clusterSize": 1,
       "_isDuplicate": false
-    },
-    {
-      "title": "UN envoy for Yemen ‘alarmed’ by Houthis’ Red Sea attacks, calls for talks",
-      "link": "https://www.aljazeera.com/news/2026/7/24/un-envoy-for-yemen-alarmed-by-houthis-red-sea-attacks-calls-for-talks?traffic_source=rss",
-      "pubDate": "Fri, 24 Jul 2026 00:03:25 +0000",
-      "source": "aljazeera",
-      "snippet": "Hans Grundberg warns that further confrontation risks &#039;deepening the suffering of the Yemeni people&#039;.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Iran war live: US completes 13th night of strikes on Iran",
-      "link": "https://www.aljazeera.com/news/liveblog/2026/7/24/iran-war-live-trump-weighs-massive-attack-on-iran?traffic_source=rss",
-      "pubDate": "Fri, 24 Jul 2026 00:00:00 +0000",
-      "source": "aljazeera",
-      "snippet": "Trump says he is considering a ‘massive attack’, as Iran&#039;s Araghchi says &#039;mindless aggression&#039; won&#039;t help a deal.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Trump expands voluntary pledge to blunt AI-driven utility bill surges",
-      "link": "https://www.aljazeera.com/news/2026/7/23/trump-expands-voluntary-pledge-to-blunt-ai-driven-utility-bill-surges?traffic_source=rss",
-      "pubDate": "Thu, 23 Jul 2026 23:55:58 +0000",
-      "source": "aljazeera",
-      "snippet": "White House hails pledge that seeks to shield consumers from the cost of energy for data centres as &#039;historic&#039;.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
     }
   ],
   "news_digest": {
@@ -568,9 +594,31 @@
         "category_id": "military",
         "category_name": "군사 작전",
         "category_icon": "⚔️",
-        "count": 18,
-        "new_count": 18,
+        "count": 20,
+        "new_count": 20,
         "articles": [
+          {
+            "title": "Mykhailo Drapatyi: Can new Ukraine army chief alter Russia war’s direction?",
+            "link": "https://www.aljazeera.com/news/2026/7/24/mykhailo-drapatyi-can-new-ukraine-army-chief-alter-russia-wars-direction?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Fri, 24 Jul 2026 05:56:31 +0000",
+            "snippet": "In 2014, a young Drapatyi became an icon for his daredevilry in Mariupol. Can he lead his military to victory?  ",
+            "isNew": true
+          },
+          {
+            "title": "Trillion dollar US defence bill would deepen military ties with Israel",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/7/24/aje-onl-nf_us-defence-bill-deepen-military-ties-with-israel-240726?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Fri, 24 Jul 2026 05:01:43 +0000",
+            "snippet": "A $1.15 trillion US defence bill passed by the House includes plans to expand military cooperation with Israel.",
+            "isNew": true
+          },
           {
             "title": "Why did Trump just gift Saudi Arabia a nuclear win? – podcast",
             "link": "https://www.theguardian.com/politics/audio/2026/jul/24/why-did-trump-just-gift-saudi-arabia-a-nuclear-win-podcast",
@@ -659,28 +707,6 @@
             "pubDate": "Fri, 24 Jul 2026 00:00:00 +0000",
             "snippet": "Trump says he is considering a ‘massive attack’, as Iran&#039;s Araghchi says &#039;mindless aggression&#039; won&#039;t help a deal.",
             "isNew": true
-          },
-          {
-            "title": "Two Palestinians killed as Israel intensifies strikes on Gaza City",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/7/23/two-palestinians-killed-as-israel-intensifies-strikes-on-gaza-city?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Thu, 23 Jul 2026 23:53:13 +0000",
-            "snippet": "Two Palestinians were killed and several others injured in a new wave of Israeli airstrikes on Gaza City.",
-            "isNew": true
-          },
-          {
-            "title": "UK ‘ready to defend itself’ after Iranian threat over US bases",
-            "link": "https://www.theguardian.com/world/2026/jul/23/uk-ready-to-defend-itself-iran-threat-us-bases",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Thu, 23 Jul 2026 22:41:37 GMT",
-            "snippet": "IRGC claims base in south-west England was used by US to launch bombing missions, making it ‘legitimate target’The government has said the UK is “ready to defend itself” after Iran’s military warned t",
-            "isNew": true
           }
         ]
       },
@@ -688,8 +714,8 @@
         "category_id": "politics",
         "category_name": "국내 정치",
         "category_icon": "🏛️",
-        "count": 8,
-        "new_count": 8,
+        "count": 7,
+        "new_count": 7,
         "articles": [
           {
             "title": "Ukraine’s Zelenskyy meets with far-right US activist Laura Loomer",
@@ -733,17 +759,6 @@
             ],
             "pubDate": "Thu, 23 Jul 2026 22:04:23 +0000",
             "snippet": "America&#039;s war on Iran has cost the US nearly $110 billion. Now, the Trump administration wants another $67 billion.",
-            "isNew": true
-          },
-          {
-            "title": "Rally attendee steals the show by mimicking Trump’s gestures",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/7/23/rally-attendee-steals-the-show-by-mimicking-trumps-gestures?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Thu, 23 Jul 2026 21:08:32 +0000",
-            "snippet": "A rally attendee seated directly behind Trump drew attention by mimicking the president. ",
             "isNew": true
           },
           {
@@ -936,9 +951,20 @@
         "category_id": "diplomacy",
         "category_name": "외교/협상",
         "category_icon": "🤝",
-        "count": 4,
-        "new_count": 4,
+        "count": 5,
+        "new_count": 5,
         "articles": [
+          {
+            "title": "Israel carries out blasts across south Lebanon despite ‘ceasefire’ deal",
+            "link": "https://www.aljazeera.com/news/2026/7/24/israel-carries-out-blasts-across-south-lebanon-despite-ceasefire-deal?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Fri, 24 Jul 2026 04:39:50 +0000",
+            "snippet": "Israeli attacks come amid ongoing talks with Lebanese officials to implement framework for peace between two countries.",
+            "isNew": true
+          },
           {
             "title": "Iran Rejects U.S. Cease-Fire Deal Presented by Iraqi Leader",
             "link": "https://www.nytimes.com/2026/07/23/world/middleeast/iran-iraq-cease-fire-proposal.html",
@@ -989,8 +1015,8 @@
         "category_id": "regional",
         "category_name": "지역 정세",
         "category_icon": "🌍",
-        "count": 4,
-        "new_count": 4,
+        "count": 3,
+        "new_count": 3,
         "articles": [
           {
             "title": "Houthi attacks raise fears of wider Middle East conflict and more global economic damage",
@@ -1001,17 +1027,6 @@
             ],
             "pubDate": "Fri, 24 Jul 2026 01:59:49 GMT",
             "snippet": "The Iran-backed group in Yemen has threatened to target Saudi vessels in a vital shipping route.\n",
-            "isNew": true
-          },
-          {
-            "title": "US attacks Iran for 13th night as Trump threatens ‘bigger’ strikes",
-            "link": "https://www.aljazeera.com/news/2026/7/23/trump-warns-of-biggest-strikes-yet-on-iran-as-tehran-lashes-out-across-gulf?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Thu, 23 Jul 2026 21:43:28 +0000",
-            "snippet": "The US president&#039;s threat comes after another day of Iranian attacks on Bahrain, Kuwait and Jordan.",
             "isNew": true
           },
           {
@@ -1043,8 +1058,18 @@
       "total_new": 50,
       "by_category": {
         "military": {
-          "count": 19,
+          "count": 21,
           "titles": [
+            {
+              "title": "Mykhailo Drapatyi: Can new Ukraine army chief alter Russia war’s direction?",
+              "link": "https://www.aljazeera.com/news/2026/7/24/mykhailo-drapatyi-can-new-ukraine-army-chief-alter-russia-wars-direction?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Trillion dollar US defence bill would deepen military ties with Israel",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/7/24/aje-onl-nf_us-defence-bill-deepen-military-ties-with-israel-240726?traffic_source=rss",
+              "source": "aljazeera"
+            },
             {
               "title": "Why did Trump just gift Saudi Arabia a nuclear win? – podcast",
               "link": "https://www.theguardian.com/politics/audio/2026/jul/24/why-did-trump-just-gift-saudi-arabia-a-nuclear-win-podcast",
@@ -1059,21 +1084,41 @@
               "title": "US court affirms release of pro-Palestine scholar as legal battle continues",
               "link": "https://www.aljazeera.com/news/2026/7/24/us-court-affirms-release-of-pro-palestine-scholar-as-legal-battle-continues?traffic_source=rss",
               "source": "aljazeera"
-            },
+            }
+          ]
+        },
+        "diplomacy": {
+          "count": 5,
+          "titles": [
             {
-              "title": "Mike Waltz pressed over Al Jazeera video during congressional hearing",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/7/24/aje-onl-nf_mike-waltz-pressed-over-al-jazeera-video-congress-230726?traffic_source=rss",
+              "title": "Israel carries out blasts across south Lebanon despite ‘ceasefire’ deal",
+              "link": "https://www.aljazeera.com/news/2026/7/24/israel-carries-out-blasts-across-south-lebanon-despite-ceasefire-deal?traffic_source=rss",
               "source": "aljazeera"
             },
             {
-              "title": "Israel bombs Gaza after displacement orders, kills two Palestinians",
-              "link": "https://www.aljazeera.com/news/2026/7/24/israel-bombs-gaza-after-displacement-orders-kills-two-palestinians?traffic_source=rss",
+              "title": "Iran Rejects U.S. Cease-Fire Deal Presented by Iraqi Leader",
+              "link": "https://www.nytimes.com/2026/07/23/world/middleeast/iran-iraq-cease-fire-proposal.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Arab and Muslim countries condemn Israeli storming of Al-Aqsa Mosque",
+              "link": "https://www.aljazeera.com/news/2026/7/23/arab-and-muslim-countries-condemn-israeli-escalation-at-al-aqsa-mosque?traffic_source=rss",
               "source": "aljazeera"
+            },
+            {
+              "title": "US signs landmark nuclear deal with Saudi Arabia",
+              "link": "https://www.bbc.co.uk/news/articles/cj03r59z73po?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
+            },
+            {
+              "title": "Why would Trump agree to the Saudi nuclear deal? | Kenneth Roth",
+              "link": "https://www.theguardian.com/commentisfree/2026/jul/23/trump-saudi-nuclear-deal",
+              "source": "guardian"
             }
           ]
         },
         "politics": {
-          "count": 9,
+          "count": 8,
           "titles": [
             {
               "title": "What are the Abraham Accords?",
@@ -1103,7 +1148,7 @@
           ]
         },
         "humanitarian": {
-          "count": 7,
+          "count": 6,
           "titles": [
             {
               "title": "Middle East crisis is ‘getting out of control’, UN chief warns – as it happened",
@@ -1116,11 +1161,6 @@
               "source": "nytimes"
             },
             {
-              "title": "US-Saudi nuclear deal hinges on normalisation with Israel",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/7/23/us-saudi-nuclear-deal-hinges-on-normalisation-with-israel?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
               "title": "Senators Ask Hegseth to Fully Account for U.S. Troops Killed or Wounded in Iran",
               "link": "https://www.nytimes.com/2026/07/23/world/middleeast/iran-war-us-troops-hegseth-casualties.html",
               "source": "nytimes"
@@ -1129,21 +1169,21 @@
               "title": "Iran crisis is not solely a product of Trump’s rule | Letters",
               "link": "https://www.theguardian.com/world/2026/jul/23/iran-crisis-is-not-solely-a-product-of-trumps-rule",
               "source": "guardian"
+            },
+            {
+              "title": "Debate Over Ancient Iranian Jewelry Worn by Zendaya to ‘Odyssey’ Event",
+              "link": "https://www.nytimes.com/2026/07/22/style/zendaya-odyssey-earrings-jewelry.html",
+              "source": "nytimes"
             }
           ]
         },
         "regional": {
-          "count": 4,
+          "count": 3,
           "titles": [
             {
               "title": "Houthi attacks raise fears of wider Middle East conflict and more global economic damage",
               "link": "https://www.bbc.co.uk/news/articles/cvgve0vxy1yo?at_medium=RSS&at_campaign=rss",
               "source": "bbc"
-            },
-            {
-              "title": "US attacks Iran for 13th night as Trump threatens ‘bigger’ strikes",
-              "link": "https://www.aljazeera.com/news/2026/7/23/trump-warns-of-biggest-strikes-yet-on-iran-as-tehran-lashes-out-across-gulf?traffic_source=rss",
-              "source": "aljazeera"
             },
             {
               "title": "U.S.-Saudi Deal Prompts Fears of a Global Nuclear Arms Race",
@@ -1184,31 +1224,6 @@
               "title": "Global Oil Price Hits $100 a Barrel for First Time Since May",
               "link": "https://www.nytimes.com/2026/07/23/business/oil-price-100-dollars.html",
               "source": "nytimes"
-            }
-          ]
-        },
-        "diplomacy": {
-          "count": 4,
-          "titles": [
-            {
-              "title": "Iran Rejects U.S. Cease-Fire Deal Presented by Iraqi Leader",
-              "link": "https://www.nytimes.com/2026/07/23/world/middleeast/iran-iraq-cease-fire-proposal.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Arab and Muslim countries condemn Israeli storming of Al-Aqsa Mosque",
-              "link": "https://www.aljazeera.com/news/2026/7/23/arab-and-muslim-countries-condemn-israeli-escalation-at-al-aqsa-mosque?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "US signs landmark nuclear deal with Saudi Arabia",
-              "link": "https://www.bbc.co.uk/news/articles/cj03r59z73po?at_medium=RSS&at_campaign=rss",
-              "source": "bbc"
-            },
-            {
-              "title": "Why would Trump agree to the Saudi nuclear deal? | Kenneth Roth",
-              "link": "https://www.theguardian.com/commentisfree/2026/jul/23/trump-saudi-nuclear-deal",
-              "source": "guardian"
             }
           ]
         }
@@ -1302,23 +1317,11 @@
     }
   ],
   "economic_indicators": {
-    "VIX": {
-      "price": 18.7,
-      "change": 2.06,
-      "changePercent": 12.38,
-      "prev": 16.64
-    },
-    "GOLD": {
-      "price": 4030.3,
-      "change": -16.3,
-      "changePercent": -0.4,
-      "prev": 4046.6
-    },
-    "WTI": {
-      "price": 91.95,
-      "change": -0.24,
-      "changePercent": -0.26,
-      "prev": 92.19
+    "US10Y": {
+      "price": 4.7,
+      "change": 0.05,
+      "changePercent": 1.07,
+      "prev": 4.66
     },
     "US2Y": {
       "price": 3.8,
@@ -1326,32 +1329,52 @@
       "changePercent": 1.6,
       "prev": 3.74
     },
-    "DXY": {
-      "price": 101.41,
-      "change": -0.02,
-      "changePercent": -0.02,
-      "prev": 101.43
-    },
     "BRENT": {
-      "price": 100.61,
-      "change": -0.08,
-      "changePercent": -0.08,
+      "price": 99.33,
+      "change": -1.36,
+      "changePercent": -1.35,
       "prev": 100.69
     },
-    "US10Y": {
-      "price": 4.7,
-      "change": 0.05,
-      "changePercent": 1.07,
-      "prev": 4.66
+    "DXY": {
+      "price": 101.38,
+      "change": -0.05,
+      "changePercent": -0.05,
+      "prev": 101.43
+    },
+    "WTI": {
+      "price": 90.86,
+      "change": -1.33,
+      "changePercent": -1.44,
+      "prev": 92.19
+    },
+    "VIX": {
+      "price": 18.7,
+      "change": 2.06,
+      "changePercent": 12.38,
+      "prev": 16.64
+    },
+    "GOLD": {
+      "price": 4037.2,
+      "change": -9.4,
+      "changePercent": -0.23,
+      "prev": 4046.6
     }
   },
   "critical_events": [
     {
+      "id": "ceasefire_agreement",
+      "name": "공식 휴전/평화 합의",
+      "severity": "critical",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "shorten"
+    },
+    {
       "id": "capital_attack",
       "name": "수도 직접 공격/포위",
       "severity": "high",
-      "confidence": 0.6666666666666666,
-      "matchCount": 2,
+      "confidence": 1,
+      "matchCount": 4,
       "direction": "shorten"
     },
     {
