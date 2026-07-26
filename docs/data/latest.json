@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-07-26T17:07:00.611Z",
+  "timestamp": "2026-07-26T18:31:00.309Z",
   "war_day": 148,
   "probabilities": {
-    "1개월 내 (~3월)": 16.4,
-    "2~3개월 (4~5월)": 33.1,
-    "4~6개월 (6~8월)": 28.7,
-    "7~12개월 (9월~27/2월)": 15.8,
-    "1년 초과": 6
+    "1개월 내 (~3월)": 18.3,
+    "2~3개월 (4~5월)": 35.9,
+    "4~6개월 (6~8월)": 26.7,
+    "7~12개월 (9월~27/2월)": 14,
+    "1년 초과": 5.1
   },
   "factors": [
     {
@@ -45,8 +45,8 @@
       "decay": 0.4
     },
     {
-      "factor": "확전 뉴스 우세 (확전20:휴전4)",
-      "impact": "전쟁 장기화 가능성 (확전비율 83%)",
+      "factor": "확전 뉴스 우세 (확전18:휴전6)",
+      "impact": "전쟁 장기화 가능성 (확전비율 75%)",
       "weight": "+0.03%p (4~6개월)",
       "direction": "lengthen",
       "detail": "언론에서 휴전보다 확전을 더 많이 보도하고 있습니다.",
@@ -181,11 +181,11 @@
       "decay": 1
     },
     {
-      "factor": "지역 확산 뉴스 38.2건 감지",
+      "factor": "지역 확산 뉴스 32.2건 감지",
       "impact": "주변국 대규모 연루 → 장기화 위험 높음",
       "weight": "+0.03%p (4~6개월), +0.03%p (7~12개월)",
       "direction": "lengthen",
-      "detail": "주변국을 언급하는 기사 38.2건이 감지되었습니다.",
+      "detail": "주변국을 언급하는 기사 32.2건이 감지되었습니다.",
       "keywords": [
         "saudi",
         "uae",
@@ -232,6 +232,40 @@
       "applied": "2026-03-03",
       "active": true,
       "decay": 0.3
+    },
+    {
+      "factor": "[중대 이벤트] 일방적 전투 축소/자제 선언",
+      "impact": "교전국의 일방적 전투 축소 또는 자제 선언. 역사적으로 패전국의 자발적 전선 축소는 80% 이상 공식 항복의 전조.",
+      "weight": "+3.3%p (1개월내), +4.7%p (2~3개월), -2.0%p (4~6개월), -2.0%p (7~12개월), -0.7%p (1년초과)",
+      "direction": "shorten",
+      "detail": "교전국의 일방적 전투 축소 또는 자제 선언. 역사적으로 패전국의 자발적 전선 축소는 80% 이상 공식 항복의 전조.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: ‘Freeze the conflict’: Drones slow Kazakh oil flow amid Russia-Ukraine war",
+      "keywords": [
+        "halt",
+        "attack",
+        "stop",
+        "attack",
+        "neighb",
+        "no more",
+        "attack",
+        "withdraw",
+        "forces",
+        "pull back",
+        "troops",
+        "unilateral",
+        "ceasefire",
+        "reduce",
+        "operation",
+        "de-escalat",
+        "announc",
+        "restrain",
+        "attack",
+        "not attack",
+        "suspend",
+        "operation"
+      ],
+      "applied": "2026-07-26",
+      "active": true,
+      "severity": "high"
     },
     {
       "factor": "[중대 이벤트] 수도 직접 공격/포위",
@@ -296,7 +330,7 @@
       "impact": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).",
       "weight": "-2.0%p (1개월내), -3.0%p (2~3개월), +4.0%p (4~6개월), +3.0%p (7~12개월), +2.0%p (1년초과)",
       "direction": "lengthen",
-      "detail": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).\n\n신뢰도: 확실 (100%), 관련 기사 6건 감지.\n관련: What to Know About Iran and the Houthis | Trump’s Threatened New Front in Iran War Could Strain U.S. Forces | How the Bab al-Mandab blockade threat helped push oil back above $100",
+      "detail": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).\n\n신뢰도: 확실 (100%), 관련 기사 4건 감지.\n관련: What to Know About Iran and the Houthis | Trump’s Threatened New Front in Iran War Could Strain U.S. Forces",
       "keywords": [
         "new front",
         "war spread",
@@ -320,9 +354,9 @@
     {
       "factor": "[중대 이벤트] 대량살상무기(WMD)/핵 위협",
       "impact": "WMD/핵 위협 감지. 핵 위협은 분쟁의 성격을 근본적으로 변화시키며, 국제사회 전체의 개입을 촉발하여 예측 불확실성이 극대화.",
-      "weight": "+3.0%p (1개월내), +3.0%p (2~3개월), +5.0%p (4~6개월), +4.0%p (7~12개월), +3.0%p (1년초과)",
+      "weight": "+2.0%p (1개월내), +2.0%p (2~3개월), +3.3%p (4~6개월), +2.7%p (7~12개월), +2.0%p (1년초과)",
       "direction": "lengthen",
-      "detail": "WMD/핵 위협 감지. 핵 위협은 분쟁의 성격을 근본적으로 변화시키며, 국제사회 전체의 개입을 촉발하여 예측 불확실성이 극대화.\n\n신뢰도: 확실 (100%), 관련 기사 4건 감지.\n관련: The Guardian view on a US-Saudi nuclear agreement: an offer that further erodes international safeguards | Editorial | Oil-Rich Saudi Arabia Isn’t Short on Energy. Here’s Why It Wants to Go Nuclear.",
+      "detail": "WMD/핵 위협 감지. 핵 위협은 분쟁의 성격을 근본적으로 변화시키며, 국제사회 전체의 개입을 촉발하여 예측 불확실성이 극대화.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: The Guardian view on a US-Saudi nuclear agreement: an offer that further erodes international safeguards | Editorial",
       "keywords": [
         "nuclear",
         "strike",
@@ -380,18 +414,66 @@
     }
   ],
   "news_signals": {
-    "ceasefire_mentions": 4,
-    "escalation_mentions": 20,
+    "ceasefire_mentions": 6,
+    "escalation_mentions": 18,
     "negotiation_mentions": 2,
     "casualty_mentions": 12.4,
     "peace_mentions": 2,
-    "regional_spread": 38.2,
+    "regional_spread": 32.2,
     "total_articles": 50,
     "new_articles": 50,
     "unique_events": 47,
     "duplicates_removed": 3
   },
   "latest_news": [
+    {
+      "title": "Al-Sharaa praises Trump’s decision to remove Syria from terrorism list",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/7/26/al-sharaa-praises-trumps-decision-to-remove-syria-from-terrorism-list?traffic_source=rss",
+      "pubDate": "Sun, 26 Jul 2026 18:08:48 +0000",
+      "source": "aljazeera",
+      "snippet": "Al-Sharaa praises Trump&#039;s decision to remove Syria from terrorism list. ",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Trump Is Pushing Nuclear Energy, Including Saudi Deal. His Family and Supporters Could Benefit.",
+      "link": "https://www.nytimes.com/2026/07/26/us/politics/trump-nuclear-energy-agenda-saudi-deal.html",
+      "pubDate": "Sun, 26 Jul 2026 17:47:40 +0000",
+      "source": "nytimes",
+      "snippet": "In some cases, no direct line can be drawn from the president’s domestic nuclear agenda to his family or close allies. But they have overlapping business ties that could position them for gains.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Israel launches military incursion into Syria amid UN condemnation",
+      "link": "https://www.aljazeera.com/news/2026/7/26/israel-launches-military-incursion-into-syria-amid-un-condemnation?traffic_source=rss",
+      "pubDate": "Sun, 26 Jul 2026 17:40:15 +0000",
+      "source": "aljazeera",
+      "snippet": "The UN&#039;s Guterres condemned violations of Syria&#039;s sovereignty as he visited and called for sanctions to be lifted.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "‘Freeze the conflict’: Drones slow Kazakh oil flow amid Russia-Ukraine war",
+      "link": "https://www.aljazeera.com/news/2026/7/26/freeze-the-conflict-drones-slow-kazakh-oil-flow-amid-russia-ukraine-war?traffic_source=rss",
+      "pubDate": "Sun, 26 Jul 2026 17:13:55 +0000",
+      "source": "aljazeera",
+      "snippet": "Kazakh oil exports halted after drone attacks disrupt supplies, posing risks to the economy and energy markets.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
     {
       "title": "Israel obstructing takeover of pilot zones in Lebanon’s south: Military",
       "link": "https://www.aljazeera.com/news/2026/7/26/israel-obstructing-takeover-of-pilot-zones-in-lebanons-south-military?traffic_source=rss",
@@ -477,18 +559,6 @@
       "_isDuplicate": false
     },
     {
-      "title": "Trump Is Pushing Nuclear Energy, Including Saudi Deal. His Family and Supporters Could Benefit.",
-      "link": "https://www.nytimes.com/2026/07/26/us/politics/trump-nuclear-energy-agenda-saudi-deal.html",
-      "pubDate": "Sun, 26 Jul 2026 14:19:15 +0000",
-      "source": "nytimes",
-      "snippet": "In some cases, no direct line can be drawn from the president’s domestic nuclear agenda to his family or close allies. But they have overlapping business ties that could position them for gains.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
       "title": "Israel and the cost paradox of the Iran war",
       "link": "https://www.aljazeera.com/opinions/2026/7/26/israel-and-the-cost-paradox-of-the-iran-war?traffic_source=rss",
       "pubDate": "Sun, 26 Jul 2026 14:04:39 +0000",
@@ -535,40 +605,6 @@
       "_isDuplicated": false,
       "_clusterSize": 1,
       "_isDuplicate": false
-    },
-    {
-      "title": "Israeli crackdown in occupied West Bank intensifies, settlers cause mayhem",
-      "link": "https://www.aljazeera.com/news/2026/7/26/israeli-crackdown-in-occupied-west-bank-intensifies-settlers-cause-mayhem?traffic_source=rss",
-      "pubDate": "Sun, 26 Jul 2026 12:52:29 +0000",
-      "source": "aljazeera",
-      "snippet": "The surge in violence comes after four Palestinians and two soldiers were killed in a gunfight on Friday.",
-      "isNew": true,
-      "_isDuplicate": true,
-      "_sourceCount": 1
-    },
-    {
-      "title": "U.S.-Iran War Pauses for 2nd Straight Day With Both Sides Holding Off on Strikes",
-      "link": "https://www.nytimes.com/2026/07/26/world/middleeast/us-iran-war-pause.html",
-      "pubDate": "Sun, 26 Jul 2026 12:49:15 +0000",
-      "source": "nytimes",
-      "snippet": "President Trump put off plans to escalate the fighting in part because of dwindling stockpiles of interceptor missiles, American officials said.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "President Ahmed al-Sharaa: Syria seeking security deal with Israel",
-      "link": "https://www.aljazeera.com/news/2026/7/26/president-ahmed-al-sharaa-syria-seeking-security-deal-with-israel?traffic_source=rss",
-      "pubDate": "Sun, 26 Jul 2026 12:34:13 +0000",
-      "source": "aljazeera",
-      "snippet": "Syrian President al-Sharaa tells Al Jazeera Damascus seeks a security deal with Israel, and warns of chaos in Lebanon.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
     }
   ],
   "news_digest": {
@@ -577,9 +613,20 @@
         "category_id": "military",
         "category_name": "군사 작전",
         "category_icon": "⚔️",
-        "count": 20,
-        "new_count": 20,
+        "count": 21,
+        "new_count": 21,
         "articles": [
+          {
+            "title": "Israel launches military incursion into Syria amid UN condemnation",
+            "link": "https://www.aljazeera.com/news/2026/7/26/israel-launches-military-incursion-into-syria-amid-un-condemnation?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Sun, 26 Jul 2026 17:40:15 +0000",
+            "snippet": "The UN&#039;s Guterres condemned violations of Syria&#039;s sovereignty as he visited and called for sanctions to be lifted.",
+            "isNew": true
+          },
           {
             "title": "Israel obstructing takeover of pilot zones in Lebanon’s south: Military",
             "link": "https://www.aljazeera.com/news/2026/7/26/israel-obstructing-takeover-of-pilot-zones-in-lebanons-south-military?traffic_source=rss",
@@ -678,81 +725,6 @@
             "pubDate": "Sat, 25 Jul 2026 12:28:31 GMT",
             "snippet": "Saudi air defences intercept ballistic missiles as Iran reports first night without US strikes in two weeksYemen’s Iran-backed Houthi rebels claimed a missile attack on the southern Saudi city of Jiza",
             "isNew": true
-          },
-          {
-            "title": "Trump’s Threatened New Front in Iran War Could Strain U.S. Forces",
-            "link": "https://www.nytimes.com/2026/07/24/us/politics/trump-new-front-iran-war.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Fri, 24 Jul 2026 21:26:23 +0000",
-            "snippet": "President Trump has said he would expand the war if the Iran-backed Houthi militants launched additional attacks.",
-            "isNew": true
-          }
-        ]
-      },
-      {
-        "category_id": "economy",
-        "category_name": "경제 영향",
-        "category_icon": "📊",
-        "count": 5,
-        "new_count": 5,
-        "articles": [
-          {
-            "title": "Treasure as trinkets: Zendaya’s earrings renew debate on ownership of ancient artefacts",
-            "link": "https://www.theguardian.com/culture/2026/jul/25/treasure-as-trinkets-zendayas-earrings-renew-debate-on-ownership-of-ancient-artefacts",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Sat, 25 Jul 2026 11:00:40 GMT",
-            "snippet": "Jewellery made from BC Iran worn at Odyssey photocall throws spotlight on the trade of rare archeological findsThe Odyssey has stormed cinemas, but while its take on the Homeric epic has created rippl",
-            "isNew": true
-          },
-          {
-            "title": "A Global Economy Jolted by an Oil Shock Now Gets a Tariff Reminder",
-            "link": "https://www.nytimes.com/2026/07/25/business/economy/trump-tariffs-iran-war-inflation.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Sat, 25 Jul 2026 04:00:07 +0000",
-            "snippet": "Tariffs are back, but this time there is a war in the Persian Gulf and oil has hit $100 a barrel.",
-            "isNew": true
-          },
-          {
-            "title": "Brent Crude Oil Prices Top $100 as Conflict With Iran Drags On",
-            "link": "https://www.nytimes.com/2026/07/24/business/oil-prices-global-stocks-shipping.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Fri, 24 Jul 2026 20:03:03 +0000",
-            "snippet": "Stocks in Asia were down following a sell-off in the U.S. markets over soaring oil prices, rising borrowing costs and worries about the technology industry.",
-            "isNew": true
-          },
-          {
-            "title": "How the Bab al-Mandab blockade threat helped push oil back above $100",
-            "link": "https://www.theguardian.com/business/2026/jul/23/bab-al-mandab-blockade-push-oil-100-houthi-ships",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Thu, 23 Jul 2026 16:04:11 GMT",
-            "snippet": "Escalating Houthi warnings to ships carrying Saudi crude through the strait lead to fears of further price surgeA fresh front in the Middle East crisis opened this week, bringing a return of soaring g",
-            "isNew": true
-          },
-          {
-            "title": "Oil-Rich Saudi Arabia Isn’t Short on Energy. Here’s Why It Wants to Go Nuclear.",
-            "link": "https://www.nytimes.com/2026/07/23/world/middleeast/saudi-arabia-nuclear.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Thu, 23 Jul 2026 15:57:43 +0000",
-            "snippet": "Opponents warn that a U.S.-Saudi deal could be a step toward the kingdom building an atomic bomb. But there are other reasons for the world’s largest oil exporter to diversify its energy mix.",
-            "isNew": true
           }
         ]
       },
@@ -823,65 +795,65 @@
         ]
       },
       {
-        "category_id": "regional",
-        "category_name": "지역 정세",
-        "category_icon": "🌍",
+        "category_id": "politics",
+        "category_name": "국내 정치",
+        "category_icon": "🏛️",
         "count": 5,
         "new_count": 5,
         "articles": [
           {
-            "title": "President Ahmed al-Sharaa: Syria seeking security deal with Israel",
-            "link": "https://www.aljazeera.com/news/2026/7/26/president-ahmed-al-sharaa-syria-seeking-security-deal-with-israel?traffic_source=rss",
+            "title": "Al-Sharaa praises Trump’s decision to remove Syria from terrorism list",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/7/26/al-sharaa-praises-trumps-decision-to-remove-syria-from-terrorism-list?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Sun, 26 Jul 2026 12:34:13 +0000",
-            "snippet": "Syrian President al-Sharaa tells Al Jazeera Damascus seeks a security deal with Israel, and warns of chaos in Lebanon.",
+            "pubDate": "Sun, 26 Jul 2026 18:08:48 +0000",
+            "snippet": "Al-Sharaa praises Trump&#039;s decision to remove Syria from terrorism list. ",
             "isNew": true
           },
           {
-            "title": "Trump Switched to Old Air Force One at NATO Summit After Credible Iranian Threat",
-            "link": "https://www.nytimes.com/2026/07/24/us/politics/trump-plane-iran-threat.html",
+            "title": "Trump Is Pushing Nuclear Energy, Including Saudi Deal. His Family and Supporters Could Benefit.",
+            "link": "https://www.nytimes.com/2026/07/26/us/politics/trump-nuclear-energy-agenda-saudi-deal.html",
             "source": "nytimes",
             "sources": [
               "nytimes"
             ],
-            "pubDate": "Sat, 25 Jul 2026 01:57:36 +0000",
-            "snippet": "The threat led the Secret Service to urge President Trump to fly out of Turkey on a different plane, raising questions about the security of the Qatari-donated jet.",
+            "pubDate": "Sun, 26 Jul 2026 17:47:40 +0000",
+            "snippet": "In some cases, no direct line can be drawn from the president’s domestic nuclear agenda to his family or close allies. But they have overlapping business ties that could position them for gains.",
             "isNew": true
           },
           {
-            "title": "Trump switched planes in Turkey earlier this month because of threat from Iran proxy forces – report",
-            "link": "https://www.theguardian.com/us-news/2026/jul/24/trump-air-force-one-iran-threat",
-            "source": "guardian",
+            "title": "Trump Seems Trapped by Iran War, Even as He Wields the World’s Biggest Hammer",
+            "link": "https://www.nytimes.com/2026/07/26/us/politics/trump-trapped-in-iran-war.html",
+            "source": "nytimes",
             "sources": [
-              "guardian"
+              "nytimes"
             ],
-            "pubDate": "Fri, 24 Jul 2026 21:50:56 GMT",
-            "snippet": "President flew to Ankara onboard Qatari-gifted jet, without advanced defenses, and flew home on old Air Force OneDonald Trump switched aircraft before departing Turkey earlier this month after US offi",
+            "pubDate": "Sun, 26 Jul 2026 16:11:05 +0000",
+            "snippet": "A president who thought there were no limits to his power has discovered several, leaving him more frustrated and erratic.",
             "isNew": true
           },
           {
-            "title": "US expands Iran attacks as Trump warns Tehran and Houthis over Red Sea strikes",
-            "link": "https://www.theguardian.com/world/2026/jul/24/us-expands-iran-attacks-as-trump-warns-tehran-and-houthis-over-red-sea-strikes",
-            "source": "guardian",
+            "title": "Trump Meets With Top Advisers as He Weighs a Major Escalation in Iran",
+            "link": "https://www.nytimes.com/2026/07/24/us/politics/trump-escalation-iran.html",
+            "source": "nytimes",
             "sources": [
-              "guardian"
+              "nytimes"
             ],
-            "pubDate": "Fri, 24 Jul 2026 17:58:22 GMT",
-            "snippet": "No end to fighting in sight as Revolutionary Guards launch drones at targets in Bahrain, Jordan and KuwaitThe US has struck targets across Iran, reaching as far as the Caspian Sea, as Donald Trump thr",
+            "pubDate": "Fri, 24 Jul 2026 21:41:12 +0000",
+            "snippet": "President Trump has insisted the U.S.-Israeli war in Iran would be a relatively short “excursion,” although it has lasted nearly five months, with no end in sight.",
             "isNew": true
           },
           {
-            "title": "Houthi attacks raise fears of wider Middle East conflict and more global economic damage",
-            "link": "https://www.bbc.co.uk/news/articles/cvgve0vxy1yo?at_medium=RSS&at_campaign=rss",
+            "title": "Saudis must recognise Israel for nuclear deal, says Trump ",
+            "link": "https://www.bbc.co.uk/news/articles/cwye71yq8wwo?at_medium=RSS&at_campaign=rss",
             "source": "bbc",
             "sources": [
               "bbc"
             ],
-            "pubDate": "Fri, 24 Jul 2026 01:59:49 GMT",
-            "snippet": "The Iran-backed group in Yemen has threatened to target Saudi vessels in a vital shipping route.\n",
+            "pubDate": "Thu, 23 Jul 2026 17:58:02 GMT",
+            "snippet": "The US president says the landmark agreement to help Saudis develop nuclear energy is dependent on it joining the Abraham Accords.",
             "isNew": true
           }
         ]
@@ -940,54 +912,107 @@
         ]
       },
       {
-        "category_id": "politics",
-        "category_name": "국내 정치",
-        "category_icon": "🏛️",
+        "category_id": "economy",
+        "category_name": "경제 영향",
+        "category_icon": "📊",
         "count": 4,
         "new_count": 4,
         "articles": [
           {
-            "title": "Trump Seems Trapped by Iran War, Even as He Wields the World’s Biggest Hammer",
-            "link": "https://www.nytimes.com/2026/07/26/us/politics/trump-trapped-in-iran-war.html",
+            "title": "‘Freeze the conflict’: Drones slow Kazakh oil flow amid Russia-Ukraine war",
+            "link": "https://www.aljazeera.com/news/2026/7/26/freeze-the-conflict-drones-slow-kazakh-oil-flow-amid-russia-ukraine-war?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Sun, 26 Jul 2026 17:13:55 +0000",
+            "snippet": "Kazakh oil exports halted after drone attacks disrupt supplies, posing risks to the economy and energy markets.",
+            "isNew": true
+          },
+          {
+            "title": "Treasure as trinkets: Zendaya’s earrings renew debate on ownership of ancient artefacts",
+            "link": "https://www.theguardian.com/culture/2026/jul/25/treasure-as-trinkets-zendayas-earrings-renew-debate-on-ownership-of-ancient-artefacts",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Sat, 25 Jul 2026 11:00:40 GMT",
+            "snippet": "Jewellery made from BC Iran worn at Odyssey photocall throws spotlight on the trade of rare archeological findsThe Odyssey has stormed cinemas, but while its take on the Homeric epic has created rippl",
+            "isNew": true
+          },
+          {
+            "title": "A Global Economy Jolted by an Oil Shock Now Gets a Tariff Reminder",
+            "link": "https://www.nytimes.com/2026/07/25/business/economy/trump-tariffs-iran-war-inflation.html",
             "source": "nytimes",
             "sources": [
               "nytimes"
             ],
-            "pubDate": "Sun, 26 Jul 2026 16:11:05 +0000",
-            "snippet": "A president who thought there were no limits to his power has discovered several, leaving him more frustrated and erratic.",
+            "pubDate": "Sat, 25 Jul 2026 04:00:07 +0000",
+            "snippet": "Tariffs are back, but this time there is a war in the Persian Gulf and oil has hit $100 a barrel.",
             "isNew": true
           },
           {
-            "title": "Trump Is Pushing Nuclear Energy, Including Saudi Deal. His Family and Supporters Could Benefit.",
-            "link": "https://www.nytimes.com/2026/07/26/us/politics/trump-nuclear-energy-agenda-saudi-deal.html",
+            "title": "Brent Crude Oil Prices Top $100 as Conflict With Iran Drags On",
+            "link": "https://www.nytimes.com/2026/07/24/business/oil-prices-global-stocks-shipping.html",
             "source": "nytimes",
             "sources": [
               "nytimes"
             ],
-            "pubDate": "Sun, 26 Jul 2026 14:19:15 +0000",
-            "snippet": "In some cases, no direct line can be drawn from the president’s domestic nuclear agenda to his family or close allies. But they have overlapping business ties that could position them for gains.",
+            "pubDate": "Fri, 24 Jul 2026 20:03:03 +0000",
+            "snippet": "Stocks in Asia were down following a sell-off in the U.S. markets over soaring oil prices, rising borrowing costs and worries about the technology industry.",
             "isNew": true
-          },
+          }
+        ]
+      },
+      {
+        "category_id": "regional",
+        "category_name": "지역 정세",
+        "category_icon": "🌍",
+        "count": 4,
+        "new_count": 4,
+        "articles": [
           {
-            "title": "Trump Meets With Top Advisers as He Weighs a Major Escalation in Iran",
-            "link": "https://www.nytimes.com/2026/07/24/us/politics/trump-escalation-iran.html",
+            "title": "Trump Switched to Old Air Force One at NATO Summit After Credible Iranian Threat",
+            "link": "https://www.nytimes.com/2026/07/24/us/politics/trump-plane-iran-threat.html",
             "source": "nytimes",
             "sources": [
               "nytimes"
             ],
-            "pubDate": "Fri, 24 Jul 2026 21:41:12 +0000",
-            "snippet": "President Trump has insisted the U.S.-Israeli war in Iran would be a relatively short “excursion,” although it has lasted nearly five months, with no end in sight.",
+            "pubDate": "Sat, 25 Jul 2026 01:57:36 +0000",
+            "snippet": "The threat led the Secret Service to urge President Trump to fly out of Turkey on a different plane, raising questions about the security of the Qatari-donated jet.",
             "isNew": true
           },
           {
-            "title": "Saudis must recognise Israel for nuclear deal, says Trump ",
-            "link": "https://www.bbc.co.uk/news/articles/cwye71yq8wwo?at_medium=RSS&at_campaign=rss",
+            "title": "Trump switched planes in Turkey earlier this month because of threat from Iran proxy forces – report",
+            "link": "https://www.theguardian.com/us-news/2026/jul/24/trump-air-force-one-iran-threat",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Fri, 24 Jul 2026 21:50:56 GMT",
+            "snippet": "President flew to Ankara onboard Qatari-gifted jet, without advanced defenses, and flew home on old Air Force OneDonald Trump switched aircraft before departing Turkey earlier this month after US offi",
+            "isNew": true
+          },
+          {
+            "title": "US expands Iran attacks as Trump warns Tehran and Houthis over Red Sea strikes",
+            "link": "https://www.theguardian.com/world/2026/jul/24/us-expands-iran-attacks-as-trump-warns-tehran-and-houthis-over-red-sea-strikes",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Fri, 24 Jul 2026 17:58:22 GMT",
+            "snippet": "No end to fighting in sight as Revolutionary Guards launch drones at targets in Bahrain, Jordan and KuwaitThe US has struck targets across Iran, reaching as far as the Caspian Sea, as Donald Trump thr",
+            "isNew": true
+          },
+          {
+            "title": "Houthi attacks raise fears of wider Middle East conflict and more global economic damage",
+            "link": "https://www.bbc.co.uk/news/articles/cvgve0vxy1yo?at_medium=RSS&at_campaign=rss",
             "source": "bbc",
             "sources": [
               "bbc"
             ],
-            "pubDate": "Thu, 23 Jul 2026 17:58:02 GMT",
-            "snippet": "The US president says the landmark agreement to help Saudis develop nuclear energy is dependent on it joining the Abraham Accords.",
+            "pubDate": "Fri, 24 Jul 2026 01:59:49 GMT",
+            "snippet": "The Iran-backed group in Yemen has threatened to target Saudi vessels in a vital shipping route.\n",
             "isNew": true
           }
         ]
@@ -1049,9 +1074,44 @@
     "recent_30min": {
       "total_new": 50,
       "by_category": {
-        "military": {
-          "count": 22,
+        "politics": {
+          "count": 5,
           "titles": [
+            {
+              "title": "Al-Sharaa praises Trump’s decision to remove Syria from terrorism list",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/7/26/al-sharaa-praises-trumps-decision-to-remove-syria-from-terrorism-list?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Trump Is Pushing Nuclear Energy, Including Saudi Deal. His Family and Supporters Could Benefit.",
+              "link": "https://www.nytimes.com/2026/07/26/us/politics/trump-nuclear-energy-agenda-saudi-deal.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Trump Seems Trapped by Iran War, Even as He Wields the World’s Biggest Hammer",
+              "link": "https://www.nytimes.com/2026/07/26/us/politics/trump-trapped-in-iran-war.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Trump Meets With Top Advisers as He Weighs a Major Escalation in Iran",
+              "link": "https://www.nytimes.com/2026/07/24/us/politics/trump-escalation-iran.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Saudis must recognise Israel for nuclear deal, says Trump ",
+              "link": "https://www.bbc.co.uk/news/articles/cwye71yq8wwo?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
+            }
+          ]
+        },
+        "military": {
+          "count": 23,
+          "titles": [
+            {
+              "title": "Israel launches military incursion into Syria amid UN condemnation",
+              "link": "https://www.aljazeera.com/news/2026/7/26/israel-launches-military-incursion-into-syria-amid-un-condemnation?traffic_source=rss",
+              "source": "aljazeera"
+            },
             {
               "title": "Israel obstructing takeover of pilot zones in Lebanon’s south: Military",
               "link": "https://www.aljazeera.com/news/2026/7/26/israel-obstructing-takeover-of-pilot-zones-in-lebanons-south-military?traffic_source=rss",
@@ -1071,10 +1131,30 @@
               "title": "Israel carries out double tap strike in central Gaza",
               "link": "https://www.aljazeera.com/video/newsfeed/2026/7/26/israel-carries-out-double-tap-strike-in-central-gaza?traffic_source=rss",
               "source": "aljazeera"
+            }
+          ]
+        },
+        "economy": {
+          "count": 4,
+          "titles": [
+            {
+              "title": "‘Freeze the conflict’: Drones slow Kazakh oil flow amid Russia-Ukraine war",
+              "link": "https://www.aljazeera.com/news/2026/7/26/freeze-the-conflict-drones-slow-kazakh-oil-flow-amid-russia-ukraine-war?traffic_source=rss",
+              "source": "aljazeera"
             },
             {
-              "title": "Trump Holds Off on Major War Escalation Against Iran as Advisers Raise Concerns",
-              "link": "https://www.nytimes.com/2026/07/25/us/politics/trump-iran-military.html",
+              "title": "Treasure as trinkets: Zendaya’s earrings renew debate on ownership of ancient artefacts",
+              "link": "https://www.theguardian.com/culture/2026/jul/25/treasure-as-trinkets-zendayas-earrings-renew-debate-on-ownership-of-ancient-artefacts",
+              "source": "guardian"
+            },
+            {
+              "title": "A Global Economy Jolted by an Oil Shock Now Gets a Tariff Reminder",
+              "link": "https://www.nytimes.com/2026/07/25/business/economy/trump-tariffs-iran-war-inflation.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Brent Crude Oil Prices Top $100 as Conflict With Iran Drags On",
+              "link": "https://www.nytimes.com/2026/07/24/business/oil-prices-global-stocks-shipping.html",
               "source": "nytimes"
             }
           ]
@@ -1101,31 +1181,6 @@
               "title": "Iran Rejects U.S. Cease-Fire Deal Presented by Iraqi Leader",
               "link": "https://www.nytimes.com/2026/07/23/world/middleeast/iran-iraq-cease-fire-proposal.html",
               "source": "nytimes"
-            }
-          ]
-        },
-        "politics": {
-          "count": 4,
-          "titles": [
-            {
-              "title": "Trump Seems Trapped by Iran War, Even as He Wields the World’s Biggest Hammer",
-              "link": "https://www.nytimes.com/2026/07/26/us/politics/trump-trapped-in-iran-war.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Trump Is Pushing Nuclear Energy, Including Saudi Deal. His Family and Supporters Could Benefit.",
-              "link": "https://www.nytimes.com/2026/07/26/us/politics/trump-nuclear-energy-agenda-saudi-deal.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Trump Meets With Top Advisers as He Weighs a Major Escalation in Iran",
-              "link": "https://www.nytimes.com/2026/07/24/us/politics/trump-escalation-iran.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Saudis must recognise Israel for nuclear deal, says Trump ",
-              "link": "https://www.bbc.co.uk/news/articles/cwye71yq8wwo?at_medium=RSS&at_campaign=rss",
-              "source": "bbc"
             }
           ]
         },
@@ -1185,13 +1240,8 @@
           ]
         },
         "regional": {
-          "count": 5,
+          "count": 4,
           "titles": [
-            {
-              "title": "President Ahmed al-Sharaa: Syria seeking security deal with Israel",
-              "link": "https://www.aljazeera.com/news/2026/7/26/president-ahmed-al-sharaa-syria-seeking-security-deal-with-israel?traffic_source=rss",
-              "source": "aljazeera"
-            },
             {
               "title": "Trump Switched to Old Air Force One at NATO Summit After Credible Iranian Threat",
               "link": "https://www.nytimes.com/2026/07/24/us/politics/trump-plane-iran-threat.html",
@@ -1211,36 +1261,6 @@
               "title": "Houthi attacks raise fears of wider Middle East conflict and more global economic damage",
               "link": "https://www.bbc.co.uk/news/articles/cvgve0vxy1yo?at_medium=RSS&at_campaign=rss",
               "source": "bbc"
-            }
-          ]
-        },
-        "economy": {
-          "count": 5,
-          "titles": [
-            {
-              "title": "Treasure as trinkets: Zendaya’s earrings renew debate on ownership of ancient artefacts",
-              "link": "https://www.theguardian.com/culture/2026/jul/25/treasure-as-trinkets-zendayas-earrings-renew-debate-on-ownership-of-ancient-artefacts",
-              "source": "guardian"
-            },
-            {
-              "title": "A Global Economy Jolted by an Oil Shock Now Gets a Tariff Reminder",
-              "link": "https://www.nytimes.com/2026/07/25/business/economy/trump-tariffs-iran-war-inflation.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Brent Crude Oil Prices Top $100 as Conflict With Iran Drags On",
-              "link": "https://www.nytimes.com/2026/07/24/business/oil-prices-global-stocks-shipping.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "How the Bab al-Mandab blockade threat helped push oil back above $100",
-              "link": "https://www.theguardian.com/business/2026/jul/23/bab-al-mandab-blockade-push-oil-100-houthi-ships",
-              "source": "guardian"
-            },
-            {
-              "title": "Oil-Rich Saudi Arabia Isn’t Short on Energy. Here’s Why It Wants to Go Nuclear.",
-              "link": "https://www.nytimes.com/2026/07/23/world/middleeast/saudi-arabia-nuclear.html",
-              "source": "nytimes"
             }
           ]
         }
@@ -1334,23 +1354,17 @@
     }
   ],
   "economic_indicators": {
+    "WTI": {
+      "price": 89.31,
+      "change": -2.88,
+      "changePercent": -3.12,
+      "prev": 92.19
+    },
     "VIX": {
       "price": 18.58,
-      "change": -0.12,
-      "changePercent": -0.64,
-      "prev": 18.7
-    },
-    "GOLD": {
-      "price": 4070.8,
-      "change": 24.2,
-      "changePercent": 0.6,
-      "prev": 4046.6
-    },
-    "US2Y": {
-      "price": 3.81,
-      "change": 0.01,
-      "changePercent": 0.26,
-      "prev": 3.8
+      "change": 1.94,
+      "changePercent": 11.66,
+      "prev": 16.64
     },
     "BRENT": {
       "price": 96.78,
@@ -1358,26 +1372,40 @@
       "changePercent": -3.88,
       "prev": 100.69
     },
-    "US10Y": {
-      "price": 4.68,
-      "change": -0.02,
-      "changePercent": -0.43,
-      "prev": 4.7
+    "US2Y": {
+      "price": 3.81,
+      "change": 0.06,
+      "changePercent": 1.6,
+      "prev": 3.74
     },
     "DXY": {
       "price": 101.47,
-      "change": 0.03,
-      "changePercent": 0.03,
-      "prev": 101.43
+      "change": 0.33,
+      "changePercent": 0.33,
+      "prev": 101.14
     },
-    "WTI": {
-      "price": 89.31,
-      "change": -2.88,
-      "changePercent": -3.12,
-      "prev": 92.19
+    "GOLD": {
+      "price": 4070.8,
+      "change": 24.2,
+      "changePercent": 0.6,
+      "prev": 4046.6
+    },
+    "US10Y": {
+      "price": 4.68,
+      "change": 0.02,
+      "changePercent": 0.43,
+      "prev": 4.66
     }
   },
   "critical_events": [
+    {
+      "id": "unilateral_deescalation",
+      "name": "일방적 전투 축소/자제 선언",
+      "severity": "high",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "shorten"
+    },
     {
       "id": "capital_attack",
       "name": "수도 직접 공격/포위",
@@ -1399,15 +1427,15 @@
       "name": "전선 확대/신규 참전국",
       "severity": "moderate",
       "confidence": 1,
-      "matchCount": 6,
+      "matchCount": 4,
       "direction": "lengthen"
     },
     {
       "id": "wmd_threat",
       "name": "대량살상무기(WMD)/핵 위협",
       "severity": "critical",
-      "confidence": 1,
-      "matchCount": 4,
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
       "direction": "lengthen"
     }
   ],
