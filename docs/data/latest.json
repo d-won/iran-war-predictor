@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-08-02T09:35:18.121Z",
+  "timestamp": "2026-08-02T11:13:39.817Z",
   "war_day": 155,
   "probabilities": {
-    "1개월 내 (~3월)": 25.5,
-    "2~3개월 (4~5월)": 42.8,
-    "4~6개월 (6~8월)": 20.5,
-    "7~12개월 (9월~27/2월)": 8.7,
-    "1년 초과": 2.5
+    "1개월 내 (~3월)": 26.8,
+    "2~3개월 (4~5월)": 44.1,
+    "4~6개월 (6~8월)": 19.4,
+    "7~12개월 (9월~27/2월)": 7.7,
+    "1년 초과": 2
   },
   "factors": [
     {
@@ -45,8 +45,8 @@
       "decay": 0.4
     },
     {
-      "factor": "확전 뉴스 우세 (확전10:휴전2)",
-      "impact": "전쟁 장기화 가능성 (확전비율 83%)",
+      "factor": "확전 뉴스 우세 (확전12:휴전4)",
+      "impact": "전쟁 장기화 가능성 (확전비율 75%)",
       "weight": "+0.03%p (4~6개월)",
       "direction": "lengthen",
       "detail": "언론에서 휴전보다 확전을 더 많이 보도하고 있습니다.",
@@ -181,11 +181,11 @@
       "decay": 1
     },
     {
-      "factor": "지역 확산 뉴스 18건 감지",
+      "factor": "지역 확산 뉴스 22건 감지",
       "impact": "주변국 대규모 연루 → 장기화 위험 높음",
       "weight": "+0.02%p (4~6개월), +0.02%p (7~12개월)",
       "direction": "lengthen",
-      "detail": "주변국을 언급하는 기사 18건이 감지되었습니다.",
+      "detail": "주변국을 언급하는 기사 22건이 감지되었습니다.",
       "keywords": [
         "saudi",
         "uae",
@@ -290,11 +290,45 @@
       "severity": "critical"
     },
     {
+      "factor": "[중대 이벤트] 일방적 전투 축소/자제 선언",
+      "impact": "교전국의 일방적 전투 축소 또는 자제 선언. 역사적으로 패전국의 자발적 전선 축소는 80% 이상 공식 항복의 전조.",
+      "weight": "+3.3%p (1개월내), +4.7%p (2~3개월), -2.0%p (4~6개월), -2.0%p (7~12개월), -0.7%p (1년초과)",
+      "direction": "shorten",
+      "detail": "교전국의 일방적 전투 축소 또는 자제 선언. 역사적으로 패전국의 자발적 전선 축소는 80% 이상 공식 항복의 전조.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Why has Trump halted Iran attacks, and what is the deal he is hinting at?",
+      "keywords": [
+        "halt",
+        "attack",
+        "stop",
+        "attack",
+        "neighb",
+        "no more",
+        "attack",
+        "withdraw",
+        "forces",
+        "pull back",
+        "troops",
+        "unilateral",
+        "ceasefire",
+        "reduce",
+        "operation",
+        "de-escalat",
+        "announc",
+        "restrain",
+        "attack",
+        "not attack",
+        "suspend",
+        "operation"
+      ],
+      "applied": "2026-08-02",
+      "active": true,
+      "severity": "high"
+    },
+    {
       "factor": "[중대 이벤트] 수도 직접 공격/포위",
       "impact": "수도 직접 공격. 베오그라드(1999): 78일 폭격 후 항복. 바그다드(2003): 21일만에 함락. 수도 타격은 전쟁 지속 의지를 급격히 약화.",
       "weight": "+4.0%p (1개월내), +6.0%p (2~3개월), -2.0%p (4~6개월), -2.0%p (7~12개월), -1.0%p (1년초과)",
       "direction": "shorten",
-      "detail": "수도 직접 공격. 베오그라드(1999): 78일 폭격 후 항복. 바그다드(2003): 21일만에 함락. 수도 타격은 전쟁 지속 의지를 급격히 약화.\n\n신뢰도: 확실 (100%), 관련 기사 8.6건 감지.\n관련: Trump Says He Is Canceling Strikes on Iran, Pending a Rapid Deal | Trump climbs down on Iran strikes after Saudi alarm and threats from Tehran | US-Iran strikes risk regional war in Middle East - The Latest",
+      "detail": "수도 직접 공격. 베오그라드(1999): 78일 폭격 후 항복. 바그다드(2003): 21일만에 함락. 수도 타격은 전쟁 지속 의지를 급격히 약화.\n\n신뢰도: 확실 (100%), 관련 기사 8.6건 감지.\n관련: Trump Says He Canceled Strikes on Iran, Claiming Progress on Outlines of a Deal | Trump climbs down on Iran strikes after Saudi alarm and threats from Tehran | US-Iran strikes risk regional war in Middle East - The Latest",
       "keywords": [
         "capital",
         "bomb",
@@ -352,7 +386,7 @@
       "impact": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).",
       "weight": "-2.0%p (1개월내), -3.0%p (2~3개월), +4.0%p (4~6개월), +3.0%p (7~12개월), +2.0%p (1년초과)",
       "direction": "lengthen",
-      "detail": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).\n\n신뢰도: 확실 (100%), 관련 기사 6건 감지.\n관련: Michigan joins Minnesota in reporting cyberattacks, with FBI investigating | The US war on Iran is spinning out of control | Mohamad Bazzi | Iran War Is Entangling a Growing List of Mideast Nations",
+      "detail": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).\n\n신뢰도: 확실 (100%), 관련 기사 4건 감지.\n관련: The US war on Iran is spinning out of control | Mohamad Bazzi | Iran War Is Entangling a Growing List of Mideast Nations",
       "keywords": [
         "new front",
         "war spread",
@@ -406,12 +440,12 @@
     }
   ],
   "news_signals": {
-    "ceasefire_mentions": 2,
-    "escalation_mentions": 10,
+    "ceasefire_mentions": 4,
+    "escalation_mentions": 12,
     "negotiation_mentions": 6,
-    "casualty_mentions": 4,
-    "peace_mentions": 14,
-    "regional_spread": 18,
+    "casualty_mentions": 6,
+    "peace_mentions": 16,
+    "regional_spread": 22,
     "total_articles": 50,
     "new_articles": 50,
     "unique_events": 45,
@@ -421,12 +455,60 @@
     {
       "title": "Trump cancels Iran strikes subject to deal being made 'rapidly'",
       "link": "https://www.bbc.co.uk/news/articles/cjwx74qgld2o?at_medium=RSS&at_campaign=rss",
-      "pubDate": "Sun, 02 Aug 2026 09:10:51 GMT",
+      "pubDate": "Sun, 02 Aug 2026 11:12:00 GMT",
       "source": "bbc",
       "snippet": "The US president claims Iran and other Middle Eastern countries asked Washington to hold off on any attack as the \"perimeters\" of a deal had been agreed.",
       "isNew": true,
       "_isDuplicate": true,
       "_sourceCount": 1
+    },
+    {
+      "title": "From Sudan to Spain: Between war and home | Al Jazeera Originals",
+      "link": "https://www.aljazeera.com/video/al-jazeera-documentaries/2026/8/2/aje-onl-aj_or_sdn_war-020826?traffic_source=rss",
+      "pubDate": "Sun, 02 Aug 2026 11:07:13 +0000",
+      "source": "aljazeera",
+      "snippet": "A young Sudanese refugee rebuilds his life in Spain while war keeps him from the family he left behind.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Israeli soldiers jailed over Sde Teiman walkout",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/8/2/israeli-soldiers-jailed-over-sde-teiman-walkout?traffic_source=rss",
+      "pubDate": "Sun, 02 Aug 2026 10:31:32 +0000",
+      "source": "aljazeera",
+      "snippet": "Fourteen Israeli soldiers have been sentenced to military prison after leading an unauthorised walkout from Sde Teiman.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Trump Says He Canceled Strikes on Iran, Claiming Progress on Outlines of a Deal",
+      "link": "https://www.nytimes.com/2026/08/02/world/middleeast/trump-iran-cancels-attack-deal.html",
+      "pubDate": "Sun, 02 Aug 2026 09:56:03 +0000",
+      "source": "nytimes",
+      "snippet": "President Trump said he agreed to requests from Iran and other Middle Eastern countries to cancel planned attacks, citing what he said was progress in reaching the “perimeters of a deal” with Tehran.",
+      "isNew": true,
+      "_sourceCount": 2,
+      "_isDuplicated": true,
+      "_clusterSize": 2,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Why has Trump halted Iran attacks, and what is the deal he is hinting at?",
+      "link": "https://www.aljazeera.com/news/2026/8/2/why-has-trump-halted-iran-attacks-and-what-is-the-deal-he-is-hinting-at?traffic_source=rss",
+      "pubDate": "Sun, 02 Aug 2026 09:43:10 +0000",
+      "source": "aljazeera",
+      "snippet": "Trump says &#039;perimeters of a deal has been agreed to&#039; as he pauses attacks. But is there any substance to his claim?",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
     },
     {
       "title": "Trump ‘cancels attack on Iran’ saying deal is near",
@@ -436,18 +518,6 @@
       "snippet": "US President Trump announced he was cancelling a planned attack on Iran with the ‘perimeters of a deal’ agreed to.",
       "isNew": true,
       "_sourceCount": 1,
-      "_isDuplicated": true,
-      "_clusterSize": 2,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Trump Says He Is Canceling Strikes on Iran, Pending a Rapid Deal",
-      "link": "https://www.nytimes.com/2026/08/02/world/middleeast/trump-iran-cancels-attack-deal.html",
-      "pubDate": "Sun, 02 Aug 2026 07:02:40 +0000",
-      "source": "nytimes",
-      "snippet": "President Trump said he agreed to requests from Iran and other Middle Eastern countries to cancel planned attacks, citing what he said was progress in reaching the “perimeters of a deal” with Tehran.",
-      "isNew": true,
-      "_sourceCount": 2,
       "_isDuplicated": true,
       "_clusterSize": 2,
       "_isDuplicate": false
@@ -535,7 +605,7 @@
       "_isDuplicate": false
     },
     {
-      "title": "Iran war live: Trump cancels attack, calls for a ‘rapid’ deal on Hormuz",
+      "title": "Iran war live: Trump cancels attack, Israel kills 9 in Gaza",
       "link": "https://www.aljazeera.com/news/liveblog/2026/8/2/iran-war-live-tehran-warns-of-decisive-response-to-any-us-aggression?traffic_source=rss",
       "pubDate": "Sun, 02 Aug 2026 00:00:00 +0000",
       "source": "aljazeera",
@@ -547,47 +617,11 @@
       "_isDuplicate": false
     },
     {
-      "title": "New York Times reveals Trump administration subpoena over North Korea story",
-      "link": "https://www.aljazeera.com/news/2026/8/1/new-york-times-reveals-trump-administration-subpoena-over-north-korea-story?traffic_source=rss",
-      "pubDate": "Sat, 01 Aug 2026 23:42:44 +0000",
-      "source": "aljazeera",
-      "snippet": "The Justice Department faces criticism for increasing use of subpoenas in attempts to compel journalists to reveal info.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Growing like ‘gangbusters’: Can Taiwan maintain its economic momentum?",
-      "link": "https://www.aljazeera.com/economy/2026/8/1/growing-like-gangbusters-can-taiwan-maintain-its-economic-momentum?traffic_source=rss",
-      "pubDate": "Sat, 01 Aug 2026 23:15:40 +0000",
-      "source": "aljazeera",
-      "snippet": "Taiwan&#039;s GDP is soaring on back of US imports of AI chips, but experts warn that problems could arise with Trump, China.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Michigan joins Minnesota in reporting cyberattacks, with FBI investigating",
-      "link": "https://www.aljazeera.com/news/2026/8/1/michigan-joins-minnesota-in-reporting-cyber-attacks-with-fbi-investigating?traffic_source=rss",
-      "pubDate": "Sat, 01 Aug 2026 22:34:36 +0000",
-      "source": "aljazeera",
-      "snippet": "No culprit has been identified in any of the attacks, which comes after authorities warned of possible Iranian plot.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "US Arabs eye ‘historic’ Senate win for Abdul El-Sayed despite AIPAC attacks",
-      "link": "https://www.aljazeera.com/news/2026/8/1/us-arabs-eye-historic-senate-win-for-abdul-el-sayed-despite-aipac-attacks?traffic_source=rss",
-      "pubDate": "Sat, 01 Aug 2026 22:31:52 +0000",
-      "source": "aljazeera",
-      "snippet": "Senate race in Michigan comes to embody Democratic rift over Israel, as AIPAC spends heavily against progressive doctor.",
+      "title": "Iran Plotted Wider War With Help of Its Proxies",
+      "link": "https://www.nytimes.com/2026/08/01/world/middleeast/iran-proxies-war-oil.html",
+      "pubDate": "Sat, 01 Aug 2026 20:26:35 +0000",
+      "source": "nytimes",
+      "snippet": "During a fleeting truce, Iranians covertly devised a plan to raise the war’s costs for President Trump if U.S. forces attacked anew.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -601,19 +635,41 @@
         "category_id": "military",
         "category_name": "군사 작전",
         "category_icon": "⚔️",
-        "count": 22,
-        "new_count": 22,
+        "count": 23,
+        "new_count": 23,
         "articles": [
           {
-            "title": "Trump Says He Is Canceling Strikes on Iran, Pending a Rapid Deal",
+            "title": "Trump Says He Canceled Strikes on Iran, Claiming Progress on Outlines of a Deal",
             "link": "https://www.nytimes.com/2026/08/02/world/middleeast/trump-iran-cancels-attack-deal.html",
             "source": "nytimes",
             "sources": [
               "nytimes",
               "bbc"
             ],
-            "pubDate": "Sun, 02 Aug 2026 07:02:40 +0000",
+            "pubDate": "Sun, 02 Aug 2026 09:56:03 +0000",
             "snippet": "President Trump said he agreed to requests from Iran and other Middle Eastern countries to cancel planned attacks, citing what he said was progress in reaching the “perimeters of a deal” with Tehran.",
+            "isNew": true
+          },
+          {
+            "title": "Israeli soldiers jailed over Sde Teiman walkout",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/8/2/israeli-soldiers-jailed-over-sde-teiman-walkout?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Sun, 02 Aug 2026 10:31:32 +0000",
+            "snippet": "Fourteen Israeli soldiers have been sentenced to military prison after leading an unauthorised walkout from Sde Teiman.",
+            "isNew": true
+          },
+          {
+            "title": "Why has Trump halted Iran attacks, and what is the deal he is hinting at?",
+            "link": "https://www.aljazeera.com/news/2026/8/2/why-has-trump-halted-iran-attacks-and-what-is-the-deal-he-is-hinting-at?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Sun, 02 Aug 2026 09:43:10 +0000",
+            "snippet": "Trump says &#039;perimeters of a deal has been agreed to&#039; as he pauses attacks. But is there any substance to his claim?",
             "isNew": true
           },
           {
@@ -639,7 +695,7 @@
             "isNew": true
           },
           {
-            "title": "Iran war live: Trump cancels attack, calls for a ‘rapid’ deal on Hormuz",
+            "title": "Iran war live: Trump cancels attack, Israel kills 9 in Gaza",
             "link": "https://www.aljazeera.com/news/liveblog/2026/8/2/iran-war-live-tehran-warns-of-decisive-response-to-any-us-aggression?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
@@ -647,28 +703,6 @@
             ],
             "pubDate": "Sun, 02 Aug 2026 00:00:00 +0000",
             "snippet": "Move comes after Iran&#039;s top diplomat warned of a &#039;decisive response&#039; to any US-Israeli &#039;aggression&#039;. ",
-            "isNew": true
-          },
-          {
-            "title": "Michigan joins Minnesota in reporting cyberattacks, with FBI investigating",
-            "link": "https://www.aljazeera.com/news/2026/8/1/michigan-joins-minnesota-in-reporting-cyber-attacks-with-fbi-investigating?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sat, 01 Aug 2026 22:34:36 +0000",
-            "snippet": "No culprit has been identified in any of the attacks, which comes after authorities warned of possible Iranian plot.",
-            "isNew": true
-          },
-          {
-            "title": "US Arabs eye ‘historic’ Senate win for Abdul El-Sayed despite AIPAC attacks",
-            "link": "https://www.aljazeera.com/news/2026/8/1/us-arabs-eye-historic-senate-win-for-abdul-el-sayed-despite-aipac-attacks?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sat, 01 Aug 2026 22:31:52 +0000",
-            "snippet": "Senate race in Michigan comes to embody Democratic rift over Israel, as AIPAC spends heavily against progressive doctor.",
             "isNew": true
           },
           {
@@ -713,134 +747,6 @@
             ],
             "pubDate": "Sat, 01 Aug 2026 03:51:36 GMT",
             "snippet": "Two members given ‘stern warnings’ after concert and barred from returning, with band also excluded from performing in Singapore again, say authoritiesBritish trip-hop band Massive Attack has been bar",
-            "isNew": true
-          }
-        ]
-      },
-      {
-        "category_id": "economy",
-        "category_name": "경제 영향",
-        "category_icon": "📊",
-        "count": 5,
-        "new_count": 5,
-        "articles": [
-          {
-            "title": "Growing like ‘gangbusters’: Can Taiwan maintain its economic momentum?",
-            "link": "https://www.aljazeera.com/economy/2026/8/1/growing-like-gangbusters-can-taiwan-maintain-its-economic-momentum?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sat, 01 Aug 2026 23:15:40 +0000",
-            "snippet": "Taiwan&#039;s GDP is soaring on back of US imports of AI chips, but experts warn that problems could arise with Trump, China.",
-            "isNew": true
-          },
-          {
-            "title": "Iran strikes tankers under US escort in Hormuz strait as Trump gathers cabinet to discuss war",
-            "link": "https://www.theguardian.com/world/2026/jul/31/iran-strikes-tankers-us-escort-hormuz-strait-trump-gathers-cabinet",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Fri, 31 Jul 2026 14:48:53 GMT",
-            "snippet": "Energy prices have soared again since fighting between US and Iran resumed two weeks ago as conflict spreads across Middle EastIran has said it struck two tankers trying to pass through the strait of ",
-            "isNew": true
-          },
-          {
-            "title": "Iraq says it had ‘no prior knowledge’ of US-Saudi attacks – as it happened",
-            "link": "https://www.theguardian.com/world/live/2026/jul/30/us-iran-war-live-updates-missile-strikes-attacks-iraq-egypt-middle-east-crisis-latest-news",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Fri, 31 Jul 2026 05:47:32 GMT",
-            "snippet": "This blog is now closed – our live coverage of the Middle East continues hereA liquefied natural gas tanker controlled by QatarEnergy exited the strait of Hormuz overnight – the first such vessel ⁠vis",
-            "isNew": true
-          },
-          {
-            "title": "Iran’s war with the US is not its only conflict as internal crises mount",
-            "link": "https://www.theguardian.com/world/2026/jul/30/iran-war-us-conflict-internal-crises-economy-dissent",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Thu, 30 Jul 2026 15:24:31 GMT",
-            "snippet": "Government fears social discontent on ‘most important battlefield’ of economy and livelihoods as war takes its toll amid anti-state dissentMiddle East crisis live – latest updatesIran, in the middle o",
-            "isNew": true
-          },
-          {
-            "title": "Oil Prices Rise as Iran and U.S. Strikes Slow Traffic in Strait of Hormuz",
-            "link": "https://www.nytimes.com/2026/07/29/business/oil-prices-iran-war-us-attacks.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Wed, 29 Jul 2026 20:23:21 +0000",
-            "snippet": "After several days of a lull in the direct conflict, a flare up in tensions left investors concerned about the continued flow of energy from the region.",
-            "isNew": true
-          }
-        ]
-      },
-      {
-        "category_id": "politics",
-        "category_name": "국내 정치",
-        "category_icon": "🏛️",
-        "count": 5,
-        "new_count": 5,
-        "articles": [
-          {
-            "title": "Trump ‘cancels attack on Iran’ saying deal is near",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/8/2/trump-cancels-attack-on-iran-saying-deal-is-near?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sun, 02 Aug 2026 08:43:15 +0000",
-            "snippet": "US President Trump announced he was cancelling a planned attack on Iran with the ‘perimeters of a deal’ agreed to.",
-            "isNew": true
-          },
-          {
-            "title": "Trump climbs down on Iran strikes after Saudi alarm and threats from Tehran",
-            "link": "https://www.theguardian.com/world/2026/aug/02/trump-climbs-down-on-iran-strikes-after-saudi-alarm-and-threats-from-tehran",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Sun, 02 Aug 2026 04:45:37 GMT",
-            "snippet": "President claims delay is ‘subject to being able to rapidly make a deal’ as intervention by Saudi crown prince is revealed and Iran warns neighboursDonald Trump said on Saturday night that the US woul",
-            "isNew": true
-          },
-          {
-            "title": "New York Times reveals Trump administration subpoena over North Korea story",
-            "link": "https://www.aljazeera.com/news/2026/8/1/new-york-times-reveals-trump-administration-subpoena-over-north-korea-story?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sat, 01 Aug 2026 23:42:44 +0000",
-            "snippet": "The Justice Department faces criticism for increasing use of subpoenas in attempts to compel journalists to reveal info.",
-            "isNew": true
-          },
-          {
-            "title": "Iran Plotted Wider War With Help of Its Proxies",
-            "link": "https://www.nytimes.com/2026/08/01/world/middleeast/iran-proxies-war-oil.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Sat, 01 Aug 2026 20:26:35 +0000",
-            "snippet": "During a fleeting truce, Iranians covertly devised a plan to raise the war’s costs for President Trump if U.S. forces attacked anew.",
-            "isNew": true
-          },
-          {
-            "title": "In Iran, the U.S. Appears Headed for a Strategic Defeat, Allies Fear",
-            "link": "https://www.nytimes.com/2026/08/01/world/middleeast/us-iran-war-strategy.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Sat, 01 Aug 2026 14:46:20 +0000",
-            "snippet": "With none of President Trump’s aims accomplished and the Strait of Hormuz closed, U.S. allies see dysfunction and vulnerability from the war.",
             "isNew": true
           }
         ]
@@ -899,12 +805,76 @@
         ]
       },
       {
+        "category_id": "economy",
+        "category_name": "경제 영향",
+        "category_icon": "📊",
+        "count": 4,
+        "new_count": 4,
+        "articles": [
+          {
+            "title": "Iran strikes tankers under US escort in Hormuz strait as Trump gathers cabinet to discuss war",
+            "link": "https://www.theguardian.com/world/2026/jul/31/iran-strikes-tankers-us-escort-hormuz-strait-trump-gathers-cabinet",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Fri, 31 Jul 2026 14:48:53 GMT",
+            "snippet": "Energy prices have soared again since fighting between US and Iran resumed two weeks ago as conflict spreads across Middle EastIran has said it struck two tankers trying to pass through the strait of ",
+            "isNew": true
+          },
+          {
+            "title": "Iraq says it had ‘no prior knowledge’ of US-Saudi attacks – as it happened",
+            "link": "https://www.theguardian.com/world/live/2026/jul/30/us-iran-war-live-updates-missile-strikes-attacks-iraq-egypt-middle-east-crisis-latest-news",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Fri, 31 Jul 2026 05:47:32 GMT",
+            "snippet": "This blog is now closed – our live coverage of the Middle East continues hereA liquefied natural gas tanker controlled by QatarEnergy exited the strait of Hormuz overnight – the first such vessel ⁠vis",
+            "isNew": true
+          },
+          {
+            "title": "Iran’s war with the US is not its only conflict as internal crises mount",
+            "link": "https://www.theguardian.com/world/2026/jul/30/iran-war-us-conflict-internal-crises-economy-dissent",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Thu, 30 Jul 2026 15:24:31 GMT",
+            "snippet": "Government fears social discontent on ‘most important battlefield’ of economy and livelihoods as war takes its toll amid anti-state dissentMiddle East crisis live – latest updatesIran, in the middle o",
+            "isNew": true
+          },
+          {
+            "title": "Oil Prices Rise as Iran and U.S. Strikes Slow Traffic in Strait of Hormuz",
+            "link": "https://www.nytimes.com/2026/07/29/business/oil-prices-iran-war-us-attacks.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Wed, 29 Jul 2026 20:23:21 +0000",
+            "snippet": "After several days of a lull in the direct conflict, a flare up in tensions left investors concerned about the continued flow of energy from the region.",
+            "isNew": true
+          }
+        ]
+      },
+      {
         "category_id": "humanitarian",
         "category_name": "인도주의/피해",
         "category_icon": "🏥",
-        "count": 3,
-        "new_count": 3,
+        "count": 4,
+        "new_count": 4,
         "articles": [
+          {
+            "title": "From Sudan to Spain: Between war and home | Al Jazeera Originals",
+            "link": "https://www.aljazeera.com/video/al-jazeera-documentaries/2026/8/2/aje-onl-aj_or_sdn_war-020826?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Sun, 02 Aug 2026 11:07:13 +0000",
+            "snippet": "A young Sudanese refugee rebuilds his life in Spain while war keeps him from the family he left behind.",
+            "isNew": true
+          },
           {
             "title": "US embassies issue alerts after Trump vows to hit Iran ‘hard’",
             "link": "https://www.aljazeera.com/video/newsfeed/2026/8/2/us-embassies-issue-alerts-after-trump-vows-to-hit-iran?traffic_source=rss",
@@ -941,11 +911,64 @@
         ]
       },
       {
+        "category_id": "politics",
+        "category_name": "국내 정치",
+        "category_icon": "🏛️",
+        "count": 4,
+        "new_count": 4,
+        "articles": [
+          {
+            "title": "Trump ‘cancels attack on Iran’ saying deal is near",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/8/2/trump-cancels-attack-on-iran-saying-deal-is-near?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Sun, 02 Aug 2026 08:43:15 +0000",
+            "snippet": "US President Trump announced he was cancelling a planned attack on Iran with the ‘perimeters of a deal’ agreed to.",
+            "isNew": true
+          },
+          {
+            "title": "Trump climbs down on Iran strikes after Saudi alarm and threats from Tehran",
+            "link": "https://www.theguardian.com/world/2026/aug/02/trump-climbs-down-on-iran-strikes-after-saudi-alarm-and-threats-from-tehran",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Sun, 02 Aug 2026 04:45:37 GMT",
+            "snippet": "President claims delay is ‘subject to being able to rapidly make a deal’ as intervention by Saudi crown prince is revealed and Iran warns neighboursDonald Trump said on Saturday night that the US woul",
+            "isNew": true
+          },
+          {
+            "title": "Iran Plotted Wider War With Help of Its Proxies",
+            "link": "https://www.nytimes.com/2026/08/01/world/middleeast/iran-proxies-war-oil.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Sat, 01 Aug 2026 20:26:35 +0000",
+            "snippet": "During a fleeting truce, Iranians covertly devised a plan to raise the war’s costs for President Trump if U.S. forces attacked anew.",
+            "isNew": true
+          },
+          {
+            "title": "In Iran, the U.S. Appears Headed for a Strategic Defeat, Allies Fear",
+            "link": "https://www.nytimes.com/2026/08/01/world/middleeast/us-iran-war-strategy.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Sat, 01 Aug 2026 14:46:20 +0000",
+            "snippet": "With none of President Trump’s aims accomplished and the Strait of Hormuz closed, U.S. allies see dysfunction and vulnerability from the war.",
+            "isNew": true
+          }
+        ]
+      },
+      {
         "category_id": "regional",
         "category_name": "지역 정세",
         "category_icon": "🌍",
-        "count": 3,
-        "new_count": 3,
+        "count": 4,
+        "new_count": 4,
         "articles": [
           {
             "title": "Israel Says It Killed Several Hezbollah Members on Key Lebanon Hilltop",
@@ -979,36 +1002,16 @@
             "pubDate": "Thu, 30 Jul 2026 05:05:24 GMT",
             "snippet": "Experts have told the BBC that the earthworks suggest Israel is planning for a long-term internal border.",
             "isNew": true
-          }
-        ]
-      },
-      {
-        "category_id": "other",
-        "category_name": "기타",
-        "category_icon": "📰",
-        "count": 2,
-        "new_count": 2,
-        "articles": [
-          {
-            "title": "Gaza students overcome Israel’s genocide to mark Tawjihi results",
-            "link": "https://www.aljazeera.com/features/2026/8/2/gaza-students-overcome-israels-genocide-to-celebrate-tawjihi-results?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sun, 02 Aug 2026 05:27:04 +0000",
-            "snippet": "Students in Gaza overcome distressing conditions amid Israel&#039;s genocide to finish their Tawjihi high school exams.",
-            "isNew": true
           },
           {
-            "title": "Why did Ceuta migrant mayhem chill already frosty Israel-Spain relations?",
-            "link": "https://www.aljazeera.com/news/2026/8/1/why-did-ceuta-migrant-mayhem-chill-already-frosty-israel-spain-relations?traffic_source=rss",
-            "source": "aljazeera",
+            "title": "Saudi Arabia's dilemma as it tries to stay out of US-Iran war",
+            "link": "https://www.bbc.co.uk/news/articles/clyx83l8jv8o?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
             "sources": [
-              "aljazeera"
+              "bbc"
             ],
-            "pubDate": "Sat, 01 Aug 2026 21:42:26 +0000",
-            "snippet": "What caused more than 50,000 migrants to storm a Spanish enclave in Africa, and did Israel have anything to do with it?",
+            "pubDate": "Wed, 29 Jul 2026 18:41:31 GMT",
+            "snippet": "The kingdom faces a choice of whether to keep hitting back as a deterrent or to try to de-escalate the situation.",
             "isNew": true
           }
         ]
@@ -1032,13 +1035,33 @@
             "isNew": true
           }
         ]
+      },
+      {
+        "category_id": "other",
+        "category_name": "기타",
+        "category_icon": "📰",
+        "count": 1,
+        "new_count": 1,
+        "articles": [
+          {
+            "title": "Gaza students overcome Israel’s genocide to mark Tawjihi results",
+            "link": "https://www.aljazeera.com/features/2026/8/2/gaza-students-overcome-israels-genocide-to-celebrate-tawjihi-results?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Sun, 02 Aug 2026 05:27:04 +0000",
+            "snippet": "Students in Gaza overcome distressing conditions amid Israel&#039;s genocide to finish their Tawjihi high school exams.",
+            "isNew": true
+          }
+        ]
       }
     ],
     "recent_30min": {
       "total_new": 50,
       "by_category": {
         "military": {
-          "count": 24,
+          "count": 25,
           "titles": [
             {
               "title": "Trump cancels Iran strikes subject to deal being made 'rapidly'",
@@ -1046,75 +1069,35 @@
               "source": "bbc"
             },
             {
-              "title": "Trump Says He Is Canceling Strikes on Iran, Pending a Rapid Deal",
+              "title": "Israeli soldiers jailed over Sde Teiman walkout",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/8/2/israeli-soldiers-jailed-over-sde-teiman-walkout?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Trump Says He Canceled Strikes on Iran, Claiming Progress on Outlines of a Deal",
               "link": "https://www.nytimes.com/2026/08/02/world/middleeast/trump-iran-cancels-attack-deal.html",
               "source": "nytimes"
+            },
+            {
+              "title": "Why has Trump halted Iran attacks, and what is the deal he is hinting at?",
+              "link": "https://www.aljazeera.com/news/2026/8/2/why-has-trump-halted-iran-attacks-and-what-is-the-deal-he-is-hinting-at?traffic_source=rss",
+              "source": "aljazeera"
             },
             {
               "title": "Israel Bombards Gaza, Days After Trump Announced Deal to Advance Cease-Fire",
               "link": "https://www.nytimes.com/2026/08/01/world/middleeast/israel-gaza-strikes-trump-hamas.html",
               "source": "nytimes"
-            },
-            {
-              "title": "Trump cancels Iran strike, says ‘deal perimeters’ reached",
-              "link": "https://www.aljazeera.com/news/2026/8/2/trump-cancels-iran-strike-says-deal-perimeters-reached?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Israel kills eight in Gaza despite Trump’s Hamas disarmament plan",
-              "link": "https://www.aljazeera.com/news/2026/8/2/israel-kills-five-in-gaza-despite-trumps-hamas-disarmament-plan?traffic_source=rss",
-              "source": "aljazeera"
-            }
-          ]
-        },
-        "politics": {
-          "count": 6,
-          "titles": [
-            {
-              "title": "Trump ‘cancels attack on Iran’ saying deal is near",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/8/2/trump-cancels-attack-on-iran-saying-deal-is-near?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Trump climbs down on Iran strikes after Saudi alarm and threats from Tehran",
-              "link": "https://www.theguardian.com/world/2026/aug/02/trump-climbs-down-on-iran-strikes-after-saudi-alarm-and-threats-from-tehran",
-              "source": "guardian"
-            },
-            {
-              "title": "New York Times reveals Trump administration subpoena over North Korea story",
-              "link": "https://www.aljazeera.com/news/2026/8/1/new-york-times-reveals-trump-administration-subpoena-over-north-korea-story?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Iran Plotted Wider War With Help of Its Proxies",
-              "link": "https://www.nytimes.com/2026/08/01/world/middleeast/iran-proxies-war-oil.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "In Iran, the U.S. Appears Headed for a Strategic Defeat, Allies Fear",
-              "link": "https://www.nytimes.com/2026/08/01/world/middleeast/us-iran-war-strategy.html",
-              "source": "nytimes"
-            }
-          ]
-        },
-        "other": {
-          "count": 2,
-          "titles": [
-            {
-              "title": "Gaza students overcome Israel’s genocide to mark Tawjihi results",
-              "link": "https://www.aljazeera.com/features/2026/8/2/gaza-students-overcome-israels-genocide-to-celebrate-tawjihi-results?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Why did Ceuta migrant mayhem chill already frosty Israel-Spain relations?",
-              "link": "https://www.aljazeera.com/news/2026/8/1/why-did-ceuta-migrant-mayhem-chill-already-frosty-israel-spain-relations?traffic_source=rss",
-              "source": "aljazeera"
             }
           ]
         },
         "humanitarian": {
-          "count": 3,
+          "count": 4,
           "titles": [
+            {
+              "title": "From Sudan to Spain: Between war and home | Al Jazeera Originals",
+              "link": "https://www.aljazeera.com/video/al-jazeera-documentaries/2026/8/2/aje-onl-aj_or_sdn_war-020826?traffic_source=rss",
+              "source": "aljazeera"
+            },
             {
               "title": "US embassies issue alerts after Trump vows to hit Iran ‘hard’",
               "link": "https://www.aljazeera.com/video/newsfeed/2026/8/2/us-embassies-issue-alerts-after-trump-vows-to-hit-iran?traffic_source=rss",
@@ -1132,6 +1115,46 @@
             }
           ]
         },
+        "politics": {
+          "count": 5,
+          "titles": [
+            {
+              "title": "Trump ‘cancels attack on Iran’ saying deal is near",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/8/2/trump-cancels-attack-on-iran-saying-deal-is-near?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Trump climbs down on Iran strikes after Saudi alarm and threats from Tehran",
+              "link": "https://www.theguardian.com/world/2026/aug/02/trump-climbs-down-on-iran-strikes-after-saudi-alarm-and-threats-from-tehran",
+              "source": "guardian"
+            },
+            {
+              "title": "Iran Plotted Wider War With Help of Its Proxies",
+              "link": "https://www.nytimes.com/2026/08/01/world/middleeast/iran-proxies-war-oil.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "In Iran, the U.S. Appears Headed for a Strategic Defeat, Allies Fear",
+              "link": "https://www.nytimes.com/2026/08/01/world/middleeast/us-iran-war-strategy.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Trump says ‘complete disarmament’ of Hamas agreed in Gaza but Israel yet to accept",
+              "link": "https://www.theguardian.com/world/2026/jul/31/trump-hamas-disarmament-agreement-gaza-board-of-peace",
+              "source": "guardian"
+            }
+          ]
+        },
+        "other": {
+          "count": 1,
+          "titles": [
+            {
+              "title": "Gaza students overcome Israel’s genocide to mark Tawjihi results",
+              "link": "https://www.aljazeera.com/features/2026/8/2/gaza-students-overcome-israels-genocide-to-celebrate-tawjihi-results?traffic_source=rss",
+              "source": "aljazeera"
+            }
+          ]
+        },
         "nuclear": {
           "count": 1,
           "titles": [
@@ -1142,38 +1165,8 @@
             }
           ]
         },
-        "economy": {
-          "count": 5,
-          "titles": [
-            {
-              "title": "Growing like ‘gangbusters’: Can Taiwan maintain its economic momentum?",
-              "link": "https://www.aljazeera.com/economy/2026/8/1/growing-like-gangbusters-can-taiwan-maintain-its-economic-momentum?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Iran strikes tankers under US escort in Hormuz strait as Trump gathers cabinet to discuss war",
-              "link": "https://www.theguardian.com/world/2026/jul/31/iran-strikes-tankers-us-escort-hormuz-strait-trump-gathers-cabinet",
-              "source": "guardian"
-            },
-            {
-              "title": "Iraq says it had ‘no prior knowledge’ of US-Saudi attacks – as it happened",
-              "link": "https://www.theguardian.com/world/live/2026/jul/30/us-iran-war-live-updates-missile-strikes-attacks-iraq-egypt-middle-east-crisis-latest-news",
-              "source": "guardian"
-            },
-            {
-              "title": "Iran’s war with the US is not its only conflict as internal crises mount",
-              "link": "https://www.theguardian.com/world/2026/jul/30/iran-war-us-conflict-internal-crises-economy-dissent",
-              "source": "guardian"
-            },
-            {
-              "title": "Oil Prices Rise as Iran and U.S. Strikes Slow Traffic in Strait of Hormuz",
-              "link": "https://www.nytimes.com/2026/07/29/business/oil-prices-iran-war-us-attacks.html",
-              "source": "nytimes"
-            }
-          ]
-        },
         "regional": {
-          "count": 3,
+          "count": 4,
           "titles": [
             {
               "title": "Israel Says It Killed Several Hezbollah Members on Key Lebanon Hilltop",
@@ -1188,6 +1181,11 @@
             {
               "title": "Israel building new land barriers in Gaza and displacing families",
               "link": "https://www.bbc.co.uk/news/articles/cpvwjmme3p0o?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
+            },
+            {
+              "title": "Saudi Arabia's dilemma as it tries to stay out of US-Iran war",
+              "link": "https://www.bbc.co.uk/news/articles/clyx83l8jv8o?at_medium=RSS&at_campaign=rss",
               "source": "bbc"
             }
           ]
@@ -1219,6 +1217,31 @@
               "title": "If Hamas disarmament plan holds, it could mark first credible step to ending Gaza war",
               "link": "https://www.bbc.co.uk/news/articles/c9d8gd87d83o?at_medium=RSS&at_campaign=rss",
               "source": "bbc"
+            }
+          ]
+        },
+        "economy": {
+          "count": 4,
+          "titles": [
+            {
+              "title": "Iran strikes tankers under US escort in Hormuz strait as Trump gathers cabinet to discuss war",
+              "link": "https://www.theguardian.com/world/2026/jul/31/iran-strikes-tankers-us-escort-hormuz-strait-trump-gathers-cabinet",
+              "source": "guardian"
+            },
+            {
+              "title": "Iraq says it had ‘no prior knowledge’ of US-Saudi attacks – as it happened",
+              "link": "https://www.theguardian.com/world/live/2026/jul/30/us-iran-war-live-updates-missile-strikes-attacks-iraq-egypt-middle-east-crisis-latest-news",
+              "source": "guardian"
+            },
+            {
+              "title": "Iran’s war with the US is not its only conflict as internal crises mount",
+              "link": "https://www.theguardian.com/world/2026/jul/30/iran-war-us-conflict-internal-crises-economy-dissent",
+              "source": "guardian"
+            },
+            {
+              "title": "Oil Prices Rise as Iran and U.S. Strikes Slow Traffic in Strait of Hormuz",
+              "link": "https://www.nytimes.com/2026/07/29/business/oil-prices-iran-war-us-attacks.html",
+              "source": "nytimes"
             }
           ]
         }
@@ -1318,11 +1341,11 @@
       "changePercent": 1.29,
       "prev": 83.59
     },
-    "GOLD": {
-      "price": 4107,
-      "change": 6.9,
-      "changePercent": 0.17,
-      "prev": 4100.1
+    "BRENT": {
+      "price": 90.12,
+      "change": 1.09,
+      "changePercent": 1.22,
+      "prev": 89.03
     },
     "VIX": {
       "price": 15.99,
@@ -1330,29 +1353,29 @@
       "changePercent": -6.44,
       "prev": 17.09
     },
-    "BRENT": {
-      "price": 90.12,
-      "change": 1.09,
-      "changePercent": 1.22,
-      "prev": 89.03
-    },
     "DXY": {
       "price": 99.8,
       "change": -0.21,
       "changePercent": -0.21,
       "prev": 100.01
     },
-    "US10Y": {
-      "price": 4.75,
-      "change": 0.08,
-      "changePercent": 1.72,
-      "prev": 4.66
+    "GOLD": {
+      "price": 4107,
+      "change": 6.9,
+      "changePercent": 0.17,
+      "prev": 4100.1
     },
     "US2Y": {
       "price": 3.68,
       "change": 0.01,
       "changePercent": 0.27,
       "prev": 3.67
+    },
+    "US10Y": {
+      "price": 4.75,
+      "change": 0.08,
+      "changePercent": 1.72,
+      "prev": 4.66
     }
   },
   "critical_events": [
@@ -1368,6 +1391,14 @@
       "id": "ceasefire_agreement",
       "name": "공식 휴전/평화 합의",
       "severity": "critical",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "shorten"
+    },
+    {
+      "id": "unilateral_deescalation",
+      "name": "일방적 전투 축소/자제 선언",
+      "severity": "high",
       "confidence": 0.6666666666666666,
       "matchCount": 2,
       "direction": "shorten"
@@ -1393,7 +1424,7 @@
       "name": "전선 확대/신규 참전국",
       "severity": "moderate",
       "confidence": 1,
-      "matchCount": 6,
+      "matchCount": 4,
       "direction": "lengthen"
     }
   ],
