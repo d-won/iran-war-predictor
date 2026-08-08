@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-08-08T14:58:34.086Z",
+  "timestamp": "2026-08-08T15:34:55.479Z",
   "war_day": 161,
   "probabilities": {
-    "1개월 내 (~3월)": 23,
-    "2~3개월 (4~5월)": 38.2,
-    "4~6개월 (6~8월)": 23.3,
-    "7~12개월 (9월~27/2월)": 12.1,
-    "1년 초과": 3.4
+    "1개월 내 (~3월)": 21.3,
+    "2~3개월 (4~5월)": 36.1,
+    "4~6개월 (6~8월)": 25,
+    "7~12개월 (9월~27/2월)": 13.4,
+    "1년 초과": 4.2
   },
   "factors": [
     {
@@ -164,11 +164,11 @@
       "decay": 1
     },
     {
-      "factor": "협상/외교 뉴스 8건 감지",
+      "factor": "협상/외교 뉴스 4건 감지",
       "impact": "외교적 해결 움직임 포착",
-      "weight": "+0.02%p (1개월내), +0.01%p (2~3개월)",
+      "weight": "+0.01%p (1개월내), +0.01%p (2~3개월)",
       "direction": "shorten",
-      "detail": "실시간 뉴스에서 협상 관련 기사 8건이 감지되었습니다.",
+      "detail": "실시간 뉴스에서 협상 관련 기사 4건이 감지되었습니다.",
       "keywords": [
         "negotiat",
         "talks",
@@ -181,11 +181,11 @@
       "decay": 1
     },
     {
-      "factor": "지역 확산 뉴스 28.2건 감지",
+      "factor": "지역 확산 뉴스 30.2건 감지",
       "impact": "주변국 대규모 연루 → 장기화 위험 높음",
       "weight": "+0.03%p (4~6개월), +0.03%p (7~12개월)",
       "direction": "lengthen",
-      "detail": "주변국을 언급하는 기사 28.2건이 감지되었습니다.",
+      "detail": "주변국을 언급하는 기사 30.2건이 감지되었습니다.",
       "keywords": [
         "saudi",
         "uae",
@@ -260,6 +260,32 @@
       "severity": "critical"
     },
     {
+      "factor": "[중대 이벤트] 전선 확대/신규 참전국",
+      "impact": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).",
+      "weight": "-1.3%p (1개월내), -2.0%p (2~3개월), +2.7%p (4~6개월), +2.0%p (7~12개월), +1.3%p (1년초과)",
+      "direction": "lengthen",
+      "detail": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Iraq’s Kurdish region wants to stay out of regional conflicts: PM Barzani",
+      "keywords": [
+        "new front",
+        "war spread",
+        "conflict expand",
+        "join",
+        "war",
+        "enter",
+        "war",
+        "open",
+        "front",
+        "declare war",
+        "widen",
+        "conflict",
+        "second front",
+        "new theater"
+      ],
+      "applied": "2026-08-08",
+      "active": true,
+      "severity": "moderate"
+    },
+    {
       "factor": "금값 사상최고 ($4399.7/oz)",
       "impact": "안전자산 수요 폭증 → 글로벌 불안 심화",
       "weight": "+2%p (4-6개월)",
@@ -294,10 +320,10 @@
   "news_signals": {
     "ceasefire_mentions": 8,
     "escalation_mentions": 12,
-    "negotiation_mentions": 8,
-    "casualty_mentions": 16.2,
+    "negotiation_mentions": 4,
+    "casualty_mentions": 18.2,
     "peace_mentions": 6,
-    "regional_spread": 28.2,
+    "regional_spread": 30.2,
     "total_articles": 50,
     "new_articles": 50,
     "unique_events": 46,
@@ -305,11 +331,11 @@
   },
   "latest_news": [
     {
-      "title": "Yemen Teeters on Civil War as Regional Stability Hangs in the Balance",
-      "link": "https://www.nytimes.com/2026/08/08/world/middleeast/yemen-houthis-regional-stability.html",
-      "pubDate": "Sat, 08 Aug 2026 14:57:24 +0000",
+      "title": "Iran Issues List of Demands, Dampening Hopes of Reopening Strait of Hormuz",
+      "link": "https://www.nytimes.com/2026/08/08/world/middleeast/iran-us-oman-strait-of-hormuz.html",
+      "pubDate": "Sat, 08 Aug 2026 15:26:07 +0000",
       "source": "nytimes",
-      "snippet": "While the Middle East waits to hear whether a deal can be reached to reopen the Strait of Hormuz, the Yemeni government’s conflict with Iran-backed Houthi rebels escalated overnight.",
+      "snippet": "The head of Iran’s Supreme National Security Council said that the waterway will remain closed until the United States met certain conditions.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -317,11 +343,35 @@
       "_isDuplicate": false
     },
     {
-      "title": "Iran Issues List of Demands, Dampening Hopes of Reopening Strait",
-      "link": "https://www.nytimes.com/2026/08/08/world/middleeast/iran-us-oman-strait-of-hormuz.html",
-      "pubDate": "Sat, 08 Aug 2026 14:55:50 +0000",
+      "title": "UAE says Iran targeted ADNOC tanker in Strait of Hormuz, no casualties",
+      "link": "https://www.aljazeera.com/news/2026/8/8/uae-says-iran-targeted-adnoc-tanker-in-hormuz-no-casualties-2?traffic_source=rss",
+      "pubDate": "Sat, 08 Aug 2026 15:01:29 +0000",
+      "source": "aljazeera",
+      "snippet": "Gulf and Arab governments condemn Iran over missile strike on Emirati tanker. ",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Iraq’s Kurdish region wants to stay out of regional conflicts: PM Barzani",
+      "link": "https://www.aljazeera.com/news/2026/8/8/iraqs-kurdish-region-wants-to-stay-out-of-regional-conflicts-pm-barzani?traffic_source=rss",
+      "pubDate": "Sat, 08 Aug 2026 14:58:42 +0000",
+      "source": "aljazeera",
+      "snippet": "In an interview with Al Jazeera, Masrour Barzani denies any &#039;pressure&#039; to enter the Iran war despite over 1,000 attacks.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Yemen Teeters on Civil War as Regional Stability Hangs in the Balance",
+      "link": "https://www.nytimes.com/2026/08/08/world/middleeast/yemen-houthis-regional-stability.html",
+      "pubDate": "Sat, 08 Aug 2026 14:57:24 +0000",
       "source": "nytimes",
-      "snippet": "The head of Iran’s Supreme National Security Council said that the Strait of Hormuz would not reopen unless the United States met certain conditions.",
+      "snippet": "While the Middle East waits to hear whether a deal can be reached to reopen the Strait of Hormuz, the Yemeni government’s conflict with Iran-backed Houthi rebels escalated overnight.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -459,30 +509,6 @@
       "_isDuplicated": false,
       "_clusterSize": 1,
       "_isDuplicate": false
-    },
-    {
-      "title": "Typhoon Dolphin hits Japan, heads towards China",
-      "link": "https://www.aljazeera.com/news/2026/8/8/typhoon-dolphin-hits-japan-heads-towards-china?traffic_source=rss",
-      "pubDate": "Sat, 08 Aug 2026 08:50:49 +0000",
-      "source": "aljazeera",
-      "snippet": "Five elderly people have suffered non-life-threatening injuries, with three falling due to the wind in Japan.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Travelling through Iran reveals no single narrative about the US-Israel war",
-      "link": "https://www.theguardian.com/world/2026/aug/08/iran-journey-israel-us-war",
-      "pubDate": "Sat, 08 Aug 2026 05:00:39 GMT",
-      "source": "guardian",
-      "snippet": "Some believe conflict strengthened national unity, others say it deepened repression, but all mourn the deadThe excavator stops suddenly. One of the workers reaches into the rubble and pulls something",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
     }
   ],
   "news_digest": {
@@ -491,9 +517,20 @@
         "category_id": "military",
         "category_name": "군사 작전",
         "category_icon": "⚔️",
-        "count": 12,
-        "new_count": 12,
+        "count": 13,
+        "new_count": 13,
         "articles": [
+          {
+            "title": "UAE says Iran targeted ADNOC tanker in Strait of Hormuz, no casualties",
+            "link": "https://www.aljazeera.com/news/2026/8/8/uae-says-iran-targeted-adnoc-tanker-in-hormuz-no-casualties-2?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Sat, 08 Aug 2026 15:01:29 +0000",
+            "snippet": "Gulf and Arab governments condemn Iran over missile strike on Emirati tanker. ",
+            "isNew": true
+          },
           {
             "title": "Houthis Claim Attack on Yemeni Military Camp",
             "link": "https://www.nytimes.com/2026/08/07/world/middleeast/yemen-houthis-attack-military-camp.html",
@@ -593,17 +630,6 @@
             "pubDate": "Wed, 05 Aug 2026 16:34:58 GMT",
             "snippet": "Hits on two towns among deadliest bombings since start of June ceasefire An Israeli airstrike in south Lebanon killed one person and injured 11, the Lebanese ministry of health said, in one of Israel’",
             "isNew": true
-          },
-          {
-            "title": "Israeli Strikes May Undermine Trump’s Peace Plan for Gaza",
-            "link": "https://www.nytimes.com/2026/08/05/world/middleeast/israel-strikes-gaza-peace-deal.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Wed, 05 Aug 2026 12:05:18 +0000",
-            "snippet": "President Trump announced a proposal aimed at achieving the disarmament of Hamas and an Israeli withdrawal. Israel ramped up attacks on the Palestinian enclave.",
-            "isNew": true
           }
         ]
       },
@@ -611,9 +637,20 @@
         "category_id": "regional",
         "category_name": "지역 정세",
         "category_icon": "🌍",
-        "count": 8,
-        "new_count": 8,
+        "count": 9,
+        "new_count": 9,
         "articles": [
+          {
+            "title": "Iraq’s Kurdish region wants to stay out of regional conflicts: PM Barzani",
+            "link": "https://www.aljazeera.com/news/2026/8/8/iraqs-kurdish-region-wants-to-stay-out-of-regional-conflicts-pm-barzani?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Sat, 08 Aug 2026 14:58:42 +0000",
+            "snippet": "In an interview with Al Jazeera, Masrour Barzani denies any &#039;pressure&#039; to enter the Iran war despite over 1,000 attacks.",
+            "isNew": true
+          },
           {
             "title": "Yemen Teeters on Civil War as Regional Stability Hangs in the Balance",
             "link": "https://www.nytimes.com/2026/08/08/world/middleeast/yemen-houthis-regional-stability.html",
@@ -700,81 +737,6 @@
             ],
             "pubDate": "Wed, 05 Aug 2026 06:59:05 +0000",
             "snippet": "The confrontation, over a strategic ridge in southern Lebanon, challenged a fragile cease-fire between Israel and the Iran-backed militant group.",
-            "isNew": true
-          }
-        ]
-      },
-      {
-        "category_id": "economy",
-        "category_name": "경제 영향",
-        "category_icon": "📊",
-        "count": 6,
-        "new_count": 6,
-        "articles": [
-          {
-            "title": "Iran Issues List of Demands, Dampening Hopes of Reopening Strait",
-            "link": "https://www.nytimes.com/2026/08/08/world/middleeast/iran-us-oman-strait-of-hormuz.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Sat, 08 Aug 2026 14:55:50 +0000",
-            "snippet": "The head of Iran’s Supreme National Security Council said that the Strait of Hormuz would not reopen unless the United States met certain conditions.",
-            "isNew": true
-          },
-          {
-            "title": "Iran deliberates Hormuz arrangement amid uncertain prospects with US",
-            "link": "https://www.aljazeera.com/news/2026/8/8/iran-deliberates-hormuz-arrangement-amid-uncertain-prospects-with-us?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sat, 08 Aug 2026 13:52:40 +0000",
-            "snippet": "Iran and Oman have agreed on the coordinates of routes to be taken by vessels through the Strait of Hormuz.",
-            "isNew": true
-          },
-          {
-            "title": "Seized on Their Way to Gaza, Activists Tell of Abuse in Israeli Custody",
-            "link": "https://www.nytimes.com/2026/08/07/world/middleeast/gaza-flotilla-israel-abuse.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Fri, 07 Aug 2026 09:00:14 +0000",
-            "snippet": "In interviews, more than 20 people who tried to break an Israeli blockade described beatings, electric shocks and other abuse after being captured. Israel denied the accusations.",
-            "isNew": true
-          },
-          {
-            "title": "Iran says a deal with Oman to reopen the strait of Hormuz is close to being finalised – as it happened",
-            "link": "https://www.theguardian.com/world/live/2026/aug/06/iran-oman-strait-of-hormuz-yemen-houthis-israel-lebanon-gaza-us-donald-trump-middle-east-crisis-live-news",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Thu, 06 Aug 2026 19:15:33 GMT",
-            "snippet": "This live blog is now closed.Understanding reached on coordinates for shipping route through Hormuz, Iran saysDonald Trump’s Board of Peace, which was set up in January to oversee the reconstruction o",
-            "isNew": true
-          },
-          {
-            "title": "Top Democrats accuse Trump officials over Israeli settlers’ ‘unbridled violence’",
-            "link": "https://www.theguardian.com/us-news/2026/aug/06/democrats-trump-west-bank-israeli-settlers",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Thu, 06 Aug 2026 10:00:45 GMT",
-            "snippet": "Letter says lifting of sanctions sent ‘clear message’ settlers can use deadly force in West Bank without consequencesSenior Democrats have accused Donald Trump’s administration of giving a green light",
-            "isNew": true
-          },
-          {
-            "title": "Stocks Rally as Investors Grow Hopeful About a Hormuz Deal",
-            "link": "https://www.nytimes.com/2026/08/04/business/stocks-sp500-oil-prices.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Tue, 04 Aug 2026 20:07:53 +0000",
-            "snippet": "The price of oil fell sharply on hopes that talks were progressing on reopening the Strait of Hormuz.",
             "isNew": true
           }
         ]
@@ -919,55 +881,65 @@
         ]
       },
       {
-        "category_id": "diplomacy",
-        "category_name": "외교/협상",
-        "category_icon": "🤝",
-        "count": 4,
-        "new_count": 4,
+        "category_id": "economy",
+        "category_name": "경제 영향",
+        "category_icon": "📊",
+        "count": 5,
+        "new_count": 5,
         "articles": [
           {
-            "title": "Israel Strikes Lebanon After Accusing Hezbollah of Cease-Fire Violation",
-            "link": "https://www.nytimes.com/2026/08/05/world/middleeast/israel-lebanon-hezbollah-cease-fire.html",
+            "title": "Iran Issues List of Demands, Dampening Hopes of Reopening Strait of Hormuz",
+            "link": "https://www.nytimes.com/2026/08/08/world/middleeast/iran-us-oman-strait-of-hormuz.html",
             "source": "nytimes",
             "sources": [
               "nytimes"
             ],
-            "pubDate": "Thu, 06 Aug 2026 07:20:01 +0000",
-            "snippet": "At the same time, Israeli and Lebanese negotiators were holding talks in Rome aimed at fostering a long-term diplomatic settlement.",
+            "pubDate": "Sat, 08 Aug 2026 15:26:07 +0000",
+            "snippet": "The head of Iran’s Supreme National Security Council said that the waterway will remain closed until the United States met certain conditions.",
             "isNew": true
           },
           {
-            "title": "Iran Says It Is Nearing Final Agreement With Oman on Strait of Hormuz",
-            "link": "https://www.nytimes.com/2026/08/05/world/middleeast/iran-oman-strait-of-hormuz.html",
+            "title": "Iran deliberates Hormuz arrangement amid uncertain prospects with US",
+            "link": "https://www.aljazeera.com/news/2026/8/8/iran-deliberates-hormuz-arrangement-amid-uncertain-prospects-with-us?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Sat, 08 Aug 2026 13:52:40 +0000",
+            "snippet": "Iran and Oman have agreed on the coordinates of routes to be taken by vessels through the Strait of Hormuz.",
+            "isNew": true
+          },
+          {
+            "title": "Seized on Their Way to Gaza, Activists Tell of Abuse in Israeli Custody",
+            "link": "https://www.nytimes.com/2026/08/07/world/middleeast/gaza-flotilla-israel-abuse.html",
             "source": "nytimes",
             "sources": [
-              "nytimes",
-              "bbc"
+              "nytimes"
             ],
-            "pubDate": "Wed, 05 Aug 2026 17:08:46 +0000",
-            "snippet": "The agreement on an acceptable route for ships to pass through the strait would effectively ratify Tehran’s control over the crucial waterway.",
+            "pubDate": "Fri, 07 Aug 2026 09:00:14 +0000",
+            "snippet": "In interviews, more than 20 people who tried to break an Israeli blockade described beatings, electric shocks and other abuse after being captured. Israel denied the accusations.",
             "isNew": true
           },
           {
-            "title": "Rubio hopes US can reach Hormuz deal with Iran ‘very shortly’ as officials say progress has been made – as it happened",
-            "link": "https://www.theguardian.com/world/live/2026/aug/04/middle-east-crisis-qatar-iran-us-israel-war-donald-trump-strait-hormuz-gaza-latest-news-updates",
+            "title": "Iran says a deal with Oman to reopen the strait of Hormuz is close to being finalised – as it happened",
+            "link": "https://www.theguardian.com/world/live/2026/aug/06/iran-oman-strait-of-hormuz-yemen-houthis-israel-lebanon-gaza-us-donald-trump-middle-east-crisis-live-news",
             "source": "guardian",
             "sources": [
               "guardian"
             ],
-            "pubDate": "Tue, 04 Aug 2026 22:13:58 GMT",
-            "snippet": "This live blog is now closed.US and Qatar report progress on Iran ceasefire and reopening Hormuz straitIran and Oman have made progress toward a deal to reopen the strait of Hormuz, a potential breakt",
+            "pubDate": "Thu, 06 Aug 2026 19:15:33 GMT",
+            "snippet": "This live blog is now closed.Understanding reached on coordinates for shipping route through Hormuz, Iran saysDonald Trump’s Board of Peace, which was set up in January to oversee the reconstruction o",
             "isNew": true
           },
           {
-            "title": "Strait of Hormuz Deal With Iran Possible Soon, Bessent Says",
-            "link": "https://www.nytimes.com/2026/08/04/world/middleeast/strait-of-hormuz-deal-progress.html",
-            "source": "nytimes",
+            "title": "Top Democrats accuse Trump officials over Israeli settlers’ ‘unbridled violence’",
+            "link": "https://www.theguardian.com/us-news/2026/aug/06/democrats-trump-west-bank-israeli-settlers",
+            "source": "guardian",
             "sources": [
-              "nytimes"
+              "guardian"
             ],
-            "pubDate": "Tue, 04 Aug 2026 17:57:27 +0000",
-            "snippet": "Qatar said that draft language of a deal was being circulated, while Secretary of State Marco Rubio expressed optimism about the talks but added that nothing was final yet.",
+            "pubDate": "Thu, 06 Aug 2026 10:00:45 GMT",
+            "snippet": "Letter says lifting of sanctions sent ‘clear message’ settlers can use deadly force in West Bank without consequencesSenior Democrats have accused Donald Trump’s administration of giving a green light",
             "isNew": true
           }
         ]
@@ -1024,46 +996,59 @@
             "isNew": true
           }
         ]
+      },
+      {
+        "category_id": "diplomacy",
+        "category_name": "외교/협상",
+        "category_icon": "🤝",
+        "count": 3,
+        "new_count": 3,
+        "articles": [
+          {
+            "title": "Israel Strikes Lebanon After Accusing Hezbollah of Cease-Fire Violation",
+            "link": "https://www.nytimes.com/2026/08/05/world/middleeast/israel-lebanon-hezbollah-cease-fire.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Thu, 06 Aug 2026 07:20:01 +0000",
+            "snippet": "At the same time, Israeli and Lebanese negotiators were holding talks in Rome aimed at fostering a long-term diplomatic settlement.",
+            "isNew": true
+          },
+          {
+            "title": "Iran Says It Is Nearing Final Agreement With Oman on Strait of Hormuz",
+            "link": "https://www.nytimes.com/2026/08/05/world/middleeast/iran-oman-strait-of-hormuz.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes",
+              "bbc"
+            ],
+            "pubDate": "Wed, 05 Aug 2026 17:08:46 +0000",
+            "snippet": "The agreement on an acceptable route for ships to pass through the strait would effectively ratify Tehran’s control over the crucial waterway.",
+            "isNew": true
+          },
+          {
+            "title": "Rubio hopes US can reach Hormuz deal with Iran ‘very shortly’ as officials say progress has been made – as it happened",
+            "link": "https://www.theguardian.com/world/live/2026/aug/04/middle-east-crisis-qatar-iran-us-israel-war-donald-trump-strait-hormuz-gaza-latest-news-updates",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Tue, 04 Aug 2026 22:13:58 GMT",
+            "snippet": "This live blog is now closed.US and Qatar report progress on Iran ceasefire and reopening Hormuz straitIran and Oman have made progress toward a deal to reopen the strait of Hormuz, a potential breakt",
+            "isNew": true
+          }
+        ]
       }
     ],
     "recent_30min": {
       "total_new": 50,
       "by_category": {
-        "regional": {
-          "count": 8,
-          "titles": [
-            {
-              "title": "Yemen Teeters on Civil War as Regional Stability Hangs in the Balance",
-              "link": "https://www.nytimes.com/2026/08/08/world/middleeast/yemen-houthis-regional-stability.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "War on Iran: Phase II: Day 28",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/8/8/war-on-iran-phase-ii-day-28?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Israel mulls Saudi, Turkiye, Pakistan pact as elections loom",
-              "link": "https://www.aljazeera.com/news/2026/8/8/netanyahu-mulls-saudi-turkiye-pakistan-pact-as-israeli-elections-loom?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Drones spotted in Bulgaria and Germany raise concerns of Russian escalation",
-              "link": "https://www.aljazeera.com/news/2026/8/8/drones-spotted-in-bulgaria-and-germany-raise-concerns-of-russian-escalation?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "The post-American Middle East is beginning to take shape",
-              "link": "https://www.aljazeera.com/opinions/2026/8/8/the-post-american-middle-east-is-beginning-to-take-shape?traffic_source=rss",
-              "source": "aljazeera"
-            }
-          ]
-        },
         "economy": {
-          "count": 8,
+          "count": 7,
           "titles": [
             {
-              "title": "Iran Issues List of Demands, Dampening Hopes of Reopening Strait",
+              "title": "Iran Issues List of Demands, Dampening Hopes of Reopening Strait of Hormuz",
               "link": "https://www.nytimes.com/2026/08/08/world/middleeast/iran-us-oman-strait-of-hormuz.html",
               "source": "nytimes"
             },
@@ -1086,6 +1071,66 @@
               "title": "Top Democrats accuse Trump officials over Israeli settlers’ ‘unbridled violence’",
               "link": "https://www.theguardian.com/us-news/2026/aug/06/democrats-trump-west-bank-israeli-settlers",
               "source": "guardian"
+            }
+          ]
+        },
+        "military": {
+          "count": 13,
+          "titles": [
+            {
+              "title": "UAE says Iran targeted ADNOC tanker in Strait of Hormuz, no casualties",
+              "link": "https://www.aljazeera.com/news/2026/8/8/uae-says-iran-targeted-adnoc-tanker-in-hormuz-no-casualties-2?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Houthis Claim Attack on Yemeni Military Camp",
+              "link": "https://www.nytimes.com/2026/08/07/world/middleeast/yemen-houthis-attack-military-camp.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "The week around the world in 20 pictures",
+              "link": "https://www.theguardian.com/artanddesign/gallery/2026/aug/07/the-week-around-the-world-in-20-pictures",
+              "source": "guardian"
+            },
+            {
+              "title": "Houthi Attacks on Yemeni Military Threaten to Reignite Civil War",
+              "link": "https://www.nytimes.com/2026/08/06/world/middleeast/houthi-yemen-strikes.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Houthi attacks reportedly kill at least 30 Yemeni government forces",
+              "link": "https://www.bbc.co.uk/news/articles/ckgdmdr0lmgo?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
+            }
+          ]
+        },
+        "regional": {
+          "count": 9,
+          "titles": [
+            {
+              "title": "Iraq’s Kurdish region wants to stay out of regional conflicts: PM Barzani",
+              "link": "https://www.aljazeera.com/news/2026/8/8/iraqs-kurdish-region-wants-to-stay-out-of-regional-conflicts-pm-barzani?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Yemen Teeters on Civil War as Regional Stability Hangs in the Balance",
+              "link": "https://www.nytimes.com/2026/08/08/world/middleeast/yemen-houthis-regional-stability.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "War on Iran: Phase II: Day 28",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/8/8/war-on-iran-phase-ii-day-28?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Israel mulls Saudi, Turkiye, Pakistan pact as elections loom",
+              "link": "https://www.aljazeera.com/news/2026/8/8/netanyahu-mulls-saudi-turkiye-pakistan-pact-as-israeli-elections-loom?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Drones spotted in Bulgaria and Germany raise concerns of Russian escalation",
+              "link": "https://www.aljazeera.com/news/2026/8/8/drones-spotted-in-bulgaria-and-germany-raise-concerns-of-russian-escalation?traffic_source=rss",
+              "source": "aljazeera"
             }
           ]
         },
@@ -1179,38 +1224,8 @@
             }
           ]
         },
-        "military": {
-          "count": 12,
-          "titles": [
-            {
-              "title": "Houthis Claim Attack on Yemeni Military Camp",
-              "link": "https://www.nytimes.com/2026/08/07/world/middleeast/yemen-houthis-attack-military-camp.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "The week around the world in 20 pictures",
-              "link": "https://www.theguardian.com/artanddesign/gallery/2026/aug/07/the-week-around-the-world-in-20-pictures",
-              "source": "guardian"
-            },
-            {
-              "title": "Houthi Attacks on Yemeni Military Threaten to Reignite Civil War",
-              "link": "https://www.nytimes.com/2026/08/06/world/middleeast/houthi-yemen-strikes.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Houthi attacks reportedly kill at least 30 Yemeni government forces",
-              "link": "https://www.bbc.co.uk/news/articles/ckgdmdr0lmgo?at_medium=RSS&at_campaign=rss",
-              "source": "bbc"
-            },
-            {
-              "title": "Israel strikes south Lebanon after two soldiers killed by explosion",
-              "link": "https://www.bbc.co.uk/news/articles/c998711dyjvo?at_medium=RSS&at_campaign=rss",
-              "source": "bbc"
-            }
-          ]
-        },
         "diplomacy": {
-          "count": 5,
+          "count": 4,
           "titles": [
             {
               "title": "Israel Strikes Lebanon After Accusing Hezbollah of Cease-Fire Violation",
@@ -1231,11 +1246,6 @@
               "title": "Rubio hopes US can reach Hormuz deal with Iran ‘very shortly’ as officials say progress has been made – as it happened",
               "link": "https://www.theguardian.com/world/live/2026/aug/04/middle-east-crisis-qatar-iran-us-israel-war-donald-trump-strait-hormuz-gaza-latest-news-updates",
               "source": "guardian"
-            },
-            {
-              "title": "Strait of Hormuz Deal With Iran Possible Soon, Bessent Says",
-              "link": "https://www.nytimes.com/2026/08/04/world/middleeast/strait-of-hormuz-deal-progress.html",
-              "source": "nytimes"
             }
           ]
         }
@@ -1353,11 +1363,11 @@
       "changePercent": -0.37,
       "prev": 99.97
     },
-    "US10Y": {
-      "price": 4.66,
-      "change": -0.01,
-      "changePercent": -0.21,
-      "prev": 4.67
+    "US2Y": {
+      "price": 3.71,
+      "change": -0.02,
+      "changePercent": -0.54,
+      "prev": 3.73
     },
     "GOLD": {
       "price": 4399.7,
@@ -1365,11 +1375,11 @@
       "changePercent": 3.72,
       "prev": 4242
     },
-    "US2Y": {
-      "price": 3.71,
-      "change": -0.02,
-      "changePercent": -0.54,
-      "prev": 3.73
+    "US10Y": {
+      "price": 4.66,
+      "change": -0.01,
+      "changePercent": -0.21,
+      "prev": 4.67
     }
   },
   "critical_events": [
@@ -1380,6 +1390,14 @@
       "confidence": 0.6666666666666666,
       "matchCount": 2,
       "direction": "shorten"
+    },
+    {
+      "id": "conflict_expansion",
+      "name": "전선 확대/신규 참전국",
+      "severity": "moderate",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "lengthen"
     }
   ],
   "feeds_loaded": 7,
