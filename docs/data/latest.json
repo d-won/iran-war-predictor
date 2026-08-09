@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-08-09T11:54:24.390Z",
+  "timestamp": "2026-08-09T12:41:14.368Z",
   "war_day": 162,
   "probabilities": {
-    "1개월 내 (~3월)": 18.7,
-    "2~3개월 (4~5월)": 36.1,
-    "4~6개월 (6~8월)": 26,
-    "7~12개월 (9월~27/2월)": 13.9,
-    "1년 초과": 5.3
+    "1개월 내 (~3월)": 17.1,
+    "2~3개월 (4~5월)": 33.8,
+    "4~6개월 (6~8월)": 27.6,
+    "7~12개월 (9월~27/2월)": 15.5,
+    "1년 초과": 6
   },
   "factors": [
     {
@@ -45,8 +45,8 @@
       "decay": 0.4
     },
     {
-      "factor": "확전 뉴스 우세 (확전12:휴전6)",
-      "impact": "전쟁 장기화 가능성 (확전비율 67%)",
+      "factor": "확전 뉴스 우세 (확전10:휴전6)",
+      "impact": "전쟁 장기화 가능성 (확전비율 63%)",
       "weight": "+0.03%p (4~6개월)",
       "direction": "lengthen",
       "detail": "언론에서 휴전보다 확전을 더 많이 보도하고 있습니다.",
@@ -181,11 +181,11 @@
       "decay": 1
     },
     {
-      "factor": "지역 확산 뉴스 18.2건 감지",
+      "factor": "지역 확산 뉴스 22.2건 감지",
       "impact": "주변국 대규모 연루 → 장기화 위험 높음",
       "weight": "+0.02%p (4~6개월), +0.02%p (7~12개월)",
       "direction": "lengthen",
-      "detail": "주변국을 언급하는 기사 18.2건이 감지되었습니다.",
+      "detail": "주변국을 언급하는 기사 22.2건이 감지되었습니다.",
       "keywords": [
         "saudi",
         "uae",
@@ -234,38 +234,62 @@
       "decay": 0.3
     },
     {
-      "factor": "[중대 이벤트] 일방적 전투 축소/자제 선언",
-      "impact": "교전국의 일방적 전투 축소 또는 자제 선언. 역사적으로 패전국의 자발적 전선 축소는 80% 이상 공식 항복의 전조.",
-      "weight": "+3.3%p (1개월내), +4.7%p (2~3개월), -2.0%p (4~6개월), -2.0%p (7~12개월), -0.7%p (1년초과)",
+      "factor": "[중대 이벤트] 수도 직접 공격/포위",
+      "impact": "수도 직접 공격. 베오그라드(1999): 78일 폭격 후 항복. 바그다드(2003): 21일만에 함락. 수도 타격은 전쟁 지속 의지를 급격히 약화.",
+      "weight": "+2.7%p (1개월내), +4.0%p (2~3개월), -1.3%p (4~6개월), -1.3%p (7~12개월), -0.7%p (1년초과)",
       "direction": "shorten",
-      "detail": "교전국의 일방적 전투 축소 또는 자제 선언. 역사적으로 패전국의 자발적 전선 축소는 80% 이상 공식 항복의 전조.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Israel rejects Trump’s 15-point plan for Gaza",
+      "detail": "수도 직접 공격. 베오그라드(1999): 78일 폭격 후 항복. 바그다드(2003): 21일만에 함락. 수도 타격은 전쟁 지속 의지를 급격히 약화.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Yemen’s Houthis claim responsibility for attack on Saudi oil refinery",
       "keywords": [
-        "halt",
+        "capital",
+        "bomb",
+        "capital",
+        "strike",
+        "capital",
         "attack",
-        "stop",
-        "attack",
-        "neighb",
-        "no more",
-        "attack",
-        "withdraw",
-        "forces",
-        "pull back",
-        "troops",
-        "unilateral",
-        "ceasefire",
-        "reduce",
-        "operation",
-        "de-escalat",
-        "announc",
-        "restrain",
-        "attack",
-        "not attack",
-        "suspend",
-        "operation"
+        "capital",
+        "siege",
+        "capital",
+        "pound",
+        "capital",
+        "explosion",
+        "tehran",
+        "bomb",
+        "tehran",
+        "strike",
+        "tehran",
+        "pound",
+        "tehran",
+        "explosion"
       ],
       "applied": "2026-08-09",
       "active": true,
       "severity": "high"
+    },
+    {
+      "factor": "[중대 이벤트] 전선 확대/신규 참전국",
+      "impact": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).",
+      "weight": "-1.3%p (1개월내), -2.0%p (2~3개월), +2.7%p (4~6개월), +2.0%p (7~12개월), +1.3%p (1년초과)",
+      "direction": "lengthen",
+      "detail": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Which other countries could join the Turkiye-Saudi-Pakistan defence pact?",
+      "keywords": [
+        "new front",
+        "war spread",
+        "conflict expand",
+        "join",
+        "war",
+        "enter",
+        "war",
+        "open",
+        "front",
+        "declare war",
+        "widen",
+        "conflict",
+        "second front",
+        "new theater"
+      ],
+      "applied": "2026-08-09",
+      "active": true,
+      "severity": "moderate"
     },
     {
       "factor": "[중대 이벤트] 대량살상무기(WMD)/핵 위협",
@@ -331,17 +355,77 @@
   ],
   "news_signals": {
     "ceasefire_mentions": 6,
-    "escalation_mentions": 12,
+    "escalation_mentions": 10,
     "negotiation_mentions": 8,
-    "casualty_mentions": 18.2,
-    "peace_mentions": 12,
-    "regional_spread": 18.2,
+    "casualty_mentions": 20.4,
+    "peace_mentions": 12.2,
+    "regional_spread": 22.2,
     "total_articles": 50,
     "new_articles": 50,
-    "unique_events": 46,
-    "duplicates_removed": 4
+    "unique_events": 45,
+    "duplicates_removed": 5
   },
   "latest_news": [
+    {
+      "title": "Yemen’s Houthis claim responsibility for attack on Saudi oil refinery",
+      "link": "https://www.theguardian.com/world/2026/aug/09/yemen-houthis-saudi-oil-refinery-defence-pact-iran-strait-of-hormuz",
+      "pubDate": "Sun, 09 Aug 2026 12:29:39 GMT",
+      "source": "guardian",
+      "snippet": "Drone strike comes after Riyadh signs defence pact and Iran issues tough demands to reopen of strait of HormuzMiddle East crisis live – latest updatesYemen’s Tehran-aligned Houthis have claimed respon",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Middle East crisis live: Netanyahu rejects US’s Gaza plan and vows no withdrawal until Hamas disarms",
+      "link": "https://www.theguardian.com/world/live/2026/aug/09/iran-us-irgc-strait-of-hormuz-israel-netanyahu-trump-gaza-plan-latest-news-updates",
+      "pubDate": "Sun, 09 Aug 2026 12:28:17 GMT",
+      "source": "guardian",
+      "snippet": "Israel prime minister says he will not support 15-point plan hailed by Donald TrumpAttacks by Iran-backed Houthi rebels in Yemen killed at least four troops from the internationally-recognised governm",
+      "isNew": true,
+      "_sourceCount": 2,
+      "_isDuplicated": true,
+      "_clusterSize": 2,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Israel Rejects Trump’s 15-Point Plan to Disarm Hamas",
+      "link": "https://www.nytimes.com/2026/08/09/world/middleeast/israel-netanyahu-trump-15-point-plan-hamas-peace-gaza.html",
+      "pubDate": "Sun, 09 Aug 2026 12:01:21 +0000",
+      "source": "nytimes",
+      "snippet": "President Trump’s Board of Peace announced an agreement last month that aimed at Hamas giving up its weapons alongside an Israeli withdrawal from Gaza.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Which other countries could join the Turkiye-Saudi-Pakistan defence pact?",
+      "link": "https://www.aljazeera.com/news/2026/8/9/which-other-countries-could-join-the-turkiye-saudi-pakistan-defence-pact?traffic_source=rss",
+      "pubDate": "Sun, 09 Aug 2026 11:59:59 +0000",
+      "source": "aljazeera",
+      "snippet": "While Egypt has been floated as a candidate, analysts say Cairo may be wary of defence commitments.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "‘US and Iran are talking past each other’ in indirect negotiations",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/8/9/us-and-iran-are-talking-past-each-other-in-indirect-negotiations?traffic_source=rss",
+      "pubDate": "Sun, 09 Aug 2026 11:53:03 +0000",
+      "source": "aljazeera",
+      "snippet": "‘US and Iran are talking past each other’ in indirect negotiations",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
     {
       "title": "Israel rejects Trump’s 15-point plan for Gaza",
       "link": "https://www.aljazeera.com/news/2026/8/9/israel-rejects-trumps-15-point-plan-for-gaza?traffic_source=rss",
@@ -349,10 +433,8 @@
       "source": "aljazeera",
       "snippet": "Prime Minister Benjamin Netanyahu says Israel will not ⁠withdraw ​forces from Gaza until Hamas ⁠fully disarms.",
       "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
+      "_isDuplicate": true,
+      "_sourceCount": 1
     },
     {
       "title": "Yemeni army warns Houthis after attacks heighten escalation risk",
@@ -461,66 +543,6 @@
       "_isDuplicated": false,
       "_clusterSize": 1,
       "_isDuplicate": false
-    },
-    {
-      "title": "Iran seeks way out of ‘neither war nor peace’ stalemate with US",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/8/9/08-08-clip-pezeshkian-iran-ir?traffic_source=rss",
-      "pubDate": "Sun, 09 Aug 2026 04:12:39 +0000",
-      "source": "aljazeera",
-      "snippet": "Iran President Pezeshkian said he hopes talks with Oman can end the “neither war nor peace” state of relations with US.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Israeli settler attacks rise as West Bank residents lose land",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/8/9/09-08-reported-nour-odeh-bethlehem?traffic_source=rss",
-      "pubDate": "Sun, 09 Aug 2026 01:43:04 +0000",
-      "source": "aljazeera",
-      "snippet": "Palestinians near Bethlehem describe daily settler attacks as violence rises across the West Bank. ",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Iran issues tough demands to reopen strait of Hormuz as deal still out of reach",
-      "link": "https://www.theguardian.com/world/2026/aug/08/iran-issues-tough-demands-to-reopen-strait-of-hormuz-as-deal-remains-out-of-reach",
-      "pubDate": "Sat, 08 Aug 2026 21:01:28 GMT",
-      "source": "guardian",
-      "snippet": "Tehran urges US to ‘correct its behaviour’ as UAE says one of its ships targeted by Iranian missileIran has issued tough new demands for reopening the strait of Hormuz, while the United Arab Emirates ",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "The U.S. Is Burning Through Weapons in Iran. Russia and China Are Taking Note.",
-      "link": "https://www.nytimes.com/2026/08/08/us/politics/pentagon-weapons-stockpiles-china-russia.html",
-      "pubDate": "Sat, 08 Aug 2026 19:56:38 +0000",
-      "source": "nytimes",
-      "snippet": "The Iran war has depleted U.S. weapons stockpiles, resulting in a significant erosion of firepower. A more drawn-out Iran conflict benefits Moscow and Beijing, some analysts say.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Iran Issues List of Demands, Dampening Hopes of Reopening Strait of Hormuz",
-      "link": "https://www.nytimes.com/2026/08/08/world/middleeast/iran-us-oman-strait-of-hormuz.html",
-      "pubDate": "Sat, 08 Aug 2026 19:04:41 +0000",
-      "source": "nytimes",
-      "snippet": "The head of Iran’s Supreme National Security Council said that the Strait of Hormuz would remain closed until the United States met certain conditions.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
     }
   ],
   "news_digest": {
@@ -529,9 +551,32 @@
         "category_id": "military",
         "category_name": "군사 작전",
         "category_icon": "⚔️",
-        "count": 18,
-        "new_count": 18,
+        "count": 16,
+        "new_count": 16,
         "articles": [
+          {
+            "title": "Yemen’s Houthis claim responsibility for attack on Saudi oil refinery",
+            "link": "https://www.theguardian.com/world/2026/aug/09/yemen-houthis-saudi-oil-refinery-defence-pact-iran-strait-of-hormuz",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Sun, 09 Aug 2026 12:29:39 GMT",
+            "snippet": "Drone strike comes after Riyadh signs defence pact and Iran issues tough demands to reopen of strait of HormuzMiddle East crisis live – latest updatesYemen’s Tehran-aligned Houthis have claimed respon",
+            "isNew": true
+          },
+          {
+            "title": "Middle East crisis live: Netanyahu rejects US’s Gaza plan and vows no withdrawal until Hamas disarms",
+            "link": "https://www.theguardian.com/world/live/2026/aug/09/iran-us-irgc-strait-of-hormuz-israel-netanyahu-trump-gaza-plan-latest-news-updates",
+            "source": "guardian",
+            "sources": [
+              "guardian",
+              "aljazeera"
+            ],
+            "pubDate": "Sun, 09 Aug 2026 12:28:17 GMT",
+            "snippet": "Israel prime minister says he will not support 15-point plan hailed by Donald TrumpAttacks by Iran-backed Houthi rebels in Yemen killed at least four troops from the internationally-recognised governm",
+            "isNew": true
+          },
           {
             "title": "Yemeni army warns Houthis after attacks heighten escalation risk",
             "link": "https://www.aljazeera.com/video/newsfeed/2026/8/9/yemeni-army-warns-houthis-after-attacks-heighten-escalation-risk?traffic_source=rss",
@@ -577,17 +622,6 @@
             "isNew": true
           },
           {
-            "title": "Israeli settler attacks rise as West Bank residents lose land",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/8/9/09-08-reported-nour-odeh-bethlehem?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sun, 09 Aug 2026 01:43:04 +0000",
-            "snippet": "Palestinians near Bethlehem describe daily settler attacks as violence rises across the West Bank. ",
-            "isNew": true
-          },
-          {
             "title": "Iran issues tough demands to reopen strait of Hormuz as deal still out of reach",
             "link": "https://www.theguardian.com/world/2026/aug/08/iran-issues-tough-demands-to-reopen-strait-of-hormuz-as-deal-remains-out-of-reach",
             "source": "guardian",
@@ -630,16 +664,81 @@
             "pubDate": "Thu, 06 Aug 2026 23:38:15 +0000",
             "snippet": "The Iranian-backed militia said it had targeted the armed forces in two resource-rich provinces, as escalating violence in Yemen imperils a fragile truce.",
             "isNew": true
+          }
+        ]
+      },
+      {
+        "category_id": "diplomacy",
+        "category_name": "외교/협상",
+        "category_icon": "🤝",
+        "count": 6,
+        "new_count": 6,
+        "articles": [
+          {
+            "title": "Israel Rejects Trump’s 15-Point Plan to Disarm Hamas",
+            "link": "https://www.nytimes.com/2026/08/09/world/middleeast/israel-netanyahu-trump-15-point-plan-hamas-peace-gaza.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Sun, 09 Aug 2026 12:01:21 +0000",
+            "snippet": "President Trump’s Board of Peace announced an agreement last month that aimed at Hamas giving up its weapons alongside an Israeli withdrawal from Gaza.",
+            "isNew": true
           },
           {
-            "title": "Houthi attacks reportedly kill at least 30 Yemeni government forces",
-            "link": "https://www.bbc.co.uk/news/articles/ckgdmdr0lmgo?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
+            "title": "‘US and Iran are talking past each other’ in indirect negotiations",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/8/9/us-and-iran-are-talking-past-each-other-in-indirect-negotiations?traffic_source=rss",
+            "source": "aljazeera",
             "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Sun, 09 Aug 2026 11:53:03 +0000",
+            "snippet": "‘US and Iran are talking past each other’ in indirect negotiations",
+            "isNew": true
+          },
+          {
+            "title": "Why is Pezeshkian urging an end to Iran’s ‘no war, no peace’ status?",
+            "link": "https://www.aljazeera.com/news/2026/8/9/why-is-pezeshkian-urging-an-end-to-irans-no-war-no-peace-status?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Sun, 09 Aug 2026 10:02:59 +0000",
+            "snippet": "The Iranian president calls for an end to deadlock with the US, declaring it the right moment for a lasting agreement.",
+            "isNew": true
+          },
+          {
+            "title": "Iran seeks way out of ‘neither war nor peace’ stalemate with US",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/8/9/08-08-clip-pezeshkian-iran-ir?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Sun, 09 Aug 2026 04:12:39 +0000",
+            "snippet": "Iran President Pezeshkian said he hopes talks with Oman can end the “neither war nor peace” state of relations with US.",
+            "isNew": true
+          },
+          {
+            "title": "Israel Strikes Lebanon After Accusing Hezbollah of Cease-Fire Violation",
+            "link": "https://www.nytimes.com/2026/08/05/world/middleeast/israel-lebanon-hezbollah-cease-fire.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Thu, 06 Aug 2026 07:20:01 +0000",
+            "snippet": "At the same time, Israeli and Lebanese negotiators were holding talks in Rome aimed at fostering a long-term diplomatic settlement.",
+            "isNew": true
+          },
+          {
+            "title": "Iran Says It Is Nearing Final Agreement With Oman on Strait of Hormuz",
+            "link": "https://www.nytimes.com/2026/08/05/world/middleeast/iran-oman-strait-of-hormuz.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes",
               "bbc"
             ],
-            "pubDate": "Thu, 06 Aug 2026 22:41:09 GMT",
-            "snippet": "The Houthis say they launched missiles and drones at \"Saudi military build-ups\" in the central provinces of Marib and Hadramawt.",
+            "pubDate": "Wed, 05 Aug 2026 17:08:46 +0000",
+            "snippet": "The agreement on an acceptable route for ships to pass through the strait would effectively ratify Tehran’s control over the crucial waterway.",
             "isNew": true
           }
         ]
@@ -648,8 +747,8 @@
         "category_id": "economy",
         "category_name": "경제 영향",
         "category_icon": "📊",
-        "count": 7,
-        "new_count": 7,
+        "count": 6,
+        "new_count": 6,
         "articles": [
           {
             "title": "Saudi Arabia says fire extinguished at Aramco facility in Jizan",
@@ -716,17 +815,6 @@
             "pubDate": "Thu, 06 Aug 2026 10:00:45 GMT",
             "snippet": "Letter says lifting of sanctions sent ‘clear message’ settlers can use deadly force in West Bank without consequencesSenior Democrats have accused Donald Trump’s administration of giving a green light",
             "isNew": true
-          },
-          {
-            "title": "Stocks Rally as Investors Grow Hopeful About a Hormuz Deal",
-            "link": "https://www.nytimes.com/2026/08/04/business/stocks-sp500-oil-prices.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Tue, 04 Aug 2026 20:07:53 +0000",
-            "snippet": "The price of oil fell sharply on hopes that talks were progressing on reopening the Strait of Hormuz.",
-            "isNew": true
           }
         ]
       },
@@ -734,20 +822,9 @@
         "category_id": "politics",
         "category_name": "국내 정치",
         "category_icon": "🏛️",
-        "count": 6,
-        "new_count": 6,
+        "count": 5,
+        "new_count": 5,
         "articles": [
-          {
-            "title": "Israel rejects Trump’s 15-point plan for Gaza",
-            "link": "https://www.aljazeera.com/news/2026/8/9/israel-rejects-trumps-15-point-plan-for-gaza?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sun, 09 Aug 2026 11:31:18 +0000",
-            "snippet": "Prime Minister Benjamin Netanyahu says Israel will not ⁠withdraw ​forces from Gaza until Hamas ⁠fully disarms.",
-            "isNew": true
-          },
           {
             "title": "It won’t be Trump who kills the ICC",
             "link": "https://www.aljazeera.com/opinions/2026/8/9/it-wont-be-trump-who-kills-the-icc?traffic_source=rss",
@@ -806,55 +883,65 @@
         ]
       },
       {
-        "category_id": "diplomacy",
-        "category_name": "외교/협상",
-        "category_icon": "🤝",
-        "count": 4,
-        "new_count": 4,
+        "category_id": "regional",
+        "category_name": "지역 정세",
+        "category_icon": "🌍",
+        "count": 5,
+        "new_count": 5,
         "articles": [
           {
-            "title": "Why is Pezeshkian urging an end to Iran’s ‘no war, no peace’ status?",
-            "link": "https://www.aljazeera.com/news/2026/8/9/why-is-pezeshkian-urging-an-end-to-irans-no-war-no-peace-status?traffic_source=rss",
+            "title": "Which other countries could join the Turkiye-Saudi-Pakistan defence pact?",
+            "link": "https://www.aljazeera.com/news/2026/8/9/which-other-countries-could-join-the-turkiye-saudi-pakistan-defence-pact?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Sun, 09 Aug 2026 10:02:59 +0000",
-            "snippet": "The Iranian president calls for an end to deadlock with the US, declaring it the right moment for a lasting agreement.",
+            "pubDate": "Sun, 09 Aug 2026 11:59:59 +0000",
+            "snippet": "While Egypt has been floated as a candidate, analysts say Cairo may be wary of defence commitments.",
             "isNew": true
           },
           {
-            "title": "Iran seeks way out of ‘neither war nor peace’ stalemate with US",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/8/9/08-08-clip-pezeshkian-iran-ir?traffic_source=rss",
-            "source": "aljazeera",
+            "title": "‘Like being in prison’: the ship crews stuck in Gulf since February",
+            "link": "https://www.theguardian.com/world/2026/aug/09/ordinary-seafarers-trapped-strait-of-hormuz-iran-strikes-killed",
+            "source": "guardian",
             "sources": [
-              "aljazeera"
+              "guardian"
             ],
-            "pubDate": "Sun, 09 Aug 2026 04:12:39 +0000",
-            "snippet": "Iran President Pezeshkian said he hopes talks with Oman can end the “neither war nor peace” state of relations with US.",
+            "pubDate": "Sun, 09 Aug 2026 08:00:10 GMT",
+            "snippet": "US-Iran war has stranded up to 20,000 seafarers, mostly Indian and Filipino crews, with none knowing when the nightmare will endThe panicked crew of a cargo ship broadcast a distress signal late on Mo",
             "isNew": true
           },
           {
-            "title": "Israel Strikes Lebanon After Accusing Hezbollah of Cease-Fire Violation",
-            "link": "https://www.nytimes.com/2026/08/05/world/middleeast/israel-lebanon-hezbollah-cease-fire.html",
+            "title": "The U.S. Is Burning Through Weapons in Iran. Russia and China Are Taking Note.",
+            "link": "https://www.nytimes.com/2026/08/08/us/politics/pentagon-weapons-stockpiles-china-russia.html",
             "source": "nytimes",
             "sources": [
               "nytimes"
             ],
-            "pubDate": "Thu, 06 Aug 2026 07:20:01 +0000",
-            "snippet": "At the same time, Israeli and Lebanese negotiators were holding talks in Rome aimed at fostering a long-term diplomatic settlement.",
+            "pubDate": "Sat, 08 Aug 2026 19:56:38 +0000",
+            "snippet": "The Iran war has depleted U.S. weapons stockpiles, resulting in a significant erosion of firepower. A more drawn-out Iran conflict benefits Moscow and Beijing, some analysts say.",
             "isNew": true
           },
           {
-            "title": "Iran Says It Is Nearing Final Agreement With Oman on Strait of Hormuz",
-            "link": "https://www.nytimes.com/2026/08/05/world/middleeast/iran-oman-strait-of-hormuz.html",
+            "title": "Yemen Teeters on Civil War as Regional Stability Hangs in the Balance",
+            "link": "https://www.nytimes.com/2026/08/08/world/middleeast/yemen-houthis-regional-stability.html",
             "source": "nytimes",
             "sources": [
-              "nytimes",
-              "bbc"
+              "nytimes"
             ],
-            "pubDate": "Wed, 05 Aug 2026 17:08:46 +0000",
-            "snippet": "The agreement on an acceptable route for ships to pass through the strait would effectively ratify Tehran’s control over the crucial waterway.",
+            "pubDate": "Sat, 08 Aug 2026 14:57:24 +0000",
+            "snippet": "While the Middle East waits to hear whether a deal can be reached to reopen the Strait of Hormuz, the Yemeni government’s conflict with Iran-backed Houthi rebels escalated overnight.",
+            "isNew": true
+          },
+          {
+            "title": "Saudi Arabia, Pakistan and Turkey sign Nato-style defence pact amid deadly Houthi strikes in Yemen",
+            "link": "https://www.theguardian.com/world/2026/aug/07/houthi-strikes-yemen-saudi-arabia-attacks-iran-war-middle-east-crisis",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Fri, 07 Aug 2026 13:00:30 GMT",
+            "snippet": "Mecca joint defence agreement says an attack on one country will be deemed an attack on allWho are the Houthis – explained in 30 secondsSaudi Arabia, Pakistan and Turkey have signed a mutual defence a",
             "isNew": true
           }
         ]
@@ -913,59 +1000,6 @@
         ]
       },
       {
-        "category_id": "regional",
-        "category_name": "지역 정세",
-        "category_icon": "🌍",
-        "count": 4,
-        "new_count": 4,
-        "articles": [
-          {
-            "title": "‘Like being in prison’: the ship crews stuck in Gulf since February",
-            "link": "https://www.theguardian.com/world/2026/aug/09/ordinary-seafarers-trapped-strait-of-hormuz-iran-strikes-killed",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Sun, 09 Aug 2026 08:00:10 GMT",
-            "snippet": "US-Iran war has stranded up to 20,000 seafarers, mostly Indian and Filipino crews, with none knowing when the nightmare will endThe panicked crew of a cargo ship broadcast a distress signal late on Mo",
-            "isNew": true
-          },
-          {
-            "title": "The U.S. Is Burning Through Weapons in Iran. Russia and China Are Taking Note.",
-            "link": "https://www.nytimes.com/2026/08/08/us/politics/pentagon-weapons-stockpiles-china-russia.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Sat, 08 Aug 2026 19:56:38 +0000",
-            "snippet": "The Iran war has depleted U.S. weapons stockpiles, resulting in a significant erosion of firepower. A more drawn-out Iran conflict benefits Moscow and Beijing, some analysts say.",
-            "isNew": true
-          },
-          {
-            "title": "Yemen Teeters on Civil War as Regional Stability Hangs in the Balance",
-            "link": "https://www.nytimes.com/2026/08/08/world/middleeast/yemen-houthis-regional-stability.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Sat, 08 Aug 2026 14:57:24 +0000",
-            "snippet": "While the Middle East waits to hear whether a deal can be reached to reopen the Strait of Hormuz, the Yemeni government’s conflict with Iran-backed Houthi rebels escalated overnight.",
-            "isNew": true
-          },
-          {
-            "title": "Saudi Arabia, Pakistan and Turkey sign Nato-style defence pact amid deadly Houthi strikes in Yemen",
-            "link": "https://www.theguardian.com/world/2026/aug/07/houthi-strikes-yemen-saudi-arabia-attacks-iran-war-middle-east-crisis",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Fri, 07 Aug 2026 13:00:30 GMT",
-            "snippet": "Mecca joint defence agreement says an attack on one country will be deemed an attack on allWho are the Houthis – explained in 30 secondsSaudi Arabia, Pakistan and Turkey have signed a mutual defence a",
-            "isNew": true
-          }
-        ]
-      },
-      {
         "category_id": "other",
         "category_name": "기타",
         "category_icon": "📰",
@@ -1011,6 +1045,96 @@
     "recent_30min": {
       "total_new": 50,
       "by_category": {
+        "military": {
+          "count": 16,
+          "titles": [
+            {
+              "title": "Yemen’s Houthis claim responsibility for attack on Saudi oil refinery",
+              "link": "https://www.theguardian.com/world/2026/aug/09/yemen-houthis-saudi-oil-refinery-defence-pact-iran-strait-of-hormuz",
+              "source": "guardian"
+            },
+            {
+              "title": "Middle East crisis live: Netanyahu rejects US’s Gaza plan and vows no withdrawal until Hamas disarms",
+              "link": "https://www.theguardian.com/world/live/2026/aug/09/iran-us-irgc-strait-of-hormuz-israel-netanyahu-trump-gaza-plan-latest-news-updates",
+              "source": "guardian"
+            },
+            {
+              "title": "Yemeni army warns Houthis after attacks heighten escalation risk",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/8/9/yemeni-army-warns-houthis-after-attacks-heighten-escalation-risk?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Palestinians in occupied West Bank hold firm on Indigenous Peoples’ Day",
+              "link": "https://www.aljazeera.com/news/2026/8/9/palestinians-in-the-west-bank-hold-firm-on-indigenous-peoples-day?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Nagasaki mayor says ‘humanity and nuclear weapons cannot coexist’",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/8/9/nagasaki-mayor-says-humanity-and-nuclear-weapons-cannot?traffic_source=rss",
+              "source": "aljazeera"
+            }
+          ]
+        },
+        "diplomacy": {
+          "count": 7,
+          "titles": [
+            {
+              "title": "Israel Rejects Trump’s 15-Point Plan to Disarm Hamas",
+              "link": "https://www.nytimes.com/2026/08/09/world/middleeast/israel-netanyahu-trump-15-point-plan-hamas-peace-gaza.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "‘US and Iran are talking past each other’ in indirect negotiations",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/8/9/us-and-iran-are-talking-past-each-other-in-indirect-negotiations?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Why is Pezeshkian urging an end to Iran’s ‘no war, no peace’ status?",
+              "link": "https://www.aljazeera.com/news/2026/8/9/why-is-pezeshkian-urging-an-end-to-irans-no-war-no-peace-status?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Iran seeks way out of ‘neither war nor peace’ stalemate with US",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/8/9/08-08-clip-pezeshkian-iran-ir?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Israel Strikes Lebanon After Accusing Hezbollah of Cease-Fire Violation",
+              "link": "https://www.nytimes.com/2026/08/05/world/middleeast/israel-lebanon-hezbollah-cease-fire.html",
+              "source": "nytimes"
+            }
+          ]
+        },
+        "regional": {
+          "count": 5,
+          "titles": [
+            {
+              "title": "Which other countries could join the Turkiye-Saudi-Pakistan defence pact?",
+              "link": "https://www.aljazeera.com/news/2026/8/9/which-other-countries-could-join-the-turkiye-saudi-pakistan-defence-pact?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "‘Like being in prison’: the ship crews stuck in Gulf since February",
+              "link": "https://www.theguardian.com/world/2026/aug/09/ordinary-seafarers-trapped-strait-of-hormuz-iran-strikes-killed",
+              "source": "guardian"
+            },
+            {
+              "title": "The U.S. Is Burning Through Weapons in Iran. Russia and China Are Taking Note.",
+              "link": "https://www.nytimes.com/2026/08/08/us/politics/pentagon-weapons-stockpiles-china-russia.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Yemen Teeters on Civil War as Regional Stability Hangs in the Balance",
+              "link": "https://www.nytimes.com/2026/08/08/world/middleeast/yemen-houthis-regional-stability.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Saudi Arabia, Pakistan and Turkey sign Nato-style defence pact amid deadly Houthi strikes in Yemen",
+              "link": "https://www.theguardian.com/world/2026/aug/07/houthi-strikes-yemen-saudi-arabia-attacks-iran-war-middle-east-crisis",
+              "source": "guardian"
+            }
+          ]
+        },
         "politics": {
           "count": 6,
           "titles": [
@@ -1041,93 +1165,8 @@
             }
           ]
         },
-        "military": {
-          "count": 18,
-          "titles": [
-            {
-              "title": "Yemeni army warns Houthis after attacks heighten escalation risk",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/8/9/yemeni-army-warns-houthis-after-attacks-heighten-escalation-risk?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Palestinians in occupied West Bank hold firm on Indigenous Peoples’ Day",
-              "link": "https://www.aljazeera.com/news/2026/8/9/palestinians-in-the-west-bank-hold-firm-on-indigenous-peoples-day?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Nagasaki mayor says ‘humanity and nuclear weapons cannot coexist’",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/8/9/nagasaki-mayor-says-humanity-and-nuclear-weapons-cannot?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Israel advances plan for 627 settler units in occupied West Bank",
-              "link": "https://www.aljazeera.com/news/2026/8/9/israel-announces-tender-for-627-settler-units-in-occupied-west-bank?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Israeli settler attacks rise as West Bank residents lose land",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/8/9/09-08-reported-nour-odeh-bethlehem?traffic_source=rss",
-              "source": "aljazeera"
-            }
-          ]
-        },
-        "diplomacy": {
-          "count": 5,
-          "titles": [
-            {
-              "title": "Why is Pezeshkian urging an end to Iran’s ‘no war, no peace’ status?",
-              "link": "https://www.aljazeera.com/news/2026/8/9/why-is-pezeshkian-urging-an-end-to-irans-no-war-no-peace-status?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Iran seeks way out of ‘neither war nor peace’ stalemate with US",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/8/9/08-08-clip-pezeshkian-iran-ir?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Israel Strikes Lebanon After Accusing Hezbollah of Cease-Fire Violation",
-              "link": "https://www.nytimes.com/2026/08/05/world/middleeast/israel-lebanon-hezbollah-cease-fire.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Iran says deal with Oman on Strait of Hormuz is in final stages",
-              "link": "https://www.bbc.co.uk/news/articles/ckg9d3eyeggo?at_medium=RSS&at_campaign=rss",
-              "source": "bbc"
-            },
-            {
-              "title": "Iran Says It Is Nearing Final Agreement With Oman on Strait of Hormuz",
-              "link": "https://www.nytimes.com/2026/08/05/world/middleeast/iran-oman-strait-of-hormuz.html",
-              "source": "nytimes"
-            }
-          ]
-        },
-        "regional": {
-          "count": 4,
-          "titles": [
-            {
-              "title": "‘Like being in prison’: the ship crews stuck in Gulf since February",
-              "link": "https://www.theguardian.com/world/2026/aug/09/ordinary-seafarers-trapped-strait-of-hormuz-iran-strikes-killed",
-              "source": "guardian"
-            },
-            {
-              "title": "The U.S. Is Burning Through Weapons in Iran. Russia and China Are Taking Note.",
-              "link": "https://www.nytimes.com/2026/08/08/us/politics/pentagon-weapons-stockpiles-china-russia.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Yemen Teeters on Civil War as Regional Stability Hangs in the Balance",
-              "link": "https://www.nytimes.com/2026/08/08/world/middleeast/yemen-houthis-regional-stability.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Saudi Arabia, Pakistan and Turkey sign Nato-style defence pact amid deadly Houthi strikes in Yemen",
-              "link": "https://www.theguardian.com/world/2026/aug/07/houthi-strikes-yemen-saudi-arabia-attacks-iran-war-middle-east-crisis",
-              "source": "guardian"
-            }
-          ]
-        },
         "economy": {
-          "count": 9,
+          "count": 8,
           "titles": [
             {
               "title": "Saudi Arabia says fire extinguished at Aramco facility in Jizan",
@@ -1302,17 +1341,29 @@
       "changePercent": 1.29,
       "prev": 82.49
     },
+    "US10Y": {
+      "price": 4.66,
+      "change": -0.01,
+      "changePercent": -0.21,
+      "prev": 4.67
+    },
+    "DXY": {
+      "price": 99.6,
+      "change": -0.37,
+      "changePercent": -0.37,
+      "prev": 99.97
+    },
     "VIX": {
       "price": 14.9,
       "change": -0.25,
       "changePercent": -1.65,
       "prev": 15.15
     },
-    "US10Y": {
-      "price": 4.66,
-      "change": -0.01,
-      "changePercent": -0.21,
-      "prev": 4.67
+    "US2Y": {
+      "price": 3.71,
+      "change": -0.02,
+      "changePercent": -0.54,
+      "prev": 3.73
     },
     "WTI": {
       "price": 78.18,
@@ -1325,28 +1376,24 @@
       "change": 157.7,
       "changePercent": 3.72,
       "prev": 4242
-    },
-    "US2Y": {
-      "price": 3.71,
-      "change": -0.02,
-      "changePercent": -0.54,
-      "prev": 3.73
-    },
-    "DXY": {
-      "price": 99.6,
-      "change": -0.37,
-      "changePercent": -0.37,
-      "prev": 99.97
     }
   },
   "critical_events": [
     {
-      "id": "unilateral_deescalation",
-      "name": "일방적 전투 축소/자제 선언",
+      "id": "capital_attack",
+      "name": "수도 직접 공격/포위",
       "severity": "high",
       "confidence": 0.6666666666666666,
       "matchCount": 2,
       "direction": "shorten"
+    },
+    {
+      "id": "conflict_expansion",
+      "name": "전선 확대/신규 참전국",
+      "severity": "moderate",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "lengthen"
     },
     {
       "id": "wmd_threat",
