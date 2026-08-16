@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-08-16T21:42:46.155Z",
+  "timestamp": "2026-08-16T22:16:01.139Z",
   "war_day": 169,
   "probabilities": {
-    "1개월 내 (~3월)": 18.4,
-    "2~3개월 (4~5월)": 39.1,
-    "4~6개월 (6~8월)": 26.3,
-    "7~12개월 (9월~27/2월)": 12.2,
-    "1년 초과": 4
+    "1개월 내 (~3월)": 17.8,
+    "2~3개월 (4~5월)": 37.6,
+    "4~6개월 (6~8월)": 26.9,
+    "7~12개월 (9월~27/2월)": 12.9,
+    "1년 초과": 4.8
   },
   "factors": [
     {
@@ -45,20 +45,20 @@
       "decay": 0.4
     },
     {
-      "factor": "확전 뉴스 우세 (확전2:휴전2)",
-      "impact": "전쟁 장기화 가능성 (확전비율 50%)",
-      "weight": "+0.02%p (4~6개월)",
-      "direction": "lengthen",
-      "detail": "언론에서 휴전보다 확전을 더 많이 보도하고 있습니다.",
+      "factor": "이란 미사일 능력 급감 (휴전4.4:확전0)",
+      "impact": "전쟁 지속 능력 약화로 단기 종전 가능성 증가",
+      "weight": "+0.1%p (1개월내), +0.0%p (2~3개월) (잔존40%)",
+      "direction": "shorten",
+      "detail": "이란의 보복 미사일 타격 능력이 약 90% 감소했습니다.",
       "keywords": [
-        "escalat",
-        "intensif",
-        "expand",
-        "widen"
+        "missile",
+        "ballistic",
+        "launch",
+        "strike capab"
       ],
-      "applied": "실시간",
+      "applied": "2026-03-02",
       "active": true,
-      "decay": 1
+      "decay": 0.4
     },
     {
       "factor": "호르무즈 해협 봉쇄 → 국제 경제 압력",
@@ -164,11 +164,11 @@
       "decay": 1
     },
     {
-      "factor": "협상/외교 뉴스 6건 감지",
+      "factor": "협상/외교 뉴스 8.4건 감지",
       "impact": "외교적 해결 움직임 포착",
-      "weight": "+0.01%p (1개월내), +0.01%p (2~3개월)",
+      "weight": "+0.02%p (1개월내), +0.01%p (2~3개월)",
       "direction": "shorten",
-      "detail": "실시간 뉴스에서 협상 관련 기사 6건이 감지되었습니다.",
+      "detail": "실시간 뉴스에서 협상 관련 기사 8.4건이 감지되었습니다.",
       "keywords": [
         "negotiat",
         "talks",
@@ -290,6 +290,32 @@
       "severity": "high"
     },
     {
+      "factor": "[중대 이벤트] 전선 확대/신규 참전국",
+      "impact": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).",
+      "weight": "-1.3%p (1개월내), -2.0%p (2~3개월), +2.7%p (4~6개월), +2.0%p (7~12개월), +1.3%p (1년초과)",
+      "direction": "lengthen",
+      "detail": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Anwar Ibrahim: Malaysia between the superpowers",
+      "keywords": [
+        "new front",
+        "war spread",
+        "conflict expand",
+        "join",
+        "war",
+        "enter",
+        "war",
+        "open",
+        "front",
+        "declare war",
+        "widen",
+        "conflict",
+        "second front",
+        "new theater"
+      ],
+      "applied": "2026-08-16",
+      "active": true,
+      "severity": "moderate"
+    },
+    {
       "factor": "금값 사상최고 ($4437.3/oz)",
       "impact": "안전자산 수요 폭증 → 글로벌 불안 심화",
       "weight": "+2%p (4-6개월)",
@@ -322,18 +348,42 @@
     }
   ],
   "news_signals": {
-    "ceasefire_mentions": 2,
-    "escalation_mentions": 2,
-    "negotiation_mentions": 6,
+    "ceasefire_mentions": 4.4,
+    "escalation_mentions": 0,
+    "negotiation_mentions": 8.4,
     "casualty_mentions": 12,
-    "peace_mentions": 6,
+    "peace_mentions": 4,
     "regional_spread": 20,
     "total_articles": 50,
     "new_articles": 50,
-    "unique_events": 45,
-    "duplicates_removed": 5
+    "unique_events": 44,
+    "duplicates_removed": 6
   },
   "latest_news": [
+    {
+      "title": "Jared Kushner meets with Hamas ahead of talks with Netanyahu on Gaza",
+      "link": "https://www.theguardian.com/us-news/2026/aug/16/jared-kushner-hamas-gaza-meeting",
+      "pubDate": "Sun, 16 Aug 2026 22:07:32 GMT",
+      "source": "guardian",
+      "snippet": "Trump’s son-in-law and envoy held rare meeting with Hamas chief in Egypt in push for progress on ceasefireDonald Trump’s son-in-law and envoy, Jared Kushner, held a rare meeting with Hamas’s political",
+      "isNew": true,
+      "_sourceCount": 3,
+      "_isDuplicated": true,
+      "_clusterSize": 3,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Anwar Ibrahim: Malaysia between the superpowers",
+      "link": "https://www.aljazeera.com/video/the-india-report/2026/8/16/anwar-ibrahim-malaysia-between-the-superpowers?traffic_source=rss",
+      "pubDate": "Sun, 16 Aug 2026 21:23:03 +0000",
+      "source": "aljazeera",
+      "snippet": "Malaysian PM Anwar Ibrahim joins Sreenivasan Jain on justice, trade, and a middle power holding superpowers to account.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
     {
       "title": "Kushner Meets With Hamas to Advance Trump’s Gaza Plan",
       "link": "https://www.nytimes.com/2026/08/16/world/middleeast/kushner-hamas-talks.html",
@@ -341,10 +391,8 @@
       "source": "nytimes",
       "snippet": "The president’s son-in-law met the Palestinian militant group’s leaders in Egypt, officials said. He will soon see Benjamin Netanyahu, the Israeli leader.",
       "isNew": true,
-      "_sourceCount": 2,
-      "_isDuplicated": true,
-      "_clusterSize": 2,
-      "_isDuplicate": false
+      "_isDuplicate": true,
+      "_sourceCount": 1
     },
     {
       "title": "Israelis harass Palestinian-owned cafe in Iceland, tear down Palestine map",
@@ -389,10 +437,8 @@
       "source": "bbc",
       "snippet": "The rare meeting comes a week after Israel rejected Donald Trump's peace plan for Gaza.",
       "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
+      "_isDuplicate": true,
+      "_sourceCount": 1
     },
     {
       "title": "Erdogan says Israeli attacks on Lebanon are a serious concern for Türkiye",
@@ -413,8 +459,10 @@
       "source": "aljazeera",
       "snippet": "Trump envoy has pushed for disarmament to end any future Hamas role in running Gaza, diplomatic sources tell AFP.",
       "isNew": true,
-      "_isDuplicate": true,
-      "_sourceCount": 1
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
     },
     {
       "title": "Erdogan calls for Strait of Hormuz reopening amid oil disruption",
@@ -487,30 +535,6 @@
       "_isDuplicated": false,
       "_clusterSize": 1,
       "_isDuplicate": false
-    },
-    {
-      "title": "Ben-Gvir calls for nightly killings of Palestinians in Gaza",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/8/16/ben-gvir-calls-for-nightly-killings-of-palestinians-in-gaza?traffic_source=rss",
-      "pubDate": "Sun, 16 Aug 2026 14:35:15 +0000",
-      "source": "aljazeera",
-      "snippet": "Israel’s far-right national security minister Itamar Ben-Gvir has called for nightly killings in Gaza.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "What is Tokyo’s Yasukuni Shrine, linked to Japan’s wartime atrocities?",
-      "link": "https://www.aljazeera.com/news/2026/8/16/what-is-tokyos-yasukuni-shrine-linked-to-japans-wartime-atrocities?traffic_source=rss",
-      "pubDate": "Sun, 16 Aug 2026 14:29:18 +0000",
-      "source": "aljazeera",
-      "snippet": "About 2.5 million people, including Japanese war criminals who fought for the country, are enshrined at Yasukuni.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
     }
   ],
   "news_digest": {
@@ -519,8 +543,8 @@
         "category_id": "military",
         "category_name": "군사 작전",
         "category_icon": "⚔️",
-        "count": 17,
-        "new_count": 17,
+        "count": 16,
+        "new_count": 16,
         "articles": [
           {
             "title": "Erdogan says Hamas acted sincerely, criticises Israeli attacks",
@@ -706,6 +730,17 @@
         "new_count": 6,
         "articles": [
           {
+            "title": "Anwar Ibrahim: Malaysia between the superpowers",
+            "link": "https://www.aljazeera.com/video/the-india-report/2026/8/16/anwar-ibrahim-malaysia-between-the-superpowers?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Sun, 16 Aug 2026 21:23:03 +0000",
+            "snippet": "Malaysian PM Anwar Ibrahim joins Sreenivasan Jain on justice, trade, and a middle power holding superpowers to account.",
+            "isNew": true
+          },
+          {
             "title": "Erdogan calls for Strait of Hormuz reopening amid oil disruption",
             "link": "https://www.aljazeera.com/video/newsfeed/2026/8/16/16-08-clip-erdogan-hormuz-tr?traffic_source=rss",
             "source": "aljazeera",
@@ -759,17 +794,6 @@
             "pubDate": "Tue, 11 Aug 2026 15:10:16 GMT",
             "snippet": "Lawsuit challenges executive order targeting international criminal court for investigating Israeli crimes in PalestineFour prominent US human rights organizations have accused the Trump administratio",
             "isNew": true
-          },
-          {
-            "title": "Iran Insists Strait of Hormuz Will Stay Closed Until Trump Agrees to Demands",
-            "link": "https://www.nytimes.com/2026/08/10/world/middleeast/iran-strait-of-hormuz-us-oman-talks.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Mon, 10 Aug 2026 15:18:29 +0000",
-            "snippet": "A spokesman for the Iranian Foreign Ministry said that talks with Oman on shipping routes in the Strait of Hormuz were “separate” from discussions to fully reopen the waterway.",
-            "isNew": true
           }
         ]
       },
@@ -777,21 +801,9 @@
         "category_id": "politics",
         "category_name": "국내 정치",
         "category_icon": "🏛️",
-        "count": 6,
-        "new_count": 6,
+        "count": 5,
+        "new_count": 5,
         "articles": [
-          {
-            "title": "Kushner Meets With Hamas to Advance Trump’s Gaza Plan",
-            "link": "https://www.nytimes.com/2026/08/16/world/middleeast/kushner-hamas-talks.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes",
-              "aljazeera"
-            ],
-            "pubDate": "Sun, 16 Aug 2026 21:16:17 +0000",
-            "snippet": "The president’s son-in-law met the Palestinian militant group’s leaders in Egypt, officials said. He will soon see Benjamin Netanyahu, the Israeli leader.",
-            "isNew": true
-          },
           {
             "title": "Ben-Gvir calls for nightly killings of Palestinians in Gaza",
             "link": "https://www.aljazeera.com/video/newsfeed/2026/8/16/ben-gvir-calls-for-nightly-killings-of-palestinians-in-gaza?traffic_source=rss",
@@ -855,9 +867,22 @@
         "category_id": "diplomacy",
         "category_name": "외교/협상",
         "category_icon": "🤝",
-        "count": 3,
-        "new_count": 3,
+        "count": 4,
+        "new_count": 4,
         "articles": [
+          {
+            "title": "Jared Kushner meets with Hamas ahead of talks with Netanyahu on Gaza",
+            "link": "https://www.theguardian.com/us-news/2026/aug/16/jared-kushner-hamas-gaza-meeting",
+            "source": "guardian",
+            "sources": [
+              "guardian",
+              "nytimes",
+              "bbc"
+            ],
+            "pubDate": "Sun, 16 Aug 2026 22:07:32 GMT",
+            "snippet": "Trump’s son-in-law and envoy held rare meeting with Hamas chief in Egypt in push for progress on ceasefireDonald Trump’s son-in-law and envoy, Jared Kushner, held a rare meeting with Hamas’s political",
+            "isNew": true
+          },
           {
             "title": "US-Iran MoU is set to expire: What to know",
             "link": "https://www.aljazeera.com/news/2026/8/16/us-iran-mou-is-set-to-expire-what-to-know?traffic_source=rss",
@@ -870,14 +895,14 @@
             "isNew": true
           },
           {
-            "title": "Trump envoy Kushner meets Hamas leader to push Gaza peace plan",
-            "link": "https://www.bbc.co.uk/news/articles/c77gg5vn44yo?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
+            "title": "Kushner meets Hamas leaders in Egypt to push Trump’s Gaza plan",
+            "link": "https://www.aljazeera.com/news/2026/8/16/kushner-meets-hamas-in-egypt-to-push-trumps-gaza-plan?traffic_source=rss",
+            "source": "aljazeera",
             "sources": [
-              "bbc"
+              "aljazeera"
             ],
-            "pubDate": "Sun, 16 Aug 2026 19:58:14 GMT",
-            "snippet": "The rare meeting comes a week after Israel rejected Donald Trump's peace plan for Gaza.",
+            "pubDate": "Sun, 16 Aug 2026 19:23:28 +0000",
+            "snippet": "Trump envoy has pushed for disarmament to end any future Hamas role in running Gaza, diplomatic sources tell AFP.",
             "isNew": true
           },
           {
@@ -970,6 +995,66 @@
     "recent_30min": {
       "total_new": 50,
       "by_category": {
+        "diplomacy": {
+          "count": 5,
+          "titles": [
+            {
+              "title": "Jared Kushner meets with Hamas ahead of talks with Netanyahu on Gaza",
+              "link": "https://www.theguardian.com/us-news/2026/aug/16/jared-kushner-hamas-gaza-meeting",
+              "source": "guardian"
+            },
+            {
+              "title": "US-Iran MoU is set to expire: What to know",
+              "link": "https://www.aljazeera.com/news/2026/8/16/us-iran-mou-is-set-to-expire-what-to-know?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Trump envoy Kushner meets Hamas leader to push Gaza peace plan",
+              "link": "https://www.bbc.co.uk/news/articles/c77gg5vn44yo?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
+            },
+            {
+              "title": "Kushner meets Hamas leaders in Egypt to push Trump’s Gaza plan",
+              "link": "https://www.aljazeera.com/news/2026/8/16/kushner-meets-hamas-in-egypt-to-push-trumps-gaza-plan?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "As Iran War Turns Into Economic Battle, a New U.S. Strategy Recalls Old Ones",
+              "link": "https://www.nytimes.com/2026/08/16/world/middleeast/iran-war-us-trump.html",
+              "source": "nytimes"
+            }
+          ]
+        },
+        "economy": {
+          "count": 6,
+          "titles": [
+            {
+              "title": "Anwar Ibrahim: Malaysia between the superpowers",
+              "link": "https://www.aljazeera.com/video/the-india-report/2026/8/16/anwar-ibrahim-malaysia-between-the-superpowers?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Erdogan calls for Strait of Hormuz reopening amid oil disruption",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/8/16/16-08-clip-erdogan-hormuz-tr?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Trump threatens to declare strait of Hormuz ‘territory of the United States’",
+              "link": "https://www.theguardian.com/us-news/2026/aug/14/trump-threat-strait-hormuz-us-territory",
+              "source": "guardian"
+            },
+            {
+              "title": "Gulf Oil Giants Are Spending Billions to Build Ways Around Strait of Hormuz",
+              "link": "https://www.nytimes.com/2026/08/12/business/iran-war-hormuz-oil.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Oil Prices Touch $90 a Barrel Over U.S.-Iran Stalemate",
+              "link": "https://www.nytimes.com/2026/08/11/business/oil-prices-iran-war-hormuz.html",
+              "source": "nytimes"
+            }
+          ]
+        },
         "politics": {
           "count": 7,
           "titles": [
@@ -1031,7 +1116,7 @@
           ]
         },
         "military": {
-          "count": 18,
+          "count": 17,
           "titles": [
             {
               "title": "Erdogan says Hamas acted sincerely, criticises Israeli attacks",
@@ -1057,61 +1142,6 @@
               "title": "Eleven killed in Israeli strikes on southern Lebanon, authorities say",
               "link": "https://www.bbc.co.uk/news/articles/c4gjygx4gjeo?at_medium=RSS&at_campaign=rss",
               "source": "bbc"
-            }
-          ]
-        },
-        "diplomacy": {
-          "count": 4,
-          "titles": [
-            {
-              "title": "US-Iran MoU is set to expire: What to know",
-              "link": "https://www.aljazeera.com/news/2026/8/16/us-iran-mou-is-set-to-expire-what-to-know?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Trump envoy Kushner meets Hamas leader to push Gaza peace plan",
-              "link": "https://www.bbc.co.uk/news/articles/c77gg5vn44yo?at_medium=RSS&at_campaign=rss",
-              "source": "bbc"
-            },
-            {
-              "title": "Kushner meets Hamas leaders in Egypt to push Trump’s Gaza plan",
-              "link": "https://www.aljazeera.com/news/2026/8/16/kushner-meets-hamas-in-egypt-to-push-trumps-gaza-plan?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "As Iran War Turns Into Economic Battle, a New U.S. Strategy Recalls Old Ones",
-              "link": "https://www.nytimes.com/2026/08/16/world/middleeast/iran-war-us-trump.html",
-              "source": "nytimes"
-            }
-          ]
-        },
-        "economy": {
-          "count": 6,
-          "titles": [
-            {
-              "title": "Erdogan calls for Strait of Hormuz reopening amid oil disruption",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/8/16/16-08-clip-erdogan-hormuz-tr?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Trump threatens to declare strait of Hormuz ‘territory of the United States’",
-              "link": "https://www.theguardian.com/us-news/2026/aug/14/trump-threat-strait-hormuz-us-territory",
-              "source": "guardian"
-            },
-            {
-              "title": "Gulf Oil Giants Are Spending Billions to Build Ways Around Strait of Hormuz",
-              "link": "https://www.nytimes.com/2026/08/12/business/iran-war-hormuz-oil.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Oil Prices Touch $90 a Barrel Over U.S.-Iran Stalemate",
-              "link": "https://www.nytimes.com/2026/08/11/business/oil-prices-iran-war-hormuz.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Human rights groups sue Trump administration over ‘crippling’ ICC sanctions",
-              "link": "https://www.theguardian.com/us-news/2026/aug/11/human-rights-groups-trump-lawsuit-icc-sanctions",
-              "source": "guardian"
             }
           ]
         },
@@ -1250,35 +1280,23 @@
     }
   ],
   "economic_indicators": {
-    "US2Y": {
-      "price": 3.7,
-      "change": -0.01,
-      "changePercent": -0.27,
-      "prev": 3.7
-    },
-    "DXY": {
-      "price": 99.64,
-      "change": -0.32,
-      "changePercent": -0.32,
-      "prev": 99.96
-    },
-    "US10Y": {
-      "price": 4.7,
-      "change": 0.06,
-      "changePercent": 1.29,
-      "prev": 4.64
-    },
     "BRENT": {
       "price": 88.52,
-      "change": 1.45,
-      "changePercent": 1.67,
-      "prev": 87.07
+      "change": 0,
+      "changePercent": 0,
+      "prev": 88.52
+    },
+    "WTI": {
+      "price": 82.4,
+      "change": 0,
+      "changePercent": 0,
+      "prev": 82.4
     },
     "GOLD": {
       "price": 4437.3,
-      "change": 73.7,
-      "changePercent": 1.69,
-      "prev": 4363.6
+      "change": 56.9,
+      "changePercent": 1.3,
+      "prev": 4380.4
     },
     "VIX": {
       "price": 14.25,
@@ -1286,11 +1304,23 @@
       "changePercent": -2.6,
       "prev": 14.63
     },
-    "WTI": {
-      "price": 82.4,
-      "change": 1.15,
-      "changePercent": 1.42,
-      "prev": 81.25
+    "DXY": {
+      "price": 99.67,
+      "change": 0,
+      "changePercent": 0,
+      "prev": 99.67
+    },
+    "US2Y": {
+      "price": 3.7,
+      "change": -0.01,
+      "changePercent": -0.27,
+      "prev": 3.7
+    },
+    "US10Y": {
+      "price": 4.7,
+      "change": 0.06,
+      "changePercent": 1.29,
+      "prev": 4.64
     }
   },
   "critical_events": [
@@ -1309,6 +1339,14 @@
       "confidence": 0.6666666666666666,
       "matchCount": 2,
       "direction": "shorten"
+    },
+    {
+      "id": "conflict_expansion",
+      "name": "전선 확대/신규 참전국",
+      "severity": "moderate",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "lengthen"
     }
   ],
   "feeds_loaded": 7,
