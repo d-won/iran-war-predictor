@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-08-16T09:50:32.423Z",
+  "timestamp": "2026-08-16T10:18:35.134Z",
   "war_day": 169,
   "probabilities": {
-    "1개월 내 (~3월)": 19,
-    "2~3개월 (4~5월)": 39.2,
-    "4~6개월 (6~8월)": 26.3,
-    "7~12개월 (9월~27/2월)": 11.9,
-    "1년 초과": 3.6
+    "1개월 내 (~3월)": 17.4,
+    "2~3개월 (4~5월)": 37.1,
+    "4~6개월 (6~8월)": 27.9,
+    "7~12개월 (9월~27/2월)": 13.1,
+    "1년 초과": 4.5
   },
   "factors": [
     {
@@ -45,9 +45,9 @@
       "decay": 0.4
     },
     {
-      "factor": "확전 뉴스 우세 (확전4:휴전4)",
-      "impact": "전쟁 장기화 가능성 (확전비율 50%)",
-      "weight": "+0.02%p (4~6개월)",
+      "factor": "확전 뉴스 우세 (확전4:휴전2)",
+      "impact": "전쟁 장기화 가능성 (확전비율 67%)",
+      "weight": "+0.03%p (4~6개월)",
       "direction": "lengthen",
       "detail": "언론에서 휴전보다 확전을 더 많이 보도하고 있습니다.",
       "keywords": [
@@ -164,11 +164,11 @@
       "decay": 1
     },
     {
-      "factor": "협상/외교 뉴스 10건 감지",
+      "factor": "협상/외교 뉴스 8건 감지",
       "impact": "외교적 해결 움직임 포착",
       "weight": "+0.02%p (1개월내), +0.01%p (2~3개월)",
       "direction": "shorten",
-      "detail": "실시간 뉴스에서 협상 관련 기사 10건이 감지되었습니다.",
+      "detail": "실시간 뉴스에서 협상 관련 기사 8건이 감지되었습니다.",
       "keywords": [
         "negotiat",
         "talks",
@@ -181,11 +181,11 @@
       "decay": 1
     },
     {
-      "factor": "지역 확산 뉴스 22건 감지",
+      "factor": "지역 확산 뉴스 20건 감지",
       "impact": "주변국 대규모 연루 → 장기화 위험 높음",
       "weight": "+0.02%p (4~6개월), +0.02%p (7~12개월)",
       "direction": "lengthen",
-      "detail": "주변국을 언급하는 기사 22건이 감지되었습니다.",
+      "detail": "주변국을 언급하는 기사 20건이 감지되었습니다.",
       "keywords": [
         "saudi",
         "uae",
@@ -290,6 +290,32 @@
       "severity": "high"
     },
     {
+      "factor": "[중대 이벤트] 전선 확대/신규 참전국",
+      "impact": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).",
+      "weight": "-1.3%p (1개월내), -2.0%p (2~3개월), +2.7%p (4~6개월), +2.0%p (7~12개월), +1.3%p (1년초과)",
+      "direction": "lengthen",
+      "detail": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Mohamed Salah’s Trabzonspor debut ends in draw with Kasimpasa",
+      "keywords": [
+        "new front",
+        "war spread",
+        "conflict expand",
+        "join",
+        "war",
+        "enter",
+        "war",
+        "open",
+        "front",
+        "declare war",
+        "widen",
+        "conflict",
+        "second front",
+        "new theater"
+      ],
+      "applied": "2026-08-16",
+      "active": true,
+      "severity": "moderate"
+    },
+    {
       "factor": "금값 사상최고 ($4437.3/oz)",
       "impact": "안전자산 수요 폭증 → 글로벌 불안 심화",
       "weight": "+2%p (4-6개월)",
@@ -322,18 +348,30 @@
     }
   ],
   "news_signals": {
-    "ceasefire_mentions": 4,
+    "ceasefire_mentions": 2,
     "escalation_mentions": 4,
-    "negotiation_mentions": 10,
-    "casualty_mentions": 16,
+    "negotiation_mentions": 8,
+    "casualty_mentions": 14,
     "peace_mentions": 6,
-    "regional_spread": 22,
+    "regional_spread": 20,
     "total_articles": 50,
     "new_articles": 50,
     "unique_events": 46,
     "duplicates_removed": 4
   },
   "latest_news": [
+    {
+      "title": "Mohamed Salah’s Trabzonspor debut ends in draw with Kasimpasa",
+      "link": "https://www.aljazeera.com/sports/2026/8/16/mohamed-salah-trabzonspor-debut-draw-kasimpasa-turkish-super-lig?traffic_source=rss",
+      "pubDate": "Sun, 16 Aug 2026 09:48:42 +0000",
+      "source": "aljazeera",
+      "snippet": "The Egyptian forward, who joined the Turkish club on a free transfer, came off the bench early in the second half.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
     {
       "title": "As Iran War Turns Into Economic Battle, a New U.S. Strategy Recalls Old Ones",
       "link": "https://www.nytimes.com/2026/08/16/world/middleeast/iran-war-us-trump.html",
@@ -424,18 +462,6 @@
       "pubDate": "Sun, 16 Aug 2026 00:50:12 +0000",
       "source": "aljazeera",
       "snippet": "Syrian army helicopters dropped roses on crowds at Damascus Citadel’s Summer Syria festival. ",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Iran war live: Talks on Hormuz Strait continue; Israel kills 11 in Lebanon",
-      "link": "https://www.aljazeera.com/news/liveblog/2026/8/16/iran-war-live-talks-on-hormuz-strait-continue-israel-kills-11-in-lebanon?traffic_source=rss",
-      "pubDate": "Sun, 16 Aug 2026 00:00:45 +0000",
-      "source": "aljazeera",
-      "snippet": "Israel kills 11 in deadliest attacks on Lebanon since June truce as Iran and Oman continue talks on Hormuz.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -844,54 +870,23 @@
         ]
       },
       {
-        "category_id": "diplomacy",
-        "category_name": "외교/협상",
-        "category_icon": "🤝",
-        "count": 3,
-        "new_count": 3,
+        "category_id": "regional",
+        "category_name": "지역 정세",
+        "category_icon": "🌍",
+        "count": 4,
+        "new_count": 4,
         "articles": [
           {
-            "title": "As Iran War Turns Into Economic Battle, a New U.S. Strategy Recalls Old Ones",
-            "link": "https://www.nytimes.com/2026/08/16/world/middleeast/iran-war-us-trump.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Sun, 16 Aug 2026 09:31:10 +0000",
-            "snippet": "The United States and Iran are poised to blow past a deadline they had set themselves to broker terms on peace and Iran’s nuclear program.",
-            "isNew": true
-          },
-          {
-            "title": "Iran war live: Talks on Hormuz Strait continue; Israel kills 11 in Lebanon",
-            "link": "https://www.aljazeera.com/news/liveblog/2026/8/16/iran-war-live-talks-on-hormuz-strait-continue-israel-kills-11-in-lebanon?traffic_source=rss",
+            "title": "Mohamed Salah’s Trabzonspor debut ends in draw with Kasimpasa",
+            "link": "https://www.aljazeera.com/sports/2026/8/16/mohamed-salah-trabzonspor-debut-draw-kasimpasa-turkish-super-lig?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Sun, 16 Aug 2026 00:00:45 +0000",
-            "snippet": "Israel kills 11 in deadliest attacks on Lebanon since June truce as Iran and Oman continue talks on Hormuz.",
+            "pubDate": "Sun, 16 Aug 2026 09:48:42 +0000",
+            "snippet": "The Egyptian forward, who joined the Turkish club on a free transfer, came off the bench early in the second half.",
             "isNew": true
           },
-          {
-            "title": "Israel Rejects Trump’s 15-Point Plan to Disarm Hamas",
-            "link": "https://www.nytimes.com/2026/08/09/world/middleeast/israel-netanyahu-trump-15-point-plan-hamas-peace-gaza.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Sun, 09 Aug 2026 21:40:38 +0000",
-            "snippet": "President Trump’s Board of Peace announced an agreement last month that aimed at Hamas’s giving up its weapons alongside an Israeli withdrawal from Gaza.",
-            "isNew": true
-          }
-        ]
-      },
-      {
-        "category_id": "regional",
-        "category_name": "지역 정세",
-        "category_icon": "🌍",
-        "count": 3,
-        "new_count": 3,
-        "articles": [
           {
             "title": "Syrian Convicted in Austria of Civil War Abuses Is Detained in Syria",
             "link": "https://www.nytimes.com/2026/08/15/world/middleeast/syria-austria-arrest-civil-war-crimes.html",
@@ -923,6 +918,37 @@
             ],
             "pubDate": "Sun, 09 Aug 2026 15:57:54 +0000",
             "snippet": "After more than a year and a half of negotiations, Syria and Russia have agreed on new parameters of Russia’s military presence in Syria. Syria said it opens the way for a new phase in relations.",
+            "isNew": true
+          }
+        ]
+      },
+      {
+        "category_id": "diplomacy",
+        "category_name": "외교/협상",
+        "category_icon": "🤝",
+        "count": 2,
+        "new_count": 2,
+        "articles": [
+          {
+            "title": "As Iran War Turns Into Economic Battle, a New U.S. Strategy Recalls Old Ones",
+            "link": "https://www.nytimes.com/2026/08/16/world/middleeast/iran-war-us-trump.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Sun, 16 Aug 2026 09:31:10 +0000",
+            "snippet": "The United States and Iran are poised to blow past a deadline they had set themselves to broker terms on peace and Iran’s nuclear program.",
+            "isNew": true
+          },
+          {
+            "title": "Israel Rejects Trump’s 15-Point Plan to Disarm Hamas",
+            "link": "https://www.nytimes.com/2026/08/09/world/middleeast/israel-netanyahu-trump-15-point-plan-hamas-peace-gaza.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Sun, 09 Aug 2026 21:40:38 +0000",
+            "snippet": "President Trump’s Board of Peace announced an agreement last month that aimed at Hamas’s giving up its weapons alongside an Israeli withdrawal from Gaza.",
             "isNew": true
           }
         ]
@@ -962,18 +988,43 @@
     "recent_30min": {
       "total_new": 50,
       "by_category": {
+        "regional": {
+          "count": 5,
+          "titles": [
+            {
+              "title": "Mohamed Salah’s Trabzonspor debut ends in draw with Kasimpasa",
+              "link": "https://www.aljazeera.com/sports/2026/8/16/mohamed-salah-trabzonspor-debut-draw-kasimpasa-turkish-super-lig?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Syrian Convicted in Austria of Civil War Abuses Is Detained in Syria",
+              "link": "https://www.nytimes.com/2026/08/15/world/middleeast/syria-austria-arrest-civil-war-crimes.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Houthis reportedly kill six in first deadly attack since start of Iran war",
+              "link": "https://www.bbc.co.uk/news/articles/ckg9wpmzmlno?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
+            },
+            {
+              "title": "Syria Sentences Former President al-Assad to Death for Crimes Against Humanity",
+              "link": "https://www.nytimes.com/2026/08/11/world/middleeast/syria-bashar-al-assad-death-sentence.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Syria Agrees to Reorganized Russian Military Presence",
+              "link": "https://www.nytimes.com/2026/08/09/world/middleeast/syria-reorganized-russian-military-presence.html",
+              "source": "nytimes"
+            }
+          ]
+        },
         "diplomacy": {
-          "count": 3,
+          "count": 2,
           "titles": [
             {
               "title": "As Iran War Turns Into Economic Battle, a New U.S. Strategy Recalls Old Ones",
               "link": "https://www.nytimes.com/2026/08/16/world/middleeast/iran-war-us-trump.html",
               "source": "nytimes"
-            },
-            {
-              "title": "Iran war live: Talks on Hormuz Strait continue; Israel kills 11 in Lebanon",
-              "link": "https://www.aljazeera.com/news/liveblog/2026/8/16/iran-war-live-talks-on-hormuz-strait-continue-israel-kills-11-in-lebanon?traffic_source=rss",
-              "source": "aljazeera"
             },
             {
               "title": "Israel Rejects Trump’s 15-Point Plan to Disarm Hamas",
@@ -1089,31 +1140,6 @@
               "title": "Activists try to deliver aid to Palestinians in homes besieged by Israeli settlers",
               "link": "https://www.bbc.co.uk/news/articles/c1w1ylw0p3no?at_medium=RSS&at_campaign=rss",
               "source": "bbc"
-            }
-          ]
-        },
-        "regional": {
-          "count": 4,
-          "titles": [
-            {
-              "title": "Syrian Convicted in Austria of Civil War Abuses Is Detained in Syria",
-              "link": "https://www.nytimes.com/2026/08/15/world/middleeast/syria-austria-arrest-civil-war-crimes.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Houthis reportedly kill six in first deadly attack since start of Iran war",
-              "link": "https://www.bbc.co.uk/news/articles/ckg9wpmzmlno?at_medium=RSS&at_campaign=rss",
-              "source": "bbc"
-            },
-            {
-              "title": "Syria Sentences Former President al-Assad to Death for Crimes Against Humanity",
-              "link": "https://www.nytimes.com/2026/08/11/world/middleeast/syria-bashar-al-assad-death-sentence.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Syria Agrees to Reorganized Russian Military Presence",
-              "link": "https://www.nytimes.com/2026/08/09/world/middleeast/syria-reorganized-russian-military-presence.html",
-              "source": "nytimes"
             }
           ]
         },
@@ -1237,29 +1263,11 @@
     }
   ],
   "economic_indicators": {
-    "VIX": {
-      "price": 14.25,
-      "change": -0.38,
-      "changePercent": -2.6,
-      "prev": 14.63
-    },
-    "US10Y": {
-      "price": 4.7,
-      "change": 0.06,
-      "changePercent": 1.29,
-      "prev": 4.64
-    },
-    "US2Y": {
-      "price": 3.7,
-      "change": -0.01,
-      "changePercent": -0.27,
-      "prev": 3.7
-    },
-    "BRENT": {
-      "price": 88.52,
-      "change": 1.45,
-      "changePercent": 1.67,
-      "prev": 87.07
+    "WTI": {
+      "price": 82.4,
+      "change": 1.15,
+      "changePercent": 1.42,
+      "prev": 81.25
     },
     "DXY": {
       "price": 99.64,
@@ -1267,17 +1275,35 @@
       "changePercent": -0.32,
       "prev": 99.96
     },
-    "WTI": {
-      "price": 82.4,
-      "change": 1.15,
-      "changePercent": 1.42,
-      "prev": 81.25
-    },
     "GOLD": {
       "price": 4437.3,
       "change": 73.7,
       "changePercent": 1.69,
       "prev": 4363.6
+    },
+    "US10Y": {
+      "price": 4.7,
+      "change": 0.06,
+      "changePercent": 1.29,
+      "prev": 4.64
+    },
+    "BRENT": {
+      "price": 88.52,
+      "change": 1.45,
+      "changePercent": 1.67,
+      "prev": 87.07
+    },
+    "US2Y": {
+      "price": 3.7,
+      "change": -0.01,
+      "changePercent": -0.27,
+      "prev": 3.7
+    },
+    "VIX": {
+      "price": 14.25,
+      "change": -0.38,
+      "changePercent": -2.6,
+      "prev": 14.63
     }
   },
   "critical_events": [
@@ -1296,6 +1322,14 @@
       "confidence": 1,
       "matchCount": 4,
       "direction": "shorten"
+    },
+    {
+      "id": "conflict_expansion",
+      "name": "전선 확대/신규 참전국",
+      "severity": "moderate",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "lengthen"
     }
   ],
   "feeds_loaded": 7,
