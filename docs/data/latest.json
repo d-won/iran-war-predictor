@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-08-20T18:32:43.371Z",
+  "timestamp": "2026-08-20T19:27:09.427Z",
   "war_day": 173,
   "probabilities": {
-    "1개월 내 (~3월)": 20,
-    "2~3개월 (4~5월)": 39.3,
-    "4~6개월 (6~8월)": 25.2,
-    "7~12개월 (9월~27/2월)": 11.7,
-    "1년 초과": 3.8
+    "1개월 내 (~3월)": 23.1,
+    "2~3개월 (4~5월)": 40.9,
+    "4~6개월 (6~8월)": 25.1,
+    "7~12개월 (9월~27/2월)": 9,
+    "1년 초과": 1.9
   },
   "factors": [
     {
@@ -45,20 +45,20 @@
       "decay": 0.4
     },
     {
-      "factor": "이란 미사일 능력 급감 (휴전8.4:확전8)",
-      "impact": "전쟁 지속 능력 약화로 단기 종전 가능성 증가",
-      "weight": "+0.0%p (1개월내), +0.0%p (2~3개월) (잔존40%)",
-      "direction": "shorten",
-      "detail": "이란의 보복 미사일 타격 능력이 약 90% 감소했습니다.",
+      "factor": "확전 뉴스 우세 (확전10:휴전8.4)",
+      "impact": "전쟁 장기화 가능성 (확전비율 54%)",
+      "weight": "+0.02%p (4~6개월)",
+      "direction": "lengthen",
+      "detail": "언론에서 휴전보다 확전을 더 많이 보도하고 있습니다.",
       "keywords": [
-        "missile",
-        "ballistic",
-        "launch",
-        "strike capab"
+        "escalat",
+        "intensif",
+        "expand",
+        "widen"
       ],
-      "applied": "2026-03-02",
+      "applied": "실시간",
       "active": true,
-      "decay": 0.4
+      "decay": 1
     },
     {
       "factor": "호르무즈 해협 봉쇄 → 국제 경제 압력",
@@ -181,11 +181,11 @@
       "decay": 1
     },
     {
-      "factor": "지역 확산 뉴스 14건 감지",
+      "factor": "지역 확산 뉴스 12건 감지",
       "impact": "주변국 연루 확대로 장기화 위험",
       "weight": "+0.01%p (4~6개월), +0.01%p (7~12개월)",
       "direction": "lengthen",
-      "detail": "주변국을 언급하는 기사 14건이 감지되었습니다.",
+      "detail": "주변국을 언급하는 기사 12건이 감지되었습니다.",
       "keywords": [
         "saudi",
         "uae",
@@ -232,6 +232,34 @@
       "applied": "2026-03-03",
       "active": true,
       "decay": 0.3
+    },
+    {
+      "factor": "[중대 이벤트] 교전국 정권 붕괴/쿠데타",
+      "impact": "교전국 정권 붕괴 또는 쿠데타. 이라크(2003): 바그다드 함락 후 3주 내 주요 전투 종료. 리비아(2011): 트리폴리 함락 후 2개월 내 종전.",
+      "weight": "+6.7%p (1개월내), +5.3%p (2~3개월), +1.3%p (4~6개월), -3.3%p (7~12개월), -2.7%p (1년초과)",
+      "direction": "shorten",
+      "detail": "교전국 정권 붕괴 또는 쿠데타. 이라크(2003): 바그다드 함락 후 3주 내 주요 전투 종료. 리비아(2011): 트리폴리 함락 후 2개월 내 종전.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: US says sanctions will 'squash' Iran's economy and 'collapse' its regime",
+      "keywords": [
+        "regime",
+        "collaps",
+        "regime",
+        "fall",
+        "government",
+        "fall",
+        "capital",
+        "fall",
+        "capital",
+        "captur",
+        "coup",
+        "detat",
+        "government",
+        "overthrow",
+        "regime",
+        "change"
+      ],
+      "applied": "2026-08-20",
+      "active": true,
+      "severity": "critical"
     },
     {
       "factor": "[중대 이벤트] 외교적 돌파구/강대국 중재",
@@ -296,11 +324,11 @@
       "severity": "high"
     },
     {
-      "factor": "금값 사상최고 ($4573.9/oz)",
+      "factor": "금값 사상최고 ($4584.6/oz)",
       "impact": "안전자산 수요 폭증 → 글로벌 불안 심화",
       "weight": "+2%p (4-6개월)",
       "direction": "lengthen",
-      "detail": "금 가격이 온스당 $4573.9로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
+      "detail": "금 가격이 온스당 $4584.6로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
       "keywords": [
         "gold",
         "safe haven",
@@ -329,17 +357,77 @@
   ],
   "news_signals": {
     "ceasefire_mentions": 8.4,
-    "escalation_mentions": 8,
+    "escalation_mentions": 10,
     "negotiation_mentions": 10.399999999999999,
-    "casualty_mentions": 14.2,
+    "casualty_mentions": 16.2,
     "peace_mentions": 12.2,
-    "regional_spread": 14,
+    "regional_spread": 12,
     "total_articles": 50,
     "new_articles": 50,
     "unique_events": 47,
     "duplicates_removed": 3
   },
   "latest_news": [
+    {
+      "title": "US says sanctions will 'squash' Iran's economy and 'collapse' its regime",
+      "link": "https://www.bbc.co.uk/news/articles/c87n90eg0p2o?at_medium=RSS&at_campaign=rss",
+      "pubDate": "Thu, 20 Aug 2026 19:19:20 GMT",
+      "source": "bbc",
+      "snippet": "The US treasury secretary says allies will need to decide whether they \"are with us or against us\".",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Israel admits its soldiers fired at car in which Hind Rajab was killed",
+      "link": "https://www.theguardian.com/world/2026/aug/19/israel-admits-it-soldiers-fired-at-car-in-which-hind-rajab-was-killed",
+      "pubDate": "Thu, 20 Aug 2026 19:15:09 GMT",
+      "source": "guardian",
+      "snippet": "Military orders criminal investigation into deaths of five-year-old and six family members in Gaza in 2024The Israeli military admitted on Wednesday its troops had opened fire on a car carrying five-y",
+      "isNew": true,
+      "_sourceCount": 2,
+      "_isDuplicated": true,
+      "_clusterSize": 2,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Thai schools hold shooter drills after deadly attack",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/8/20/thai-schools-hold-shooter-drills-after-deadly-attack?traffic_source=rss",
+      "pubDate": "Thu, 20 Aug 2026 18:59:08 +0000",
+      "source": "aljazeera",
+      "snippet": "Schools across Thailand are carrying out active shooter drills to save lives and spread awareness.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "UK, France, Germany, Italy and Canada condemn Israel's West Bank settlement project",
+      "link": "https://www.bbc.co.uk/news/articles/c998evlgz8ko?at_medium=RSS&at_campaign=rss",
+      "pubDate": "Thu, 20 Aug 2026 18:55:14 GMT",
+      "source": "bbc",
+      "snippet": "European countries and Canada pile on pressure over Israel's plans to expand settlements in a strategically vital part of the occupied West Bank.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "FBI raids ex-US Representative Swalwell’s home amid sexual misconduct probe",
+      "link": "https://www.aljazeera.com/news/2026/8/20/fbi-raids-ex-us-representative-swalwells-home-amid-sexual-misconduct-probe?traffic_source=rss",
+      "pubDate": "Thu, 20 Aug 2026 18:39:03 +0000",
+      "source": "aljazeera",
+      "snippet": "Swalwell, a vocal Trump critic, resigned from Congress and dropped out of California governor&#039;s race amid allegations.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
     {
       "title": "First group of US deportees, out of an expected 1,200, arrive in Liberia",
       "link": "https://www.aljazeera.com/news/2026/8/20/first-group-of-us-deportees-out-of-an-expected-1200-arrive-in-liberia?traffic_source=rss",
@@ -437,47 +525,11 @@
       "_isDuplicate": false
     },
     {
-      "title": "USS Washington arrives in Arabian Sea after aircraft carrier outcry",
-      "link": "https://www.aljazeera.com/news/2026/8/20/uss-washington-arrives-in-middle-east-after-aircraft-carrier-outcry?traffic_source=rss",
-      "pubDate": "Thu, 20 Aug 2026 14:36:35 +0000",
-      "source": "aljazeera",
-      "snippet": "Vessel expected to replace USS Lincoln after reports of dire conditions on board raised questions over US war planning.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
       "title": "Trump’s Economic Threat Puts Focus on Iran’s Trading Partners",
       "link": "https://www.nytimes.com/2026/08/20/world/middleeast/iran-trade-trump-threat-china.html",
       "pubDate": "Thu, 20 Aug 2026 14:34:46 +0000",
       "source": "nytimes",
       "snippet": "President Trump appeared to suggest that the United States would impose economic penalties on countries that do business with Iran, though he did not specify what actions he would take.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Trump’s war on Stars and Stripes: Why has military newspaper chief quit?",
-      "link": "https://www.aljazeera.com/news/2026/8/20/trumps-war-on-stars-and-stripes-why-has-military-newspaper-chief-quit?traffic_source=rss",
-      "pubDate": "Thu, 20 Aug 2026 14:10:01 +0000",
-      "source": "aljazeera",
-      "snippet": "Longtime Stars and Stripes publisher Max D Lederer Jr announced his resignation over clashes with the Pentagon.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Ex-defence chief’s call for wartime election raises pressure on Zelenskyy",
-      "link": "https://www.aljazeera.com/news/2026/8/20/ukraines-ex-defence-chief-calls-for-presidential-vote?traffic_source=rss",
-      "pubDate": "Thu, 20 Aug 2026 13:32:55 +0000",
-      "source": "aljazeera",
-      "snippet": "Fedorov, a popular figure, is challenging Zelenskyy but holding a vote under Russia&#039;s bombs is near impossible.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -495,30 +547,6 @@
       "_isDuplicated": false,
       "_clusterSize": 1,
       "_isDuplicate": false
-    },
-    {
-      "title": "Israel’s Ben-Gvir posts video of gallows site for hanging Palestinians",
-      "link": "https://www.theguardian.com/world/2026/aug/20/israel-ben-gvir-video-gallows-site-hanging-palestinians",
-      "pubDate": "Thu, 20 Aug 2026 12:34:11 GMT",
-      "source": "guardian",
-      "snippet": "Far-right minister says those convicted in military courts of terror offences will be executed after passing of death penalty law that does not apply to Jewish extremistsIsrael’s far-right national se",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Israel opens up bids for highly sensitive West Bank settlement project",
-      "link": "https://www.bbc.co.uk/news/articles/cly50gn1e54o?at_medium=RSS&at_campaign=rss",
-      "pubDate": "Thu, 20 Aug 2026 10:30:52 GMT",
-      "source": "bbc",
-      "snippet": "The UK's foreign secretary condemned the move as \"an unacceptable and destructive act\".",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
     }
   ],
   "news_digest": {
@@ -527,9 +555,32 @@
         "category_id": "military",
         "category_name": "군사 작전",
         "category_icon": "⚔️",
-        "count": 16,
-        "new_count": 16,
+        "count": 15,
+        "new_count": 15,
         "articles": [
+          {
+            "title": "Israel admits its soldiers fired at car in which Hind Rajab was killed",
+            "link": "https://www.theguardian.com/world/2026/aug/19/israel-admits-it-soldiers-fired-at-car-in-which-hind-rajab-was-killed",
+            "source": "guardian",
+            "sources": [
+              "guardian",
+              "bbc"
+            ],
+            "pubDate": "Thu, 20 Aug 2026 19:15:09 GMT",
+            "snippet": "Military orders criminal investigation into deaths of five-year-old and six family members in Gaza in 2024The Israeli military admitted on Wednesday its troops had opened fire on a car carrying five-y",
+            "isNew": true
+          },
+          {
+            "title": "Thai schools hold shooter drills after deadly attack",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/8/20/thai-schools-hold-shooter-drills-after-deadly-attack?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Thu, 20 Aug 2026 18:59:08 +0000",
+            "snippet": "Schools across Thailand are carrying out active shooter drills to save lives and spread awareness.",
+            "isNew": true
+          },
           {
             "title": "North Korea fires ballistic missiles as US-South Korea drills near end",
             "link": "https://www.aljazeera.com/news/2026/8/20/north-korea-launches-ballistic-missiles-as-us-south-korea-drills-end?traffic_source=rss",
@@ -564,17 +615,6 @@
             "isNew": true
           },
           {
-            "title": "Trump’s war on Stars and Stripes: Why has military newspaper chief quit?",
-            "link": "https://www.aljazeera.com/news/2026/8/20/trumps-war-on-stars-and-stripes-why-has-military-newspaper-chief-quit?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Thu, 20 Aug 2026 14:10:01 +0000",
-            "snippet": "Longtime Stars and Stripes publisher Max D Lederer Jr announced his resignation over clashes with the Pentagon.",
-            "isNew": true
-          },
-          {
             "title": "Israel’s Ben-Gvir posts video of gallows site for hanging Palestinians",
             "link": "https://www.theguardian.com/world/2026/aug/20/israel-ben-gvir-video-gallows-site-hanging-palestinians",
             "source": "guardian",
@@ -594,18 +634,6 @@
             ],
             "pubDate": "Thu, 20 Aug 2026 04:53:44 GMT",
             "snippet": "US president pivots towards ‘crushing’ economic operation against Iran and its trading partners as military strikes fail to bring Tehran to the tableDonald Trump has announced a new campaign to isolat",
-            "isNew": true
-          },
-          {
-            "title": "Israel admits its soldiers fired at car in which Hind Rajab was killed",
-            "link": "https://www.theguardian.com/world/2026/aug/19/israel-admits-it-soldiers-fired-at-car-in-which-hind-rajab-was-killed",
-            "source": "guardian",
-            "sources": [
-              "guardian",
-              "bbc"
-            ],
-            "pubDate": "Wed, 19 Aug 2026 17:21:14 GMT",
-            "snippet": "Military orders criminal investigation into deaths of five-year-old and six family members in Gaza in 2024The Israeli military admitted on Wednesday its troops had opened fire on a car carrying five-y",
             "isNew": true
           },
           {
@@ -651,6 +679,17 @@
         "new_count": 8,
         "articles": [
           {
+            "title": "FBI raids ex-US Representative Swalwell’s home amid sexual misconduct probe",
+            "link": "https://www.aljazeera.com/news/2026/8/20/fbi-raids-ex-us-representative-swalwells-home-amid-sexual-misconduct-probe?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Thu, 20 Aug 2026 18:39:03 +0000",
+            "snippet": "Swalwell, a vocal Trump critic, resigned from Congress and dropped out of California governor&#039;s race amid allegations.",
+            "isNew": true
+          },
+          {
             "title": "First group of US deportees, out of an expected 1,200, arrive in Liberia",
             "link": "https://www.aljazeera.com/news/2026/8/20/first-group-of-us-deportees-out-of-an-expected-1200-arrive-in-liberia?traffic_source=rss",
             "source": "aljazeera",
@@ -681,17 +720,6 @@
             ],
             "pubDate": "Thu, 20 Aug 2026 14:34:46 +0000",
             "snippet": "President Trump appeared to suggest that the United States would impose economic penalties on countries that do business with Iran, though he did not specify what actions he would take.",
-            "isNew": true
-          },
-          {
-            "title": "Ex-defence chief’s call for wartime election raises pressure on Zelenskyy",
-            "link": "https://www.aljazeera.com/news/2026/8/20/ukraines-ex-defence-chief-calls-for-presidential-vote?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Thu, 20 Aug 2026 13:32:55 +0000",
-            "snippet": "Fedorov, a popular figure, is challenging Zelenskyy but holding a vote under Russia&#039;s bombs is near impossible.",
             "isNew": true
           },
           {
@@ -832,9 +860,20 @@
         "category_id": "economy",
         "category_name": "경제 영향",
         "category_icon": "📊",
-        "count": 6,
-        "new_count": 6,
+        "count": 7,
+        "new_count": 7,
         "articles": [
+          {
+            "title": "US says sanctions will 'squash' Iran's economy and 'collapse' its regime",
+            "link": "https://www.bbc.co.uk/news/articles/c87n90eg0p2o?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc"
+            ],
+            "pubDate": "Thu, 20 Aug 2026 19:19:20 GMT",
+            "snippet": "The US treasury secretary says allies will need to decide whether they \"are with us or against us\".",
+            "isNew": true
+          },
           {
             "title": "An open letter to Iran’s political prisoners, trapped ‘between two blades of a scissors’",
             "link": "https://www.theguardian.com/commentisfree/ng-interactive/2026/aug/20/iran-political-prisoners",
@@ -1006,14 +1045,14 @@
         "new_count": 3,
         "articles": [
           {
-            "title": "USS Washington arrives in Arabian Sea after aircraft carrier outcry",
-            "link": "https://www.aljazeera.com/news/2026/8/20/uss-washington-arrives-in-middle-east-after-aircraft-carrier-outcry?traffic_source=rss",
-            "source": "aljazeera",
+            "title": "UK, France, Germany, Italy and Canada condemn Israel's West Bank settlement project",
+            "link": "https://www.bbc.co.uk/news/articles/c998evlgz8ko?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
             "sources": [
-              "aljazeera"
+              "bbc"
             ],
-            "pubDate": "Thu, 20 Aug 2026 14:36:35 +0000",
-            "snippet": "Vessel expected to replace USS Lincoln after reports of dire conditions on board raised questions over US war planning.",
+            "pubDate": "Thu, 20 Aug 2026 18:55:14 GMT",
+            "snippet": "European countries and Canada pile on pressure over Israel's plans to expand settlements in a strategically vital part of the occupied West Bank.",
             "isNew": true
           },
           {
@@ -1044,9 +1083,94 @@
     "recent_30min": {
       "total_new": 50,
       "by_category": {
+        "economy": {
+          "count": 7,
+          "titles": [
+            {
+              "title": "US says sanctions will 'squash' Iran's economy and 'collapse' its regime",
+              "link": "https://www.bbc.co.uk/news/articles/c87n90eg0p2o?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
+            },
+            {
+              "title": "An open letter to Iran’s political prisoners, trapped ‘between two blades of a scissors’",
+              "link": "https://www.theguardian.com/commentisfree/ng-interactive/2026/aug/20/iran-political-prisoners",
+              "source": "guardian"
+            },
+            {
+              "title": "U.A.E. Announces Halt to Trade With Iran Amid Trump’s Push To Isolate Tehran",
+              "link": "https://www.nytimes.com/2026/08/19/world/middleeast/uae-cuts-trade-ties-iran-missiles.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "What to Know About Iran’s Economic Ties With Gulf Countries",
+              "link": "https://www.nytimes.com/2026/08/19/world/middleeast/iran-emirates-gulf-economic-ties.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "How the U.S. Navy Is Helping Get Oil Through the Strait of Hormuz",
+              "link": "https://www.nytimes.com/2026/08/19/business/iran-hormuz-oman-us-navy.html",
+              "source": "nytimes"
+            }
+          ]
+        },
+        "military": {
+          "count": 16,
+          "titles": [
+            {
+              "title": "Israel admits its soldiers fired at car in which Hind Rajab was killed",
+              "link": "https://www.theguardian.com/world/2026/aug/19/israel-admits-it-soldiers-fired-at-car-in-which-hind-rajab-was-killed",
+              "source": "guardian"
+            },
+            {
+              "title": "Thai schools hold shooter drills after deadly attack",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/8/20/thai-schools-hold-shooter-drills-after-deadly-attack?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "North Korea fires ballistic missiles as US-South Korea drills near end",
+              "link": "https://www.aljazeera.com/news/2026/8/20/north-korea-launches-ballistic-missiles-as-us-south-korea-drills-end?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Deadly Russian missile barrage hits Kyiv in hours-long overnight attack",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/8/20/deadly-russian-missile-barrage-hits-kyiv-in-hours-long-overnight-attack?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Gunmen seize tanker off Yemen amid resurgence of Somali piracy",
+              "link": "https://www.aljazeera.com/news/2026/8/20/gunmen-seize-tanker-off-yemen-amid-resurgence-of-somali-piracy?traffic_source=rss",
+              "source": "aljazeera"
+            }
+          ]
+        },
+        "other": {
+          "count": 3,
+          "titles": [
+            {
+              "title": "UK, France, Germany, Italy and Canada condemn Israel's West Bank settlement project",
+              "link": "https://www.bbc.co.uk/news/articles/c998evlgz8ko?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
+            },
+            {
+              "title": "Israel opens up bids for highly sensitive West Bank settlement project",
+              "link": "https://www.bbc.co.uk/news/articles/cly50gn1e54o?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
+            },
+            {
+              "title": "Why Your Next Long-Haul Layover May Be in Seoul, Not Dubai",
+              "link": "https://www.nytimes.com/2026/08/20/world/asia/iran-war-asia-airports-dubai.html",
+              "source": "nytimes"
+            }
+          ]
+        },
         "politics": {
           "count": 9,
           "titles": [
+            {
+              "title": "FBI raids ex-US Representative Swalwell’s home amid sexual misconduct probe",
+              "link": "https://www.aljazeera.com/news/2026/8/20/fbi-raids-ex-us-representative-swalwells-home-amid-sexual-misconduct-probe?traffic_source=rss",
+              "source": "aljazeera"
+            },
             {
               "title": "First group of US deportees, out of an expected 1,200, arrive in Liberia",
               "link": "https://www.aljazeera.com/news/2026/8/20/first-group-of-us-deportees-out-of-an-expected-1200-arrive-in-liberia?traffic_source=rss",
@@ -1061,11 +1185,6 @@
               "title": "Trump’s Economic Threat Puts Focus on Iran’s Trading Partners",
               "link": "https://www.nytimes.com/2026/08/20/world/middleeast/iran-trade-trump-threat-china.html",
               "source": "nytimes"
-            },
-            {
-              "title": "Ex-defence chief’s call for wartime election raises pressure on Zelenskyy",
-              "link": "https://www.aljazeera.com/news/2026/8/20/ukraines-ex-defence-chief-calls-for-presidential-vote?traffic_source=rss",
-              "source": "aljazeera"
             },
             {
               "title": "Kushner Meets Netanyahu in Israel in Effort to Break Logjam Over Gaza",
@@ -1101,36 +1220,6 @@
               "title": "Kushner hails 'very good' meeting with Netanyahu after Hamas talks on Gaza peace plan",
               "link": "https://www.bbc.co.uk/news/articles/c77gg5vn44yo?at_medium=RSS&at_campaign=rss",
               "source": "bbc"
-            }
-          ]
-        },
-        "military": {
-          "count": 17,
-          "titles": [
-            {
-              "title": "North Korea fires ballistic missiles as US-South Korea drills near end",
-              "link": "https://www.aljazeera.com/news/2026/8/20/north-korea-launches-ballistic-missiles-as-us-south-korea-drills-end?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Deadly Russian missile barrage hits Kyiv in hours-long overnight attack",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/8/20/deadly-russian-missile-barrage-hits-kyiv-in-hours-long-overnight-attack?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Gunmen seize tanker off Yemen amid resurgence of Somali piracy",
-              "link": "https://www.aljazeera.com/news/2026/8/20/gunmen-seize-tanker-off-yemen-amid-resurgence-of-somali-piracy?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Trump’s war on Stars and Stripes: Why has military newspaper chief quit?",
-              "link": "https://www.aljazeera.com/news/2026/8/20/trumps-war-on-stars-and-stripes-why-has-military-newspaper-chief-quit?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Israel’s Ben-Gvir posts video of gallows site for hanging Palestinians",
-              "link": "https://www.theguardian.com/world/2026/aug/20/israel-ben-gvir-video-gallows-site-hanging-palestinians",
-              "source": "guardian"
             }
           ]
         },
@@ -1176,56 +1265,6 @@
               "title": "Iraq’s impossible predicament: why the country is trapped between Iran and the US – podcast",
               "link": "https://www.theguardian.com/news/audio/2026/aug/17/iraqs-impossible-predicament-why-the-country-is-trapped-between-iran-and-the-us-podcast",
               "source": "guardian"
-            }
-          ]
-        },
-        "other": {
-          "count": 3,
-          "titles": [
-            {
-              "title": "USS Washington arrives in Arabian Sea after aircraft carrier outcry",
-              "link": "https://www.aljazeera.com/news/2026/8/20/uss-washington-arrives-in-middle-east-after-aircraft-carrier-outcry?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Israel opens up bids for highly sensitive West Bank settlement project",
-              "link": "https://www.bbc.co.uk/news/articles/cly50gn1e54o?at_medium=RSS&at_campaign=rss",
-              "source": "bbc"
-            },
-            {
-              "title": "Why Your Next Long-Haul Layover May Be in Seoul, Not Dubai",
-              "link": "https://www.nytimes.com/2026/08/20/world/asia/iran-war-asia-airports-dubai.html",
-              "source": "nytimes"
-            }
-          ]
-        },
-        "economy": {
-          "count": 6,
-          "titles": [
-            {
-              "title": "An open letter to Iran’s political prisoners, trapped ‘between two blades of a scissors’",
-              "link": "https://www.theguardian.com/commentisfree/ng-interactive/2026/aug/20/iran-political-prisoners",
-              "source": "guardian"
-            },
-            {
-              "title": "U.A.E. Announces Halt to Trade With Iran Amid Trump’s Push To Isolate Tehran",
-              "link": "https://www.nytimes.com/2026/08/19/world/middleeast/uae-cuts-trade-ties-iran-missiles.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "What to Know About Iran’s Economic Ties With Gulf Countries",
-              "link": "https://www.nytimes.com/2026/08/19/world/middleeast/iran-emirates-gulf-economic-ties.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "How the U.S. Navy Is Helping Get Oil Through the Strait of Hormuz",
-              "link": "https://www.nytimes.com/2026/08/19/business/iran-hormuz-oman-us-navy.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Two Ships Transiting Strait of Hormuz Are Attacked as Oil Prices Rise",
-              "link": "https://www.nytimes.com/2026/08/18/business/strait-of-hormuz-ship-attack.html",
-              "source": "nytimes"
             }
           ]
         }
@@ -1319,50 +1358,58 @@
     }
   ],
   "economic_indicators": {
-    "BRENT": {
-      "price": 93.47,
-      "change": 1.85,
-      "changePercent": 2.02,
-      "prev": 91.62
-    },
-    "WTI": {
-      "price": 86.52,
-      "change": 0.69,
-      "changePercent": 0.8,
-      "prev": 85.83
-    },
-    "VIX": {
-      "price": 16.03,
-      "change": 1.14,
-      "changePercent": 7.66,
-      "prev": 14.89
-    },
-    "DXY": {
-      "price": 98.91,
-      "change": 0.08,
-      "changePercent": 0.08,
-      "prev": 98.83
-    },
-    "GOLD": {
-      "price": 4573.9,
-      "change": 84.5,
-      "changePercent": 1.88,
-      "prev": 4489.4
-    },
     "US2Y": {
       "price": 3.7,
       "change": 0,
       "changePercent": 0,
       "prev": 3.7
     },
+    "DXY": {
+      "price": 98.89,
+      "change": 0.06,
+      "changePercent": 0.06,
+      "prev": 98.83
+    },
+    "VIX": {
+      "price": 16.12,
+      "change": 1.23,
+      "changePercent": 8.26,
+      "prev": 14.89
+    },
+    "WTI": {
+      "price": 86.73,
+      "change": 0.9,
+      "changePercent": 1.05,
+      "prev": 85.83
+    },
+    "BRENT": {
+      "price": 93.63,
+      "change": 2.01,
+      "changePercent": 2.19,
+      "prev": 91.62
+    },
     "US10Y": {
       "price": 4.7,
-      "change": 0.05,
-      "changePercent": 1.07,
+      "change": 0.04,
+      "changePercent": 0.86,
       "prev": 4.65
+    },
+    "GOLD": {
+      "price": 4584.6,
+      "change": 95.2,
+      "changePercent": 2.12,
+      "prev": 4489.4
     }
   },
   "critical_events": [
+    {
+      "id": "regime_collapse",
+      "name": "교전국 정권 붕괴/쿠데타",
+      "severity": "critical",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "shorten"
+    },
     {
       "id": "diplomatic_breakthrough",
       "name": "외교적 돌파구/강대국 중재",
