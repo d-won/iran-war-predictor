@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-08-27T00:24:35.898Z",
+  "timestamp": "2026-08-27T10:05:49.087Z",
   "war_day": 180,
   "probabilities": {
-    "1개월 내 (~3월)": 17.8,
-    "2~3개월 (4~5월)": 36.6,
-    "4~6개월 (6~8월)": 27.5,
-    "7~12개월 (9월~27/2월)": 13.7,
-    "1년 초과": 4.4
+    "1개월 내 (~3월)": 17.1,
+    "2~3개월 (4~5월)": 36,
+    "4~6개월 (6~8월)": 28.7,
+    "7~12개월 (9월~27/2월)": 13.6,
+    "1년 초과": 4.6
   },
   "factors": [
     {
@@ -45,8 +45,8 @@
       "decay": 0.4
     },
     {
-      "factor": "확전 뉴스 우세 (확전12:휴전4)",
-      "impact": "전쟁 장기화 가능성 (확전비율 75%)",
+      "factor": "확전 뉴스 우세 (확전10:휴전2)",
+      "impact": "전쟁 장기화 가능성 (확전비율 83%)",
       "weight": "+0.03%p (4~6개월)",
       "direction": "lengthen",
       "detail": "언론에서 휴전보다 확전을 더 많이 보도하고 있습니다.",
@@ -181,11 +181,11 @@
       "decay": 1
     },
     {
-      "factor": "지역 확산 뉴스 8건 감지",
+      "factor": "지역 확산 뉴스 14건 감지",
       "impact": "주변국 연루 확대로 장기화 위험",
       "weight": "+0.01%p (4~6개월), +0.01%p (7~12개월)",
       "direction": "lengthen",
-      "detail": "주변국을 언급하는 기사 8건이 감지되었습니다.",
+      "detail": "주변국을 언급하는 기사 14건이 감지되었습니다.",
       "keywords": [
         "saudi",
         "uae",
@@ -234,11 +234,41 @@
       "decay": 0.3
     },
     {
+      "factor": "[중대 이벤트] 외교적 돌파구/강대국 중재",
+      "impact": "주요 외교적 돌파구 또는 강대국 중재. 데이턴(1995): 미국 중재 → 3주만에 합의. UN 안보리 결의는 평균 2~4주 내 휴전 이행.",
+      "weight": "+2.0%p (1개월내), +4.0%p (2~3개월), +1.3%p (4~6개월), -1.3%p (7~12개월), -0.7%p (1년초과)",
+      "direction": "shorten",
+      "detail": "주요 외교적 돌파구 또는 강대국 중재. 데이턴(1995): 미국 중재 → 3주만에 합의. UN 안보리 결의는 평균 2~4주 내 휴전 이행.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Qatar’s prime minister to visit Tehran, seeking to revive US-Iran talks",
+      "keywords": [
+        "peace talk",
+        "agree",
+        "diplomatic",
+        "breakthrough",
+        "summit",
+        "peace",
+        "mediati",
+        "accept",
+        "un",
+        "resolution",
+        "ceasefire",
+        "broker",
+        "peace",
+        "negotiat",
+        "breakthrough",
+        "china",
+        "mediat",
+        "peace framework"
+      ],
+      "applied": "2026-08-27",
+      "active": true,
+      "severity": "high"
+    },
+    {
       "factor": "[중대 이벤트] 대규모 인도주의 위기",
       "impact": "대규모 인도주의 위기. 국제사회 개입 압력 증가. 코소보(1999): 난민 위기가 NATO 작전 가속화. 인도적 위기는 국제 종전 압력을 2~3배 강화.",
       "weight": "+1.3%p (1개월내), +2.7%p (2~3개월), +0.7%p (4~6개월), -0.7%p (7~12개월), -0.7%p (1년초과)",
       "direction": "shorten",
-      "detail": "대규모 인도주의 위기. 국제사회 개입 압력 증가. 코소보(1999): 난민 위기가 NATO 작전 가속화. 인도적 위기는 국제 종전 압력을 2~3배 강화.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Burnham to face pressure at Labour conference to recognise Israel’s actions in Gaza as genocide",
+      "detail": "대규모 인도주의 위기. 국제사회 개입 압력 증가. 코소보(1999): 난민 위기가 NATO 작전 가속화. 인도적 위기는 국제 종전 압력을 2~3배 강화.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Ben Shapiro’s anti-Muslim film is nothing new",
       "keywords": [
         "humanitarian",
         "catastroph",
@@ -260,11 +290,37 @@
       "severity": "high"
     },
     {
-      "factor": "금값 사상최고 ($4672.2/oz)",
+      "factor": "[중대 이벤트] 전선 확대/신규 참전국",
+      "impact": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).",
+      "weight": "-1.3%p (1개월내), -2.0%p (2~3개월), +2.7%p (4~6개월), +2.0%p (7~12개월), +1.3%p (1년초과)",
+      "direction": "lengthen",
+      "detail": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Saudi Arabia Appears to Be Preparing for a New War With the Houthis",
+      "keywords": [
+        "new front",
+        "war spread",
+        "conflict expand",
+        "join",
+        "war",
+        "enter",
+        "war",
+        "open",
+        "front",
+        "declare war",
+        "widen",
+        "conflict",
+        "second front",
+        "new theater"
+      ],
+      "applied": "2026-08-27",
+      "active": true,
+      "severity": "moderate"
+    },
+    {
+      "factor": "금값 사상최고 ($4634.1/oz)",
       "impact": "안전자산 수요 폭증 → 글로벌 불안 심화",
       "weight": "+2%p (4-6개월)",
       "direction": "lengthen",
-      "detail": "금 가격이 온스당 $4672.2로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
+      "detail": "금 가격이 온스당 $4634.1로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
       "keywords": [
         "gold",
         "safe haven",
@@ -292,24 +348,24 @@
     }
   ],
   "news_signals": {
-    "ceasefire_mentions": 4,
-    "escalation_mentions": 12,
+    "ceasefire_mentions": 2,
+    "escalation_mentions": 10,
     "negotiation_mentions": 12,
     "casualty_mentions": 2,
-    "peace_mentions": 4,
-    "regional_spread": 8,
+    "peace_mentions": 2,
+    "regional_spread": 14,
     "total_articles": 50,
     "new_articles": 50,
-    "unique_events": 49,
-    "duplicates_removed": 1
+    "unique_events": 50,
+    "duplicates_removed": 0
   },
   "latest_news": [
     {
-      "title": "Iran war live: Qatar PM to visit Tehran; Trump ‘not in a hurry’ over talks",
-      "link": "https://www.aljazeera.com/news/liveblog/2026/8/27/iran-war-live-trump-not-in-hurry-over-talks-tehran-defends-us-dialogue?traffic_source=rss",
-      "pubDate": "Thu, 27 Aug 2026 00:00:00 +0000",
+      "title": "How far will the US-Canada trade war go?",
+      "link": "https://www.aljazeera.com/video/counting-the-cost/2026/8/27/how-far-will-the-us-canada-trade-war-go?traffic_source=rss",
+      "pubDate": "Thu, 27 Aug 2026 09:41:01 +0000",
       "source": "aljazeera",
-      "snippet": "Qatar&#039;s PM will meet Iranian officials to discuss ways to de-escalate tensions in the region, foreign ministry says.",
+      "snippet": "Canada and the US risk a full-scale trade war after a breakdown in talks.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -317,23 +373,11 @@
       "_isDuplicate": false
     },
     {
-      "title": "UNRWA chief: Israel seeks to eliminate agency and Palestinian refugee issue",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/8/26/26-08-sv-unrwa-responds-to-aljazeera-fm?traffic_source=rss",
-      "pubDate": "Wed, 26 Aug 2026 21:09:57 +0000",
+      "title": "Trump crosses Lake Ontario on map, renames it ‘Lake America’",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/8/27/trump-crosses-lake-ontario-on-map-renames-it-lake-america?traffic_source=rss",
+      "pubDate": "Thu, 27 Aug 2026 09:37:21 +0000",
       "source": "aljazeera",
-      "snippet": "UNRWA chief says the seizure of its training centre is part of Israel’s efforts to eliminate agency and refugee issue",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": true,
-      "_clusterSize": 2,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Palestinians demand return of 1,700 bodies held by Israel",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/8/26/palestinians-demand-return-of-1700-bodies-held-by-israel?traffic_source=rss",
-      "pubDate": "Wed, 26 Aug 2026 21:07:50 +0000",
-      "source": "aljazeera",
-      "snippet": "Palestinians held vigils across the occupied West Bank demanding the return of Palestinian bodies held by Israel.",
+      "snippet": "US President Donald Trump posted a video of him crossing out Lake Ontario on a map and writing ‘Lake America’ instead.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -341,11 +385,11 @@
       "_isDuplicate": false
     },
     {
-      "title": "Israel-Hamas truce failure ‘point of no return’, envoy warns",
-      "link": "https://www.aljazeera.com/news/2026/8/26/israel-hamas-truce-failure-point-of-no-return-envoy-warns?traffic_source=rss",
-      "pubDate": "Wed, 26 Aug 2026 19:31:34 +0000",
+      "title": "How a 95 percent drop in Hormuz traffic changed global shipping",
+      "link": "https://www.aljazeera.com/news/2026/8/27/how-a-95-percent-drop-in-hormuz-traffic-changed-global-shipping?traffic_source=rss",
+      "pubDate": "Thu, 27 Aug 2026 09:29:06 +0000",
       "source": "aljazeera",
-      "snippet": "Hamas has pledged to hand over its weapons as part of the US plan for Gaza, which Israeli PM Netanyahu has rejected. ",
+      "snippet": "A crisis in one narrow passage has disrupted an industry that carries about 80 percent of the world’s trade.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -353,21 +397,119 @@
       "_isDuplicate": false
     },
     {
-      "title": "UNRWA chief condemns Israeli seizure of East Jerusalem training centre",
-      "link": "https://www.aljazeera.com/news/2026/8/26/unrwa-chief-condemns-israeli-seizure-of-east-jerusalem-facility?traffic_source=rss",
-      "pubDate": "Wed, 26 Aug 2026 19:25:04 +0000",
-      "source": "aljazeera",
-      "snippet": "Christian Saunders tells Al Jazeera raid part of campaign to weaken agency and eliminate Palestinian rights. ",
+      "title": "Saudi Arabia Appears to Be Preparing for a New War With the Houthis",
+      "link": "https://www.nytimes.com/2026/08/27/world/middleeast/saudi-arabia-yemen-houthis-war.html",
+      "pubDate": "Thu, 27 Aug 2026 09:01:06 +0000",
+      "source": "nytimes",
+      "snippet": "Analysts say that weeks of Houthi attacks on Saudi targets have brought the kingdom and the Iranian-backed militia to the brink of full-blown conflict, and could open a new front in the Iran war.",
       "isNew": true,
-      "_isDuplicate": true,
-      "_sourceCount": 1
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
     },
     {
-      "title": "Israeli forces install new gate, isolating Palestinian village",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/8/26/israeli-forces-install-new-gate-isolating-palestinian-village?traffic_source=rss",
-      "pubDate": "Wed, 26 Aug 2026 19:09:38 +0000",
+      "title": "Scenes From a Destroyed Barbershop in Lebanon",
+      "link": "https://www.nytimes.com/video/world/middleeast/100000011005726/scenes-from-a-destroyed-barbershop-in-lebanon.html",
+      "pubDate": "Thu, 27 Aug 2026 09:00:01 +0000",
+      "source": "nytimes",
+      "snippet": "Our reporter Abdi Latif Dahir visits a barbershop in Lebanon that was demolished in an Israeli airstrike in the conflict between Israel and Hezbollah.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Lightning bolt strikes Mecca’s clock tower",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/8/27/lightning-bolt-strikes-meccas-clock-tower?traffic_source=rss",
+      "pubDate": "Thu, 27 Aug 2026 07:59:58 +0000",
       "source": "aljazeera",
-      "snippet": " Israeli forces installed gates around the home of Palestinian American Lou Ridi in Qusra, in the occupied West Bank.",
+      "snippet": "Lightning bolt strikes Mecca’s clock tower",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Ben Shapiro’s anti-Muslim film is nothing new",
+      "link": "https://www.aljazeera.com/opinions/2026/8/27/ben-shapiros-anti-muslim-film-is-nothing-new?traffic_source=rss",
+      "pubDate": "Thu, 27 Aug 2026 07:43:39 +0000",
+      "source": "aljazeera",
+      "snippet": "Shapiro’s film recycles decades-old anti-Muslim tropes to portray critics of Israel’s genocide in Gaza as extremists.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Israel is not heading for civil war",
+      "link": "https://www.aljazeera.com/opinions/2026/8/27/israel-is-not-heading-for-civil-war?traffic_source=rss",
+      "pubDate": "Thu, 27 Aug 2026 07:24:59 +0000",
+      "source": "aljazeera",
+      "snippet": "Israel’s bitter political divisions obscure a broad consensus on Jewish supremacy, occupation and military force.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Palestinian children return to school under threat of Israel demolition",
+      "link": "https://www.aljazeera.com/features/2026/8/27/palestinian-children-return-to-school-under-threat-of-israel-demolition?traffic_source=rss",
+      "pubDate": "Thu, 27 Aug 2026 06:01:17 +0000",
+      "source": "aljazeera",
+      "snippet": "As new school year begins, children in West Bank&#039;s Masafer Yatta face threat that their schools may not remain standing.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Sunken ship sparks fight on Israel’s right over militia’s violent legacy",
+      "link": "https://www.aljazeera.com/news/2026/8/27/sunken-ship-sparks-fight-on-israels-right-over-militias-violent-legacy?traffic_source=rss",
+      "pubDate": "Thu, 27 Aug 2026 06:00:18 +0000",
+      "source": "aljazeera",
+      "snippet": "Altalena wreck fuels Netanyahu-Ben-Gvir rivalry, with each claiming to be heir of Irgun militia. ",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Israel continues attacks on Syria, Lebanon despite US push for diplomacy",
+      "link": "https://www.aljazeera.com/news/2026/8/27/israel-continues-attacks-on-syria-lebanon-despite-us-push-for-diplomacy?traffic_source=rss",
+      "pubDate": "Thu, 27 Aug 2026 04:25:44 +0000",
+      "source": "aljazeera",
+      "snippet": "Israeli artillery attacks, air raids and incursions continue as questions grow over US commitment to ending strikes.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Qatar’s prime minister to visit Tehran, seeking to revive US-Iran talks",
+      "link": "https://www.aljazeera.com/news/2026/8/27/qatars-prime-minister-to-visit-tehran-seeking-to-revive-us-iran-talks?traffic_source=rss",
+      "pubDate": "Thu, 27 Aug 2026 02:54:04 +0000",
+      "source": "aljazeera",
+      "snippet": "Sheikh Mohammed&#039;s visit comes as US-Israel war on Iran nears its sixth month with no diplomatic breakthrough in sight.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Diesel Price Nears Record High, Helping Oil Companies and Hurting Consumers",
+      "link": "https://www.nytimes.com/2026/08/26/business/energy-environment/diesel-prices-iran-war-oil.html",
+      "pubDate": "Thu, 27 Aug 2026 02:41:15 +0000",
+      "source": "nytimes",
+      "snippet": "The cost of the fuel, used in farm machinery, trucks and other heavy equipment, has surged because of the war in Iran and Ukrainian attacks on Russian refineries.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -387,95 +529,11 @@
       "_isDuplicate": false
     },
     {
-      "title": "US imposes sanctions on Palestine Action and other left-wing groups",
-      "link": "https://www.aljazeera.com/news/2026/8/26/us-imposes-sanctions-on-palestine-action-and-other-left-wing-groups?traffic_source=rss",
-      "pubDate": "Wed, 26 Aug 2026 18:08:50 +0000",
-      "source": "aljazeera",
-      "snippet": "Palestine Action&#039;s Huda Ammori says Trump&#039;s penalties should be a &#039;wake-up call&#039; for UK to lift ban on the group.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
       "title": "Oil Prices Dip on News of Progress in Hormuz Talks",
       "link": "https://www.nytimes.com/2026/08/26/world/middleeast/iran-oman-strait-hormuz.html",
       "pubDate": "Wed, 26 Aug 2026 16:20:42 +0000",
       "source": "nytimes",
       "snippet": "The two countries said they would create a temporary shipping lane and clear mines in the waterway. Global oil prices dipped after the joint announcement.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Trump’s Top Gaza Official Says Israel Is Jeopardizing the Cease-Fire",
-      "link": "https://www.nytimes.com/2026/08/26/world/middleeast/trump-official-israel-jeopardizing-gaza-cease-fire.html",
-      "pubDate": "Wed, 26 Aug 2026 16:16:08 +0000",
-      "source": "nytimes",
-      "snippet": "Nickolay Mladenov, the Board of Peace’s high representative for Gaza, criticized Israel for its ongoing strikes on what it says are Hamas targets, after it rejected a plan to disarm the group.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Only sanctions imposed on Israel will work | Letter",
-      "link": "https://www.theguardian.com/world/2026/aug/26/only-sanctions-imposed-on-israel-will-work",
-      "pubDate": "Wed, 26 Aug 2026 16:06:20 GMT",
-      "source": "guardian",
-      "snippet": "The UK’s response to flagrant breaches of international law is pathetic, writes Bernie Evans, and sanctions against a few individuals have no effectHow long does it take for the penny to drop in Downi",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Diesel Price Nears Record High, Helping Oil Companies and Hurting Consumers",
-      "link": "https://www.nytimes.com/2026/08/26/business/energy-environment/diesel-prices-iran-war-oil.html",
-      "pubDate": "Wed, 26 Aug 2026 16:02:26 +0000",
-      "source": "nytimes",
-      "snippet": "The cost of the fuel, used in farm machinery, trucks and other heavy equipment, has surged because of the war in Iran and Ukrainian attacks on Russian refineries.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "What to Know About Bank Melli, Singled Out in U.S. Call for Economic War",
-      "link": "https://www.nytimes.com/2026/08/26/world/europe/iran-melli-bank-us-sanctions.html",
-      "pubDate": "Wed, 26 Aug 2026 13:02:45 +0000",
-      "source": "nytimes",
-      "snippet": "Bank Melli, Iran’s largest lender, already faces sanctions that severely limit its ability to operate abroad. Every foreign branch must be shut down, Treasury Secretary Scott Bessent said.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Gold, Flights, Cryptocurrency: U.S. Vows to Go After More Than Iran’s Oil",
-      "link": "https://www.nytimes.com/2026/08/25/world/middleeast/iran-us-sanctions-oil-gold.html",
-      "pubDate": "Wed, 26 Aug 2026 12:46:05 +0000",
-      "source": "nytimes",
-      "snippet": "The United States threatened sanctions for any country or entity that engages with Iran’s gold, digital assets, aviation, shipping and tech industries. Here’s why that matters.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Israel's seizure of Unrwa training college in East Jerusalem condemned",
-      "link": "https://www.bbc.co.uk/news/articles/c5yl89yrldpo?at_medium=RSS&at_campaign=rss",
-      "pubDate": "Wed, 26 Aug 2026 10:34:39 GMT",
-      "source": "bbc",
-      "snippet": "It marks the shutting of the last of the Palestinian refugee agency's facilities in the sector of the city, after Israel passed a law against it.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -493,14 +551,14 @@
         "new_count": 18,
         "articles": [
           {
-            "title": "US imposes sanctions on Palestine Action and other left-wing groups",
-            "link": "https://www.aljazeera.com/news/2026/8/26/us-imposes-sanctions-on-palestine-action-and-other-left-wing-groups?traffic_source=rss",
+            "title": "How a 95 percent drop in Hormuz traffic changed global shipping",
+            "link": "https://www.aljazeera.com/news/2026/8/27/how-a-95-percent-drop-in-hormuz-traffic-changed-global-shipping?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Wed, 26 Aug 2026 18:08:50 +0000",
-            "snippet": "Palestine Action&#039;s Huda Ammori says Trump&#039;s penalties should be a &#039;wake-up call&#039; for UK to lift ban on the group.",
+            "pubDate": "Thu, 27 Aug 2026 09:29:06 +0000",
+            "snippet": "A crisis in one narrow passage has disrupted an industry that carries about 80 percent of the world’s trade.",
             "isNew": true
           },
           {
@@ -608,18 +666,62 @@
         "category_id": "military",
         "category_name": "군사 작전",
         "category_icon": "⚔️",
-        "count": 8,
-        "new_count": 8,
+        "count": 12,
+        "new_count": 12,
         "articles": [
           {
-            "title": "Trump’s Top Gaza Official Says Israel Is Jeopardizing the Cease-Fire",
-            "link": "https://www.nytimes.com/2026/08/26/world/middleeast/trump-official-israel-jeopardizing-gaza-cease-fire.html",
+            "title": "Saudi Arabia Appears to Be Preparing for a New War With the Houthis",
+            "link": "https://www.nytimes.com/2026/08/27/world/middleeast/saudi-arabia-yemen-houthis-war.html",
             "source": "nytimes",
             "sources": [
               "nytimes"
             ],
-            "pubDate": "Wed, 26 Aug 2026 16:16:08 +0000",
-            "snippet": "Nickolay Mladenov, the Board of Peace’s high representative for Gaza, criticized Israel for its ongoing strikes on what it says are Hamas targets, after it rejected a plan to disarm the group.",
+            "pubDate": "Thu, 27 Aug 2026 09:01:06 +0000",
+            "snippet": "Analysts say that weeks of Houthi attacks on Saudi targets have brought the kingdom and the Iranian-backed militia to the brink of full-blown conflict, and could open a new front in the Iran war.",
+            "isNew": true
+          },
+          {
+            "title": "Scenes From a Destroyed Barbershop in Lebanon",
+            "link": "https://www.nytimes.com/video/world/middleeast/100000011005726/scenes-from-a-destroyed-barbershop-in-lebanon.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Thu, 27 Aug 2026 09:00:01 +0000",
+            "snippet": "Our reporter Abdi Latif Dahir visits a barbershop in Lebanon that was demolished in an Israeli airstrike in the conflict between Israel and Hezbollah.",
+            "isNew": true
+          },
+          {
+            "title": "Lightning bolt strikes Mecca’s clock tower",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/8/27/lightning-bolt-strikes-meccas-clock-tower?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Thu, 27 Aug 2026 07:59:58 +0000",
+            "snippet": "Lightning bolt strikes Mecca’s clock tower",
+            "isNew": true
+          },
+          {
+            "title": "Israel is not heading for civil war",
+            "link": "https://www.aljazeera.com/opinions/2026/8/27/israel-is-not-heading-for-civil-war?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Thu, 27 Aug 2026 07:24:59 +0000",
+            "snippet": "Israel’s bitter political divisions obscure a broad consensus on Jewish supremacy, occupation and military force.",
+            "isNew": true
+          },
+          {
+            "title": "Israel continues attacks on Syria, Lebanon despite US push for diplomacy",
+            "link": "https://www.aljazeera.com/news/2026/8/27/israel-continues-attacks-on-syria-lebanon-despite-us-push-for-diplomacy?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Thu, 27 Aug 2026 04:25:44 +0000",
+            "snippet": "Israeli artillery attacks, air raids and incursions continue as questions grow over US commitment to ending strikes.",
             "isNew": true
           },
           {
@@ -629,8 +731,19 @@
             "sources": [
               "nytimes"
             ],
-            "pubDate": "Wed, 26 Aug 2026 16:02:26 +0000",
+            "pubDate": "Thu, 27 Aug 2026 02:41:15 +0000",
             "snippet": "The cost of the fuel, used in farm machinery, trucks and other heavy equipment, has surged because of the war in Iran and Ukrainian attacks on Russian refineries.",
+            "isNew": true
+          },
+          {
+            "title": "Trump’s Top Gaza Official Says Israel Is Jeopardizing the Cease-Fire",
+            "link": "https://www.nytimes.com/2026/08/26/world/middleeast/trump-official-israel-jeopardizing-gaza-cease-fire.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Wed, 26 Aug 2026 16:16:09 +0000",
+            "snippet": "Nickolay Mladenov, the Board of Peace’s high representative for Gaza, criticized Israel for its ongoing strikes on what it says are Hamas targets, after it rejected a plan to disarm the group.",
             "isNew": true
           },
           {
@@ -665,39 +778,6 @@
             "pubDate": "Tue, 25 Aug 2026 15:54:17 GMT",
             "snippet": "The White House has threatened sanctions on any country that trades with Iran in another bid to economically isolate the country, as US military efforts falter. Launching what he called Operation Econ",
             "isNew": true
-          },
-          {
-            "title": "Israeli attacks kill five in Gaza, including two children, medics say",
-            "link": "https://www.bbc.co.uk/news/articles/ce8x1rdgp3lo?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
-            "sources": [
-              "bbc"
-            ],
-            "pubDate": "Tue, 25 Aug 2026 14:07:50 GMT",
-            "snippet": "An Israeli strike on Monday killed a four-year-old boy, while a 10-year-old girl was hit by a bullet inside her tent, according to medics and relatives.",
-            "isNew": true
-          },
-          {
-            "title": "Syria and Israel Hold U.S.-Mediated Talks to Try to Ease Tensions",
-            "link": "https://www.nytimes.com/2026/08/24/world/middleeast/syria-israel-talks-us-jordan.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Mon, 24 Aug 2026 16:41:33 +0000",
-            "snippet": "The discussions, reported by the Syrian state news agency, came days after Israel struck an air base in Syria’s northwest, the latest in a series of military interventions.",
-            "isNew": true
-          },
-          {
-            "title": "Iran-linked hackers blamed for cyber-attack that shut down UK power plant",
-            "link": "https://www.theguardian.com/world/2026/aug/23/iran-linked-hackers-blamed-cyber-attack-british-power-plant",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Sun, 23 Aug 2026 14:46:56 GMT",
-            "snippet": "Incident marks apparent escalation by Tehran in its in retaliation against UK over allowing US to use British basesHackers linked to Iran have been blamed for a cyber-attack that caused a British powe",
-            "isNew": true
           }
         ]
       },
@@ -705,9 +785,20 @@
         "category_id": "politics",
         "category_name": "국내 정치",
         "category_icon": "🏛️",
-        "count": 8,
-        "new_count": 8,
+        "count": 7,
+        "new_count": 7,
         "articles": [
+          {
+            "title": "Trump crosses Lake Ontario on map, renames it ‘Lake America’",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/8/27/trump-crosses-lake-ontario-on-map-renames-it-lake-america?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Thu, 27 Aug 2026 09:37:21 +0000",
+            "snippet": "US President Donald Trump posted a video of him crossing out Lake Ontario on a map and writing ‘Lake America’ instead.",
+            "isNew": true
+          },
           {
             "title": "Trump downplays Moscow visit by CIA director as ‘semi-routine’",
             "link": "https://www.theguardian.com/us-news/2026/aug/26/trump-cia-director-moscow-visit",
@@ -759,7 +850,7 @@
             "sources": [
               "nytimes"
             ],
-            "pubDate": "Tue, 25 Aug 2026 19:14:11 +0000",
+            "pubDate": "Tue, 25 Aug 2026 19:14:12 +0000",
             "snippet": "President Trump’s “Economic D-Day” is intended to break the stalemate with Iran. But decades of sanctions have done little to change the country’s behavior.",
             "isNew": true
           },
@@ -773,92 +864,6 @@
             "pubDate": "Tue, 25 Aug 2026 00:17:25 GMT",
             "snippet": "The Trump administration has embraced Syria's new president, former al-Qaeda linked militant Ahmed al-Sharaa. ",
             "isNew": true
-          },
-          {
-            "title": "Which Countries Could Be Hurt Most by Trump’s Plan to Hit Iran’s Economy?",
-            "link": "https://www.nytimes.com/article/us-iran-economy-sanctions-trade-trump-china.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Mon, 24 Aug 2026 08:49:48 +0000",
-            "snippet": "President Trump has threatened economic penalties on countries that do business with Iran as he seeks to add pressure on Tehran to negotiate an end to the war.",
-            "isNew": true
-          },
-          {
-            "title": "Iran’s foreign minister calls threat of new US economic sanctions ‘desperate’",
-            "link": "https://www.theguardian.com/world/2026/aug/23/iran-new-security-chief-trump-economic-war-enemies-mohsen-rezaei",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Sun, 23 Aug 2026 13:56:11 GMT",
-            "snippet": "Abbas Araghchi says country is unbowed but president Masoud Pezeshkian admits its people face ‘many problems’Iran’s foreign minister has dismissed the threat of a fresh round of US economic sanctions ",
-            "isNew": true
-          }
-        ]
-      },
-      {
-        "category_id": "other",
-        "category_name": "기타",
-        "category_icon": "📰",
-        "count": 5,
-        "new_count": 5,
-        "articles": [
-          {
-            "title": "Palestinians demand return of 1,700 bodies held by Israel",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/8/26/palestinians-demand-return-of-1700-bodies-held-by-israel?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Wed, 26 Aug 2026 21:07:50 +0000",
-            "snippet": "Palestinians held vigils across the occupied West Bank demanding the return of Palestinian bodies held by Israel.",
-            "isNew": true
-          },
-          {
-            "title": "Israeli forces install new gate, isolating Palestinian village",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/8/26/israeli-forces-install-new-gate-isolating-palestinian-village?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Wed, 26 Aug 2026 19:09:38 +0000",
-            "snippet": " Israeli forces installed gates around the home of Palestinian American Lou Ridi in Qusra, in the occupied West Bank.",
-            "isNew": true
-          },
-          {
-            "title": "Iran seeks to criminalise all contact with foreign media in ‘chilling’ crackdown",
-            "link": "https://www.theguardian.com/global-development/2026/aug/26/iran-criminalises-contact-foreign-media-human-rights-crackdown",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Wed, 26 Aug 2026 05:00:35 GMT",
-            "snippet": "As photojournalist sentenced to 15 years, rights groups warn law would turn civic engagement into security crimeIran has taken the first step towards criminalising contact with foreign media, in a mov",
-            "isNew": true
-          },
-          {
-            "title": "Iran Cracks Down on One Luxury Left to Its Youth: Coffee Shops",
-            "link": "https://www.nytimes.com/2026/08/24/world/middleeast/iran-cafe-closures.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Mon, 24 Aug 2026 11:49:33 +0000",
-            "snippet": "In recent weeks, the police have closed dozens of cafes, often citing laws that stipulate women must veil in public. Experts say the closures are part of an effort to control public space.",
-            "isNew": true
-          },
-          {
-            "title": "Burnham to face pressure at Labour conference to recognise Israel’s actions in Gaza as genocide",
-            "link": "https://www.theguardian.com/politics/2026/aug/23/andy-burnham-pressure-labour-conference-recognise-israel-actions-gaza-genocide",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Sun, 23 Aug 2026 11:26:40 GMT",
-            "snippet": "Grassroots groups to urge PM to break with Starmer policy and impose full arms embargo on IsraelGrassroots Labour groups are gearing up for a conference showdown with Andy Burnham over Gaza, as the pa",
-            "isNew": true
           }
         ]
       },
@@ -870,25 +875,25 @@
         "new_count": 4,
         "articles": [
           {
-            "title": "Iran war live: Qatar PM to visit Tehran; Trump ‘not in a hurry’ over talks",
-            "link": "https://www.aljazeera.com/news/liveblog/2026/8/27/iran-war-live-trump-not-in-hurry-over-talks-tehran-defends-us-dialogue?traffic_source=rss",
+            "title": "How far will the US-Canada trade war go?",
+            "link": "https://www.aljazeera.com/video/counting-the-cost/2026/8/27/how-far-will-the-us-canada-trade-war-go?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Thu, 27 Aug 2026 00:00:00 +0000",
-            "snippet": "Qatar&#039;s PM will meet Iranian officials to discuss ways to de-escalate tensions in the region, foreign ministry says.",
+            "pubDate": "Thu, 27 Aug 2026 09:41:01 +0000",
+            "snippet": "Canada and the US risk a full-scale trade war after a breakdown in talks.",
             "isNew": true
           },
           {
-            "title": "Israel-Hamas truce failure ‘point of no return’, envoy warns",
-            "link": "https://www.aljazeera.com/news/2026/8/26/israel-hamas-truce-failure-point-of-no-return-envoy-warns?traffic_source=rss",
+            "title": "Qatar’s prime minister to visit Tehran, seeking to revive US-Iran talks",
+            "link": "https://www.aljazeera.com/news/2026/8/27/qatars-prime-minister-to-visit-tehran-seeking-to-revive-us-iran-talks?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Wed, 26 Aug 2026 19:31:34 +0000",
-            "snippet": "Hamas has pledged to hand over its weapons as part of the US plan for Gaza, which Israeli PM Netanyahu has rejected. ",
+            "pubDate": "Thu, 27 Aug 2026 02:54:04 +0000",
+            "snippet": "Sheikh Mohammed&#039;s visit comes as US-Israel war on Iran nears its sixth month with no diplomatic breakthrough in sight.",
             "isNew": true
           },
           {
@@ -969,23 +974,65 @@
         ]
       },
       {
-        "category_id": "humanitarian",
-        "category_name": "인도주의/피해",
-        "category_icon": "🏥",
-        "count": 2,
-        "new_count": 2,
+        "category_id": "other",
+        "category_name": "기타",
+        "category_icon": "📰",
+        "count": 4,
+        "new_count": 4,
         "articles": [
           {
-            "title": "UNRWA chief: Israel seeks to eliminate agency and Palestinian refugee issue",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/8/26/26-08-sv-unrwa-responds-to-aljazeera-fm?traffic_source=rss",
+            "title": "Ben Shapiro’s anti-Muslim film is nothing new",
+            "link": "https://www.aljazeera.com/opinions/2026/8/27/ben-shapiros-anti-muslim-film-is-nothing-new?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Wed, 26 Aug 2026 21:09:57 +0000",
-            "snippet": "UNRWA chief says the seizure of its training centre is part of Israel’s efforts to eliminate agency and refugee issue",
+            "pubDate": "Thu, 27 Aug 2026 07:43:39 +0000",
+            "snippet": "Shapiro’s film recycles decades-old anti-Muslim tropes to portray critics of Israel’s genocide in Gaza as extremists.",
             "isNew": true
           },
+          {
+            "title": "Palestinian children return to school under threat of Israel demolition",
+            "link": "https://www.aljazeera.com/features/2026/8/27/palestinian-children-return-to-school-under-threat-of-israel-demolition?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Thu, 27 Aug 2026 06:01:17 +0000",
+            "snippet": "As new school year begins, children in West Bank&#039;s Masafer Yatta face threat that their schools may not remain standing.",
+            "isNew": true
+          },
+          {
+            "title": "Sunken ship sparks fight on Israel’s right over militia’s violent legacy",
+            "link": "https://www.aljazeera.com/news/2026/8/27/sunken-ship-sparks-fight-on-israels-right-over-militias-violent-legacy?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Thu, 27 Aug 2026 06:00:18 +0000",
+            "snippet": "Altalena wreck fuels Netanyahu-Ben-Gvir rivalry, with each claiming to be heir of Irgun militia. ",
+            "isNew": true
+          },
+          {
+            "title": "Iran seeks to criminalise all contact with foreign media in ‘chilling’ crackdown",
+            "link": "https://www.theguardian.com/global-development/2026/aug/26/iran-criminalises-contact-foreign-media-human-rights-crackdown",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Wed, 26 Aug 2026 05:00:35 GMT",
+            "snippet": "As photojournalist sentenced to 15 years, rights groups warn law would turn civic engagement into security crimeIran has taken the first step towards criminalising contact with foreign media, in a mov",
+            "isNew": true
+          }
+        ]
+      },
+      {
+        "category_id": "humanitarian",
+        "category_name": "인도주의/피해",
+        "category_icon": "🏥",
+        "count": 1,
+        "new_count": 1,
+        "articles": [
           {
             "title": "Israel's seizure of Unrwa training college in East Jerusalem condemned",
             "link": "https://www.bbc.co.uk/news/articles/c5yl89yrldpo?at_medium=RSS&at_campaign=rss",
@@ -1007,13 +1054,13 @@
           "count": 4,
           "titles": [
             {
-              "title": "Iran war live: Qatar PM to visit Tehran; Trump ‘not in a hurry’ over talks",
-              "link": "https://www.aljazeera.com/news/liveblog/2026/8/27/iran-war-live-trump-not-in-hurry-over-talks-tehran-defends-us-dialogue?traffic_source=rss",
+              "title": "How far will the US-Canada trade war go?",
+              "link": "https://www.aljazeera.com/video/counting-the-cost/2026/8/27/how-far-will-the-us-canada-trade-war-go?traffic_source=rss",
               "source": "aljazeera"
             },
             {
-              "title": "Israel-Hamas truce failure ‘point of no return’, envoy warns",
-              "link": "https://www.aljazeera.com/news/2026/8/26/israel-hamas-truce-failure-point-of-no-return-envoy-warns?traffic_source=rss",
+              "title": "Qatar’s prime minister to visit Tehran, seeking to revive US-Iran talks",
+              "link": "https://www.aljazeera.com/news/2026/8/27/qatars-prime-minister-to-visit-tehran-seeking-to-revive-us-iran-talks?traffic_source=rss",
               "source": "aljazeera"
             },
             {
@@ -1028,84 +1075,14 @@
             }
           ]
         },
-        "humanitarian": {
-          "count": 2,
-          "titles": [
-            {
-              "title": "UNRWA chief: Israel seeks to eliminate agency and Palestinian refugee issue",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/8/26/26-08-sv-unrwa-responds-to-aljazeera-fm?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Israel's seizure of Unrwa training college in East Jerusalem condemned",
-              "link": "https://www.bbc.co.uk/news/articles/c5yl89yrldpo?at_medium=RSS&at_campaign=rss",
-              "source": "bbc"
-            }
-          ]
-        },
-        "other": {
-          "count": 5,
-          "titles": [
-            {
-              "title": "Palestinians demand return of 1,700 bodies held by Israel",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/8/26/palestinians-demand-return-of-1700-bodies-held-by-israel?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Israeli forces install new gate, isolating Palestinian village",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/8/26/israeli-forces-install-new-gate-isolating-palestinian-village?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Iran seeks to criminalise all contact with foreign media in ‘chilling’ crackdown",
-              "link": "https://www.theguardian.com/global-development/2026/aug/26/iran-criminalises-contact-foreign-media-human-rights-crackdown",
-              "source": "guardian"
-            },
-            {
-              "title": "Iran Cracks Down on One Luxury Left to Its Youth: Coffee Shops",
-              "link": "https://www.nytimes.com/2026/08/24/world/middleeast/iran-cafe-closures.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Burnham to face pressure at Labour conference to recognise Israel’s actions in Gaza as genocide",
-              "link": "https://www.theguardian.com/politics/2026/aug/23/andy-burnham-pressure-labour-conference-recognise-israel-actions-gaza-genocide",
-              "source": "guardian"
-            }
-          ]
-        },
-        "military": {
-          "count": 9,
-          "titles": [
-            {
-              "title": "UNRWA chief condemns Israeli seizure of East Jerusalem training centre",
-              "link": "https://www.aljazeera.com/news/2026/8/26/unrwa-chief-condemns-israeli-seizure-of-east-jerusalem-facility?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Trump’s Top Gaza Official Says Israel Is Jeopardizing the Cease-Fire",
-              "link": "https://www.nytimes.com/2026/08/26/world/middleeast/trump-official-israel-jeopardizing-gaza-cease-fire.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Diesel Price Nears Record High, Helping Oil Companies and Hurting Consumers",
-              "link": "https://www.nytimes.com/2026/08/26/business/energy-environment/diesel-prices-iran-war-oil.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Israeli Lawmaker Smashes Palestinian Monument in West Bank",
-              "link": "https://www.nytimes.com/2026/08/25/world/middleeast/israel-lawmaker-palestinian-monument.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Iran May Have Little to Lose as U.S. Tries to Squeeze Its Economy",
-              "link": "https://www.nytimes.com/2026/08/25/world/middleeast/iran-us-economy-sanctions.html",
-              "source": "nytimes"
-            }
-          ]
-        },
         "politics": {
-          "count": 8,
+          "count": 7,
           "titles": [
+            {
+              "title": "Trump crosses Lake Ontario on map, renames it ‘Lake America’",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/8/27/trump-crosses-lake-ontario-on-map-renames-it-lake-america?traffic_source=rss",
+              "source": "aljazeera"
+            },
             {
               "title": "Trump downplays Moscow visit by CIA director as ‘semi-routine’",
               "link": "https://www.theguardian.com/us-news/2026/aug/26/trump-cia-director-moscow-visit",
@@ -1125,11 +1102,6 @@
               "title": "Christian Convert Who Fled Iran and Was Deported By Trump Finds New Home",
               "link": "https://www.nytimes.com/2026/08/25/world/middleeast/artemis-ghasemzadeh-iran-christian-us-deported-canada-asylum.html",
               "source": "nytimes"
-            },
-            {
-              "title": "What’s More Than ‘Maximum’? Trump Faces Limits on Iran Sanctions.",
-              "link": "https://www.nytimes.com/2026/08/25/us/politics/trump-iran-maximum-sanctions.html",
-              "source": "nytimes"
             }
           ]
         },
@@ -1137,8 +1109,8 @@
           "count": 18,
           "titles": [
             {
-              "title": "US imposes sanctions on Palestine Action and other left-wing groups",
-              "link": "https://www.aljazeera.com/news/2026/8/26/us-imposes-sanctions-on-palestine-action-and-other-left-wing-groups?traffic_source=rss",
+              "title": "How a 95 percent drop in Hormuz traffic changed global shipping",
+              "link": "https://www.aljazeera.com/news/2026/8/27/how-a-95-percent-drop-in-hormuz-traffic-changed-global-shipping?traffic_source=rss",
               "source": "aljazeera"
             },
             {
@@ -1160,6 +1132,71 @@
               "title": "Gold, Flights, Cryptocurrency: U.S. Vows to Go After More Than Iran’s Oil",
               "link": "https://www.nytimes.com/2026/08/25/world/middleeast/iran-us-sanctions-oil-gold.html",
               "source": "nytimes"
+            }
+          ]
+        },
+        "military": {
+          "count": 12,
+          "titles": [
+            {
+              "title": "Saudi Arabia Appears to Be Preparing for a New War With the Houthis",
+              "link": "https://www.nytimes.com/2026/08/27/world/middleeast/saudi-arabia-yemen-houthis-war.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Scenes From a Destroyed Barbershop in Lebanon",
+              "link": "https://www.nytimes.com/video/world/middleeast/100000011005726/scenes-from-a-destroyed-barbershop-in-lebanon.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Lightning bolt strikes Mecca’s clock tower",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/8/27/lightning-bolt-strikes-meccas-clock-tower?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Israel is not heading for civil war",
+              "link": "https://www.aljazeera.com/opinions/2026/8/27/israel-is-not-heading-for-civil-war?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Israel continues attacks on Syria, Lebanon despite US push for diplomacy",
+              "link": "https://www.aljazeera.com/news/2026/8/27/israel-continues-attacks-on-syria-lebanon-despite-us-push-for-diplomacy?traffic_source=rss",
+              "source": "aljazeera"
+            }
+          ]
+        },
+        "other": {
+          "count": 4,
+          "titles": [
+            {
+              "title": "Ben Shapiro’s anti-Muslim film is nothing new",
+              "link": "https://www.aljazeera.com/opinions/2026/8/27/ben-shapiros-anti-muslim-film-is-nothing-new?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Palestinian children return to school under threat of Israel demolition",
+              "link": "https://www.aljazeera.com/features/2026/8/27/palestinian-children-return-to-school-under-threat-of-israel-demolition?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Sunken ship sparks fight on Israel’s right over militia’s violent legacy",
+              "link": "https://www.aljazeera.com/news/2026/8/27/sunken-ship-sparks-fight-on-israels-right-over-militias-violent-legacy?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Iran seeks to criminalise all contact with foreign media in ‘chilling’ crackdown",
+              "link": "https://www.theguardian.com/global-development/2026/aug/26/iran-criminalises-contact-foreign-media-human-rights-crackdown",
+              "source": "guardian"
+            }
+          ]
+        },
+        "humanitarian": {
+          "count": 1,
+          "titles": [
+            {
+              "title": "Israel's seizure of Unrwa training college in East Jerusalem condemned",
+              "link": "https://www.bbc.co.uk/news/articles/c5yl89yrldpo?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
             }
           ]
         },
@@ -1278,35 +1315,29 @@
     }
   ],
   "economic_indicators": {
+    "VIX": {
+      "price": 14.9,
+      "change": -0.31,
+      "changePercent": -2.04,
+      "prev": 15.21
+    },
+    "GOLD": {
+      "price": 4634.1,
+      "change": 35.9,
+      "changePercent": 0.78,
+      "prev": 4598.2
+    },
+    "WTI": {
+      "price": 82.16,
+      "change": -0.07,
+      "changePercent": -0.09,
+      "prev": 82.23
+    },
     "US10Y": {
       "price": 4.66,
       "change": 0.03,
       "changePercent": 0.65,
       "prev": 4.64
-    },
-    "WTI": {
-      "price": 81.64,
-      "change": -0.72,
-      "changePercent": -0.87,
-      "prev": 82.36
-    },
-    "DXY": {
-      "price": 99.12,
-      "change": 0.2,
-      "changePercent": 0.2,
-      "prev": 98.92
-    },
-    "VIX": {
-      "price": 15.21,
-      "change": -0.24,
-      "changePercent": -1.55,
-      "prev": 15.45
-    },
-    "GOLD": {
-      "price": 4672.2,
-      "change": 34.1,
-      "changePercent": 0.74,
-      "prev": 4638.1
     },
     "US2Y": {
       "price": 3.69,
@@ -1315,13 +1346,27 @@
       "prev": 3.7
     },
     "BRENT": {
-      "price": 86.38,
-      "change": -2.2,
-      "changePercent": -2.48,
-      "prev": 88.58
+      "price": 87.06,
+      "change": -0.78,
+      "changePercent": -0.89,
+      "prev": 87.84
+    },
+    "DXY": {
+      "price": 99.22,
+      "change": 0.05,
+      "changePercent": 0.05,
+      "prev": 99.17
     }
   },
   "critical_events": [
+    {
+      "id": "diplomatic_breakthrough",
+      "name": "외교적 돌파구/강대국 중재",
+      "severity": "high",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "shorten"
+    },
     {
       "id": "humanitarian_crisis",
       "name": "대규모 인도주의 위기",
@@ -1329,6 +1374,14 @@
       "confidence": 0.6666666666666666,
       "matchCount": 2,
       "direction": "shorten"
+    },
+    {
+      "id": "conflict_expansion",
+      "name": "전선 확대/신규 참전국",
+      "severity": "moderate",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "lengthen"
     }
   ],
   "feeds_loaded": 7,
