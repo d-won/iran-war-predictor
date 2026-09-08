@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-09-08T20:02:37.663Z",
+  "timestamp": "2026-09-08T22:51:52.787Z",
   "war_day": 192,
   "probabilities": {
-    "1개월 내 (~3월)": 17.5,
-    "2~3개월 (4~5월)": 35.9,
-    "4~6개월 (6~8월)": 27.3,
-    "7~12개월 (9월~27/2월)": 14.2,
-    "1년 초과": 5.1
+    "1개월 내 (~3월)": 22,
+    "2~3개월 (4~5월)": 40.2,
+    "4~6개월 (6~8월)": 25.8,
+    "7~12개월 (9월~27/2월)": 9.6,
+    "1년 초과": 2.4
   },
   "factors": [
     {
@@ -45,8 +45,8 @@
       "decay": 0.4
     },
     {
-      "factor": "확전 뉴스 우세 (확전8:휴전4)",
-      "impact": "전쟁 장기화 가능성 (확전비율 67%)",
+      "factor": "확전 뉴스 우세 (확전8:휴전2)",
+      "impact": "전쟁 장기화 가능성 (확전비율 80%)",
       "weight": "+0.03%p (4~6개월)",
       "direction": "lengthen",
       "detail": "언론에서 휴전보다 확전을 더 많이 보도하고 있습니다.",
@@ -164,11 +164,11 @@
       "decay": 1
     },
     {
-      "factor": "협상/외교 뉴스 2건 감지",
-      "impact": "외교 움직임 미약",
+      "factor": "협상/외교 뉴스 0건 감지",
+      "impact": "외교 움직임 부재",
       "weight": "+0.00%p (1개월내), +0.00%p (2~3개월)",
       "direction": "shorten",
-      "detail": "실시간 뉴스에서 협상 관련 기사 2건이 감지되었습니다.",
+      "detail": "실시간 뉴스에서 협상 관련 기사 0건이 감지되었습니다.",
       "keywords": [
         "negotiat",
         "talks",
@@ -234,11 +234,101 @@
       "decay": 0.3
     },
     {
+      "factor": "[중대 이벤트] 교전국 정권 붕괴/쿠데타",
+      "impact": "교전국 정권 붕괴 또는 쿠데타. 이라크(2003): 바그다드 함락 후 3주 내 주요 전투 종료. 리비아(2011): 트리폴리 함락 후 2개월 내 종전.",
+      "weight": "+6.7%p (1개월내), +5.3%p (2~3개월), +1.3%p (4~6개월), -3.3%p (7~12개월), -2.7%p (1년초과)",
+      "direction": "shorten",
+      "detail": "교전국 정권 붕괴 또는 쿠데타. 이라크(2003): 바그다드 함락 후 3주 내 주요 전투 종료. 리비아(2011): 트리폴리 함락 후 2개월 내 종전.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Police bodycam captures Russian missile strike on Kyiv",
+      "keywords": [
+        "regime",
+        "collaps",
+        "regime",
+        "fall",
+        "government",
+        "fall",
+        "capital",
+        "fall",
+        "capital",
+        "captur",
+        "coup",
+        "detat",
+        "government",
+        "overthrow",
+        "regime",
+        "change"
+      ],
+      "applied": "2026-09-08",
+      "active": true,
+      "severity": "critical"
+    },
+    {
+      "factor": "[중대 이벤트] 외교적 돌파구/강대국 중재",
+      "impact": "주요 외교적 돌파구 또는 강대국 중재. 데이턴(1995): 미국 중재 → 3주만에 합의. UN 안보리 결의는 평균 2~4주 내 휴전 이행.",
+      "weight": "+2.0%p (1개월내), +4.0%p (2~3개월), +1.3%p (4~6개월), -1.3%p (7~12개월), -0.7%p (1년초과)",
+      "direction": "shorten",
+      "detail": "주요 외교적 돌파구 또는 강대국 중재. 데이턴(1995): 미국 중재 → 3주만에 합의. UN 안보리 결의는 평균 2~4주 내 휴전 이행.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Israel Says It Is Cementing Its Foothold in Southern Lebanon",
+      "keywords": [
+        "peace talk",
+        "agree",
+        "diplomatic",
+        "breakthrough",
+        "summit",
+        "peace",
+        "mediati",
+        "accept",
+        "un",
+        "resolution",
+        "ceasefire",
+        "broker",
+        "peace",
+        "negotiat",
+        "breakthrough",
+        "china",
+        "mediat",
+        "peace framework"
+      ],
+      "applied": "2026-09-08",
+      "active": true,
+      "severity": "high"
+    },
+    {
+      "factor": "[중대 이벤트] 수도 직접 공격/포위",
+      "impact": "수도 직접 공격. 베오그라드(1999): 78일 폭격 후 항복. 바그다드(2003): 21일만에 함락. 수도 타격은 전쟁 지속 의지를 급격히 약화.",
+      "weight": "+2.7%p (1개월내), +4.0%p (2~3개월), -1.3%p (4~6개월), -1.3%p (7~12개월), -0.7%p (1년초과)",
+      "direction": "shorten",
+      "detail": "수도 직접 공격. 베오그라드(1999): 78일 폭격 후 항복. 바그다드(2003): 21일만에 함락. 수도 타격은 전쟁 지속 의지를 급격히 약화.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Police bodycam captures Russian missile strike on Kyiv",
+      "keywords": [
+        "capital",
+        "bomb",
+        "capital",
+        "strike",
+        "capital",
+        "attack",
+        "capital",
+        "siege",
+        "capital",
+        "pound",
+        "capital",
+        "explosion",
+        "tehran",
+        "bomb",
+        "tehran",
+        "strike",
+        "tehran",
+        "pound",
+        "tehran",
+        "explosion"
+      ],
+      "applied": "2026-09-08",
+      "active": true,
+      "severity": "high"
+    },
+    {
       "factor": "[중대 이벤트] 대규모 인도주의 위기",
       "impact": "대규모 인도주의 위기. 국제사회 개입 압력 증가. 코소보(1999): 난민 위기가 NATO 작전 가속화. 인도적 위기는 국제 종전 압력을 2~3배 강화.",
-      "weight": "+2.0%p (1개월내), +4.0%p (2~3개월), +1.0%p (4~6개월), -1.0%p (7~12개월), -1.0%p (1년초과)",
+      "weight": "+1.7%p (1개월내), +3.5%p (2~3개월), +0.9%p (4~6개월), -0.9%p (7~12개월), -0.9%p (1년초과)",
       "direction": "shorten",
-      "detail": "대규모 인도주의 위기. 국제사회 개입 압력 증가. 코소보(1999): 난민 위기가 NATO 작전 가속화. 인도적 위기는 국제 종전 압력을 2~3배 강화.\n\n신뢰도: 확실 (100%), 관련 기사 4.6건 감지.\n관련: UK accuses Israeli ‘terrorists’ of ethnic cleansing in West Bank with government backing | Nicaragua urges ICJ to reject Germany’s bid to throw out Gaza genocide case",
+      "detail": "대규모 인도주의 위기. 국제사회 개입 압력 증가. 코소보(1999): 난민 위기가 NATO 작전 가속화. 인도적 위기는 국제 종전 압력을 2~3배 강화.\n\n신뢰도: 확실 (87%), 관련 기사 2.6건 감지.\n관련: UK accuses Israeli ‘terrorists’ of ethnic cleansing in West Bank with government backing",
       "keywords": [
         "humanitarian",
         "catastroph",
@@ -290,11 +380,11 @@
       "severity": "critical"
     },
     {
-      "factor": "유가 급등 (WTI $93.69/배럴)",
+      "factor": "유가 급등 (WTI $94.23/배럴)",
       "impact": "중간 수준 경제 압력",
       "weight": "+2%p (1-2개월)",
       "direction": "shorten",
-      "detail": "WTI 유가가 $93.69/배럴로 90달러 이상입니다. 호르무즈 해협 봉쇄와 맞물려 글로벌 에너지 시장에 큰 충격을 주고 있으며, 주요국들의 조기 종전 압력이 강화되고 있습니다.",
+      "detail": "WTI 유가가 $94.23/배럴로 90달러 이상입니다. 호르무즈 해협 봉쇄와 맞물려 글로벌 에너지 시장에 큰 충격을 주고 있으며, 주요국들의 조기 종전 압력이 강화되고 있습니다.",
       "keywords": [
         "oil",
         "crude",
@@ -307,11 +397,11 @@
       "active": true
     },
     {
-      "factor": "금값 사상최고 ($4407/oz)",
+      "factor": "금값 사상최고 ($4395.8/oz)",
       "impact": "안전자산 수요 폭증 → 글로벌 불안 심화",
       "weight": "+2%p (4-6개월)",
       "direction": "lengthen",
-      "detail": "금 가격이 온스당 $4407로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
+      "detail": "금 가격이 온스당 $4395.8로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
       "keywords": [
         "gold",
         "safe haven",
@@ -339,22 +429,46 @@
     }
   ],
   "news_signals": {
-    "ceasefire_mentions": 4,
+    "ceasefire_mentions": 2,
     "escalation_mentions": 8,
-    "negotiation_mentions": 2,
-    "casualty_mentions": 4,
-    "peace_mentions": 2,
+    "negotiation_mentions": 0,
+    "casualty_mentions": 2,
+    "peace_mentions": 6,
     "regional_spread": 18,
     "total_articles": 50,
     "new_articles": 50,
-    "unique_events": 45,
-    "duplicates_removed": 5
+    "unique_events": 48,
+    "duplicates_removed": 2
   },
   "latest_news": [
     {
+      "title": "U.S. Strikes Iranian Oil Tankers, Drawing Threat of Reprisal",
+      "link": "https://www.nytimes.com/2026/09/08/world/middleeast/us-strikes-iran-tankers.html",
+      "pubDate": "Tue, 08 Sep 2026 22:13:04 +0000",
+      "source": "nytimes",
+      "snippet": "American forces were said to have hit multiple vessels in response to Iranian attempts to hit a U.S. warship.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Protesters, police clash in Albania over Trump-linked project",
+      "link": "https://www.aljazeera.com/news/2026/9/8/protesters-police-clash-in-albania-over-trump-linked-project?traffic_source=rss",
+      "pubDate": "Tue, 08 Sep 2026 22:05:17 +0000",
+      "source": "aljazeera",
+      "snippet": "Albanians have protested for over 100 days against a planned luxury hotel linked to Jared Kushner and Ivanka Trump.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
       "title": "Israeli Allies Ban Trade With Settlements as U.K. Cites ‘Ethnic Cleansing’",
       "link": "https://www.nytimes.com/2026/09/08/world/europe/uk-sanctions-israel-west-bank-settlements.html",
-      "pubDate": "Tue, 08 Sep 2026 19:57:33 +0000",
+      "pubDate": "Tue, 08 Sep 2026 21:49:47 +0000",
       "source": "nytimes",
       "snippet": "Britain, Canada and France on Tuesday announced sanctions on Israeli settlements in the West Bank, with Britain saying Israel had “turned a blind eye” to violence against Palestinians.",
       "isNew": true,
@@ -362,11 +476,95 @@
       "_sourceCount": 1
     },
     {
+      "title": "What the UK ban on goods from illegal Israeli settlements really means",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/9/8/what-the-uk-ban-on-goods-from-illegal-israeli-settlements-really-means?traffic_source=rss",
+      "pubDate": "Tue, 08 Sep 2026 21:35:36 +0000",
+      "source": "aljazeera",
+      "snippet": "Israel has announced that it’s shutting down the UK Consulate in occupied East Jerusalem after a new ban on its goods.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Before Oct. 7 Attack, Netanyahu Was Warned, Report Says. He Denies It.",
+      "link": "https://www.nytimes.com/2026/09/08/world/middleeast/israel-netanyahu-2023-hamas-attack.html",
+      "pubDate": "Tue, 08 Sep 2026 21:27:54 +0000",
+      "source": "nytimes",
+      "snippet": "Prime Minister Benjamin Netanyahu’s office denied the report in Haaretz that the Emirati president had warned him Hamas was planning a major operation against Israel.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "US warns Ford over ties with Chinese firms amid tensions",
+      "link": "https://www.aljazeera.com/economy/2026/9/8/us-warns-ford-over-ties-with-chinese-firms-amid-tensions?traffic_source=rss",
+      "pubDate": "Tue, 08 Sep 2026 21:24:03 +0000",
+      "source": "aljazeera",
+      "snippet": "US officials criticise Ford’s partnerships with Chinese firms CATL, Geely, and BYD over security risks.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Police bodycam captures Russian missile strike on Kyiv",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/9/8/police-bodycam-captures-russian-missile-strike-on-kyiv?traffic_source=rss",
+      "pubDate": "Tue, 08 Sep 2026 20:43:52 +0000",
+      "source": "aljazeera",
+      "snippet": "Bodycam video has captured the moment a Russian missile struck near police in Ukraine’s capital Kiev",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
       "title": "Oil Climbs Toward $100 a Barrel Following Houthi Attacks",
       "link": "https://www.nytimes.com/2026/09/08/business/oil-prices-iran-war.html",
-      "pubDate": "Tue, 08 Sep 2026 19:55:46 +0000",
+      "pubDate": "Tue, 08 Sep 2026 20:39:14 +0000",
       "source": "nytimes",
       "snippet": "Analysts said they expected the price of Brent crude, the international benchmark, to remain elevated for the rest of the year.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Iran claims to have seized American drone US says had ‘malfunctioned’",
+      "link": "https://www.theguardian.com/us-news/2026/sep/08/iran-underwater-drone-strait-of-hormuz",
+      "pubDate": "Tue, 08 Sep 2026 20:34:01 GMT",
+      "source": "guardian",
+      "snippet": "Centcom says ‘defective’ drone was surveilling regional waters and was not collecting sensitive dataIranian forces claimed to have seized an American underwater drone in the strait of Hormuz that the ",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Head of Smithsonian museums announces he will be stepping down",
+      "link": "https://www.aljazeera.com/news/2026/9/8/head-of-smithsonian-museums-announces-he-will-be-stepping-down?traffic_source=rss",
+      "pubDate": "Tue, 08 Sep 2026 20:32:52 +0000",
+      "source": "aljazeera",
+      "snippet": "The US institution is under pressure from the Trump administration to change how it portrays the country&#039;s history.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "What’s happening in the Yemen war?",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/9/8/09-08-hosted-yemen-explainer?traffic_source=rss",
+      "pubDate": "Tue, 08 Sep 2026 20:13:23 +0000",
+      "source": "aljazeera",
+      "snippet": "Fighting between government forces and Iran-backed Houthis is raising fears Yemen could return to full-scale war.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -418,112 +616,6 @@
       "_isDuplicated": false,
       "_clusterSize": 1,
       "_isDuplicate": false
-    },
-    {
-      "title": "Trump, Putin hold ‘frank’ phone call as US restarts Ukraine deal efforts",
-      "link": "https://www.aljazeera.com/news/2026/9/8/trump-putin-hold-frank-phone-call-as-us-restarts-ukraine-deal-efforts?traffic_source=rss",
-      "pubDate": "Tue, 08 Sep 2026 18:31:30 +0000",
-      "source": "aljazeera",
-      "snippet": "The phone call comes after US special envoys travelled to Russia and Ukraine to discuss &#039;a proposal to end the war&#039;.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Will UK sanctions have any impact on Israel’s ‘settler terrorists’ in West Bank?",
-      "link": "https://www.theguardian.com/world/2026/sep/08/will-uk-sanctions-have-any-impact-on-israel-settler-terrorists-west-bank",
-      "pubDate": "Tue, 08 Sep 2026 18:08:19 GMT",
-      "source": "guardian",
-      "snippet": "A look at whether Ed Miliband’s plans will be effective and what they signal for future Israel-UK relationsThe British foreign secretary, Ed Miliband, has announced plans for an import ban on goods fr",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Yemen’s war is back: A new battle for Sanaa and the Red Sea",
-      "link": "https://www.aljazeera.com/features/2026/9/8/yemens-war-is-back-a-new-battle-for-sanaa-and-the-red-sea?traffic_source=rss",
-      "pubDate": "Tue, 08 Sep 2026 17:37:35 +0000",
-      "source": "aljazeera",
-      "snippet": "This phase of the war  could be the start of another protracted conflict rather than a decisive campaign, say analysts.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Ella Baron on the UK’s ban on trade with illegal Israeli settlements – cartoon",
-      "link": "https://www.theguardian.com/commentisfree/picture/2026/sep/08/ella-baron-uk-ban-trade-with-israeli-settlements-cartoon",
-      "pubDate": "Tue, 08 Sep 2026 17:36:32 GMT",
-      "source": "guardian",
-      "snippet": "Continue reading...",
-      "isNew": true,
-      "_isDuplicate": true,
-      "_sourceCount": 1
-    },
-    {
-      "title": "The Guardian view on Britain’s new Middle East policy: an unlawful occupation must carry a price | Editorial",
-      "link": "https://www.theguardian.com/commentisfree/2026/sep/08/the-guardian-view-on-britains-new-middle-east-policy-an-unlawful-occupation-must-carry-a-price",
-      "pubDate": "Tue, 08 Sep 2026 17:35:24 GMT",
-      "source": "guardian",
-      "snippet": "Ed Miliband has delivered Britain’s toughest indictment of Israeli conduct in Palestinian lands - and rightly says this has economic consequencesRarely in recent years has the Commons felt like the co",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Nicaragua urges ICJ to reject Germany’s bid to throw out Gaza genocide case",
-      "link": "https://www.aljazeera.com/news/2026/9/8/nicaragua-urges-icj-to-reject-germanys-bid-to-throw-out-gaza-genocide-case?traffic_source=rss",
-      "pubDate": "Tue, 08 Sep 2026 17:26:33 +0000",
-      "source": "aljazeera",
-      "snippet": "Nicaragua maintains that German arms exports to Israel facilitated Gaza genocide as Germany&#039;s tries to halt the case.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "US won’t join UK ban on trade with illegal Israeli settlements",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/9/8/09-08-rubio-comments-uk-sanctions-clip-mp4?traffic_source=rss",
-      "pubDate": "Tue, 08 Sep 2026 17:24:36 +0000",
-      "source": "aljazeera",
-      "snippet": "Secretary of State Marco Rubio says the US will ‘obviously not’ follow the UK in sanctioning illegal Israeli settlements",
-      "isNew": true,
-      "_sourceCount": 2,
-      "_isDuplicated": true,
-      "_clusterSize": 2,
-      "_isDuplicate": false
-    },
-    {
-      "title": "‘A bit too late, but important’: UK bans goods from Israeli settlements",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/9/8/a-bit-too-late-but-important-uk-bans-goods-from-israeli-settlements?traffic_source=rss",
-      "pubDate": "Tue, 08 Sep 2026 17:11:16 +0000",
-      "source": "aljazeera",
-      "snippet": "The UK has announced a ban on the import of all goods produced by illegal Israeli settlements in the occupied West Bank.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": true,
-      "_clusterSize": 2,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Israeli strikes devastate homes, displace families across Gaza",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/9/8/israeli-strikes-devastate-homes-displace-families-across-gaza?traffic_source=rss",
-      "pubDate": "Tue, 08 Sep 2026 17:04:28 +0000",
-      "source": "aljazeera",
-      "snippet": "Israeli strikes hit several areas across Gaza, destroying homes in Khan Younis and sending thick smoke over Bureij camp.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
     }
   ],
   "news_digest": {
@@ -532,9 +624,42 @@
         "category_id": "military",
         "category_name": "군사 작전",
         "category_icon": "⚔️",
-        "count": 19,
-        "new_count": 19,
+        "count": 20,
+        "new_count": 20,
         "articles": [
+          {
+            "title": "U.S. Strikes Iranian Oil Tankers, Drawing Threat of Reprisal",
+            "link": "https://www.nytimes.com/2026/09/08/world/middleeast/us-strikes-iran-tankers.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Tue, 08 Sep 2026 22:13:04 +0000",
+            "snippet": "American forces were said to have hit multiple vessels in response to Iranian attempts to hit a U.S. warship.",
+            "isNew": true
+          },
+          {
+            "title": "Before Oct. 7 Attack, Netanyahu Was Warned, Report Says. He Denies It.",
+            "link": "https://www.nytimes.com/2026/09/08/world/middleeast/israel-netanyahu-2023-hamas-attack.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Tue, 08 Sep 2026 21:27:54 +0000",
+            "snippet": "Prime Minister Benjamin Netanyahu’s office denied the report in Haaretz that the Emirati president had warned him Hamas was planning a major operation against Israel.",
+            "isNew": true
+          },
+          {
+            "title": "Police bodycam captures Russian missile strike on Kyiv",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/8/police-bodycam-captures-russian-missile-strike-on-kyiv?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Tue, 08 Sep 2026 20:43:52 +0000",
+            "snippet": "Bodycam video has captured the moment a Russian missile struck near police in Ukraine’s capital Kiev",
+            "isNew": true
+          },
           {
             "title": "Oil Climbs Toward $100 a Barrel Following Houthi Attacks",
             "link": "https://www.nytimes.com/2026/09/08/business/oil-prices-iran-war.html",
@@ -542,8 +667,19 @@
             "sources": [
               "nytimes"
             ],
-            "pubDate": "Tue, 08 Sep 2026 19:55:46 +0000",
+            "pubDate": "Tue, 08 Sep 2026 20:39:14 +0000",
             "snippet": "Analysts said they expected the price of Brent crude, the international benchmark, to remain elevated for the rest of the year.",
+            "isNew": true
+          },
+          {
+            "title": "Iran claims to have seized American drone US says had ‘malfunctioned’",
+            "link": "https://www.theguardian.com/us-news/2026/sep/08/iran-underwater-drone-strait-of-hormuz",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Tue, 08 Sep 2026 20:34:01 GMT",
+            "snippet": "Centcom says ‘defective’ drone was surveilling regional waters and was not collecting sensitive dataIranian forces claimed to have seized an American underwater drone in the strait of Hormuz that the ",
             "isNew": true
           },
           {
@@ -558,39 +694,6 @@
             "isNew": true
           },
           {
-            "title": "Israeli strikes devastate homes, displace families across Gaza",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/8/israeli-strikes-devastate-homes-displace-families-across-gaza?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Tue, 08 Sep 2026 17:04:28 +0000",
-            "snippet": "Israeli strikes hit several areas across Gaza, destroying homes in Khan Younis and sending thick smoke over Bureij camp.",
-            "isNew": true
-          },
-          {
-            "title": "Bombardier defends US manufacturing amid Trump’s aviation sales threat",
-            "link": "https://www.aljazeera.com/economy/2026/9/8/bombardier-defends-us-manufacturing-amid-trumps-aviation-sales-threat?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Tue, 08 Sep 2026 17:04:10 +0000",
-            "snippet": "Bombardier defends its US presence, stating its planes already feature components made in Texas and California.",
-            "isNew": true
-          },
-          {
-            "title": "Israeli strikes transform Lebanese city into ghost town",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/8/israeli-strikes-transform-lebanese-city-into-ghost-town?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Tue, 08 Sep 2026 16:19:52 +0000",
-            "snippet": "Nabatieh, once southern Lebanon’s economic centre, is now a ghost town as Israel intensifies attacks.",
-            "isNew": true
-          },
-          {
             "title": "Netanyahu was warned of 7 October Hamas attacks, book claims",
             "link": "https://www.theguardian.com/world/2026/sep/08/netanyahu-warned-7-october-hamas-book-haaretz",
             "source": "guardian",
@@ -599,17 +702,6 @@
             ],
             "pubDate": "Tue, 08 Sep 2026 15:25:38 GMT",
             "snippet": "Israeli PM says allegation that UAE president alerted him more than a week before major offensive is ‘absolute lie’Benjamin Netanyahu was personally alerted by the president of the United Arab Emirate",
-            "isNew": true
-          },
-          {
-            "title": "EU condemns Serbia’s ministers for attending funeral of war criminal Mladic",
-            "link": "https://www.aljazeera.com/news/2026/9/8/eu-condemns-serbias-ministers-for-attending-funeral-of-war-criminal-mladic?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Tue, 08 Sep 2026 15:01:36 +0000",
-            "snippet": "EU leaders condemn Serbian officials&#039; presence at Ratko Mladic&#039;s funeral as a failure to confront past war crimes.",
             "isNew": true
           },
           {
@@ -651,8 +743,8 @@
         "category_id": "economy",
         "category_name": "경제 영향",
         "category_icon": "📊",
-        "count": 13,
-        "new_count": 13,
+        "count": 10,
+        "new_count": 10,
         "articles": [
           {
             "title": "UK accuses Israeli ‘terrorists’ of ethnic cleansing in West Bank with government backing",
@@ -690,15 +782,14 @@
             "isNew": true
           },
           {
-            "title": "US won’t join UK ban on trade with illegal Israeli settlements",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/8/09-08-rubio-comments-uk-sanctions-clip-mp4?traffic_source=rss",
-            "source": "aljazeera",
+            "title": "Ella Baron on the UK’s ban on trade with illegal Israeli settlements – cartoon",
+            "link": "https://www.theguardian.com/commentisfree/picture/2026/sep/08/ella-baron-uk-ban-trade-with-israeli-settlements-cartoon",
+            "source": "guardian",
             "sources": [
-              "aljazeera",
               "guardian"
             ],
-            "pubDate": "Tue, 08 Sep 2026 17:24:36 +0000",
-            "snippet": "Secretary of State Marco Rubio says the US will ‘obviously not’ follow the UK in sanctioning illegal Israeli settlements",
+            "pubDate": "Tue, 08 Sep 2026 17:36:32 GMT",
+            "snippet": "Continue reading...",
             "isNew": true
           },
           {
@@ -713,28 +804,6 @@
             "isNew": true
           },
           {
-            "title": "Nicaragua urges ICJ to reject Germany’s bid to throw out Gaza genocide case",
-            "link": "https://www.aljazeera.com/news/2026/9/8/nicaragua-urges-icj-to-reject-germanys-bid-to-throw-out-gaza-genocide-case?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Tue, 08 Sep 2026 17:26:33 +0000",
-            "snippet": "Nicaragua maintains that German arms exports to Israel facilitated Gaza genocide as Germany&#039;s tries to halt the case.",
-            "isNew": true
-          },
-          {
-            "title": "‘A bit too late, but important’: UK bans goods from Israeli settlements",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/8/a-bit-too-late-but-important-uk-bans-goods-from-israeli-settlements?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Tue, 08 Sep 2026 17:11:16 +0000",
-            "snippet": "The UK has announced a ban on the import of all goods produced by illegal Israeli settlements in the occupied West Bank.",
-            "isNew": true
-          },
-          {
             "title": "Israel to close British consulate in Jerusalem after sanctions announced",
             "link": "https://www.theguardian.com/world/2026/sep/08/israel-close-british-consulate-jerusalem-sanctions",
             "source": "guardian",
@@ -743,18 +812,6 @@
             ],
             "pubDate": "Tue, 08 Sep 2026 16:55:26 GMT",
             "snippet": "Several MPs also banned from Israel after UK steps up condemnation of settlements and announces sweeping sanctionsIsrael has ordered the closure of the British consulate in occupied East Jerusalem in ",
-            "isNew": true
-          },
-          {
-            "title": "UN expert Francesca Albanese calls for ‘true paradigm shift’ as Miliband resets policy on Israel",
-            "link": "https://www.theguardian.com/world/2026/sep/07/un-francesca-albanese-miliband-israel-palestine-settlements-trade",
-            "source": "guardian",
-            "sources": [
-              "guardian",
-              "aljazeera"
-            ],
-            "pubDate": "Mon, 07 Sep 2026 04:00:25 GMT",
-            "snippet": "Exclusive: UN special rapporteur on occupied territories says ban on goods from settlements ‘important’ but must go further if it is to amount to more than a ‘press release’The UK’s planned ban on tra",
             "isNew": true
           },
           {
@@ -767,6 +824,114 @@
             "pubDate": "Tue, 08 Sep 2026 15:36:34 GMT",
             "snippet": "Palestinians strongly back a ban on settlement goods, but Israel's government says it is a \"big mistake\".",
             "isNew": true
+          },
+          {
+            "title": "Britain Set to Target Israeli West Bank Settlements With Trade Ban",
+            "link": "https://www.nytimes.com/2026/09/07/world/middleeast/britain-sanctions-israeli-settlers.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Tue, 08 Sep 2026 08:32:38 +0000",
+            "snippet": "The expected move will be announced on Tuesday, officials said, and underscored Israel’s mounting isolation over its policies toward Palestinians following the war in Gaza.",
+            "isNew": true
+          },
+          {
+            "title": "UK to adopt tougher stance on Israel with illegal settlements trade ban",
+            "link": "https://www.theguardian.com/politics/2026/sep/07/ed-miliband-reset-uk-relations-israel-palestine",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Tue, 08 Sep 2026 07:55:05 GMT",
+            "snippet": "Ed Miliband to reassert support for Palestinian rights and a two-state solution in move fiercely criticised by US and IsraelEd Miliband will announce a broad reset of the UK’s relations with Israel on",
+            "isNew": true
+          },
+          {
+            "title": "UN expert Francesca Albanese calls for ‘true paradigm shift’ as Miliband resets policy on Israel",
+            "link": "https://www.theguardian.com/world/2026/sep/07/un-francesca-albanese-miliband-israel-palestine-settlements-trade",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Mon, 07 Sep 2026 04:00:25 GMT",
+            "snippet": "Exclusive: UN special rapporteur on occupied territories says ban on goods from settlements ‘important’ but must go further if it is to amount to more than a ‘press release’The UK’s planned ban on tra",
+            "isNew": true
+          }
+        ]
+      },
+      {
+        "category_id": "politics",
+        "category_name": "국내 정치",
+        "category_icon": "🏛️",
+        "count": 6,
+        "new_count": 6,
+        "articles": [
+          {
+            "title": "Protesters, police clash in Albania over Trump-linked project",
+            "link": "https://www.aljazeera.com/news/2026/9/8/protesters-police-clash-in-albania-over-trump-linked-project?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Tue, 08 Sep 2026 22:05:17 +0000",
+            "snippet": "Albanians have protested for over 100 days against a planned luxury hotel linked to Jared Kushner and Ivanka Trump.",
+            "isNew": true
+          },
+          {
+            "title": "Head of Smithsonian museums announces he will be stepping down",
+            "link": "https://www.aljazeera.com/news/2026/9/8/head-of-smithsonian-museums-announces-he-will-be-stepping-down?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Tue, 08 Sep 2026 20:32:52 +0000",
+            "snippet": "The US institution is under pressure from the Trump administration to change how it portrays the country&#039;s history.",
+            "isNew": true
+          },
+          {
+            "title": "Hijacking pirates exploit regional chaos to return to seas off Somalia",
+            "link": "https://www.theguardian.com/world/2026/sep/08/hijacking-pirates-somalia-geopolitical-chaos",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Tue, 08 Sep 2026 04:00:27 GMT",
+            "snippet": "US-Israel war on Iran and political instability in Somalia lead to pirates targeting cargo ships off Horn of AfricaThe scourge of Somali piracy targeting cargo ships and smaller dhows off the Horn of ",
+            "isNew": true
+          },
+          {
+            "title": "Israeli ministers keep telling everyone their brutal plans – so why doesn’t the world take them seriously? | Nesrine Malik",
+            "link": "https://www.theguardian.com/commentisfree/2026/sep/07/israeli-ministers-brutal-plans-palestinians-gaza",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Mon, 07 Sep 2026 05:00:26 GMT",
+            "snippet": "Schemes to forcibly remove Palestinians from Gaza are not being promoted by fringe voices. But the international community continues to avert its eyesThe gap between what is being inflicted on Palesti",
+            "isNew": true
+          },
+          {
+            "title": "A Glitz-Free Place Named for Trump? Welcome to the Golan Heights.",
+            "link": "https://www.nytimes.com/2026/09/05/world/middleeast/israel-golan-trump-heights.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Sat, 05 Sep 2026 09:22:05 +0000",
+            "snippet": "The bare-bones village of prefab homes has none of the gilded Trump aesthetic, and the Israelis there are weary of being seen as a gauge of their country’s roller-coaster view of the president.",
+            "isNew": true
+          },
+          {
+            "title": "Netanyahu Posts A.I. Video Pairing Mamdani With Iranian Ruler",
+            "link": "https://www.nytimes.com/2026/09/04/world/middleeast/netanyahu-ai-video-mamdani.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Fri, 04 Sep 2026 20:34:35 +0000",
+            "snippet": "The video shows fictitious scenes of Mayor Zohran Mamdani on the phone, celebrating with Ayatollah Mojtaba Khamenei and others, at the prospect of Mr. Netanyahu losing re-election.",
+            "isNew": true
           }
         ]
       },
@@ -774,9 +939,20 @@
         "category_id": "regional",
         "category_name": "지역 정세",
         "category_icon": "🌍",
-        "count": 4,
-        "new_count": 4,
+        "count": 5,
+        "new_count": 5,
         "articles": [
+          {
+            "title": "What’s happening in the Yemen war?",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/8/09-08-hosted-yemen-explainer?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Tue, 08 Sep 2026 20:13:23 +0000",
+            "snippet": "Fighting between government forces and Iran-backed Houthis is raising fears Yemen could return to full-scale war.",
+            "isNew": true
+          },
           {
             "title": "China and Qatar are strengthening bilateral ties: What that really means",
             "link": "https://www.aljazeera.com/features/2026/9/8/china-and-qatar-are-strengthening-bilateral-ties-what-that-really-means?traffic_source=rss",
@@ -831,7 +1007,7 @@
         "new_count": 3,
         "articles": [
           {
-            "title": "Trump, Putin hold ‘frank’ phone call as US restarts Ukraine deal efforts",
+            "title": "Trump, Putin hold ‘frank’ phone call as US revives Ukraine peace efforts",
             "link": "https://www.aljazeera.com/news/2026/9/8/trump-putin-hold-frank-phone-call-as-us-restarts-ukraine-deal-efforts?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
@@ -839,17 +1015,6 @@
             ],
             "pubDate": "Tue, 08 Sep 2026 18:31:30 +0000",
             "snippet": "The phone call comes after US special envoys travelled to Russia and Ukraine to discuss &#039;a proposal to end the war&#039;.",
-            "isNew": true
-          },
-          {
-            "title": "The shift in British policy on Israel is palpable",
-            "link": "https://www.aljazeera.com/opinions/2026/9/8/the-shift-in-british-policy-on-israel-is-palpable?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Tue, 08 Sep 2026 15:20:47 +0000",
-            "snippet": "But progress could be threatened if there is a new more diplomatic government in Israel.",
             "isNew": true
           },
           {
@@ -862,47 +1027,58 @@
             "pubDate": "Mon, 07 Sep 2026 13:39:23 GMT",
             "snippet": "Lebanon says a recent Israeli escalation is jeopardising a US-brokered ceasefire meant to end the conflict between Israel and Hezbollah.",
             "isNew": true
-          }
-        ]
-      },
-      {
-        "category_id": "politics",
-        "category_name": "국내 정치",
-        "category_icon": "🏛️",
-        "count": 3,
-        "new_count": 3,
-        "articles": [
-          {
-            "title": "Hijacking pirates exploit regional chaos to return to seas off Somalia",
-            "link": "https://www.theguardian.com/world/2026/sep/08/hijacking-pirates-somalia-geopolitical-chaos",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Tue, 08 Sep 2026 04:00:27 GMT",
-            "snippet": "US-Israel war on Iran and political instability in Somalia lead to pirates targeting cargo ships off Horn of AfricaThe scourge of Somali piracy targeting cargo ships and smaller dhows off the Horn of ",
-            "isNew": true
           },
           {
-            "title": "Israeli ministers keep telling everyone their brutal plans – so why doesn’t the world take them seriously? | Nesrine Malik",
-            "link": "https://www.theguardian.com/commentisfree/2026/sep/07/israeli-ministers-brutal-plans-palestinians-gaza",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Mon, 07 Sep 2026 05:00:26 GMT",
-            "snippet": "Schemes to forcibly remove Palestinians from Gaza are not being promoted by fringe voices. But the international community continues to avert its eyesThe gap between what is being inflicted on Palesti",
-            "isNew": true
-          },
-          {
-            "title": "A Glitz-Free Place Named for Trump? Welcome to the Golan Heights.",
-            "link": "https://www.nytimes.com/2026/09/05/world/middleeast/israel-golan-trump-heights.html",
+            "title": "Israel Says It Is Cementing Its Foothold in Southern Lebanon",
+            "link": "https://www.nytimes.com/2026/09/04/world/middleeast/israel-captures-ridge-occupation-katz.html",
             "source": "nytimes",
             "sources": [
               "nytimes"
             ],
-            "pubDate": "Sat, 05 Sep 2026 09:22:05 +0000",
-            "snippet": "The bare-bones village of prefab homes has none of the gilded Trump aesthetic, and the Israelis there are weary of being seen as a gauge of their country’s roller-coaster view of the president.",
+            "pubDate": "Fri, 04 Sep 2026 20:51:29 +0000",
+            "snippet": "The recent capture of a strategic ridge has further entrenched the Israeli occupation of Lebanese territory, as efforts to broker lasting peace have floundered.",
+            "isNew": true
+          }
+        ]
+      },
+      {
+        "category_id": "other",
+        "category_name": "기타",
+        "category_icon": "📰",
+        "count": 3,
+        "new_count": 3,
+        "articles": [
+          {
+            "title": "What the UK ban on goods from illegal Israeli settlements really means",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/8/what-the-uk-ban-on-goods-from-illegal-israeli-settlements-really-means?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Tue, 08 Sep 2026 21:35:36 +0000",
+            "snippet": "Israel has announced that it’s shutting down the UK Consulate in occupied East Jerusalem after a new ban on its goods.",
+            "isNew": true
+          },
+          {
+            "title": "US warns Ford over ties with Chinese firms amid tensions",
+            "link": "https://www.aljazeera.com/economy/2026/9/8/us-warns-ford-over-ties-with-chinese-firms-amid-tensions?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Tue, 08 Sep 2026 21:24:03 +0000",
+            "snippet": "US officials criticise Ford’s partnerships with Chinese firms CATL, Geely, and BYD over security risks.",
+            "isNew": true
+          },
+          {
+            "title": "A More Confident Iran Emerges After Six Months of War With the U.S.",
+            "link": "https://www.nytimes.com/2026/09/04/us/politics/iran-war-intelligence-reports.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Fri, 04 Sep 2026 15:21:43 +0000",
+            "snippet": "New intelligence reports have assessed that Iran now has a far better understanding of its capabilities and the limits of U.S. power.",
             "isNew": true
           }
         ]
@@ -911,8 +1087,8 @@
         "category_id": "humanitarian",
         "category_name": "인도주의/피해",
         "category_icon": "🏥",
-        "count": 2,
-        "new_count": 2,
+        "count": 1,
+        "new_count": 1,
         "articles": [
           {
             "title": "‘This is what I have to do to survive’: the Sudan refugees forced into sex work",
@@ -924,37 +1100,6 @@
             "pubDate": "Mon, 07 Sep 2026 06:00:26 GMT",
             "snippet": "They fled a brutal civil war to reach safety in Egypt, but now many Sudanese women and girls are falling prey to sexual exploitationSudanese women who fled to Egypt to escape the war in their country ",
             "isNew": true
-          },
-          {
-            "title": "Broken feet, ripped-out hair and now a death sentence: the fate of twin sisters jailed over Iran protests",
-            "link": "https://www.theguardian.com/world/2026/sep/06/taraneh-romina-rahimi-twin-sisters-jailed-over-iran-protests",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Sun, 06 Sep 2026 06:00:58 GMT",
-            "snippet": "Taraneh Rahimi was told prison guards would rape her sister, Romina, if she did not sign a confessionThe twins were 19 and still in high school when they were taken from their beds in the dead of nigh",
-            "isNew": true
-          }
-        ]
-      },
-      {
-        "category_id": "other",
-        "category_name": "기타",
-        "category_icon": "📰",
-        "count": 1,
-        "new_count": 1,
-        "articles": [
-          {
-            "title": "Israeli academia accused of systemic apartheid against Palestinians",
-            "link": "https://www.aljazeera.com/news/2026/9/8/israeli-academia-accused-of-systemic-apartheid-against-palestinians?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Tue, 08 Sep 2026 16:04:42 +0000",
-            "snippet": "A legal report exposes how Israeli universities use a dual-track disciplinary system to target Palestinian students.",
-            "isNew": true
           }
         ]
       }
@@ -962,8 +1107,68 @@
     "recent_30min": {
       "total_new": 50,
       "by_category": {
+        "military": {
+          "count": 20,
+          "titles": [
+            {
+              "title": "U.S. Strikes Iranian Oil Tankers, Drawing Threat of Reprisal",
+              "link": "https://www.nytimes.com/2026/09/08/world/middleeast/us-strikes-iran-tankers.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Before Oct. 7 Attack, Netanyahu Was Warned, Report Says. He Denies It.",
+              "link": "https://www.nytimes.com/2026/09/08/world/middleeast/israel-netanyahu-2023-hamas-attack.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Police bodycam captures Russian missile strike on Kyiv",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/9/8/police-bodycam-captures-russian-missile-strike-on-kyiv?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Oil Climbs Toward $100 a Barrel Following Houthi Attacks",
+              "link": "https://www.nytimes.com/2026/09/08/business/oil-prices-iran-war.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Iran claims to have seized American drone US says had ‘malfunctioned’",
+              "link": "https://www.theguardian.com/us-news/2026/sep/08/iran-underwater-drone-strait-of-hormuz",
+              "source": "guardian"
+            }
+          ]
+        },
+        "politics": {
+          "count": 6,
+          "titles": [
+            {
+              "title": "Protesters, police clash in Albania over Trump-linked project",
+              "link": "https://www.aljazeera.com/news/2026/9/8/protesters-police-clash-in-albania-over-trump-linked-project?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Head of Smithsonian museums announces he will be stepping down",
+              "link": "https://www.aljazeera.com/news/2026/9/8/head-of-smithsonian-museums-announces-he-will-be-stepping-down?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Hijacking pirates exploit regional chaos to return to seas off Somalia",
+              "link": "https://www.theguardian.com/world/2026/sep/08/hijacking-pirates-somalia-geopolitical-chaos",
+              "source": "guardian"
+            },
+            {
+              "title": "Israeli ministers keep telling everyone their brutal plans – so why doesn’t the world take them seriously? | Nesrine Malik",
+              "link": "https://www.theguardian.com/commentisfree/2026/sep/07/israeli-ministers-brutal-plans-palestinians-gaza",
+              "source": "guardian"
+            },
+            {
+              "title": "A Glitz-Free Place Named for Trump? Welcome to the Golan Heights.",
+              "link": "https://www.nytimes.com/2026/09/05/world/middleeast/israel-golan-trump-heights.html",
+              "source": "nytimes"
+            }
+          ]
+        },
         "economy": {
-          "count": 18,
+          "count": 12,
           "titles": [
             {
               "title": "Israeli Allies Ban Trade With Settlements as U.K. Cites ‘Ethnic Cleansing’",
@@ -992,39 +1197,34 @@
             }
           ]
         },
-        "military": {
-          "count": 19,
+        "other": {
+          "count": 3,
           "titles": [
             {
-              "title": "Oil Climbs Toward $100 a Barrel Following Houthi Attacks",
-              "link": "https://www.nytimes.com/2026/09/08/business/oil-prices-iran-war.html",
+              "title": "What the UK ban on goods from illegal Israeli settlements really means",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/9/8/what-the-uk-ban-on-goods-from-illegal-israeli-settlements-really-means?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "US warns Ford over ties with Chinese firms amid tensions",
+              "link": "https://www.aljazeera.com/economy/2026/9/8/us-warns-ford-over-ties-with-chinese-firms-amid-tensions?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "A More Confident Iran Emerges After Six Months of War With the U.S.",
+              "link": "https://www.nytimes.com/2026/09/04/us/politics/iran-war-intelligence-reports.html",
               "source": "nytimes"
-            },
-            {
-              "title": "Yemen’s war is back: A new battle for Sanaa and the Red Sea",
-              "link": "https://www.aljazeera.com/features/2026/9/8/yemens-war-is-back-a-new-battle-for-sanaa-and-the-red-sea?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Israeli strikes devastate homes, displace families across Gaza",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/9/8/israeli-strikes-devastate-homes-displace-families-across-gaza?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Bombardier defends US manufacturing amid Trump’s aviation sales threat",
-              "link": "https://www.aljazeera.com/economy/2026/9/8/bombardier-defends-us-manufacturing-amid-trumps-aviation-sales-threat?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Israeli strikes transform Lebanese city into ghost town",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/9/8/israeli-strikes-transform-lebanese-city-into-ghost-town?traffic_source=rss",
-              "source": "aljazeera"
             }
           ]
         },
         "regional": {
-          "count": 4,
+          "count": 5,
           "titles": [
+            {
+              "title": "What’s happening in the Yemen war?",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/9/8/09-08-hosted-yemen-explainer?traffic_source=rss",
+              "source": "aljazeera"
+            },
             {
               "title": "China and Qatar are strengthening bilateral ties: What that really means",
               "link": "https://www.aljazeera.com/features/2026/9/8/china-and-qatar-are-strengthening-bilateral-ties-what-that-really-means?traffic_source=rss",
@@ -1051,63 +1251,28 @@
           "count": 3,
           "titles": [
             {
-              "title": "Trump, Putin hold ‘frank’ phone call as US restarts Ukraine deal efforts",
+              "title": "Trump, Putin hold ‘frank’ phone call as US revives Ukraine peace efforts",
               "link": "https://www.aljazeera.com/news/2026/9/8/trump-putin-hold-frank-phone-call-as-us-restarts-ukraine-deal-efforts?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "The shift in British policy on Israel is palpable",
-              "link": "https://www.aljazeera.com/opinions/2026/9/8/the-shift-in-british-policy-on-israel-is-palpable?traffic_source=rss",
               "source": "aljazeera"
             },
             {
               "title": "Israeli strikes in southern Lebanese village kill 12",
               "link": "https://www.bbc.co.uk/news/articles/c5yl96vz0edo?at_medium=RSS&at_campaign=rss",
               "source": "bbc"
-            }
-          ]
-        },
-        "other": {
-          "count": 1,
-          "titles": [
-            {
-              "title": "Israeli academia accused of systemic apartheid against Palestinians",
-              "link": "https://www.aljazeera.com/news/2026/9/8/israeli-academia-accused-of-systemic-apartheid-against-palestinians?traffic_source=rss",
-              "source": "aljazeera"
-            }
-          ]
-        },
-        "politics": {
-          "count": 3,
-          "titles": [
-            {
-              "title": "Hijacking pirates exploit regional chaos to return to seas off Somalia",
-              "link": "https://www.theguardian.com/world/2026/sep/08/hijacking-pirates-somalia-geopolitical-chaos",
-              "source": "guardian"
             },
             {
-              "title": "Israeli ministers keep telling everyone their brutal plans – so why doesn’t the world take them seriously? | Nesrine Malik",
-              "link": "https://www.theguardian.com/commentisfree/2026/sep/07/israeli-ministers-brutal-plans-palestinians-gaza",
-              "source": "guardian"
-            },
-            {
-              "title": "A Glitz-Free Place Named for Trump? Welcome to the Golan Heights.",
-              "link": "https://www.nytimes.com/2026/09/05/world/middleeast/israel-golan-trump-heights.html",
+              "title": "Israel Says It Is Cementing Its Foothold in Southern Lebanon",
+              "link": "https://www.nytimes.com/2026/09/04/world/middleeast/israel-captures-ridge-occupation-katz.html",
               "source": "nytimes"
             }
           ]
         },
         "humanitarian": {
-          "count": 2,
+          "count": 1,
           "titles": [
             {
               "title": "‘This is what I have to do to survive’: the Sudan refugees forced into sex work",
               "link": "https://www.theguardian.com/global-development/2026/sep/07/sudan-women-war-refugees-egypt-sex-work-exploitation",
-              "source": "guardian"
-            },
-            {
-              "title": "Broken feet, ripped-out hair and now a death sentence: the fate of twin sisters jailed over Iran protests",
-              "link": "https://www.theguardian.com/world/2026/sep/06/taraneh-romina-rahimi-twin-sisters-jailed-over-iran-protests",
               "source": "guardian"
             }
           ]
@@ -1202,28 +1367,10 @@
     }
   ],
   "economic_indicators": {
-    "GOLD": {
-      "price": 4407,
-      "change": -22.8,
-      "changePercent": -0.51,
-      "prev": 4429.8
-    },
-    "DXY": {
-      "price": 98.86,
-      "change": -0.3,
-      "changePercent": -0.3,
-      "prev": 99.16
-    },
-    "VIX": {
-      "price": 15.52,
-      "change": 0.22,
-      "changePercent": 1.44,
-      "prev": 15.3
-    },
     "BRENT": {
-      "price": 98.67,
-      "change": 2.39,
-      "changePercent": 2.48,
+      "price": 99.37,
+      "change": 3.09,
+      "changePercent": 3.21,
       "prev": 96.28
     },
     "US10Y": {
@@ -1232,26 +1379,68 @@
       "changePercent": 0.42,
       "prev": 4.78
     },
-    "WTI": {
-      "price": 93.69,
-      "change": 2.21,
-      "changePercent": 2.42,
-      "prev": 91.48
-    },
     "US2Y": {
       "price": 3.77,
       "change": 0.02,
       "changePercent": 0.53,
       "prev": 3.76
+    },
+    "DXY": {
+      "price": 98.84,
+      "change": -0.32,
+      "changePercent": -0.32,
+      "prev": 99.16
+    },
+    "GOLD": {
+      "price": 4395.8,
+      "change": -34,
+      "changePercent": -0.77,
+      "prev": 4429.8
+    },
+    "WTI": {
+      "price": 94.23,
+      "change": 2.75,
+      "changePercent": 3.01,
+      "prev": 91.48
+    },
+    "VIX": {
+      "price": 15.72,
+      "change": 0.42,
+      "changePercent": 2.75,
+      "prev": 15.3
     }
   },
   "critical_events": [
     {
+      "id": "regime_collapse",
+      "name": "교전국 정권 붕괴/쿠데타",
+      "severity": "critical",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "shorten"
+    },
+    {
+      "id": "diplomatic_breakthrough",
+      "name": "외교적 돌파구/강대국 중재",
+      "severity": "high",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "shorten"
+    },
+    {
+      "id": "capital_attack",
+      "name": "수도 직접 공격/포위",
+      "severity": "high",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "shorten"
+    },
+    {
       "id": "humanitarian_crisis",
       "name": "대규모 인도주의 위기",
       "severity": "high",
-      "confidence": 1,
-      "matchCount": 4.6,
+      "confidence": 0.8666666666666667,
+      "matchCount": 2.6,
       "direction": "shorten"
     },
     {
