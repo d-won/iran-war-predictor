@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-09-09T19:02:16.677Z",
+  "timestamp": "2026-09-09T21:48:06.721Z",
   "war_day": 193,
   "probabilities": {
-    "1개월 내 (~3월)": 17.2,
-    "2~3개월 (4~5월)": 36.9,
-    "4~6개월 (6~8월)": 27.7,
-    "7~12개월 (9월~27/2월)": 14,
-    "1년 초과": 4.2
+    "1개월 내 (~3월)": 18.9,
+    "2~3개월 (4~5월)": 37.5,
+    "4~6개월 (6~8월)": 25.8,
+    "7~12개월 (9월~27/2월)": 13.1,
+    "1년 초과": 4.7
   },
   "factors": [
     {
@@ -45,8 +45,8 @@
       "decay": 0.4
     },
     {
-      "factor": "확전 뉴스 우세 (확전10:휴전2)",
-      "impact": "전쟁 장기화 가능성 (확전비율 83%)",
+      "factor": "확전 뉴스 우세 (확전8:휴전2)",
+      "impact": "전쟁 장기화 가능성 (확전비율 80%)",
       "weight": "+0.03%p (4~6개월)",
       "direction": "lengthen",
       "detail": "언론에서 휴전보다 확전을 더 많이 보도하고 있습니다.",
@@ -164,11 +164,11 @@
       "decay": 1
     },
     {
-      "factor": "협상/외교 뉴스 4건 감지",
+      "factor": "협상/외교 뉴스 6건 감지",
       "impact": "외교적 해결 움직임 포착",
       "weight": "+0.01%p (1개월내), +0.01%p (2~3개월)",
       "direction": "shorten",
-      "detail": "실시간 뉴스에서 협상 관련 기사 4건이 감지되었습니다.",
+      "detail": "실시간 뉴스에서 협상 관련 기사 6건이 감지되었습니다.",
       "keywords": [
         "negotiat",
         "talks",
@@ -181,11 +181,11 @@
       "decay": 1
     },
     {
-      "factor": "지역 확산 뉴스 18건 감지",
+      "factor": "지역 확산 뉴스 16건 감지",
       "impact": "주변국 대규모 연루 → 장기화 위험 높음",
       "weight": "+0.02%p (4~6개월), +0.02%p (7~12개월)",
       "direction": "lengthen",
-      "detail": "주변국을 언급하는 기사 18건이 감지되었습니다.",
+      "detail": "주변국을 언급하는 기사 16건이 감지되었습니다.",
       "keywords": [
         "saudi",
         "uae",
@@ -234,6 +234,38 @@
       "decay": 0.3
     },
     {
+      "factor": "[중대 이벤트] 수도 직접 공격/포위",
+      "impact": "수도 직접 공격. 베오그라드(1999): 78일 폭격 후 항복. 바그다드(2003): 21일만에 함락. 수도 타격은 전쟁 지속 의지를 급격히 약화.",
+      "weight": "+2.7%p (1개월내), +4.0%p (2~3개월), -1.3%p (4~6개월), -1.3%p (7~12개월), -0.7%p (1년초과)",
+      "direction": "shorten",
+      "detail": "수도 직접 공격. 베오그라드(1999): 78일 폭격 후 항복. 바그다드(2003): 21일만에 함락. 수도 타격은 전쟁 지속 의지를 급격히 약화.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Iran referred to UN Security Council for nuclear non-compliance",
+      "keywords": [
+        "capital",
+        "bomb",
+        "capital",
+        "strike",
+        "capital",
+        "attack",
+        "capital",
+        "siege",
+        "capital",
+        "pound",
+        "capital",
+        "explosion",
+        "tehran",
+        "bomb",
+        "tehran",
+        "strike",
+        "tehran",
+        "pound",
+        "tehran",
+        "explosion"
+      ],
+      "applied": "2026-09-09",
+      "active": true,
+      "severity": "high"
+    },
+    {
       "factor": "[중대 이벤트] 대규모 인도주의 위기",
       "impact": "대규모 인도주의 위기. 국제사회 개입 압력 증가. 코소보(1999): 난민 위기가 NATO 작전 가속화. 인도적 위기는 국제 종전 압력을 2~3배 강화.",
       "weight": "+1.7%p (1개월내), +3.5%p (2~3개월), +0.9%p (4~6개월), -0.9%p (7~12개월), -0.9%p (1년초과)",
@@ -260,11 +292,41 @@
       "severity": "high"
     },
     {
-      "factor": "유가 급등 (WTI $96.42/배럴)",
+      "factor": "[중대 이벤트] 대량살상무기(WMD)/핵 위협",
+      "impact": "WMD/핵 위협 감지. 핵 위협은 분쟁의 성격을 근본적으로 변화시키며, 국제사회 전체의 개입을 촉발하여 예측 불확실성이 극대화.",
+      "weight": "+2.0%p (1개월내), +2.0%p (2~3개월), +3.3%p (4~6개월), +2.7%p (7~12개월), +2.0%p (1년초과)",
+      "direction": "lengthen",
+      "detail": "WMD/핵 위협 감지. 핵 위협은 분쟁의 성격을 근본적으로 변화시키며, 국제사회 전체의 개입을 촉발하여 예측 불확실성이 극대화.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Iran referred to UN Security Council for nuclear non-compliance",
+      "keywords": [
+        "nuclear",
+        "strike",
+        "nuclear",
+        "weapon",
+        "use",
+        "nuclear",
+        "threat",
+        "chemical",
+        "weapon",
+        "use",
+        "biological",
+        "weapon",
+        "wmd",
+        "deploy",
+        "nuclear",
+        "option",
+        "atomic",
+        "bomb"
+      ],
+      "applied": "2026-09-09",
+      "active": true,
+      "severity": "critical"
+    },
+    {
+      "factor": "유가 급등 (WTI $96.67/배럴)",
       "impact": "중간 수준 경제 압력",
       "weight": "+2%p (1-2개월)",
       "direction": "shorten",
-      "detail": "WTI 유가가 $96.42/배럴로 90달러 이상입니다. 호르무즈 해협 봉쇄와 맞물려 글로벌 에너지 시장에 큰 충격을 주고 있으며, 주요국들의 조기 종전 압력이 강화되고 있습니다.",
+      "detail": "WTI 유가가 $96.67/배럴로 90달러 이상입니다. 호르무즈 해협 봉쇄와 맞물려 글로벌 에너지 시장에 큰 충격을 주고 있으며, 주요국들의 조기 종전 압력이 강화되고 있습니다.",
       "keywords": [
         "oil",
         "crude",
@@ -277,11 +339,11 @@
       "active": true
     },
     {
-      "factor": "금값 사상최고 ($4451.9/oz)",
+      "factor": "금값 사상최고 ($4447.2/oz)",
       "impact": "안전자산 수요 폭증 → 글로벌 불안 심화",
       "weight": "+2%p (4-6개월)",
       "direction": "lengthen",
-      "detail": "금 가격이 온스당 $4451.9로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
+      "detail": "금 가격이 온스당 $4447.2로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
       "keywords": [
         "gold",
         "safe haven",
@@ -310,17 +372,157 @@
   ],
   "news_signals": {
     "ceasefire_mentions": 2,
-    "escalation_mentions": 10,
-    "negotiation_mentions": 4,
-    "casualty_mentions": 6,
+    "escalation_mentions": 8,
+    "negotiation_mentions": 6,
+    "casualty_mentions": 2,
     "peace_mentions": 0,
-    "regional_spread": 18,
+    "regional_spread": 16,
     "total_articles": 50,
     "new_articles": 50,
     "unique_events": 46,
     "duplicates_removed": 4
   },
   "latest_news": [
+    {
+      "title": "Liverpool come back to beat Atletico Madrid 2-1 in Champions League opener",
+      "link": "https://www.aljazeera.com/sports/2026/9/9/liverpool-come-back-to-beat-atletico-madrid-2-1-in-champions-league-opener?traffic_source=rss",
+      "pubDate": "Wed, 09 Sep 2026 21:14:20 +0000",
+      "source": "aljazeera",
+      "snippet": "Marcos Llorente gives Atleti an early lead but Liverpool strike back through Dominik Szoboszlai and Alexis Mac Allister.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Trump says Iran war ‘will end immediately’ after US midterm elections",
+      "link": "https://www.aljazeera.com/news/2026/9/9/trump-says-iran-war-will-end-immediately-after-us-midterm-elections?traffic_source=rss",
+      "pubDate": "Wed, 09 Sep 2026 21:09:45 +0000",
+      "source": "aljazeera",
+      "snippet": "The president added the US is not looking to restart negotiations with Iran after the failure of previous ceasefires.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Yemen Tilts Toward Full-Scale War as Saudi-Houthi Clashes Escalate",
+      "link": "https://www.nytimes.com/2026/09/09/world/middleeast/saudi-yemen-strilkes.html",
+      "pubDate": "Wed, 09 Sep 2026 21:09:08 +0000",
+      "source": "nytimes",
+      "snippet": "With its oil-export routes once again under threat, Saudi Arabia is stepping up its military campaign against an old antagonist.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Miliband rejects chief rabbi's claim British Jews in greater danger after sanctions move",
+      "link": "https://www.bbc.co.uk/news/articles/ce9e3djdz94o?at_medium=RSS&at_campaign=rss",
+      "pubDate": "Wed, 09 Sep 2026 20:59:24 GMT",
+      "source": "bbc",
+      "snippet": "The foreign secretary disagrees that sanctions on Israeli settlements could put British Jews at greater risk.",
+      "isNew": true,
+      "_isDuplicate": true,
+      "_sourceCount": 1
+    },
+    {
+      "title": "Trump says Putin wants to make a deal to end Ukraine war",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/9/9/trump-says-putin-wants-to-make-a-deal-to-end-ukraine-war?traffic_source=rss",
+      "pubDate": "Wed, 09 Sep 2026 20:56:05 +0000",
+      "source": "aljazeera",
+      "snippet": "US President Donald Trump says Russian President Putin wants a deal to end the war in Ukraine. ",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Pro-Palestinian protesters oppose Israel embassy opening in Slovenia",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/9/9/09-09-sv-slovenia-protests-israeli-embassy-ljubljana-slov?traffic_source=rss",
+      "pubDate": "Wed, 09 Sep 2026 20:53:26 +0000",
+      "source": "aljazeera",
+      "snippet": "Pro-Palestinian protesters gathered in Slovenia’s capital to oppose the opening of Israel’s first resident embassy.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Burnham defends UK ban on Israeli settlement trade",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/9/9/burnham-defends-uk-ban-on-israeli-settlement-trade?traffic_source=rss",
+      "pubDate": "Wed, 09 Sep 2026 20:32:24 +0000",
+      "source": "aljazeera",
+      "snippet": "UK Prime Minister Andy Burnham defended a ban on trade with Israeli settlements in the occupied West Bank",
+      "isNew": true,
+      "_isDuplicate": true,
+      "_sourceCount": 1
+    },
+    {
+      "title": "IAEA board refers Iran to UN Security Council over nuclear ‘non-compliance’",
+      "link": "https://www.aljazeera.com/news/2026/9/9/iaea-board-resolves-to-report-iran-to-security-council-over-nuclear-program?traffic_source=rss",
+      "pubDate": "Wed, 09 Sep 2026 20:23:34 +0000",
+      "source": "aljazeera",
+      "snippet": "The symbolic escalation has been initiated by the United States, Germany, France and the United Kingdom.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Iran referred to UN Security Council for nuclear non-compliance",
+      "link": "https://www.bbc.co.uk/news/articles/ckgwj4kl5lno?at_medium=RSS&at_campaign=rss",
+      "pubDate": "Wed, 09 Sep 2026 20:22:51 GMT",
+      "source": "bbc",
+      "snippet": "Tehran condemns the resolution, blaming US and Israeli strikes on its nuclear facilities for disrupting inspections.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Yemen envoy warns of wider war as Houthis threaten Bab al-Mandeb Strait",
+      "link": "https://www.aljazeera.com/news/2026/9/9/yemen-envoy-warns-of-wider-war-as-houthis-threaten-bab-al-mandeb-strait?traffic_source=rss",
+      "pubDate": "Wed, 09 Sep 2026 20:05:48 +0000",
+      "source": "aljazeera",
+      "snippet": "In an interview with Al Jazeera, Yemen&#039;s ambassador warns Houthi attacks threaten global shipping.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Israeli strike targets home in Gaza’s al-Shati refugee camp",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/9/9/israeli-strike-targets-home-in-gazas-al-shati-refugee-camp?traffic_source=rss",
+      "pubDate": "Wed, 09 Sep 2026 19:37:47 +0000",
+      "source": "aljazeera",
+      "snippet": "An Israeli strike devastated a home in Gaza City’s al-Shati refugee camp, heavily damaging surrounding homes. ",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Yemeni diplomat says Houthis want to drag Saudi Arabia into war",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/9/9/09-09-clip-yemen-says-houthis-dragging-saudi-into-war-yn?traffic_source=rss",
+      "pubDate": "Wed, 09 Sep 2026 19:18:19 +0000",
+      "source": "aljazeera",
+      "snippet": "Houthis are trying to drag Saudi Arabia into conflict by targeting Saudi territory, says Yemen’s Ambassador to Qatar.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
     {
       "title": "Explosion at depot storing weapons left from Syria war kills 14",
       "link": "https://www.aljazeera.com/video/newsfeed/2026/9/9/explosion-at-depot-storing-weapons-left-from-syria-war-kills-14?traffic_source=rss",
@@ -356,148 +558,6 @@
       "_isDuplicated": false,
       "_clusterSize": 1,
       "_isDuplicate": false
-    },
-    {
-      "title": "How significant are new European sanctions on illegal Israeli settlements?",
-      "link": "https://www.aljazeera.com/video/inside-story/2026/9/9/how-significant-are-new-european-sanctions-on-illegal-israeli-settlements?traffic_source=rss",
-      "pubDate": "Wed, 09 Sep 2026 18:23:27 +0000",
-      "source": "aljazeera",
-      "snippet": "Israel is accused of the ethnic cleansing of Palestinians.",
-      "isNew": true,
-      "_isDuplicate": true,
-      "_sourceCount": 1
-    },
-    {
-      "title": "Saudi Oil Exports Plunge as Spread of War Shuts Off Shipping Routes",
-      "link": "https://www.nytimes.com/2026/09/09/business/saudi-arabia-houthis-red-sea-oil-shipping.html",
-      "pubDate": "Wed, 09 Sep 2026 18:04:07 +0000",
-      "source": "nytimes",
-      "snippet": "With few good options for safely shipping oil, Saudi Arabia’s exports have fallen to a 13-year low.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Senior UK rabbis come out in support of sanctions on Israeli settlements",
-      "link": "https://www.theguardian.com/politics/2026/sep/09/senior-uk-rabbis-come-out-in-support-of-sanctions-on-israeli-settlements",
-      "pubDate": "Wed, 09 Sep 2026 17:57:14 GMT",
-      "source": "guardian",
-      "snippet": "Spiritual leaders stress diversity of views within Jewish community and warn against inaction on settler violence‘It’s a good start’: prominent Israelis welcome UK sanctionsProminent British rabbis ha",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Bombardier looks to hire 500 new workers in US, despite Trump threat",
-      "link": "https://www.aljazeera.com/economy/2026/9/9/bombardier-looks-to-hire-500-new-workers-in-us-despite-trump-threat?traffic_source=rss",
-      "pubDate": "Wed, 09 Sep 2026 17:37:50 +0000",
-      "source": "aljazeera",
-      "snippet": "The Canadian aircraft manufacturer has received support from Republican lawmakers on its economic impact record.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "‘It’s a good start’: prominent Israelis welcome UK sanctions on illegal settlements",
-      "link": "https://www.theguardian.com/world/2026/sep/09/israelis-welcome-uk-sanctions-on-settlements-palestine-west-bank",
-      "pubDate": "Wed, 09 Sep 2026 17:36:42 GMT",
-      "source": "guardian",
-      "snippet": "Ed Miliband’s intervention was ‘inevitable’ after Israeli government and security failures, say former ministers and diplomatsProminent Israelis have welcomed new UK sanctions as a necessary response ",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Palestinian child misses first day of school due to settler siege",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/9/9/palestinian-child-misses-first-day-of-school-due-to-settler-siege?traffic_source=rss",
-      "pubDate": "Wed, 09 Sep 2026 17:32:46 +0000",
-      "source": "aljazeera",
-      "snippet": "Four-year-old Kinda Hassan is missing the start of her first school year amid a month-long siege by Israeli settlers.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Why Israel Reacted With Fury to U.K. Sanctions on West Bank Settlements",
-      "link": "https://www.nytimes.com/2026/09/09/world/middleeast/israel-uk-west-bank-sanctions.html",
-      "pubDate": "Wed, 09 Sep 2026 17:13:10 +0000",
-      "source": "nytimes",
-      "snippet": "The fierce retaliation of Prime Minister Benjamin Netanyahu’s government to the new restrictions is a reflection of his tough re-election fight, analysts say.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Inside Israel’s prisons, where Ben-Gvir’s cruelty is policy",
-      "link": "https://www.aljazeera.com/features/2026/9/9/inside-israels-prisons-where-ben-gvirs-cruelty-is-policy?traffic_source=rss",
-      "pubDate": "Wed, 09 Sep 2026 17:04:24 +0000",
-      "source": "aljazeera",
-      "snippet": "Palestinian prisoners are being kept in inhumane conditions in Israeli detention facilities, overseen by Ben-Gvir.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Oil hits $100 a barrel for first time since July after US and Houthi strikes",
-      "link": "https://www.bbc.co.uk/news/articles/cyvznqypz0yo?at_medium=RSS&at_campaign=rss",
-      "pubDate": "Wed, 09 Sep 2026 16:46:53 GMT",
-      "source": "bbc",
-      "snippet": "Brent crude - the global benchmark for prices - rises after the US hit five Iranian tankers on Tuesday",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "UK defends sanctions on Israeli West Bank settlements after backlash – The Latest",
-      "link": "https://www.theguardian.com/news/audio/2026/sep/09/uk-defends-sanctions-on-israeli-west-bank-settlements-after-backlash-the-latest",
-      "pubDate": "Wed, 09 Sep 2026 16:37:06 GMT",
-      "source": "guardian",
-      "snippet": "The foreign secretary, Ed Miliband, is facing a backlash over the government’s sanctions against illegal Israeli settlements in the West Bank after the chief rabbi, Ephraim Mirvis, said the safety of ",
-      "isNew": true,
-      "_sourceCount": 2,
-      "_isDuplicated": true,
-      "_clusterSize": 2,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Israel sanctions will not hurt intelligence sharing between spy agencies, says Miliband",
-      "link": "https://www.theguardian.com/politics/2026/sep/09/israel-sanctions-will-not-hurt-intelligence-sharing-between-spy-agencies-says-miliband",
-      "pubDate": "Wed, 09 Sep 2026 16:14:41 GMT",
-      "source": "guardian",
-      "snippet": "UK foreign secretary says international community including US shares ‘frustration’ at Israel’s failure to constrain illegal settlersBritish intelligence has been given assurances by its Israeli count",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "As the UK sanctions Israeli settlements, is the two-state solution dead?",
-      "link": "https://www.aljazeera.com/news/2026/9/9/as-the-uk-sanctions-israeli-settlements-is-the-two-state-solution-dead?traffic_source=rss",
-      "pubDate": "Wed, 09 Sep 2026 15:43:29 +0000",
-      "source": "aljazeera",
-      "snippet": "Analysts say UK move far from enough to drive momentum for Palestinian statehood.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
     }
   ],
   "news_digest": {
@@ -506,21 +566,31 @@
         "category_id": "economy",
         "category_name": "경제 영향",
         "category_icon": "📊",
-        "count": 21,
-        "new_count": 21,
+        "count": 18,
+        "new_count": 18,
         "articles": [
           {
-            "title": "UK accuses Israeli ‘terrorists’ of ethnic cleansing in West Bank with government backing",
-            "link": "https://www.theguardian.com/world/2026/sep/08/uk-accuses-israeli-terrorists-ethnic-cleansing-west-bank-government-backing",
+            "title": "UK defends sanctions on Israeli West Bank settlements after backlash – The Latest",
+            "link": "https://www.theguardian.com/news/audio/2026/sep/09/uk-defends-sanctions-on-israeli-west-bank-settlements-after-backlash-the-latest",
             "source": "guardian",
             "sources": [
               "guardian",
-              "aljazeera",
-              "bbc",
-              "nytimes"
+              "bbc"
             ],
-            "pubDate": "Tue, 08 Sep 2026 19:00:50 GMT",
-            "snippet": "Ed Miliband announces sanctions on trade with settlements as PM says in the Guardian it is time to actI believe in a two-state solution in the Middle East. That’s why we’re taking action to keep that ",
+            "pubDate": "Wed, 09 Sep 2026 16:37:06 GMT",
+            "snippet": "The foreign secretary, Ed Miliband, is facing a backlash over the government’s sanctions against illegal Israeli settlements in the West Bank after the chief rabbi, Ephraim Mirvis, said the safety of ",
+            "isNew": true
+          },
+          {
+            "title": "British-Israeli relations at lowest ebb in decades",
+            "link": "https://www.bbc.co.uk/news/articles/c5ydlex9yn3o?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc",
+              "aljazeera"
+            ],
+            "pubDate": "Tue, 08 Sep 2026 21:46:31 GMT",
+            "snippet": "Israel's response to London's trade ban with Israeli settlements in the occupied West Bank shows how important this moment is.",
             "isNew": true
           },
           {
@@ -546,18 +616,6 @@
             "isNew": true
           },
           {
-            "title": "UK defends sanctions on Israeli West Bank settlements after backlash – The Latest",
-            "link": "https://www.theguardian.com/news/audio/2026/sep/09/uk-defends-sanctions-on-israeli-west-bank-settlements-after-backlash-the-latest",
-            "source": "guardian",
-            "sources": [
-              "guardian",
-              "bbc"
-            ],
-            "pubDate": "Wed, 09 Sep 2026 16:37:06 GMT",
-            "snippet": "The foreign secretary, Ed Miliband, is facing a backlash over the government’s sanctions against illegal Israeli settlements in the West Bank after the chief rabbi, Ephraim Mirvis, said the safety of ",
-            "isNew": true
-          },
-          {
             "title": "Israel sanctions will not hurt intelligence sharing between spy agencies, says Miliband",
             "link": "https://www.theguardian.com/politics/2026/sep/09/israel-sanctions-will-not-hurt-intelligence-sharing-between-spy-agencies-says-miliband",
             "source": "guardian",
@@ -566,28 +624,6 @@
             ],
             "pubDate": "Wed, 09 Sep 2026 16:14:41 GMT",
             "snippet": "UK foreign secretary says international community including US shares ‘frustration’ at Israel’s failure to constrain illegal settlersBritish intelligence has been given assurances by its Israeli count",
-            "isNew": true
-          },
-          {
-            "title": "As the UK sanctions Israeli settlements, is the two-state solution dead?",
-            "link": "https://www.aljazeera.com/news/2026/9/9/as-the-uk-sanctions-israeli-settlements-is-the-two-state-solution-dead?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Wed, 09 Sep 2026 15:43:29 +0000",
-            "snippet": "Analysts say UK move far from enough to drive momentum for Palestinian statehood.",
-            "isNew": true
-          },
-          {
-            "title": "Jerusalem Daily: Israel retaliates over sanctions on illegal settlements",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/9/jerusalem-daily-israel-retaliates-over-sanctions-on-illegal-settlements?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Wed, 09 Sep 2026 15:41:43 +0000",
-            "snippet": "A diplomatic rift grows between the UK and Israel after Britain led a ban on trade with illegal Israeli settlements",
             "isNew": true
           },
           {
@@ -622,6 +658,28 @@
             "pubDate": "Wed, 09 Sep 2026 05:46:18 GMT",
             "snippet": "In today’s newsletter: Ed Miliband has announced the strongest statement on Israel’s actions ever issued by the the UK government, but will it make a meaningful difference to Palestinians?Good morning",
             "isNew": true
+          },
+          {
+            "title": "Australia to impose 'targeted measures' to stop Israeli settler violence but no import ban – video",
+            "link": "https://www.theguardian.com/world/video/2026/sep/09/australia-to-impose-targeted-measures-to-stop-israeli-settler-violence-but-no-import-ban-video",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Wed, 09 Sep 2026 01:39:04 GMT",
+            "snippet": "The foreign affairs minister, Penny Wong, has announced that Australia will work with international partners to 'deter illegal settlements and settler violence' but won’t follow the UK in implementing",
+            "isNew": true
+          },
+          {
+            "title": "Australia considers new Israel sanctions but won’t join UK in banning trade with ‘settler terrorists’",
+            "link": "https://www.theguardian.com/australia-news/2026/sep/09/australia-considers-new-israel-sanctions-but-wont-join-uk-in-banning-trade-with-settler-terrorists-ntwnfb",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Wed, 09 Sep 2026 01:38:02 GMT",
+            "snippet": "Penny Wong has concerns about blanket ban announced by UK, France and Canada, but says new ‘targeted measures’ planned over Israeli settlersFollow our Australia news live blog for latest updatesGet ou",
+            "isNew": true
           }
         ]
       },
@@ -629,9 +687,31 @@
         "category_id": "military",
         "category_name": "군사 작전",
         "category_icon": "⚔️",
-        "count": 11,
-        "new_count": 11,
+        "count": 10,
+        "new_count": 10,
         "articles": [
+          {
+            "title": "Liverpool come back to beat Atletico Madrid 2-1 in Champions League opener",
+            "link": "https://www.aljazeera.com/sports/2026/9/9/liverpool-come-back-to-beat-atletico-madrid-2-1-in-champions-league-opener?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Wed, 09 Sep 2026 21:14:20 +0000",
+            "snippet": "Marcos Llorente gives Atleti an early lead but Liverpool strike back through Dominik Szoboszlai and Alexis Mac Allister.",
+            "isNew": true
+          },
+          {
+            "title": "Israeli strike targets home in Gaza’s al-Shati refugee camp",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/9/israeli-strike-targets-home-in-gazas-al-shati-refugee-camp?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Wed, 09 Sep 2026 19:37:47 +0000",
+            "snippet": "An Israeli strike devastated a home in Gaza City’s al-Shati refugee camp, heavily damaging surrounding homes. ",
+            "isNew": true
+          },
           {
             "title": "Explosion at depot storing weapons left from Syria war kills 14",
             "link": "https://www.aljazeera.com/video/newsfeed/2026/9/9/explosion-at-depot-storing-weapons-left-from-syria-war-kills-14?traffic_source=rss",
@@ -641,17 +721,6 @@
             ],
             "pubDate": "Wed, 09 Sep 2026 18:32:19 +0000",
             "snippet": "An explosion tore through a temporary weapons depot near Sarmada, in northwestern Syria killing at least 14 people",
-            "isNew": true
-          },
-          {
-            "title": "Bombardier looks to hire 500 new workers in US, despite Trump threat",
-            "link": "https://www.aljazeera.com/economy/2026/9/9/bombardier-looks-to-hire-500-new-workers-in-us-despite-trump-threat?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Wed, 09 Sep 2026 17:37:50 +0000",
-            "snippet": "The Canadian aircraft manufacturer has received support from Republican lawmakers on its economic impact record.",
             "isNew": true
           },
           {
@@ -730,17 +799,6 @@
             "pubDate": "Tue, 08 Sep 2026 15:25:38 GMT",
             "snippet": "Israeli PM says allegation that UAE president alerted him more than a week before major offensive is ‘absolute lie’Benjamin Netanyahu was personally alerted by the president of the United Arab Emirate",
             "isNew": true
-          },
-          {
-            "title": "Houthis strike Saudi Arabian cities in significant expansion of Middle East war",
-            "link": "https://www.theguardian.com/world/2026/sep/08/houthi-strike-saudi-arabia-oil-facilities-middle-east-war-iran",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Tue, 08 Sep 2026 12:05:31 GMT",
-            "snippet": "Riyadh says it will retaliate after overnight attacks by Iran-backed Yemen group on oil facilities wound more than 70Yemen’s Iran-backed Houthis have attacked four cities in Saudi Arabia, wounding mor",
-            "isNew": true
           }
         ]
       },
@@ -748,9 +806,31 @@
         "category_id": "regional",
         "category_name": "지역 정세",
         "category_icon": "🌍",
-        "count": 6,
-        "new_count": 6,
+        "count": 7,
+        "new_count": 7,
         "articles": [
+          {
+            "title": "Yemen Tilts Toward Full-Scale War as Saudi-Houthi Clashes Escalate",
+            "link": "https://www.nytimes.com/2026/09/09/world/middleeast/saudi-yemen-strilkes.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Wed, 09 Sep 2026 21:09:08 +0000",
+            "snippet": "With its oil-export routes once again under threat, Saudi Arabia is stepping up its military campaign against an old antagonist.",
+            "isNew": true
+          },
+          {
+            "title": "Yemeni diplomat says Houthis want to drag Saudi Arabia into war",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/9/09-09-clip-yemen-says-houthis-dragging-saudi-into-war-yn?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Wed, 09 Sep 2026 19:18:19 +0000",
+            "snippet": "Houthis are trying to drag Saudi Arabia into conflict by targeting Saudi territory, says Yemen’s Ambassador to Qatar.",
+            "isNew": true
+          },
           {
             "title": "Houthi attacks on Saudi Arabia could activate defence pact, Pakistan says",
             "link": "https://www.aljazeera.com/news/2026/9/9/pakistan-warns-mecca-defense-pact-will-activate-after-houthi-attacks?traffic_source=rss",
@@ -760,17 +840,6 @@
             ],
             "pubDate": "Wed, 09 Sep 2026 18:31:10 +0000",
             "snippet": "Pakistan warns Mecca defence agreement may be activated if Yemen&#039;s Houthi rebels continue targeting Saudi Arabia.",
-            "isNew": true
-          },
-          {
-            "title": "What is Jordan’s Al-Azraq base and why is Iran targeting it?",
-            "link": "https://www.aljazeera.com/news/2026/9/9/what-is-jordans-al-azraq-base-and-why-is-iran-targeting-it?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Wed, 09 Sep 2026 14:19:00 +0000",
-            "snippet": "Tehran appears to be increasingly targeting Jordanian assets in the latest round of escalation with the US.",
             "isNew": true
           },
           {
@@ -820,85 +889,45 @@
         ]
       },
       {
-        "category_id": "other",
-        "category_name": "기타",
-        "category_icon": "📰",
-        "count": 3,
-        "new_count": 3,
-        "articles": [
-          {
-            "title": "Palestinian child misses first day of school due to settler siege",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/9/palestinian-child-misses-first-day-of-school-due-to-settler-siege?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Wed, 09 Sep 2026 17:32:46 +0000",
-            "snippet": "Four-year-old Kinda Hassan is missing the start of her first school year amid a month-long siege by Israeli settlers.",
-            "isNew": true
-          },
-          {
-            "title": "Inside Israel’s prisons, where Ben-Gvir’s cruelty is policy",
-            "link": "https://www.aljazeera.com/features/2026/9/9/inside-israels-prisons-where-ben-gvirs-cruelty-is-policy?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Wed, 09 Sep 2026 17:04:24 +0000",
-            "snippet": "Palestinian prisoners are being kept in inhumane conditions in Israeli detention facilities, overseen by Ben-Gvir.",
-            "isNew": true
-          },
-          {
-            "title": "John Malkovich cancels Israel trip over fabricated solidarity quote",
-            "link": "https://www.theguardian.com/film/2026/sep/09/john-malkovich-cancels-israel-trip-over-fabricated-solidarity-quote",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Wed, 09 Sep 2026 15:23:41 GMT",
-            "snippet": "The Wild Horse Nine actor had been due to appear on stage in The Music Critic in Tel Aviv – but pulled out over PR firm’s ‘unacceptable and untenable’ attribution of statementJohn Malkovich has cancel",
-            "isNew": true
-          }
-        ]
-      },
-      {
-        "category_id": "diplomacy",
-        "category_name": "외교/협상",
-        "category_icon": "🤝",
-        "count": 2,
-        "new_count": 2,
-        "articles": [
-          {
-            "title": "‘It’s a good start’: prominent Israelis welcome UK sanctions on illegal settlements",
-            "link": "https://www.theguardian.com/world/2026/sep/09/israelis-welcome-uk-sanctions-on-settlements-palestine-west-bank",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Wed, 09 Sep 2026 17:36:42 GMT",
-            "snippet": "Ed Miliband’s intervention was ‘inevitable’ after Israeli government and security failures, say former ministers and diplomatsProminent Israelis have welcomed new UK sanctions as a necessary response ",
-            "isNew": true
-          },
-          {
-            "title": "Israeli strikes in southern Lebanese village kill 12",
-            "link": "https://www.bbc.co.uk/news/articles/c5yl96vz0edo?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
-            "sources": [
-              "bbc"
-            ],
-            "pubDate": "Mon, 07 Sep 2026 13:39:23 GMT",
-            "snippet": "Lebanon says a recent Israeli escalation is jeopardising a US-brokered ceasefire meant to end the conflict between Israel and Hezbollah.",
-            "isNew": true
-          }
-        ]
-      },
-      {
         "category_id": "politics",
         "category_name": "국내 정치",
         "category_icon": "🏛️",
-        "count": 2,
-        "new_count": 2,
+        "count": 5,
+        "new_count": 5,
         "articles": [
+          {
+            "title": "Trump says Iran war ‘will end immediately’ after US midterm elections",
+            "link": "https://www.aljazeera.com/news/2026/9/9/trump-says-iran-war-will-end-immediately-after-us-midterm-elections?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Wed, 09 Sep 2026 21:09:45 +0000",
+            "snippet": "The president added the US is not looking to restart negotiations with Iran after the failure of previous ceasefires.",
+            "isNew": true
+          },
+          {
+            "title": "Trump says Putin wants to make a deal to end Ukraine war",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/9/trump-says-putin-wants-to-make-a-deal-to-end-ukraine-war?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Wed, 09 Sep 2026 20:56:05 +0000",
+            "snippet": "US President Donald Trump says Russian President Putin wants a deal to end the war in Ukraine. ",
+            "isNew": true
+          },
+          {
+            "title": "Pro-Palestinian protesters oppose Israel embassy opening in Slovenia",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/9/09-09-sv-slovenia-protests-israeli-embassy-ljubljana-slov?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Wed, 09 Sep 2026 20:53:26 +0000",
+            "snippet": "Pro-Palestinian protesters gathered in Slovenia’s capital to oppose the opening of Israel’s first resident embassy.",
+            "isNew": true
+          },
           {
             "title": "Why Israel Reacted With Fury to U.K. Sanctions on West Bank Settlements",
             "link": "https://www.nytimes.com/2026/09/09/world/middleeast/israel-uk-west-bank-sanctions.html",
@@ -924,6 +953,48 @@
         ]
       },
       {
+        "category_id": "diplomacy",
+        "category_name": "외교/협상",
+        "category_icon": "🤝",
+        "count": 3,
+        "new_count": 3,
+        "articles": [
+          {
+            "title": "Iran referred to UN Security Council for nuclear non-compliance",
+            "link": "https://www.bbc.co.uk/news/articles/ckgwj4kl5lno?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc"
+            ],
+            "pubDate": "Wed, 09 Sep 2026 20:22:51 GMT",
+            "snippet": "Tehran condemns the resolution, blaming US and Israeli strikes on its nuclear facilities for disrupting inspections.",
+            "isNew": true
+          },
+          {
+            "title": "Yemen envoy warns of wider war as Houthis threaten Bab al-Mandeb Strait",
+            "link": "https://www.aljazeera.com/news/2026/9/9/yemen-envoy-warns-of-wider-war-as-houthis-threaten-bab-al-mandeb-strait?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Wed, 09 Sep 2026 20:05:48 +0000",
+            "snippet": "In an interview with Al Jazeera, Yemen&#039;s ambassador warns Houthi attacks threaten global shipping.",
+            "isNew": true
+          },
+          {
+            "title": "‘It’s a good start’: prominent Israelis welcome UK sanctions on illegal settlements",
+            "link": "https://www.theguardian.com/world/2026/sep/09/israelis-welcome-uk-sanctions-on-settlements-palestine-west-bank",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Wed, 09 Sep 2026 17:36:42 GMT",
+            "snippet": "Ed Miliband’s intervention was ‘inevitable’ after Israeli government and security failures, say former ministers and diplomatsProminent Israelis have welcomed new UK sanctions as a necessary response ",
+            "isNew": true
+          }
+        ]
+      },
+      {
         "category_id": "humanitarian",
         "category_name": "인도주의/피해",
         "category_icon": "🏥",
@@ -942,22 +1013,67 @@
             "isNew": true
           }
         ]
+      },
+      {
+        "category_id": "nuclear",
+        "category_name": "핵/WMD",
+        "category_icon": "☢️",
+        "count": 1,
+        "new_count": 1,
+        "articles": [
+          {
+            "title": "IAEA board refers Iran to UN Security Council over nuclear ‘non-compliance’",
+            "link": "https://www.aljazeera.com/news/2026/9/9/iaea-board-resolves-to-report-iran-to-security-council-over-nuclear-program?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Wed, 09 Sep 2026 20:23:34 +0000",
+            "snippet": "The symbolic escalation has been initiated by the United States, Germany, France and the United Kingdom.",
+            "isNew": true
+          }
+        ]
+      },
+      {
+        "category_id": "other",
+        "category_name": "기타",
+        "category_icon": "📰",
+        "count": 1,
+        "new_count": 1,
+        "articles": [
+          {
+            "title": "John Malkovich cancels Israel trip over fabricated solidarity quote",
+            "link": "https://www.theguardian.com/film/2026/sep/09/john-malkovich-cancels-israel-trip-over-fabricated-solidarity-quote",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Wed, 09 Sep 2026 15:23:41 GMT",
+            "snippet": "The Wild Horse Nine actor had been due to appear on stage in The Music Critic in Tel Aviv – but pulled out over PR firm’s ‘unacceptable and untenable’ attribution of statementJohn Malkovich has cancel",
+            "isNew": true
+          }
+        ]
       }
     ],
     "recent_30min": {
       "total_new": 50,
       "by_category": {
         "military": {
-          "count": 11,
+          "count": 10,
           "titles": [
             {
-              "title": "Explosion at depot storing weapons left from Syria war kills 14",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/9/9/explosion-at-depot-storing-weapons-left-from-syria-war-kills-14?traffic_source=rss",
+              "title": "Liverpool come back to beat Atletico Madrid 2-1 in Champions League opener",
+              "link": "https://www.aljazeera.com/sports/2026/9/9/liverpool-come-back-to-beat-atletico-madrid-2-1-in-champions-league-opener?traffic_source=rss",
               "source": "aljazeera"
             },
             {
-              "title": "Bombardier looks to hire 500 new workers in US, despite Trump threat",
-              "link": "https://www.aljazeera.com/economy/2026/9/9/bombardier-looks-to-hire-500-new-workers-in-us-despite-trump-threat?traffic_source=rss",
+              "title": "Israeli strike targets home in Gaza’s al-Shati refugee camp",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/9/9/israeli-strike-targets-home-in-gazas-al-shati-refugee-camp?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Explosion at depot storing weapons left from Syria war kills 14",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/9/9/explosion-at-depot-storing-weapons-left-from-syria-war-kills-14?traffic_source=rss",
               "source": "aljazeera"
             },
             {
@@ -969,25 +1085,55 @@
               "title": "Iran Signals Readiness to Escalate War With U.S. Amid Rising Economic Pressure",
               "link": "https://www.nytimes.com/2026/09/09/world/middleeast/iran-war-us-aggression-hormuz.html",
               "source": "nytimes"
+            }
+          ]
+        },
+        "politics": {
+          "count": 5,
+          "titles": [
+            {
+              "title": "Trump says Iran war ‘will end immediately’ after US midterm elections",
+              "link": "https://www.aljazeera.com/news/2026/9/9/trump-says-iran-war-will-end-immediately-after-us-midterm-elections?traffic_source=rss",
+              "source": "aljazeera"
             },
             {
-              "title": "Before Oct. 7 Attack, Netanyahu Was Warned, Report Says. He Denies It.",
-              "link": "https://www.nytimes.com/2026/09/08/world/middleeast/israel-netanyahu-2023-hamas-attack.html",
+              "title": "Trump says Putin wants to make a deal to end Ukraine war",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/9/9/trump-says-putin-wants-to-make-a-deal-to-end-ukraine-war?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Pro-Palestinian protesters oppose Israel embassy opening in Slovenia",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/9/9/09-09-sv-slovenia-protests-israeli-embassy-ljubljana-slov?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Why Israel Reacted With Fury to U.K. Sanctions on West Bank Settlements",
+              "link": "https://www.nytimes.com/2026/09/09/world/middleeast/israel-uk-west-bank-sanctions.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Israel’s Election Campaign Is Heating Up. Here’s Who’s Running.",
+              "link": "https://www.nytimes.com/2026/09/09/world/middleeast/israels-election-campaign-is-heating-up-heres-whos-running.html",
               "source": "nytimes"
             }
           ]
         },
         "regional": {
-          "count": 6,
+          "count": 7,
           "titles": [
             {
-              "title": "Houthi attacks on Saudi Arabia could activate defence pact, Pakistan says",
-              "link": "https://www.aljazeera.com/news/2026/9/9/pakistan-warns-mecca-defense-pact-will-activate-after-houthi-attacks?traffic_source=rss",
+              "title": "Yemen Tilts Toward Full-Scale War as Saudi-Houthi Clashes Escalate",
+              "link": "https://www.nytimes.com/2026/09/09/world/middleeast/saudi-yemen-strilkes.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Yemeni diplomat says Houthis want to drag Saudi Arabia into war",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/9/9/09-09-clip-yemen-says-houthis-dragging-saudi-into-war-yn?traffic_source=rss",
               "source": "aljazeera"
             },
             {
-              "title": "What is Jordan’s Al-Azraq base and why is Iran targeting it?",
-              "link": "https://www.aljazeera.com/news/2026/9/9/what-is-jordans-al-azraq-base-and-why-is-iran-targeting-it?traffic_source=rss",
+              "title": "Houthi attacks on Saudi Arabia could activate defence pact, Pakistan says",
+              "link": "https://www.aljazeera.com/news/2026/9/9/pakistan-warns-mecca-defense-pact-will-activate-after-houthi-attacks?traffic_source=rss",
               "source": "aljazeera"
             },
             {
@@ -999,30 +1145,20 @@
               "title": "Saudi Arabia and Yemen’s Houthis Edge Back to the Brink of War",
               "link": "https://www.nytimes.com/2026/09/08/world/middleeast/saudi-arabia-yemen-houthis-energy-attack.html",
               "source": "nytimes"
-            },
-            {
-              "title": "British family of man abducted by Saudi Arabia speak out over nine-year ordeal",
-              "link": "https://www.theguardian.com/world/2026/sep/08/rami-naimi-abducted-saudi-arabia-mira-lozi",
-              "source": "guardian"
-            }
-          ]
-        },
-        "humanitarian": {
-          "count": 1,
-          "titles": [
-            {
-              "title": "14 Killed in Weapons Depot Blast in Northwest Syria",
-              "link": "https://www.nytimes.com/2026/09/09/world/middleeast/syria-weapons-depot-blast.html",
-              "source": "nytimes"
             }
           ]
         },
         "economy": {
-          "count": 25,
+          "count": 22,
           "titles": [
             {
-              "title": "How significant are new European sanctions on illegal Israeli settlements?",
-              "link": "https://www.aljazeera.com/video/inside-story/2026/9/9/how-significant-are-new-european-sanctions-on-illegal-israeli-settlements?traffic_source=rss",
+              "title": "Miliband rejects chief rabbi's claim British Jews in greater danger after sanctions move",
+              "link": "https://www.bbc.co.uk/news/articles/ce9e3djdz94o?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
+            },
+            {
+              "title": "Burnham defends UK ban on Israeli settlement trade",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/9/9/burnham-defends-uk-ban-on-israeli-settlement-trade?traffic_source=rss",
               "source": "aljazeera"
             },
             {
@@ -1039,61 +1175,56 @@
               "title": "UK defends sanctions on Israeli West Bank settlements after backlash – The Latest",
               "link": "https://www.theguardian.com/news/audio/2026/sep/09/uk-defends-sanctions-on-israeli-west-bank-settlements-after-backlash-the-latest",
               "source": "guardian"
-            },
+            }
+          ]
+        },
+        "nuclear": {
+          "count": 1,
+          "titles": [
             {
-              "title": "Israel sanctions will not hurt intelligence sharing between spy agencies, says Miliband",
-              "link": "https://www.theguardian.com/politics/2026/sep/09/israel-sanctions-will-not-hurt-intelligence-sharing-between-spy-agencies-says-miliband",
-              "source": "guardian"
+              "title": "IAEA board refers Iran to UN Security Council over nuclear ‘non-compliance’",
+              "link": "https://www.aljazeera.com/news/2026/9/9/iaea-board-resolves-to-report-iran-to-security-council-over-nuclear-program?traffic_source=rss",
+              "source": "aljazeera"
             }
           ]
         },
         "diplomacy": {
-          "count": 2,
+          "count": 3,
           "titles": [
+            {
+              "title": "Iran referred to UN Security Council for nuclear non-compliance",
+              "link": "https://www.bbc.co.uk/news/articles/ckgwj4kl5lno?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
+            },
+            {
+              "title": "Yemen envoy warns of wider war as Houthis threaten Bab al-Mandeb Strait",
+              "link": "https://www.aljazeera.com/news/2026/9/9/yemen-envoy-warns-of-wider-war-as-houthis-threaten-bab-al-mandeb-strait?traffic_source=rss",
+              "source": "aljazeera"
+            },
             {
               "title": "‘It’s a good start’: prominent Israelis welcome UK sanctions on illegal settlements",
               "link": "https://www.theguardian.com/world/2026/sep/09/israelis-welcome-uk-sanctions-on-settlements-palestine-west-bank",
               "source": "guardian"
-            },
+            }
+          ]
+        },
+        "humanitarian": {
+          "count": 1,
+          "titles": [
             {
-              "title": "Israeli strikes in southern Lebanese village kill 12",
-              "link": "https://www.bbc.co.uk/news/articles/c5yl96vz0edo?at_medium=RSS&at_campaign=rss",
-              "source": "bbc"
+              "title": "14 Killed in Weapons Depot Blast in Northwest Syria",
+              "link": "https://www.nytimes.com/2026/09/09/world/middleeast/syria-weapons-depot-blast.html",
+              "source": "nytimes"
             }
           ]
         },
         "other": {
-          "count": 3,
+          "count": 1,
           "titles": [
-            {
-              "title": "Palestinian child misses first day of school due to settler siege",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/9/9/palestinian-child-misses-first-day-of-school-due-to-settler-siege?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Inside Israel’s prisons, where Ben-Gvir’s cruelty is policy",
-              "link": "https://www.aljazeera.com/features/2026/9/9/inside-israels-prisons-where-ben-gvirs-cruelty-is-policy?traffic_source=rss",
-              "source": "aljazeera"
-            },
             {
               "title": "John Malkovich cancels Israel trip over fabricated solidarity quote",
               "link": "https://www.theguardian.com/film/2026/sep/09/john-malkovich-cancels-israel-trip-over-fabricated-solidarity-quote",
               "source": "guardian"
-            }
-          ]
-        },
-        "politics": {
-          "count": 2,
-          "titles": [
-            {
-              "title": "Why Israel Reacted With Fury to U.K. Sanctions on West Bank Settlements",
-              "link": "https://www.nytimes.com/2026/09/09/world/middleeast/israel-uk-west-bank-sanctions.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Israel’s Election Campaign Is Heating Up. Here’s Who’s Running.",
-              "link": "https://www.nytimes.com/2026/09/09/world/middleeast/israels-election-campaign-is-heating-up-heres-whos-running.html",
-              "source": "nytimes"
             }
           ]
         }
@@ -1187,23 +1318,23 @@
     }
   ],
   "economic_indicators": {
-    "US10Y": {
-      "price": 4.84,
-      "change": 0.03,
-      "changePercent": 0.62,
-      "prev": 4.81
-    },
-    "VIX": {
-      "price": 16.18,
-      "change": 0.46,
-      "changePercent": 2.93,
-      "prev": 15.72
+    "DXY": {
+      "price": 98.77,
+      "change": -0.07,
+      "changePercent": -0.07,
+      "prev": 98.84
     },
     "GOLD": {
-      "price": 4451.9,
-      "change": 58,
-      "changePercent": 1.32,
+      "price": 4447.2,
+      "change": 53.3,
+      "changePercent": 1.21,
       "prev": 4393.9
+    },
+    "BRENT": {
+      "price": 101.63,
+      "change": 3.71,
+      "changePercent": 3.79,
+      "prev": 97.92
     },
     "US2Y": {
       "price": 3.81,
@@ -1211,26 +1342,34 @@
       "changePercent": 0.79,
       "prev": 3.78
     },
+    "VIX": {
+      "price": 16.46,
+      "change": 0.74,
+      "changePercent": 4.71,
+      "prev": 15.72
+    },
+    "US10Y": {
+      "price": 4.84,
+      "change": 0.03,
+      "changePercent": 0.62,
+      "prev": 4.81
+    },
     "WTI": {
-      "price": 96.42,
-      "change": 3.39,
-      "changePercent": 3.64,
+      "price": 96.67,
+      "change": 3.64,
+      "changePercent": 3.91,
       "prev": 93.03
-    },
-    "DXY": {
-      "price": 98.82,
-      "change": -0.02,
-      "changePercent": -0.02,
-      "prev": 98.84
-    },
-    "BRENT": {
-      "price": 101.45,
-      "change": 3.53,
-      "changePercent": 3.6,
-      "prev": 97.92
     }
   },
   "critical_events": [
+    {
+      "id": "capital_attack",
+      "name": "수도 직접 공격/포위",
+      "severity": "high",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "shorten"
+    },
     {
       "id": "humanitarian_crisis",
       "name": "대규모 인도주의 위기",
@@ -1238,6 +1377,14 @@
       "confidence": 0.8666666666666667,
       "matchCount": 2.6,
       "direction": "shorten"
+    },
+    {
+      "id": "wmd_threat",
+      "name": "대량살상무기(WMD)/핵 위협",
+      "severity": "critical",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "lengthen"
     }
   ],
   "feeds_loaded": 7,
