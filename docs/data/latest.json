@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-09-12T07:44:48.714Z",
+  "timestamp": "2026-09-12T11:56:29.784Z",
   "war_day": 196,
   "probabilities": {
-    "1개월 내 (~3월)": 17,
-    "2~3개월 (4~5월)": 35.1,
-    "4~6개월 (6~8월)": 27.6,
-    "7~12개월 (9월~27/2월)": 14.8,
-    "1년 초과": 5.5
+    "1개월 내 (~3월)": 16.7,
+    "2~3개월 (4~5월)": 35.7,
+    "4~6개월 (6~8월)": 27.9,
+    "7~12개월 (9월~27/2월)": 14.1,
+    "1년 초과": 5.6
   },
   "factors": [
     {
@@ -45,20 +45,20 @@
       "decay": 0.4
     },
     {
-      "factor": "확전 뉴스 우세 (확전10:휴전0)",
-      "impact": "전쟁 장기화 가능성 (확전비율 100%)",
-      "weight": "+0.04%p (4~6개월)",
-      "direction": "lengthen",
-      "detail": "언론에서 휴전보다 확전을 더 많이 보도하고 있습니다.",
+      "factor": "이란 미사일 능력 급감 (휴전6:확전4.4)",
+      "impact": "전쟁 지속 능력 약화로 단기 종전 가능성 증가",
+      "weight": "+0.0%p (1개월내), +0.0%p (2~3개월) (잔존40%)",
+      "direction": "shorten",
+      "detail": "이란의 보복 미사일 타격 능력이 약 90% 감소했습니다.",
       "keywords": [
-        "escalat",
-        "intensif",
-        "expand",
-        "widen"
+        "missile",
+        "ballistic",
+        "launch",
+        "strike capab"
       ],
-      "applied": "실시간",
+      "applied": "2026-03-02",
       "active": true,
-      "decay": 1
+      "decay": 0.4
     },
     {
       "factor": "호르무즈 해협 봉쇄 → 국제 경제 압력",
@@ -181,11 +181,11 @@
       "decay": 1
     },
     {
-      "factor": "지역 확산 뉴스 22건 감지",
-      "impact": "주변국 대규모 연루 → 장기화 위험 높음",
-      "weight": "+0.02%p (4~6개월), +0.02%p (7~12개월)",
+      "factor": "지역 확산 뉴스 12건 감지",
+      "impact": "주변국 연루 확대로 장기화 위험",
+      "weight": "+0.01%p (4~6개월), +0.01%p (7~12개월)",
       "direction": "lengthen",
-      "detail": "주변국을 언급하는 기사 22건이 감지되었습니다.",
+      "detail": "주변국을 언급하는 기사 12건이 감지되었습니다.",
       "keywords": [
         "saudi",
         "uae",
@@ -234,58 +234,30 @@
       "decay": 0.3
     },
     {
-      "factor": "[중대 이벤트] 수도 직접 공격/포위",
-      "impact": "수도 직접 공격. 베오그라드(1999): 78일 폭격 후 항복. 바그다드(2003): 21일만에 함락. 수도 타격은 전쟁 지속 의지를 급격히 약화.",
-      "weight": "+2.7%p (1개월내), +4.0%p (2~3개월), -1.3%p (4~6개월), -1.3%p (7~12개월), -0.7%p (1년초과)",
+      "factor": "[중대 이벤트] 외교적 돌파구/강대국 중재",
+      "impact": "주요 외교적 돌파구 또는 강대국 중재. 데이턴(1995): 미국 중재 → 3주만에 합의. UN 안보리 결의는 평균 2~4주 내 휴전 이행.",
+      "weight": "+2.0%p (1개월내), +4.0%p (2~3개월), +1.3%p (4~6개월), -1.3%p (7~12개월), -0.7%p (1년초과)",
       "direction": "shorten",
-      "detail": "수도 직접 공격. 베오그라드(1999): 78일 폭격 후 항복. 바그다드(2003): 21일만에 함락. 수도 타격은 전쟁 지속 의지를 급격히 약화.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Iran referred to UN Security Council for nuclear non-compliance",
+      "detail": "주요 외교적 돌파구 또는 강대국 중재. 데이턴(1995): 미국 중재 → 3주만에 합의. UN 안보리 결의는 평균 2~4주 내 휴전 이행.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: June 10, 2024 Israel-Hamas war",
       "keywords": [
-        "capital",
-        "bomb",
-        "capital",
-        "strike",
-        "capital",
-        "attack",
-        "capital",
-        "siege",
-        "capital",
-        "pound",
-        "capital",
-        "explosion",
-        "tehran",
-        "bomb",
-        "tehran",
-        "strike",
-        "tehran",
-        "pound",
-        "tehran",
-        "explosion"
-      ],
-      "applied": "2026-09-12",
-      "active": true,
-      "severity": "high"
-    },
-    {
-      "factor": "[중대 이벤트] 대규모 인도주의 위기",
-      "impact": "대규모 인도주의 위기. 국제사회 개입 압력 증가. 코소보(1999): 난민 위기가 NATO 작전 가속화. 인도적 위기는 국제 종전 압력을 2~3배 강화.",
-      "weight": "+1.3%p (1개월내), +2.7%p (2~3개월), +0.7%p (4~6개월), -0.7%p (7~12개월), -0.7%p (1년초과)",
-      "direction": "shorten",
-      "detail": "대규모 인도주의 위기. 국제사회 개입 압력 증가. 코소보(1999): 난민 위기가 NATO 작전 가속화. 인도적 위기는 국제 종전 압력을 2~3배 강화.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Muted US response to UK's West Bank sanctions may reflect simmering frustration",
-      "keywords": [
-        "humanitarian",
-        "catastroph",
-        "civilian",
-        "massacre",
-        "genocide",
-        "refugee",
-        "crisis",
-        "humanitarian",
-        "crisis",
-        "war crime",
-        "evidence",
-        "civilian death",
-        "thousand",
-        "ethnic cleansing"
+        "peace talk",
+        "agree",
+        "diplomatic",
+        "breakthrough",
+        "summit",
+        "peace",
+        "mediati",
+        "accept",
+        "un",
+        "resolution",
+        "ceasefire",
+        "broker",
+        "peace",
+        "negotiat",
+        "breakthrough",
+        "china",
+        "mediat",
+        "peace framework"
       ],
       "applied": "2026-09-12",
       "active": true,
@@ -294,9 +266,9 @@
     {
       "factor": "[중대 이벤트] 전선 확대/신규 참전국",
       "impact": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).",
-      "weight": "-1.3%p (1개월내), -2.0%p (2~3개월), +2.7%p (4~6개월), +2.0%p (7~12개월), +1.3%p (1년초과)",
+      "weight": "-2.0%p (1개월내), -3.0%p (2~3개월), +4.0%p (4~6개월), +3.0%p (7~12개월), +2.0%p (1년초과)",
       "direction": "lengthen",
-      "detail": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Houthis seize key Yemeni port of Mocha in drive to take control of Red Sea coast",
+      "detail": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).\n\n신뢰도: 확실 (100%), 관련 기사 4.6건 감지.\n관련: Houthis seize key Yemeni port of Mocha in drive to take control of Red Sea coast | Devastation in Gaza as Israel wages war on Hamas",
       "keywords": [
         "new front",
         "war spread",
@@ -316,36 +288,6 @@
       "applied": "2026-09-12",
       "active": true,
       "severity": "moderate"
-    },
-    {
-      "factor": "[중대 이벤트] 대량살상무기(WMD)/핵 위협",
-      "impact": "WMD/핵 위협 감지. 핵 위협은 분쟁의 성격을 근본적으로 변화시키며, 국제사회 전체의 개입을 촉발하여 예측 불확실성이 극대화.",
-      "weight": "+2.0%p (1개월내), +2.0%p (2~3개월), +3.3%p (4~6개월), +2.7%p (7~12개월), +2.0%p (1년초과)",
-      "direction": "lengthen",
-      "detail": "WMD/핵 위협 감지. 핵 위협은 분쟁의 성격을 근본적으로 변화시키며, 국제사회 전체의 개입을 촉발하여 예측 불확실성이 극대화.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Iran referred to UN Security Council for nuclear non-compliance",
-      "keywords": [
-        "nuclear",
-        "strike",
-        "nuclear",
-        "weapon",
-        "use",
-        "nuclear",
-        "threat",
-        "chemical",
-        "weapon",
-        "use",
-        "biological",
-        "weapon",
-        "wmd",
-        "deploy",
-        "nuclear",
-        "option",
-        "atomic",
-        "bomb"
-      ],
-      "applied": "2026-09-12",
-      "active": true,
-      "severity": "critical"
     },
     {
       "factor": "유가 급등 (WTI $100.05/배럴)",
@@ -397,24 +339,24 @@
     }
   ],
   "news_signals": {
-    "ceasefire_mentions": 0,
-    "escalation_mentions": 10,
+    "ceasefire_mentions": 6,
+    "escalation_mentions": 4.4,
     "negotiation_mentions": 2,
-    "casualty_mentions": 4,
+    "casualty_mentions": 10,
     "peace_mentions": 0,
-    "regional_spread": 22,
+    "regional_spread": 12,
     "total_articles": 50,
-    "new_articles": 50,
-    "unique_events": 50,
-    "duplicates_removed": 0
+    "new_articles": 49,
+    "unique_events": 37,
+    "duplicates_removed": 13
   },
   "latest_news": [
     {
-      "title": "Inside an Ancient Lebanese City Engulfed by War",
-      "link": "https://www.nytimes.com/2026/09/11/world/middleeast/tyre-engulfed-war-lebanon.html",
-      "pubDate": "Sat, 12 Sep 2026 07:18:28 +0000",
-      "source": "nytimes",
-      "snippet": "The Lebanese city of Tyre, one of the oldest metropolises in the world, has been left scarred.",
+      "title": "[속보] 브릭스 \"국제법 위반한 일방 제재 반대…중동서 자제 촉구\"",
+      "link": "https://www.yna.co.kr/view/AKR20260912047300104",
+      "pubDate": "Sat, 12 Sep 2026 20:39:12 +0900",
+      "source": "yonhap",
+      "snippet": "(",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -422,35 +364,21 @@
       "_isDuplicate": false
     },
     {
-      "title": "‘War on terror’: How 9/11 changed the language of conflict",
-      "link": "https://www.aljazeera.com/news/2026/9/12/war-on-terror-how-9-11-changed-the-language-of?traffic_source=rss",
-      "pubDate": "Sat, 12 Sep 2026 05:26:05 +0000",
+      "title": "Houthis celebrate seizing control of Yemen’s Red Sea coast",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/9/12/houthis-celebrate-seizing-control-of-yemens-red-sea-coast?traffic_source=rss",
+      "pubDate": "Sat, 12 Sep 2026 11:32:02 +0000",
       "source": "aljazeera",
-      "snippet": "The events of September 11, 2001 spawned a new lexicon which effectively sanitised the erosion of human rights.",
+      "snippet": "Yemen’s Iran-aligned Houthis have been celebrating after seizing control of the Red Sea coast in a rapid offensive.",
       "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
+      "_isDuplicate": true,
+      "_sourceCount": 1
     },
     {
-      "title": "BRICS meets in India: What’s on the agenda, why it matters",
-      "link": "https://www.aljazeera.com/news/2026/9/12/brics-meets-in-india-whats-on-the-agenda-why-it-matters?traffic_source=rss",
-      "pubDate": "Sat, 12 Sep 2026 05:22:09 +0000",
-      "source": "aljazeera",
-      "snippet": "This year&#039;s summit comes amid the US-Israel war on Iran, Russia&#039;s war on Ukraine and global economic challenges.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Saudi Arabia shuts down oil pipeline, blaming drones from Iraq",
-      "link": "https://www.theguardian.com/world/2026/sep/12/saudi-arabia-shuts-down-oil-pipeline-blaming-drones-from-iraq",
-      "pubDate": "Sat, 12 Sep 2026 05:22:01 GMT",
+      "title": "Curse of the Nile’s gold: how Sudan is losing its fertile fields and ability to produce food",
+      "link": "https://www.theguardian.com/global-development/2026/sep/11/nile-gold-mining-sudan-environmental-disaster-poverty-public-health-emergency-crops-fail-chemicals",
+      "pubDate": "Fri, 11 Sep 2026 11:00:03 GMT",
       "source": "guardian",
-      "snippet": "Riyadh has increased its use of the East-West pipeline since the start of the Middle East war to bypass the closure of the strait of HormuzSaudi authorities said Friday drones launched from Iraq led t",
+      "snippet": "An artisanal mining boom driven by war and poverty is causing a public health emergency, as chemicals poison soil, water and societyIn Abu Hamad, on the banks of the Nile, verdant orchards, gardens an",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -458,23 +386,23 @@
       "_isDuplicate": false
     },
     {
-      "title": "Call it the Miliband doctrine. Let’s hope the new Israeli settlement boycott is just the start | Steve Bloomfield",
-      "link": "https://www.theguardian.com/commentisfree/2026/sep/12/miliband-doctrine-israeli-settlement-boycott-uk-foreign-policy",
-      "pubDate": "Sat, 12 Sep 2026 05:00:30 GMT",
+      "title": "Secret systems used by Israel in mass killings of Gaza civilians revealed in new film",
+      "link": "https://www.theguardian.com/world/2026/sep/10/secret-systems-used-by-israel-in-mass-killings-of-gaza-civilians-revealed-in-new-film",
+      "pubDate": "Thu, 10 Sep 2026 13:42:20 GMT",
       "source": "guardian",
-      "snippet": "This week’s move suggests that, even in the age of Trump, Britain will once again have an ‘ethical dimension’ to its foreign policy. That’s good for the world Almost 30 years ago, the Labour titan Rob",
+      "snippet": "Testimony from Israeli military insiders involved in surveillance and remote killings features in documentary produced by the GuardianTestimony from 24 Israeli military insiders ​on the secret ​system",
       "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
+      "_sourceCount": 2,
+      "_isDuplicated": true,
+      "_clusterSize": 2,
       "_isDuplicate": false
     },
     {
-      "title": "Iran’s Houthi allies capture strategic island on vital oil shipping route",
-      "link": "https://www.theguardian.com/world/2026/sep/11/iran-houthi-allies-capture-strategic-island-bab-al-mandab-strait",
-      "pubDate": "Sat, 12 Sep 2026 04:45:28 GMT",
+      "title": "ECB raises interest rates to 2.5% and warns Iran war is fuelling inflation",
+      "link": "https://www.theguardian.com/business/2026/sep/10/ecb-raises-interest-rates-to-25-amid-warning-iran-war-is-fuelling-inflation",
+      "pubDate": "Thu, 10 Sep 2026 13:10:15 GMT",
       "source": "guardian",
-      "snippet": "Rampant Yemeni fighters take control of island in narrow point of Bab al-Mandab strait, which Saudi is relying on for oil exportsWhy the rapid Houthi advance matters and what’s at stakeYemen’s rampant",
+      "snippet": "Borrowing costs climb in Europe and oil tops $105 a barrel as bank says growing price pressures in eurozone will be ‘longer lasting than we had anticipated’Business live – latest updatesThe European C",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -482,23 +410,23 @@
       "_isDuplicate": false
     },
     {
-      "title": "China’s Xi lands in India for BRICS summit overshadowed by wars",
-      "link": "https://www.aljazeera.com/news/2026/9/12/chinas-xi-heads-to-india-for-brics-summit-overshadowed-by-wars?traffic_source=rss",
-      "pubDate": "Sat, 12 Sep 2026 04:27:27 +0000",
-      "source": "aljazeera",
-      "snippet": "Wars in the Middle East and Ukraine, along with global energy security, are expected to dominate the summit.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Nearly 50,000 Yemeni civilians flee as Houthis advance along Red Sea coast",
-      "link": "https://www.theguardian.com/world/2026/sep/12/yemen-houthi-advance-red-sea-coast-displaces-civilians-bab-al-mandab",
-      "pubDate": "Sat, 12 Sep 2026 04:00:24 GMT",
+      "title": "Houthis seize key Yemeni port of Mocha in drive to take control of Red Sea coast",
+      "link": "https://www.theguardian.com/world/2026/sep/10/houthis-seize-key-port-mocha-yemen-red-sea-coast-iran-saudi-arabia-us",
+      "pubDate": "Thu, 10 Sep 2026 11:39:56 GMT",
       "source": "guardian",
-      "snippet": "Global struggle for control of Bab al-Mandab strait threatens to turn Yemen’s on-off conflict into a forever warViolence erupts in Yemen again: why it matters globally and how it is linked to the US-I",
+      "snippet": "Iran and its proxies move closer to full control of two shipping chokepoints as regional conflict widensExplained: why the fighting in Yemen matters globallyHouthi forces in Yemen are making a concert",
+      "isNew": true,
+      "_sourceCount": 3,
+      "_isDuplicated": true,
+      "_clusterSize": 3,
+      "_isDuplicate": false
+    },
+    {
+      "title": "The UK’s sanctions on Israeli settlements are a great victory – but must be only the beginning | Em Hilton",
+      "link": "https://www.theguardian.com/commentisfree/2026/sep/10/uk-sanctions-israel-settlements-activists-palestine-movement",
+      "pubDate": "Thu, 10 Sep 2026 10:00:23 GMT",
+      "source": "guardian",
+      "snippet": "The change in policy is a direct result of sustained pressure from activists and organisers across the Palestine movement. But what comes next?The announcement on Tuesday by the foreign secretary, Ed ",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -506,11 +434,11 @@
       "_isDuplicate": false
     },
     {
-      "title": "North Korea fires ballistic missiles off eastern coast, Seoul says",
-      "link": "https://www.aljazeera.com/news/2026/9/12/north-korea-fires-ballistic-missiles-off-eastern-coast-seoul-says?traffic_source=rss",
-      "pubDate": "Sat, 12 Sep 2026 02:25:59 +0000",
-      "source": "aljazeera",
-      "snippet": "South Korea said it was closely exchanging information on the launches with the US and Japan.",
+      "title": "Trump’s repeated threats to ‘wipe out’ Iran are normalizing mass violence | Mohamad Bazzi",
+      "link": "https://www.theguardian.com/commentisfree/2026/sep/10/trump-iran-violence",
+      "pubDate": "Thu, 10 Sep 2026 09:00:20 GMT",
+      "source": "guardian",
+      "snippet": "The president’s latest warning barely registered, written off as typical behavior. But the threats have real-world consequencesAs the US and Iran fought around the strait of Hormuz last week, Donald T",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -518,11 +446,11 @@
       "_isDuplicate": false
     },
     {
-      "title": "Putin and Pezeshkian call out US dominance ahead of BRICS",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/9/12/putin-and-pezeshkian-call-out-us-dominance-ahead-of-brics?traffic_source=rss",
-      "pubDate": "Sat, 12 Sep 2026 02:22:29 +0000",
-      "source": "aljazeera",
-      "snippet": "The presidents of Iran and Russia have criticised US dollar dominance ahead of the BRICS summit in India.",
+      "title": "How the fate of a small furry animal reveals the ecological tragedy of Israel’s war on Lebanon | Hisham Younes",
+      "link": "https://www.theguardian.com/environment/2026/sep/10/how-the-fate-of-a-small-furry-animal-reveals-the-ecological-tragedy-of-israels-war-on-lebanon",
+      "pubDate": "Thu, 10 Sep 2026 06:00:18 GMT",
+      "source": "guardian",
+      "snippet": "The Syrian rock hyrax depends on the fragile landscapes of the border region. Alongside other environmentalists, I have been documenting the destruction of its habitatWars are usually measured in the ",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -530,11 +458,11 @@
       "_isDuplicate": false
     },
     {
-      "title": "CIA releases dozens of declassified documents on bin Laden prior to 9/11",
-      "link": "https://www.aljazeera.com/news/2026/9/12/cia-drops-dozens-of-declassified-documents-on-bin-laden-and-al-qaeda?traffic_source=rss",
-      "pubDate": "Sat, 12 Sep 2026 01:22:41 +0000",
-      "source": "aljazeera",
-      "snippet": "A briefer told Clinton in 1998 that bin Laden’s &#039;preferred option is to strike the US on its own soil in Washington&#039;.",
+      "title": "Senior UK rabbis come out in support of sanctions on Israeli settlements",
+      "link": "https://www.theguardian.com/politics/2026/sep/09/senior-uk-rabbis-come-out-in-support-of-sanctions-on-israeli-settlements",
+      "pubDate": "Wed, 09 Sep 2026 17:57:14 GMT",
+      "source": "guardian",
+      "snippet": "Spiritual leaders stress diversity of views within Jewish community and warn against inaction on settler violence‘It’s a good start’: prominent Israelis welcome UK sanctionsProminent British rabbis ha",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -542,11 +470,11 @@
       "_isDuplicate": false
     },
     {
-      "title": "How Canadians are bracing for the impact of Trump’s trade war",
-      "link": "https://www.aljazeera.com/economy/2026/9/12/how-canadians-are-bracing-for-the-impact-of-trumps-trade-war?traffic_source=rss",
-      "pubDate": "Sat, 12 Sep 2026 00:52:00 +0000",
-      "source": "aljazeera",
-      "snippet": "Canada’s buy-local movement remains strong, but new tariffs could test how much more shoppers are willing to pay.",
+      "title": "Several dead after Israeli joint security forces raid in West Bank",
+      "link": "https://www.cnn.com/2022/10/25/middleeast/israel-forces-raid-nablus-palestine-intl-hnk/index.html",
+      "pubDate": "Tue, 25 Oct 2022 13:58:46 GMT",
+      "source": "cnn",
+      "snippet": "",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -554,35 +482,41 @@
       "_isDuplicate": false
     },
     {
-      "title": "Former top US diplomat reveals mistakes made after 9/11 attacks",
-      "link": "https://www.aljazeera.com/news/2026/9/12/former-top-us-diplomat-reveals-mistakes-made-after-9-11?traffic_source=rss",
-      "pubDate": "Sat, 12 Sep 2026 00:04:23 +0000",
-      "source": "aljazeera",
-      "snippet": "Ambassador Zalmay Khalilzad describes misgivings about the US handling of the Afghanistan and Iraq wars.",
+      "title": "Iran",
+      "link": "https://www.cnn.com/specials/middleeast/iran?utm_source=section",
+      "pubDate": "",
+      "source": "cnn",
+      "snippet": "",
       "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
+      "_isDuplicate": true,
+      "_sourceCount": 1
     },
     {
-      "title": "Iran war live: Houthis control Red Sea coast, Saudi pipeline shut down",
-      "link": "https://www.aljazeera.com/news/liveblog/2026/9/12/iran-war-live-houthis-control-red-sea-coast-saudi-pipeline-shut-down?traffic_source=rss",
-      "pubDate": "Sat, 12 Sep 2026 00:00:00 +0000",
-      "source": "aljazeera",
-      "snippet": "Houthi forces seize Yemen&#039;s Red Sea coast while Saudi Arabia suspends crucial oil pipeline following drone attack.",
+      "title": "Israel",
+      "link": "https://www.cnn.com/specials/middleeast/israel?utm_source=section",
+      "pubDate": "",
+      "source": "cnn",
+      "snippet": "",
       "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
+      "_isDuplicate": true,
+      "_sourceCount": 1
     },
     {
-      "title": "Houthis claim major advance in Yemen and tighten grip on Red Sea shipping lane",
-      "link": "https://www.bbc.co.uk/news/articles/c23x72yx2rvo?at_medium=RSS&at_campaign=rss",
-      "pubDate": "Fri, 11 Sep 2026 22:17:45 GMT",
-      "source": "bbc",
-      "snippet": "The Iran-backed Houthis are also reported to have seized Perim - a strategic island on the major shipping route.",
+      "title": "June 17, 2024 - Israel-Gaza news",
+      "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-17-24/index.html",
+      "pubDate": "",
+      "source": "cnn",
+      "snippet": "Israeli Prime Minister Benjamin Netanyahu has disbanded the country's war cabinet, an Israeli official says, just over a week after opposition leader Benny Gantz withdrew from the body.",
+      "isNew": true,
+      "_isDuplicate": true,
+      "_sourceCount": 1
+    },
+    {
+      "title": "June 13, 2024 Israel-Hamas war",
+      "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-13-24/index.html",
+      "pubDate": "",
+      "source": "cnn",
+      "snippet": "The US-backed Gaza ceasefire proposal doesn't meet Hamas' demands for an end to the war, a senior official has told CNN. Osama Hamdan also said that \"no one has an idea\" how many of the hostages held ",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -596,236 +530,85 @@
         "category_id": "military",
         "category_name": "군사 작전",
         "category_icon": "⚔️",
-        "count": 15,
-        "new_count": 15,
+        "count": 7,
+        "new_count": 7,
         "articles": [
           {
-            "title": "Iran’s Houthi allies capture strategic island on vital oil shipping route",
-            "link": "https://www.theguardian.com/world/2026/sep/11/iran-houthi-allies-capture-strategic-island-bab-al-mandab-strait",
+            "title": "Secret systems used by Israel in mass killings of Gaza civilians revealed in new film",
+            "link": "https://www.theguardian.com/world/2026/sep/10/secret-systems-used-by-israel-in-mass-killings-of-gaza-civilians-revealed-in-new-film",
             "source": "guardian",
             "sources": [
-              "guardian"
+              "guardian",
+              "cnn"
             ],
-            "pubDate": "Sat, 12 Sep 2026 04:45:28 GMT",
-            "snippet": "Rampant Yemeni fighters take control of island in narrow point of Bab al-Mandab strait, which Saudi is relying on for oil exportsWhy the rapid Houthi advance matters and what’s at stakeYemen’s rampant",
+            "pubDate": "Thu, 10 Sep 2026 13:42:20 GMT",
+            "snippet": "Testimony from Israeli military insiders involved in surveillance and remote killings features in documentary produced by the GuardianTestimony from 24 Israeli military insiders ​on the secret ​system",
             "isNew": true
           },
           {
-            "title": "Nearly 50,000 Yemeni civilians flee as Houthis advance along Red Sea coast",
-            "link": "https://www.theguardian.com/world/2026/sep/12/yemen-houthi-advance-red-sea-coast-displaces-civilians-bab-al-mandab",
-            "source": "guardian",
+            "title": "June 12, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-12-24-intl/index.html",
+            "source": "cnn",
             "sources": [
-              "guardian"
+              "cnn"
             ],
-            "pubDate": "Sat, 12 Sep 2026 04:00:24 GMT",
-            "snippet": "Global struggle for control of Bab al-Mandab strait threatens to turn Yemen’s on-off conflict into a forever warViolence erupts in Yemen again: why it matters globally and how it is linked to the US-I",
+            "pubDate": "",
+            "snippet": "Israel launched strikes on Al-Mawasi in southern Gaza early Thursday, bombarding an area it had previously designated as a \"safe zone\" by land, sea and air, according to the official Palestinian news ",
             "isNew": true
           },
           {
-            "title": "North Korea fires ballistic missiles off eastern coast, Seoul says",
-            "link": "https://www.aljazeera.com/news/2026/9/12/north-korea-fires-ballistic-missiles-off-eastern-coast-seoul-says?traffic_source=rss",
+            "title": "June 6, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-06-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "Dozens of people were killed in an Israeli airstrike on a United Nations-run school in central Gaza, authorities said, in an attack that CNN analysis found was conducted with a US-made weapon.",
+            "isNew": true
+          },
+          {
+            "title": "May 29, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-29-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "The Israeli military says it established \"operational control\" over the Philadelphi Corridor, a 14-kilometer (8.7 miles) strip of land along the border between Gaza and Egypt.",
+            "isNew": true
+          },
+          {
+            "title": "May 24, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-24-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "The United Nations' top court has ordered Israel to immediately halt its controversial military operation in the southern Gaza city of Rafah, further increasing international pressure on Israel over i",
+            "isNew": true
+          },
+          {
+            "title": "Saudi Arabia shuts critical oil pipeline after drone attack: What it means",
+            "link": "https://www.aljazeera.com/news/2026/9/12/saudi-arabia-shuts-critical-oil-pipeline-after-drone-attack-what-happened?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Sat, 12 Sep 2026 02:25:59 +0000",
-            "snippet": "South Korea said it was closely exchanging information on the launches with the US and Japan.",
+            "pubDate": "Sat, 12 Sep 2026 10:36:18 +0000",
+            "snippet": "Baghdad launches investigation, closes border after confirming strike came from Iraqi territory.",
             "isNew": true
           },
           {
-            "title": "CIA releases dozens of declassified documents on bin Laden prior to 9/11",
-            "link": "https://www.aljazeera.com/news/2026/9/12/cia-drops-dozens-of-declassified-documents-on-bin-laden-and-al-qaeda?traffic_source=rss",
+            "title": "What did US intelligence know before the 9/11 attacks?",
+            "link": "https://www.aljazeera.com/news/2026/9/12/what-did-us-intelligence-know-before-the-9-11?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Sat, 12 Sep 2026 01:22:41 +0000",
-            "snippet": "A briefer told Clinton in 1998 that bin Laden’s &#039;preferred option is to strike the US on its own soil in Washington&#039;.",
-            "isNew": true
-          },
-          {
-            "title": "Iran war live: Houthis control Red Sea coast, Saudi pipeline shut down",
-            "link": "https://www.aljazeera.com/news/liveblog/2026/9/12/iran-war-live-houthis-control-red-sea-coast-saudi-pipeline-shut-down?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sat, 12 Sep 2026 00:00:00 +0000",
-            "snippet": "Houthi forces seize Yemen&#039;s Red Sea coast while Saudi Arabia suspends crucial oil pipeline following drone attack.",
-            "isNew": true
-          },
-          {
-            "title": "Houthis claim major advance in Yemen and tighten grip on Red Sea shipping lane",
-            "link": "https://www.bbc.co.uk/news/articles/c23x72yx2rvo?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
-            "sources": [
-              "bbc"
-            ],
-            "pubDate": "Fri, 11 Sep 2026 22:17:45 GMT",
-            "snippet": "The Iran-backed Houthis are also reported to have seized Perim - a strategic island on the major shipping route.",
-            "isNew": true
-          },
-          {
-            "title": "Lightning Houthi advance in Yemen may bring dangerous new dimension to Iran war",
-            "link": "https://www.bbc.co.uk/news/articles/c3v4zgzr1kxo?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
-            "sources": [
-              "bbc"
-            ],
-            "pubDate": "Fri, 11 Sep 2026 19:44:58 GMT",
-            "snippet": "The capture by the rebels of a stretch Yemen's strategic coastline is the group's most impressive military coup for several years.",
-            "isNew": true
-          },
-          {
-            "title": "The week around the world in 20 pictures",
-            "link": "https://www.theguardian.com/artanddesign/gallery/2026/sep/11/the-week-around-the-world-in-20-pictures",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Fri, 11 Sep 2026 18:51:12 GMT",
-            "snippet": "The 25th anniversary of 9/11, Russian strikes in Kyiv, wildfires in Indonesia and Sabalenka at the US Open – the past seven days as captured by the world’s leading photojournalistsWarning: this galler",
-            "isNew": true
-          },
-          {
-            "title": "Trump and Hegseth use 9/11 memorial remarks at Pentagon to defend war on Iran",
-            "link": "https://www.theguardian.com/us-news/2026/sep/11/trump-hegseth-911-memorial",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Fri, 11 Sep 2026 18:06:08 GMT",
-            "snippet": "President and defense secretary try to link worst terrorist attack in US history to current unpopular warUS politics live – latest updatesDonald Trump and Pete Hegseth used remarks at the memorial cer",
-            "isNew": true
-          },
-          {
-            "title": "Israel says it has destroyed major underground Hezbollah base",
-            "link": "https://www.bbc.co.uk/news/articles/c4gl92lw8vpo?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
-            "sources": [
-              "bbc"
-            ],
-            "pubDate": "Fri, 11 Sep 2026 15:50:23 GMT",
-            "snippet": "The powerful blast registered as the equivalent of a magnitude 4.1 earthquake, according to the US Geological Survey.",
-            "isNew": true
-          }
-        ]
-      },
-      {
-        "category_id": "economy",
-        "category_name": "경제 영향",
-        "category_icon": "📊",
-        "count": 11,
-        "new_count": 11,
-        "articles": [
-          {
-            "title": "How Canadians are bracing for the impact of Trump’s trade war",
-            "link": "https://www.aljazeera.com/economy/2026/9/12/how-canadians-are-bracing-for-the-impact-of-trumps-trade-war?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sat, 12 Sep 2026 00:52:00 +0000",
-            "snippet": "Canada’s buy-local movement remains strong, but new tariffs could test how much more shoppers are willing to pay.",
-            "isNew": true
-          },
-          {
-            "title": "UK sanctions on West Bank settlers are the right step | Letters",
-            "link": "https://www.theguardian.com/world/2026/sep/11/uk-sanctions-on-west-bank-settlers-are-the-right-step",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Fri, 11 Sep 2026 17:19:10 GMT",
-            "snippet": "Readers respond to the move announced by Ed Miliband to impose sanctions on illegal Israeli settlementsAs a religious Jew, I am disappointed at the reaction of some of our communal leaders and bodies ",
-            "isNew": true
-          },
-          {
-            "title": "UK Sanctions Against Israeli Settlers Divide British Rabbis",
-            "link": "https://www.nytimes.com/2026/09/10/world/europe/britain-israel-jews-sanctions-settlers.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Fri, 11 Sep 2026 14:36:07 +0000",
-            "snippet": "Prominent rabbis reacted with a mix of support, condemnation and concern about the ramifications for Jews in Britain.",
-            "isNew": true
-          },
-          {
-            "title": "ECB raises interest rates to 2.5% and warns Iran war is fuelling inflation",
-            "link": "https://www.theguardian.com/business/2026/sep/10/ecb-raises-interest-rates-to-25-amid-warning-iran-war-is-fuelling-inflation",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Thu, 10 Sep 2026 13:10:15 GMT",
-            "snippet": "Borrowing costs climb in Europe and oil tops $105 a barrel as bank says growing price pressures in eurozone will be ‘longer lasting than we had anticipated’Business live – latest updatesThe European C",
-            "isNew": true
-          },
-          {
-            "title": "Saudi Oil Exports Plunge as Spread of War Shuts Off Shipping Routes",
-            "link": "https://www.nytimes.com/2026/09/09/business/saudi-arabia-houthis-red-sea-oil-shipping.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Thu, 10 Sep 2026 13:01:52 +0000",
-            "snippet": "With few good options for safely shipping oil, Saudi Arabia’s exports have fallen to a 13-year low.",
-            "isNew": true
-          },
-          {
-            "title": "The UK’s sanctions on Israeli settlements are a great victory – but must be only the beginning | Em Hilton",
-            "link": "https://www.theguardian.com/commentisfree/2026/sep/10/uk-sanctions-israel-settlements-activists-palestine-movement",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Thu, 10 Sep 2026 10:00:23 GMT",
-            "snippet": "The change in policy is a direct result of sustained pressure from activists and organisers across the Palestine movement. But what comes next?The announcement on Tuesday by the foreign secretary, Ed ",
-            "isNew": true
-          },
-          {
-            "title": "Oil Hits $100 a Barrel as Turmoil Intensifies in Middle East",
-            "link": "https://www.nytimes.com/2026/09/09/business/brent-oil-100-barrel-iran-war.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Thu, 10 Sep 2026 04:28:03 +0000",
-            "snippet": "The cost of crude has risen 40 percent since the start of the war in Iran, pushing up the price of gasoline, diesel and other refined fuels.",
-            "isNew": true
-          },
-          {
-            "title": "How a community living under demolition orders from Israel view UK sanctions",
-            "link": "https://www.bbc.co.uk/news/videos/cy5zpze3qe3o?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
-            "sources": [
-              "bbc"
-            ],
-            "pubDate": "Wed, 09 Sep 2026 22:17:22 GMT",
-            "snippet": "BBC's Middle East Correspondent Lucy Williamson visits the Palestinian community of Khan al Ahmar in the so-called E1 area, and the neighbouring Israeli settlement of Maale Admumim.",
-            "isNew": true
-          },
-          {
-            "title": "Muted US response to UK's West Bank sanctions may reflect simmering frustration",
-            "link": "https://www.bbc.co.uk/news/articles/cevw2lxnwk9o?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
-            "sources": [
-              "bbc"
-            ],
-            "pubDate": "Wed, 09 Sep 2026 21:21:13 GMT",
-            "snippet": "The UK accuses Israel's government of turning a blind eye to the \"ethnic cleansing\" of Palestinians by settlers.",
-            "isNew": true
-          },
-          {
-            "title": "Miliband rejects chief rabbi's claim British Jews in greater danger after sanctions move",
-            "link": "https://www.bbc.co.uk/news/articles/ce9e3djdz94o?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
-            "sources": [
-              "bbc"
-            ],
-            "pubDate": "Wed, 09 Sep 2026 20:59:24 GMT",
-            "snippet": "The foreign secretary disagrees that sanctions on Israeli settlements could put British Jews at greater risk.",
+            "pubDate": "Sat, 12 Sep 2026 09:30:51 +0000",
+            "snippet": "The CIA have declassified documents showing US presidents were warned about Osama bin Laden and al-Qaeda before 9/11.",
             "isNew": true
           }
         ]
@@ -834,92 +617,17 @@
         "category_id": "regional",
         "category_name": "지역 정세",
         "category_icon": "🌍",
-        "count": 10,
-        "new_count": 10,
+        "count": 7,
+        "new_count": 7,
         "articles": [
-          {
-            "title": "BRICS meets in India: What’s on the agenda, why it matters",
-            "link": "https://www.aljazeera.com/news/2026/9/12/brics-meets-in-india-whats-on-the-agenda-why-it-matters?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sat, 12 Sep 2026 05:22:09 +0000",
-            "snippet": "This year&#039;s summit comes amid the US-Israel war on Iran, Russia&#039;s war on Ukraine and global economic challenges.",
-            "isNew": true
-          },
-          {
-            "title": "Saudi Arabia shuts down oil pipeline, blaming drones from Iraq",
-            "link": "https://www.theguardian.com/world/2026/sep/12/saudi-arabia-shuts-down-oil-pipeline-blaming-drones-from-iraq",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Sat, 12 Sep 2026 05:22:01 GMT",
-            "snippet": "Riyadh has increased its use of the East-West pipeline since the start of the Middle East war to bypass the closure of the strait of HormuzSaudi authorities said Friday drones launched from Iraq led t",
-            "isNew": true
-          },
-          {
-            "title": "China’s Xi lands in India for BRICS summit overshadowed by wars",
-            "link": "https://www.aljazeera.com/news/2026/9/12/chinas-xi-heads-to-india-for-brics-summit-overshadowed-by-wars?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sat, 12 Sep 2026 04:27:27 +0000",
-            "snippet": "Wars in the Middle East and Ukraine, along with global energy security, are expected to dominate the summit.",
-            "isNew": true
-          },
-          {
-            "title": "Putin and Pezeshkian call out US dominance ahead of BRICS",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/12/putin-and-pezeshkian-call-out-us-dominance-ahead-of-brics?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sat, 12 Sep 2026 02:22:29 +0000",
-            "snippet": "The presidents of Iran and Russia have criticised US dollar dominance ahead of the BRICS summit in India.",
-            "isNew": true
-          },
-          {
-            "title": "Israel Destroys Underground Hezbollah Base in Southern Lebanon",
-            "link": "https://www.nytimes.com/2026/09/11/world/middleeast/blast-lebanon-israel-hezbollah-base.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Fri, 11 Sep 2026 18:45:57 +0000",
-            "snippet": "The complex sat below Ali al-Taher ridge, a strategic hilltop that overlooks the region and that has seen intense fighting.",
-            "isNew": true
-          },
-          {
-            "title": "The rapid Houthi advance in Yemen: why it matters and what’s at stake",
-            "link": "https://www.theguardian.com/world/2026/sep/10/violence-erupts-in-yemen-again-why-it-matters-globally-and-how-it-is-linked-to-the-us-iran-war",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Fri, 11 Sep 2026 15:49:23 GMT",
-            "snippet": "The Houthis have wrested control of Yemen’s Red Sea coast from Saudi-backed government, giving Iran and its allies control over a key shipping laneViolence has erupted again in Yemen, where a rapid ad",
-            "isNew": true
-          },
-          {
-            "title": "Why Yemen Is Back on the Brink of War",
-            "link": "https://www.nytimes.com/2026/09/10/world/middleeast/yemen-houthis-saudis-war.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Thu, 10 Sep 2026 16:12:07 +0000",
-            "snippet": "The Houthi militia, the Yemeni government, Iran and Saudi Arabia all have reasons to escalate the conflict. Here’s what to know.",
-            "isNew": true
-          },
           {
             "title": "Houthis seize key Yemeni port of Mocha in drive to take control of Red Sea coast",
             "link": "https://www.theguardian.com/world/2026/sep/10/houthis-seize-key-port-mocha-yemen-red-sea-coast-iran-saudi-arabia-us",
             "source": "guardian",
             "sources": [
-              "guardian"
+              "guardian",
+              "aljazeera",
+              "cnn"
             ],
             "pubDate": "Thu, 10 Sep 2026 11:39:56 GMT",
             "snippet": "Iran and its proxies move closer to full control of two shipping chokepoints as regional conflict widensExplained: why the fighting in Yemen matters globallyHouthi forces in Yemen are making a concert",
@@ -937,14 +645,208 @@
             "isNew": true
           },
           {
-            "title": "Yemen Tilts Toward Full-Scale War as Saudi-Houthi Clashes Escalate",
-            "link": "https://www.nytimes.com/2026/09/09/world/middleeast/saudi-yemen-strilkes.html",
+            "title": "June 5, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-05-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "Tensions are ramping up at the Israel-Lebanon border, with Hezbollah claiming responsibility for a Wednesday evening attack in northern Israel that left multiple people injured.",
+            "isNew": true
+          },
+          {
+            "title": "시진핑 \"브릭스와 중동 평화·안정 실현에 역할 할 것\"",
+            "link": "https://www.yna.co.kr/view/AKR20260912045500009",
+            "source": "yonhap",
+            "sources": [
+              "yonhap"
+            ],
+            "pubDate": "Sat, 12 Sep 2026 20:20:17 +0900",
+            "snippet": "(서울=연합뉴스) 권숙희 기자 = 중국과 러시아가 주도하는 비(非)서방 신흥경제국 모임인 브릭스(BRICS) 정상회의 참석차 인도를 방문한 시진...",
+            "isNew": true
+          },
+          {
+            "title": "\"극우집권 위험 대비\"…프랑스, EU에 핵심법안 연내처리 압박",
+            "link": "https://www.yna.co.kr/view/AKR20260912045100009",
+            "source": "yonhap",
+            "sources": [
+              "yonhap"
+            ],
+            "pubDate": "Sat, 12 Sep 2026 19:53:49 +0900",
+            "snippet": "(서울=연합뉴스) 오수진 기자 = 프랑스 정부가 내년 대선을 앞두고 극우 정당이 집권할 가능성에 대비하는 차원에서 유럽연합(EU)에 예산안과 기...",
+            "isNew": true
+          },
+          {
+            "title": "사우디 '새 중동의 꿈' 꺾이나…미·이란 확전 휘말려 속수무책",
+            "link": "https://www.yna.co.kr/view/AKR20260912039200009",
+            "source": "yonhap",
+            "sources": [
+              "yonhap"
+            ],
+            "pubDate": "Sat, 12 Sep 2026 18:20:15 +0900",
+            "snippet": "(서울=연합뉴스) 오수진 기자 = 이란 전쟁 발발 후 가장 큰 피해를 본 중동 국가 중 하나인 사우디아라비아가 예멘이 친이란 반군 후티, 이라크...",
+            "isNew": true
+          },
+          {
+            "title": "‘We Left in the Clothes We Were Wearing’: Yemenis Flee New Fighting",
+            "link": "https://www.nytimes.com/2026/09/12/world/middleeast/yemen-iran-war-houthis.html",
             "source": "nytimes",
             "sources": [
               "nytimes"
             ],
-            "pubDate": "Wed, 09 Sep 2026 21:09:08 +0000",
-            "snippet": "With its oil-export routes once again under threat, Saudi Arabia is stepping up its military campaign against an old antagonist.",
+            "pubDate": "Sat, 12 Sep 2026 09:03:00 +0000",
+            "snippet": "Hunger and disease have tormented Yemen for years. Now, fighting between the Saudi-backed government and Iran-backed Houthis is pushing it to the brink.",
+            "isNew": true
+          }
+        ]
+      },
+      {
+        "category_id": "economy",
+        "category_name": "경제 영향",
+        "category_icon": "📊",
+        "count": 6,
+        "new_count": 6,
+        "articles": [
+          {
+            "title": "[속보] 브릭스 \"국제법 위반한 일방 제재 반대…중동서 자제 촉구\"",
+            "link": "https://www.yna.co.kr/view/AKR20260912047300104",
+            "source": "yonhap",
+            "sources": [
+              "yonhap"
+            ],
+            "pubDate": "Sat, 12 Sep 2026 20:39:12 +0900",
+            "snippet": "(",
+            "isNew": true
+          },
+          {
+            "title": "ECB raises interest rates to 2.5% and warns Iran war is fuelling inflation",
+            "link": "https://www.theguardian.com/business/2026/sep/10/ecb-raises-interest-rates-to-25-amid-warning-iran-war-is-fuelling-inflation",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Thu, 10 Sep 2026 13:10:15 GMT",
+            "snippet": "Borrowing costs climb in Europe and oil tops $105 a barrel as bank says growing price pressures in eurozone will be ‘longer lasting than we had anticipated’Business live – latest updatesThe European C",
+            "isNew": true
+          },
+          {
+            "title": "The UK’s sanctions on Israeli settlements are a great victory – but must be only the beginning | Em Hilton",
+            "link": "https://www.theguardian.com/commentisfree/2026/sep/10/uk-sanctions-israel-settlements-activists-palestine-movement",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Thu, 10 Sep 2026 10:00:23 GMT",
+            "snippet": "The change in policy is a direct result of sustained pressure from activists and organisers across the Palestine movement. But what comes next?The announcement on Tuesday by the foreign secretary, Ed ",
+            "isNew": true
+          },
+          {
+            "title": "Senior UK rabbis come out in support of sanctions on Israeli settlements",
+            "link": "https://www.theguardian.com/politics/2026/sep/09/senior-uk-rabbis-come-out-in-support-of-sanctions-on-israeli-settlements",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Wed, 09 Sep 2026 17:57:14 GMT",
+            "snippet": "Spiritual leaders stress diversity of views within Jewish community and warn against inaction on settler violence‘It’s a good start’: prominent Israelis welcome UK sanctionsProminent British rabbis ha",
+            "isNew": true
+          },
+          {
+            "title": "Saudi Arabia shuts East-West pipeline that bypasses Hormuz after attacks",
+            "link": "https://www.ft.com/content/3bafb3ae-ba94-44f0-984c-ec7c9f54a5e0?syn-25a6b1a6=1",
+            "source": "ft",
+            "sources": [
+              "ft"
+            ],
+            "pubDate": "Sat, 12 Sep 2026 10:50:57 GMT",
+            "snippet": "Move is likely to put further momentum behind fast-rising oil prices",
+            "isNew": true
+          },
+          {
+            "title": "Why Mokha, Historic Port That Shaped the Coffee Trade, Is a Prize in Yemen’s War",
+            "link": "https://www.nytimes.com/2026/09/12/world/middleeast/mokha-yemen-houthis-mocha-coffee.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Sat, 12 Sep 2026 10:09:22 +0000",
+            "snippet": "A strategic location on the Red Sea afforded the city centuries of trading dominance — and makes it a coveted target in today’s fighting in the Middle East.",
+            "isNew": true
+          }
+        ]
+      },
+      {
+        "category_id": "humanitarian",
+        "category_name": "인도주의/피해",
+        "category_icon": "🏥",
+        "count": 6,
+        "new_count": 6,
+        "articles": [
+          {
+            "title": "Several dead after Israeli joint security forces raid in West Bank",
+            "link": "https://www.cnn.com/2022/10/25/middleeast/israel-forces-raid-nablus-palestine-intl-hnk/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "Tue, 25 Oct 2022 13:58:46 GMT",
+            "snippet": "",
+            "isNew": true
+          },
+          {
+            "title": "June 9, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-09-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "Key Israeli war cabinet member Benny Gantz quit Prime Minister Benjamin Netanyahu's government Sunday. Meanwhile, the death toll from Israel's hostage rescue in central Gaza keeps rising. Follow for l",
+            "isNew": true
+          },
+          {
+            "title": "June 8, 2024 - Israel-Gaza news",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-08-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "The Israeli military says it rescued four hostages from central Gaza on Saturday. Palestinians report scenes of horror on the ground, and Gaza hospital officials say more than 200 people were killed.",
+            "isNew": true
+          },
+          {
+            "title": "May 19, 2024 - Israel-Gaza news",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-19-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "An Israeli airstrike on a refugee camp in central Gaza has killed at least 35 people, including seven children, according to hospital officials. Meanwhile, Israeli war cabinet divisions are spilling i",
+            "isNew": true
+          },
+          {
+            "title": "Devastation in Gaza as Israel wages war on Hamas",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-18-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "Gaza faces a \"dire\" food situation as barely more than 300 aid trucks have entered the strip since Israel began its offensive in Rafah, a UN agency said in a report published Friday. Follow live updat",
+            "isNew": true
+          },
+          {
+            "title": "May 14, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-14-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "Amid signs that Israel may launch a full-scale incursion in Rafah, aid agencies are warning any escalation in the southern Gaza city risks exacerbating the already deteriorating humanitarian situation",
             "isNew": true
           }
         ]
@@ -957,39 +859,6 @@
         "new_count": 5,
         "articles": [
           {
-            "title": "Call it the Miliband doctrine. Let’s hope the new Israeli settlement boycott is just the start | Steve Bloomfield",
-            "link": "https://www.theguardian.com/commentisfree/2026/sep/12/miliband-doctrine-israeli-settlement-boycott-uk-foreign-policy",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Sat, 12 Sep 2026 05:00:30 GMT",
-            "snippet": "This week’s move suggests that, even in the age of Trump, Britain will once again have an ‘ethical dimension’ to its foreign policy. That’s good for the world Almost 30 years ago, the Labour titan Rob",
-            "isNew": true
-          },
-          {
-            "title": "Behind the Scenes, Vance Gathered Unvarnished Views of the Iran War",
-            "link": "https://www.nytimes.com/2026/09/10/us/politics/vance-iran-war-trump-munitions.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Fri, 11 Sep 2026 01:17:31 +0000",
-            "snippet": "Vice President JD Vance received sobering assessments about the war that did not line up with what he, President Trump and other top administration officials were saying publicly.",
-            "isNew": true
-          },
-          {
-            "title": "Iran war won't end until after crucial November elections, says Trump ",
-            "link": "https://www.bbc.co.uk/news/articles/c5ydld0gykpo?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
-            "sources": [
-              "bbc"
-            ],
-            "pubDate": "Thu, 10 Sep 2026 10:43:53 GMT",
-            "snippet": "The president also said oil prices won't come down until after the November races, claiming without evidence that Iran wants to impact the election.",
-            "isNew": true
-          },
-          {
             "title": "Trump’s repeated threats to ‘wipe out’ Iran are normalizing mass violence | Mohamad Bazzi",
             "link": "https://www.theguardian.com/commentisfree/2026/sep/10/trump-iran-violence",
             "source": "guardian",
@@ -1001,14 +870,89 @@
             "isNew": true
           },
           {
-            "title": "Why Israel Reacted With Fury to U.K. Sanctions on West Bank Settlements",
-            "link": "https://www.nytimes.com/2026/09/09/world/middleeast/israel-uk-west-bank-sanctions.html",
-            "source": "nytimes",
+            "title": "June 1, 2024 - Israel-Gaza news",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-01-24/index.html",
+            "source": "cnn",
             "sources": [
-              "nytimes"
+              "cnn"
             ],
-            "pubDate": "Wed, 09 Sep 2026 17:13:11 +0000",
-            "snippet": "The fierce retaliation of Prime Minister Benjamin Netanyahu’s government to the new restrictions is a reflection of his tough re-election fight, analysts say.",
+            "pubDate": "",
+            "snippet": "President Joe Biden has laid out a three-phase proposal to end the conflict in Gaza, as global condemnation of Israel's offensive in Rafah grows.",
+            "isNew": true
+          },
+          {
+            "title": "May 21, 2024 Israel-Hamas war, Iran president death news",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-21-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "Prime Minister Benjamin Netanyahu blasted the charges brought by the International Criminal Court against himself and Israel's defense minister as \"beyond outrageous\" in an interview Tuesday with CNN'",
+            "isNew": true
+          },
+          {
+            "title": "May 19, 2024 helicopter crash involving Iranian president",
+            "link": "https://www.cnn.com/middleeast/live-news/raisi-iran-president-helicopter-crash/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "A helicopter carrying Iranian President Ebrahim Raisi crashed while he was visiting a northern region in the country Sunday, according to the Iranian state news agency IRNA.",
+            "isNew": true
+          },
+          {
+            "title": "트럼프 \"이란 전쟁, 11월 중간선거 직후 끝나고 유가도 급락\"",
+            "link": "https://www.yna.co.kr/view/AKR20260912044600009",
+            "source": "yonhap",
+            "sources": [
+              "yonhap"
+            ],
+            "pubDate": "Sat, 12 Sep 2026 19:33:59 +0900",
+            "snippet": "(서울=연합뉴스) 고일환 기자 = 도널드 트럼프 미국 대통령은 이란과의 전쟁이 11월 미국 중간선거 직후 끝날 것으로 본다고 말했다.",
+            "isNew": true
+          }
+        ]
+      },
+      {
+        "category_id": "diplomacy",
+        "category_name": "외교/협상",
+        "category_icon": "🤝",
+        "count": 3,
+        "new_count": 3,
+        "articles": [
+          {
+            "title": "June 13, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-13-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "The US-backed Gaza ceasefire proposal doesn't meet Hamas' demands for an end to the war, a senior official has told CNN. Osama Hamdan also said that \"no one has an idea\" how many of the hostages held ",
+            "isNew": true
+          },
+          {
+            "title": "June 10, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-10-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "The UN Security Council adopted a resolution proposed by the United States for a permanent ceasefire and release of the hostages in Gaza.",
+            "isNew": true
+          },
+          {
+            "title": "Israel-Lebanon talks postponed as explosions rock southern Lebanon",
+            "link": "https://www.aljazeera.com/news/2026/9/12/israel-lebanon-talks-postponed-as-explosions-rock-southern-lebanon?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Sat, 12 Sep 2026 11:04:34 +0000",
+            "snippet": "President Aoun says &#039;no new negotiations with Israel at the moment&#039;.",
             "isNew": true
           }
         ]
@@ -1017,42 +961,9 @@
         "category_id": "other",
         "category_name": "기타",
         "category_icon": "📰",
-        "count": 5,
-        "new_count": 5,
+        "count": 3,
+        "new_count": 3,
         "articles": [
-          {
-            "title": "Inside an Ancient Lebanese City Engulfed by War",
-            "link": "https://www.nytimes.com/2026/09/11/world/middleeast/tyre-engulfed-war-lebanon.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Sat, 12 Sep 2026 07:18:28 +0000",
-            "snippet": "The Lebanese city of Tyre, one of the oldest metropolises in the world, has been left scarred.",
-            "isNew": true
-          },
-          {
-            "title": "‘War on terror’: How 9/11 changed the language of conflict",
-            "link": "https://www.aljazeera.com/news/2026/9/12/war-on-terror-how-9-11-changed-the-language-of?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sat, 12 Sep 2026 05:26:05 +0000",
-            "snippet": "The events of September 11, 2001 spawned a new lexicon which effectively sanitised the erosion of human rights.",
-            "isNew": true
-          },
-          {
-            "title": "Israeli demolitions threaten schools and homes in Masafer Yatta",
-            "link": "https://www.aljazeera.com/features/2026/9/11/israeli-demolitions-threaten-schools-and-homes-in-masafer-yatta?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Fri, 11 Sep 2026 21:53:34 +0000",
-            "snippet": "Students pledge to continue learning as Masafer Yatta demolitions target homes, schools, and their right to education.",
-            "isNew": true
-          },
           {
             "title": "Curse of the Nile’s gold: how Sudan is losing its fertile fields and ability to produce food",
             "link": "https://www.theguardian.com/global-development/2026/sep/11/nile-gold-mining-sudan-environmental-disaster-poverty-public-health-emergency-crops-fail-chemicals",
@@ -1065,221 +976,40 @@
             "isNew": true
           },
           {
-            "title": "An Artist Inspired by Men Behaving Badly",
-            "link": "https://www.nytimes.com/2026/09/10/arts/design/an-artist-inspired-by-men-behaving-badly.html",
-            "source": "nytimes",
+            "title": "May 30, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-30-24/index.html",
+            "source": "cnn",
             "sources": [
-              "nytimes"
+              "cnn"
             ],
-            "pubDate": "Thu, 10 Sep 2026 17:02:12 +0000",
-            "snippet": "In a new show at David Kordansky Gallery, the Iranian American painter Tala Madani plumbs the lives of her characters with absurd humor and a strange tenderness.",
-            "isNew": true
-          }
-        ]
-      },
-      {
-        "category_id": "diplomacy",
-        "category_name": "외교/협상",
-        "category_icon": "🤝",
-        "count": 2,
-        "new_count": 2,
-        "articles": [
-          {
-            "title": "Former top US diplomat reveals mistakes made after 9/11 attacks",
-            "link": "https://www.aljazeera.com/news/2026/9/12/former-top-us-diplomat-reveals-mistakes-made-after-9-11?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sat, 12 Sep 2026 00:04:23 +0000",
-            "snippet": "Ambassador Zalmay Khalilzad describes misgivings about the US handling of the Afghanistan and Iraq wars.",
+            "pubDate": "",
+            "snippet": "The war in Gaza will likely continue until at least the end of the year, an Israeli official warned.",
             "isNew": true
           },
           {
-            "title": "Iran referred to UN Security Council for nuclear non-compliance",
-            "link": "https://www.bbc.co.uk/news/articles/ckgwj4kl5lno?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
+            "title": "May 22, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/iran-israel-hamas-war-gaza-news-05-22-24/index.html",
+            "source": "cnn",
             "sources": [
-              "bbc"
+              "cnn"
             ],
-            "pubDate": "Wed, 09 Sep 2026 20:22:51 GMT",
-            "snippet": "Tehran condemns the resolution, blaming US and Israeli strikes on its nuclear facilities for disrupting inspections.",
-            "isNew": true
-          }
-        ]
-      },
-      {
-        "category_id": "humanitarian",
-        "category_name": "인도주의/피해",
-        "category_icon": "🏥",
-        "count": 2,
-        "new_count": 2,
-        "articles": [
-          {
-            "title": "In Gaza, we’ve seen horror unfold with global powers’ support. Is that a blueprint for horror elsewhere? | Ahdaf Soueif",
-            "link": "https://www.theguardian.com/commentisfree/2026/sep/11/gaza-horror-global-powers-support-blueprint-palestinians-israel",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Fri, 11 Sep 2026 14:29:23 GMT",
-            "snippet": "For now, it is Palestinians who are being killed and displaced. But ideologies of supremacy and domination threaten us allLast week, Itamar Ben-Gvir, Israel’s minister of national security, put out an",
-            "isNew": true
-          },
-          {
-            "title": "14 Killed in Weapons Depot Blast in Northwest Syria",
-            "link": "https://www.nytimes.com/2026/09/09/world/middleeast/syria-weapons-depot-blast.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Wed, 09 Sep 2026 18:24:17 +0000",
-            "snippet": "Officials said they had not determined the cause of the explosion. Years of fighting have left Syria littered with weapons and ordnance left over from the civil war.",
+            "pubDate": "",
+            "snippet": "Spain, Norway and Ireland announced plans to formally recognize a Palestinian state, in a move that is likely to bolster the global Palestinian cause but strain relations with Israel.",
             "isNew": true
           }
         ]
       }
     ],
     "recent_30min": {
-      "total_new": 50,
+      "total_new": 49,
       "by_category": {
-        "other": {
-          "count": 5,
-          "titles": [
-            {
-              "title": "Inside an Ancient Lebanese City Engulfed by War",
-              "link": "https://www.nytimes.com/2026/09/11/world/middleeast/tyre-engulfed-war-lebanon.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "‘War on terror’: How 9/11 changed the language of conflict",
-              "link": "https://www.aljazeera.com/news/2026/9/12/war-on-terror-how-9-11-changed-the-language-of?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Israeli demolitions threaten schools and homes in Masafer Yatta",
-              "link": "https://www.aljazeera.com/features/2026/9/11/israeli-demolitions-threaten-schools-and-homes-in-masafer-yatta?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Curse of the Nile’s gold: how Sudan is losing its fertile fields and ability to produce food",
-              "link": "https://www.theguardian.com/global-development/2026/sep/11/nile-gold-mining-sudan-environmental-disaster-poverty-public-health-emergency-crops-fail-chemicals",
-              "source": "guardian"
-            },
-            {
-              "title": "An Artist Inspired by Men Behaving Badly",
-              "link": "https://www.nytimes.com/2026/09/10/arts/design/an-artist-inspired-by-men-behaving-badly.html",
-              "source": "nytimes"
-            }
-          ]
-        },
-        "regional": {
-          "count": 10,
-          "titles": [
-            {
-              "title": "BRICS meets in India: What’s on the agenda, why it matters",
-              "link": "https://www.aljazeera.com/news/2026/9/12/brics-meets-in-india-whats-on-the-agenda-why-it-matters?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Saudi Arabia shuts down oil pipeline, blaming drones from Iraq",
-              "link": "https://www.theguardian.com/world/2026/sep/12/saudi-arabia-shuts-down-oil-pipeline-blaming-drones-from-iraq",
-              "source": "guardian"
-            },
-            {
-              "title": "China’s Xi lands in India for BRICS summit overshadowed by wars",
-              "link": "https://www.aljazeera.com/news/2026/9/12/chinas-xi-heads-to-india-for-brics-summit-overshadowed-by-wars?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Putin and Pezeshkian call out US dominance ahead of BRICS",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/9/12/putin-and-pezeshkian-call-out-us-dominance-ahead-of-brics?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Israel Destroys Underground Hezbollah Base in Southern Lebanon",
-              "link": "https://www.nytimes.com/2026/09/11/world/middleeast/blast-lebanon-israel-hezbollah-base.html",
-              "source": "nytimes"
-            }
-          ]
-        },
-        "politics": {
-          "count": 5,
-          "titles": [
-            {
-              "title": "Call it the Miliband doctrine. Let’s hope the new Israeli settlement boycott is just the start | Steve Bloomfield",
-              "link": "https://www.theguardian.com/commentisfree/2026/sep/12/miliband-doctrine-israeli-settlement-boycott-uk-foreign-policy",
-              "source": "guardian"
-            },
-            {
-              "title": "Behind the Scenes, Vance Gathered Unvarnished Views of the Iran War",
-              "link": "https://www.nytimes.com/2026/09/10/us/politics/vance-iran-war-trump-munitions.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Iran war won't end until after crucial November elections, says Trump ",
-              "link": "https://www.bbc.co.uk/news/articles/c5ydld0gykpo?at_medium=RSS&at_campaign=rss",
-              "source": "bbc"
-            },
-            {
-              "title": "Trump’s repeated threats to ‘wipe out’ Iran are normalizing mass violence | Mohamad Bazzi",
-              "link": "https://www.theguardian.com/commentisfree/2026/sep/10/trump-iran-violence",
-              "source": "guardian"
-            },
-            {
-              "title": "Why Israel Reacted With Fury to U.K. Sanctions on West Bank Settlements",
-              "link": "https://www.nytimes.com/2026/09/09/world/middleeast/israel-uk-west-bank-sanctions.html",
-              "source": "nytimes"
-            }
-          ]
-        },
-        "military": {
-          "count": 15,
-          "titles": [
-            {
-              "title": "Iran’s Houthi allies capture strategic island on vital oil shipping route",
-              "link": "https://www.theguardian.com/world/2026/sep/11/iran-houthi-allies-capture-strategic-island-bab-al-mandab-strait",
-              "source": "guardian"
-            },
-            {
-              "title": "Nearly 50,000 Yemeni civilians flee as Houthis advance along Red Sea coast",
-              "link": "https://www.theguardian.com/world/2026/sep/12/yemen-houthi-advance-red-sea-coast-displaces-civilians-bab-al-mandab",
-              "source": "guardian"
-            },
-            {
-              "title": "North Korea fires ballistic missiles off eastern coast, Seoul says",
-              "link": "https://www.aljazeera.com/news/2026/9/12/north-korea-fires-ballistic-missiles-off-eastern-coast-seoul-says?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "CIA releases dozens of declassified documents on bin Laden prior to 9/11",
-              "link": "https://www.aljazeera.com/news/2026/9/12/cia-drops-dozens-of-declassified-documents-on-bin-laden-and-al-qaeda?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Iran war live: Houthis control Red Sea coast, Saudi pipeline shut down",
-              "link": "https://www.aljazeera.com/news/liveblog/2026/9/12/iran-war-live-houthis-control-red-sea-coast-saudi-pipeline-shut-down?traffic_source=rss",
-              "source": "aljazeera"
-            }
-          ]
-        },
         "economy": {
-          "count": 11,
+          "count": 6,
           "titles": [
             {
-              "title": "How Canadians are bracing for the impact of Trump’s trade war",
-              "link": "https://www.aljazeera.com/economy/2026/9/12/how-canadians-are-bracing-for-the-impact-of-trumps-trade-war?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "UK sanctions on West Bank settlers are the right step | Letters",
-              "link": "https://www.theguardian.com/world/2026/sep/11/uk-sanctions-on-west-bank-settlers-are-the-right-step",
-              "source": "guardian"
-            },
-            {
-              "title": "UK Sanctions Against Israeli Settlers Divide British Rabbis",
-              "link": "https://www.nytimes.com/2026/09/10/world/europe/britain-israel-jews-sanctions-settlers.html",
-              "source": "nytimes"
+              "title": "[속보] 브릭스 \"국제법 위반한 일방 제재 반대…중동서 자제 촉구\"",
+              "link": "https://www.yna.co.kr/view/AKR20260912047300104",
+              "source": "yonhap"
             },
             {
               "title": "ECB raises interest rates to 2.5% and warns Iran war is fuelling inflation",
@@ -1287,39 +1017,189 @@
               "source": "guardian"
             },
             {
-              "title": "Saudi Oil Exports Plunge as Spread of War Shuts Off Shipping Routes",
-              "link": "https://www.nytimes.com/2026/09/09/business/saudi-arabia-houthis-red-sea-oil-shipping.html",
-              "source": "nytimes"
+              "title": "The UK’s sanctions on Israeli settlements are a great victory – but must be only the beginning | Em Hilton",
+              "link": "https://www.theguardian.com/commentisfree/2026/sep/10/uk-sanctions-israel-settlements-activists-palestine-movement",
+              "source": "guardian"
+            },
+            {
+              "title": "Senior UK rabbis come out in support of sanctions on Israeli settlements",
+              "link": "https://www.theguardian.com/politics/2026/sep/09/senior-uk-rabbis-come-out-in-support-of-sanctions-on-israeli-settlements",
+              "source": "guardian"
+            },
+            {
+              "title": "Saudi Arabia shuts East-West pipeline that bypasses Hormuz after attacks",
+              "link": "https://www.ft.com/content/3bafb3ae-ba94-44f0-984c-ec7c9f54a5e0?syn-25a6b1a6=1",
+              "source": "ft"
             }
           ]
         },
-        "diplomacy": {
-          "count": 2,
+        "military": {
+          "count": 11,
           "titles": [
             {
-              "title": "Former top US diplomat reveals mistakes made after 9/11 attacks",
-              "link": "https://www.aljazeera.com/news/2026/9/12/former-top-us-diplomat-reveals-mistakes-made-after-9-11?traffic_source=rss",
+              "title": "Houthis celebrate seizing control of Yemen’s Red Sea coast",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/9/12/houthis-celebrate-seizing-control-of-yemens-red-sea-coast?traffic_source=rss",
               "source": "aljazeera"
             },
             {
-              "title": "Iran referred to UN Security Council for nuclear non-compliance",
-              "link": "https://www.bbc.co.uk/news/articles/ckgwj4kl5lno?at_medium=RSS&at_campaign=rss",
-              "source": "bbc"
+              "title": "Secret systems used by Israel in mass killings of Gaza civilians revealed in new film",
+              "link": "https://www.theguardian.com/world/2026/sep/10/secret-systems-used-by-israel-in-mass-killings-of-gaza-civilians-revealed-in-new-film",
+              "source": "guardian"
+            },
+            {
+              "title": "June 12, 2024 Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-12-24-intl/index.html",
+              "source": "cnn"
+            },
+            {
+              "title": "June 6, 2024 Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-06-24/index.html",
+              "source": "cnn"
+            },
+            {
+              "title": "May 29, 2024 Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-29-24/index.html",
+              "source": "cnn"
+            }
+          ]
+        },
+        "other": {
+          "count": 5,
+          "titles": [
+            {
+              "title": "Curse of the Nile’s gold: how Sudan is losing its fertile fields and ability to produce food",
+              "link": "https://www.theguardian.com/global-development/2026/sep/11/nile-gold-mining-sudan-environmental-disaster-poverty-public-health-emergency-crops-fail-chemicals",
+              "source": "guardian"
+            },
+            {
+              "title": "Iran",
+              "link": "https://www.cnn.com/specials/middleeast/iran?utm_source=section",
+              "source": "cnn"
+            },
+            {
+              "title": "Israel",
+              "link": "https://www.cnn.com/specials/middleeast/israel?utm_source=section",
+              "source": "cnn"
+            },
+            {
+              "title": "May 30, 2024 Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-30-24/index.html",
+              "source": "cnn"
+            },
+            {
+              "title": "May 22, 2024 Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/iran-israel-hamas-war-gaza-news-05-22-24/index.html",
+              "source": "cnn"
+            }
+          ]
+        },
+        "regional": {
+          "count": 8,
+          "titles": [
+            {
+              "title": "Houthis seize key Yemeni port of Mocha in drive to take control of Red Sea coast",
+              "link": "https://www.theguardian.com/world/2026/sep/10/houthis-seize-key-port-mocha-yemen-red-sea-coast-iran-saudi-arabia-us",
+              "source": "guardian"
+            },
+            {
+              "title": "How the fate of a small furry animal reveals the ecological tragedy of Israel’s war on Lebanon | Hisham Younes",
+              "link": "https://www.theguardian.com/environment/2026/sep/10/how-the-fate-of-a-small-furry-animal-reveals-the-ecological-tragedy-of-israels-war-on-lebanon",
+              "source": "guardian"
+            },
+            {
+              "title": "June 5, 2024 Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-05-24/index.html",
+              "source": "cnn"
+            },
+            {
+              "title": "시진핑 \"브릭스와 중동 평화·안정 실현에 역할 할 것\"",
+              "link": "https://www.yna.co.kr/view/AKR20260912045500009",
+              "source": "yonhap"
+            },
+            {
+              "title": "\"극우집권 위험 대비\"…프랑스, EU에 핵심법안 연내처리 압박",
+              "link": "https://www.yna.co.kr/view/AKR20260912045100009",
+              "source": "yonhap"
+            }
+          ]
+        },
+        "politics": {
+          "count": 7,
+          "titles": [
+            {
+              "title": "Trump’s repeated threats to ‘wipe out’ Iran are normalizing mass violence | Mohamad Bazzi",
+              "link": "https://www.theguardian.com/commentisfree/2026/sep/10/trump-iran-violence",
+              "source": "guardian"
+            },
+            {
+              "title": "June 17, 2024 - Israel-Gaza news",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-17-24/index.html",
+              "source": "cnn"
+            },
+            {
+              "title": "June 1, 2024 - Israel-Gaza news",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-01-24/index.html",
+              "source": "cnn"
+            },
+            {
+              "title": "May 21, 2024 Israel-Hamas war, Iran president death news",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-21-24/index.html",
+              "source": "cnn"
+            },
+            {
+              "title": "May 20, 2024 Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-20-24/index.html",
+              "source": "cnn"
             }
           ]
         },
         "humanitarian": {
-          "count": 2,
+          "count": 9,
           "titles": [
             {
-              "title": "In Gaza, we’ve seen horror unfold with global powers’ support. Is that a blueprint for horror elsewhere? | Ahdaf Soueif",
-              "link": "https://www.theguardian.com/commentisfree/2026/sep/11/gaza-horror-global-powers-support-blueprint-palestinians-israel",
-              "source": "guardian"
+              "title": "Several dead after Israeli joint security forces raid in West Bank",
+              "link": "https://www.cnn.com/2022/10/25/middleeast/israel-forces-raid-nablus-palestine-intl-hnk/index.html",
+              "source": "cnn"
             },
             {
-              "title": "14 Killed in Weapons Depot Blast in Northwest Syria",
-              "link": "https://www.nytimes.com/2026/09/09/world/middleeast/syria-weapons-depot-blast.html",
-              "source": "nytimes"
+              "title": "June 9, 2024 Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-09-24/index.html",
+              "source": "cnn"
+            },
+            {
+              "title": "June 8, 2024 - Israel-Gaza news",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-08-24/index.html",
+              "source": "cnn"
+            },
+            {
+              "title": "May 27, 2024 - Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-27-24/index.html",
+              "source": "cnn"
+            },
+            {
+              "title": "May 26, 2024 Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-26-24/index.html",
+              "source": "cnn"
+            }
+          ]
+        },
+        "diplomacy": {
+          "count": 3,
+          "titles": [
+            {
+              "title": "June 13, 2024 Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-13-24/index.html",
+              "source": "cnn"
+            },
+            {
+              "title": "June 10, 2024 Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-10-24/index.html",
+              "source": "cnn"
+            },
+            {
+              "title": "Israel-Lebanon talks postponed as explosions rock southern Lebanon",
+              "link": "https://www.aljazeera.com/news/2026/9/12/israel-lebanon-talks-postponed-as-explosions-rock-southern-lebanon?traffic_source=rss",
+              "source": "aljazeera"
             }
           ]
         }
@@ -1413,29 +1293,11 @@
     }
   ],
   "economic_indicators": {
-    "US10Y": {
-      "price": 4.97,
-      "change": 0.03,
-      "changePercent": 0.61,
-      "prev": 4.94
-    },
-    "GOLD": {
-      "price": 4408.9,
-      "change": 44.4,
-      "changePercent": 1.02,
-      "prev": 4364.5
-    },
-    "DXY": {
-      "price": 99.09,
-      "change": 0.01,
-      "changePercent": 0.01,
-      "prev": 99.09
-    },
-    "BRENT": {
-      "price": 104.61,
-      "change": -3.02,
-      "changePercent": -2.81,
-      "prev": 107.63
+    "VIX": {
+      "price": 15.84,
+      "change": -2,
+      "changePercent": -11.21,
+      "prev": 17.84
     },
     "WTI": {
       "price": 100.05,
@@ -1449,25 +1311,35 @@
       "changePercent": 1.82,
       "prev": 3.85
     },
-    "VIX": {
-      "price": 15.84,
-      "change": -2,
-      "changePercent": -11.21,
-      "prev": 17.84
+    "US10Y": {
+      "price": 4.97,
+      "change": 0.03,
+      "changePercent": 0.61,
+      "prev": 4.94
+    },
+    "DXY": {
+      "price": 99.09,
+      "change": 0.01,
+      "changePercent": 0.01,
+      "prev": 99.09
+    },
+    "BRENT": {
+      "price": 104.61,
+      "change": -3.02,
+      "changePercent": -2.81,
+      "prev": 107.63
+    },
+    "GOLD": {
+      "price": 4408.9,
+      "change": 44.4,
+      "changePercent": 1.02,
+      "prev": 4364.5
     }
   },
   "critical_events": [
     {
-      "id": "capital_attack",
-      "name": "수도 직접 공격/포위",
-      "severity": "high",
-      "confidence": 0.6666666666666666,
-      "matchCount": 2,
-      "direction": "shorten"
-    },
-    {
-      "id": "humanitarian_crisis",
-      "name": "대규모 인도주의 위기",
+      "id": "diplomatic_breakthrough",
+      "name": "외교적 돌파구/강대국 중재",
       "severity": "high",
       "confidence": 0.6666666666666666,
       "matchCount": 2,
@@ -1477,16 +1349,8 @@
       "id": "conflict_expansion",
       "name": "전선 확대/신규 참전국",
       "severity": "moderate",
-      "confidence": 0.6666666666666666,
-      "matchCount": 2,
-      "direction": "lengthen"
-    },
-    {
-      "id": "wmd_threat",
-      "name": "대량살상무기(WMD)/핵 위협",
-      "severity": "critical",
-      "confidence": 0.6666666666666666,
-      "matchCount": 2,
+      "confidence": 1,
+      "matchCount": 4.6,
       "direction": "lengthen"
     }
   ],
