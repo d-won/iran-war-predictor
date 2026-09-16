@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-09-16T18:17:18.028Z",
+  "timestamp": "2026-09-16T21:30:41.075Z",
   "war_day": 200,
   "probabilities": {
-    "1개월 내 (~3월)": 17.9,
-    "2~3개월 (4~5월)": 38.1,
-    "4~6개월 (6~8월)": 26.7,
-    "7~12개월 (9월~27/2월)": 12.5,
-    "1년 초과": 4.8
+    "1개월 내 (~3월)": 17,
+    "2~3개월 (4~5월)": 36.8,
+    "4~6개월 (6~8월)": 27.5,
+    "7~12개월 (9월~27/2월)": 14.3,
+    "1년 초과": 4.4
   },
   "factors": [
     {
@@ -45,20 +45,20 @@
       "decay": 0.4
     },
     {
-      "factor": "이란 미사일 능력 급감 (휴전6:확전2)",
-      "impact": "전쟁 지속 능력 약화로 단기 종전 가능성 증가",
-      "weight": "+0.0%p (1개월내), +0.0%p (2~3개월) (잔존40%)",
-      "direction": "shorten",
-      "detail": "이란의 보복 미사일 타격 능력이 약 90% 감소했습니다.",
+      "factor": "확전 뉴스 우세 (확전8:휴전0)",
+      "impact": "전쟁 장기화 가능성 (확전비율 100%)",
+      "weight": "+0.04%p (4~6개월)",
+      "direction": "lengthen",
+      "detail": "언론에서 휴전보다 확전을 더 많이 보도하고 있습니다.",
       "keywords": [
-        "missile",
-        "ballistic",
-        "launch",
-        "strike capab"
+        "escalat",
+        "intensif",
+        "expand",
+        "widen"
       ],
-      "applied": "2026-03-02",
+      "applied": "실시간",
       "active": true,
-      "decay": 0.4
+      "decay": 1
     },
     {
       "factor": "호르무즈 해협 봉쇄 → 국제 경제 압력",
@@ -164,11 +164,11 @@
       "decay": 1
     },
     {
-      "factor": "협상/외교 뉴스 0건 감지",
-      "impact": "외교 움직임 부재",
+      "factor": "협상/외교 뉴스 2건 감지",
+      "impact": "외교 움직임 미약",
       "weight": "+0.00%p (1개월내), +0.00%p (2~3개월)",
       "direction": "shorten",
-      "detail": "실시간 뉴스에서 협상 관련 기사 0건이 감지되었습니다.",
+      "detail": "실시간 뉴스에서 협상 관련 기사 2건이 감지되었습니다.",
       "keywords": [
         "negotiat",
         "talks",
@@ -181,11 +181,11 @@
       "decay": 1
     },
     {
-      "factor": "지역 확산 뉴스 10건 감지",
-      "impact": "주변국 연루 확대로 장기화 위험",
-      "weight": "+0.01%p (4~6개월), +0.01%p (7~12개월)",
+      "factor": "지역 확산 뉴스 24건 감지",
+      "impact": "주변국 대규모 연루 → 장기화 위험 높음",
+      "weight": "+0.02%p (4~6개월), +0.02%p (7~12개월)",
       "direction": "lengthen",
-      "detail": "주변국을 언급하는 기사 10건이 감지되었습니다.",
+      "detail": "주변국을 언급하는 기사 24건이 감지되었습니다.",
       "keywords": [
         "saudi",
         "uae",
@@ -234,36 +234,6 @@
       "decay": 0.3
     },
     {
-      "factor": "[중대 이벤트] 외교적 돌파구/강대국 중재",
-      "impact": "주요 외교적 돌파구 또는 강대국 중재. 데이턴(1995): 미국 중재 → 3주만에 합의. UN 안보리 결의는 평균 2~4주 내 휴전 이행.",
-      "weight": "+2.0%p (1개월내), +4.0%p (2~3개월), +1.3%p (4~6개월), -1.3%p (7~12개월), -0.7%p (1년초과)",
-      "direction": "shorten",
-      "detail": "주요 외교적 돌파구 또는 강대국 중재. 데이턴(1995): 미국 중재 → 3주만에 합의. UN 안보리 결의는 평균 2~4주 내 휴전 이행.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: June 10, 2024 Israel-Hamas war",
-      "keywords": [
-        "peace talk",
-        "agree",
-        "diplomatic",
-        "breakthrough",
-        "summit",
-        "peace",
-        "mediati",
-        "accept",
-        "un",
-        "resolution",
-        "ceasefire",
-        "broker",
-        "peace",
-        "negotiat",
-        "breakthrough",
-        "china",
-        "mediat",
-        "peace framework"
-      ],
-      "applied": "2026-09-16",
-      "active": true,
-      "severity": "high"
-    },
-    {
       "factor": "[중대 이벤트] 대규모 인도주의 위기",
       "impact": "대규모 인도주의 위기. 국제사회 개입 압력 증가. 코소보(1999): 난민 위기가 NATO 작전 가속화. 인도적 위기는 국제 종전 압력을 2~3배 강화.",
       "weight": "+1.3%p (1개월내), +2.7%p (2~3개월), +0.7%p (4~6개월), -0.7%p (7~12개월), -0.7%p (1년초과)",
@@ -290,37 +260,11 @@
       "severity": "high"
     },
     {
-      "factor": "[중대 이벤트] 전선 확대/신규 참전국",
-      "impact": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).",
-      "weight": "-1.3%p (1개월내), -2.0%p (2~3개월), +2.7%p (4~6개월), +2.0%p (7~12개월), +1.3%p (1년초과)",
-      "direction": "lengthen",
-      "detail": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Devastation in Gaza as Israel wages war on Hamas",
-      "keywords": [
-        "new front",
-        "war spread",
-        "conflict expand",
-        "join",
-        "war",
-        "enter",
-        "war",
-        "open",
-        "front",
-        "declare war",
-        "widen",
-        "conflict",
-        "second front",
-        "new theater"
-      ],
-      "applied": "2026-09-16",
-      "active": true,
-      "severity": "moderate"
-    },
-    {
-      "factor": "유가 급등 (WTI $102.35/배럴)",
+      "factor": "유가 급등 (WTI $102.02/배럴)",
       "impact": "높은 경제 압력 → 빠른 해결 요구 증가",
       "weight": "+4%p (1-2개월)",
       "direction": "shorten",
-      "detail": "WTI 유가가 $102.35/배럴로 100달러 돌파입니다. 호르무즈 해협 봉쇄와 맞물려 글로벌 에너지 시장에 큰 충격을 주고 있으며, 주요국들의 조기 종전 압력이 강화되고 있습니다.",
+      "detail": "WTI 유가가 $102.02/배럴로 100달러 돌파입니다. 호르무즈 해협 봉쇄와 맞물려 글로벌 에너지 시장에 큰 충격을 주고 있으며, 주요국들의 조기 종전 압력이 강화되고 있습니다.",
       "keywords": [
         "oil",
         "crude",
@@ -333,11 +277,11 @@
       "active": true
     },
     {
-      "factor": "금값 사상최고 ($4380.4/oz)",
+      "factor": "금값 사상최고 ($4302.5/oz)",
       "impact": "안전자산 수요 폭증 → 글로벌 불안 심화",
       "weight": "+2%p (4-6개월)",
       "direction": "lengthen",
-      "detail": "금 가격이 온스당 $4380.4로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
+      "detail": "금 가격이 온스당 $4302.5로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
       "keywords": [
         "gold",
         "safe haven",
@@ -348,11 +292,11 @@
       "active": true
     },
     {
-      "factor": "미국 10년 국채금리 4.96% (고금리 지속)",
+      "factor": "미국 10년 국채금리 5.01% (고금리 지속)",
       "impact": "전쟁 자금 조달 비용 증가",
       "weight": "+1%p (4-6개월)",
       "direction": "mixed",
-      "detail": "미국 10년물 국채금리가 4.96%로 높은 수준을 유지하고 있습니다. 전쟁 자금 조달 비용이 증가하며, 장기전의 경제적 부담이 커지고 있습니다.",
+      "detail": "미국 10년물 국채금리가 5.01%로 높은 수준을 유지하고 있습니다. 전쟁 자금 조달 비용이 증가하며, 장기전의 경제적 부담이 커지고 있습니다.",
       "keywords": [
         "treasury",
         "yield",
@@ -365,24 +309,108 @@
     }
   ],
   "news_signals": {
-    "ceasefire_mentions": 6,
-    "escalation_mentions": 2,
-    "negotiation_mentions": 0,
-    "casualty_mentions": 16,
-    "peace_mentions": 2.2,
-    "regional_spread": 10,
+    "ceasefire_mentions": 0,
+    "escalation_mentions": 8,
+    "negotiation_mentions": 2,
+    "casualty_mentions": 14,
+    "peace_mentions": 2,
+    "regional_spread": 24,
     "total_articles": 50,
-    "new_articles": 49,
-    "unique_events": 40,
-    "duplicates_removed": 10
+    "new_articles": 50,
+    "unique_events": 50,
+    "duplicates_removed": 0
   },
   "latest_news": [
     {
-      "title": "스웨덴, 이란 공관 직원 추방·대사 초치…\"이스라엘 이익 위협\"(종합)",
-      "link": "https://www.yna.co.kr/view/AKR20260917000851098",
-      "pubDate": "Thu, 17 Sep 2026 03:10:31 +0900",
-      "source": "yonhap",
-      "snippet": "(브뤼셀=연합뉴스) 현윤경 특파원 = 스웨덴이 자국 내에서 유대인과 이스라엘의 이익을 위협하는 행위를 했다고 비난하며 스웨덴 주재 이란 대사관 ...",
+      "title": "Why Israel Wants More One-Ton Bombs From the U.S.",
+      "link": "https://www.nytimes.com/2026/09/16/world/middleeast/israel-one-ton-bombs-us.html",
+      "pubDate": "Wed, 16 Sep 2026 20:54:26 +0000",
+      "source": "nytimes",
+      "snippet": "The Trump administration plans to deliver 60,000 of the powerful munitions at a time when opposition is growing in Washington to arms sales to Israel.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "US removes Venezuela from list of drug transit, production countries",
+      "link": "https://www.aljazeera.com/news/2026/9/16/us-removes-venezuela-from-list-of-drug-transit-production-countries?traffic_source=rss",
+      "pubDate": "Wed, 16 Sep 2026 20:53:02 +0000",
+      "source": "aljazeera",
+      "snippet": "Trump says the country has made progress against narcotics since Maduro&#039;s removal, may also remove Colombia and Bolivia.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Key House Democrat refuses to clear Trump’s $2.8bn arms sale to Israel",
+      "link": "https://www.theguardian.com/us-news/2026/sep/16/us-arms-sale-israel-gregory-meeks",
+      "pubDate": "Wed, 16 Sep 2026 20:20:28 GMT",
+      "source": "guardian",
+      "snippet": "Pro-Israel Gregory Meeks raises concerns over threat to civilian lives from package of 40,000 one-ton bombs‘An antidote to Trumpism’: Our politics team answered your questions on Democrats’ midterms h",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "At Least 21 Dead in Gaza After Building Collapse, Officials Say",
+      "link": "https://www.nytimes.com/2026/09/16/world/middleeast/gaza-building-collapse.html",
+      "pubDate": "Wed, 16 Sep 2026 20:13:21 +0000",
+      "source": "nytimes",
+      "snippet": "The Israeli military said in a statement it “did not strike the building,” but did not say whether any strikes on nearby targets could have caused the damage.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Efforts underway for Zelenskyy-Trump meeting at UN next week",
+      "link": "https://www.aljazeera.com/news/2026/9/16/efforts-underway-for-zelenskyy-trump-meeting-at-un-next-week?traffic_source=rss",
+      "pubDate": "Wed, 16 Sep 2026 20:05:51 +0000",
+      "source": "aljazeera",
+      "snippet": "Trump pushes for a solution to end Moscow&#039;s war against Kyiv as civilian deaths in Ukraine rise.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Republican US senator slams Trump vaccine policy amid rising measles deaths",
+      "link": "https://www.aljazeera.com/news/2026/9/16/republican-us-senator-slams-trump-vaccine-policy-amid-rising-measles-deaths?traffic_source=rss",
+      "pubDate": "Wed, 16 Sep 2026 19:45:30 +0000",
+      "source": "aljazeera",
+      "snippet": "US Senator Bill Cassidy presses Trump&#039;s pick for surgeon general on views over vaccines, public health. ",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Jerusalem Daily: US to send $2.8BN worth of weapons to Israel",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/9/16/jerusalem-daily-us-to-send-2-8bn-worth-of-weapons-to-israel?traffic_source=rss",
+      "pubDate": "Wed, 16 Sep 2026 19:14:28 +0000",
+      "source": "aljazeera",
+      "snippet": "A 15-year-old boy was killed in a double-tap strike while trying to save a paramedic. ",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Photos show widespread damage at US sites from Iranian attacks",
+      "link": "https://www.bbc.co.uk/news/articles/c8g49e0gwxeno?at_medium=RSS&at_campaign=rss",
+      "pubDate": "Wed, 16 Sep 2026 18:36:16 GMT",
+      "source": "bbc",
+      "snippet": "A wrecked air force plane and destroyed buildings are among the images obtained by the BBC's partner CBS News.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -402,15 +430,27 @@
       "_isDuplicate": false
     },
     {
+      "title": "Geopolitical divides fueling UN Security Council inaction, Guterres warns",
+      "link": "https://www.aljazeera.com/news/2026/9/16/geopolitical-divides-fueling-security-council-inaction-guterres-warns?traffic_source=rss",
+      "pubDate": "Wed, 16 Sep 2026 17:55:49 +0000",
+      "source": "aljazeera",
+      "snippet": "Guterres calls for urgent Security Council reform, says geopolitical divides hindering action on global crises.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
       "title": "UK trade unions back motion to boycott and sanction Israel",
       "link": "https://www.aljazeera.com/news/2026/9/16/uk-trade-unions-back-motion-to-boycott-and-sanction-israel?traffic_source=rss",
       "pubDate": "Wed, 16 Sep 2026 17:42:00 +0000",
       "source": "aljazeera",
       "snippet": "Motion demands taking action to oppose the &#039;catastrophic destruction of Gaza&#039; and Israeli settler violence.",
       "isNew": true,
-      "_sourceCount": 2,
-      "_isDuplicated": true,
-      "_clusterSize": 2,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
       "_isDuplicate": false
     },
     {
@@ -456,102 +496,6 @@
       "source": "guardian",
       "snippet": "Three more GOP members voted for war powers resolution to force withdrawal from the conflict as election loomsUS politics live – latest updatesAs the US war with Iran drags on, the ranks of Republican",
       "isNew": true,
-      "_sourceCount": 2,
-      "_isDuplicated": true,
-      "_clusterSize": 2,
-      "_isDuplicate": false
-    },
-    {
-      "title": "At Least 21 Dead in Gaza After Building Collapse, Officials Say",
-      "link": "https://www.nytimes.com/2026/09/16/world/middleeast/gaza-building-collapse.html",
-      "pubDate": "Wed, 16 Sep 2026 17:18:08 +0000",
-      "source": "nytimes",
-      "snippet": "The building was previously damaged by an Israeli strike, the local rescue service said. Its fall underscored the severe risks for many people living among Gaza’s ruins.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Eight children among 21 killed after war-damaged Gaza building collapses, rescuers say",
-      "link": "https://www.bbc.co.uk/news/articles/cvp8d00j9gg5o?at_medium=RSS&at_campaign=rss",
-      "pubDate": "Wed, 16 Sep 2026 17:16:47 GMT",
-      "source": "bbc",
-      "snippet": "Some 10 families had reportedly been living in the six-storey building in Gaza City that was hit by an Israeli strike last year.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "South Africa slams planned US sanctions over alleged racial discrimination",
-      "link": "https://www.aljazeera.com/news/2026/9/16/south-africa-slam-planned-us-sanctions-over-alleged-racial-discrimination?traffic_source=rss",
-      "pubDate": "Wed, 16 Sep 2026 17:13:06 +0000",
-      "source": "aljazeera",
-      "snippet": "Trump administration falling for misinformation from &#039;fringe groups&#039; alleging discrimination against white Afrikaners.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "‘Nowhere to go’: Gaza’s damaged buildings turn deadly",
-      "link": "https://www.aljazeera.com/news/2026/9/16/nowhere-to-go-gazas-damaged-buildings-turn-deadly?traffic_source=rss",
-      "pubDate": "Wed, 16 Sep 2026 17:07:50 +0000",
-      "source": "aljazeera",
-      "snippet": "A war-damaged building collapses in Gaza City, killing at least 21 Palestinians and exposing fears of unsafe ruins.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Can the US government punish a university for boycotting Israel?",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/9/16/can-the-us-government-punish-a-university-for-boycotting-israel?traffic_source=rss",
-      "pubDate": "Wed, 16 Sep 2026 16:57:32 +0000",
-      "source": "aljazeera",
-      "snippet": "The US House passed a bill that could cut universities off from federal student aid if they boycott Israel.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Saudi Arabia warns of ‘red line’ after Houthi drone intercepted close to holy city of Mecca",
-      "link": "https://www.theguardian.com/world/2026/sep/16/saudi-arabia-houthi-drone-shot-down-mecca-iran-middle-east",
-      "pubDate": "Wed, 16 Sep 2026 02:56:37 GMT",
-      "source": "guardian",
-      "snippet": "Iran-aligned group rejects claim it targeted Mecca, while Organisation of Islamic Cooperation condemns attackSaudi Arabia has claimed its air defences intercepted and destroyed a ⁠Houthi drone attempt",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "US House votes for third time to end Iran war after $38bn cost is revealed",
-      "link": "https://www.theguardian.com/world/2026/sep/15/iran-war-cost-cbo-report",
-      "pubDate": "Tue, 15 Sep 2026 21:47:39 GMT",
-      "source": "guardian",
-      "snippet": "Damaging budget report estimates cost will grow by $3bn per month and stockpiles of weapons could take five years to rebuildThe US House of Representatives has voted for a third time to end the war in",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Houthis threaten more Saudi strikes as UN warns of humanitarian crisis in Yemen",
-      "link": "https://www.theguardian.com/world/2026/sep/15/houthis-threaten-saudi-arabia-strikes-un-warning-humanitarian-crisis-yemen",
-      "pubDate": "Tue, 15 Sep 2026 17:25:02 GMT",
-      "source": "guardian",
-      "snippet": "Estimated 100,000 Yemenis displaced amid renewed fighting as Qatar sounds alarm over Bab al-Mandab straitSaudi cities faced the threat of a second day of Houthi attacks as fighting across Yemen led th",
-      "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
       "_clusterSize": 1,
@@ -561,21 +505,21 @@
   "news_digest": {
     "categories": [
       {
-        "category_id": "humanitarian",
-        "category_name": "인도주의/피해",
-        "category_icon": "🏥",
-        "count": 12,
-        "new_count": 12,
+        "category_id": "military",
+        "category_name": "군사 작전",
+        "category_icon": "⚔️",
+        "count": 16,
+        "new_count": 16,
         "articles": [
           {
-            "title": "Belarus frees 25 political prisoners in return for US sanctions relief",
-            "link": "https://www.aljazeera.com/news/2026/9/16/belarus-frees-25-political-prisoners-in-return-for-us-sanctions-relief?traffic_source=rss",
-            "source": "aljazeera",
+            "title": "Key House Democrat refuses to clear Trump’s $2.8bn arms sale to Israel",
+            "link": "https://www.theguardian.com/us-news/2026/sep/16/us-arms-sale-israel-gregory-meeks",
+            "source": "guardian",
             "sources": [
-              "aljazeera"
+              "guardian"
             ],
-            "pubDate": "Wed, 16 Sep 2026 17:38:09 +0000",
-            "snippet": "The Trump administration said more releases would be secured soon amid improved US-Belarus relations.",
+            "pubDate": "Wed, 16 Sep 2026 20:20:28 GMT",
+            "snippet": "Pro-Israel Gregory Meeks raises concerns over threat to civilian lives from package of 40,000 one-ton bombs‘An antidote to Trumpism’: Our politics team answered your questions on Democrats’ midterms h",
             "isNew": true
           },
           {
@@ -585,8 +529,246 @@
             "sources": [
               "nytimes"
             ],
-            "pubDate": "Wed, 16 Sep 2026 17:18:08 +0000",
-            "snippet": "The building was previously damaged by an Israeli strike, the local rescue service said. Its fall underscored the severe risks for many people living among Gaza’s ruins.",
+            "pubDate": "Wed, 16 Sep 2026 20:13:21 +0000",
+            "snippet": "The Israeli military said in a statement it “did not strike the building,” but did not say whether any strikes on nearby targets could have caused the damage.",
+            "isNew": true
+          },
+          {
+            "title": "Jerusalem Daily: US to send $2.8BN worth of weapons to Israel",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/16/jerusalem-daily-us-to-send-2-8bn-worth-of-weapons-to-israel?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Wed, 16 Sep 2026 19:14:28 +0000",
+            "snippet": "A 15-year-old boy was killed in a double-tap strike while trying to save a paramedic. ",
+            "isNew": true
+          },
+          {
+            "title": "Photos show widespread damage at US sites from Iranian attacks",
+            "link": "https://www.bbc.co.uk/news/articles/c8g49e0gwxeno?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc"
+            ],
+            "pubDate": "Wed, 16 Sep 2026 18:36:16 GMT",
+            "snippet": "A wrecked air force plane and destroyed buildings are among the images obtained by the BBC's partner CBS News.",
+            "isNew": true
+          },
+          {
+            "title": "The Guardian view on the Houthi advance in Yemen: another vital Middle East artery becomes a battlefield | Editorial",
+            "link": "https://www.theguardian.com/commentisfree/2026/sep/16/the-guardian-view-on-the-houthi-advance-in-yemen-another-vital-middle-east-artery-becomes-a-battlefield",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Wed, 16 Sep 2026 17:36:16 GMT",
+            "snippet": "The extraordinary success of the rebels, and Saudi counterstrikes, threaten economic havoc. But the country’s civilians are paying the highest priceEven in a region beset by turmoil and learning to ex",
+            "isNew": true
+          },
+          {
+            "title": "Houthis and Saudis Trade Claims of Military Attacks as Conflict Escalates",
+            "link": "https://www.nytimes.com/2026/09/16/world/middleeast/saudi-arabia-houthi-fighter-jet-mecca-drone.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Wed, 16 Sep 2026 16:32:01 +0000",
+            "snippet": "The Houthis, an Iran-backed militia in Yemen, said they had downed a Saudi jet, while Saudi authorities accused the group of firing a drone near Mecca. The Houthis denied doing so.",
+            "isNew": true
+          },
+          {
+            "title": "Emergency crews rush to free families from building collapse in Gaza – video",
+            "link": "https://www.theguardian.com/world/video/2026/sep/16/emergency-crews-gaza-building-collapse-israeli-strike-video",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Wed, 16 Sep 2026 12:49:30 GMT",
+            "snippet": "At least 20 people were killed after a building that had previously been hit by an Israeli strike collapsed on Wednesday in Gaza City. Gaza's civil defence reported that at least 100 people, including",
+            "isNew": true
+          },
+          {
+            "title": "Israeli Strikes in Gaza Kill Teenager and Civil Defense Worker, Official Says",
+            "link": "https://www.nytimes.com/2026/09/15/world/middleeast/gaza-strikes-israel.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Wed, 16 Sep 2026 05:00:44 +0000",
+            "snippet": "Two Israeli drone strikes hit a residential neighborhood, an official said. Israel is under international pressure to curtail its attacks.",
+            "isNew": true
+          },
+          {
+            "title": "Saudi Arabia warns of ‘red line’ after Houthi drone intercepted close to holy city of Mecca",
+            "link": "https://www.theguardian.com/world/2026/sep/16/saudi-arabia-houthi-drone-shot-down-mecca-iran-middle-east",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Wed, 16 Sep 2026 02:56:37 GMT",
+            "snippet": "Iran-aligned group rejects claim it targeted Mecca, while Organisation of Islamic Cooperation condemns attackSaudi Arabia has claimed its air defences intercepted and destroyed a ⁠Houthi drone attempt",
+            "isNew": true
+          },
+          {
+            "title": "Houthis Report Deadly Saudi Airstrikes as Kingdom Issues Mass Alerts",
+            "link": "https://www.nytimes.com/2026/09/15/world/middleeast/yemen-saudi-arabia-houthis-attacks.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Tue, 15 Sep 2026 21:55:35 +0000",
+            "snippet": "The two sides traded accusations of attacks as fighting inside Yemen remains fierce. The escalating conflict threatens to further destabilize the Middle East.",
+            "isNew": true
+          }
+        ]
+      },
+      {
+        "category_id": "politics",
+        "category_name": "국내 정치",
+        "category_icon": "🏛️",
+        "count": 11,
+        "new_count": 11,
+        "articles": [
+          {
+            "title": "Why Israel Wants More One-Ton Bombs From the U.S.",
+            "link": "https://www.nytimes.com/2026/09/16/world/middleeast/israel-one-ton-bombs-us.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Wed, 16 Sep 2026 20:54:26 +0000",
+            "snippet": "The Trump administration plans to deliver 60,000 of the powerful munitions at a time when opposition is growing in Washington to arms sales to Israel.",
+            "isNew": true
+          },
+          {
+            "title": "US removes Venezuela from list of drug transit, production countries",
+            "link": "https://www.aljazeera.com/news/2026/9/16/us-removes-venezuela-from-list-of-drug-transit-production-countries?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Wed, 16 Sep 2026 20:53:02 +0000",
+            "snippet": "Trump says the country has made progress against narcotics since Maduro&#039;s removal, may also remove Colombia and Bolivia.",
+            "isNew": true
+          },
+          {
+            "title": "Republican US senator slams Trump vaccine policy amid rising measles deaths",
+            "link": "https://www.aljazeera.com/news/2026/9/16/republican-us-senator-slams-trump-vaccine-policy-amid-rising-measles-deaths?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Wed, 16 Sep 2026 19:45:30 +0000",
+            "snippet": "US Senator Bill Cassidy presses Trump&#039;s pick for surgeon general on views over vaccines, public health. ",
+            "isNew": true
+          },
+          {
+            "title": "‘NAZA,’ Israeli Film About Killings in Gaza, Faces Backlash",
+            "link": "https://www.nytimes.com/2026/09/14/world/middleeast/israel-naza-documentary-backlash.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Wed, 16 Sep 2026 18:07:59 +0000",
+            "snippet": "The film “NAZA” investigates the killing of Palestinians by Israeli forces in Gaza. Israel’s culture minister has suggested revoking the directors’ citizenship.",
+            "isNew": true
+          },
+          {
+            "title": "Kosovo’s former president guilty of war crimes",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/16/kosovos-former-president-guilty-of-war-crimes?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Wed, 16 Sep 2026 17:20:15 +0000",
+            "snippet": "Hashim Thaci, former President of Kosovo and KLA leader, has been found guilty of war crimes in the Hague.",
+            "isNew": true
+          },
+          {
+            "title": "More Republicans are turning on Iran war as midterms come into view",
+            "link": "https://www.theguardian.com/us-news/2026/sep/16/republicans-iran-war-midterm-elections",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Wed, 16 Sep 2026 17:18:14 GMT",
+            "snippet": "Three more GOP members voted for war powers resolution to force withdrawal from the conflict as election loomsUS politics live – latest updatesAs the US war with Iran drags on, the ranks of Republican",
+            "isNew": true
+          },
+          {
+            "title": "South Africa slams planned US visa curbs over alleged racial discrimination",
+            "link": "https://www.aljazeera.com/news/2026/9/16/south-africa-slam-planned-us-sanctions-over-alleged-racial-discrimination?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Wed, 16 Sep 2026 17:13:06 +0000",
+            "snippet": "Trump administration falling for misinformation from &#039;fringe groups&#039; alleging discrimination against white Afrikaners.",
+            "isNew": true
+          },
+          {
+            "title": "Turkey Begins Broad Crackdown on L.G.B.T.Q. Community",
+            "link": "https://www.nytimes.com/2026/09/16/world/middleeast/lgbtq-arrests-erdogan-turkey.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Wed, 16 Sep 2026 13:10:23 +0000",
+            "snippet": "The government has called the campaign an effort to protect families. Rights organizations have accused the authorities of criminalizing L.G.B.T.Q. people and of seeking to thwart political activism.",
+            "isNew": true
+          },
+          {
+            "title": "Iranian security forces coordinated killing, torture and sexual abuse of protesters, says Amnesty",
+            "link": "https://www.theguardian.com/global-development/2026/sep/16/iran-killing-torture-sexual-abuse-protesters-amnesty",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Wed, 16 Sep 2026 09:00:16 GMT",
+            "snippet": "Leaked documents and testimony reveal extent of regime’s crackdown in 2022 and how it paved the way for more brutal killings of protesters this yearIranian security forces “coordinated” the killing, t",
+            "isNew": true
+          },
+          {
+            "title": "Iran war has led to US munitions shortfalls, Pentagon inspector confirms",
+            "link": "https://www.bbc.co.uk/news/articles/c9gk58xgng0vo?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc"
+            ],
+            "pubDate": "Tue, 15 Sep 2026 20:34:12 GMT",
+            "snippet": "The inspector also found a bottleneck in resupply, despite President Donald Trump's claims that US supplies are \"virtually limitless\".  ",
+            "isNew": true
+          }
+        ]
+      },
+      {
+        "category_id": "humanitarian",
+        "category_name": "인도주의/피해",
+        "category_icon": "🏥",
+        "count": 8,
+        "new_count": 8,
+        "articles": [
+          {
+            "title": "Efforts underway for Zelenskyy-Trump meeting at UN next week",
+            "link": "https://www.aljazeera.com/news/2026/9/16/efforts-underway-for-zelenskyy-trump-meeting-at-un-next-week?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Wed, 16 Sep 2026 20:05:51 +0000",
+            "snippet": "Trump pushes for a solution to end Moscow&#039;s war against Kyiv as civilian deaths in Ukraine rise.",
+            "isNew": true
+          },
+          {
+            "title": "Belarus frees 25 political prisoners in return for US sanctions relief",
+            "link": "https://www.aljazeera.com/news/2026/9/16/belarus-frees-25-political-prisoners-in-return-for-us-sanctions-relief?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Wed, 16 Sep 2026 17:38:09 +0000",
+            "snippet": "The Trump administration said more releases would be secured soon amid improved US-Belarus relations.",
             "isNew": true
           },
           {
@@ -623,6 +805,28 @@
             "isNew": true
           },
           {
+            "title": "At least 21 killed after Israeli-hit building in Gaza City collapses",
+            "link": "https://www.theguardian.com/world/2026/sep/16/building-gaza-city-damaged-israeli-strikes-collapses-killed",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Wed, 16 Sep 2026 16:36:15 GMT",
+            "snippet": "Rescue workers say search for dozens of people hampered by lack of heavy machineryA building housing about 100 displaced Palestinian families has collapsed in Gaza City, killing at least 21 people in ",
+            "isNew": true
+          },
+          {
+            "title": "Two Chinese Firms Used Binance to Launder Iranian Oil Money, US Says",
+            "link": "https://www.nytimes.com/2026/09/15/technology/binance-iran-china.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Tue, 15 Sep 2026 17:29:37 +0000",
+            "snippet": "Federal prosecutors said proceeds from the sale of Iranian oil flowed through Binance, the world’s largest crypto exchange, to finance terrorism.",
+            "isNew": true
+          },
+          {
             "title": "Houthis threaten more Saudi strikes as UN warns of humanitarian crisis in Yemen",
             "link": "https://www.theguardian.com/world/2026/sep/15/houthis-threaten-saudi-arabia-strikes-un-warning-humanitarian-crisis-yemen",
             "source": "guardian",
@@ -632,233 +836,69 @@
             "pubDate": "Tue, 15 Sep 2026 17:25:02 GMT",
             "snippet": "Estimated 100,000 Yemenis displaced amid renewed fighting as Qatar sounds alarm over Bab al-Mandab straitSaudi cities faced the threat of a second day of Houthi attacks as fighting across Yemen led th",
             "isNew": true
-          },
-          {
-            "title": "Several dead after Israeli joint security forces raid in West Bank",
-            "link": "https://www.cnn.com/2022/10/25/middleeast/israel-forces-raid-nablus-palestine-intl-hnk/index.html",
-            "source": "cnn",
-            "sources": [
-              "cnn"
-            ],
-            "pubDate": "Tue, 25 Oct 2022 13:58:46 GMT",
-            "snippet": "",
-            "isNew": true
-          },
-          {
-            "title": "June 9, 2024 Israel-Hamas war",
-            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-09-24/index.html",
-            "source": "cnn",
-            "sources": [
-              "cnn"
-            ],
-            "pubDate": "",
-            "snippet": "Key Israeli war cabinet member Benny Gantz quit Prime Minister Benjamin Netanyahu's government Sunday. Meanwhile, the death toll from Israel's hostage rescue in central Gaza keeps rising. Follow for l",
-            "isNew": true
-          },
-          {
-            "title": "June 8, 2024 - Israel-Gaza news",
-            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-08-24/index.html",
-            "source": "cnn",
-            "sources": [
-              "cnn"
-            ],
-            "pubDate": "",
-            "snippet": "The Israeli military says it rescued four hostages from central Gaza on Saturday. Palestinians report scenes of horror on the ground, and Gaza hospital officials say more than 200 people were killed.",
-            "isNew": true
-          },
-          {
-            "title": "May 19, 2024 - Israel-Gaza news",
-            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-19-24/index.html",
-            "source": "cnn",
-            "sources": [
-              "cnn"
-            ],
-            "pubDate": "",
-            "snippet": "An Israeli airstrike on a refugee camp in central Gaza has killed at least 35 people, including seven children, according to hospital officials. Meanwhile, Israeli war cabinet divisions are spilling i",
-            "isNew": true
           }
         ]
       },
       {
-        "category_id": "military",
-        "category_name": "군사 작전",
-        "category_icon": "⚔️",
-        "count": 9,
-        "new_count": 9,
+        "category_id": "economy",
+        "category_name": "경제 영향",
+        "category_icon": "📊",
+        "count": 5,
+        "new_count": 5,
         "articles": [
           {
-            "title": "The Guardian view on the Houthi advance in Yemen: another vital Middle East artery becomes a battlefield | Editorial",
-            "link": "https://www.theguardian.com/commentisfree/2026/sep/16/the-guardian-view-on-the-houthi-advance-in-yemen-another-vital-middle-east-artery-becomes-a-battlefield",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Wed, 16 Sep 2026 17:36:16 GMT",
-            "snippet": "The extraordinary success of the rebels, and Saudi counterstrikes, threaten economic havoc. But the country’s civilians are paying the highest priceEven in a region beset by turmoil and learning to ex",
-            "isNew": true
-          },
-          {
-            "title": "Saudi Arabia warns of ‘red line’ after Houthi drone intercepted close to holy city of Mecca",
-            "link": "https://www.theguardian.com/world/2026/sep/16/saudi-arabia-houthi-drone-shot-down-mecca-iran-middle-east",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Wed, 16 Sep 2026 02:56:37 GMT",
-            "snippet": "Iran-aligned group rejects claim it targeted Mecca, while Organisation of Islamic Cooperation condemns attackSaudi Arabia has claimed its air defences intercepted and destroyed a ⁠Houthi drone attempt",
-            "isNew": true
-          },
-          {
-            "title": "US House votes for third time to end Iran war after $38bn cost is revealed",
-            "link": "https://www.theguardian.com/world/2026/sep/15/iran-war-cost-cbo-report",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Tue, 15 Sep 2026 21:47:39 GMT",
-            "snippet": "Damaging budget report estimates cost will grow by $3bn per month and stockpiles of weapons could take five years to rebuildThe US House of Representatives has voted for a third time to end the war in",
-            "isNew": true
-          },
-          {
-            "title": "Trump says he will consider releasing more 9/11 records after families’ request",
-            "link": "https://www.theguardian.com/us-news/2026/sep/14/trump-911-saudi-arabia-records",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Mon, 14 Sep 2026 15:45:18 GMT",
-            "snippet": "Families have asked Trump to declassify records that could shed light on Saudi Arabia’s alleged role in the 2001 attacksDonald Trump said on Sunday that he will look into requests from families of 9/1",
-            "isNew": true
-          },
-          {
-            "title": "Israeli minister threatens to strip Israeli film-makers of citizenship over Gaza documentary NAZA",
-            "link": "https://www.theguardian.com/film/2026/sep/14/gaza-documentary-makers-naza-israel-citizenship-ntwnfb",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Mon, 14 Sep 2026 15:38:35 GMT",
-            "snippet": "Miki Zohar accuses Oscar-winning directors Yuval Abraham and Rachel Szor of ‘treason against the state’‘They know the house they are bombing is full of children’: NAZA’s directors on their devastating",
-            "isNew": true
-          },
-          {
-            "title": "June 12, 2024 Israel-Hamas war",
-            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-12-24-intl/index.html",
-            "source": "cnn",
-            "sources": [
-              "cnn"
-            ],
-            "pubDate": "",
-            "snippet": "Israel launched strikes on Al-Mawasi in southern Gaza early Thursday, bombarding an area it had previously designated as a \"safe zone\" by land, sea and air, according to the official Palestinian news ",
-            "isNew": true
-          },
-          {
-            "title": "June 6, 2024 Israel-Hamas war",
-            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-06-24/index.html",
-            "source": "cnn",
-            "sources": [
-              "cnn"
-            ],
-            "pubDate": "",
-            "snippet": "Dozens of people were killed in an Israeli airstrike on a United Nations-run school in central Gaza, authorities said, in an attack that CNN analysis found was conducted with a US-made weapon.",
-            "isNew": true
-          },
-          {
-            "title": "May 29, 2024 Israel-Hamas war",
-            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-29-24/index.html",
-            "source": "cnn",
-            "sources": [
-              "cnn"
-            ],
-            "pubDate": "",
-            "snippet": "The Israeli military says it established \"operational control\" over the Philadelphi Corridor, a 14-kilometer (8.7 miles) strip of land along the border between Gaza and Egypt.",
-            "isNew": true
-          },
-          {
-            "title": "May 24, 2024 Israel-Hamas war",
-            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-24-24/index.html",
-            "source": "cnn",
-            "sources": [
-              "cnn"
-            ],
-            "pubDate": "",
-            "snippet": "The United Nations' top court has ordered Israel to immediately halt its controversial military operation in the southern Gaza city of Rafah, further increasing international pressure on Israel over i",
-            "isNew": true
-          }
-        ]
-      },
-      {
-        "category_id": "politics",
-        "category_name": "국내 정치",
-        "category_icon": "🏛️",
-        "count": 6,
-        "new_count": 6,
-        "articles": [
-          {
-            "title": "‘NAZA,’ Israeli Film About Killings in Gaza, Faces Backlash",
-            "link": "https://www.nytimes.com/2026/09/14/world/middleeast/israel-naza-documentary-backlash.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Wed, 16 Sep 2026 18:07:59 +0000",
-            "snippet": "The film “NAZA” investigates the killing of Palestinians by Israeli forces in Gaza. Israel’s culture minister has suggested revoking the directors’ citizenship.",
-            "isNew": true
-          },
-          {
-            "title": "Kosovo’s former president guilty of war crimes",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/16/kosovos-former-president-guilty-of-war-crimes?traffic_source=rss",
+            "title": "UK trade unions back motion to boycott and sanction Israel",
+            "link": "https://www.aljazeera.com/news/2026/9/16/uk-trade-unions-back-motion-to-boycott-and-sanction-israel?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Wed, 16 Sep 2026 17:20:15 +0000",
-            "snippet": "Hashim Thaci, former President of Kosovo and KLA leader, has been found guilty of war crimes in the Hague.",
+            "pubDate": "Wed, 16 Sep 2026 17:42:00 +0000",
+            "snippet": "Motion demands taking action to oppose the &#039;catastrophic destruction of Gaza&#039; and Israeli settler violence.",
             "isNew": true
           },
           {
-            "title": "More Republicans are turning on Iran war as midterms come into view",
-            "link": "https://www.theguardian.com/us-news/2026/sep/16/republicans-iran-war-midterm-elections",
+            "title": "How escalating Saudi oil crisis could drive up prices everywhere",
+            "link": "https://www.bbc.co.uk/news/articles/cqlym3wye1ero?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc"
+            ],
+            "pubDate": "Wed, 16 Sep 2026 16:06:50 GMT",
+            "snippet": "BBC Verify's Ben Chu examines what impact rising energy costs could have on the global economy.",
+            "isNew": true
+          },
+          {
+            "title": "Sweden expels Iran embassy employee, citing security concerns",
+            "link": "https://www.aljazeera.com/news/2026/9/16/sweden-expels-iran-embassy-employee-citing-security-concerns?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Wed, 16 Sep 2026 15:53:38 +0000",
+            "snippet": "Stockholm says Iran-backed groups are plotting against &#039;Jewish and Israeli interests&#039; in the country.",
+            "isNew": true
+          },
+          {
+            "title": "Why Mokha, Historic Port That Shaped the Coffee Trade, Is a Prize in Yemen’s War",
+            "link": "https://www.nytimes.com/2026/09/12/world/middleeast/mokha-yemen-houthis-mocha-coffee.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Tue, 15 Sep 2026 13:14:09 +0000",
+            "snippet": "A strategic location on the Red Sea afforded the city centuries of trading dominance — and makes it a coveted target in today’s fighting in the Middle East.",
+            "isNew": true
+          },
+          {
+            "title": "UK sanctions on Israel ‘fall far short’ of its obligations, legal experts say",
+            "link": "https://www.theguardian.com/politics/2026/sep/15/legal-experts-say-sanctions-israel-fall-far-short-uk-obligations",
             "source": "guardian",
             "sources": [
-              "guardian",
-              "cnn"
+              "guardian"
             ],
-            "pubDate": "Wed, 16 Sep 2026 17:18:14 GMT",
-            "snippet": "Three more GOP members voted for war powers resolution to force withdrawal from the conflict as election loomsUS politics live – latest updatesAs the US war with Iran drags on, the ranks of Republican",
-            "isNew": true
-          },
-          {
-            "title": "June 1, 2024 - Israel-Gaza news",
-            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-01-24/index.html",
-            "source": "cnn",
-            "sources": [
-              "cnn"
-            ],
-            "pubDate": "",
-            "snippet": "President Joe Biden has laid out a three-phase proposal to end the conflict in Gaza, as global condemnation of Israel's offensive in Rafah grows.",
-            "isNew": true
-          },
-          {
-            "title": "May 21, 2024 Israel-Hamas war, Iran president death news",
-            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-21-24/index.html",
-            "source": "cnn",
-            "sources": [
-              "cnn"
-            ],
-            "pubDate": "",
-            "snippet": "Prime Minister Benjamin Netanyahu blasted the charges brought by the International Criminal Court against himself and Israel's defense minister as \"beyond outrageous\" in an interview Tuesday with CNN'",
-            "isNew": true
-          },
-          {
-            "title": "May 19, 2024 helicopter crash involving Iranian president",
-            "link": "https://www.cnn.com/middleeast/live-news/raisi-iran-president-helicopter-crash/index.html",
-            "source": "cnn",
-            "sources": [
-              "cnn"
-            ],
-            "pubDate": "",
-            "snippet": "A helicopter carrying Iranian President Ebrahim Raisi crashed while he was visiting a northern region in the country Sunday, according to the Iranian state news agency IRNA.",
+            "pubDate": "Tue, 15 Sep 2026 11:54:14 GMT",
+            "snippet": "More than 130 sign letter to PM saying international law requires further measures to stop illegal settlementsMore than 130 legal experts, including 18 king’s counsel (KCs), have written to Andy Burnh",
             "isNew": true
           }
         ]
@@ -870,6 +910,28 @@
         "count": 4,
         "new_count": 4,
         "articles": [
+          {
+            "title": "Ebola fight in DRC ‘far from over,’ warns WHO chief",
+            "link": "https://www.aljazeera.com/news/2026/9/16/ebola-fight-in-drc-far-from-over-warns-who-chief?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Wed, 16 Sep 2026 16:23:37 +0000",
+            "snippet": "The DRC faces a growing Ebola threat as cases soar in North Kivu, despite progress in other regions, says Tedros",
+            "isNew": true
+          },
+          {
+            "title": "Macklemore Dropped From Ed Sheeran Tour After ‘Free Palestine’ Remarks",
+            "link": "https://www.nytimes.com/2026/09/14/arts/music/macklemore-ed-sheeran-tour-palestine-gaza.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Wed, 16 Sep 2026 02:30:21 +0000",
+            "snippet": "The rapper, a critic of the war in Gaza, made the comments onstage at MetLife Stadium.",
+            "isNew": true
+          },
           {
             "title": "Legend of Destruction review – starry voices grace animated telling of the Jewish revolt against the Romans",
             "link": "https://www.theguardian.com/film/2026/sep/15/legend-of-destruction-review-starry-voices-grace-animated-telling-of-thejewish-revolt-against-the-romans",
@@ -891,28 +953,6 @@
             "pubDate": "Tue, 15 Sep 2026 08:00:30 GMT",
             "snippet": "Exclusive: Jamie Roberts admits ‘serious mistake’ with Gaza: How to Survive a Warzone, as he speaks ahead of new film on UK far rightThe stories told in the controversial BBC documentary Gaza: How to ",
             "isNew": true
-          },
-          {
-            "title": "May 30, 2024 Israel-Hamas war",
-            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-30-24/index.html",
-            "source": "cnn",
-            "sources": [
-              "cnn"
-            ],
-            "pubDate": "",
-            "snippet": "The war in Gaza will likely continue until at least the end of the year, an Israeli official warned.",
-            "isNew": true
-          },
-          {
-            "title": "May 22, 2024 Israel-Hamas war",
-            "link": "https://www.cnn.com/middleeast/live-news/iran-israel-hamas-war-gaza-news-05-22-24/index.html",
-            "source": "cnn",
-            "sources": [
-              "cnn"
-            ],
-            "pubDate": "",
-            "snippet": "Spain, Norway and Ireland announced plans to formally recognize a Palestinian state, in a move that is likely to bolster the global Palestinian cause but strain relations with Israel.",
-            "isNew": true
           }
         ]
       },
@@ -924,6 +964,28 @@
         "new_count": 3,
         "articles": [
           {
+            "title": "Geopolitical divides fueling UN Security Council inaction, Guterres warns",
+            "link": "https://www.aljazeera.com/news/2026/9/16/geopolitical-divides-fueling-security-council-inaction-guterres-warns?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Wed, 16 Sep 2026 17:55:49 +0000",
+            "snippet": "Guterres calls for urgent Security Council reform, says geopolitical divides hindering action on global crises.",
+            "isNew": true
+          },
+          {
+            "title": "Gulf Arabs Seek Options After U.S. Bases Did Not Deter Iran",
+            "link": "https://www.nytimes.com/2026/09/15/world/middleeast/gulf-us-iran-uae-bahrain-saudi-arabia.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Tue, 15 Sep 2026 12:27:29 +0000",
+            "snippet": "The American presence in these countries has not shielded them from retaliation during the Iran war. Now they are hoping direct talks with Iran could help.",
+            "isNew": true
+          },
+          {
             "title": "New special envoy for Britons detained overseas warns of limits of role",
             "link": "https://www.theguardian.com/politics/2026/sep/14/new-special-envoy-for-britons-detained-overseas-warns-of-limits-of-role",
             "source": "guardian",
@@ -932,71 +994,6 @@
             ],
             "pubDate": "Mon, 14 Sep 2026 20:57:21 GMT",
             "snippet": "Alistair Burt speaks candidly about difficulties of tackling complex cases as families express concern over mandateThe special envoy for British citizens detained overseas has spoken about the difficu",
-            "isNew": true
-          },
-          {
-            "title": "June 13, 2024 Israel-Hamas war",
-            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-13-24/index.html",
-            "source": "cnn",
-            "sources": [
-              "cnn"
-            ],
-            "pubDate": "",
-            "snippet": "The US-backed Gaza ceasefire proposal doesn't meet Hamas' demands for an end to the war, a senior official has told CNN. Osama Hamdan also said that \"no one has an idea\" how many of the hostages held ",
-            "isNew": true
-          },
-          {
-            "title": "June 10, 2024 Israel-Hamas war",
-            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-10-24/index.html",
-            "source": "cnn",
-            "sources": [
-              "cnn"
-            ],
-            "pubDate": "",
-            "snippet": "The UN Security Council adopted a resolution proposed by the United States for a permanent ceasefire and release of the hostages in Gaza.",
-            "isNew": true
-          }
-        ]
-      },
-      {
-        "category_id": "economy",
-        "category_name": "경제 영향",
-        "category_icon": "📊",
-        "count": 3,
-        "new_count": 3,
-        "articles": [
-          {
-            "title": "UK trade unions back motion to boycott and sanction Israel",
-            "link": "https://www.aljazeera.com/news/2026/9/16/uk-trade-unions-back-motion-to-boycott-and-sanction-israel?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera",
-              "cnn"
-            ],
-            "pubDate": "Wed, 16 Sep 2026 17:42:00 +0000",
-            "snippet": "Motion demands taking action to oppose the &#039;catastrophic destruction of Gaza&#039; and Israeli settler violence.",
-            "isNew": true
-          },
-          {
-            "title": "South Africa slams planned US sanctions over alleged racial discrimination",
-            "link": "https://www.aljazeera.com/news/2026/9/16/south-africa-slam-planned-us-sanctions-over-alleged-racial-discrimination?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Wed, 16 Sep 2026 17:13:06 +0000",
-            "snippet": "Trump administration falling for misinformation from &#039;fringe groups&#039; alleging discrimination against white Afrikaners.",
-            "isNew": true
-          },
-          {
-            "title": "UK sanctions on Israel ‘fall far short’ of its obligations, legal experts say",
-            "link": "https://www.theguardian.com/politics/2026/sep/15/legal-experts-say-sanctions-israel-fall-far-short-uk-obligations",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Tue, 15 Sep 2026 11:54:14 GMT",
-            "snippet": "More than 130 sign letter to PM saying international law requires further measures to stop illegal settlementsMore than 130 legal experts, including 18 king’s counsel (KCs), have written to Andy Burnh",
             "isNew": true
           }
         ]
@@ -1009,14 +1006,25 @@
         "new_count": 3,
         "articles": [
           {
-            "title": "스웨덴, 이란 공관 직원 추방·대사 초치…\"이스라엘 이익 위협\"(종합)",
-            "link": "https://www.yna.co.kr/view/AKR20260917000851098",
-            "source": "yonhap",
+            "title": "US opts not to back Saudi Arabia in Yemen after meeting Houthi leaders",
+            "link": "https://www.theguardian.com/world/2026/sep/16/us-officials-decide-against-backing-saudi-arabia-yemen-meeting-houthi-leaders",
+            "source": "guardian",
             "sources": [
-              "yonhap"
+              "guardian"
             ],
-            "pubDate": "Thu, 17 Sep 2026 03:10:31 +0900",
-            "snippet": "(브뤼셀=연합뉴스) 현윤경 특파원 = 스웨덴이 자국 내에서 유대인과 이스라엘의 이익을 위협하는 행위를 했다고 비난하며 스웨덴 주재 이란 대사관 ...",
+            "pubDate": "Wed, 16 Sep 2026 14:56:40 GMT",
+            "snippet": "Iran-backed militants have offered Trump administration assurances over safety of Red Sea shippingOfficials from the US met Houthi leaders over the weekend at the country’s embassy in Muscat, Oman, it",
+            "isNew": true
+          },
+          {
+            "title": "How Sept. 11 Paved the Way to Mideast Power for Iran",
+            "link": "https://www.nytimes.com/2026/09/16/world/middleeast/sept-11-iran-islamic-state-iraq.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Wed, 16 Sep 2026 12:49:05 +0000",
+            "snippet": "The American invasion of Iraq in 2003 set the path for Tehran to dominate its neighbor and whetted its appetite to expand its influence across the greater Middle East.",
             "isNew": true
           },
           {
@@ -1029,47 +1037,31 @@
             "pubDate": "Tue, 15 Sep 2026 04:22:16 GMT",
             "snippet": "The militant group in Yemen captured the islands of Greater and Lesser Hanish, near the chokepoint of the Bab al-Mandab straitYemen’s Houthi militants have seized two strategic islands in the Red Sea,",
             "isNew": true
-          },
-          {
-            "title": "June 5, 2024 Israel-Hamas war",
-            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-05-24/index.html",
-            "source": "cnn",
-            "sources": [
-              "cnn"
-            ],
-            "pubDate": "",
-            "snippet": "Tensions are ramping up at the Israel-Lebanon border, with Hezbollah claiming responsibility for a Wednesday evening attack in northern Israel that left multiple people injured.",
-            "isNew": true
           }
         ]
       }
     ],
     "recent_30min": {
-      "total_new": 49,
+      "total_new": 50,
       "by_category": {
-        "regional": {
-          "count": 3,
-          "titles": [
-            {
-              "title": "스웨덴, 이란 공관 직원 추방·대사 초치…\"이스라엘 이익 위협\"(종합)",
-              "link": "https://www.yna.co.kr/view/AKR20260917000851098",
-              "source": "yonhap"
-            },
-            {
-              "title": "Houthis seize strategic Red Sea islands as analysts warn of impending oil crunch",
-              "link": "https://www.theguardian.com/world/2026/sep/15/houthi-rebels-seize-red-sea-hanish-islands-saudi-oil-warning",
-              "source": "guardian"
-            },
-            {
-              "title": "June 5, 2024 Israel-Hamas war",
-              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-05-24/index.html",
-              "source": "cnn"
-            }
-          ]
-        },
         "politics": {
-          "count": 8,
+          "count": 11,
           "titles": [
+            {
+              "title": "Why Israel Wants More One-Ton Bombs From the U.S.",
+              "link": "https://www.nytimes.com/2026/09/16/world/middleeast/israel-one-ton-bombs-us.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "US removes Venezuela from list of drug transit, production countries",
+              "link": "https://www.aljazeera.com/news/2026/9/16/us-removes-venezuela-from-list-of-drug-transit-production-countries?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Republican US senator slams Trump vaccine policy amid rising measles deaths",
+              "link": "https://www.aljazeera.com/news/2026/9/16/republican-us-senator-slams-trump-vaccine-policy-amid-rising-measles-deaths?traffic_source=rss",
+              "source": "aljazeera"
+            },
             {
               "title": "‘NAZA,’ Israeli Film About Killings in Gaza, Faces Backlash",
               "link": "https://www.nytimes.com/2026/09/14/world/middleeast/israel-naza-documentary-backlash.html",
@@ -1079,56 +1071,51 @@
               "title": "Kosovo’s former president guilty of war crimes",
               "link": "https://www.aljazeera.com/video/newsfeed/2026/9/16/kosovos-former-president-guilty-of-war-crimes?traffic_source=rss",
               "source": "aljazeera"
-            },
-            {
-              "title": "More Republicans are turning on Iran war as midterms come into view",
-              "link": "https://www.theguardian.com/us-news/2026/sep/16/republicans-iran-war-midterm-elections",
-              "source": "guardian"
-            },
-            {
-              "title": "June 17, 2024 - Israel-Gaza news",
-              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-17-24/index.html",
-              "source": "cnn"
-            },
-            {
-              "title": "June 1, 2024 - Israel-Gaza news",
-              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-01-24/index.html",
-              "source": "cnn"
             }
           ]
         },
-        "economy": {
-          "count": 3,
+        "military": {
+          "count": 16,
           "titles": [
             {
-              "title": "UK trade unions back motion to boycott and sanction Israel",
-              "link": "https://www.aljazeera.com/news/2026/9/16/uk-trade-unions-back-motion-to-boycott-and-sanction-israel?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "South Africa slams planned US sanctions over alleged racial discrimination",
-              "link": "https://www.aljazeera.com/news/2026/9/16/south-africa-slam-planned-us-sanctions-over-alleged-racial-discrimination?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "UK sanctions on Israel ‘fall far short’ of its obligations, legal experts say",
-              "link": "https://www.theguardian.com/politics/2026/sep/15/legal-experts-say-sanctions-israel-fall-far-short-uk-obligations",
+              "title": "Key House Democrat refuses to clear Trump’s $2.8bn arms sale to Israel",
+              "link": "https://www.theguardian.com/us-news/2026/sep/16/us-arms-sale-israel-gregory-meeks",
               "source": "guardian"
-            }
-          ]
-        },
-        "humanitarian": {
-          "count": 15,
-          "titles": [
-            {
-              "title": "Belarus frees 25 political prisoners in return for US sanctions relief",
-              "link": "https://www.aljazeera.com/news/2026/9/16/belarus-frees-25-political-prisoners-in-return-for-us-sanctions-relief?traffic_source=rss",
-              "source": "aljazeera"
             },
             {
               "title": "At Least 21 Dead in Gaza After Building Collapse, Officials Say",
               "link": "https://www.nytimes.com/2026/09/16/world/middleeast/gaza-building-collapse.html",
               "source": "nytimes"
+            },
+            {
+              "title": "Jerusalem Daily: US to send $2.8BN worth of weapons to Israel",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/9/16/jerusalem-daily-us-to-send-2-8bn-worth-of-weapons-to-israel?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Photos show widespread damage at US sites from Iranian attacks",
+              "link": "https://www.bbc.co.uk/news/articles/c8g49e0gwxeno?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
+            },
+            {
+              "title": "The Guardian view on the Houthi advance in Yemen: another vital Middle East artery becomes a battlefield | Editorial",
+              "link": "https://www.theguardian.com/commentisfree/2026/sep/16/the-guardian-view-on-the-houthi-advance-in-yemen-another-vital-middle-east-artery-becomes-a-battlefield",
+              "source": "guardian"
+            }
+          ]
+        },
+        "humanitarian": {
+          "count": 8,
+          "titles": [
+            {
+              "title": "Efforts underway for Zelenskyy-Trump meeting at UN next week",
+              "link": "https://www.aljazeera.com/news/2026/9/16/efforts-underway-for-zelenskyy-trump-meeting-at-un-next-week?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Belarus frees 25 political prisoners in return for US sanctions relief",
+              "link": "https://www.aljazeera.com/news/2026/9/16/belarus-frees-25-political-prisoners-in-return-for-us-sanctions-relief?traffic_source=rss",
+              "source": "aljazeera"
             },
             {
               "title": "Eight children among 21 killed after war-damaged Gaza building collapses, rescuers say",
@@ -1147,39 +1134,69 @@
             }
           ]
         },
-        "military": {
-          "count": 11,
+        "diplomacy": {
+          "count": 3,
           "titles": [
             {
-              "title": "The Guardian view on the Houthi advance in Yemen: another vital Middle East artery becomes a battlefield | Editorial",
-              "link": "https://www.theguardian.com/commentisfree/2026/sep/16/the-guardian-view-on-the-houthi-advance-in-yemen-another-vital-middle-east-artery-becomes-a-battlefield",
-              "source": "guardian"
+              "title": "Geopolitical divides fueling UN Security Council inaction, Guterres warns",
+              "link": "https://www.aljazeera.com/news/2026/9/16/geopolitical-divides-fueling-security-council-inaction-guterres-warns?traffic_source=rss",
+              "source": "aljazeera"
             },
             {
-              "title": "Saudi Arabia warns of ‘red line’ after Houthi drone intercepted close to holy city of Mecca",
-              "link": "https://www.theguardian.com/world/2026/sep/16/saudi-arabia-houthi-drone-shot-down-mecca-iran-middle-east",
-              "source": "guardian"
+              "title": "Gulf Arabs Seek Options After U.S. Bases Did Not Deter Iran",
+              "link": "https://www.nytimes.com/2026/09/15/world/middleeast/gulf-us-iran-uae-bahrain-saudi-arabia.html",
+              "source": "nytimes"
             },
             {
-              "title": "US House votes for third time to end Iran war after $38bn cost is revealed",
-              "link": "https://www.theguardian.com/world/2026/sep/15/iran-war-cost-cbo-report",
+              "title": "New special envoy for Britons detained overseas warns of limits of role",
+              "link": "https://www.theguardian.com/politics/2026/sep/14/new-special-envoy-for-britons-detained-overseas-warns-of-limits-of-role",
               "source": "guardian"
+            }
+          ]
+        },
+        "economy": {
+          "count": 5,
+          "titles": [
+            {
+              "title": "UK trade unions back motion to boycott and sanction Israel",
+              "link": "https://www.aljazeera.com/news/2026/9/16/uk-trade-unions-back-motion-to-boycott-and-sanction-israel?traffic_source=rss",
+              "source": "aljazeera"
             },
             {
-              "title": "Trump says he will consider releasing more 9/11 records after families’ request",
-              "link": "https://www.theguardian.com/us-news/2026/sep/14/trump-911-saudi-arabia-records",
-              "source": "guardian"
+              "title": "How escalating Saudi oil crisis could drive up prices everywhere",
+              "link": "https://www.bbc.co.uk/news/articles/cqlym3wye1ero?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
             },
             {
-              "title": "Israeli minister threatens to strip Israeli film-makers of citizenship over Gaza documentary NAZA",
-              "link": "https://www.theguardian.com/film/2026/sep/14/gaza-documentary-makers-naza-israel-citizenship-ntwnfb",
+              "title": "Sweden expels Iran embassy employee, citing security concerns",
+              "link": "https://www.aljazeera.com/news/2026/9/16/sweden-expels-iran-embassy-employee-citing-security-concerns?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Why Mokha, Historic Port That Shaped the Coffee Trade, Is a Prize in Yemen’s War",
+              "link": "https://www.nytimes.com/2026/09/12/world/middleeast/mokha-yemen-houthis-mocha-coffee.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "UK sanctions on Israel ‘fall far short’ of its obligations, legal experts say",
+              "link": "https://www.theguardian.com/politics/2026/sep/15/legal-experts-say-sanctions-israel-fall-far-short-uk-obligations",
               "source": "guardian"
             }
           ]
         },
         "other": {
-          "count": 6,
+          "count": 4,
           "titles": [
+            {
+              "title": "Ebola fight in DRC ‘far from over,’ warns WHO chief",
+              "link": "https://www.aljazeera.com/news/2026/9/16/ebola-fight-in-drc-far-from-over-warns-who-chief?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Macklemore Dropped From Ed Sheeran Tour After ‘Free Palestine’ Remarks",
+              "link": "https://www.nytimes.com/2026/09/14/arts/music/macklemore-ed-sheeran-tour-palestine-gaza.html",
+              "source": "nytimes"
+            },
             {
               "title": "Legend of Destruction review – starry voices grace animated telling of the Jewish revolt against the Romans",
               "link": "https://www.theguardian.com/film/2026/sep/15/legend-of-destruction-review-starry-voices-grace-animated-telling-of-thejewish-revolt-against-the-romans",
@@ -1189,41 +1206,26 @@
               "title": "Stories in Gaza documentary pulled by BBC still need to be aired, director says",
               "link": "https://www.theguardian.com/media/2026/sep/15/stories-gaza-documentary-pulled-bbc-need-aired-director-says",
               "source": "guardian"
-            },
-            {
-              "title": "Iran",
-              "link": "https://www.cnn.com/specials/middleeast/iran?utm_source=section",
-              "source": "cnn"
-            },
-            {
-              "title": "Israel",
-              "link": "https://www.cnn.com/specials/middleeast/israel?utm_source=section",
-              "source": "cnn"
-            },
-            {
-              "title": "May 30, 2024 Israel-Hamas war",
-              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-30-24/index.html",
-              "source": "cnn"
             }
           ]
         },
-        "diplomacy": {
+        "regional": {
           "count": 3,
           "titles": [
             {
-              "title": "New special envoy for Britons detained overseas warns of limits of role",
-              "link": "https://www.theguardian.com/politics/2026/sep/14/new-special-envoy-for-britons-detained-overseas-warns-of-limits-of-role",
+              "title": "US opts not to back Saudi Arabia in Yemen after meeting Houthi leaders",
+              "link": "https://www.theguardian.com/world/2026/sep/16/us-officials-decide-against-backing-saudi-arabia-yemen-meeting-houthi-leaders",
               "source": "guardian"
             },
             {
-              "title": "June 13, 2024 Israel-Hamas war",
-              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-13-24/index.html",
-              "source": "cnn"
+              "title": "How Sept. 11 Paved the Way to Mideast Power for Iran",
+              "link": "https://www.nytimes.com/2026/09/16/world/middleeast/sept-11-iran-islamic-state-iraq.html",
+              "source": "nytimes"
             },
             {
-              "title": "June 10, 2024 Israel-Hamas war",
-              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-10-24/index.html",
-              "source": "cnn"
+              "title": "Houthis seize strategic Red Sea islands as analysts warn of impending oil crunch",
+              "link": "https://www.theguardian.com/world/2026/sep/15/houthi-rebels-seize-red-sea-hanish-islands-saudi-oil-warning",
+              "source": "guardian"
             }
           ]
         }
@@ -1317,58 +1319,50 @@
     }
   ],
   "economic_indicators": {
-    "BRENT": {
-      "price": 105.67,
-      "change": -3.08,
-      "changePercent": -2.83,
-      "prev": 108.75
-    },
-    "WTI": {
-      "price": 102.35,
-      "change": -3.48,
-      "changePercent": -3.29,
-      "prev": 105.83
-    },
-    "GOLD": {
-      "price": 4380.4,
-      "change": 47.6,
-      "changePercent": 1.1,
-      "prev": 4332.8
-    },
-    "VIX": {
-      "price": 16.96,
-      "change": -0.24,
-      "changePercent": -1.4,
-      "prev": 17.2
-    },
     "DXY": {
-      "price": 99.83,
-      "change": 0.18,
-      "changePercent": 0.18,
+      "price": 100.33,
+      "change": 0.68,
+      "changePercent": 0.68,
       "prev": 99.65
     },
-    "US10Y": {
-      "price": 4.96,
-      "change": -0.04,
-      "changePercent": -0.8,
-      "prev": 5
+    "WTI": {
+      "price": 102.02,
+      "change": -3.81,
+      "changePercent": -3.6,
+      "prev": 105.83
+    },
+    "VIX": {
+      "price": 17.71,
+      "change": 0.51,
+      "changePercent": 2.97,
+      "prev": 17.2
     },
     "US2Y": {
-      "price": 3.93,
-      "change": -0.03,
-      "changePercent": -0.76,
+      "price": 3.97,
+      "change": 0.01,
+      "changePercent": 0.25,
       "prev": 3.96
+    },
+    "US10Y": {
+      "price": 5.01,
+      "change": 0.01,
+      "changePercent": 0.2,
+      "prev": 5
+    },
+    "GOLD": {
+      "price": 4302.5,
+      "change": -30.3,
+      "changePercent": -0.7,
+      "prev": 4332.8
+    },
+    "BRENT": {
+      "price": 105.6,
+      "change": -3.15,
+      "changePercent": -2.9,
+      "prev": 108.75
     }
   },
   "critical_events": [
-    {
-      "id": "diplomatic_breakthrough",
-      "name": "외교적 돌파구/강대국 중재",
-      "severity": "high",
-      "confidence": 0.6666666666666666,
-      "matchCount": 2,
-      "direction": "shorten"
-    },
     {
       "id": "humanitarian_crisis",
       "name": "대규모 인도주의 위기",
@@ -1376,14 +1370,6 @@
       "confidence": 0.6666666666666666,
       "matchCount": 2,
       "direction": "shorten"
-    },
-    {
-      "id": "conflict_expansion",
-      "name": "전선 확대/신규 참전국",
-      "severity": "moderate",
-      "confidence": 0.6666666666666666,
-      "matchCount": 2,
-      "direction": "lengthen"
     }
   ],
   "feeds_loaded": 7,
