@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-09-18T18:02:06.720Z",
+  "timestamp": "2026-09-18T21:05:37.891Z",
   "war_day": 202,
   "probabilities": {
-    "1개월 내 (~3월)": 14,
-    "2~3개월 (4~5월)": 32,
-    "4~6개월 (6~8월)": 30.7,
-    "7~12개월 (9월~27/2월)": 17.1,
-    "1년 초과": 6.2
+    "1개월 내 (~3월)": 17.7,
+    "2~3개월 (4~5월)": 36.4,
+    "4~6개월 (6~8월)": 26.7,
+    "7~12개월 (9월~27/2월)": 14.1,
+    "1년 초과": 5.1
   },
   "factors": [
     {
@@ -45,9 +45,9 @@
       "decay": 0.4
     },
     {
-      "factor": "확전 뉴스 우세 (확전12:휴전0)",
-      "impact": "전쟁 장기화 가능성 (확전비율 100%)",
-      "weight": "+0.04%p (4~6개월)",
+      "factor": "확전 뉴스 우세 (확전10:휴전2)",
+      "impact": "전쟁 장기화 가능성 (확전비율 83%)",
+      "weight": "+0.03%p (4~6개월)",
       "direction": "lengthen",
       "detail": "언론에서 휴전보다 확전을 더 많이 보도하고 있습니다.",
       "keywords": [
@@ -181,11 +181,11 @@
       "decay": 1
     },
     {
-      "factor": "지역 확산 뉴스 20건 감지",
+      "factor": "지역 확산 뉴스 24건 감지",
       "impact": "주변국 대규모 연루 → 장기화 위험 높음",
       "weight": "+0.02%p (4~6개월), +0.02%p (7~12개월)",
       "direction": "lengthen",
-      "detail": "주변국을 언급하는 기사 20건이 감지되었습니다.",
+      "detail": "주변국을 언급하는 기사 24건이 감지되었습니다.",
       "keywords": [
         "saudi",
         "uae",
@@ -234,11 +234,77 @@
       "decay": 0.3
     },
     {
+      "factor": "[중대 이벤트] 일방적 전투 축소/자제 선언",
+      "impact": "교전국의 일방적 전투 축소 또는 자제 선언. 역사적으로 패전국의 자발적 전선 축소는 80% 이상 공식 항복의 전조.",
+      "weight": "+3.3%p (1개월내), +4.7%p (2~3개월), -2.0%p (4~6개월), -2.0%p (7~12개월), -0.7%p (1년초과)",
+      "direction": "shorten",
+      "detail": "교전국의 일방적 전투 축소 또는 자제 선언. 역사적으로 패전국의 자발적 전선 축소는 80% 이상 공식 항복의 전조.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Two injured by Israeli shelling as troops advance in southern Lebanon",
+      "keywords": [
+        "halt",
+        "attack",
+        "stop",
+        "attack",
+        "neighb",
+        "no more",
+        "attack",
+        "withdraw",
+        "forces",
+        "pull back",
+        "troops",
+        "unilateral",
+        "ceasefire",
+        "reduce",
+        "operation",
+        "de-escalat",
+        "announc",
+        "restrain",
+        "attack",
+        "not attack",
+        "suspend",
+        "operation"
+      ],
+      "applied": "2026-09-18",
+      "active": true,
+      "severity": "high"
+    },
+    {
+      "factor": "[중대 이벤트] 수도 직접 공격/포위",
+      "impact": "수도 직접 공격. 베오그라드(1999): 78일 폭격 후 항복. 바그다드(2003): 21일만에 함락. 수도 타격은 전쟁 지속 의지를 급격히 약화.",
+      "weight": "+2.7%p (1개월내), +4.0%p (2~3개월), -1.3%p (4~6개월), -1.3%p (7~12개월), -0.7%p (1년초과)",
+      "direction": "shorten",
+      "detail": "수도 직접 공격. 베오그라드(1999): 78일 폭격 후 항복. 바그다드(2003): 21일만에 함락. 수도 타격은 전쟁 지속 의지를 급격히 약화.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: The week around the world in 20 pictures",
+      "keywords": [
+        "capital",
+        "bomb",
+        "capital",
+        "strike",
+        "capital",
+        "attack",
+        "capital",
+        "siege",
+        "capital",
+        "pound",
+        "capital",
+        "explosion",
+        "tehran",
+        "bomb",
+        "tehran",
+        "strike",
+        "tehran",
+        "pound",
+        "tehran",
+        "explosion"
+      ],
+      "applied": "2026-09-18",
+      "active": true,
+      "severity": "high"
+    },
+    {
       "factor": "[중대 이벤트] 전선 확대/신규 참전국",
       "impact": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).",
       "weight": "-2.0%p (1개월내), -3.0%p (2~3개월), +4.0%p (4~6개월), +3.0%p (7~12개월), +2.0%p (1년초과)",
       "direction": "lengthen",
-      "detail": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).\n\n신뢰도: 확실 (100%), 관련 기사 6건 감지.\n관련: Iranians rally in biggest show of defiance against US since war began | Why does Canada want to join the Europe-led JEF military partnership? | South Korea will not send military to support US war on Iran, defying Trump pressure",
+      "detail": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).\n\n신뢰도: 확실 (100%), 관련 기사 4건 감지.\n관련: Iranians rally in biggest show of defiance against US since war began | South Korea will not send military to support US war on Iran, defying Trump pressure",
       "keywords": [
         "new front",
         "war spread",
@@ -260,11 +326,11 @@
       "severity": "moderate"
     },
     {
-      "factor": "유가 급등 (WTI $96.1/배럴)",
+      "factor": "유가 급등 (WTI $95.46/배럴)",
       "impact": "중간 수준 경제 압력",
       "weight": "+2%p (1-2개월)",
       "direction": "shorten",
-      "detail": "WTI 유가가 $96.1/배럴로 90달러 이상입니다. 호르무즈 해협 봉쇄와 맞물려 글로벌 에너지 시장에 큰 충격을 주고 있으며, 주요국들의 조기 종전 압력이 강화되고 있습니다.",
+      "detail": "WTI 유가가 $95.46/배럴로 90달러 이상입니다. 호르무즈 해협 봉쇄와 맞물려 글로벌 에너지 시장에 큰 충격을 주고 있으며, 주요국들의 조기 종전 압력이 강화되고 있습니다.",
       "keywords": [
         "oil",
         "crude",
@@ -277,11 +343,11 @@
       "active": true
     },
     {
-      "factor": "금값 사상최고 ($4432.2/oz)",
+      "factor": "금값 사상최고 ($4416.7/oz)",
       "impact": "안전자산 수요 폭증 → 글로벌 불안 심화",
       "weight": "+2%p (4-6개월)",
       "direction": "lengthen",
-      "detail": "금 가격이 온스당 $4432.2로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
+      "detail": "금 가격이 온스당 $4416.7로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
       "keywords": [
         "gold",
         "safe haven",
@@ -309,18 +375,162 @@
     }
   ],
   "news_signals": {
-    "ceasefire_mentions": 0,
-    "escalation_mentions": 12,
+    "ceasefire_mentions": 2,
+    "escalation_mentions": 10,
     "negotiation_mentions": 2,
     "casualty_mentions": 10,
-    "peace_mentions": 6,
-    "regional_spread": 20,
+    "peace_mentions": 4,
+    "regional_spread": 24,
     "total_articles": 50,
     "new_articles": 50,
     "unique_events": 50,
     "duplicates_removed": 0
   },
   "latest_news": [
+    {
+      "title": "Syria arrests five former al-Assad-era officers over strikes on civilians",
+      "link": "https://www.aljazeera.com/news/2026/9/18/syria-arrests-five-former-al-assad-era-officers-over-strikes-on-civilians?traffic_source=rss",
+      "pubDate": "Fri, 18 Sep 2026 20:20:23 +0000",
+      "source": "aljazeera",
+      "snippet": "Former air officers, including an air force general, were arrested in a series of operations.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Trump bans CNN, MS NOW, Politico from the White House for ‘fake news’",
+      "link": "https://www.aljazeera.com/news/2026/9/18/trump-bans-news-outlets-cnn-ms-now-and-politico-from-white-house?traffic_source=rss",
+      "pubDate": "Fri, 18 Sep 2026 19:50:04 +0000",
+      "source": "aljazeera",
+      "snippet": "The US president insists media outlets report &#039;fiction and lies&#039; as he enforces new bans on White House access.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Cost of Iran War Estimated at $43.6 Billion",
+      "link": "https://www.nytimes.com/2026/09/18/us/politics/iran-war-cost-pentagon.html",
+      "pubDate": "Fri, 18 Sep 2026 19:43:39 +0000",
+      "source": "nytimes",
+      "snippet": "For the first time, the Pentagon reported costs incurred by each armed service. The figures are almost certainly on the low side, congressional officials said.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Russia labels Cannes-winning director Andrey Zvyagintsev a ‘foreign agent’",
+      "link": "https://www.aljazeera.com/news/2026/9/18/russia-labels-cannes-winning-director-andrey-zvyagintsev-a-foreign-agent?traffic_source=rss",
+      "pubDate": "Fri, 18 Sep 2026 19:39:16 +0000",
+      "source": "aljazeera",
+      "snippet": "Acclaimed Russian film director who won 2026 Grand Prix award at Cannes, ⁠has been critical of the war in Ukraine.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Lebanese artist turns Israeli missile debris into art",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/9/18/lebanese-artist-turns-israeli-missile-debris-into-art?traffic_source=rss",
+      "pubDate": "Fri, 18 Sep 2026 19:31:32 +0000",
+      "source": "aljazeera",
+      "snippet": "In southern Lebanon, visual artist Lina Jouni transforms debris from Israeli missile strikes into pieces of art.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Two injured by Israeli shelling as troops advance in southern Lebanon",
+      "link": "https://www.aljazeera.com/news/2026/9/18/two-injured-by-israeli-shelling-as-troops-advance-in-southern-lebanon?traffic_source=rss",
+      "pubDate": "Fri, 18 Sep 2026 19:14:41 +0000",
+      "source": "aljazeera",
+      "snippet": "Israeli forces withdraw from outskirts of a town in southern Lebanon after a standoff with Lebanese forces.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Pentagon resumes paused testosterone policy amid medical experts’ concerns",
+      "link": "https://www.aljazeera.com/news/2026/9/18/pentagon-resumes-paused-testosterone-policy-amid-medical-experts-concerns?traffic_source=rss",
+      "pubDate": "Fri, 18 Sep 2026 18:54:12 +0000",
+      "source": "aljazeera",
+      "snippet": "New policy mandates testosterone testing for US service members over 30, citing readiness while experts warn of risks.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Mexico’s Sheinbaum says she spoke with Trump as trade negotiations continue",
+      "link": "https://www.aljazeera.com/news/2026/9/18/mexicos-sheinbaum-says-she-spoke-with-trump-as-trade-negotiations-continue?traffic_source=rss",
+      "pubDate": "Fri, 18 Sep 2026 18:46:51 +0000",
+      "source": "aljazeera",
+      "snippet": "Mexican president says she is seeking a decrease in tariffs as both countries seek new bilateral trade deal. ",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Warren Buffett steps down as Berkshire Hathaway chairman",
+      "link": "https://www.aljazeera.com/economy/2026/9/18/warren-buffett-steps-down-as-berkshire-hathaway-chairman?traffic_source=rss",
+      "pubDate": "Fri, 18 Sep 2026 18:32:24 +0000",
+      "source": "aljazeera",
+      "snippet": "Buffett will become chairman emeritus immediately and his son Howard will become chairman.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "The week around the world in 20 pictures",
+      "link": "https://www.theguardian.com/artanddesign/gallery/2026/sep/18/the-week-around-the-world-in-20-pictures",
+      "pubDate": "Fri, 18 Sep 2026 18:23:58 GMT",
+      "source": "guardian",
+      "snippet": "Russian strikes in Kyiv, a female militia march in Tehran, protests in Pristina and Alfie Hewett at the US Open – the past seven days as captured by the world’s leading photojournalists Continue readi",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Russia’s drones threaten Kyiv-bound Western officials as war effort stalls",
+      "link": "https://www.aljazeera.com/news/2026/9/18/russia-targets-ukraines-peaceful-borders?traffic_source=rss",
+      "pubDate": "Fri, 18 Sep 2026 18:19:47 +0000",
+      "source": "aljazeera",
+      "snippet": "Russia strikes Ukraine’s border crossings with Poland and Moldova as its offensives peter out in the east.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Early in-person voting begins in the 2026 US midterm elections in Virginia",
+      "link": "https://www.aljazeera.com/news/2026/9/18/early-in-person-voting-begins-in-the-2026-us-midterm-elections-in-virginia?traffic_source=rss",
+      "pubDate": "Fri, 18 Sep 2026 18:15:32 +0000",
+      "source": "aljazeera",
+      "snippet": "Virginia leads the way for in-person voting, reflecting a nationwide trend towards casting ballots before Election Day.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
     {
       "title": "Iranians rally in biggest show of defiance against US since war began",
       "link": "https://www.aljazeera.com/news/2026/9/18/iranians-rally-in-biggest-show-of-defiance-against-us-since-war-began?traffic_source=rss",
@@ -356,150 +566,6 @@
       "_isDuplicated": false,
       "_clusterSize": 1,
       "_isDuplicate": false
-    },
-    {
-      "title": "Israeli Strikes in Gaza Kill Teenager and Civil Defense Worker, Official Says",
-      "link": "https://www.nytimes.com/2026/09/15/world/middleeast/gaza-strikes-israel.html",
-      "pubDate": "Fri, 18 Sep 2026 15:57:05 +0000",
-      "source": "nytimes",
-      "snippet": "Two Israeli drone strikes hit a residential neighborhood, an official said. Israel is under international pressure to curtail its attacks.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Russia seizes assets of French firms, summons UK envoy over Ukraine support",
-      "link": "https://www.aljazeera.com/news/2026/9/18/russia-seizes-assets-of-french-firms-summons-uk-envoy-over-ukraine-support?traffic_source=rss",
-      "pubDate": "Fri, 18 Sep 2026 14:17:20 +0000",
-      "source": "aljazeera",
-      "snippet": "Kremlin calls UK&#039;s support for Ukraine an endorsement of &#039;terrorism&#039; after recent escalation in weapons supply.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Barcelona’s Lamine Yamal says he has experienced racism ‘a thousand times’",
-      "link": "https://www.aljazeera.com/sports/2026/9/18/barcelonas-lamine-yamal-says-he-has-experienced-racism-a-thousand-times?traffic_source=rss",
-      "pubDate": "Fri, 18 Sep 2026 14:08:03 +0000",
-      "source": "aljazeera",
-      "snippet": "Spain&#039;s Lamine Yamal says most racism he has suffered has come from people unaware of their own comments or behaviour.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "The cost of Iran’s regional leverage",
-      "link": "https://www.aljazeera.com/opinions/2026/9/18/the-cost-of-irans-regional-leverage?traffic_source=rss",
-      "pubDate": "Fri, 18 Sep 2026 13:52:49 +0000",
-      "source": "aljazeera",
-      "snippet": "Tehran’s use of pressure across the region is putting its rapprochement with Gulf states under increasing strain.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Ronaldo keeps Portugal place for Nations League as Jesus names first squad",
-      "link": "https://www.aljazeera.com/sports/2026/9/18/ronaldo-keeps-portugal-place-for-nations-league-as-jesus-names-first-squad?traffic_source=rss",
-      "pubDate": "Fri, 18 Sep 2026 13:36:58 +0000",
-      "source": "aljazeera",
-      "snippet": "Ex-Manchester United and Real Madrid forward Cristiano Ronaldo named in Portugal squad to face ⁠Norway and Denmark.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "US voter opposition to war on Iran grows to new highs: Poll",
-      "link": "https://www.aljazeera.com/news/2026/9/18/us-voter-opposition-to-war-on-iran-grows-to-new-highs-poll?traffic_source=rss",
-      "pubDate": "Fri, 18 Sep 2026 13:09:27 +0000",
-      "source": "aljazeera",
-      "snippet": "Poll reveals 71 percent in US believe Trump&#039;s team lacks a clear strategy for resolving the conflict.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "As Houthis grab Bab al-Mandeb, US appears willing to watch from sidelines",
-      "link": "https://www.aljazeera.com/news/2026/9/18/as-houthis-grab-bab-al-mandeb-us-appears-willing-to-watch-from-sidelines?traffic_source=rss",
-      "pubDate": "Fri, 18 Sep 2026 12:52:29 +0000",
-      "source": "aljazeera",
-      "snippet": "Stretched by its war with Iran, Washington may have little choice but to trust Houthi assurances on shipping.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Why does Canada want to join the Europe-led JEF military partnership?",
-      "link": "https://www.aljazeera.com/news/2026/9/18/why-does-canada-want-to-join-the-europe-led-jef-military-partnership?traffic_source=rss",
-      "pubDate": "Fri, 18 Sep 2026 12:51:15 +0000",
-      "source": "aljazeera",
-      "snippet": "This is the latest step in Canada&#039;s bid to move closer to Europe amid bitter trade war with the US.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "China Stockpiled Oil, and Now It Could Dominate the Energy Landscape",
-      "link": "https://www.nytimes.com/2026/09/17/business/energy-environment/china-oil-iran-war.html",
-      "pubDate": "Fri, 18 Sep 2026 12:47:31 +0000",
-      "source": "nytimes",
-      "snippet": "The war with Iran revealed just how much influence the world’s biggest oil importer has over prices and other countries’ supplies of jet fuel, gasoline and diesel.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "The view from Russia: ‘No party can be antiwar’ in parliamentary election",
-      "link": "https://www.aljazeera.com/news/2026/9/18/the-view-from-russia-no-party-can-be-antiwar-in-parliamentary-election?traffic_source=rss",
-      "pubDate": "Fri, 18 Sep 2026 12:26:46 +0000",
-      "source": "aljazeera",
-      "snippet": "First vote since Russia invaded Ukraine seen as a sham by some and an opportunity to strengthen nationalism by others.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Thailand’s Malay-Muslim separatists vow to fight as peace talks stall",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/9/18/thailand-malay-muslim-separatists-southern-insurgency-peace-talks?traffic_source=rss",
-      "pubDate": "Fri, 18 Sep 2026 12:20:37 +0000",
-      "source": "aljazeera",
-      "snippet": "Thailand’s main armed separatist group, Barisan Revolusi Nasional, says it will continue fighting for self-determination",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Iranian actor Laleh Marzban faces severe threats after Venice film festival speech",
-      "link": "https://www.theguardian.com/film/2026/sep/18/iranian-actor-laheh-marzban-venice-film-festival-speech-falling-house",
-      "pubDate": "Fri, 18 Sep 2026 09:59:09 GMT",
-      "source": "guardian",
-      "snippet": "Marzban, who won a best actress award for her portrayal of a woman held hostage by her father in Falling House, has received condemnations from authorities after dedicating her prize to ‘the women of ",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
     }
   ],
   "news_digest": {
@@ -508,9 +574,86 @@
         "category_id": "military",
         "category_name": "군사 작전",
         "category_icon": "⚔️",
-        "count": 17,
-        "new_count": 17,
+        "count": 21,
+        "new_count": 21,
         "articles": [
+          {
+            "title": "Syria arrests five former al-Assad-era officers over strikes on civilians",
+            "link": "https://www.aljazeera.com/news/2026/9/18/syria-arrests-five-former-al-assad-era-officers-over-strikes-on-civilians?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Fri, 18 Sep 2026 20:20:23 +0000",
+            "snippet": "Former air officers, including an air force general, were arrested in a series of operations.",
+            "isNew": true
+          },
+          {
+            "title": "Cost of Iran War Estimated at $43.6 Billion",
+            "link": "https://www.nytimes.com/2026/09/18/us/politics/iran-war-cost-pentagon.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Fri, 18 Sep 2026 19:43:39 +0000",
+            "snippet": "For the first time, the Pentagon reported costs incurred by each armed service. The figures are almost certainly on the low side, congressional officials said.",
+            "isNew": true
+          },
+          {
+            "title": "Lebanese artist turns Israeli missile debris into art",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/18/lebanese-artist-turns-israeli-missile-debris-into-art?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Fri, 18 Sep 2026 19:31:32 +0000",
+            "snippet": "In southern Lebanon, visual artist Lina Jouni transforms debris from Israeli missile strikes into pieces of art.",
+            "isNew": true
+          },
+          {
+            "title": "Two injured by Israeli shelling as troops advance in southern Lebanon",
+            "link": "https://www.aljazeera.com/news/2026/9/18/two-injured-by-israeli-shelling-as-troops-advance-in-southern-lebanon?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Fri, 18 Sep 2026 19:14:41 +0000",
+            "snippet": "Israeli forces withdraw from outskirts of a town in southern Lebanon after a standoff with Lebanese forces.",
+            "isNew": true
+          },
+          {
+            "title": "Pentagon resumes paused testosterone policy amid medical experts’ concerns",
+            "link": "https://www.aljazeera.com/news/2026/9/18/pentagon-resumes-paused-testosterone-policy-amid-medical-experts-concerns?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Fri, 18 Sep 2026 18:54:12 +0000",
+            "snippet": "New policy mandates testosterone testing for US service members over 30, citing readiness while experts warn of risks.",
+            "isNew": true
+          },
+          {
+            "title": "The week around the world in 20 pictures",
+            "link": "https://www.theguardian.com/artanddesign/gallery/2026/sep/18/the-week-around-the-world-in-20-pictures",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Fri, 18 Sep 2026 18:23:58 GMT",
+            "snippet": "Russian strikes in Kyiv, a female militia march in Tehran, protests in Pristina and Alfie Hewett at the US Open – the past seven days as captured by the world’s leading photojournalists Continue readi",
+            "isNew": true
+          },
+          {
+            "title": "Russia’s drones threaten Kyiv-bound Western officials as war effort stalls",
+            "link": "https://www.aljazeera.com/news/2026/9/18/russia-targets-ukraines-peaceful-borders?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Fri, 18 Sep 2026 18:19:47 +0000",
+            "snippet": "Russia strikes Ukraine’s border crossings with Poland and Moldova as its offensives peter out in the east.",
+            "isNew": true
+          },
           {
             "title": "This Israeli election could be the country’s last – this week I saw that for myself | Jonathan Freedland",
             "link": "https://www.theguardian.com/commentisfree/2026/sep/18/israel-election-last-october-palestinians",
@@ -534,28 +677,6 @@
             "isNew": true
           },
           {
-            "title": "Russia seizes assets of French firms, summons UK envoy over Ukraine support",
-            "link": "https://www.aljazeera.com/news/2026/9/18/russia-seizes-assets-of-french-firms-summons-uk-envoy-over-ukraine-support?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Fri, 18 Sep 2026 14:17:20 +0000",
-            "snippet": "Kremlin calls UK&#039;s support for Ukraine an endorsement of &#039;terrorism&#039; after recent escalation in weapons supply.",
-            "isNew": true
-          },
-          {
-            "title": "Why does Canada want to join the Europe-led JEF military partnership?",
-            "link": "https://www.aljazeera.com/news/2026/9/18/why-does-canada-want-to-join-the-europe-led-jef-military-partnership?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Fri, 18 Sep 2026 12:51:15 +0000",
-            "snippet": "This is the latest step in Canada&#039;s bid to move closer to Europe amid bitter trade war with the US.",
-            "isNew": true
-          },
-          {
             "title": "South Korea will not send military to support US war on Iran, defying Trump pressure",
             "link": "https://www.theguardian.com/world/2026/sep/18/south-korea-will-not-send-military-to-support-us-war-on-iran-defying-trump-pressure",
             "source": "guardian",
@@ -564,61 +685,6 @@
             ],
             "pubDate": "Fri, 18 Sep 2026 05:54:29 GMT",
             "snippet": "Seoul resolves recent speculation over sending military to strait of Hormuz, saying ‘there won’t be deployment that would involve or enter war’South Korea’s president, Lee Jae Myung, has said he will ",
-            "isNew": true
-          },
-          {
-            "title": "‘Run! Get away!’: witnesses recount Israeli ‘double tap’ strike that killed child and medic in Gaza",
-            "link": "https://www.theguardian.com/world/2026/sep/18/run-get-away-witnesses-recount-israeli-double-tap-strike-that-killed-child-and-medic-in-gaza",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Fri, 18 Sep 2026 05:00:10 GMT",
-            "snippet": "When Mohammad Abdul Zinati, 15, rushed to help a man wounded in a bomb attack, he had no time to react before he too was hitMohammad Abdul Zinati was walking home from school through the rubble of Sal",
-            "isNew": true
-          },
-          {
-            "title": "Why US plan to sell F-35 warplanes to Saudi Arabia is controversial",
-            "link": "https://www.bbc.co.uk/news/articles/c3x2zrn01pxko?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
-            "sources": [
-              "bbc"
-            ],
-            "pubDate": "Fri, 18 Sep 2026 01:31:43 GMT",
-            "snippet": "Saudi Arabia has lobbied the US for years to buy F35s, the world's most advanced fighter jet.",
-            "isNew": true
-          },
-          {
-            "title": "Yemen War Intensifies as Houthi Militia Advances on Marib",
-            "link": "https://www.nytimes.com/2026/09/17/world/middleeast/yemen-houthis-marib.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Thu, 17 Sep 2026 22:44:04 +0000",
-            "snippet": "Clashes between Iranian-backed Houthi fighters and Saudi-backed government forces have been reported near oil-rich Marib Province.",
-            "isNew": true
-          },
-          {
-            "title": "UN experts say grounds to believe US committed war crimes in Iran strikes",
-            "link": "https://www.bbc.co.uk/news/articles/cm9w4n5nverdo?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
-            "sources": [
-              "bbc"
-            ],
-            "pubDate": "Thu, 17 Sep 2026 20:34:30 GMT",
-            "snippet": "The US has not acknowledged carrying out February's deadly strikes on a primary school in Minab and a sports complex in Lamerd.",
-            "isNew": true
-          },
-          {
-            "title": "Iran school bombing: grounds to believe US was behind atrocity, UN finds",
-            "link": "https://www.theguardian.com/world/2026/sep/17/iran-school-bombing-un-mission-us-military-behind-attack",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Thu, 17 Sep 2026 13:22:35 GMT",
-            "snippet": "Fact-finding mission says military strikes on school and sports facility in ⁠February constitute war ⁠crimesA UN fact-finding mission has determined there are reasonable grounds to believe the US was ",
             "isNew": true
           }
         ]
@@ -631,6 +697,39 @@
         "new_count": 8,
         "articles": [
           {
+            "title": "Trump bans CNN, MS NOW, Politico from the White House for ‘fake news’",
+            "link": "https://www.aljazeera.com/news/2026/9/18/trump-bans-news-outlets-cnn-ms-now-and-politico-from-white-house?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Fri, 18 Sep 2026 19:50:04 +0000",
+            "snippet": "The US president insists media outlets report &#039;fiction and lies&#039; as he enforces new bans on White House access.",
+            "isNew": true
+          },
+          {
+            "title": "Mexico’s Sheinbaum says she spoke with Trump as trade negotiations continue",
+            "link": "https://www.aljazeera.com/news/2026/9/18/mexicos-sheinbaum-says-she-spoke-with-trump-as-trade-negotiations-continue?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Fri, 18 Sep 2026 18:46:51 +0000",
+            "snippet": "Mexican president says she is seeking a decrease in tariffs as both countries seek new bilateral trade deal. ",
+            "isNew": true
+          },
+          {
+            "title": "Early in-person voting begins in the 2026 US midterm elections in Virginia",
+            "link": "https://www.aljazeera.com/news/2026/9/18/early-in-person-voting-begins-in-the-2026-us-midterm-elections-in-virginia?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Fri, 18 Sep 2026 18:15:32 +0000",
+            "snippet": "Virginia leads the way for in-person voting, reflecting a nationwide trend towards casting ballots before Election Day.",
+            "isNew": true
+          },
+          {
             "title": "Jerusalem Daily: Netanyahu says he will ‘change the face of the Middle East",
             "link": "https://www.aljazeera.com/video/newsfeed/2026/9/18/jerusalem-daily-netanyahu-says-he-will-change-the-face-of-the-middle-east?traffic_source=rss",
             "source": "aljazeera",
@@ -639,28 +738,6 @@
             ],
             "pubDate": "Fri, 18 Sep 2026 16:38:10 +0000",
             "snippet": "Israeli Prime Minister Benjamin Netanyahu says he will ‘change the face of the Middle East’",
-            "isNew": true
-          },
-          {
-            "title": "US voter opposition to war on Iran grows to new highs: Poll",
-            "link": "https://www.aljazeera.com/news/2026/9/18/us-voter-opposition-to-war-on-iran-grows-to-new-highs-poll?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Fri, 18 Sep 2026 13:09:27 +0000",
-            "snippet": "Poll reveals 71 percent in US believe Trump&#039;s team lacks a clear strategy for resolving the conflict.",
-            "isNew": true
-          },
-          {
-            "title": "The view from Russia: ‘No party can be antiwar’ in parliamentary election",
-            "link": "https://www.aljazeera.com/news/2026/9/18/the-view-from-russia-no-party-can-be-antiwar-in-parliamentary-election?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Fri, 18 Sep 2026 12:26:46 +0000",
-            "snippet": "First vote since Russia invaded Ukraine seen as a sham by some and an opportunity to strengthen nationalism by others.",
             "isNew": true
           },
           {
@@ -683,17 +760,6 @@
             ],
             "pubDate": "Wed, 16 Sep 2026 18:07:59 +0000",
             "snippet": "The film “NAZA” investigates the killing of Palestinians by Israeli forces in Gaza. Israel’s culture minister has suggested revoking the directors’ citizenship.",
-            "isNew": true
-          },
-          {
-            "title": "More Republicans are turning on Iran war as midterms come into view",
-            "link": "https://www.theguardian.com/us-news/2026/sep/16/republicans-iran-war-midterm-elections",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Wed, 16 Sep 2026 17:18:14 GMT",
-            "snippet": "Three more GOP members voted for war powers resolution to force withdrawal from the conflict as election loomsAs the US war with Iran drags on, the ranks of Republicans signaling the conflict is a lia",
             "isNew": true
           },
           {
@@ -724,9 +790,20 @@
         "category_id": "other",
         "category_name": "기타",
         "category_icon": "📰",
-        "count": 8,
-        "new_count": 8,
+        "count": 7,
+        "new_count": 7,
         "articles": [
+          {
+            "title": "Warren Buffett steps down as Berkshire Hathaway chairman",
+            "link": "https://www.aljazeera.com/economy/2026/9/18/warren-buffett-steps-down-as-berkshire-hathaway-chairman?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Fri, 18 Sep 2026 18:32:24 +0000",
+            "snippet": "Buffett will become chairman emeritus immediately and his son Howard will become chairman.",
+            "isNew": true
+          },
           {
             "title": "Iranians rally in biggest show of defiance against US since war began",
             "link": "https://www.aljazeera.com/news/2026/9/18/iranians-rally-in-biggest-show-of-defiance-against-us-since-war-began?traffic_source=rss",
@@ -736,28 +813,6 @@
             ],
             "pubDate": "Fri, 18 Sep 2026 17:23:23 +0000",
             "snippet": "Volunteers rallied through downtown Tehran to join campaign highlighting &#039;self-sacrifice&#039; for Iran.",
-            "isNew": true
-          },
-          {
-            "title": "Barcelona’s Lamine Yamal says he has experienced racism ‘a thousand times’",
-            "link": "https://www.aljazeera.com/sports/2026/9/18/barcelonas-lamine-yamal-says-he-has-experienced-racism-a-thousand-times?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Fri, 18 Sep 2026 14:08:03 +0000",
-            "snippet": "Spain&#039;s Lamine Yamal says most racism he has suffered has come from people unaware of their own comments or behaviour.",
-            "isNew": true
-          },
-          {
-            "title": "Ronaldo keeps Portugal place for Nations League as Jesus names first squad",
-            "link": "https://www.aljazeera.com/sports/2026/9/18/ronaldo-keeps-portugal-place-for-nations-league-as-jesus-names-first-squad?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Fri, 18 Sep 2026 13:36:58 +0000",
-            "snippet": "Ex-Manchester United and Real Madrid forward Cristiano Ronaldo named in Portugal squad to face ⁠Norway and Denmark.",
             "isNew": true
           },
           {
@@ -781,6 +836,17 @@
             "pubDate": "Thu, 17 Sep 2026 14:14:58 +0000",
             "snippet": "Israel’s right-wing government is opening bidding for thousands of housing units in a patch of the West Bank, a move that would thwart efforts at Palestinian statehood.",
             "isNew": true
+          },
+          {
+            "title": "Algae bloom that crippled Israel's desalination plants raises water security concerns",
+            "link": "https://www.bbc.co.uk/news/articles/ck4glvqj4qqdo?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc"
+            ],
+            "pubDate": "Thu, 17 Sep 2026 08:40:41 GMT",
+            "snippet": "The \"carpet\" of microalgae stopped five of Israel's six desalination plants from working.",
+            "isNew": true
           }
         ]
       },
@@ -788,20 +854,9 @@
         "category_id": "economy",
         "category_name": "경제 영향",
         "category_icon": "📊",
-        "count": 7,
-        "new_count": 7,
+        "count": 6,
+        "new_count": 6,
         "articles": [
-          {
-            "title": "As Houthis grab Bab al-Mandeb, US appears willing to watch from sidelines",
-            "link": "https://www.aljazeera.com/news/2026/9/18/as-houthis-grab-bab-al-mandeb-us-appears-willing-to-watch-from-sidelines?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Fri, 18 Sep 2026 12:52:29 +0000",
-            "snippet": "Stretched by its war with Iran, Washington may have little choice but to trust Houthi assurances on shipping.",
-            "isNew": true
-          },
           {
             "title": "China Stockpiled Oil, and Now It Could Dominate the Energy Landscape",
             "link": "https://www.nytimes.com/2026/09/17/business/energy-environment/china-oil-iran-war.html",
@@ -871,59 +926,6 @@
         ]
       },
       {
-        "category_id": "humanitarian",
-        "category_name": "인도주의/피해",
-        "category_icon": "🏥",
-        "count": 4,
-        "new_count": 4,
-        "articles": [
-          {
-            "title": "Trump administration again denies entry visas to Palestinian officials ahead of UN general assembly",
-            "link": "https://www.theguardian.com/us-news/2026/sep/17/trump-denies-visas-palestine-un",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Fri, 18 Sep 2026 00:42:39 GMT",
-            "snippet": "For the second year in a row, the administration has barred the Palestinian delegation from US travel for the forumThe US state department said on Wednesday that it had again denied entry visas to Pal",
-            "isNew": true
-          },
-          {
-            "title": "‘We left everything behind’: 125,000 people displaced as war reignites in Yemen",
-            "link": "https://www.theguardian.com/world/2026/sep/17/displaced-people-yemen-war",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Thu, 17 Sep 2026 08:37:15 GMT",
-            "snippet": "Fierce fighting has forced people to abandon their homes, leaving everything behind to seek shelter in refugee campsThe rapid Houthi advance in Yemen: why it matters and what’s at stakeAbandoning thei",
-            "isNew": true
-          },
-          {
-            "title": "Eight children among 21 killed after war-damaged Gaza building collapses, rescuers say",
-            "link": "https://www.bbc.co.uk/news/articles/cvp8d00j9gg5o?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
-            "sources": [
-              "bbc"
-            ],
-            "pubDate": "Wed, 16 Sep 2026 17:16:47 GMT",
-            "snippet": "Some 10 families had reportedly been living in the six-storey building in Gaza City that was hit by an Israeli strike last year.",
-            "isNew": true
-          },
-          {
-            "title": "Two Chinese Firms Used Binance to Launder Iranian Oil Money, US Says",
-            "link": "https://www.nytimes.com/2026/09/15/technology/binance-iran-china.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Tue, 15 Sep 2026 17:29:37 +0000",
-            "snippet": "Federal prosecutors said proceeds from the sale of Iranian oil flowed through Binance, the world’s largest crypto exchange, to finance terrorism.",
-            "isNew": true
-          }
-        ]
-      },
-      {
         "category_id": "regional",
         "category_name": "지역 정세",
         "category_icon": "🌍",
@@ -931,14 +933,14 @@
         "new_count": 4,
         "articles": [
           {
-            "title": "The cost of Iran’s regional leverage",
-            "link": "https://www.aljazeera.com/opinions/2026/9/18/the-cost-of-irans-regional-leverage?traffic_source=rss",
+            "title": "Russia labels Cannes-winning director Andrey Zvyagintsev a ‘foreign agent’",
+            "link": "https://www.aljazeera.com/news/2026/9/18/russia-labels-cannes-winning-director-andrey-zvyagintsev-a-foreign-agent?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Fri, 18 Sep 2026 13:52:49 +0000",
-            "snippet": "Tehran’s use of pressure across the region is putting its rapprochement with Gulf states under increasing strain.",
+            "pubDate": "Fri, 18 Sep 2026 19:39:16 +0000",
+            "snippet": "Acclaimed Russian film director who won 2026 Grand Prix award at Cannes, ⁠has been critical of the war in Ukraine.",
             "isNew": true
           },
           {
@@ -977,23 +979,54 @@
         ]
       },
       {
+        "category_id": "humanitarian",
+        "category_name": "인도주의/피해",
+        "category_icon": "🏥",
+        "count": 3,
+        "new_count": 3,
+        "articles": [
+          {
+            "title": "Trump administration again denies entry visas to Palestinian officials ahead of UN general assembly",
+            "link": "https://www.theguardian.com/us-news/2026/sep/17/trump-denies-visas-palestine-un",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Fri, 18 Sep 2026 00:42:39 GMT",
+            "snippet": "For the second year in a row, the administration has barred the Palestinian delegation from US travel for the forumThe US state department said on Wednesday that it had again denied entry visas to Pal",
+            "isNew": true
+          },
+          {
+            "title": "‘We left everything behind’: 125,000 people displaced as war reignites in Yemen",
+            "link": "https://www.theguardian.com/world/2026/sep/17/displaced-people-yemen-war",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Thu, 17 Sep 2026 08:37:15 GMT",
+            "snippet": "Fierce fighting has forced people to abandon their homes, leaving everything behind to seek shelter in refugee campsThe rapid Houthi advance in Yemen: why it matters and what’s at stakeAbandoning thei",
+            "isNew": true
+          },
+          {
+            "title": "Eight children among 21 killed after war-damaged Gaza building collapses, rescuers say",
+            "link": "https://www.bbc.co.uk/news/articles/cvp8d00j9gg5o?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc"
+            ],
+            "pubDate": "Wed, 16 Sep 2026 17:16:47 GMT",
+            "snippet": "Some 10 families had reportedly been living in the six-storey building in Gaza City that was hit by an Israeli strike last year.",
+            "isNew": true
+          }
+        ]
+      },
+      {
         "category_id": "diplomacy",
         "category_name": "외교/협상",
         "category_icon": "🤝",
-        "count": 2,
-        "new_count": 2,
+        "count": 1,
+        "new_count": 1,
         "articles": [
-          {
-            "title": "Thailand’s Malay-Muslim separatists vow to fight as peace talks stall",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/18/thailand-malay-muslim-separatists-southern-insurgency-peace-talks?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Fri, 18 Sep 2026 12:20:37 +0000",
-            "snippet": "Thailand’s main armed separatist group, Barisan Revolusi Nasional, says it will continue fighting for self-determination",
-            "isNew": true
-          },
           {
             "title": "US blocks Palestinian leader from UN meeting in New York for second year in row",
             "link": "https://www.bbc.co.uk/news/articles/cq783jlrr282o?at_medium=RSS&at_campaign=rss",
@@ -1011,63 +1044,33 @@
     "recent_30min": {
       "total_new": 50,
       "by_category": {
-        "other": {
-          "count": 8,
-          "titles": [
-            {
-              "title": "Iranians rally in biggest show of defiance against US since war began",
-              "link": "https://www.aljazeera.com/news/2026/9/18/iranians-rally-in-biggest-show-of-defiance-against-us-since-war-began?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Barcelona’s Lamine Yamal says he has experienced racism ‘a thousand times’",
-              "link": "https://www.aljazeera.com/sports/2026/9/18/barcelonas-lamine-yamal-says-he-has-experienced-racism-a-thousand-times?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Ronaldo keeps Portugal place for Nations League as Jesus names first squad",
-              "link": "https://www.aljazeera.com/sports/2026/9/18/ronaldo-keeps-portugal-place-for-nations-league-as-jesus-names-first-squad?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Iranian actor Laleh Marzban faces severe threats after Venice film festival speech",
-              "link": "https://www.theguardian.com/film/2026/sep/18/iranian-actor-laheh-marzban-venice-film-festival-speech-falling-house",
-              "source": "guardian"
-            },
-            {
-              "title": "What Is the E1 Project, Israel’s Disputed Settlement Plan in the West Bank?",
-              "link": "https://www.nytimes.com/2026/09/17/world/middleeast/e1-israel-west-bank-settlement.html",
-              "source": "nytimes"
-            }
-          ]
-        },
         "military": {
-          "count": 17,
+          "count": 21,
           "titles": [
             {
-              "title": "This Israeli election could be the country’s last – this week I saw that for myself | Jonathan Freedland",
-              "link": "https://www.theguardian.com/commentisfree/2026/sep/18/israel-election-last-october-palestinians",
-              "source": "guardian"
+              "title": "Syria arrests five former al-Assad-era officers over strikes on civilians",
+              "link": "https://www.aljazeera.com/news/2026/9/18/syria-arrests-five-former-al-assad-era-officers-over-strikes-on-civilians?traffic_source=rss",
+              "source": "aljazeera"
             },
             {
-              "title": "Israeli Strikes in Gaza Kill Teenager and Civil Defense Worker, Official Says",
-              "link": "https://www.nytimes.com/2026/09/15/world/middleeast/gaza-strikes-israel.html",
+              "title": "Cost of Iran War Estimated at $43.6 Billion",
+              "link": "https://www.nytimes.com/2026/09/18/us/politics/iran-war-cost-pentagon.html",
               "source": "nytimes"
             },
             {
-              "title": "Russia seizes assets of French firms, summons UK envoy over Ukraine support",
-              "link": "https://www.aljazeera.com/news/2026/9/18/russia-seizes-assets-of-french-firms-summons-uk-envoy-over-ukraine-support?traffic_source=rss",
+              "title": "Lebanese artist turns Israeli missile debris into art",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/9/18/lebanese-artist-turns-israeli-missile-debris-into-art?traffic_source=rss",
               "source": "aljazeera"
             },
             {
-              "title": "Why does Canada want to join the Europe-led JEF military partnership?",
-              "link": "https://www.aljazeera.com/news/2026/9/18/why-does-canada-want-to-join-the-europe-led-jef-military-partnership?traffic_source=rss",
+              "title": "Two injured by Israeli shelling as troops advance in southern Lebanon",
+              "link": "https://www.aljazeera.com/news/2026/9/18/two-injured-by-israeli-shelling-as-troops-advance-in-southern-lebanon?traffic_source=rss",
               "source": "aljazeera"
             },
             {
-              "title": "South Korea will not send military to support US war on Iran, defying Trump pressure",
-              "link": "https://www.theguardian.com/world/2026/sep/18/south-korea-will-not-send-military-to-support-us-war-on-iran-defying-trump-pressure",
-              "source": "guardian"
+              "title": "Pentagon resumes paused testosterone policy amid medical experts’ concerns",
+              "link": "https://www.aljazeera.com/news/2026/9/18/pentagon-resumes-paused-testosterone-policy-amid-medical-experts-concerns?traffic_source=rss",
+              "source": "aljazeera"
             }
           ]
         },
@@ -1075,28 +1078,28 @@
           "count": 8,
           "titles": [
             {
+              "title": "Trump bans CNN, MS NOW, Politico from the White House for ‘fake news’",
+              "link": "https://www.aljazeera.com/news/2026/9/18/trump-bans-news-outlets-cnn-ms-now-and-politico-from-white-house?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Mexico’s Sheinbaum says she spoke with Trump as trade negotiations continue",
+              "link": "https://www.aljazeera.com/news/2026/9/18/mexicos-sheinbaum-says-she-spoke-with-trump-as-trade-negotiations-continue?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Early in-person voting begins in the 2026 US midterm elections in Virginia",
+              "link": "https://www.aljazeera.com/news/2026/9/18/early-in-person-voting-begins-in-the-2026-us-midterm-elections-in-virginia?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
               "title": "Jerusalem Daily: Netanyahu says he will ‘change the face of the Middle East",
               "link": "https://www.aljazeera.com/video/newsfeed/2026/9/18/jerusalem-daily-netanyahu-says-he-will-change-the-face-of-the-middle-east?traffic_source=rss",
               "source": "aljazeera"
             },
             {
-              "title": "US voter opposition to war on Iran grows to new highs: Poll",
-              "link": "https://www.aljazeera.com/news/2026/9/18/us-voter-opposition-to-war-on-iran-grows-to-new-highs-poll?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "The view from Russia: ‘No party can be antiwar’ in parliamentary election",
-              "link": "https://www.aljazeera.com/news/2026/9/18/the-view-from-russia-no-party-can-be-antiwar-in-parliamentary-election?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
               "title": "Why Israel Wants More One-Ton Bombs From the U.S.",
               "link": "https://www.nytimes.com/2026/09/16/world/middleeast/israel-one-ton-bombs-us.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "‘NAZA,’ Israeli Film About Killings in Gaza, Faces Backlash",
-              "link": "https://www.nytimes.com/2026/09/14/world/middleeast/israel-naza-documentary-backlash.html",
               "source": "nytimes"
             }
           ]
@@ -1105,8 +1108,8 @@
           "count": 4,
           "titles": [
             {
-              "title": "The cost of Iran’s regional leverage",
-              "link": "https://www.aljazeera.com/opinions/2026/9/18/the-cost-of-irans-regional-leverage?traffic_source=rss",
+              "title": "Russia labels Cannes-winning director Andrey Zvyagintsev a ‘foreign agent’",
+              "link": "https://www.aljazeera.com/news/2026/9/18/russia-labels-cannes-winning-director-andrey-zvyagintsev-a-foreign-agent?traffic_source=rss",
               "source": "aljazeera"
             },
             {
@@ -1126,14 +1129,39 @@
             }
           ]
         },
-        "economy": {
+        "other": {
           "count": 7,
           "titles": [
             {
-              "title": "As Houthis grab Bab al-Mandeb, US appears willing to watch from sidelines",
-              "link": "https://www.aljazeera.com/news/2026/9/18/as-houthis-grab-bab-al-mandeb-us-appears-willing-to-watch-from-sidelines?traffic_source=rss",
+              "title": "Warren Buffett steps down as Berkshire Hathaway chairman",
+              "link": "https://www.aljazeera.com/economy/2026/9/18/warren-buffett-steps-down-as-berkshire-hathaway-chairman?traffic_source=rss",
               "source": "aljazeera"
             },
+            {
+              "title": "Iranians rally in biggest show of defiance against US since war began",
+              "link": "https://www.aljazeera.com/news/2026/9/18/iranians-rally-in-biggest-show-of-defiance-against-us-since-war-began?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Iranian actor Laleh Marzban faces severe threats after Venice film festival speech",
+              "link": "https://www.theguardian.com/film/2026/sep/18/iranian-actor-laheh-marzban-venice-film-festival-speech-falling-house",
+              "source": "guardian"
+            },
+            {
+              "title": "What Is the E1 Project, Israel’s Disputed Settlement Plan in the West Bank?",
+              "link": "https://www.nytimes.com/2026/09/17/world/middleeast/e1-israel-west-bank-settlement.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Algae bloom that crippled Israel's desalination plants raises water security concerns",
+              "link": "https://www.bbc.co.uk/news/articles/ck4glvqj4qqdo?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
+            }
+          ]
+        },
+        "economy": {
+          "count": 6,
+          "titles": [
             {
               "title": "China Stockpiled Oil, and Now It Could Dominate the Energy Landscape",
               "link": "https://www.nytimes.com/2026/09/17/business/energy-environment/china-oil-iran-war.html",
@@ -1153,26 +1181,16 @@
               "title": "Global Economy Is Running Out of Wiggle Room",
               "link": "https://www.nytimes.com/2026/09/17/business/economy/iran-war-energy-prices.html",
               "source": "nytimes"
-            }
-          ]
-        },
-        "diplomacy": {
-          "count": 2,
-          "titles": [
-            {
-              "title": "Thailand’s Malay-Muslim separatists vow to fight as peace talks stall",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/9/18/thailand-malay-muslim-separatists-southern-insurgency-peace-talks?traffic_source=rss",
-              "source": "aljazeera"
             },
             {
-              "title": "US blocks Palestinian leader from UN meeting in New York for second year in row",
-              "link": "https://www.bbc.co.uk/news/articles/cq783jlrr282o?at_medium=RSS&at_campaign=rss",
-              "source": "bbc"
+              "title": "Thursday briefing: Yemen’s war continues to threaten oil supplies– but what about its people?",
+              "link": "https://www.theguardian.com/world/2026/sep/17/thursday-briefing-yemens-war-continues-to-threaten-oil-supplies-but-what-about-its-people",
+              "source": "guardian"
             }
           ]
         },
         "humanitarian": {
-          "count": 4,
+          "count": 3,
           "titles": [
             {
               "title": "Trump administration again denies entry visas to Palestinian officials ahead of UN general assembly",
@@ -1188,11 +1206,16 @@
               "title": "Eight children among 21 killed after war-damaged Gaza building collapses, rescuers say",
               "link": "https://www.bbc.co.uk/news/articles/cvp8d00j9gg5o?at_medium=RSS&at_campaign=rss",
               "source": "bbc"
-            },
+            }
+          ]
+        },
+        "diplomacy": {
+          "count": 1,
+          "titles": [
             {
-              "title": "Two Chinese Firms Used Binance to Launder Iranian Oil Money, US Says",
-              "link": "https://www.nytimes.com/2026/09/15/technology/binance-iran-china.html",
-              "source": "nytimes"
+              "title": "US blocks Palestinian leader from UN meeting in New York for second year in row",
+              "link": "https://www.bbc.co.uk/news/articles/cq783jlrr282o?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
             }
           ]
         }
@@ -1286,35 +1309,29 @@
     }
   ],
   "economic_indicators": {
-    "GOLD": {
-      "price": 4432.2,
-      "change": 32.5,
-      "changePercent": 0.74,
-      "prev": 4399.7
-    },
-    "VIX": {
-      "price": 15.26,
-      "change": -0.18,
-      "changePercent": -1.17,
-      "prev": 15.44
-    },
-    "WTI": {
-      "price": 96.1,
-      "change": -5.81,
-      "changePercent": -5.7,
-      "prev": 101.91
-    },
-    "DXY": {
-      "price": 100.23,
-      "change": 0.01,
-      "changePercent": 0.01,
-      "prev": 100.22
+    "BRENT": {
+      "price": 98.75,
+      "change": -6.07,
+      "changePercent": -5.79,
+      "prev": 104.82
     },
     "US2Y": {
       "price": 3.98,
-      "change": 0.02,
-      "changePercent": 0.5,
+      "change": 0.01,
+      "changePercent": 0.25,
       "prev": 3.96
+    },
+    "VIX": {
+      "price": 14.81,
+      "change": -0.63,
+      "changePercent": -4.08,
+      "prev": 15.44
+    },
+    "GOLD": {
+      "price": 4416.7,
+      "change": 17,
+      "changePercent": 0.39,
+      "prev": 4399.7
     },
     "US10Y": {
       "price": 5,
@@ -1322,20 +1339,42 @@
       "changePercent": 1.01,
       "prev": 4.95
     },
-    "BRENT": {
-      "price": 99.2,
-      "change": -5.62,
-      "changePercent": -5.36,
-      "prev": 104.82
+    "DXY": {
+      "price": 100.21,
+      "change": -0.01,
+      "changePercent": -0.01,
+      "prev": 100.22
+    },
+    "WTI": {
+      "price": 95.46,
+      "change": -6.45,
+      "changePercent": -6.33,
+      "prev": 101.91
     }
   },
   "critical_events": [
+    {
+      "id": "unilateral_deescalation",
+      "name": "일방적 전투 축소/자제 선언",
+      "severity": "high",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "shorten"
+    },
+    {
+      "id": "capital_attack",
+      "name": "수도 직접 공격/포위",
+      "severity": "high",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "shorten"
+    },
     {
       "id": "conflict_expansion",
       "name": "전선 확대/신규 참전국",
       "severity": "moderate",
       "confidence": 1,
-      "matchCount": 6,
+      "matchCount": 4,
       "direction": "lengthen"
     }
   ],
