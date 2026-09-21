@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-09-21T10:56:41.983Z",
+  "timestamp": "2026-09-21T16:48:01.709Z",
   "war_day": 205,
   "probabilities": {
-    "1개월 내 (~3월)": 16,
-    "2~3개월 (4~5월)": 34.4,
-    "4~6개월 (6~8월)": 28.8,
-    "7~12개월 (9월~27/2월)": 15.5,
-    "1년 초과": 5.3
+    "1개월 내 (~3월)": 25.4,
+    "2~3개월 (4~5월)": 40,
+    "4~6개월 (6~8월)": 23.7,
+    "7~12개월 (9월~27/2월)": 9.1,
+    "1년 초과": 1.8
   },
   "factors": [
     {
@@ -45,9 +45,9 @@
       "decay": 0.4
     },
     {
-      "factor": "확전 뉴스 우세 (확전14:휴전0)",
-      "impact": "전쟁 장기화 가능성 (확전비율 100%)",
-      "weight": "+0.04%p (4~6개월)",
+      "factor": "확전 뉴스 우세 (확전14:휴전4)",
+      "impact": "전쟁 장기화 가능성 (확전비율 78%)",
+      "weight": "+0.03%p (4~6개월)",
       "direction": "lengthen",
       "detail": "언론에서 휴전보다 확전을 더 많이 보도하고 있습니다.",
       "keywords": [
@@ -164,11 +164,11 @@
       "decay": 1
     },
     {
-      "factor": "협상/외교 뉴스 2건 감지",
-      "impact": "외교 움직임 미약",
+      "factor": "협상/외교 뉴스 0건 감지",
+      "impact": "외교 움직임 부재",
       "weight": "+0.00%p (1개월내), +0.00%p (2~3개월)",
       "direction": "shorten",
-      "detail": "실시간 뉴스에서 협상 관련 기사 2건이 감지되었습니다.",
+      "detail": "실시간 뉴스에서 협상 관련 기사 0건이 감지되었습니다.",
       "keywords": [
         "negotiat",
         "talks",
@@ -181,11 +181,11 @@
       "decay": 1
     },
     {
-      "factor": "지역 확산 뉴스 22.2건 감지",
+      "factor": "지역 확산 뉴스 24.2건 감지",
       "impact": "주변국 대규모 연루 → 장기화 위험 높음",
       "weight": "+0.02%p (4~6개월), +0.02%p (7~12개월)",
       "direction": "lengthen",
-      "detail": "주변국을 언급하는 기사 22.2건이 감지되었습니다.",
+      "detail": "주변국을 언급하는 기사 24.2건이 감지되었습니다.",
       "keywords": [
         "saudi",
         "uae",
@@ -234,11 +234,65 @@
       "decay": 0.3
     },
     {
+      "factor": "[중대 이벤트] 공식 휴전/평화 합의",
+      "impact": "공식 휴전 또는 평화 합의 체결. 휴전 합의는 전쟁 종결의 결정적 단계이며, 합의 후 이행까지 평균 1~2주 소요.",
+      "weight": "+10.0%p (1개월내), +6.7%p (2~3개월), -5.3%p (4~6개월), -4.0%p (7~12개월), -2.0%p (1년초과)",
+      "direction": "shorten",
+      "detail": "공식 휴전 또는 평화 합의 체결. 휴전 합의는 전쟁 종결의 결정적 단계이며, 합의 후 이행까지 평균 1~2주 소요.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Child among four Palestinians killed in Israeli attacks on Gaza",
+      "keywords": [
+        "ceasefire",
+        "agree",
+        "ceasefire",
+        "deal",
+        "ceasefire",
+        "sign",
+        "truce",
+        "agree",
+        "armistice",
+        "sign",
+        "peace deal",
+        "ceasefire",
+        "accept",
+        "peace agreement"
+      ],
+      "applied": "2026-09-21",
+      "active": true,
+      "severity": "critical"
+    },
+    {
+      "factor": "[중대 이벤트] 교전국 정권 붕괴/쿠데타",
+      "impact": "교전국 정권 붕괴 또는 쿠데타. 이라크(2003): 바그다드 함락 후 3주 내 주요 전투 종료. 리비아(2011): 트리폴리 함락 후 2개월 내 종전.",
+      "weight": "+6.7%p (1개월내), +5.3%p (2~3개월), +1.3%p (4~6개월), -3.3%p (7~12개월), -2.7%p (1년초과)",
+      "direction": "shorten",
+      "detail": "교전국 정권 붕괴 또는 쿠데타. 이라크(2003): 바그다드 함락 후 3주 내 주요 전투 종료. 리비아(2011): 트리폴리 함락 후 2개월 내 종전.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Why is the US trying ‘regime change’ again?",
+      "keywords": [
+        "regime",
+        "collaps",
+        "regime",
+        "fall",
+        "government",
+        "fall",
+        "capital",
+        "fall",
+        "capital",
+        "captur",
+        "coup",
+        "detat",
+        "government",
+        "overthrow",
+        "regime",
+        "change"
+      ],
+      "applied": "2026-09-21",
+      "active": true,
+      "severity": "critical"
+    },
+    {
       "factor": "[중대 이벤트] 수도 직접 공격/포위",
       "impact": "수도 직접 공격. 베오그라드(1999): 78일 폭격 후 항복. 바그다드(2003): 21일만에 함락. 수도 타격은 전쟁 지속 의지를 급격히 약화.",
       "weight": "+4.0%p (1개월내), +6.0%p (2~3개월), -2.0%p (4~6개월), -2.0%p (7~12개월), -1.0%p (1년초과)",
       "direction": "shorten",
-      "detail": "수도 직접 공격. 베오그라드(1999): 78일 폭격 후 항복. 바그다드(2003): 21일만에 함락. 수도 타격은 전쟁 지속 의지를 급격히 약화.\n\n신뢰도: 확실 (100%), 관련 기사 10.6건 감지.\n관련: Iran’s military says US preparing to resume strikes | Iran war live: Tehran says world will be ‘astonished’ by its new weapons | Houthis say they targeted Saudi capital with ballistic missiles",
+      "detail": "수도 직접 공격. 베오그라드(1999): 78일 폭격 후 항복. 바그다드(2003): 21일만에 함락. 수도 타격은 전쟁 지속 의지를 급격히 약화.\n\n신뢰도: 확실 (100%), 관련 기사 6.6건 감지.\n관련: Houthis say they targeted Saudi capital with ballistic missiles | Thick smoke seen near Riyadh airport as Houthis claim attack on Saudi capital | The week around the world in 20 pictures",
       "keywords": [
         "capital",
         "bomb",
@@ -266,11 +320,37 @@
       "severity": "high"
     },
     {
+      "factor": "[중대 이벤트] 대규모 인도주의 위기",
+      "impact": "대규모 인도주의 위기. 국제사회 개입 압력 증가. 코소보(1999): 난민 위기가 NATO 작전 가속화. 인도적 위기는 국제 종전 압력을 2~3배 강화.",
+      "weight": "+1.3%p (1개월내), +2.7%p (2~3개월), +0.7%p (4~6개월), -0.7%p (7~12개월), -0.7%p (1년초과)",
+      "direction": "shorten",
+      "detail": "대규모 인도주의 위기. 국제사회 개입 압력 증가. 코소보(1999): 난민 위기가 NATO 작전 가속화. 인도적 위기는 국제 종전 압력을 2~3배 강화.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: NFL’s Azeez Al-Shaair pays tribute to slain Palestinian girl Wafaa Akila",
+      "keywords": [
+        "humanitarian",
+        "catastroph",
+        "civilian",
+        "massacre",
+        "genocide",
+        "refugee",
+        "crisis",
+        "humanitarian",
+        "crisis",
+        "war crime",
+        "evidence",
+        "civilian death",
+        "thousand",
+        "ethnic cleansing"
+      ],
+      "applied": "2026-09-21",
+      "active": true,
+      "severity": "high"
+    },
+    {
       "factor": "[중대 이벤트] 전선 확대/신규 참전국",
       "impact": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).",
       "weight": "-2.0%p (1개월내), -3.0%p (2~3개월), +4.0%p (4~6개월), +3.0%p (7~12개월), +2.0%p (1년초과)",
       "direction": "lengthen",
-      "detail": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).\n\n신뢰도: 확실 (100%), 관련 기사 6건 감지.\n관련: Trump Gets Caught in a Dilemma Over a Saudi Plea for Military Help | South Korea will not send military to support US war on Iran, defying Trump pressure | US to allow Iran delegation to attend UN meetings in New York as war passes half-year mark",
+      "detail": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).\n\n신뢰도: 확실 (100%), 관련 기사 6건 감지.\n관련: Why the Iran-Backed Houthis in Yemen and Saudi Arabia Are Back at War | Trump Gets Caught in a Dilemma Over a Saudi Plea for Military Help | South Korea will not send military to support US war on Iran, defying Trump pressure",
       "keywords": [
         "new front",
         "war spread",
@@ -292,11 +372,11 @@
       "severity": "moderate"
     },
     {
-      "factor": "유가 급등 (WTI $92.97/배럴)",
+      "factor": "유가 급등 (WTI $91.32/배럴)",
       "impact": "중간 수준 경제 압력",
       "weight": "+2%p (1-2개월)",
       "direction": "shorten",
-      "detail": "WTI 유가가 $92.97/배럴로 90달러 이상입니다. 호르무즈 해협 봉쇄와 맞물려 글로벌 에너지 시장에 큰 충격을 주고 있으며, 주요국들의 조기 종전 압력이 강화되고 있습니다.",
+      "detail": "WTI 유가가 $91.32/배럴로 90달러 이상입니다. 호르무즈 해협 봉쇄와 맞물려 글로벌 에너지 시장에 큰 충격을 주고 있으며, 주요국들의 조기 종전 압력이 강화되고 있습니다.",
       "keywords": [
         "oil",
         "crude",
@@ -309,11 +389,11 @@
       "active": true
     },
     {
-      "factor": "금값 사상최고 ($4387.6/oz)",
+      "factor": "금값 사상최고 ($4388.4/oz)",
       "impact": "안전자산 수요 폭증 → 글로벌 불안 심화",
       "weight": "+2%p (4-6개월)",
       "direction": "lengthen",
-      "detail": "금 가격이 온스당 $4387.6로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
+      "detail": "금 가격이 온스당 $4388.4로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
       "keywords": [
         "gold",
         "safe haven",
@@ -324,11 +404,11 @@
       "active": true
     },
     {
-      "factor": "미국 10년 국채금리 5% (고금리 지속)",
+      "factor": "미국 10년 국채금리 4.96% (고금리 지속)",
       "impact": "전쟁 자금 조달 비용 증가",
       "weight": "+1%p (4-6개월)",
       "direction": "mixed",
-      "detail": "미국 10년물 국채금리가 5%로 높은 수준을 유지하고 있습니다. 전쟁 자금 조달 비용이 증가하며, 장기전의 경제적 부담이 커지고 있습니다.",
+      "detail": "미국 10년물 국채금리가 4.96%로 높은 수준을 유지하고 있습니다. 전쟁 자금 조달 비용이 증가하며, 장기전의 경제적 부담이 커지고 있습니다.",
       "keywords": [
         "treasury",
         "yield",
@@ -341,60 +421,24 @@
     }
   ],
   "news_signals": {
-    "ceasefire_mentions": 0,
+    "ceasefire_mentions": 4,
     "escalation_mentions": 14,
-    "negotiation_mentions": 2,
+    "negotiation_mentions": 0,
     "casualty_mentions": 14,
-    "peace_mentions": 2,
-    "regional_spread": 22.2,
+    "peace_mentions": 0,
+    "regional_spread": 24.2,
     "total_articles": 50,
     "new_articles": 50,
-    "unique_events": 49,
-    "duplicates_removed": 1
+    "unique_events": 48,
+    "duplicates_removed": 2
   },
   "latest_news": [
     {
-      "title": "How oil, gas losses have shrunk Iran’s GDP by 10 percent during war",
-      "link": "https://www.aljazeera.com/news/2026/9/21/how-oil-gas-losses-have-shrunk-irans-gdp-by-10-percent-during-war?traffic_source=rss",
-      "pubDate": "Mon, 21 Sep 2026 10:38:41 +0000",
-      "source": "aljazeera",
-      "snippet": "The oil and gas sector shrank 26 percent, new official data shows, pointing to the costs of the US-Israel war on Iran.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Mystery object spotted hovering over Tehran",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/9/21/mystery-object-spotted-hovering-over-tehran?traffic_source=rss",
-      "pubDate": "Mon, 21 Sep 2026 10:10:14 +0000",
-      "source": "aljazeera",
-      "snippet": "A mysterious object filmed hovering over Tehran has sparked online speculation.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "A simple guide to the Yemen conflict",
-      "link": "https://www.aljazeera.com/news/2026/9/21/a-brief-history-of-the-yemen-conflict?traffic_source=rss",
-      "pubDate": "Mon, 21 Sep 2026 10:01:30 +0000",
-      "source": "aljazeera",
-      "snippet": "Here’s a brief history of Yemen’s war - from the Houthi takeover in 2014 to the latest escalation.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "The Houthis’ offensive is the latest spillover from Trump’s Iran disaster | Mohamad Bazzi",
-      "link": "https://www.theguardian.com/commentisfree/2026/sep/21/houthi-iran-war-trump",
-      "pubDate": "Mon, 21 Sep 2026 10:00:21 GMT",
+      "title": "Houthis move to seize strategic terrain after Trump calls off airstrikes at last minute",
+      "link": "https://www.theguardian.com/world/2026/sep/21/houthis-seize-strategic-terrain-yemen-trump-calls-off-airstrikes-last-minute",
+      "pubDate": "Mon, 21 Sep 2026 16:14:38 GMT",
       "source": "guardian",
-      "snippet": "Trump’s mess has rekindled Yemen’s civil war and a years-long conflict between the Houthis and Saudi ArabiaWhen the US and Israel launched a war of aggression against Iran in late February, Tehran’s a",
+      "snippet": "US president reportedly changed his mind over Saudi Arabia’s pleas for assistance as bombs were being loadedHouthi fighters are moving to seize strategic heights in Yemen that would cut the Red Sea co",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -402,47 +446,11 @@
       "_isDuplicate": false
     },
     {
-      "title": "Do Israelis feel any safer now than they did on October 6, 2023?",
-      "link": "https://www.aljazeera.com/news/2026/9/21/do-israelis-feel-any-safer-now-than-they-did-on-october-6-2023?traffic_source=rss",
-      "pubDate": "Mon, 21 Sep 2026 09:54:05 +0000",
-      "source": "aljazeera",
-      "snippet": "Despite having rarely been more secure, public concerns about security continue to dominate the election.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Can the US win the AI cold war with China?",
-      "link": "https://www.aljazeera.com/opinions/2026/9/21/can-the-us-win-the-ai-cold-war-with-china?traffic_source=rss",
-      "pubDate": "Mon, 21 Sep 2026 09:50:16 +0000",
-      "source": "aljazeera",
-      "snippet": "US attempts to slow down Chinese progress on AI through economic restrictions could backfire.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Why can’t the UN stop wars?",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/9/21/who-actually-has-power-at-the-united-nations?traffic_source=rss",
-      "pubDate": "Mon, 21 Sep 2026 06:17:27 +0000",
-      "source": "aljazeera",
-      "snippet": "The UN was created to help save the world from war. More than 80 years later, conflicts and atrocities continue. ",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Houthis Push to Expand Territory as Tensions With Saudi Arabia Rise",
-      "link": "https://www.nytimes.com/2026/09/20/world/middleeast/saudi-arabia-yemen-houthis-fighting.html",
-      "pubDate": "Mon, 21 Sep 2026 05:23:51 +0000",
+      "title": "Why the Iran-Backed Houthis in Yemen and Saudi Arabia Are Back at War",
+      "link": "https://www.nytimes.com/2026/09/21/world/middleeast/yemen-houthis-saudi-war.html",
+      "pubDate": "Mon, 21 Sep 2026 15:56:43 +0000",
       "source": "nytimes",
-      "snippet": "The Iranian-backed militia was engaged in fierce battles with Saudi-backed government forces in Yemen on Sunday, as it seeks to maintain momentum in the war.",
+      "snippet": "The conflict has opened a second front in the Middle East after the United States and Israel attacked Iran, adding to global uncertainty and turmoil in energy markets.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -450,11 +458,11 @@
       "_isDuplicate": false
     },
     {
-      "title": "Iran’s military says US preparing to resume strikes",
-      "link": "https://www.aljazeera.com/news/2026/9/21/irans-military-says-us-preparing-to-resume-strikes?traffic_source=rss",
-      "pubDate": "Mon, 21 Sep 2026 05:21:41 +0000",
+      "title": "US threatens to ground Iranian airlines worldwide from Wednesday",
+      "link": "https://www.aljazeera.com/economy/2026/9/21/us-threatens-to-ground-iranian-airlines-worldwide-from-wednesday?traffic_source=rss",
+      "pubDate": "Mon, 21 Sep 2026 15:18:12 +0000",
       "source": "aljazeera",
-      "snippet": "Tehran threatens retaliation as Trump weighs military action while Qatar pushes to revive talks.",
+      "snippet": "Treasury Secretary says airports and companies servicing Iranian carriers risk being cut off from the US dollar system.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -462,47 +470,11 @@
       "_isDuplicate": false
     },
     {
-      "title": "Why Israel Wants More One-Ton Bombs From the U.S.",
-      "link": "https://www.nytimes.com/2026/09/16/world/middleeast/israel-one-ton-bombs-us.html",
-      "pubDate": "Mon, 21 Sep 2026 04:20:14 +0000",
-      "source": "nytimes",
-      "snippet": "The Trump administration plans to deliver 60,000 of the powerful munitions at a time when opposition is growing in Washington to arms sales to Israel.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Whiplashed middle powers seek new alliances as Trump rages on world stage",
-      "link": "https://www.theguardian.com/us-news/2026/sep/21/us-allies-donald-trump-world-un-global-order",
-      "pubDate": "Mon, 21 Sep 2026 04:00:34 GMT",
-      "source": "guardian",
-      "snippet": "While world leaders prepare for annual UN gathering, shifts in the global order continue in the face of a disruptive American presidentIn the event of a midterms election battering, it is possible tha",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Trump Gets Caught in a Dilemma Over a Saudi Plea for Military Help",
-      "link": "https://www.nytimes.com/2026/09/20/us/politics/trump-yemen-houthis-red-sea-iran.html",
-      "pubDate": "Mon, 21 Sep 2026 02:36:46 +0000",
-      "source": "nytimes",
-      "snippet": "The president vacillated but decided on Sunday not to join Saudi Arabia, for now, in joint strikes against the Houthis in Yemen. But he also needs the kingdom’s cooperation in his war against Iran.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Trump administration readies sweeping sanctions against ICC, reports say",
-      "link": "https://www.aljazeera.com/news/2026/9/21/trump-administration-readies-sweeping-sanctions-against-icc-reports-say?traffic_source=rss",
-      "pubDate": "Mon, 21 Sep 2026 01:19:42 +0000",
+      "title": "Poor storage or sabotage? Series of explosions in Syria raises fears",
+      "link": "https://www.aljazeera.com/news/2026/9/21/poor-storage-or-sabotage-series-of-explosions-in-syria-raises-fears?traffic_source=rss",
+      "pubDate": "Mon, 21 Sep 2026 15:16:03 +0000",
       "source": "aljazeera",
-      "snippet": "Measures targeting the court itself could disrupt payments, IT services and investigations.",
+      "snippet": "Repeated blasts at military sites expose the risks facing Syria as it rebuilds its army after years of war.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -510,11 +482,11 @@
       "_isDuplicate": false
     },
     {
-      "title": "Ethiopian armed groups forge alliance against government",
-      "link": "https://www.aljazeera.com/news/2026/9/21/ethiopian-armed-groups-forge-alliance-against-government?traffic_source=rss",
-      "pubDate": "Mon, 21 Sep 2026 00:34:30 +0000",
+      "title": "How an economic squeeze is changing everyday life and work for Iranians",
+      "link": "https://www.aljazeera.com/economy/2026/9/21/how-an-economic-squeeze-is-changing-everyday-life-and-work-for-iranians?traffic_source=rss",
+      "pubDate": "Mon, 21 Sep 2026 14:50:46 +0000",
       "source": "aljazeera",
-      "snippet": "Former adversaries say they will settle differences as fears grow of expanding war in Ethiopia.",
+      "snippet": "Iran’s government is trying to change some work patterns to help save on fuel and energy amid struggles and shortages.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -522,11 +494,117 @@
       "_isDuplicate": false
     },
     {
-      "title": "Iran war live: Tehran says world will be ‘astonished’ by its new weapons",
-      "link": "https://www.aljazeera.com/news/liveblog/2026/9/21/iran-war-live-tehran-warns-us-against-new-strikes-fighting-rages-in-yemen?traffic_source=rss",
-      "pubDate": "Mon, 21 Sep 2026 00:00:47 +0000",
+      "title": "Is it a missile? Is it a drone? What’s the Pelican used by Ukraine?",
+      "link": "https://www.aljazeera.com/news/2026/9/21/is-it-a-missile-is-it-a-drone-whats-the-pelican-used-by-ukraine?traffic_source=rss",
+      "pubDate": "Mon, 21 Sep 2026 14:19:46 +0000",
       "source": "aljazeera",
-      "snippet": "Tehran says it has learnt the US may be planning a new round of strikes, warns of retaliation &#039;without limitations&#039;.",
+      "snippet": "The use of the Pelican has provoked interest among military analysts as to whether it is a tactical ballistic missile.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Yemenis flee across Red Sea as Houthis and Saudi-backed forces escalate war",
+      "link": "https://www.bbc.co.uk/news/articles/cw4gm7l742dmo?at_medium=RSS&at_campaign=rss",
+      "pubDate": "Mon, 21 Sep 2026 14:14:16 GMT",
+      "source": "bbc",
+      "snippet": "The BBC's Frank Gardner speaks to some of those who have fled the war by crossing the Red Sea to Djibouti.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "What’s the US–China AI ‘hotline’ that Trump plans to pitch to Xi Jinping?",
+      "link": "https://www.aljazeera.com/news/2026/9/21/whats-the-us-china-ai-hotline-that-trump-plans-to-pitch-to-xi?traffic_source=rss",
+      "pubDate": "Mon, 21 Sep 2026 13:32:55 +0000",
+      "source": "aljazeera",
+      "snippet": "Washington and Beijing discuss AI hotline idea amid escalating competition and restrictions on advanced technologies.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Inside Kazakhstan’s push to become a regional AI centre",
+      "link": "https://www.aljazeera.com/news/2026/9/21/inside-kazakhstans-push-to-become-a-regional-ai-centre?traffic_source=rss",
+      "pubDate": "Mon, 21 Sep 2026 13:26:01 +0000",
+      "source": "aljazeera",
+      "snippet": "Kazakhstan accelerates AI development but experts warn of impact on the environment and human rights.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "CNN, Politico, MS NOW sue Trump administration over White House ban",
+      "link": "https://www.aljazeera.com/news/2026/9/21/cnn-politico-ms-now-to-sue-trump-administration-over-white-house-ban?traffic_source=rss",
+      "pubDate": "Mon, 21 Sep 2026 13:15:24 +0000",
+      "source": "aljazeera",
+      "snippet": "Trump says ban targets ‘fake news’, which poses a ‘threat to our National Security’.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "NFL’s Azeez Al-Shaair honours another Palestinian girl killed by Israel",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/9/21/nfls-azeez-al-shaair-honours-another-palestinian-girl-killed-by-israel?traffic_source=rss",
+      "pubDate": "Mon, 21 Sep 2026 12:49:07 +0000",
+      "source": "aljazeera",
+      "snippet": "Azeez Al-Shaair has paid tribute to another Palestinian child killed by Israel, despite the NFL fine last week.",
+      "isNew": true,
+      "_isDuplicate": true,
+      "_sourceCount": 1
+    },
+    {
+      "title": "Child among four Palestinians killed in Israeli attacks on Gaza",
+      "link": "https://www.aljazeera.com/news/2026/9/21/israeli-attacks-on-gaza-kill-three-including-a-child?traffic_source=rss",
+      "pubDate": "Mon, 21 Sep 2026 12:32:43 +0000",
+      "source": "aljazeera",
+      "snippet": "Israeli attacks on Palestinians continue in Gaza despite a &#039;ceasefire&#039; signed in October.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Israeli forces arrest dozens of Palestinians in occupied West Bank raid",
+      "link": "https://www.aljazeera.com/news/2026/9/21/israeli-forces-arrest-dozens-of-palestinians-in-occupied-west-bank-raid?traffic_source=rss",
+      "pubDate": "Mon, 21 Sep 2026 12:31:10 +0000",
+      "source": "aljazeera",
+      "snippet": "At least 53 young men are being held in Biddu after raids left the town in lockdown, with schools and businesses shut.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "NFL’s Azeez Al-Shaair pays tribute to slain Palestinian girl Wafaa Akila",
+      "link": "https://www.aljazeera.com/sports/2026/9/21/nfls-azeez-al-shaair-pays-tribute-to-slain-palestinian-girl-wafaa-akila?traffic_source=rss",
+      "pubDate": "Mon, 21 Sep 2026 11:26:41 +0000",
+      "source": "aljazeera",
+      "snippet": "Al-Shaair wears eye black with Akila&#039;s name despite being fined for displaying messages about Israel&#039;s genocide in Gaza.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": true,
+      "_clusterSize": 2,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Why do Sudan’s humanitarian truces keep failing and who is to blame?",
+      "link": "https://www.aljazeera.com/news/2026/9/21/why-do-sudans-humanitarian-truces-keep-failing-and-who-is-to-blame?traffic_source=rss",
+      "pubDate": "Mon, 21 Sep 2026 11:22:40 +0000",
+      "source": "aljazeera",
+      "snippet": "Efforts to bring about humanitarian truces in Sudan hit a dead end as warring factions prioritise battlefield victories.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -540,118 +618,117 @@
         "category_id": "military",
         "category_name": "군사 작전",
         "category_icon": "⚔️",
-        "count": 18,
-        "new_count": 18,
+        "count": 22,
+        "new_count": 22,
         "articles": [
           {
-            "title": "Iran’s military says US preparing to resume strikes",
-            "link": "https://www.aljazeera.com/news/2026/9/21/irans-military-says-us-preparing-to-resume-strikes?traffic_source=rss",
+            "title": "Houthis move to seize strategic terrain after Trump calls off airstrikes at last minute",
+            "link": "https://www.theguardian.com/world/2026/sep/21/houthis-seize-strategic-terrain-yemen-trump-calls-off-airstrikes-last-minute",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Mon, 21 Sep 2026 16:14:38 GMT",
+            "snippet": "US president reportedly changed his mind over Saudi Arabia’s pleas for assistance as bombs were being loadedHouthi fighters are moving to seize strategic heights in Yemen that would cut the Red Sea co",
+            "isNew": true
+          },
+          {
+            "title": "Why the Iran-Backed Houthis in Yemen and Saudi Arabia Are Back at War",
+            "link": "https://www.nytimes.com/2026/09/21/world/middleeast/yemen-houthis-saudi-war.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Mon, 21 Sep 2026 15:56:43 +0000",
+            "snippet": "The conflict has opened a second front in the Middle East after the United States and Israel attacked Iran, adding to global uncertainty and turmoil in energy markets.",
+            "isNew": true
+          },
+          {
+            "title": "US threatens to ground Iranian airlines worldwide from Wednesday",
+            "link": "https://www.aljazeera.com/economy/2026/9/21/us-threatens-to-ground-iranian-airlines-worldwide-from-wednesday?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Mon, 21 Sep 2026 05:21:41 +0000",
-            "snippet": "Tehran threatens retaliation as Trump weighs military action while Qatar pushes to revive talks.",
+            "pubDate": "Mon, 21 Sep 2026 15:18:12 +0000",
+            "snippet": "Treasury Secretary says airports and companies servicing Iranian carriers risk being cut off from the US dollar system.",
             "isNew": true
           },
           {
-            "title": "Trump Gets Caught in a Dilemma Over a Saudi Plea for Military Help",
-            "link": "https://www.nytimes.com/2026/09/20/us/politics/trump-yemen-houthis-red-sea-iran.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Mon, 21 Sep 2026 02:36:46 +0000",
-            "snippet": "The president vacillated but decided on Sunday not to join Saudi Arabia, for now, in joint strikes against the Houthis in Yemen. But he also needs the kingdom’s cooperation in his war against Iran.",
-            "isNew": true
-          },
-          {
-            "title": "Iran war live: Tehran says world will be ‘astonished’ by its new weapons",
-            "link": "https://www.aljazeera.com/news/liveblog/2026/9/21/iran-war-live-tehran-warns-us-against-new-strikes-fighting-rages-in-yemen?traffic_source=rss",
+            "title": "Poor storage or sabotage? Series of explosions in Syria raises fears",
+            "link": "https://www.aljazeera.com/news/2026/9/21/poor-storage-or-sabotage-series-of-explosions-in-syria-raises-fears?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Mon, 21 Sep 2026 00:00:47 +0000",
-            "snippet": "Tehran says it has learnt the US may be planning a new round of strikes, warns of retaliation &#039;without limitations&#039;.",
+            "pubDate": "Mon, 21 Sep 2026 15:16:03 +0000",
+            "snippet": "Repeated blasts at military sites expose the risks facing Syria as it rebuilds its army after years of war.",
             "isNew": true
           },
           {
-            "title": "Middle East braces for more violence as Iran claims US is planning to renew bombing campaign",
-            "link": "https://www.theguardian.com/world/2026/sep/20/middle-east-braces-for-more-violence-as-iran-claims-us-is-planning-to-renew-bombing-campaign",
+            "title": "Is it a missile? Is it a drone? What’s the Pelican used by Ukraine?",
+            "link": "https://www.aljazeera.com/news/2026/9/21/is-it-a-missile-is-it-a-drone-whats-the-pelican-used-by-ukraine?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Mon, 21 Sep 2026 14:19:46 +0000",
+            "snippet": "The use of the Pelican has provoked interest among military analysts as to whether it is a tactical ballistic missile.",
+            "isNew": true
+          },
+          {
+            "title": "What’s the US–China AI ‘hotline’ that Trump plans to pitch to Xi Jinping?",
+            "link": "https://www.aljazeera.com/news/2026/9/21/whats-the-us-china-ai-hotline-that-trump-plans-to-pitch-to-xi?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Mon, 21 Sep 2026 13:32:55 +0000",
+            "snippet": "Washington and Beijing discuss AI hotline idea amid escalating competition and restrictions on advanced technologies.",
+            "isNew": true
+          },
+          {
+            "title": "Child among four Palestinians killed in Israeli attacks on Gaza",
+            "link": "https://www.aljazeera.com/news/2026/9/21/israeli-attacks-on-gaza-kill-three-including-a-child?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Mon, 21 Sep 2026 12:32:43 +0000",
+            "snippet": "Israeli attacks on Palestinians continue in Gaza despite a &#039;ceasefire&#039; signed in October.",
+            "isNew": true
+          },
+          {
+            "title": "Israeli forces arrest dozens of Palestinians in occupied West Bank raid",
+            "link": "https://www.aljazeera.com/news/2026/9/21/israeli-forces-arrest-dozens-of-palestinians-in-occupied-west-bank-raid?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Mon, 21 Sep 2026 12:31:10 +0000",
+            "snippet": "At least 53 young men are being held in Biddu after raids left the town in lockdown, with schools and businesses shut.",
+            "isNew": true
+          },
+          {
+            "title": "Why is the US trying ‘regime change’ again?",
+            "link": "https://www.aljazeera.com/video/project-force-2/2026/9/21/why-is-the-us-trying-regime-change-again?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Mon, 21 Sep 2026 11:00:49 +0000",
+            "snippet": "The US invasions after 9/11 were disasters -- but the US is trying again in Iran anyway ",
+            "isNew": true
+          },
+          {
+            "title": "‘I lost my children, and I’m afraid of losing my baby again’: a day in the life of a pregnant woman in Gaza",
+            "link": "https://www.theguardian.com/global-development/ng-interactive/2026/sep/21/alaa-gaza-day-in-life-pregnant-woman-alaa",
             "source": "guardian",
             "sources": [
               "guardian"
             ],
-            "pubDate": "Sun, 20 Sep 2026 18:56:45 GMT",
-            "snippet": "Tensions grow as Trump tells Fox News he is considering ‘wiping Iran out’ after attacks on Riyadh by Houthi rebelsGovernments across the Middle East are bracing for an escalation of violence after Ira",
-            "isNew": true
-          },
-          {
-            "title": "Houthis say they targeted Saudi capital with ballistic missiles",
-            "link": "https://www.bbc.co.uk/news/articles/cwly5d9v7r43o?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
-            "sources": [
-              "bbc",
-              "nytimes"
-            ],
-            "pubDate": "Sat, 19 Sep 2026 23:49:26 GMT",
-            "snippet": "A reported strike on a fuel depot at Riyadh airport caused delays on Saturday, as Saudi Arabia says it shot down a ballistic missile aimed at the capital.",
-            "isNew": true
-          },
-          {
-            "title": "Israeli President Pardons Ex-Soldier Over Killing of Incapacitated Palestinian",
-            "link": "https://www.nytimes.com/2026/09/19/world/middleeast/israel-pardon-azaria.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Sun, 20 Sep 2026 02:45:46 +0000",
-            "snippet": "In 2016, Elor Azaria killed a Palestinian attacker who had been injured, fueling a public debate both at home and abroad over Israeli military actions.",
-            "isNew": true
-          },
-          {
-            "title": "Cost of Iran War Estimated at $43.6 Billion",
-            "link": "https://www.nytimes.com/2026/09/18/us/politics/iran-war-cost-pentagon.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Sun, 20 Sep 2026 02:41:51 +0000",
-            "snippet": "For the first time, the Pentagon reported costs incurred by each armed service. The figures are almost certainly on the low side, congressional officials said.",
-            "isNew": true
-          },
-          {
-            "title": "Israeli president pardons combat medic who shot dead wounded Palestinian attacker",
-            "link": "https://www.theguardian.com/world/2026/sep/19/israel-president-pardon-elor-azaria-wounded-palestinian-attacker",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Sat, 19 Sep 2026 20:32:17 GMT",
-            "snippet": "Elor Azaria’s conviction in 2017 for manslaughter of man who stabbed soldier continues to divide countryIsrael’s president has pardoned a combat medic who shot dead a badly wounded Palestinian attacke",
-            "isNew": true
-          },
-          {
-            "title": "The week around the world in 20 pictures",
-            "link": "https://www.theguardian.com/artanddesign/gallery/2026/sep/18/the-week-around-the-world-in-20-pictures",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Fri, 18 Sep 2026 18:23:58 GMT",
-            "snippet": "Russian strikes in Kyiv, a female militia march in Tehran, protests in Pristina and Alfie Hewett at the US Open – the past seven days as captured by the world’s leading photojournalists Continue readi",
-            "isNew": true
-          },
-          {
-            "title": "This Israeli election could be the country’s last – this week I saw that for myself | Jonathan Freedland",
-            "link": "https://www.theguardian.com/commentisfree/2026/sep/18/israel-election-last-october-palestinians",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Fri, 18 Sep 2026 17:20:45 GMT",
-            "snippet": "Spend time on the ground and you see how high the stakes are for next month’s contest – for Israelis and Palestinians alikeCandidates always say it, but this time it’s true. When Israel goes to the po",
+            "pubDate": "Mon, 21 Sep 2026 11:00:23 GMT",
+            "snippet": "Alaa lives in a tent pitched on the ruins of her house, which was destroyed by an Israeli airstrike that killed all three of her children. In one month, she will give birth again.As the war in Gaza ap",
             "isNew": true
           }
         ]
@@ -663,6 +740,28 @@
         "count": 9,
         "new_count": 9,
         "articles": [
+          {
+            "title": "Yemenis flee across Red Sea as Houthis and Saudi-backed forces escalate war",
+            "link": "https://www.bbc.co.uk/news/articles/cw4gm7l742dmo?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc"
+            ],
+            "pubDate": "Mon, 21 Sep 2026 14:14:16 GMT",
+            "snippet": "The BBC's Frank Gardner speaks to some of those who have fled the war by crossing the Red Sea to Djibouti.",
+            "isNew": true
+          },
+          {
+            "title": "Inside Kazakhstan’s push to become a regional AI centre",
+            "link": "https://www.aljazeera.com/news/2026/9/21/inside-kazakhstans-push-to-become-a-regional-ai-centre?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Mon, 21 Sep 2026 13:26:01 +0000",
+            "snippet": "Kazakhstan accelerates AI development but experts warn of impact on the environment and human rights.",
+            "isNew": true
+          },
           {
             "title": "A simple guide to the Yemen conflict",
             "link": "https://www.aljazeera.com/news/2026/9/21/a-brief-history-of-the-yemen-conflict?traffic_source=rss",
@@ -708,17 +807,6 @@
             "isNew": true
           },
           {
-            "title": "Ethiopian armed groups forge alliance against government",
-            "link": "https://www.aljazeera.com/news/2026/9/21/ethiopian-armed-groups-forge-alliance-against-government?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Mon, 21 Sep 2026 00:34:30 +0000",
-            "snippet": "Former adversaries say they will settle differences as fears grow of expanding war in Ethiopia.",
-            "isNew": true
-          },
-          {
             "title": "Thick smoke seen near Riyadh airport as Houthis claim attack on Saudi capital",
             "link": "https://www.theguardian.com/world/2026/sep/19/saudi-arabia-riyadh-airport",
             "source": "guardian",
@@ -750,17 +838,6 @@
             "pubDate": "Fri, 18 Sep 2026 02:32:19 +0000",
             "snippet": "U.S. intelligence agencies have warned in internal reports that China could acquire or steal U.S. warplane technology if F-35 jets are sent to Saudi Arabia.",
             "isNew": true
-          },
-          {
-            "title": "Russia and China Veto U.S. Bid to Renew U.N. Monitoring of Iran Nuclear Program",
-            "link": "https://www.nytimes.com/2026/09/17/world/middleeast/un-iran-resolution-russia-china-veto.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Thu, 17 Sep 2026 19:34:10 +0000",
-            "snippet": "The conflict underscored the distance between world powers over the United States’ pressure campaign on Iran.",
-            "isNew": true
           }
         ]
       },
@@ -768,9 +845,20 @@
         "category_id": "economy",
         "category_name": "경제 영향",
         "category_icon": "📊",
-        "count": 6,
-        "new_count": 6,
+        "count": 5,
+        "new_count": 5,
         "articles": [
+          {
+            "title": "How an economic squeeze is changing everyday life and work for Iranians",
+            "link": "https://www.aljazeera.com/economy/2026/9/21/how-an-economic-squeeze-is-changing-everyday-life-and-work-for-iranians?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Mon, 21 Sep 2026 14:50:46 +0000",
+            "snippet": "Iran’s government is trying to change some work patterns to help save on fuel and energy amid struggles and shortages.",
+            "isNew": true
+          },
           {
             "title": "How oil, gas losses have shrunk Iran’s GDP by 10 percent during war",
             "link": "https://www.aljazeera.com/news/2026/9/21/how-oil-gas-losses-have-shrunk-irans-gdp-by-10-percent-during-war?traffic_source=rss",
@@ -780,17 +868,6 @@
             ],
             "pubDate": "Mon, 21 Sep 2026 10:38:41 +0000",
             "snippet": "The oil and gas sector shrank 26 percent, new official data shows, pointing to the costs of the US-Israel war on Iran.",
-            "isNew": true
-          },
-          {
-            "title": "Trump administration readies sweeping sanctions against ICC, reports say",
-            "link": "https://www.aljazeera.com/news/2026/9/21/trump-administration-readies-sweeping-sanctions-against-icc-reports-say?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Mon, 21 Sep 2026 01:19:42 +0000",
-            "snippet": "Measures targeting the court itself could disrupt payments, IT services and investigations.",
             "isNew": true
           },
           {
@@ -825,81 +902,6 @@
             "pubDate": "Fri, 18 Sep 2026 07:51:46 +0000",
             "snippet": "Mahan Air, a major airline, said it would stop flying to Turkey and Oman just over a week after new restrictions were announced, adding to U.S. pressure on the economy.",
             "isNew": true
-          },
-          {
-            "title": "Global Economy Is Running Out of Wiggle Room",
-            "link": "https://www.nytimes.com/2026/09/17/business/economy/iran-war-energy-prices.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Thu, 17 Sep 2026 13:14:06 +0000",
-            "snippet": "Many countries blunted the most painful effects of the energy shock from the war in Iran. But prices remain elevated and risks are multiplying.",
-            "isNew": true
-          }
-        ]
-      },
-      {
-        "category_id": "other",
-        "category_name": "기타",
-        "category_icon": "📰",
-        "count": 6,
-        "new_count": 6,
-        "articles": [
-          {
-            "title": "Mystery object spotted hovering over Tehran",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/21/mystery-object-spotted-hovering-over-tehran?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Mon, 21 Sep 2026 10:10:14 +0000",
-            "snippet": "A mysterious object filmed hovering over Tehran has sparked online speculation.",
-            "isNew": true
-          },
-          {
-            "title": "Why can’t the UN stop wars?",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/21/who-actually-has-power-at-the-united-nations?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Mon, 21 Sep 2026 06:17:27 +0000",
-            "snippet": "The UN was created to help save the world from war. More than 80 years later, conflicts and atrocities continue. ",
-            "isNew": true
-          },
-          {
-            "title": "Israeli Tourist Trap ‘Herod’s Pool’ Is Draining Palestinians’ Land Dry",
-            "link": "https://www.nytimes.com/2026/09/20/world/middleeast/west-bank-pool-palestinians-israelis-water.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Sun, 20 Sep 2026 09:00:50 +0000",
-            "snippet": "Israeli lawmakers have promoted visits to an ancient reservoir in the West Bank that was refilled this summer with water diverted from Palestinian-owned farms.",
-            "isNew": true
-          },
-          {
-            "title": "Iranian actor Laleh Marzban faces severe threats after Venice film festival speech",
-            "link": "https://www.theguardian.com/film/2026/sep/18/iranian-actor-laheh-marzban-venice-film-festival-speech-falling-house",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Fri, 18 Sep 2026 09:59:09 GMT",
-            "snippet": "Marzban, who won a best actress award for her portrayal of a woman held hostage by her father in Falling House, has received condemnations from authorities after dedicating her prize to ‘the women of ",
-            "isNew": true
-          },
-          {
-            "title": "What Is the E1 Project, Israel’s Disputed Settlement Plan in the West Bank?",
-            "link": "https://www.nytimes.com/2026/09/17/world/middleeast/e1-israel-west-bank-settlement.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Thu, 17 Sep 2026 14:14:58 +0000",
-            "snippet": "Israel’s right-wing government is opening bidding for thousands of housing units in a patch of the West Bank, a move that would thwart efforts at Palestinian statehood.",
-            "isNew": true
           }
         ]
       },
@@ -910,6 +912,17 @@
         "count": 5,
         "new_count": 5,
         "articles": [
+          {
+            "title": "CNN, Politico, MS NOW sue Trump administration over White House ban",
+            "link": "https://www.aljazeera.com/news/2026/9/21/cnn-politico-ms-now-to-sue-trump-administration-over-white-house-ban?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Mon, 21 Sep 2026 13:15:24 +0000",
+            "snippet": "Trump says ban targets ‘fake news’, which poses a ‘threat to our National Security’.",
+            "isNew": true
+          },
           {
             "title": "Do Israelis feel any safer now than they did on October 6, 2023?",
             "link": "https://www.aljazeera.com/news/2026/9/21/do-israelis-feel-any-safer-now-than-they-did-on-october-6-2023?traffic_source=rss",
@@ -953,16 +966,58 @@
             "pubDate": "Sat, 19 Sep 2026 05:00:37 GMT",
             "snippet": "As Gaza documentary wins cinematic acclaim, its directors face vitriol in Israel amid a febrile election campaignFirst there was a moment of stunned silence. Then, in the Sala Grande, the main screeni",
             "isNew": true
+          }
+        ]
+      },
+      {
+        "category_id": "other",
+        "category_name": "기타",
+        "category_icon": "📰",
+        "count": 4,
+        "new_count": 4,
+        "articles": [
+          {
+            "title": "NFL’s Azeez Al-Shaair pays tribute to slain Palestinian girl Wafaa Akila",
+            "link": "https://www.aljazeera.com/sports/2026/9/21/nfls-azeez-al-shaair-pays-tribute-to-slain-palestinian-girl-wafaa-akila?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Mon, 21 Sep 2026 11:26:41 +0000",
+            "snippet": "Al-Shaair wears eye black with Akila&#039;s name despite being fined for displaying messages about Israel&#039;s genocide in Gaza.",
+            "isNew": true
           },
           {
-            "title": "US to allow Iran delegation to attend UN meetings in New York as war passes half-year mark",
-            "link": "https://www.bbc.co.uk/news/articles/c6n8m72r13ngo?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
+            "title": "Mystery object spotted hovering over Tehran",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/21/mystery-object-spotted-hovering-over-tehran?traffic_source=rss",
+            "source": "aljazeera",
             "sources": [
-              "bbc"
+              "aljazeera"
             ],
-            "pubDate": "Thu, 17 Sep 2026 21:41:19 GMT",
-            "snippet": "The BBC understands Iranian President Masoud Pezeshkian and Foreign Minister Abbas Araghchi are among the delegates allowed to enter the US.",
+            "pubDate": "Mon, 21 Sep 2026 10:10:14 +0000",
+            "snippet": "A mysterious object filmed hovering over Tehran has sparked online speculation.",
+            "isNew": true
+          },
+          {
+            "title": "Israeli Tourist Trap ‘Herod’s Pool’ Is Draining Palestinians’ Land Dry",
+            "link": "https://www.nytimes.com/2026/09/20/world/middleeast/west-bank-pool-palestinians-israelis-water.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Sun, 20 Sep 2026 09:00:50 +0000",
+            "snippet": "Israeli lawmakers have promoted visits to an ancient reservoir in the West Bank that was refilled this summer with water diverted from Palestinian-owned farms.",
+            "isNew": true
+          },
+          {
+            "title": "Iranian actor Laleh Marzban faces severe threats after Venice film festival speech",
+            "link": "https://www.theguardian.com/film/2026/sep/18/iranian-actor-laheh-marzban-venice-film-festival-speech-falling-house",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Fri, 18 Sep 2026 09:59:09 GMT",
+            "snippet": "Marzban, who won a best actress award for her portrayal of a woman held hostage by her father in Falling House, has received condemnations from authorities after dedicating her prize to ‘the women of ",
             "isNew": true
           }
         ]
@@ -971,9 +1026,20 @@
         "category_id": "humanitarian",
         "category_name": "인도주의/피해",
         "category_icon": "🏥",
-        "count": 4,
-        "new_count": 4,
+        "count": 3,
+        "new_count": 3,
         "articles": [
+          {
+            "title": "Why do Sudan’s humanitarian truces keep failing and who is to blame?",
+            "link": "https://www.aljazeera.com/news/2026/9/21/why-do-sudans-humanitarian-truces-keep-failing-and-who-is-to-blame?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Mon, 21 Sep 2026 11:22:40 +0000",
+            "snippet": "Efforts to bring about humanitarian truces in Sudan hit a dead end as warring factions prioritise battlefield victories.",
+            "isNew": true
+          },
           {
             "title": "Inside the Breakdown of U.K.-Israel Relations Over West Bank Settlements",
             "link": "https://www.nytimes.com/2026/09/19/world/europe/uk-israel-west-bank-sanctions.html",
@@ -995,48 +1061,6 @@
             "pubDate": "Sun, 20 Sep 2026 14:59:59 +0000",
             "snippet": "The Israeli officials said an arrest had been made. The attack was on the eve of Yom Kippur, the holiest day in the Jewish calendar. Violence in the territory has grown recently.",
             "isNew": true
-          },
-          {
-            "title": "Trump administration again denies entry visas to Palestinian officials ahead of UN general assembly",
-            "link": "https://www.theguardian.com/us-news/2026/sep/17/trump-denies-visas-palestine-un",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Fri, 18 Sep 2026 00:42:39 GMT",
-            "snippet": "For the second year in a row, the administration has barred the Palestinian delegation from US travel for the forumThe US state department said on Wednesday that it had again denied entry visas to Pal",
-            "isNew": true
-          },
-          {
-            "title": "Eight children among 21 killed after war-damaged Gaza building collapses, rescuers say",
-            "link": "https://www.bbc.co.uk/news/articles/cvp8d00j9gg5o?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
-            "sources": [
-              "bbc"
-            ],
-            "pubDate": "Wed, 16 Sep 2026 17:16:47 GMT",
-            "snippet": "Some 10 families had reportedly been living in the six-storey building in Gaza City that was hit by an Israeli strike last year.",
-            "isNew": true
-          }
-        ]
-      },
-      {
-        "category_id": "diplomacy",
-        "category_name": "외교/협상",
-        "category_icon": "🤝",
-        "count": 1,
-        "new_count": 1,
-        "articles": [
-          {
-            "title": "US blocks Palestinian leader from UN meeting in New York for second year in row",
-            "link": "https://www.bbc.co.uk/news/articles/cq783jlrr282o?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
-            "sources": [
-              "bbc"
-            ],
-            "pubDate": "Thu, 17 Sep 2026 09:06:08 GMT",
-            "snippet": "The US State Department extended visa sanctions after accusing Palestinian officials of failing to live up to peace process commitments.",
-            "isNew": true
           }
         ]
       }
@@ -1044,17 +1068,47 @@
     "recent_30min": {
       "total_new": 50,
       "by_category": {
-        "economy": {
-          "count": 6,
+        "military": {
+          "count": 23,
           "titles": [
             {
-              "title": "How oil, gas losses have shrunk Iran’s GDP by 10 percent during war",
-              "link": "https://www.aljazeera.com/news/2026/9/21/how-oil-gas-losses-have-shrunk-irans-gdp-by-10-percent-during-war?traffic_source=rss",
+              "title": "Houthis move to seize strategic terrain after Trump calls off airstrikes at last minute",
+              "link": "https://www.theguardian.com/world/2026/sep/21/houthis-seize-strategic-terrain-yemen-trump-calls-off-airstrikes-last-minute",
+              "source": "guardian"
+            },
+            {
+              "title": "Why the Iran-Backed Houthis in Yemen and Saudi Arabia Are Back at War",
+              "link": "https://www.nytimes.com/2026/09/21/world/middleeast/yemen-houthis-saudi-war.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "US threatens to ground Iranian airlines worldwide from Wednesday",
+              "link": "https://www.aljazeera.com/economy/2026/9/21/us-threatens-to-ground-iranian-airlines-worldwide-from-wednesday?traffic_source=rss",
               "source": "aljazeera"
             },
             {
-              "title": "Trump administration readies sweeping sanctions against ICC, reports say",
-              "link": "https://www.aljazeera.com/news/2026/9/21/trump-administration-readies-sweeping-sanctions-against-icc-reports-say?traffic_source=rss",
+              "title": "Poor storage or sabotage? Series of explosions in Syria raises fears",
+              "link": "https://www.aljazeera.com/news/2026/9/21/poor-storage-or-sabotage-series-of-explosions-in-syria-raises-fears?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Is it a missile? Is it a drone? What’s the Pelican used by Ukraine?",
+              "link": "https://www.aljazeera.com/news/2026/9/21/is-it-a-missile-is-it-a-drone-whats-the-pelican-used-by-ukraine?traffic_source=rss",
+              "source": "aljazeera"
+            }
+          ]
+        },
+        "economy": {
+          "count": 5,
+          "titles": [
+            {
+              "title": "How an economic squeeze is changing everyday life and work for Iranians",
+              "link": "https://www.aljazeera.com/economy/2026/9/21/how-an-economic-squeeze-is-changing-everyday-life-and-work-for-iranians?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "How oil, gas losses have shrunk Iran’s GDP by 10 percent during war",
+              "link": "https://www.aljazeera.com/news/2026/9/21/how-oil-gas-losses-have-shrunk-irans-gdp-by-10-percent-during-war?traffic_source=rss",
               "source": "aljazeera"
             },
             {
@@ -1074,39 +1128,19 @@
             }
           ]
         },
-        "other": {
-          "count": 6,
-          "titles": [
-            {
-              "title": "Mystery object spotted hovering over Tehran",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/9/21/mystery-object-spotted-hovering-over-tehran?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Why can’t the UN stop wars?",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/9/21/who-actually-has-power-at-the-united-nations?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Israeli Tourist Trap ‘Herod’s Pool’ Is Draining Palestinians’ Land Dry",
-              "link": "https://www.nytimes.com/2026/09/20/world/middleeast/west-bank-pool-palestinians-israelis-water.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Iranian actor Laleh Marzban faces severe threats after Venice film festival speech",
-              "link": "https://www.theguardian.com/film/2026/sep/18/iranian-actor-laheh-marzban-venice-film-festival-speech-falling-house",
-              "source": "guardian"
-            },
-            {
-              "title": "What Is the E1 Project, Israel’s Disputed Settlement Plan in the West Bank?",
-              "link": "https://www.nytimes.com/2026/09/17/world/middleeast/e1-israel-west-bank-settlement.html",
-              "source": "nytimes"
-            }
-          ]
-        },
         "regional": {
           "count": 9,
           "titles": [
+            {
+              "title": "Yemenis flee across Red Sea as Houthis and Saudi-backed forces escalate war",
+              "link": "https://www.bbc.co.uk/news/articles/cw4gm7l742dmo?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
+            },
+            {
+              "title": "Inside Kazakhstan’s push to become a regional AI centre",
+              "link": "https://www.aljazeera.com/news/2026/9/21/inside-kazakhstans-push-to-become-a-regional-ai-centre?traffic_source=rss",
+              "source": "aljazeera"
+            },
             {
               "title": "A simple guide to the Yemen conflict",
               "link": "https://www.aljazeera.com/news/2026/9/21/a-brief-history-of-the-yemen-conflict?traffic_source=rss",
@@ -1121,22 +1155,17 @@
               "title": "Can the US win the AI cold war with China?",
               "link": "https://www.aljazeera.com/opinions/2026/9/21/can-the-us-win-the-ai-cold-war-with-china?traffic_source=rss",
               "source": "aljazeera"
-            },
-            {
-              "title": "Houthis Push to Expand Territory as Tensions With Saudi Arabia Rise",
-              "link": "https://www.nytimes.com/2026/09/20/world/middleeast/saudi-arabia-yemen-houthis-fighting.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Ethiopian armed groups forge alliance against government",
-              "link": "https://www.aljazeera.com/news/2026/9/21/ethiopian-armed-groups-forge-alliance-against-government?traffic_source=rss",
-              "source": "aljazeera"
             }
           ]
         },
         "politics": {
           "count": 5,
           "titles": [
+            {
+              "title": "CNN, Politico, MS NOW sue Trump administration over White House ban",
+              "link": "https://www.aljazeera.com/news/2026/9/21/cnn-politico-ms-now-to-sue-trump-administration-over-white-house-ban?traffic_source=rss",
+              "source": "aljazeera"
+            },
             {
               "title": "Do Israelis feel any safer now than they did on October 6, 2023?",
               "link": "https://www.aljazeera.com/news/2026/9/21/do-israelis-feel-any-safer-now-than-they-did-on-october-6-2023?traffic_source=rss",
@@ -1156,47 +1185,22 @@
               "title": "From ovations in Venice to death threats in Israel: the extreme responses to NAZA documentary",
               "link": "https://www.theguardian.com/film/2026/sep/19/ovations-venice-death-threats-israel-extreme-responses-to-naza-documentary",
               "source": "guardian"
-            },
-            {
-              "title": "US to allow Iran delegation to attend UN meetings in New York as war passes half-year mark",
-              "link": "https://www.bbc.co.uk/news/articles/c6n8m72r13ngo?at_medium=RSS&at_campaign=rss",
-              "source": "bbc"
-            }
-          ]
-        },
-        "military": {
-          "count": 19,
-          "titles": [
-            {
-              "title": "Iran’s military says US preparing to resume strikes",
-              "link": "https://www.aljazeera.com/news/2026/9/21/irans-military-says-us-preparing-to-resume-strikes?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Trump Gets Caught in a Dilemma Over a Saudi Plea for Military Help",
-              "link": "https://www.nytimes.com/2026/09/20/us/politics/trump-yemen-houthis-red-sea-iran.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Iran war live: Tehran says world will be ‘astonished’ by its new weapons",
-              "link": "https://www.aljazeera.com/news/liveblog/2026/9/21/iran-war-live-tehran-warns-us-against-new-strikes-fighting-rages-in-yemen?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Middle East braces for more violence as Iran claims US is planning to renew bombing campaign",
-              "link": "https://www.theguardian.com/world/2026/sep/20/middle-east-braces-for-more-violence-as-iran-claims-us-is-planning-to-renew-bombing-campaign",
-              "source": "guardian"
-            },
-            {
-              "title": "In Significant Escalation, Houthis Attack Saudi Capital",
-              "link": "https://www.nytimes.com/2026/09/19/world/middleeast/saudi-arabia-riyadh-houthis.html",
-              "source": "nytimes"
             }
           ]
         },
         "humanitarian": {
           "count": 4,
           "titles": [
+            {
+              "title": "NFL’s Azeez Al-Shaair honours another Palestinian girl killed by Israel",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/9/21/nfls-azeez-al-shaair-honours-another-palestinian-girl-killed-by-israel?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Why do Sudan’s humanitarian truces keep failing and who is to blame?",
+              "link": "https://www.aljazeera.com/news/2026/9/21/why-do-sudans-humanitarian-truces-keep-failing-and-who-is-to-blame?traffic_source=rss",
+              "source": "aljazeera"
+            },
             {
               "title": "Inside the Breakdown of U.K.-Israel Relations Over West Bank Settlements",
               "link": "https://www.nytimes.com/2026/09/19/world/europe/uk-israel-west-bank-sanctions.html",
@@ -1206,26 +1210,31 @@
               "title": "Israeli Shot and Killed in West Bank by Palestinian, Officials Say",
               "link": "https://www.nytimes.com/2026/09/20/world/middleeast/israeli-killed-west-bank-attack.html",
               "source": "nytimes"
-            },
-            {
-              "title": "Trump administration again denies entry visas to Palestinian officials ahead of UN general assembly",
-              "link": "https://www.theguardian.com/us-news/2026/sep/17/trump-denies-visas-palestine-un",
-              "source": "guardian"
-            },
-            {
-              "title": "Eight children among 21 killed after war-damaged Gaza building collapses, rescuers say",
-              "link": "https://www.bbc.co.uk/news/articles/cvp8d00j9gg5o?at_medium=RSS&at_campaign=rss",
-              "source": "bbc"
             }
           ]
         },
-        "diplomacy": {
-          "count": 1,
+        "other": {
+          "count": 4,
           "titles": [
             {
-              "title": "US blocks Palestinian leader from UN meeting in New York for second year in row",
-              "link": "https://www.bbc.co.uk/news/articles/cq783jlrr282o?at_medium=RSS&at_campaign=rss",
-              "source": "bbc"
+              "title": "NFL’s Azeez Al-Shaair pays tribute to slain Palestinian girl Wafaa Akila",
+              "link": "https://www.aljazeera.com/sports/2026/9/21/nfls-azeez-al-shaair-pays-tribute-to-slain-palestinian-girl-wafaa-akila?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Mystery object spotted hovering over Tehran",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/9/21/mystery-object-spotted-hovering-over-tehran?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Israeli Tourist Trap ‘Herod’s Pool’ Is Draining Palestinians’ Land Dry",
+              "link": "https://www.nytimes.com/2026/09/20/world/middleeast/west-bank-pool-palestinians-israelis-water.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Iranian actor Laleh Marzban faces severe threats after Venice film festival speech",
+              "link": "https://www.theguardian.com/film/2026/sep/18/iranian-actor-laheh-marzban-venice-film-festival-speech-falling-house",
+              "source": "guardian"
             }
           ]
         }
@@ -1319,56 +1328,80 @@
     }
   ],
   "economic_indicators": {
-    "DXY": {
-      "price": 100.29,
-      "change": 0.07,
-      "changePercent": 0.07,
-      "prev": 100.22
-    },
-    "BRENT": {
-      "price": 96.39,
-      "change": -7.48,
-      "changePercent": -7.2,
-      "prev": 103.87
-    },
-    "GOLD": {
-      "price": 4387.6,
-      "change": -37.3,
-      "changePercent": -0.84,
-      "prev": 4424.9
-    },
     "VIX": {
-      "price": 14.87,
-      "change": 0.06,
-      "changePercent": 0.41,
+      "price": 15.07,
+      "change": 0.26,
+      "changePercent": 1.76,
       "prev": 14.81
     },
     "WTI": {
-      "price": 92.97,
-      "change": -7.33,
-      "changePercent": -7.31,
+      "price": 91.32,
+      "change": -8.98,
+      "changePercent": -8.95,
       "prev": 100.3
     },
     "US10Y": {
-      "price": 5,
-      "change": 0.05,
-      "changePercent": 1.01,
-      "prev": 4.95
+      "price": 4.96,
+      "change": -0.04,
+      "changePercent": -0.8,
+      "prev": 5
+    },
+    "BRENT": {
+      "price": 95.2,
+      "change": -8.67,
+      "changePercent": -8.35,
+      "prev": 103.87
+    },
+    "GOLD": {
+      "price": 4388.4,
+      "change": -36.5,
+      "changePercent": -0.82,
+      "prev": 4424.9
+    },
+    "DXY": {
+      "price": 100.37,
+      "change": 0.15,
+      "changePercent": 0.15,
+      "prev": 100.22
     },
     "US2Y": {
       "price": 3.98,
       "change": 0.01,
       "changePercent": 0.25,
-      "prev": 3.96
+      "prev": 3.98
     }
   },
   "critical_events": [
+    {
+      "id": "ceasefire_agreement",
+      "name": "공식 휴전/평화 합의",
+      "severity": "critical",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "shorten"
+    },
+    {
+      "id": "regime_collapse",
+      "name": "교전국 정권 붕괴/쿠데타",
+      "severity": "critical",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "shorten"
+    },
     {
       "id": "capital_attack",
       "name": "수도 직접 공격/포위",
       "severity": "high",
       "confidence": 1,
-      "matchCount": 10.6,
+      "matchCount": 6.6,
+      "direction": "shorten"
+    },
+    {
+      "id": "humanitarian_crisis",
+      "name": "대규모 인도주의 위기",
+      "severity": "high",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
       "direction": "shorten"
     },
     {
