@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-09-23T12:53:10.324Z",
+  "timestamp": "2026-09-23T17:41:26.822Z",
   "war_day": 207,
   "probabilities": {
-    "1개월 내 (~3월)": 17,
-    "2~3개월 (4~5월)": 34.7,
-    "4~6개월 (6~8월)": 27.7,
-    "7~12개월 (9월~27/2월)": 15.3,
-    "1년 초과": 5.3
+    "1개월 내 (~3월)": 27.7,
+    "2~3개월 (4~5월)": 42.1,
+    "4~6개월 (6~8월)": 21.6,
+    "7~12개월 (9월~27/2월)": 6.9,
+    "1년 초과": 1.7
   },
   "factors": [
     {
@@ -45,9 +45,9 @@
       "decay": 0.4
     },
     {
-      "factor": "확전 뉴스 우세 (확전10:휴전2)",
-      "impact": "전쟁 장기화 가능성 (확전비율 83%)",
-      "weight": "+0.03%p (4~6개월)",
+      "factor": "확전 뉴스 우세 (확전10:휴전8)",
+      "impact": "전쟁 장기화 가능성 (확전비율 56%)",
+      "weight": "+0.02%p (4~6개월)",
       "direction": "lengthen",
       "detail": "언론에서 휴전보다 확전을 더 많이 보도하고 있습니다.",
       "keywords": [
@@ -164,11 +164,11 @@
       "decay": 1
     },
     {
-      "factor": "협상/외교 뉴스 12건 감지",
+      "factor": "협상/외교 뉴스 14건 감지",
       "impact": "외교적 해결 움직임 포착",
-      "weight": "+0.02%p (1개월내), +0.02%p (2~3개월)",
+      "weight": "+0.03%p (1개월내), +0.02%p (2~3개월)",
       "direction": "shorten",
-      "detail": "실시간 뉴스에서 협상 관련 기사 12건이 감지되었습니다.",
+      "detail": "실시간 뉴스에서 협상 관련 기사 14건이 감지되었습니다.",
       "keywords": [
         "negotiat",
         "talks",
@@ -181,11 +181,11 @@
       "decay": 1
     },
     {
-      "factor": "지역 확산 뉴스 30.2건 감지",
+      "factor": "지역 확산 뉴스 26건 감지",
       "impact": "주변국 대규모 연루 → 장기화 위험 높음",
       "weight": "+0.03%p (4~6개월), +0.03%p (7~12개월)",
       "direction": "lengthen",
-      "detail": "주변국을 언급하는 기사 30.2건이 감지되었습니다.",
+      "detail": "주변국을 언급하는 기사 26건이 감지되었습니다.",
       "keywords": [
         "saudi",
         "uae",
@@ -234,32 +234,144 @@
       "decay": 0.3
     },
     {
-      "factor": "[중대 이벤트] 수도 직접 공격/포위",
-      "impact": "수도 직접 공격. 베오그라드(1999): 78일 폭격 후 항복. 바그다드(2003): 21일만에 함락. 수도 타격은 전쟁 지속 의지를 급격히 약화.",
-      "weight": "+3.5%p (1개월내), +5.2%p (2~3개월), -1.7%p (4~6개월), -1.7%p (7~12개월), -0.9%p (1년초과)",
+      "factor": "[중대 이벤트] 공식 휴전/평화 합의",
+      "impact": "공식 휴전 또는 평화 합의 체결. 휴전 합의는 전쟁 종결의 결정적 단계이며, 합의 후 이행까지 평균 1~2주 소요.",
+      "weight": "+10.0%p (1개월내), +6.7%p (2~3개월), -5.3%p (4~6개월), -4.0%p (7~12개월), -2.0%p (1년초과)",
       "direction": "shorten",
-      "detail": "수도 직접 공격. 베오그라드(1999): 78일 폭격 후 항복. 바그다드(2003): 21일만에 함락. 수도 타격은 전쟁 지속 의지를 급격히 약화.\n\n신뢰도: 확실 (87%), 관련 기사 2.6건 감지.\n관련: Houthis say they targeted Saudi capital with ballistic missiles",
+      "detail": "공식 휴전 또는 평화 합의 체결. 휴전 합의는 전쟁 종결의 결정적 단계이며, 합의 후 이행까지 평균 1~2주 소요.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Iran's president tells Trump it will never 'bend the knee'",
       "keywords": [
+        "ceasefire",
+        "agree",
+        "ceasefire",
+        "deal",
+        "ceasefire",
+        "sign",
+        "truce",
+        "agree",
+        "armistice",
+        "sign",
+        "peace deal",
+        "ceasefire",
+        "accept",
+        "peace agreement"
+      ],
+      "applied": "2026-09-23",
+      "active": true,
+      "severity": "critical"
+    },
+    {
+      "factor": "[중대 이벤트] 교전국 정권 붕괴/쿠데타",
+      "impact": "교전국 정권 붕괴 또는 쿠데타. 이라크(2003): 바그다드 함락 후 3주 내 주요 전투 종료. 리비아(2011): 트리폴리 함락 후 2개월 내 종전.",
+      "weight": "+6.7%p (1개월내), +5.3%p (2~3개월), +1.3%p (4~6개월), -3.3%p (7~12개월), -2.7%p (1년초과)",
+      "direction": "shorten",
+      "detail": "교전국 정권 붕괴 또는 쿠데타. 이라크(2003): 바그다드 함락 후 3주 내 주요 전투 종료. 리비아(2011): 트리폴리 함락 후 2개월 내 종전.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Ethiopia faces renewed war as armed groups launch offensive",
+      "keywords": [
+        "regime",
+        "collaps",
+        "regime",
+        "fall",
+        "government",
+        "fall",
         "capital",
-        "bomb",
+        "fall",
         "capital",
-        "strike",
-        "capital",
+        "captur",
+        "coup",
+        "detat",
+        "government",
+        "overthrow",
+        "regime",
+        "change"
+      ],
+      "applied": "2026-09-23",
+      "active": true,
+      "severity": "critical"
+    },
+    {
+      "factor": "[중대 이벤트] 일방적 전투 축소/자제 선언",
+      "impact": "교전국의 일방적 전투 축소 또는 자제 선언. 역사적으로 패전국의 자발적 전선 축소는 80% 이상 공식 항복의 전조.",
+      "weight": "+5.0%p (1개월내), +7.0%p (2~3개월), -3.0%p (4~6개월), -3.0%p (7~12개월), -1.0%p (1년초과)",
+      "direction": "shorten",
+      "detail": "교전국의 일방적 전투 축소 또는 자제 선언. 역사적으로 패전국의 자발적 전선 축소는 80% 이상 공식 항복의 전조.\n\n신뢰도: 확실 (100%), 관련 기사 4건 감지.\n관련: Trump pushes Russia-Ukraine ‘energy truce’: Can it work? | Al-Sharaa: Occupied Golan Heights to ‘remain Syrian territory’",
+      "keywords": [
+        "halt",
         "attack",
-        "capital",
-        "siege",
-        "capital",
-        "pound",
-        "capital",
-        "explosion",
-        "tehran",
-        "bomb",
-        "tehran",
-        "strike",
-        "tehran",
-        "pound",
-        "tehran",
-        "explosion"
+        "stop",
+        "attack",
+        "neighb",
+        "no more",
+        "attack",
+        "withdraw",
+        "forces",
+        "pull back",
+        "troops",
+        "unilateral",
+        "ceasefire",
+        "reduce",
+        "operation",
+        "de-escalat",
+        "announc",
+        "restrain",
+        "attack",
+        "not attack",
+        "suspend",
+        "operation"
+      ],
+      "applied": "2026-09-23",
+      "active": true,
+      "severity": "high"
+    },
+    {
+      "factor": "[중대 이벤트] 외교적 돌파구/강대국 중재",
+      "impact": "주요 외교적 돌파구 또는 강대국 중재. 데이턴(1995): 미국 중재 → 3주만에 합의. UN 안보리 결의는 평균 2~4주 내 휴전 이행.",
+      "weight": "+2.0%p (1개월내), +4.0%p (2~3개월), +1.3%p (4~6개월), -1.3%p (7~12개월), -0.7%p (1년초과)",
+      "direction": "shorten",
+      "detail": "주요 외교적 돌파구 또는 강대국 중재. 데이턴(1995): 미국 중재 → 3주만에 합의. UN 안보리 결의는 평균 2~4주 내 휴전 이행.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Can flurry of New York diplomacy lead to US-Iran diplomatic breakthrough?",
+      "keywords": [
+        "peace talk",
+        "agree",
+        "diplomatic",
+        "breakthrough",
+        "summit",
+        "peace",
+        "mediati",
+        "accept",
+        "un",
+        "resolution",
+        "ceasefire",
+        "broker",
+        "peace",
+        "negotiat",
+        "breakthrough",
+        "china",
+        "mediat",
+        "peace framework"
+      ],
+      "applied": "2026-09-23",
+      "active": true,
+      "severity": "high"
+    },
+    {
+      "factor": "[중대 이벤트] 대규모 인도주의 위기",
+      "impact": "대규모 인도주의 위기. 국제사회 개입 압력 증가. 코소보(1999): 난민 위기가 NATO 작전 가속화. 인도적 위기는 국제 종전 압력을 2~3배 강화.",
+      "weight": "+1.3%p (1개월내), +2.7%p (2~3개월), +0.7%p (4~6개월), -0.7%p (7~12개월), -0.7%p (1년초과)",
+      "direction": "shorten",
+      "detail": "대규모 인도주의 위기. 국제사회 개입 압력 증가. 코소보(1999): 난민 위기가 NATO 작전 가속화. 인도적 위기는 국제 종전 압력을 2~3배 강화.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Priests Against Genocide hold shroud with names of children killed in Gaza",
+      "keywords": [
+        "humanitarian",
+        "catastroph",
+        "civilian",
+        "massacre",
+        "genocide",
+        "refugee",
+        "crisis",
+        "humanitarian",
+        "crisis",
+        "war crime",
+        "evidence",
+        "civilian death",
+        "thousand",
+        "ethnic cleansing"
       ],
       "applied": "2026-09-23",
       "active": true,
@@ -292,11 +404,11 @@
       "severity": "moderate"
     },
     {
-      "factor": "유가 급등 (WTI $90.95/배럴)",
+      "factor": "유가 급등 (WTI $91.81/배럴)",
       "impact": "중간 수준 경제 압력",
       "weight": "+2%p (1-2개월)",
       "direction": "shorten",
-      "detail": "WTI 유가가 $90.95/배럴로 90달러 이상입니다. 호르무즈 해협 봉쇄와 맞물려 글로벌 에너지 시장에 큰 충격을 주고 있으며, 주요국들의 조기 종전 압력이 강화되고 있습니다.",
+      "detail": "WTI 유가가 $91.81/배럴로 90달러 이상입니다. 호르무즈 해협 봉쇄와 맞물려 글로벌 에너지 시장에 큰 충격을 주고 있으며, 주요국들의 조기 종전 압력이 강화되고 있습니다.",
       "keywords": [
         "oil",
         "crude",
@@ -309,11 +421,11 @@
       "active": true
     },
     {
-      "factor": "금값 사상최고 ($4341.2/oz)",
+      "factor": "금값 사상최고 ($4317.8/oz)",
       "impact": "안전자산 수요 폭증 → 글로벌 불안 심화",
       "weight": "+2%p (4-6개월)",
       "direction": "lengthen",
-      "detail": "금 가격이 온스당 $4341.2로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
+      "detail": "금 가격이 온스당 $4317.8로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
       "keywords": [
         "gold",
         "safe haven",
@@ -324,11 +436,11 @@
       "active": true
     },
     {
-      "factor": "미국 10년 국채금리 4.99% (고금리 지속)",
+      "factor": "미국 10년 국채금리 5.13% (고금리 지속)",
       "impact": "전쟁 자금 조달 비용 증가",
       "weight": "+1%p (4-6개월)",
       "direction": "mixed",
-      "detail": "미국 10년물 국채금리가 4.99%로 높은 수준을 유지하고 있습니다. 전쟁 자금 조달 비용이 증가하며, 장기전의 경제적 부담이 커지고 있습니다.",
+      "detail": "미국 10년물 국채금리가 5.13%로 높은 수준을 유지하고 있습니다. 전쟁 자금 조달 비용이 증가하며, 장기전의 경제적 부담이 커지고 있습니다.",
       "keywords": [
         "treasury",
         "yield",
@@ -341,12 +453,12 @@
     }
   ],
   "news_signals": {
-    "ceasefire_mentions": 2,
+    "ceasefire_mentions": 8,
     "escalation_mentions": 10,
-    "negotiation_mentions": 12,
-    "casualty_mentions": 10,
-    "peace_mentions": 2,
-    "regional_spread": 30.2,
+    "negotiation_mentions": 14,
+    "casualty_mentions": 8,
+    "peace_mentions": 6,
+    "regional_spread": 26,
     "total_articles": 50,
     "new_articles": 50,
     "unique_events": 46,
@@ -354,35 +466,11 @@
   },
   "latest_news": [
     {
-      "title": "As Xi meets Trump, who’s winning their trade war?",
-      "link": "https://www.aljazeera.com/features/2026/9/23/as-xi-meets-trump-whos-winning-their-trade-war?traffic_source=rss",
-      "pubDate": "Wed, 23 Sep 2026 12:20:40 +0000",
-      "source": "aljazeera",
-      "snippet": "Trade war has been central to Trump&#039;s presidency, but it didn&#039;t slash US deficits. Meanwhile, China recorded a surplus.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "UN General Assembly live: Iran’s Pezeshkian, Ukraine’s Zelenskyy to speak",
-      "link": "https://www.aljazeera.com/news/liveblog/2026/9/23/un-general-assembly-live-irans-pezeshkian-ukraines-zelenskyy-to-speak?traffic_source=rss",
-      "pubDate": "Wed, 23 Sep 2026 12:00:00 +0000",
-      "source": "aljazeera",
-      "snippet": "Second day of UN General Assembly kicks off with speeches from world leaders, including from Syria, Iran and Ukraine.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Netanyahu calls Macron's remarks on West Bank in UN speech 'grotesque'",
-      "link": "https://www.bbc.co.uk/news/articles/ck1l6yyg52qvo?at_medium=RSS&at_campaign=rss",
-      "pubDate": "Wed, 23 Sep 2026 11:30:58 GMT",
+      "title": "Iran's president tells Trump it will never 'bend the knee'",
+      "link": "https://www.bbc.co.uk/news/articles/cqvgyjy23ggjo?at_medium=RSS&at_campaign=rss",
+      "pubDate": "Wed, 23 Sep 2026 17:34:44 GMT",
       "source": "bbc",
-      "snippet": "Israel's PM denounces the French president after he appeared to downplay Hamas's activities in the occupied territory.",
+      "snippet": "Masoud Pezeshkian's defiant speech to the UN comes after the US president threatened to \"annihilate\" Iran if a peace deal is not agreed soon.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -390,11 +478,11 @@
       "_isDuplicate": false
     },
     {
-      "title": "Qatar on mediation efforts: ‘We can’t let diplomacy fail’",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/9/23/qatar-on-mediation-efforts-we-cant-let-diplomacy?traffic_source=rss",
-      "pubDate": "Wed, 23 Sep 2026 11:03:35 +0000",
+      "title": "Ethiopia faces renewed war as armed groups launch offensive",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/9/23/09-23-26-ethiopia-armed-groups-sv-mp4?traffic_source=rss",
+      "pubDate": "Wed, 23 Sep 2026 17:10:33 +0000",
       "source": "aljazeera",
-      "snippet": "Qatar’s Majed al-Ansari says Doha is determined to make diplomacy work to end the US-Iran conflict. ",
+      "snippet": "There are fears of a renewed war in Ethiopia after seven armed groups formed an alliance to overthrow the government.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -402,35 +490,59 @@
       "_isDuplicate": false
     },
     {
-      "title": "‘This is where I live now, the back of a truck’: a day in the life of a grandmother in Gaza",
-      "link": "https://www.theguardian.com/global-development/ng-interactive/2026/sep/23/this-is-where-i-live-now-the-back-of-a-truck-a-day-in-the-life-of-a-grandmother-in-gaza",
-      "pubDate": "Wed, 23 Sep 2026 11:00:46 GMT",
-      "source": "guardian",
-      "snippet": "As the war in Gaza approaches its fourth year, the Guardian follows five ordinary Palestinians as they go about their lives. Each tells the story of their day, revealing the terrible toll of the confl",
+      "title": "Israel’s destruction leaves Lebanon’s border villages in ruins",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/9/23/israels-destruction-leaves-lebanons-border-villages-in-ruins?traffic_source=rss",
+      "pubDate": "Wed, 23 Sep 2026 16:48:33 +0000",
+      "source": "aljazeera",
+      "snippet": "Israel’s destruction leaves Lebanon’s border villages in ruins",
       "isNew": true,
       "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Iran’s president hits out at ‘bully’ Trump in UN speech but signals willingness to talk",
+      "link": "https://www.theguardian.com/world/2026/sep/23/iranian-leader-hits-back-at-bully-trump-signals-willingness-to-talk",
+      "pubDate": "Wed, 23 Sep 2026 16:44:57 GMT",
+      "source": "guardian",
+      "snippet": "Masoud Pezeshkian says Tehran is ready for dialogue and diplomacy ‘but without the language of force’Iran’s president, Masoud Pezeshkian, turned the tables on Donald Trump, describing America as the t",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Syria’s al-Sharaa warns Israeli attacks endanger delicate post-war recovery",
+      "link": "https://www.aljazeera.com/news/2026/9/23/syrias-al-sharaa-warns-israeli-attacks-endanger-delicate-post-war-recovery?traffic_source=rss",
+      "pubDate": "Wed, 23 Sep 2026 16:44:01 +0000",
+      "source": "aljazeera",
+      "snippet": "President Ahmed al-Sharaa calls for Israeli withdrawal, condemning its attacks as Syria emerges from civil war.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "US envoy walks out on Pezeshkian UN speech slamming war on Iran",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/9/23/us-envoy-walks-out-on-pezeshkian-un-speech-slamming-war-on-iran?traffic_source=rss",
+      "pubDate": "Wed, 23 Sep 2026 16:34:47 +0000",
+      "source": "aljazeera",
+      "snippet": "As Iran’s president began his speech at the UN General Assembly, an official from the US delegation walked out.",
+      "isNew": true,
+      "_sourceCount": 2,
       "_isDuplicated": true,
       "_clusterSize": 2,
       "_isDuplicate": false
     },
     {
-      "title": "Iran denies dropping preconditions amid ‘very productive’ three-hour UN talks in New York",
-      "link": "https://www.theguardian.com/world/2026/sep/23/iran-denies-dropping-preconditions-very-productive-three-hour-un-talks-new-york",
-      "pubDate": "Wed, 23 Sep 2026 10:41:41 GMT",
-      "source": "guardian",
-      "snippet": "Trump says further talks possible as barrel of Brent crude falls to below $100 for first time in two weeksUnited Nations general assembly – latest updatesIran has pushed back on claims that it dropped",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "As AI leaders warn of catastrophe, US and China shun slowdown calls",
-      "link": "https://www.aljazeera.com/economy/2026/9/23/as-ai-leaders-warn-of-catastrophe-us-and-china-shun-slowdown-calls?traffic_source=rss",
-      "pubDate": "Wed, 23 Sep 2026 10:27:38 +0000",
+      "title": "Scientists warn super El Nino could cause 450,000 deaths: Should we worry?",
+      "link": "https://www.aljazeera.com/features/2026/9/23/scientists-warn-super-el-nino-could-cause-450000-deaths-should-we-worry?traffic_source=rss",
+      "pubDate": "Wed, 23 Sep 2026 16:29:55 +0000",
       "source": "aljazeera",
-      "snippet": "Presidents Donald Trump and Xi Jinping are expected to agree to only limited cooperation on AI safety at summit.",
+      "snippet": "Global South countries will be worst affected by the phenomenon sweeping the planet from June to February. ",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -438,11 +550,11 @@
       "_isDuplicate": false
     },
     {
-      "title": "‘Annihilate’ vs ‘crushing’ attacks: Why Iran, US up rhetoric amid talks",
-      "link": "https://www.aljazeera.com/news/2026/9/23/annihilate-vs-crushing-attacks-why-iran-us-up-rhetoric-amid-talks?traffic_source=rss",
-      "pubDate": "Wed, 23 Sep 2026 09:40:20 +0000",
+      "title": "‘They kill, we are punished’: Iran calls out Western hypocrisy",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/9/23/they-kill-we-are-punished-iran-calls-out-western-hypocrisy?traffic_source=rss",
+      "pubDate": "Wed, 23 Sep 2026 15:49:59 +0000",
       "source": "aljazeera",
-      "snippet": "Trump threatens to &#039;annihilate&#039; Iran and then brags about diplomacy, provoking Tehran to warn of a response.",
+      "snippet": "Iranian President Masoud Pezeshkian has accused Israel and the US of applying ‘double standards’.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -450,11 +562,33 @@
       "_isDuplicate": false
     },
     {
-      "title": "US senator condemns Netanyahu as a ‘chronic liar’ ahead of UNGA visit",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/9/23/us-senator-condemns-netanyahu-as-a-chronic-liar-ahead-of-unga-visit?traffic_source=rss",
-      "pubDate": "Wed, 23 Sep 2026 08:44:44 +0000",
+      "title": "Stanislas Hutin, Who Denounced Torture in France’s Algerian War, Dies at 95",
+      "link": "https://www.nytimes.com/2026/09/23/world/middleeast/stanislas-hutin-dead.html",
+      "pubDate": "Wed, 23 Sep 2026 15:44:52 +0000",
+      "source": "nytimes",
+      "snippet": "He was among the first to chronicle the French force’s systematic abuse of Algerians, brutal encounters that he documented in his journal and with his photography.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Walkouts at the U.N. General Assembly Are Somewhat of a Tradition",
+      "link": "https://www.nytimes.com/2026/09/23/world/un-general-assembly-walkout.html",
+      "pubDate": "Wed, 23 Sep 2026 15:26:59 +0000",
+      "source": "nytimes",
+      "snippet": "As President Masoud Pezeshkian of Iran delivered his speech, the lone U.S. diplomat sitting in the hall left.",
+      "isNew": true,
+      "_isDuplicate": true,
+      "_sourceCount": 1
+    },
+    {
+      "title": "Iran: Strait of Hormuz won’t be used to ‘impose insecurity on us’",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/9/23/iran-strait-of-hormuz-wont-be-used-to-impose-insecurity-on?traffic_source=rss",
+      "pubDate": "Wed, 23 Sep 2026 15:24:13 +0000",
       "source": "aljazeera",
-      "snippet": "US Democratic senator Chris Van Hollen has called Netanyahu a lying war criminal ahead of his visit to UNGA",
+      "snippet": "Iranian President Masoud Pezeshkian told the UN General Assembly that ‘warfare knows no borders’.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -462,11 +596,11 @@
       "_isDuplicate": false
     },
     {
-      "title": "What Palestinian children endure in Israeli detention",
-      "link": "https://www.aljazeera.com/features/2026/9/23/inside-israels-prisons-what-palestinian-children-say-they-endure-in-deten?traffic_source=rss",
-      "pubDate": "Wed, 23 Sep 2026 08:42:11 +0000",
+      "title": "Russia’s attacks on Ukraine kill six after Zelenskyy-Trump talks",
+      "link": "https://www.aljazeera.com/news/2026/9/23/russian-drone-strikes-target-kyiv-infrastructure-after-zelenskyy-trump-talk?traffic_source=rss",
+      "pubDate": "Wed, 23 Sep 2026 14:58:23 +0000",
       "source": "aljazeera",
-      "snippet": "Every day, Fidaa Zalbani checks the room of her son, Mohammed, 17, tidying his bed and arranging untouched clothes.",
+      "snippet": "Ukraine&#039;s Zelenskyy met Trump on Tuesday and discussed a potential bilateral ceasefire on energy-related targets.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -474,11 +608,11 @@
       "_isDuplicate": false
     },
     {
-      "title": "Qatar says ‘no alternative to diplomacy’ as Belgium and Rwanda restore ties",
-      "link": "https://www.aljazeera.com/news/2026/9/23/qatar-says-no-alternative-to-diplomacy-as-belgium-and-rwanda-restore-ties?traffic_source=rss",
-      "pubDate": "Wed, 23 Sep 2026 08:40:35 +0000",
+      "title": "Trump pushes Russia-Ukraine ‘energy truce’: Can it work?",
+      "link": "https://www.aljazeera.com/news/2026/9/23/trump-pushes-russia-ukraine-energy-truce-can-it-work?traffic_source=rss",
+      "pubDate": "Wed, 23 Sep 2026 14:49:04 +0000",
       "source": "aljazeera",
-      "snippet": "Doha lauded for mediating Brussels-Kigali rupture, showcasing its trusted role in international peace efforts.",
+      "snippet": "Talks of a possible halt in attacks on energy facilities come as strikes on such targets continue unabated. ",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -486,11 +620,11 @@
       "_isDuplicate": false
     },
     {
-      "title": "Pakistan’s latest Trump bet is on drone firm already selling to India",
-      "link": "https://www.aljazeera.com/news/2026/9/23/pakistans-new-drone-deal-is-with-trump-backed-firm-also-selling-to-india?traffic_source=rss",
-      "pubDate": "Wed, 23 Sep 2026 07:18:54 +0000",
+      "title": "Al-Sharaa: Occupied Golan Heights to ‘remain Syrian territory’",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/9/23/al-sharaa-occupied-golan-heights-to-remain-syrian?traffic_source=rss",
+      "pubDate": "Wed, 23 Sep 2026 14:33:40 +0000",
       "source": "aljazeera",
-      "snippet": "The company&#039;s cofounder is also an ex-Israeli soldier. Pakistan does not recognise Israel. ",
+      "snippet": "Syrian President Ahmed al-Sharaa demanded the withdrawal of Israeli forces from Syrian territory.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -498,35 +632,11 @@
       "_isDuplicate": false
     },
     {
-      "title": "US and Iran hold first talks since June after Trump's 'annihilation' threat",
-      "link": "https://www.bbc.co.uk/news/articles/ck62m1631d7po?at_medium=RSS&at_campaign=rss",
-      "pubDate": "Wed, 23 Sep 2026 06:12:56 GMT",
-      "source": "bbc",
-      "snippet": "The talks are the first since a ceasefire collapsed in June, with the sides exchanging fire intermittently.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Trump rallies Latin American allies against drug cartels",
-      "link": "https://www.aljazeera.com/news/2026/9/23/trump-rallies-shield-of-the-americas-coalition-against-drug-cartels?traffic_source=rss",
-      "pubDate": "Wed, 23 Sep 2026 05:34:40 +0000",
+      "title": "How much is UK supporting Saudi Arabia in its war with Iran-backed Houthis?",
+      "link": "https://www.aljazeera.com/news/2026/9/23/how-much-is-uk-supporting-saudi-arabia-in-its-war-with-iran-backed-houthis?traffic_source=rss",
+      "pubDate": "Wed, 23 Sep 2026 13:57:50 +0000",
       "source": "aljazeera",
-      "snippet": "US-led Shield of the Americas coalition backs sanctions against crime groups after Trump urges stronger action.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Reports of violence against women in Gaza surge, UN agency finds",
-      "link": "https://www.bbc.co.uk/news/articles/c94gm7dp40y0o?at_medium=RSS&at_campaign=rss",
-      "pubDate": "Wed, 23 Sep 2026 05:02:26 GMT",
-      "source": "bbc",
-      "snippet": "The UN Population Fund also says there has been a \"severe escalation\" in the number of early and forced marriages.",
+      "snippet": "UK to refuel Saudi fighter jets and France to secure energy infrastructure amid fighting with Yemen&#039;s Houthi group.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -537,6 +647,126 @@
   "news_digest": {
     "categories": [
       {
+        "category_id": "politics",
+        "category_name": "국내 정치",
+        "category_icon": "🏛️",
+        "count": 11,
+        "new_count": 11,
+        "articles": [
+          {
+            "title": "Iran's president tells Trump it will never 'bend the knee'",
+            "link": "https://www.bbc.co.uk/news/articles/cqvgyjy23ggjo?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc"
+            ],
+            "pubDate": "Wed, 23 Sep 2026 17:34:44 GMT",
+            "snippet": "Masoud Pezeshkian's defiant speech to the UN comes after the US president threatened to \"annihilate\" Iran if a peace deal is not agreed soon.",
+            "isNew": true
+          },
+          {
+            "title": "Iran’s president hits out at ‘bully’ Trump in UN speech but signals willingness to talk",
+            "link": "https://www.theguardian.com/world/2026/sep/23/iranian-leader-hits-back-at-bully-trump-signals-willingness-to-talk",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Wed, 23 Sep 2026 16:44:57 GMT",
+            "snippet": "Masoud Pezeshkian says Tehran is ready for dialogue and diplomacy ‘but without the language of force’Iran’s president, Masoud Pezeshkian, turned the tables on Donald Trump, describing America as the t",
+            "isNew": true
+          },
+          {
+            "title": "‘They kill, we are punished’: Iran calls out Western hypocrisy",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/23/they-kill-we-are-punished-iran-calls-out-western-hypocrisy?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Wed, 23 Sep 2026 15:49:59 +0000",
+            "snippet": "Iranian President Masoud Pezeshkian has accused Israel and the US of applying ‘double standards’.",
+            "isNew": true
+          },
+          {
+            "title": "Al-Sharaa: Occupied Golan Heights to ‘remain Syrian territory’",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/23/al-sharaa-occupied-golan-heights-to-remain-syrian?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Wed, 23 Sep 2026 14:33:40 +0000",
+            "snippet": "Syrian President Ahmed al-Sharaa demanded the withdrawal of Israeli forces from Syrian territory.",
+            "isNew": true
+          },
+          {
+            "title": "Syria’s al-Sharaa answers questions on Israel’s violations in Syria",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/23/syrias-al-sharaa-answers-questions-on-israels-violations-in-syria?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Wed, 23 Sep 2026 13:20:05 +0000",
+            "snippet": "Syria’s President Ahmed al-Sharaa says Donald Trump should give New Jersey to Israel, instead of the Golan Heights.",
+            "isNew": true
+          },
+          {
+            "title": "Netanyahu calls Macron's remarks on West Bank in UN speech 'grotesque'",
+            "link": "https://www.bbc.co.uk/news/articles/ck1l6yyg52qvo?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc"
+            ],
+            "pubDate": "Wed, 23 Sep 2026 11:30:58 GMT",
+            "snippet": "Israel's PM denounces the French president after he appeared to downplay Hamas's activities in the occupied territory.",
+            "isNew": true
+          },
+          {
+            "title": "Donald Trump says he could 'annihilate Iran' if no deal is reached – video",
+            "link": "https://www.theguardian.com/us-news/video/2026/sep/22/donald-trump-iran-threat-un-general-assembly",
+            "source": "guardian",
+            "sources": [
+              "guardian",
+              "nytimes"
+            ],
+            "pubDate": "Tue, 22 Sep 2026 16:16:27 GMT",
+            "snippet": "The US president spoke about the war with Iran during the UN general assembly on Tuesday, threatening to 'annihilate' the country and 'drive them into hell' if the regime didn’t agree to a deal with t",
+            "isNew": true
+          },
+          {
+            "title": "Macron Criticizes Israel and Russia in Final U.N. Speech as France’s President",
+            "link": "https://www.nytimes.com/2026/09/22/world/europe/macron-farewell-united-nations-speech.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Tue, 22 Sep 2026 21:54:51 +0000",
+            "snippet": "In his farewell address to the General Assembly, the French president criticized Russia, Israel and, in more veiled terms, the United States.",
+            "isNew": true
+          },
+          {
+            "title": "Iraq’s Prime Minister Al-Zaidi Vows to Disarm Iran-backed Militias",
+            "link": "https://www.nytimes.com/2026/09/21/world/middleeast/iraq-prime-minister-interview-disarm-militias.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Tue, 22 Sep 2026 18:17:29 +0000",
+            "snippet": "Ali al-Zaidi is a political neophyte hoping to succeed where previous leaders failed. In an interview, he laid out an ambitious timeline that could prove hard to meet.",
+            "isNew": true
+          },
+          {
+            "title": "Watch: Trump threatens to 'annihilate' Iran if no deal reached",
+            "link": "https://www.bbc.co.uk/news/videos/cmvgydqqlyx9o?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc"
+            ],
+            "pubDate": "Tue, 22 Sep 2026 17:35:36 GMT",
+            "snippet": "US President Donald Trump presented Iran with a stark choice: reach an agreement or face the rapid “annihilation” of the Islamic Republic.",
+            "isNew": true
+          }
+        ]
+      },
+      {
         "category_id": "military",
         "category_name": "군사 작전",
         "category_icon": "⚔️",
@@ -544,14 +774,47 @@
         "new_count": 10,
         "articles": [
           {
-            "title": "‘Annihilate’ vs ‘crushing’ attacks: Why Iran, US up rhetoric amid talks",
-            "link": "https://www.aljazeera.com/news/2026/9/23/annihilate-vs-crushing-attacks-why-iran-us-up-rhetoric-amid-talks?traffic_source=rss",
+            "title": "Ethiopia faces renewed war as armed groups launch offensive",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/23/09-23-26-ethiopia-armed-groups-sv-mp4?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Wed, 23 Sep 2026 09:40:20 +0000",
-            "snippet": "Trump threatens to &#039;annihilate&#039; Iran and then brags about diplomacy, provoking Tehran to warn of a response.",
+            "pubDate": "Wed, 23 Sep 2026 17:10:33 +0000",
+            "snippet": "There are fears of a renewed war in Ethiopia after seven armed groups formed an alliance to overthrow the government.",
+            "isNew": true
+          },
+          {
+            "title": "Syria’s al-Sharaa warns Israeli attacks endanger delicate post-war recovery",
+            "link": "https://www.aljazeera.com/news/2026/9/23/syrias-al-sharaa-warns-israeli-attacks-endanger-delicate-post-war-recovery?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Wed, 23 Sep 2026 16:44:01 +0000",
+            "snippet": "President Ahmed al-Sharaa calls for Israeli withdrawal, condemning its attacks as Syria emerges from civil war.",
+            "isNew": true
+          },
+          {
+            "title": "Trump pushes Russia-Ukraine ‘energy truce’: Can it work?",
+            "link": "https://www.aljazeera.com/news/2026/9/23/trump-pushes-russia-ukraine-energy-truce-can-it-work?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Wed, 23 Sep 2026 14:49:04 +0000",
+            "snippet": "Talks of a possible halt in attacks on energy facilities come as strikes on such targets continue unabated. ",
+            "isNew": true
+          },
+          {
+            "title": "How much is UK supporting Saudi Arabia in its war with Iran-backed Houthis?",
+            "link": "https://www.aljazeera.com/news/2026/9/23/how-much-is-uk-supporting-saudi-arabia-in-its-war-with-iran-backed-houthis?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Wed, 23 Sep 2026 13:57:50 +0000",
+            "snippet": "UK to refuel Saudi fighter jets and France to secure energy infrastructure amid fighting with Yemen&#039;s Houthi group.",
             "isNew": true
           },
           {
@@ -619,40 +882,6 @@
             "pubDate": "Mon, 21 Sep 2026 02:36:47 +0000",
             "snippet": "The president vacillated but decided on Sunday not to join Saudi Arabia, for now, in joint strikes against the Houthis in Yemen. But he also needs the kingdom’s cooperation in his war against Iran.",
             "isNew": true
-          },
-          {
-            "title": "Houthis say they targeted Saudi capital with ballistic missiles",
-            "link": "https://www.bbc.co.uk/news/articles/cwly5d9v7r43o?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
-            "sources": [
-              "bbc",
-              "nytimes"
-            ],
-            "pubDate": "Sat, 19 Sep 2026 23:49:26 GMT",
-            "snippet": "A reported strike on a fuel depot at Riyadh airport caused delays on Saturday, as Saudi Arabia says it shot down a ballistic missile aimed at the capital.",
-            "isNew": true
-          },
-          {
-            "title": "Israeli President Pardons Ex-Soldier Over Killing of Incapacitated Palestinian",
-            "link": "https://www.nytimes.com/2026/09/19/world/middleeast/israel-pardon-azaria.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Sun, 20 Sep 2026 02:45:46 +0000",
-            "snippet": "In 2016, Elor Azaria killed a Palestinian attacker who had been injured, fueling a public debate both at home and abroad over Israeli military actions.",
-            "isNew": true
-          },
-          {
-            "title": "Cost of Iran War Estimated at $43.6 Billion",
-            "link": "https://www.nytimes.com/2026/09/18/us/politics/iran-war-cost-pentagon.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Sun, 20 Sep 2026 02:41:51 +0000",
-            "snippet": "For the first time, the Pentagon reported costs incurred by each armed service. The figures are almost certainly on the low side, congressional officials said.",
-            "isNew": true
           }
         ]
       },
@@ -660,40 +889,18 @@
         "category_id": "regional",
         "category_name": "지역 정세",
         "category_icon": "🌍",
-        "count": 10,
-        "new_count": 10,
+        "count": 8,
+        "new_count": 8,
         "articles": [
           {
-            "title": "UN General Assembly live: Iran’s Pezeshkian, Ukraine’s Zelenskyy to speak",
-            "link": "https://www.aljazeera.com/news/liveblog/2026/9/23/un-general-assembly-live-irans-pezeshkian-ukraines-zelenskyy-to-speak?traffic_source=rss",
+            "title": "Israel’s destruction leaves Lebanon’s border villages in ruins",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/23/israels-destruction-leaves-lebanons-border-villages-in-ruins?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Wed, 23 Sep 2026 12:00:00 +0000",
-            "snippet": "Second day of UN General Assembly kicks off with speeches from world leaders, including from Syria, Iran and Ukraine.",
-            "isNew": true
-          },
-          {
-            "title": "US senator condemns Netanyahu as a ‘chronic liar’ ahead of UNGA visit",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/23/us-senator-condemns-netanyahu-as-a-chronic-liar-ahead-of-unga-visit?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Wed, 23 Sep 2026 08:44:44 +0000",
-            "snippet": "US Democratic senator Chris Van Hollen has called Netanyahu a lying war criminal ahead of his visit to UNGA",
-            "isNew": true
-          },
-          {
-            "title": "Pakistan’s latest Trump bet is on drone firm already selling to India",
-            "link": "https://www.aljazeera.com/news/2026/9/23/pakistans-new-drone-deal-is-with-trump-backed-firm-also-selling-to-india?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Wed, 23 Sep 2026 07:18:54 +0000",
-            "snippet": "The company&#039;s cofounder is also an ex-Israeli soldier. Pakistan does not recognise Israel. ",
+            "pubDate": "Wed, 23 Sep 2026 16:48:33 +0000",
+            "snippet": "Israel’s destruction leaves Lebanon’s border villages in ruins",
             "isNew": true
           },
           {
@@ -776,99 +983,88 @@
         ]
       },
       {
-        "category_id": "politics",
-        "category_name": "국내 정치",
-        "category_icon": "🏛️",
-        "count": 8,
-        "new_count": 8,
+        "category_id": "diplomacy",
+        "category_name": "외교/협상",
+        "category_icon": "🤝",
+        "count": 7,
+        "new_count": 7,
         "articles": [
           {
-            "title": "Netanyahu calls Macron's remarks on West Bank in UN speech 'grotesque'",
-            "link": "https://www.bbc.co.uk/news/articles/ck1l6yyg52qvo?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
+            "title": "US envoy walks out on Pezeshkian UN speech slamming war on Iran",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/23/us-envoy-walks-out-on-pezeshkian-un-speech-slamming-war-on-iran?traffic_source=rss",
+            "source": "aljazeera",
             "sources": [
-              "bbc"
+              "aljazeera",
+              "nytimes"
             ],
-            "pubDate": "Wed, 23 Sep 2026 11:30:58 GMT",
-            "snippet": "Israel's PM denounces the French president after he appeared to downplay Hamas's activities in the occupied territory.",
+            "pubDate": "Wed, 23 Sep 2026 16:34:47 +0000",
+            "snippet": "As Iran’s president began his speech at the UN General Assembly, an official from the US delegation walked out.",
             "isNew": true
           },
           {
-            "title": "As AI leaders warn of catastrophe, US and China shun slowdown calls",
-            "link": "https://www.aljazeera.com/economy/2026/9/23/as-ai-leaders-warn-of-catastrophe-us-and-china-shun-slowdown-calls?traffic_source=rss",
+            "title": "Russia’s attacks on Ukraine kill six after Zelenskyy-Trump talks",
+            "link": "https://www.aljazeera.com/news/2026/9/23/russian-drone-strikes-target-kyiv-infrastructure-after-zelenskyy-trump-talk?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Wed, 23 Sep 2026 10:27:38 +0000",
-            "snippet": "Presidents Donald Trump and Xi Jinping are expected to agree to only limited cooperation on AI safety at summit.",
+            "pubDate": "Wed, 23 Sep 2026 14:58:23 +0000",
+            "snippet": "Ukraine&#039;s Zelenskyy met Trump on Tuesday and discussed a potential bilateral ceasefire on energy-related targets.",
             "isNew": true
           },
           {
-            "title": "Donald Trump says he could 'annihilate Iran' if no deal is reached – video",
-            "link": "https://www.theguardian.com/us-news/video/2026/sep/22/donald-trump-iran-threat-un-general-assembly",
+            "title": "Can flurry of New York diplomacy lead to US-Iran diplomatic breakthrough?",
+            "link": "https://www.aljazeera.com/news/2026/9/23/flurry-of-diplomacy-trumps-fiery-threats-us-iran-war-deal-still-elusive?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Wed, 23 Sep 2026 13:52:27 +0000",
+            "snippet": "Analysts say a deal this week is unlikely - core disagreements between Washington and Tehran remain unresolved.",
+            "isNew": true
+          },
+          {
+            "title": "Priests Against Genocide hold shroud with names of children killed in Gaza",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/23/priests-against-genocide-hold-shroud-with-names-of-children-killed-in-gaza?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Wed, 23 Sep 2026 13:23:25 +0000",
+            "snippet": "Priests Against Genocide hold shroud with names of 300 children killed in &#039;ceasefires&#039; in Gaza, the occupied West Bank",
+            "isNew": true
+          },
+          {
+            "title": "Iran denies dropping preconditions amid ‘very productive’ three-hour UN talks in New York",
+            "link": "https://www.theguardian.com/world/2026/sep/23/iran-denies-dropping-preconditions-very-productive-three-hour-un-talks-new-york",
             "source": "guardian",
             "sources": [
-              "guardian",
-              "nytimes"
+              "guardian"
             ],
-            "pubDate": "Tue, 22 Sep 2026 16:16:27 GMT",
-            "snippet": "The US president spoke about the war with Iran during the UN general assembly on Tuesday, threatening to 'annihilate' the country and 'drive them into hell' if the regime didn’t agree to a deal with t",
+            "pubDate": "Wed, 23 Sep 2026 10:41:41 GMT",
+            "snippet": "Trump says further talks possible as barrel of Brent crude falls to below $100 for first time in two weeksUnited Nations general assembly – latest updatesIran has pushed back on claims that it dropped",
             "isNew": true
           },
           {
-            "title": "Macron Criticizes Israel and Russia in Final U.N. Speech as France’s President",
-            "link": "https://www.nytimes.com/2026/09/22/world/europe/macron-farewell-united-nations-speech.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Tue, 22 Sep 2026 21:54:51 +0000",
-            "snippet": "In his farewell address to the General Assembly, the French president criticized Russia, Israel and, in more veiled terms, the United States.",
-            "isNew": true
-          },
-          {
-            "title": "Iraq’s Prime Minister Al-Zaidi Vows to Disarm Iran-backed Militias",
-            "link": "https://www.nytimes.com/2026/09/21/world/middleeast/iraq-prime-minister-interview-disarm-militias.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Tue, 22 Sep 2026 18:17:29 +0000",
-            "snippet": "Ali al-Zaidi is a political neophyte hoping to succeed where previous leaders failed. In an interview, he laid out an ambitious timeline that could prove hard to meet.",
-            "isNew": true
-          },
-          {
-            "title": "Watch: Trump threatens to 'annihilate' Iran if no deal reached",
-            "link": "https://www.bbc.co.uk/news/videos/cmvgydqqlyx9o?at_medium=RSS&at_campaign=rss",
+            "title": "US and Iran hold first talks since June after Trump's 'annihilation' threat",
+            "link": "https://www.bbc.co.uk/news/articles/ck62m1631d7po?at_medium=RSS&at_campaign=rss",
             "source": "bbc",
             "sources": [
               "bbc"
             ],
-            "pubDate": "Tue, 22 Sep 2026 17:35:36 GMT",
-            "snippet": "US President Donald Trump presented Iran with a stark choice: reach an agreement or face the rapid “annihilation” of the Islamic Republic.",
+            "pubDate": "Wed, 23 Sep 2026 06:12:56 GMT",
+            "snippet": "The talks are the first since a ceasefire collapsed in June, with the sides exchanging fire intermittently.",
             "isNew": true
           },
           {
-            "title": "Trump still thinks Iranians will ‘rise up’ against the government. In Tehran I see a different story | Hossein Hamdieh",
-            "link": "https://www.theguardian.com/commentisfree/2026/sep/22/trump-iranians-rise-up-against-the-regime-in-tehran",
+            "title": "Iran and US have held talks on sidelines of UN summit, says Donald Trump",
+            "link": "https://www.theguardian.com/world/2026/sep/22/iran-us-talks-sidelines-un-summit-trump-israel-us",
             "source": "guardian",
             "sources": [
               "guardian"
             ],
-            "pubDate": "Tue, 22 Sep 2026 09:00:54 GMT",
-            "snippet": "If anything, the ongoing war is uniting a divided country against the foreign invaders. Washington seems a long way from grasping this pointThe US president, Donald Trump, asked recently on one of his",
-            "isNew": true
-          },
-          {
-            "title": "Whiplashed middle powers seek new alliances as Trump rages on world stage",
-            "link": "https://www.theguardian.com/us-news/2026/sep/21/us-allies-donald-trump-world-un-global-order",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Mon, 21 Sep 2026 04:00:34 GMT",
-            "snippet": "While world leaders prepare for annual UN gathering, shifts in the global order continue in the face of a disruptive American presidentIn the event of a midterms election battering, it is possible tha",
+            "pubDate": "Tue, 22 Sep 2026 21:21:59 GMT",
+            "snippet": "Senior Iranian official indicates willingness to reopen strait of Hormuz if US takes steps to ease pressure on TehranIranian officials held three hours of talks with US special envoy Steve Witkoff on ",
             "isNew": true
           }
         ]
@@ -877,29 +1073,18 @@
         "category_id": "economy",
         "category_name": "경제 영향",
         "category_icon": "📊",
-        "count": 6,
-        "new_count": 6,
+        "count": 5,
+        "new_count": 5,
         "articles": [
           {
-            "title": "As Xi meets Trump, who’s winning their trade war?",
-            "link": "https://www.aljazeera.com/features/2026/9/23/as-xi-meets-trump-whos-winning-their-trade-war?traffic_source=rss",
+            "title": "Iran: Strait of Hormuz won’t be used to ‘impose insecurity on us’",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/23/iran-strait-of-hormuz-wont-be-used-to-impose-insecurity-on?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Wed, 23 Sep 2026 12:20:40 +0000",
-            "snippet": "Trade war has been central to Trump&#039;s presidency, but it didn&#039;t slash US deficits. Meanwhile, China recorded a surplus.",
-            "isNew": true
-          },
-          {
-            "title": "Trump rallies Latin American allies against drug cartels",
-            "link": "https://www.aljazeera.com/news/2026/9/23/trump-rallies-shield-of-the-americas-coalition-against-drug-cartels?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Wed, 23 Sep 2026 05:34:40 +0000",
-            "snippet": "US-led Shield of the Americas coalition backs sanctions against crime groups after Trump urges stronger action.",
+            "pubDate": "Wed, 23 Sep 2026 15:24:13 +0000",
+            "snippet": "Iranian President Masoud Pezeshkian told the UN General Assembly that ‘warfare knows no borders’.",
             "isNew": true
           },
           {
@@ -949,65 +1134,43 @@
         ]
       },
       {
-        "category_id": "diplomacy",
-        "category_name": "외교/협상",
-        "category_icon": "🤝",
-        "count": 5,
-        "new_count": 5,
+        "category_id": "other",
+        "category_name": "기타",
+        "category_icon": "📰",
+        "count": 3,
+        "new_count": 3,
         "articles": [
           {
-            "title": "Qatar on mediation efforts: ‘We can’t let diplomacy fail’",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/23/qatar-on-mediation-efforts-we-cant-let-diplomacy?traffic_source=rss",
+            "title": "Scientists warn super El Nino could cause 450,000 deaths: Should we worry?",
+            "link": "https://www.aljazeera.com/features/2026/9/23/scientists-warn-super-el-nino-could-cause-450000-deaths-should-we-worry?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Wed, 23 Sep 2026 11:03:35 +0000",
-            "snippet": "Qatar’s Majed al-Ansari says Doha is determined to make diplomacy work to end the US-Iran conflict. ",
+            "pubDate": "Wed, 23 Sep 2026 16:29:55 +0000",
+            "snippet": "Global South countries will be worst affected by the phenomenon sweeping the planet from June to February. ",
             "isNew": true
           },
           {
-            "title": "Iran denies dropping preconditions amid ‘very productive’ three-hour UN talks in New York",
-            "link": "https://www.theguardian.com/world/2026/sep/23/iran-denies-dropping-preconditions-very-productive-three-hour-un-talks-new-york",
+            "title": "Stanislas Hutin, Who Denounced Torture in France’s Algerian War, Dies at 95",
+            "link": "https://www.nytimes.com/2026/09/23/world/middleeast/stanislas-hutin-dead.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Wed, 23 Sep 2026 15:44:52 +0000",
+            "snippet": "He was among the first to chronicle the French force’s systematic abuse of Algerians, brutal encounters that he documented in his journal and with his photography.",
+            "isNew": true
+          },
+          {
+            "title": "‘This is where I live now, the back of a truck’: a day in the life of a grandmother in Gaza",
+            "link": "https://www.theguardian.com/global-development/ng-interactive/2026/sep/23/this-is-where-i-live-now-the-back-of-a-truck-a-day-in-the-life-of-a-grandmother-in-gaza",
             "source": "guardian",
             "sources": [
               "guardian"
             ],
-            "pubDate": "Wed, 23 Sep 2026 10:41:41 GMT",
-            "snippet": "Trump says further talks possible as barrel of Brent crude falls to below $100 for first time in two weeksUnited Nations general assembly – latest updatesIran has pushed back on claims that it dropped",
-            "isNew": true
-          },
-          {
-            "title": "Qatar says ‘no alternative to diplomacy’ as Belgium and Rwanda restore ties",
-            "link": "https://www.aljazeera.com/news/2026/9/23/qatar-says-no-alternative-to-diplomacy-as-belgium-and-rwanda-restore-ties?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Wed, 23 Sep 2026 08:40:35 +0000",
-            "snippet": "Doha lauded for mediating Brussels-Kigali rupture, showcasing its trusted role in international peace efforts.",
-            "isNew": true
-          },
-          {
-            "title": "US and Iran hold first talks since June after Trump's 'annihilation' threat",
-            "link": "https://www.bbc.co.uk/news/articles/ck62m1631d7po?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
-            "sources": [
-              "bbc"
-            ],
-            "pubDate": "Wed, 23 Sep 2026 06:12:56 GMT",
-            "snippet": "The talks are the first since a ceasefire collapsed in June, with the sides exchanging fire intermittently.",
-            "isNew": true
-          },
-          {
-            "title": "Iran and US have held talks on sidelines of UN summit, says Donald Trump",
-            "link": "https://www.theguardian.com/world/2026/sep/22/iran-us-talks-sidelines-un-summit-trump-israel-us",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Tue, 22 Sep 2026 21:21:59 GMT",
-            "snippet": "Senior Iranian official indicates willingness to reopen strait of Hormuz if US takes steps to ease pressure on TehranIranian officials held three hours of talks with US special envoy Steve Witkoff on ",
+            "pubDate": "Wed, 23 Sep 2026 11:00:46 GMT",
+            "snippet": "As the war in Gaza approaches its fourth year, the Guardian follows five ordinary Palestinians as they go about their lives. Each tells the story of their day, revealing the terrible toll of the confl",
             "isNew": true
           }
         ]
@@ -1016,8 +1179,8 @@
         "category_id": "humanitarian",
         "category_name": "인도주의/피해",
         "category_icon": "🏥",
-        "count": 4,
-        "new_count": 4,
+        "count": 2,
+        "new_count": 2,
         "articles": [
           {
             "title": "Reports of violence against women in Gaza surge, UN agency finds",
@@ -1040,70 +1203,6 @@
             "pubDate": "Tue, 22 Sep 2026 19:19:02 GMT",
             "snippet": "Houthi militants have made a lightning advance along the Red Sea coast, capturing strategically important territory in Yemen.Hundreds of civilians have been killed and more than 100,000 people have be",
             "isNew": true
-          },
-          {
-            "title": "Inside the Breakdown of U.K.-Israel Relations Over West Bank Settlements",
-            "link": "https://www.nytimes.com/2026/09/19/world/europe/uk-israel-west-bank-sanctions.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Sun, 20 Sep 2026 18:06:47 +0000",
-            "snippet": "British officials believed Israel had said it would hold off on moving ahead with construction in E1, a piece of land viewed as vital to a future Palestinian state. Israel said it promised no such thi",
-            "isNew": true
-          },
-          {
-            "title": "Israeli Shot and Killed in West Bank by Palestinian, Officials Say",
-            "link": "https://www.nytimes.com/2026/09/20/world/middleeast/israeli-killed-west-bank-attack.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Sun, 20 Sep 2026 14:59:59 +0000",
-            "snippet": "The Israeli officials said an arrest had been made. The attack was on the eve of Yom Kippur, the holiest day in the Jewish calendar. Violence in the territory has grown recently.",
-            "isNew": true
-          }
-        ]
-      },
-      {
-        "category_id": "other",
-        "category_name": "기타",
-        "category_icon": "📰",
-        "count": 3,
-        "new_count": 3,
-        "articles": [
-          {
-            "title": "‘This is where I live now, the back of a truck’: a day in the life of a grandmother in Gaza",
-            "link": "https://www.theguardian.com/global-development/ng-interactive/2026/sep/23/this-is-where-i-live-now-the-back-of-a-truck-a-day-in-the-life-of-a-grandmother-in-gaza",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Wed, 23 Sep 2026 11:00:46 GMT",
-            "snippet": "As the war in Gaza approaches its fourth year, the Guardian follows five ordinary Palestinians as they go about their lives. Each tells the story of their day, revealing the terrible toll of the confl",
-            "isNew": true
-          },
-          {
-            "title": "What Palestinian children endure in Israeli detention",
-            "link": "https://www.aljazeera.com/features/2026/9/23/inside-israels-prisons-what-palestinian-children-say-they-endure-in-deten?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Wed, 23 Sep 2026 08:42:11 +0000",
-            "snippet": "Every day, Fidaa Zalbani checks the room of her son, Mohammed, 17, tidying his bed and arranging untouched clothes.",
-            "isNew": true
-          },
-          {
-            "title": "Israeli Tourist Trap ‘Herod’s Pool’ Is Draining Palestinians’ Land Dry",
-            "link": "https://www.nytimes.com/2026/09/20/world/middleeast/west-bank-pool-palestinians-israelis-water.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Sun, 20 Sep 2026 09:00:50 +0000",
-            "snippet": "Israeli lawmakers have promoted visits to an ancient reservoir in the West Bank that was refilled this summer with water diverted from Palestinian-owned farms.",
-            "isNew": true
           }
         ]
       }
@@ -1111,17 +1210,152 @@
     "recent_30min": {
       "total_new": 50,
       "by_category": {
-        "economy": {
-          "count": 6,
+        "politics": {
+          "count": 13,
           "titles": [
             {
-              "title": "As Xi meets Trump, who’s winning their trade war?",
-              "link": "https://www.aljazeera.com/features/2026/9/23/as-xi-meets-trump-whos-winning-their-trade-war?traffic_source=rss",
+              "title": "Iran's president tells Trump it will never 'bend the knee'",
+              "link": "https://www.bbc.co.uk/news/articles/cqvgyjy23ggjo?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
+            },
+            {
+              "title": "Iran’s president hits out at ‘bully’ Trump in UN speech but signals willingness to talk",
+              "link": "https://www.theguardian.com/world/2026/sep/23/iranian-leader-hits-back-at-bully-trump-signals-willingness-to-talk",
+              "source": "guardian"
+            },
+            {
+              "title": "‘They kill, we are punished’: Iran calls out Western hypocrisy",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/9/23/they-kill-we-are-punished-iran-calls-out-western-hypocrisy?traffic_source=rss",
               "source": "aljazeera"
             },
             {
-              "title": "Trump rallies Latin American allies against drug cartels",
-              "link": "https://www.aljazeera.com/news/2026/9/23/trump-rallies-shield-of-the-americas-coalition-against-drug-cartels?traffic_source=rss",
+              "title": "Al-Sharaa: Occupied Golan Heights to ‘remain Syrian territory’",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/9/23/al-sharaa-occupied-golan-heights-to-remain-syrian?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Syria’s al-Sharaa answers questions on Israel’s violations in Syria",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/9/23/syrias-al-sharaa-answers-questions-on-israels-violations-in-syria?traffic_source=rss",
+              "source": "aljazeera"
+            }
+          ]
+        },
+        "military": {
+          "count": 11,
+          "titles": [
+            {
+              "title": "Ethiopia faces renewed war as armed groups launch offensive",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/9/23/09-23-26-ethiopia-armed-groups-sv-mp4?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Syria’s al-Sharaa warns Israeli attacks endanger delicate post-war recovery",
+              "link": "https://www.aljazeera.com/news/2026/9/23/syrias-al-sharaa-warns-israeli-attacks-endanger-delicate-post-war-recovery?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Trump pushes Russia-Ukraine ‘energy truce’: Can it work?",
+              "link": "https://www.aljazeera.com/news/2026/9/23/trump-pushes-russia-ukraine-energy-truce-can-it-work?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "How much is UK supporting Saudi Arabia in its war with Iran-backed Houthis?",
+              "link": "https://www.aljazeera.com/news/2026/9/23/how-much-is-uk-supporting-saudi-arabia-in-its-war-with-iran-backed-houthis?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Iran’s President Arrives in U.S. for U.N. Meeting Against the Backdrop of War",
+              "link": "https://www.nytimes.com/2026/09/22/world/middleeast/iran-war-un-general-assembly-pezeshkian.html",
+              "source": "nytimes"
+            }
+          ]
+        },
+        "regional": {
+          "count": 8,
+          "titles": [
+            {
+              "title": "Israel’s destruction leaves Lebanon’s border villages in ruins",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/9/23/israels-destruction-leaves-lebanons-border-villages-in-ruins?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Trump Meets Middle East Leaders as Regional Wars Widen",
+              "link": "https://www.nytimes.com/2026/09/22/world/middleeast/trump-persian-gulf-leaders-meeting.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Up to 169 killed in Yemen as Houthis battle for Red Sea coastal heights",
+              "link": "https://www.theguardian.com/world/2026/sep/22/yemen-houthis-battle-strategic-red-sea-heights",
+              "source": "guardian"
+            },
+            {
+              "title": "Iran must stop arming Houthis in Yemen, G7 says ahead of UN General Assembly",
+              "link": "https://www.bbc.co.uk/news/articles/cwm2qpmepmlzo?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
+            },
+            {
+              "title": "Jordan’s King Abdullah Likely to Focus on Palestinians at U.N. General Assembly",
+              "link": "https://www.nytimes.com/live/2026/09/22/world/un-general-assembly-trump-speech-news/king-abdullah-jordan-gaza-unga",
+              "source": "nytimes"
+            }
+          ]
+        },
+        "diplomacy": {
+          "count": 8,
+          "titles": [
+            {
+              "title": "US envoy walks out on Pezeshkian UN speech slamming war on Iran",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/9/23/us-envoy-walks-out-on-pezeshkian-un-speech-slamming-war-on-iran?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Walkouts at the U.N. General Assembly Are Somewhat of a Tradition",
+              "link": "https://www.nytimes.com/2026/09/23/world/un-general-assembly-walkout.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Russia’s attacks on Ukraine kill six after Zelenskyy-Trump talks",
+              "link": "https://www.aljazeera.com/news/2026/9/23/russian-drone-strikes-target-kyiv-infrastructure-after-zelenskyy-trump-talk?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Can flurry of New York diplomacy lead to US-Iran diplomatic breakthrough?",
+              "link": "https://www.aljazeera.com/news/2026/9/23/flurry-of-diplomacy-trumps-fiery-threats-us-iran-war-deal-still-elusive?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Priests Against Genocide hold shroud with names of children killed in Gaza",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/9/23/priests-against-genocide-hold-shroud-with-names-of-children-killed-in-gaza?traffic_source=rss",
+              "source": "aljazeera"
+            }
+          ]
+        },
+        "other": {
+          "count": 3,
+          "titles": [
+            {
+              "title": "Scientists warn super El Nino could cause 450,000 deaths: Should we worry?",
+              "link": "https://www.aljazeera.com/features/2026/9/23/scientists-warn-super-el-nino-could-cause-450000-deaths-should-we-worry?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Stanislas Hutin, Who Denounced Torture in France’s Algerian War, Dies at 95",
+              "link": "https://www.nytimes.com/2026/09/23/world/middleeast/stanislas-hutin-dead.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "‘This is where I live now, the back of a truck’: a day in the life of a grandmother in Gaza",
+              "link": "https://www.theguardian.com/global-development/ng-interactive/2026/sep/23/this-is-where-i-live-now-the-back-of-a-truck-a-day-in-the-life-of-a-grandmother-in-gaza",
+              "source": "guardian"
+            }
+          ]
+        },
+        "economy": {
+          "count": 5,
+          "titles": [
+            {
+              "title": "Iran: Strait of Hormuz won’t be used to ‘impose insecurity on us’",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/9/23/iran-strait-of-hormuz-wont-be-used-to-impose-insecurity-on?traffic_source=rss",
               "source": "aljazeera"
             },
             {
@@ -1138,151 +1372,16 @@
               "title": "British banks warned not to invest in planned Israeli settlement before UK trade ban begins",
               "link": "https://www.theguardian.com/politics/2026/sep/22/mps-uk-banks-investment-israeli-settlement-trade-ban",
               "source": "guardian"
-            }
-          ]
-        },
-        "regional": {
-          "count": 10,
-          "titles": [
-            {
-              "title": "UN General Assembly live: Iran’s Pezeshkian, Ukraine’s Zelenskyy to speak",
-              "link": "https://www.aljazeera.com/news/liveblog/2026/9/23/un-general-assembly-live-irans-pezeshkian-ukraines-zelenskyy-to-speak?traffic_source=rss",
-              "source": "aljazeera"
             },
             {
-              "title": "US senator condemns Netanyahu as a ‘chronic liar’ ahead of UNGA visit",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/9/23/us-senator-condemns-netanyahu-as-a-chronic-liar-ahead-of-unga-visit?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Pakistan’s latest Trump bet is on drone firm already selling to India",
-              "link": "https://www.aljazeera.com/news/2026/9/23/pakistans-new-drone-deal-is-with-trump-backed-firm-also-selling-to-india?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Trump Meets Middle East Leaders as Regional Wars Widen",
-              "link": "https://www.nytimes.com/2026/09/22/world/middleeast/trump-persian-gulf-leaders-meeting.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Up to 169 killed in Yemen as Houthis battle for Red Sea coastal heights",
-              "link": "https://www.theguardian.com/world/2026/sep/22/yemen-houthis-battle-strategic-red-sea-heights",
-              "source": "guardian"
-            }
-          ]
-        },
-        "politics": {
-          "count": 10,
-          "titles": [
-            {
-              "title": "Netanyahu calls Macron's remarks on West Bank in UN speech 'grotesque'",
-              "link": "https://www.bbc.co.uk/news/articles/ck1l6yyg52qvo?at_medium=RSS&at_campaign=rss",
-              "source": "bbc"
-            },
-            {
-              "title": "As AI leaders warn of catastrophe, US and China shun slowdown calls",
-              "link": "https://www.aljazeera.com/economy/2026/9/23/as-ai-leaders-warn-of-catastrophe-us-and-china-shun-slowdown-calls?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Trump Threatens Annihilation in Iran in UN Speech and Lays Out Winner-Takes-All Vision",
-              "link": "https://www.nytimes.com/2026/09/22/us/politics/un-trump-speech-iran-venezuela-greenland.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Macron Criticizes Israel and Russia in Final U.N. Speech as France’s President",
-              "link": "https://www.nytimes.com/2026/09/22/world/europe/macron-farewell-united-nations-speech.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "At U.N., Trump Says He Will Strike a Deal With Iran or ‘Annihilate’ It",
-              "link": "https://www.nytimes.com/2026/09/22/world/americas/trump-annihilate-iran-unga.html",
-              "source": "nytimes"
-            }
-          ]
-        },
-        "diplomacy": {
-          "count": 5,
-          "titles": [
-            {
-              "title": "Qatar on mediation efforts: ‘We can’t let diplomacy fail’",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/9/23/qatar-on-mediation-efforts-we-cant-let-diplomacy?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Iran denies dropping preconditions amid ‘very productive’ three-hour UN talks in New York",
-              "link": "https://www.theguardian.com/world/2026/sep/23/iran-denies-dropping-preconditions-very-productive-three-hour-un-talks-new-york",
-              "source": "guardian"
-            },
-            {
-              "title": "Qatar says ‘no alternative to diplomacy’ as Belgium and Rwanda restore ties",
-              "link": "https://www.aljazeera.com/news/2026/9/23/qatar-says-no-alternative-to-diplomacy-as-belgium-and-rwanda-restore-ties?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "US and Iran hold first talks since June after Trump's 'annihilation' threat",
-              "link": "https://www.bbc.co.uk/news/articles/ck62m1631d7po?at_medium=RSS&at_campaign=rss",
-              "source": "bbc"
-            },
-            {
-              "title": "Iran and US have held talks on sidelines of UN summit, says Donald Trump",
-              "link": "https://www.theguardian.com/world/2026/sep/22/iran-us-talks-sidelines-un-summit-trump-israel-us",
-              "source": "guardian"
-            }
-          ]
-        },
-        "other": {
-          "count": 3,
-          "titles": [
-            {
-              "title": "‘This is where I live now, the back of a truck’: a day in the life of a grandmother in Gaza",
-              "link": "https://www.theguardian.com/global-development/ng-interactive/2026/sep/23/this-is-where-i-live-now-the-back-of-a-truck-a-day-in-the-life-of-a-grandmother-in-gaza",
-              "source": "guardian"
-            },
-            {
-              "title": "What Palestinian children endure in Israeli detention",
-              "link": "https://www.aljazeera.com/features/2026/9/23/inside-israels-prisons-what-palestinian-children-say-they-endure-in-deten?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Israeli Tourist Trap ‘Herod’s Pool’ Is Draining Palestinians’ Land Dry",
-              "link": "https://www.nytimes.com/2026/09/20/world/middleeast/west-bank-pool-palestinians-israelis-water.html",
-              "source": "nytimes"
-            }
-          ]
-        },
-        "military": {
-          "count": 12,
-          "titles": [
-            {
-              "title": "‘Annihilate’ vs ‘crushing’ attacks: Why Iran, US up rhetoric amid talks",
-              "link": "https://www.aljazeera.com/news/2026/9/23/annihilate-vs-crushing-attacks-why-iran-us-up-rhetoric-amid-talks?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Iran’s President Arrives in U.S. for U.N. Meeting Against the Backdrop of War",
-              "link": "https://www.nytimes.com/2026/09/22/world/middleeast/iran-war-un-general-assembly-pezeshkian.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "‘I’m afraid they’ll bomb the cafe where I work, or bomb me’: a day in the life of a 12-year-old boy in Gaza",
-              "link": "https://www.theguardian.com/global-development/ng-interactive/2026/sep/22/im-afraid-theyll-bomb-the-cafe-where-i-work-or-bomb-me-a-day-in-the-life-of-a-12-year-old-boy-in-gaza",
-              "source": "guardian"
-            },
-            {
-              "title": "Why the Iran-Backed Houthis in Yemen and Saudi Arabia Are Back at War",
-              "link": "https://www.nytimes.com/2026/09/21/world/middleeast/yemen-houthis-saudi-war.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "UK to give support to Saudi jets in attempt to counter Houthi fighters",
-              "link": "https://www.theguardian.com/politics/2026/sep/21/uk-to-give-support-to-saudi-jets-in-attempt-to-counter-houthi-fighters",
+              "title": "Charges dropped against Stanford students over pro-Palestine protest",
+              "link": "https://www.theguardian.com/us-news/2026/sep/21/stanford-students-gaza-protest-charges-dropped",
               "source": "guardian"
             }
           ]
         },
         "humanitarian": {
-          "count": 4,
+          "count": 2,
           "titles": [
             {
               "title": "Reports of violence against women in Gaza surge, UN agency finds",
@@ -1293,16 +1392,6 @@
               "title": "Why the civil war in Yemen has world governments on edge",
               "link": "https://www.theguardian.com/world/video/2026/sep/22/how-the-civil-war-in-yemen-could-affect-global-shipping-routes-explainer",
               "source": "guardian"
-            },
-            {
-              "title": "Inside the Breakdown of U.K.-Israel Relations Over West Bank Settlements",
-              "link": "https://www.nytimes.com/2026/09/19/world/europe/uk-israel-west-bank-sanctions.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Israeli Shot and Killed in West Bank by Palestinian, Officials Say",
-              "link": "https://www.nytimes.com/2026/09/20/world/middleeast/israeli-killed-west-bank-attack.html",
-              "source": "nytimes"
             }
           ]
         }
@@ -1396,56 +1485,88 @@
     }
   ],
   "economic_indicators": {
-    "GOLD": {
-      "price": 4341.2,
-      "change": -35.2,
-      "changePercent": -0.8,
-      "prev": 4376.4
-    },
     "DXY": {
-      "price": 100.95,
-      "change": 0.52,
-      "changePercent": 0.52,
+      "price": 101.17,
+      "change": 0.74,
+      "changePercent": 0.74,
       "prev": 100.43
     },
-    "WTI": {
-      "price": 90.95,
-      "change": -3.64,
-      "changePercent": -3.85,
-      "prev": 94.59
-    },
-    "US2Y": {
-      "price": 4,
-      "change": 0.02,
-      "changePercent": 0.5,
-      "prev": 3.98
-    },
-    "VIX": {
-      "price": 14.29,
-      "change": -0.58,
-      "changePercent": -3.9,
-      "prev": 14.87
+    "GOLD": {
+      "price": 4317.8,
+      "change": -58.6,
+      "changePercent": -1.34,
+      "prev": 4376.4
     },
     "BRENT": {
-      "price": 96.37,
-      "change": -2.88,
-      "changePercent": -2.9,
+      "price": 98.05,
+      "change": -1.2,
+      "changePercent": -1.21,
       "prev": 99.25
     },
     "US10Y": {
-      "price": 4.99,
-      "change": 0.03,
-      "changePercent": 0.6,
+      "price": 5.13,
+      "change": 0.16,
+      "changePercent": 3.22,
       "prev": 4.96
+    },
+    "VIX": {
+      "price": 15.34,
+      "change": 0.47,
+      "changePercent": 3.16,
+      "prev": 14.87
+    },
+    "US2Y": {
+      "price": 4.02,
+      "change": 0.04,
+      "changePercent": 1,
+      "prev": 3.98
+    },
+    "WTI": {
+      "price": 91.81,
+      "change": -2.78,
+      "changePercent": -2.94,
+      "prev": 94.59
     }
   },
   "critical_events": [
     {
-      "id": "capital_attack",
-      "name": "수도 직접 공격/포위",
+      "id": "ceasefire_agreement",
+      "name": "공식 휴전/평화 합의",
+      "severity": "critical",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "shorten"
+    },
+    {
+      "id": "regime_collapse",
+      "name": "교전국 정권 붕괴/쿠데타",
+      "severity": "critical",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "shorten"
+    },
+    {
+      "id": "unilateral_deescalation",
+      "name": "일방적 전투 축소/자제 선언",
       "severity": "high",
-      "confidence": 0.8666666666666667,
-      "matchCount": 2.6,
+      "confidence": 1,
+      "matchCount": 4,
+      "direction": "shorten"
+    },
+    {
+      "id": "diplomatic_breakthrough",
+      "name": "외교적 돌파구/강대국 중재",
+      "severity": "high",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "shorten"
+    },
+    {
+      "id": "humanitarian_crisis",
+      "name": "대규모 인도주의 위기",
+      "severity": "high",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
       "direction": "shorten"
     },
     {
@@ -1457,6 +1578,6 @@
       "direction": "lengthen"
     }
   ],
-  "feeds_loaded": 7,
+  "feeds_loaded": 6,
   "feeds_total": 8
 }
