@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-09-24T08:17:32.905Z",
+  "timestamp": "2026-09-24T13:40:46.694Z",
   "war_day": 208,
   "probabilities": {
-    "1개월 내 (~3월)": 23.5,
-    "2~3개월 (4~5월)": 39.1,
-    "4~6개월 (6~8월)": 23.2,
-    "7~12개월 (9월~27/2월)": 10.5,
-    "1년 초과": 3.7
+    "1개월 내 (~3월)": 25.6,
+    "2~3개월 (4~5월)": 39.3,
+    "4~6개월 (6~8월)": 24.1,
+    "7~12개월 (9월~27/2월)": 8.8,
+    "1년 초과": 2.2
   },
   "factors": [
     {
@@ -45,8 +45,8 @@
       "decay": 0.4
     },
     {
-      "factor": "확전 뉴스 우세 (확전8:휴전4)",
-      "impact": "전쟁 장기화 가능성 (확전비율 67%)",
+      "factor": "확전 뉴스 우세 (확전10:휴전2)",
+      "impact": "전쟁 장기화 가능성 (확전비율 83%)",
       "weight": "+0.03%p (4~6개월)",
       "direction": "lengthen",
       "detail": "언론에서 휴전보다 확전을 더 많이 보도하고 있습니다.",
@@ -164,11 +164,11 @@
       "decay": 1
     },
     {
-      "factor": "협상/외교 뉴스 14건 감지",
+      "factor": "협상/외교 뉴스 18건 감지",
       "impact": "외교적 해결 움직임 포착",
       "weight": "+0.03%p (1개월내), +0.02%p (2~3개월)",
       "direction": "shorten",
-      "detail": "실시간 뉴스에서 협상 관련 기사 14건이 감지되었습니다.",
+      "detail": "실시간 뉴스에서 협상 관련 기사 18건이 감지되었습니다.",
       "keywords": [
         "negotiat",
         "talks",
@@ -260,11 +260,39 @@
       "severity": "critical"
     },
     {
+      "factor": "[중대 이벤트] 교전국 정권 붕괴/쿠데타",
+      "impact": "교전국 정권 붕괴 또는 쿠데타. 이라크(2003): 바그다드 함락 후 3주 내 주요 전투 종료. 리비아(2011): 트리폴리 함락 후 2개월 내 종전.",
+      "weight": "+6.7%p (1개월내), +5.3%p (2~3개월), +1.3%p (4~6개월), -3.3%p (7~12개월), -2.7%p (1년초과)",
+      "direction": "shorten",
+      "detail": "교전국 정권 붕괴 또는 쿠데타. 이라크(2003): 바그다드 함락 후 3주 내 주요 전투 종료. 리비아(2011): 트리폴리 함락 후 2개월 내 종전.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: To the victor belong Venezuela’s spoils: Delcy Rodriguez’s UNGA about-face",
+      "keywords": [
+        "regime",
+        "collaps",
+        "regime",
+        "fall",
+        "government",
+        "fall",
+        "capital",
+        "fall",
+        "capital",
+        "captur",
+        "coup",
+        "detat",
+        "government",
+        "overthrow",
+        "regime",
+        "change"
+      ],
+      "applied": "2026-09-24",
+      "active": true,
+      "severity": "critical"
+    },
+    {
       "factor": "[중대 이벤트] 외교적 돌파구/강대국 중재",
       "impact": "주요 외교적 돌파구 또는 강대국 중재. 데이턴(1995): 미국 중재 → 3주만에 합의. UN 안보리 결의는 평균 2~4주 내 휴전 이행.",
       "weight": "+2.0%p (1개월내), +4.0%p (2~3개월), +1.3%p (4~6개월), -1.3%p (7~12개월), -0.7%p (1년초과)",
       "direction": "shorten",
-      "detail": "주요 외교적 돌파구 또는 강대국 중재. 데이턴(1995): 미국 중재 → 3주만에 합의. UN 안보리 결의는 평균 2~4주 내 휴전 이행.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Trump Aides Seek to Jump Start Diplomacy With Iran as Crisis Widens",
+      "detail": "주요 외교적 돌파구 또는 강대국 중재. 데이턴(1995): 미국 중재 → 3주만에 합의. UN 안보리 결의는 평균 2~4주 내 휴전 이행.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Trump Aides Seek to Jump-Start Diplomacy With Iran as Crisis Widens",
       "keywords": [
         "peace talk",
         "agree",
@@ -292,9 +320,9 @@
     {
       "factor": "[중대 이벤트] 전선 확대/신규 참전국",
       "impact": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).",
-      "weight": "-1.3%p (1개월내), -2.0%p (2~3개월), +2.7%p (4~6개월), +2.0%p (7~12개월), +1.3%p (1년초과)",
+      "weight": "-2.0%p (1개월내), -3.0%p (2~3개월), +4.0%p (4~6개월), +3.0%p (7~12개월), +2.0%p (1년초과)",
       "direction": "lengthen",
-      "detail": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Trump Meets Middle East Leaders as Regional Wars Widen",
+      "detail": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).\n\n신뢰도: 확실 (100%), 관련 기사 6건 감지.\n관련: Family of Iranian twins sentenced to death and decades in jail ask UN for help | Hurricane Polo brings fears of heavy rain and landslides in Mexico | Trump Meets Middle East Leaders as Regional Wars Widen",
       "keywords": [
         "new front",
         "war spread",
@@ -316,11 +344,11 @@
       "severity": "moderate"
     },
     {
-      "factor": "유가 급등 (WTI $93.38/배럴)",
+      "factor": "유가 급등 (WTI $93.95/배럴)",
       "impact": "중간 수준 경제 압력",
       "weight": "+2%p (1-2개월)",
       "direction": "shorten",
-      "detail": "WTI 유가가 $93.38/배럴로 90달러 이상입니다. 호르무즈 해협 봉쇄와 맞물려 글로벌 에너지 시장에 큰 충격을 주고 있으며, 주요국들의 조기 종전 압력이 강화되고 있습니다.",
+      "detail": "WTI 유가가 $93.95/배럴로 90달러 이상입니다. 호르무즈 해협 봉쇄와 맞물려 글로벌 에너지 시장에 큰 충격을 주고 있으며, 주요국들의 조기 종전 압력이 강화되고 있습니다.",
       "keywords": [
         "oil",
         "crude",
@@ -333,11 +361,11 @@
       "active": true
     },
     {
-      "factor": "금값 사상최고 ($4318.4/oz)",
+      "factor": "금값 사상최고 ($4310.1/oz)",
       "impact": "안전자산 수요 폭증 → 글로벌 불안 심화",
       "weight": "+2%p (4-6개월)",
       "direction": "lengthen",
-      "detail": "금 가격이 온스당 $4318.4로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
+      "detail": "금 가격이 온스당 $4310.1로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
       "keywords": [
         "gold",
         "safe haven",
@@ -348,11 +376,11 @@
       "active": true
     },
     {
-      "factor": "미국 10년 국채금리 5.11% (고금리 지속)",
+      "factor": "미국 10년 국채금리 5.1% (고금리 지속)",
       "impact": "전쟁 자금 조달 비용 증가",
       "weight": "+1%p (4-6개월)",
       "direction": "mixed",
-      "detail": "미국 10년물 국채금리가 5.11%로 높은 수준을 유지하고 있습니다. 전쟁 자금 조달 비용이 증가하며, 장기전의 경제적 부담이 커지고 있습니다.",
+      "detail": "미국 10년물 국채금리가 5.1%로 높은 수준을 유지하고 있습니다. 전쟁 자금 조달 비용이 증가하며, 장기전의 경제적 부담이 커지고 있습니다.",
       "keywords": [
         "treasury",
         "yield",
@@ -365,22 +393,82 @@
     }
   ],
   "news_signals": {
-    "ceasefire_mentions": 4,
-    "escalation_mentions": 8,
-    "negotiation_mentions": 14,
-    "casualty_mentions": 6,
-    "peace_mentions": 4,
+    "ceasefire_mentions": 2,
+    "escalation_mentions": 10,
+    "negotiation_mentions": 18,
+    "casualty_mentions": 4,
+    "peace_mentions": 6,
     "regional_spread": 8,
     "total_articles": 50,
     "new_articles": 50,
-    "unique_events": 45,
-    "duplicates_removed": 5
+    "unique_events": 44,
+    "duplicates_removed": 6
   },
   "latest_news": [
     {
+      "title": "Son of Israeli Ambassador to U.S. Critically Hurt in West Bank Attack, Officials Say",
+      "link": "https://www.nytimes.com/2026/09/24/world/middleeast/son-of-israeli-ambassador-to-us-critically-hurt-in-west-bank-attack-officials-say.html",
+      "pubDate": "Thu, 24 Sep 2026 13:27:02 +0000",
+      "source": "nytimes",
+      "snippet": "Neria Leiter, a reserve soldier, sustained life-threatening injuries after a Palestinian man drove into a military checkpoint in the West Bank, the Israeli military said.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Family of Iranian twins sentenced to death and decades in jail ask UN for help",
+      "link": "https://www.theguardian.com/world/2026/sep/24/twins-sentenced-to-death-and-jail-iran-un-appeal",
+      "pubDate": "Thu, 24 Sep 2026 13:15:48 GMT",
+      "source": "guardian",
+      "snippet": "Taraneh and Romina Rahimi were charged with ‘waging war against God’ after joining protests against Tehran regimeThe family of 21-year-old twins who have been sentenced to death and decades in jail fo",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Hurricane Polo brings fears of heavy rain and landslides in Mexico",
+      "link": "https://www.aljazeera.com/news/2026/9/24/hurricane-polo-hits-mexicos-coast-as-tropical-storm-nolo-approaches-hawaii?traffic_source=rss",
+      "pubDate": "Thu, 24 Sep 2026 13:02:43 +0000",
+      "source": "aljazeera",
+      "snippet": "Heavy rains could cause life-threatening flooding and landslides in Mexico, the US National Hurricane Center warned.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Tunisia fuel strike highlights growing economic and political anger",
+      "link": "https://www.aljazeera.com/economy/2026/9/24/tunisia-fuel-strike-highlights-growing-economic-and-political-anger?traffic_source=rss",
+      "pubDate": "Thu, 24 Sep 2026 12:54:47 +0000",
+      "source": "aljazeera",
+      "snippet": "A 48-hour strike in Tunis adds to mounting public frustration over worsening living conditions and basic services.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Fighting widens across Ethiopia as Tigray clashes escalate",
+      "link": "https://www.aljazeera.com/news/2026/9/24/fighting-widens-across-ethiopia-as-tigray-clashes-escalate?traffic_source=rss",
+      "pubDate": "Thu, 24 Sep 2026 12:25:20 +0000",
+      "source": "aljazeera",
+      "snippet": "Armed groups clashed with government forces across northern Ethiopia as fears mount of regional spillover.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
       "title": "Beleaguered at Home, a Bellicose Netanyahu Heads to the U.N.",
       "link": "https://www.nytimes.com/2026/09/24/world/middleeast/netanyahu-unga-israel-election.html",
-      "pubDate": "Thu, 24 Sep 2026 08:08:30 +0000",
+      "pubDate": "Thu, 24 Sep 2026 12:16:26 +0000",
       "source": "nytimes",
       "snippet": "Prime Minister Benjamin Netanyahu of Israel will take to the world stage while fighting for his political future in a critical national election.",
       "isNew": true,
@@ -388,153 +476,69 @@
       "_sourceCount": 1
     },
     {
-      "title": "Benjamin Netanyahu to deliver defiant UN speech while facing protests and political isolation",
-      "link": "https://www.theguardian.com/world/2026/sep/24/netanyahu-to-deliver-defiant-un-speech-facing-protests-political-isolation",
-      "pubDate": "Thu, 24 Sep 2026 08:00:12 GMT",
-      "source": "guardian",
-      "snippet": "Prime minister will ‘highlight Israel’s achievements’ as he heads towards his toughest re-election challengeWhen he takes the stage at the UN on Thursday, Benjamin Netanyahu will deliver a familiar me",
+      "title": "Trump-Xi summit live: Trade, AI, Iran and Taiwan top US-China talks",
+      "link": "https://www.aljazeera.com/news/liveblog/2026/9/24/trump-xi-summit-live-trade-ai-iran-and-taiwan-top-us-china-talks?traffic_source=rss",
+      "pubDate": "Thu, 24 Sep 2026 12:00:00 +0000",
+      "source": "aljazeera",
+      "snippet": "Xi’s first White House visit in more than a decade comes amid ongoing disputes over trade, AI, Taiwan and war in Iran.",
       "isNew": true,
-      "_sourceCount": 2,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Belgium and Rwanda are talking again. Is DR Congo any closer to peace?",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/9/24/belgium-and-rwanda-are-talking-again-is-dr-congo-any-closer-to-peace?traffic_source=rss",
+      "pubDate": "Thu, 24 Sep 2026 11:44:00 +0000",
+      "source": "aljazeera",
+      "snippet": "Belgium and Rwanda have restored diplomatic relations after an 18-month rupture over the war in eastern DR Congo. ",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Could the oil shock push fuel prices even higher?",
+      "link": "https://www.aljazeera.com/video/counting-the-cost/2026/9/24/could-the-oil-shock-push-fuel-prices-even-higher?traffic_source=rss",
+      "pubDate": "Thu, 24 Sep 2026 11:17:48 +0000",
+      "source": "aljazeera",
+      "snippet": "From Hormuz to the Black Sea, pressure on main supply routes is testing the resilience of the global energy market.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Why is Iran threatening regional airports, and what could be the impact?",
+      "link": "https://www.aljazeera.com/news/2026/9/24/why-is-iran-threatening-regional-airports-and-what-could-be-the-impact?traffic_source=rss",
+      "pubDate": "Thu, 24 Sep 2026 11:10:42 +0000",
+      "source": "aljazeera",
+      "snippet": "Tehran hints retaliation as Georgia and Azerbaijan suspend Iranian flights amid mounting US sanctions on airlines.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "‘First there’s the gruelling task of trying to charge my laptop’: a day in the life of a university lecturer in Gaza",
+      "link": "https://www.theguardian.com/global-development/ng-interactive/2026/sep/24/first-theres-the-gruelling-task-of-trying-to-charge-my-laptop-a-day-in-the-life-of-a-university-lecturer-in-gaza",
+      "pubDate": "Thu, 24 Sep 2026 11:00:17 GMT",
+      "source": "guardian",
+      "snippet": "As the war in Gaza approaches its fourth year, the Guardian follows five ordinary Palestinians as they go about their lives. Each tells the story of their day, revealing the terrible toll of the confl",
+      "isNew": true,
+      "_sourceCount": 1,
       "_isDuplicated": true,
-      "_clusterSize": 2,
+      "_clusterSize": 3,
       "_isDuplicate": false
     },
     {
-      "title": "Gaza watches Israel’s elections with fear and antipathy",
-      "link": "https://www.aljazeera.com/news/2026/9/24/gaza-watches-israels-election-with-fear-and-antipathy?traffic_source=rss",
-      "pubDate": "Thu, 24 Sep 2026 07:07:02 +0000",
-      "source": "aljazeera",
-      "snippet": "Palestinians are following the campaign, but few feel next month&#039;s vote will make their lives any better.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "The west is in freefall – and the worst part is that we were warned, but chose not to listen | Owen Jones",
-      "link": "https://www.theguardian.com/commentisfree/2026/sep/24/west-freefall-warned-wealth-power",
-      "pubDate": "Thu, 24 Sep 2026 07:00:12 GMT",
-      "source": "guardian",
-      "snippet": "Endless pursuit of wealth and power by western leaders led us here. What strikes me most is how many saw what was comingThe symptoms of decline are everywhere you look. On Sunday, Germany’s far right ",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Pakistan says it launches air strikes on Afghanistan after drone attacks",
-      "link": "https://www.aljazeera.com/news/2026/9/24/pakistan-says-it-launches-air-strikes-on-afghanistan-after-drone-attacks?traffic_source=rss",
-      "pubDate": "Thu, 24 Sep 2026 06:29:46 +0000",
-      "source": "aljazeera",
-      "snippet": "Strikes carried out in southeastern province of Khost cause no casualties, governor&#039;s office says.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Outcry in Sudan as US reportedly holds al-Burhan’s UN visa over truce plan",
-      "link": "https://www.aljazeera.com/news/2026/9/24/outcry-in-sudan-as-us-reportedly-holds-army-chiefs-un-visa-over-ceasefire?traffic_source=rss",
-      "pubDate": "Thu, 24 Sep 2026 06:25:08 +0000",
-      "source": "aljazeera",
-      "snippet": "Media reports say US withheld army chief&#039;s visa to pressure him into accepting a 90-day truce in Sudan&#039;s civil war.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Trump-Xi summit: Here’s what’s on the agenda, and why it matters",
-      "link": "https://www.aljazeera.com/news/2026/9/24/trump-xi-summit-whats-on-the-agenda-why-it-matters?traffic_source=rss",
-      "pubDate": "Thu, 24 Sep 2026 06:11:30 +0000",
-      "source": "aljazeera",
-      "snippet": "The leaders of the US and China are expected to discuss trade, AI and Iran in their third in-person meeting in a year.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Gaza $2.45 billion reconstruction plan. Who decides its future?",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/9/24/gaza-2-45-billion-reconstruction-plan-who-decides-its-future?traffic_source=rss",
-      "pubDate": "Thu, 24 Sep 2026 06:09:05 +0000",
-      "source": "aljazeera",
-      "snippet": "Gaza’s $2.45bn recovery plan spans housing, health and 4G, but Israeli pullout and Hamas’s disarmament remain unclear.\n",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Trump and Xi summit will focus on ‘stalibising’ ties, experts say",
-      "link": "https://www.aljazeera.com/economy/2026/9/24/trump-and-xi-summit-may-just-be-a-horse-and-pony-show-experts-say?traffic_source=rss",
-      "pubDate": "Thu, 24 Sep 2026 05:55:10 +0000",
-      "source": "aljazeera",
-      "snippet": "Trade, AI and security are on the agenda, but experts say rebuilding trust may take priority over major deals.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Why have some nations developed while others struggle?",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/9/24/why-have-some-nations-developed-while-others-struggle?traffic_source=rss",
-      "pubDate": "Thu, 24 Sep 2026 05:02:12 +0000",
-      "source": "aljazeera",
-      "snippet": "At UNGA, Iran, Syria and Kenya have highlighted how war and injustice have skewed global development.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Israel facing water shortages caused by destruction of Gaza’s treatment plants",
-      "link": "https://www.theguardian.com/world/2026/sep/24/israel-water-shortages-destruction-gaza-treatment-plants-pollution-sanitation-crisis",
-      "pubDate": "Thu, 24 Sep 2026 05:00:08 GMT",
-      "source": "guardian",
-      "snippet": "Five desalination plants shut down for days, while Gaza remains in grip of severe water and sanitation crisisIsrael is facing weeks of water shortages after an exceptional algae bloom crippled much of",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "‘They uprooted it all’: Israel bulldozes Palestinian-owned olive groves",
-      "link": "https://www.aljazeera.com/news/2026/9/24/they-uprooted-it-all-israel-bulldozes-palestinian-owned-olive-groves?traffic_source=rss",
-      "pubDate": "Thu, 24 Sep 2026 03:32:28 +0000",
-      "source": "aljazeera",
-      "snippet": "Israeli bulldozers uprooted olive groves near Ramallah in the occupied West Bank weeks before the annual harvest.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Spain’s Sanchez warns of far-right threat in UNGA speech",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/9/24/aje-onl-nf_spains-sanchez-warns-of-far-right-in-unga-speech-230926?traffic_source=rss",
-      "pubDate": "Thu, 24 Sep 2026 03:30:58 +0000",
-      "source": "aljazeera",
-      "snippet": "Spanish PM Pedro Sanchez has warned of the growing power of ‘selfish, ignorant and cruel’ forces undermining humanity.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Trump Aides Seek to Jump Start Diplomacy With Iran as Crisis Widens",
+      "title": "Trump Aides Seek to Jump-Start Diplomacy With Iran as Crisis Widens",
       "link": "https://www.nytimes.com/2026/09/23/us/politics/trump-aides-iran-talks.html",
-      "pubDate": "Thu, 24 Sep 2026 03:17:09 +0000",
+      "pubDate": "Thu, 24 Sep 2026 10:48:56 +0000",
       "source": "nytimes",
       "snippet": "Secretary of State Marco Rubio said that U.S. negotiators had restarted conversations about Iran’s nuclear program, but that there were no breakthroughs.",
       "isNew": true,
@@ -544,11 +548,35 @@
       "_isDuplicate": false
     },
     {
-      "title": "Venezuela’s Rodriguez pledges elections, path forward in UNGA speech",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/9/24/venezuelas-rodriguez-pledges-elections-path-forward-in-unga-speech?traffic_source=rss",
-      "pubDate": "Thu, 24 Sep 2026 02:23:06 +0000",
+      "title": "Russian attacks kill eight people across Ukraine as US steps up diplomacy",
+      "link": "https://www.aljazeera.com/news/2026/9/24/russian-attacks-kill-eight-people-across-ukraine-as-us-steps-up-diplomacy?traffic_source=rss",
+      "pubDate": "Thu, 24 Sep 2026 10:27:17 +0000",
       "source": "aljazeera",
-      "snippet": "Venezuela’s Interim President Delcy Rodriguez says her country must abandon the ‘extremism’ of the past.",
+      "snippet": "US and Russia engage in urgent talks to reduce war&#039;s impact on global energy during UN General Assembly.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Trump's Board of Peace unveils $2.45bn Gaza recovery plan",
+      "link": "https://www.bbc.co.uk/news/articles/cwlyke0mm0x3o?at_medium=RSS&at_campaign=rss",
+      "pubDate": "Thu, 24 Sep 2026 10:11:15 GMT",
+      "source": "bbc",
+      "snippet": "The figure was announced during a meeting of the group's board at the sidelines of the UN General Assembly in New York. ",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Global release announced for acclaimed Gaza documentary NAZA",
+      "link": "https://www.theguardian.com/film/2026/sep/24/global-release-announced-for-acclaimed-gaza-documentary-naza",
+      "pubDate": "Thu, 24 Sep 2026 10:00:05 GMT",
+      "source": "guardian",
+      "snippet": "Theatrical rollout across 56 territories planned for documentary about Israel’s mass killing of civilians in Gaza before film will stream on Guardian websiteNAZA, the award-winning documentary from Is",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -562,9 +590,20 @@
         "category_id": "politics",
         "category_name": "국내 정치",
         "category_icon": "🏛️",
-        "count": 15,
-        "new_count": 15,
+        "count": 11,
+        "new_count": 11,
         "articles": [
+          {
+            "title": "Family of Iranian twins sentenced to death and decades in jail ask UN for help",
+            "link": "https://www.theguardian.com/world/2026/sep/24/twins-sentenced-to-death-and-jail-iran-un-appeal",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Thu, 24 Sep 2026 13:15:48 GMT",
+            "snippet": "Taraneh and Romina Rahimi were charged with ‘waging war against God’ after joining protests against Tehran regimeThe family of 21-year-old twins who have been sentenced to death and decades in jail fo",
+            "isNew": true
+          },
           {
             "title": "Benjamin Netanyahu to deliver defiant UN speech while facing protests and political isolation",
             "link": "https://www.theguardian.com/world/2026/sep/24/netanyahu-to-deliver-defiant-un-speech-facing-protests-political-isolation",
@@ -578,69 +617,14 @@
             "isNew": true
           },
           {
-            "title": "Gaza watches Israel’s elections with fear and antipathy",
-            "link": "https://www.aljazeera.com/news/2026/9/24/gaza-watches-israels-election-with-fear-and-antipathy?traffic_source=rss",
+            "title": "To the victor belong Venezuela’s spoils: Delcy Rodriguez’s UNGA about-face",
+            "link": "https://www.aljazeera.com/opinions/2026/9/24/to-the-victor-belong-venezuelas-spoils-delcy-rodriguezs-unga-about-face?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Thu, 24 Sep 2026 07:07:02 +0000",
-            "snippet": "Palestinians are following the campaign, but few feel next month&#039;s vote will make their lives any better.",
-            "isNew": true
-          },
-          {
-            "title": "Venezuela’s Rodriguez pledges elections, path forward in UNGA speech",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/24/venezuelas-rodriguez-pledges-elections-path-forward-in-unga-speech?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Thu, 24 Sep 2026 02:23:06 +0000",
-            "snippet": "Venezuela’s Interim President Delcy Rodriguez says her country must abandon the ‘extremism’ of the past.",
-            "isNew": true
-          },
-          {
-            "title": "Iran’s president brings receipts of US strikes on civilians to the UNGA",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/24/aje-onl-nf_iran-president-pushes-back-against-trump-at-unga-230926?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Thu, 24 Sep 2026 02:17:36 +0000",
-            "snippet": "Iran’s president delivered his UN General Assembly address after US President Trump threatened to ‘annihilate’ Iran.",
-            "isNew": true
-          },
-          {
-            "title": "Israel moves to bar both main Arab lists from October election",
-            "link": "https://www.aljazeera.com/news/2026/9/24/israel-moves-to-bar-both-main-arab-lists-from-october-election?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Thu, 24 Sep 2026 02:06:59 +0000",
-            "snippet": "Excluding Ra&#039;am and the Joint List leaves Palestinian citizens in Israel without major Knesset representation options.",
-            "isNew": true
-          },
-          {
-            "title": "China’s Xi visits US as Trump bets on stabilising global relations",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/24/aje-onl-nf_trump-hosts-xi-amid-rising-tensions-1-230926?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Thu, 24 Sep 2026 00:43:10 +0000",
-            "snippet": "US President Donald Trump welcomes his Chinese counterpart Xi Jinping ahead of talks and state dinner.",
-            "isNew": true
-          },
-          {
-            "title": "OpenAI, Anthropic CEOs call for global AI regulation at UN",
-            "link": "https://www.aljazeera.com/news/2026/9/24/ai-corporate-leaders-tell-un-the-industry-needs-global-regulation?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Thu, 24 Sep 2026 00:13:53 +0000",
-            "snippet": "Industry leaders urge global regulation, as Trump administration baulks at setting up new guardrails.",
+            "pubDate": "Thu, 24 Sep 2026 09:31:15 +0000",
+            "snippet": "Seven years after warning against US regime change, Venezuela’s interim president thanked the man who delivered it.",
             "isNew": true
           },
           {
@@ -675,6 +659,51 @@
             "pubDate": "Wed, 23 Sep 2026 11:30:58 GMT",
             "snippet": "Israel's PM denounces the French president after he appeared to downplay Hamas's activities in the occupied territory.",
             "isNew": true
+          },
+          {
+            "title": "Donald Trump says he could 'annihilate Iran' if no deal is reached – video",
+            "link": "https://www.theguardian.com/us-news/video/2026/sep/22/donald-trump-iran-threat-un-general-assembly",
+            "source": "guardian",
+            "sources": [
+              "guardian",
+              "nytimes"
+            ],
+            "pubDate": "Tue, 22 Sep 2026 16:16:27 GMT",
+            "snippet": "The US president spoke about the war with Iran during the UN general assembly on Tuesday, threatening to 'annihilate' the country and 'drive them into hell' if the regime didn’t agree to a deal with t",
+            "isNew": true
+          },
+          {
+            "title": "Macron Criticizes Israel and Russia in Final U.N. Speech as France’s President",
+            "link": "https://www.nytimes.com/2026/09/22/world/europe/macron-farewell-united-nations-speech.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Tue, 22 Sep 2026 21:54:51 +0000",
+            "snippet": "In his farewell address to the General Assembly, the French president criticized Russia, Israel and, in more veiled terms, the United States.",
+            "isNew": true
+          },
+          {
+            "title": "Iraq’s Prime Minister Al-Zaidi Vows to Disarm Iran-backed Militias",
+            "link": "https://www.nytimes.com/2026/09/21/world/middleeast/iraq-prime-minister-interview-disarm-militias.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Tue, 22 Sep 2026 18:17:29 +0000",
+            "snippet": "Ali al-Zaidi is a political neophyte hoping to succeed where previous leaders failed. In an interview, he laid out an ambitious timeline that could prove hard to meet.",
+            "isNew": true
+          },
+          {
+            "title": "Watch: Trump threatens to 'annihilate' Iran if no deal reached",
+            "link": "https://www.bbc.co.uk/news/videos/cmvgydqqlyx9o?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc"
+            ],
+            "pubDate": "Tue, 22 Sep 2026 17:35:36 GMT",
+            "snippet": "US President Donald Trump presented Iran with a stark choice: reach an agreement or face the rapid “annihilation” of the Islamic Republic.",
+            "isNew": true
           }
         ]
       },
@@ -686,35 +715,35 @@
         "new_count": 7,
         "articles": [
           {
-            "title": "Trump-Xi summit: Here’s what’s on the agenda, and why it matters",
-            "link": "https://www.aljazeera.com/news/2026/9/24/trump-xi-summit-whats-on-the-agenda-why-it-matters?traffic_source=rss",
+            "title": "Trump-Xi summit live: Trade, AI, Iran and Taiwan top US-China talks",
+            "link": "https://www.aljazeera.com/news/liveblog/2026/9/24/trump-xi-summit-live-trade-ai-iran-and-taiwan-top-us-china-talks?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Thu, 24 Sep 2026 06:11:30 +0000",
-            "snippet": "The leaders of the US and China are expected to discuss trade, AI and Iran in their third in-person meeting in a year.",
+            "pubDate": "Thu, 24 Sep 2026 12:00:00 +0000",
+            "snippet": "Xi’s first White House visit in more than a decade comes amid ongoing disputes over trade, AI, Taiwan and war in Iran.",
             "isNew": true
           },
           {
-            "title": "Trump and Xi summit will focus on ‘stalibising’ ties, experts say",
-            "link": "https://www.aljazeera.com/economy/2026/9/24/trump-and-xi-summit-may-just-be-a-horse-and-pony-show-experts-say?traffic_source=rss",
+            "title": "Belgium and Rwanda are talking again. Is DR Congo any closer to peace?",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/24/belgium-and-rwanda-are-talking-again-is-dr-congo-any-closer-to-peace?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Thu, 24 Sep 2026 05:55:10 +0000",
-            "snippet": "Trade, AI and security are on the agenda, but experts say rebuilding trust may take priority over major deals.",
+            "pubDate": "Thu, 24 Sep 2026 11:44:00 +0000",
+            "snippet": "Belgium and Rwanda have restored diplomatic relations after an 18-month rupture over the war in eastern DR Congo. ",
             "isNew": true
           },
           {
-            "title": "Trump's Board of Peace unveils $2.45bn plan to begin Gaza's reconstruction",
+            "title": "Trump's Board of Peace unveils $2.45bn Gaza recovery plan",
             "link": "https://www.bbc.co.uk/news/articles/cwlyke0mm0x3o?at_medium=RSS&at_campaign=rss",
             "source": "bbc",
             "sources": [
               "bbc"
             ],
-            "pubDate": "Wed, 23 Sep 2026 21:26:14 GMT",
+            "pubDate": "Thu, 24 Sep 2026 10:11:15 GMT",
             "snippet": "The figure was announced during a meeting of the group's board at the sidelines of the UN General Assembly in New York. ",
             "isNew": true
           },
@@ -768,9 +797,31 @@
         "category_id": "humanitarian",
         "category_name": "인도주의/피해",
         "category_icon": "🏥",
-        "count": 6,
-        "new_count": 6,
+        "count": 7,
+        "new_count": 7,
         "articles": [
+          {
+            "title": "Trump Aides Seek to Jump-Start Diplomacy With Iran as Crisis Widens",
+            "link": "https://www.nytimes.com/2026/09/23/us/politics/trump-aides-iran-talks.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Thu, 24 Sep 2026 10:48:56 +0000",
+            "snippet": "Secretary of State Marco Rubio said that U.S. negotiators had restarted conversations about Iran’s nuclear program, but that there were no breakthroughs.",
+            "isNew": true
+          },
+          {
+            "title": "Global release announced for acclaimed Gaza documentary NAZA",
+            "link": "https://www.theguardian.com/film/2026/sep/24/global-release-announced-for-acclaimed-gaza-documentary-naza",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Thu, 24 Sep 2026 10:00:05 GMT",
+            "snippet": "Theatrical rollout across 56 territories planned for documentary about Israel’s mass killing of civilians in Gaza before film will stream on Guardian websiteNAZA, the award-winning documentary from Is",
+            "isNew": true
+          },
           {
             "title": "Israel facing water shortages caused by destruction of Gaza’s treatment plants",
             "link": "https://www.theguardian.com/world/2026/sep/24/israel-water-shortages-destruction-gaza-treatment-plants-pollution-sanitation-crisis",
@@ -780,17 +831,6 @@
             ],
             "pubDate": "Thu, 24 Sep 2026 05:00:08 GMT",
             "snippet": "Five desalination plants shut down for days, while Gaza remains in grip of severe water and sanitation crisisIsrael is facing weeks of water shortages after an exceptional algae bloom crippled much of",
-            "isNew": true
-          },
-          {
-            "title": "Trump Aides Seek to Jump Start Diplomacy With Iran as Crisis Widens",
-            "link": "https://www.nytimes.com/2026/09/23/us/politics/trump-aides-iran-talks.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Thu, 24 Sep 2026 03:17:09 +0000",
-            "snippet": "Secretary of State Marco Rubio said that U.S. negotiators had restarted conversations about Iran’s nuclear program, but that there were no breakthroughs.",
             "isNew": true
           },
           {
@@ -840,6 +880,145 @@
         ]
       },
       {
+        "category_id": "military",
+        "category_name": "군사 작전",
+        "category_icon": "⚔️",
+        "count": 6,
+        "new_count": 6,
+        "articles": [
+          {
+            "title": "Son of Israeli Ambassador to U.S. Critically Hurt in West Bank Attack, Officials Say",
+            "link": "https://www.nytimes.com/2026/09/24/world/middleeast/son-of-israeli-ambassador-to-us-critically-hurt-in-west-bank-attack-officials-say.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Thu, 24 Sep 2026 13:27:02 +0000",
+            "snippet": "Neria Leiter, a reserve soldier, sustained life-threatening injuries after a Palestinian man drove into a military checkpoint in the West Bank, the Israeli military said.",
+            "isNew": true
+          },
+          {
+            "title": "Tunisia fuel strike highlights growing economic and political anger",
+            "link": "https://www.aljazeera.com/economy/2026/9/24/tunisia-fuel-strike-highlights-growing-economic-and-political-anger?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Thu, 24 Sep 2026 12:54:47 +0000",
+            "snippet": "A 48-hour strike in Tunis adds to mounting public frustration over worsening living conditions and basic services.",
+            "isNew": true
+          },
+          {
+            "title": "Russian attacks kill eight people across Ukraine as US steps up diplomacy",
+            "link": "https://www.aljazeera.com/news/2026/9/24/russian-attacks-kill-eight-people-across-ukraine-as-us-steps-up-diplomacy?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Thu, 24 Sep 2026 10:27:17 +0000",
+            "snippet": "US and Russia engage in urgent talks to reduce war&#039;s impact on global energy during UN General Assembly.",
+            "isNew": true
+          },
+          {
+            "title": "‘Partial satisfaction’: Sri Lankans hail 2019 bombings ruling with a caveat",
+            "link": "https://www.aljazeera.com/news/2026/9/24/partial-satisfaction-sri-lankans-hail-2019-bombings-ruling-with-a-caveat?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Thu, 24 Sep 2026 09:22:27 +0000",
+            "snippet": "As 15 men are given long prison terms, a father who lost teen daughter wants to know if it was a political conspiracy.",
+            "isNew": true
+          },
+          {
+            "title": "The west is in freefall – and the worst part is that we were warned, but chose not to listen | Owen Jones",
+            "link": "https://www.theguardian.com/commentisfree/2026/sep/24/west-freefall-warned-wealth-power",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Thu, 24 Sep 2026 07:00:12 GMT",
+            "snippet": "Endless pursuit of wealth and power by western leaders led us here. What strikes me most is how many saw what was comingThe symptoms of decline are everywhere you look. On Sunday, Germany’s far right ",
+            "isNew": true
+          },
+          {
+            "title": "Iran’s President Arrives in U.S. for U.N. Meeting Against the Backdrop of War",
+            "link": "https://www.nytimes.com/2026/09/22/world/middleeast/iran-war-un-general-assembly-pezeshkian.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Tue, 22 Sep 2026 14:58:39 +0000",
+            "snippet": "President Masoud Pezeshkian had combative words for the United States before he departed Iran to attend the annual meeting of the U.N. General Assembly.",
+            "isNew": true
+          }
+        ]
+      },
+      {
+        "category_id": "economy",
+        "category_name": "경제 영향",
+        "category_icon": "📊",
+        "count": 5,
+        "new_count": 5,
+        "articles": [
+          {
+            "title": "Could the oil shock push fuel prices even higher?",
+            "link": "https://www.aljazeera.com/video/counting-the-cost/2026/9/24/could-the-oil-shock-push-fuel-prices-even-higher?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Thu, 24 Sep 2026 11:17:48 +0000",
+            "snippet": "From Hormuz to the Black Sea, pressure on main supply routes is testing the resilience of the global energy market.",
+            "isNew": true
+          },
+          {
+            "title": "Why is Iran threatening regional airports, and what could be the impact?",
+            "link": "https://www.aljazeera.com/news/2026/9/24/why-is-iran-threatening-regional-airports-and-what-could-be-the-impact?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Thu, 24 Sep 2026 11:10:42 +0000",
+            "snippet": "Tehran hints retaliation as Georgia and Azerbaijan suspend Iranian flights amid mounting US sanctions on airlines.",
+            "isNew": true
+          },
+          {
+            "title": "Trump Says He Supports Banning Diesel Exports to Bring Down Prices",
+            "link": "https://www.nytimes.com/2026/09/22/business/energy-environment/trump-diesel-exports-iran-war.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Wed, 23 Sep 2026 18:13:59 +0000",
+            "snippet": "Diesel prices have been setting records because of the war in Iran, but the oil industry say banning U.S. exports would not make the fuel cheaper.",
+            "isNew": true
+          },
+          {
+            "title": "Middle East crisis: Trump says Iran will make a deal after US midterms – as it happened",
+            "link": "https://www.theguardian.com/world/live/2026/sep/22/middle-east-iran-irgc-donald-trump-mahmoud-mahmoud-pezeshkian-abbas-araqchi-unga-latest-news-updates",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Tue, 22 Sep 2026 19:09:42 GMT",
+            "snippet": "This live blog is now closed.Tehran appears to have relaxed its preconditions for reopening the strait of Hormuz, saying it is prepared to do so within seven days so long as the US takes reciprocal st",
+            "isNew": true
+          },
+          {
+            "title": "British banks warned not to invest in planned Israeli settlement before UK trade ban begins",
+            "link": "https://www.theguardian.com/politics/2026/sep/22/mps-uk-banks-investment-israeli-settlement-trade-ban",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Tue, 22 Sep 2026 13:43:41 GMT",
+            "snippet": "MPs send out letter as Israeli government seeks bids for construction of large E1 settlement in West BankBritish banks and financial institutions are receiving written warnings from MPs that they shou",
+            "isNew": true
+          }
+        ]
+      },
+      {
         "category_id": "regional",
         "category_name": "지역 정세",
         "category_icon": "🌍",
@@ -847,14 +1026,14 @@
         "new_count": 5,
         "articles": [
           {
-            "title": "Why have some nations developed while others struggle?",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/24/why-have-some-nations-developed-while-others-struggle?traffic_source=rss",
+            "title": "Fighting widens across Ethiopia as Tigray clashes escalate",
+            "link": "https://www.aljazeera.com/news/2026/9/24/fighting-widens-across-ethiopia-as-tigray-clashes-escalate?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Thu, 24 Sep 2026 05:02:12 +0000",
-            "snippet": "At UNGA, Iran, Syria and Kenya have highlighted how war and injustice have skewed global development.",
+            "pubDate": "Thu, 24 Sep 2026 12:25:20 +0000",
+            "snippet": "Armed groups clashed with government forces across northern Ethiopia as fears mount of regional spillover.",
             "isNew": true
           },
           {
@@ -907,40 +1086,29 @@
         "category_id": "other",
         "category_name": "기타",
         "category_icon": "📰",
-        "count": 5,
-        "new_count": 5,
+        "count": 3,
+        "new_count": 3,
         "articles": [
           {
-            "title": "Gaza $2.45 billion reconstruction plan. Who decides its future?",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/24/gaza-2-45-billion-reconstruction-plan-who-decides-its-future?traffic_source=rss",
+            "title": "Hurricane Polo brings fears of heavy rain and landslides in Mexico",
+            "link": "https://www.aljazeera.com/news/2026/9/24/hurricane-polo-hits-mexicos-coast-as-tropical-storm-nolo-approaches-hawaii?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Thu, 24 Sep 2026 06:09:05 +0000",
-            "snippet": "Gaza’s $2.45bn recovery plan spans housing, health and 4G, but Israeli pullout and Hamas’s disarmament remain unclear.\n",
+            "pubDate": "Thu, 24 Sep 2026 13:02:43 +0000",
+            "snippet": "Heavy rains could cause life-threatening flooding and landslides in Mexico, the US National Hurricane Center warned.",
             "isNew": true
           },
           {
-            "title": "‘They uprooted it all’: Israel bulldozes Palestinian-owned olive groves",
-            "link": "https://www.aljazeera.com/news/2026/9/24/they-uprooted-it-all-israel-bulldozes-palestinian-owned-olive-groves?traffic_source=rss",
-            "source": "aljazeera",
+            "title": "‘First there’s the gruelling task of trying to charge my laptop’: a day in the life of a university lecturer in Gaza",
+            "link": "https://www.theguardian.com/global-development/ng-interactive/2026/sep/24/first-theres-the-gruelling-task-of-trying-to-charge-my-laptop-a-day-in-the-life-of-a-university-lecturer-in-gaza",
+            "source": "guardian",
             "sources": [
-              "aljazeera"
+              "guardian"
             ],
-            "pubDate": "Thu, 24 Sep 2026 03:32:28 +0000",
-            "snippet": "Israeli bulldozers uprooted olive groves near Ramallah in the occupied West Bank weeks before the annual harvest.",
-            "isNew": true
-          },
-          {
-            "title": "Spain’s Sanchez warns of far-right threat in UNGA speech",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/24/aje-onl-nf_spains-sanchez-warns-of-far-right-in-unga-speech-230926?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Thu, 24 Sep 2026 03:30:58 +0000",
-            "snippet": "Spanish PM Pedro Sanchez has warned of the growing power of ‘selfish, ignorant and cruel’ forces undermining humanity.",
+            "pubDate": "Thu, 24 Sep 2026 11:00:17 GMT",
+            "snippet": "As the war in Gaza approaches its fourth year, the Guardian follows five ordinary Palestinians as they go about their lives. Each tells the story of their day, revealing the terrible toll of the confl",
             "isNew": true
           },
           {
@@ -953,112 +1121,6 @@
             "pubDate": "Wed, 23 Sep 2026 15:44:52 +0000",
             "snippet": "He was among the first to chronicle the French force’s systematic abuse of Algerians, brutal encounters that he documented in his journal and with his photography.",
             "isNew": true
-          },
-          {
-            "title": "‘This is where I live now, the back of a truck’: a day in the life of a grandmother in Gaza",
-            "link": "https://www.theguardian.com/global-development/ng-interactive/2026/sep/23/this-is-where-i-live-now-the-back-of-a-truck-a-day-in-the-life-of-a-grandmother-in-gaza",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Wed, 23 Sep 2026 11:00:46 GMT",
-            "snippet": "As the war in Gaza approaches its fourth year, the Guardian follows five ordinary Palestinians as they go about their lives. Each tells the story of their day, revealing the terrible toll of the confl",
-            "isNew": true
-          }
-        ]
-      },
-      {
-        "category_id": "military",
-        "category_name": "군사 작전",
-        "category_icon": "⚔️",
-        "count": 4,
-        "new_count": 4,
-        "articles": [
-          {
-            "title": "The west is in freefall – and the worst part is that we were warned, but chose not to listen | Owen Jones",
-            "link": "https://www.theguardian.com/commentisfree/2026/sep/24/west-freefall-warned-wealth-power",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Thu, 24 Sep 2026 07:00:12 GMT",
-            "snippet": "Endless pursuit of wealth and power by western leaders led us here. What strikes me most is how many saw what was comingThe symptoms of decline are everywhere you look. On Sunday, Germany’s far right ",
-            "isNew": true
-          },
-          {
-            "title": "Pakistan says it launches air strikes on Afghanistan after drone attacks",
-            "link": "https://www.aljazeera.com/news/2026/9/24/pakistan-says-it-launches-air-strikes-on-afghanistan-after-drone-attacks?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Thu, 24 Sep 2026 06:29:46 +0000",
-            "snippet": "Strikes carried out in southeastern province of Khost cause no casualties, governor&#039;s office says.",
-            "isNew": true
-          },
-          {
-            "title": "Outcry in Sudan as US reportedly holds al-Burhan’s UN visa over truce plan",
-            "link": "https://www.aljazeera.com/news/2026/9/24/outcry-in-sudan-as-us-reportedly-holds-army-chiefs-un-visa-over-ceasefire?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Thu, 24 Sep 2026 06:25:08 +0000",
-            "snippet": "Media reports say US withheld army chief&#039;s visa to pressure him into accepting a 90-day truce in Sudan&#039;s civil war.",
-            "isNew": true
-          },
-          {
-            "title": "Iran’s President Arrives in U.S. for U.N. Meeting Against the Backdrop of War",
-            "link": "https://www.nytimes.com/2026/09/22/world/middleeast/iran-war-un-general-assembly-pezeshkian.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Tue, 22 Sep 2026 14:58:39 +0000",
-            "snippet": "President Masoud Pezeshkian had combative words for the United States before he departed Iran to attend the annual meeting of the U.N. General Assembly.",
-            "isNew": true
-          }
-        ]
-      },
-      {
-        "category_id": "economy",
-        "category_name": "경제 영향",
-        "category_icon": "📊",
-        "count": 3,
-        "new_count": 3,
-        "articles": [
-          {
-            "title": "Trump Says He Supports Banning Diesel Exports to Bring Down Prices",
-            "link": "https://www.nytimes.com/2026/09/22/business/energy-environment/trump-diesel-exports-iran-war.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Wed, 23 Sep 2026 18:13:59 +0000",
-            "snippet": "Diesel prices have been setting records because of the war in Iran, but the oil industry say banning U.S. exports would not make the fuel cheaper.",
-            "isNew": true
-          },
-          {
-            "title": "Middle East crisis: Trump says Iran will make a deal after US midterms – as it happened",
-            "link": "https://www.theguardian.com/world/live/2026/sep/22/middle-east-iran-irgc-donald-trump-mahmoud-mahmoud-pezeshkian-abbas-araqchi-unga-latest-news-updates",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Tue, 22 Sep 2026 19:09:42 GMT",
-            "snippet": "This live blog is now closed.Tehran appears to have relaxed its preconditions for reopening the strait of Hormuz, saying it is prepared to do so within seven days so long as the US takes reciprocal st",
-            "isNew": true
-          },
-          {
-            "title": "British banks warned not to invest in planned Israeli settlement before UK trade ban begins",
-            "link": "https://www.theguardian.com/politics/2026/sep/22/mps-uk-banks-investment-israeli-settlement-trade-ban",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Tue, 22 Sep 2026 13:43:41 GMT",
-            "snippet": "MPs send out letter as Israeli government seeks bids for construction of large E1 settlement in West BankBritish banks and financial institutions are receiving written warnings from MPs that they shou",
-            "isNew": true
           }
         ]
       }
@@ -1066,13 +1128,53 @@
     "recent_30min": {
       "total_new": 50,
       "by_category": {
-        "politics": {
-          "count": 18,
+        "military": {
+          "count": 7,
           "titles": [
+            {
+              "title": "Son of Israeli Ambassador to U.S. Critically Hurt in West Bank Attack, Officials Say",
+              "link": "https://www.nytimes.com/2026/09/24/world/middleeast/son-of-israeli-ambassador-to-us-critically-hurt-in-west-bank-attack-officials-say.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Tunisia fuel strike highlights growing economic and political anger",
+              "link": "https://www.aljazeera.com/economy/2026/9/24/tunisia-fuel-strike-highlights-growing-economic-and-political-anger?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Russian attacks kill eight people across Ukraine as US steps up diplomacy",
+              "link": "https://www.aljazeera.com/news/2026/9/24/russian-attacks-kill-eight-people-across-ukraine-as-us-steps-up-diplomacy?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "‘Partial satisfaction’: Sri Lankans hail 2019 bombings ruling with a caveat",
+              "link": "https://www.aljazeera.com/news/2026/9/24/partial-satisfaction-sri-lankans-hail-2019-bombings-ruling-with-a-caveat?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "The west is in freefall – and the worst part is that we were warned, but chose not to listen | Owen Jones",
+              "link": "https://www.theguardian.com/commentisfree/2026/sep/24/west-freefall-warned-wealth-power",
+              "source": "guardian"
+            }
+          ]
+        },
+        "politics": {
+          "count": 14,
+          "titles": [
+            {
+              "title": "Family of Iranian twins sentenced to death and decades in jail ask UN for help",
+              "link": "https://www.theguardian.com/world/2026/sep/24/twins-sentenced-to-death-and-jail-iran-un-appeal",
+              "source": "guardian"
+            },
             {
               "title": "Beleaguered at Home, a Bellicose Netanyahu Heads to the U.N.",
               "link": "https://www.nytimes.com/2026/09/24/world/middleeast/netanyahu-unga-israel-election.html",
               "source": "nytimes"
+            },
+            {
+              "title": "To the victor belong Venezuela’s spoils: Delcy Rodriguez’s UNGA about-face",
+              "link": "https://www.aljazeera.com/opinions/2026/9/24/to-the-victor-belong-venezuelas-spoils-delcy-rodriguezs-unga-about-face?traffic_source=rss",
+              "source": "aljazeera"
             },
             {
               "title": "Benjamin Netanyahu to deliver defiant UN speech while facing protests and political isolation",
@@ -1080,99 +1182,24 @@
               "source": "guardian"
             },
             {
-              "title": "Gaza watches Israel’s elections with fear and antipathy",
-              "link": "https://www.aljazeera.com/news/2026/9/24/gaza-watches-israels-election-with-fear-and-antipathy?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Venezuela’s Rodriguez pledges elections, path forward in UNGA speech",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/9/24/venezuelas-rodriguez-pledges-elections-path-forward-in-unga-speech?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Iran’s president brings receipts of US strikes on civilians to the UNGA",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/9/24/aje-onl-nf_iran-president-pushes-back-against-trump-at-unga-230926?traffic_source=rss",
-              "source": "aljazeera"
-            }
-          ]
-        },
-        "military": {
-          "count": 5,
-          "titles": [
-            {
-              "title": "The west is in freefall – and the worst part is that we were warned, but chose not to listen | Owen Jones",
-              "link": "https://www.theguardian.com/commentisfree/2026/sep/24/west-freefall-warned-wealth-power",
-              "source": "guardian"
-            },
-            {
-              "title": "Pakistan says it launches air strikes on Afghanistan after drone attacks",
-              "link": "https://www.aljazeera.com/news/2026/9/24/pakistan-says-it-launches-air-strikes-on-afghanistan-after-drone-attacks?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Outcry in Sudan as US reportedly holds al-Burhan’s UN visa over truce plan",
-              "link": "https://www.aljazeera.com/news/2026/9/24/outcry-in-sudan-as-us-reportedly-holds-army-chiefs-un-visa-over-ceasefire?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Iran’s President Arrives in U.S. for U.N. Meeting Against the Backdrop of War",
-              "link": "https://www.nytimes.com/2026/09/22/world/middleeast/iran-war-un-general-assembly-pezeshkian.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "‘I’m afraid they’ll bomb the cafe where I work, or bomb me’: a day in the life of a 12-year-old boy in Gaza",
-              "link": "https://www.theguardian.com/global-development/ng-interactive/2026/sep/22/im-afraid-theyll-bomb-the-cafe-where-i-work-or-bomb-me-a-day-in-the-life-of-a-12-year-old-boy-in-gaza",
-              "source": "guardian"
-            }
-          ]
-        },
-        "diplomacy": {
-          "count": 8,
-          "titles": [
-            {
-              "title": "Trump-Xi summit: Here’s what’s on the agenda, and why it matters",
-              "link": "https://www.aljazeera.com/news/2026/9/24/trump-xi-summit-whats-on-the-agenda-why-it-matters?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Trump and Xi summit will focus on ‘stalibising’ ties, experts say",
-              "link": "https://www.aljazeera.com/economy/2026/9/24/trump-and-xi-summit-may-just-be-a-horse-and-pony-show-experts-say?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Trump's Board of Peace unveils $2.45bn plan to begin Gaza's reconstruction",
-              "link": "https://www.bbc.co.uk/news/articles/cwlyke0mm0x3o?at_medium=RSS&at_campaign=rss",
+              "title": "Iran's president tells Trump it will never 'bend the knee'",
+              "link": "https://www.bbc.co.uk/news/articles/cqvgyjy23ggjo?at_medium=RSS&at_campaign=rss",
               "source": "bbc"
-            },
-            {
-              "title": "Iran’s president says his country will not give up its right to a peaceful nuclear program.",
-              "link": "https://www.nytimes.com/live/2026/09/23/world/un-general-assembly-iran-ukraine/irans-president-says-his-country-will-not-give-up-its-right-to-a-peaceful-nuclear-program",
-              "source": "nytimes"
-            },
-            {
-              "title": "Walkouts at the U.N. General Assembly Are Somewhat of a Tradition",
-              "link": "https://www.nytimes.com/2026/09/23/world/un-general-assembly-walkout.html",
-              "source": "nytimes"
             }
           ]
         },
         "other": {
-          "count": 5,
+          "count": 4,
           "titles": [
             {
-              "title": "Gaza $2.45 billion reconstruction plan. Who decides its future?",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/9/24/gaza-2-45-billion-reconstruction-plan-who-decides-its-future?traffic_source=rss",
+              "title": "Hurricane Polo brings fears of heavy rain and landslides in Mexico",
+              "link": "https://www.aljazeera.com/news/2026/9/24/hurricane-polo-hits-mexicos-coast-as-tropical-storm-nolo-approaches-hawaii?traffic_source=rss",
               "source": "aljazeera"
             },
             {
-              "title": "‘They uprooted it all’: Israel bulldozes Palestinian-owned olive groves",
-              "link": "https://www.aljazeera.com/news/2026/9/24/they-uprooted-it-all-israel-bulldozes-palestinian-owned-olive-groves?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Spain’s Sanchez warns of far-right threat in UNGA speech",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/9/24/aje-onl-nf_spains-sanchez-warns-of-far-right-in-unga-speech-230926?traffic_source=rss",
-              "source": "aljazeera"
+              "title": "‘First there’s the gruelling task of trying to charge my laptop’: a day in the life of a university lecturer in Gaza",
+              "link": "https://www.theguardian.com/global-development/ng-interactive/2026/sep/24/first-theres-the-gruelling-task-of-trying-to-charge-my-laptop-a-day-in-the-life-of-a-university-lecturer-in-gaza",
+              "source": "guardian"
             },
             {
               "title": "Stanislas Hutin, Who Denounced Torture in France’s Algerian War, Dies at 95",
@@ -1190,8 +1217,8 @@
           "count": 5,
           "titles": [
             {
-              "title": "Why have some nations developed while others struggle?",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/9/24/why-have-some-nations-developed-while-others-struggle?traffic_source=rss",
+              "title": "Fighting widens across Ethiopia as Tigray clashes escalate",
+              "link": "https://www.aljazeera.com/news/2026/9/24/fighting-widens-across-ethiopia-as-tigray-clashes-escalate?traffic_source=rss",
               "source": "aljazeera"
             },
             {
@@ -1216,39 +1243,49 @@
             }
           ]
         },
-        "humanitarian": {
-          "count": 6,
+        "diplomacy": {
+          "count": 8,
           "titles": [
             {
-              "title": "Israel facing water shortages caused by destruction of Gaza’s treatment plants",
-              "link": "https://www.theguardian.com/world/2026/sep/24/israel-water-shortages-destruction-gaza-treatment-plants-pollution-sanitation-crisis",
-              "source": "guardian"
+              "title": "Trump-Xi summit live: Trade, AI, Iran and Taiwan top US-China talks",
+              "link": "https://www.aljazeera.com/news/liveblog/2026/9/24/trump-xi-summit-live-trade-ai-iran-and-taiwan-top-us-china-talks?traffic_source=rss",
+              "source": "aljazeera"
             },
             {
-              "title": "Trump Aides Seek to Jump Start Diplomacy With Iran as Crisis Widens",
-              "link": "https://www.nytimes.com/2026/09/23/us/politics/trump-aides-iran-talks.html",
-              "source": "nytimes"
+              "title": "Belgium and Rwanda are talking again. Is DR Congo any closer to peace?",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/9/24/belgium-and-rwanda-are-talking-again-is-dr-congo-any-closer-to-peace?traffic_source=rss",
+              "source": "aljazeera"
             },
             {
-              "title": "Save the Children officially warned by regulator over staff put at risk in Yemen",
-              "link": "https://www.theguardian.com/society/2026/sep/23/save-the-children-officially-warned-by-regulator-over-staff-put-at-risk-in-yemen",
-              "source": "guardian"
-            },
-            {
-              "title": "Iran Will Not Be Bullied, President Masoud Pezeshkian Says in U.N. Speech",
-              "link": "https://www.nytimes.com/2026/09/23/world/middleeast/iran-president-un-speech.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Reports of violence against women in Gaza surge, UN agency finds",
-              "link": "https://www.bbc.co.uk/news/articles/c94gm7dp40y0o?at_medium=RSS&at_campaign=rss",
+              "title": "Trump's Board of Peace unveils $2.45bn Gaza recovery plan",
+              "link": "https://www.bbc.co.uk/news/articles/cwlyke0mm0x3o?at_medium=RSS&at_campaign=rss",
               "source": "bbc"
+            },
+            {
+              "title": "Iran’s president says his country will not give up its right to a peaceful nuclear program.",
+              "link": "https://www.nytimes.com/live/2026/09/23/world/un-general-assembly-iran-ukraine/irans-president-says-his-country-will-not-give-up-its-right-to-a-peaceful-nuclear-program",
+              "source": "nytimes"
+            },
+            {
+              "title": "Walkouts at the U.N. General Assembly Are Somewhat of a Tradition",
+              "link": "https://www.nytimes.com/2026/09/23/world/un-general-assembly-walkout.html",
+              "source": "nytimes"
             }
           ]
         },
         "economy": {
-          "count": 3,
+          "count": 5,
           "titles": [
+            {
+              "title": "Could the oil shock push fuel prices even higher?",
+              "link": "https://www.aljazeera.com/video/counting-the-cost/2026/9/24/could-the-oil-shock-push-fuel-prices-even-higher?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Why is Iran threatening regional airports, and what could be the impact?",
+              "link": "https://www.aljazeera.com/news/2026/9/24/why-is-iran-threatening-regional-airports-and-what-could-be-the-impact?traffic_source=rss",
+              "source": "aljazeera"
+            },
             {
               "title": "Trump Says He Supports Banning Diesel Exports to Bring Down Prices",
               "link": "https://www.nytimes.com/2026/09/22/business/energy-environment/trump-diesel-exports-iran-war.html",
@@ -1263,6 +1300,36 @@
               "title": "British banks warned not to invest in planned Israeli settlement before UK trade ban begins",
               "link": "https://www.theguardian.com/politics/2026/sep/22/mps-uk-banks-investment-israeli-settlement-trade-ban",
               "source": "guardian"
+            }
+          ]
+        },
+        "humanitarian": {
+          "count": 7,
+          "titles": [
+            {
+              "title": "Trump Aides Seek to Jump-Start Diplomacy With Iran as Crisis Widens",
+              "link": "https://www.nytimes.com/2026/09/23/us/politics/trump-aides-iran-talks.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Global release announced for acclaimed Gaza documentary NAZA",
+              "link": "https://www.theguardian.com/film/2026/sep/24/global-release-announced-for-acclaimed-gaza-documentary-naza",
+              "source": "guardian"
+            },
+            {
+              "title": "Israel facing water shortages caused by destruction of Gaza’s treatment plants",
+              "link": "https://www.theguardian.com/world/2026/sep/24/israel-water-shortages-destruction-gaza-treatment-plants-pollution-sanitation-crisis",
+              "source": "guardian"
+            },
+            {
+              "title": "Save the Children officially warned by regulator over staff put at risk in Yemen",
+              "link": "https://www.theguardian.com/society/2026/sep/23/save-the-children-officially-warned-by-regulator-over-staff-put-at-risk-in-yemen",
+              "source": "guardian"
+            },
+            {
+              "title": "Iran Will Not Be Bullied, President Masoud Pezeshkian Says in U.N. Speech",
+              "link": "https://www.nytimes.com/2026/09/23/world/middleeast/iran-president-un-speech.html",
+              "source": "nytimes"
             }
           ]
         }
@@ -1357,52 +1424,60 @@
   ],
   "economic_indicators": {
     "GOLD": {
-      "price": 4318.4,
-      "change": 0,
-      "changePercent": 0,
+      "price": 4310.1,
+      "change": -8.3,
+      "changePercent": -0.19,
       "prev": 4318.4
-    },
-    "VIX": {
-      "price": 15.93,
-      "change": 0.75,
-      "changePercent": 4.94,
-      "prev": 15.18
-    },
-    "BRENT": {
-      "price": 99.45,
-      "change": -3.63,
-      "changePercent": -3.52,
-      "prev": 103.08
-    },
-    "WTI": {
-      "price": 93.38,
-      "change": 1.22,
-      "changePercent": 1.32,
-      "prev": 92.16
-    },
-    "DXY": {
-      "price": 101.01,
-      "change": -0.09,
-      "changePercent": -0.09,
-      "prev": 101.1
-    },
-    "US10Y": {
-      "price": 5.11,
-      "change": 0.15,
-      "changePercent": 3.02,
-      "prev": 4.96
     },
     "US2Y": {
       "price": 4.03,
-      "change": 0.05,
-      "changePercent": 1.26,
-      "prev": 3.98
+      "change": 0,
+      "changePercent": 0,
+      "prev": 4.03
+    },
+    "US10Y": {
+      "price": 5.1,
+      "change": -0.01,
+      "changePercent": -0.2,
+      "prev": 5.11
+    },
+    "WTI": {
+      "price": 93.95,
+      "change": 1.79,
+      "changePercent": 1.94,
+      "prev": 92.16
+    },
+    "BRENT": {
+      "price": 99.82,
+      "change": -3.26,
+      "changePercent": -3.16,
+      "prev": 103.08
+    },
+    "VIX": {
+      "price": 15.87,
+      "change": 0.69,
+      "changePercent": 4.55,
+      "prev": 15.18
+    },
+    "DXY": {
+      "price": 101.33,
+      "change": 0.23,
+      "changePercent": 0.23,
+      "prev": 101.1
     }
   },
   "critical_events": [
     {
       "id": "ceasefire_agreement",
       "name": "공식 휴전/평화 합의",
+      "severity": "critical",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "shorten"
+    },
+    {
+      "id": "regime_collapse",
+      "name": "교전국 정권 붕괴/쿠데타",
       "severity": "critical",
       "confidence": 0.6666666666666666,
       "matchCount": 2,
@@ -1420,8 +1495,8 @@
       "id": "conflict_expansion",
       "name": "전선 확대/신규 참전국",
       "severity": "moderate",
-      "confidence": 0.6666666666666666,
-      "matchCount": 2,
+      "confidence": 1,
+      "matchCount": 6,
       "direction": "lengthen"
     }
   ],
