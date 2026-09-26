@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-09-26T06:21:47.352Z",
+  "timestamp": "2026-09-26T11:38:41.835Z",
   "war_day": 210,
   "probabilities": {
-    "1개월 내 (~3월)": 22.4,
-    "2~3개월 (4~5월)": 38.7,
-    "4~6개월 (6~8월)": 23.7,
-    "7~12개월 (9월~27/2월)": 11,
-    "1년 초과": 4.2
+    "1개월 내 (~3월)": 23.8,
+    "2~3개월 (4~5월)": 40.3,
+    "4~6개월 (6~8월)": 22.3,
+    "7~12개월 (9월~27/2월)": 10,
+    "1년 초과": 3.6
   },
   "factors": [
     {
@@ -45,9 +45,9 @@
       "decay": 0.4
     },
     {
-      "factor": "확전 뉴스 우세 (확전4:휴전0)",
-      "impact": "전쟁 장기화 가능성 (확전비율 100%)",
-      "weight": "+0.04%p (4~6개월)",
+      "factor": "확전 뉴스 우세 (확전4:휴전2)",
+      "impact": "전쟁 장기화 가능성 (확전비율 67%)",
+      "weight": "+0.03%p (4~6개월)",
       "direction": "lengthen",
       "detail": "언론에서 휴전보다 확전을 더 많이 보도하고 있습니다.",
       "keywords": [
@@ -164,11 +164,11 @@
       "decay": 1
     },
     {
-      "factor": "협상/외교 뉴스 8건 감지",
+      "factor": "협상/외교 뉴스 10건 감지",
       "impact": "외교적 해결 움직임 포착",
       "weight": "+0.02%p (1개월내), +0.01%p (2~3개월)",
       "direction": "shorten",
-      "detail": "실시간 뉴스에서 협상 관련 기사 8건이 감지되었습니다.",
+      "detail": "실시간 뉴스에서 협상 관련 기사 10건이 감지되었습니다.",
       "keywords": [
         "negotiat",
         "talks",
@@ -181,11 +181,11 @@
       "decay": 1
     },
     {
-      "factor": "지역 확산 뉴스 10.2건 감지",
+      "factor": "지역 확산 뉴스 14.2건 감지",
       "impact": "주변국 연루 확대로 장기화 위험",
       "weight": "+0.01%p (4~6개월), +0.01%p (7~12개월)",
       "direction": "lengthen",
-      "detail": "주변국을 언급하는 기사 10.2건이 감지되었습니다.",
+      "detail": "주변국을 언급하는 기사 14.2건이 감지되었습니다.",
       "keywords": [
         "saudi",
         "uae",
@@ -238,7 +238,7 @@
       "impact": "공식 휴전 또는 평화 합의 체결. 휴전 합의는 전쟁 종결의 결정적 단계이며, 합의 후 이행까지 평균 1~2주 소요.",
       "weight": "+10.0%p (1개월내), +6.7%p (2~3개월), -5.3%p (4~6개월), -4.0%p (7~12개월), -2.0%p (1년초과)",
       "direction": "shorten",
-      "detail": "공식 휴전 또는 평화 합의 체결. 휴전 합의는 전쟁 종결의 결정적 단계이며, 합의 후 이행까지 평균 1~2주 소요.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Iran's president tells Trump it will never 'bend the knee'",
+      "detail": "공식 휴전 또는 평화 합의 체결. 휴전 합의는 전쟁 종결의 결정적 단계이며, 합의 후 이행까지 평균 1~2주 소요.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Trump reportedly rejects Iran’s seven-day peace deal to reopen strait of Hormuz",
       "keywords": [
         "ceasefire",
         "agree",
@@ -284,6 +284,38 @@
         "china",
         "mediat",
         "peace framework"
+      ],
+      "applied": "2026-09-26",
+      "active": true,
+      "severity": "high"
+    },
+    {
+      "factor": "[중대 이벤트] 수도 직접 공격/포위",
+      "impact": "수도 직접 공격. 베오그라드(1999): 78일 폭격 후 항복. 바그다드(2003): 21일만에 함락. 수도 타격은 전쟁 지속 의지를 급격히 약화.",
+      "weight": "+2.7%p (1개월내), +4.0%p (2~3개월), -1.3%p (4~6개월), -1.3%p (7~12개월), -0.7%p (1년초과)",
+      "direction": "shorten",
+      "detail": "수도 직접 공격. 베오그라드(1999): 78일 폭격 후 항복. 바그다드(2003): 21일만에 함락. 수도 타격은 전쟁 지속 의지를 급격히 약화.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Trump reportedly rejects Iran’s seven-day peace deal to reopen strait of Hormuz",
+      "keywords": [
+        "capital",
+        "bomb",
+        "capital",
+        "strike",
+        "capital",
+        "attack",
+        "capital",
+        "siege",
+        "capital",
+        "pound",
+        "capital",
+        "explosion",
+        "tehran",
+        "bomb",
+        "tehran",
+        "strike",
+        "tehran",
+        "pound",
+        "tehran",
+        "explosion"
       ],
       "applied": "2026-09-26",
       "active": true,
@@ -365,24 +397,132 @@
     }
   ],
   "news_signals": {
-    "ceasefire_mentions": 0,
+    "ceasefire_mentions": 2,
     "escalation_mentions": 4,
-    "negotiation_mentions": 8,
+    "negotiation_mentions": 10,
     "casualty_mentions": 0,
     "peace_mentions": 8,
-    "regional_spread": 10.2,
+    "regional_spread": 14.2,
     "total_articles": 50,
     "new_articles": 50,
-    "unique_events": 44,
-    "duplicates_removed": 6
+    "unique_events": 47,
+    "duplicates_removed": 3
   },
   "latest_news": [
     {
-      "title": "미중정상 \"국제수로 통행료 반대\"…이란 호르무즈 통제 변수되나",
-      "link": "https://www.yna.co.kr/view/AKR20260926032900009",
-      "pubDate": "Sat, 26 Sep 2026 15:10:46 +0900",
+      "title": "UN adds 61 companies to settlements blacklist over alleged Palestinian human rights violations",
+      "link": "https://www.theguardian.com/world/2026/sep/26/un-companies-israeli-settlements-blacklist-alleged-palestinian-rights-violations",
+      "pubDate": "Sat, 26 Sep 2026 11:10:09 GMT",
+      "source": "guardian",
+      "snippet": "Human rights council names and shames businesses with ties to illegal Israeli settlements in West BankThe UN human rights office has added 61 more companies to a blacklist of firms that it says are in",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Pezeshkian says Iran ‘no longer trusts talks with Washington’",
+      "link": "https://www.aljazeera.com/news/2026/9/26/pezeshkian-says-iran-no-longer-trusts-talks-with-washington?traffic_source=rss",
+      "pubDate": "Sat, 26 Sep 2026 11:06:28 +0000",
+      "source": "aljazeera",
+      "snippet": "In an interview with Al Jazeera, the Iranian president says Qatar and Pakistan are relaying Tehran&#039;s messages to the US.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "We followed five people in Gaza from dawn to dusk – this is what the headlines don’t tell us",
+      "link": "https://www.theguardian.com/global-development/ng-interactive/2026/sep/26/we-followed-five-people-in-gaza-from-dawn-to-dusk-this-is-what-the-headlines-dont-tell-us",
+      "pubDate": "Sat, 26 Sep 2026 11:00:34 GMT",
+      "source": "guardian",
+      "snippet": "Behind the stories of bombings and mass deaths, the everyday challenges facing Palestinians living under siege portray a quieter tragedy we rarely hear What does it take to make a morning cup of tea i",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "'에너지 위기' EU, 가스 수요 억제 조치 검토 촉구",
+      "link": "https://www.yna.co.kr/view/AKR20260926043900098",
+      "pubDate": "Sat, 26 Sep 2026 19:55:22 +0900",
       "source": "yonhap",
-      "snippet": "(서울=연합뉴스) 강훈상 기자 = 도널드 트럼프 미 대통령과 시진핑 국가주석이 정상회담에서 &apos;국제수로 통행료&apos;에 반대하기로 합의하면서 호르무즈 ...",
+      "snippet": "(브뤼셀=연합뉴스) 현윤경 특파원 = 유럽연합(EU) 에너지 수장이 이란 전쟁의 여파로 인한 에너지 가격 급등으로 유럽이 에너지 위기에 직면했다...",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Israel bans Arab parties from election: Who they are, why it matters",
+      "link": "https://www.aljazeera.com/news/2026/9/26/israel-bans-arab-parties-from-election-who-they-are-why-it-matters?traffic_source=rss",
+      "pubDate": "Sat, 26 Sep 2026 10:27:11 +0000",
+      "source": "aljazeera",
+      "snippet": "Israeli politicians subject to ICC arrest warrants or international sanctions remain eligible to run.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Trump reportedly rejects Iran’s seven-day peace deal to reopen strait of Hormuz",
+      "link": "https://www.theguardian.com/world/2026/sep/26/trump-dismiss-iran-seven-day-peace-deal-hormuz",
+      "pubDate": "Sat, 26 Sep 2026 09:31:47 GMT",
+      "source": "guardian",
+      "snippet": "Tehran awaits official response to plan, but US president is said to expect renewed strikes after midtermsIran is ⁠awaiting an official US response to its proposal to reopen the strait of Hormuz and e",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Trump ‘rejects’ Iran’s seven-day ceasefire proposal. What’s next?",
+      "link": "https://www.aljazeera.com/news/2026/9/26/trump-reportedly-rejects-irans-seven-day-ceasefire-proposal-whats-next?traffic_source=rss",
+      "pubDate": "Sat, 26 Sep 2026 09:28:19 +0000",
+      "source": "aljazeera",
+      "snippet": "Analysts say Trump may opt to resume attacks on Iran after November midterm elections.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Heroine or Public Enemy? The Israeli Blocking Much of Netanyahu’s Agenda.",
+      "link": "https://www.nytimes.com/2026/09/26/world/middleeast/israel-netanyahu-gali-baharav-miara-attorney-general.html",
+      "pubDate": "Sat, 26 Sep 2026 09:00:10 +0000",
+      "source": "nytimes",
+      "snippet": "Gali Baharav-Miara, Israel’s first female attorney general, has stopped many of the government’s efforts to remove constraints on its power.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Iran war squeezes Iraq’s economy as oil revenues fall and prices rise",
+      "link": "https://www.aljazeera.com/news/2026/9/26/iran-war-squeezes-iraqs-economy-as-oil-revenues-fall-and-prices-rise?traffic_source=rss",
+      "pubDate": "Sat, 26 Sep 2026 08:13:06 +0000",
+      "source": "aljazeera",
+      "snippet": "Disrupted oil exports, costlier imports, and a weaker dinar expose Iraq&#039;s economic dependence on oil, foreign goods. ",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Could AI firms be held responsible for mass shootings?",
+      "link": "https://www.aljazeera.com/news/2026/9/26/could-ai-firms-be-held-responsible-for-mass-shootings?traffic_source=rss",
+      "pubDate": "Sat, 26 Sep 2026 07:46:45 +0000",
+      "source": "aljazeera",
+      "snippet": "Canadian lawsuits against OpenAI raise questions about liability and duty to warn in the AI industry, say experts.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -446,108 +586,6 @@
       "isNew": true,
       "_isDuplicate": true,
       "_sourceCount": 1
-    },
-    {
-      "title": "White House bars CNN from Air Force One for Trump’s upcoming trip",
-      "link": "https://www.aljazeera.com/news/2026/9/26/white-house-bars-cnn-from-air-force-one-for-trumps-upcoming-trip?traffic_source=rss",
-      "pubDate": "Sat, 26 Sep 2026 04:27:07 +0000",
-      "source": "aljazeera",
-      "snippet": "Real America&#039;s Voice News replaces CNN on Air Force One amid escalating tensions between President Trump and US media.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Yemen’s government offers amnesty to Houthi defectors",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/9/26/yemens-government-offers-amnesty-to-houthi-defectors?traffic_source=rss",
-      "pubDate": "Sat, 26 Sep 2026 04:06:49 +0000",
-      "source": "aljazeera",
-      "snippet": "Yemen’s president called on citizens to join the armed forces, and offered amnesty to Iran-backed Houthi rebels.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "The bombs are still falling. Does diplomacy even work?",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/9/26/the-bombs-are-still-falling-does-diplomacy-even-work?traffic_source=rss",
-      "pubDate": "Sat, 26 Sep 2026 03:34:23 +0000",
-      "source": "aljazeera",
-      "snippet": "Al Jazeera’s Emma Withrow asked Al Anoud Al Thani what diplomacy can achieve.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Iran war live: Tehran offers US plan to reopen Hormuz within seven days",
-      "link": "https://www.aljazeera.com/news/liveblog/2026/9/26/iran-war-live-tehran-offers-us-plan-to-reopen-hormuz-within-seven-days?traffic_source=rss",
-      "pubDate": "Sat, 26 Sep 2026 00:00:00 +0000",
-      "source": "aljazeera",
-      "snippet": "Iran&#039;s FM says the &quot;choice rests with the US&quot; to approve the proposed seven-day proposal to reopen Hormuz.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": true,
-      "_clusterSize": 3,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Iran says it awaits US response on seven-day roadmap to end war",
-      "link": "https://www.aljazeera.com/news/2026/9/25/iran-says-it-awaits-us-response-on-seven-day-roadmap-to-end-war?traffic_source=rss",
-      "pubDate": "Fri, 25 Sep 2026 23:52:18 +0000",
-      "source": "aljazeera",
-      "snippet": "Tehran says the plan would reopen the Strait of Hormuz and resume nuclear talks within a week if Washington agrees.",
-      "isNew": true,
-      "_isDuplicate": true,
-      "_sourceCount": 1
-    },
-    {
-      "title": "Pope Leo XIV warns AI could undermine humanity during France visit",
-      "link": "https://www.aljazeera.com/news/2026/9/25/pope-leo-xiv-warns-ai-could-undermine-humanity-during-france-visit?traffic_source=rss",
-      "pubDate": "Fri, 25 Sep 2026 23:21:52 +0000",
-      "source": "aljazeera",
-      "snippet": "Thousands gather in Paris as the pope warns against a &#039;paradise of machines&#039; at the Elysee Palace.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Iran to reopen Strait of Hormuz within a week if US agrees to plan",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/9/25/iran-to-reopen-strait-of-hormuz-within-a-week-if-us-agrees-to-plan?traffic_source=rss",
-      "pubDate": "Fri, 25 Sep 2026 22:33:27 +0000",
-      "source": "aljazeera",
-      "snippet": "Iran says it has given the US a seven-day plan to reopen the Strait of Hormuz, with the choice to accept now up to them",
-      "isNew": true,
-      "_isDuplicate": true,
-      "_sourceCount": 1
-    },
-    {
-      "title": "Netanyahu calls Al Jazeera a ‘toxic media outlet’",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/9/25/netanyahu-calls-al-jazeera-a-toxic-media?traffic_source=rss",
-      "pubDate": "Fri, 25 Sep 2026 21:37:35 +0000",
-      "source": "aljazeera",
-      "snippet": "Israeli Prime Minister Benjamin Netanyahu called Al Jazeera a “toxic media outlet.” ",
-      "isNew": true,
-      "_isDuplicate": true,
-      "_sourceCount": 1
-    },
-    {
-      "title": "Mbappe goal overshadowed by knee injury to mar Zidane debut France win",
-      "link": "https://www.aljazeera.com/sports/2026/9/25/mbappe-goal-overshadowed-by-knee-injury-to-mar-zidane-debut-france-win?traffic_source=rss",
-      "pubDate": "Fri, 25 Sep 2026 21:32:43 +0000",
-      "source": "aljazeera",
-      "snippet": "Kylian Mbappe scores the only goal of France&#039;s win in Turkiye, but Real Madrid striker immediately forced off by injury.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
     }
   ],
   "news_digest": {
@@ -556,8 +594,8 @@
         "category_id": "politics",
         "category_name": "국내 정치",
         "category_icon": "🏛️",
-        "count": 14,
-        "new_count": 14,
+        "count": 13,
+        "new_count": 13,
         "articles": [
           {
             "title": "Huckabee blames ‘biblical illiteracy’ for waning support for Israel in US",
@@ -604,18 +642,6 @@
             "isNew": true
           },
           {
-            "title": "Protests erupt as Netanyahu gives inflammatory UN speech - The Latest",
-            "link": "https://www.theguardian.com/news/audio/2026/sep/25/protests-erupt-as-netanyahu-gives-inflammatory-un-speech-the-latest",
-            "source": "guardian",
-            "sources": [
-              "guardian",
-              "aljazeera"
-            ],
-            "pubDate": "Fri, 25 Sep 2026 18:22:27 GMT",
-            "snippet": "More than 100 people were arrested at large protests against the Israeli prime minister Benjamin Netanyahu’s address to the UN general assembly. Susan Sarandon, Chelsea Manning and Caleb Hearon were a",
-            "isNew": true
-          },
-          {
             "title": "Why a U.S. Diesel Export Ban May Not Lower Prices",
             "link": "https://www.nytimes.com/2026/09/25/business/energy-environment/trump-diesel-export-ban.html",
             "source": "nytimes",
@@ -624,6 +650,17 @@
             ],
             "pubDate": "Fri, 25 Sep 2026 19:22:03 +0000",
             "snippet": "President Trump has said he is considering restricting overseas sales of the fuel to bring down domestic prices, but experts say the policy will have many unintended effects.",
+            "isNew": true
+          },
+          {
+            "title": "Protests erupt as Netanyahu gives inflammatory UN speech - The Latest",
+            "link": "https://www.theguardian.com/news/audio/2026/sep/25/protests-erupt-as-netanyahu-gives-inflammatory-un-speech-the-latest",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Fri, 25 Sep 2026 18:22:27 GMT",
+            "snippet": "More than 100 people were arrested at large protests against the Israeli prime minister Benjamin Netanyahu’s address to the UN general assembly. Susan Sarandon, Chelsea Manning and Caleb Hearon were a",
             "isNew": true
           },
           {
@@ -676,29 +713,18 @@
         "category_id": "military",
         "category_name": "군사 작전",
         "category_icon": "⚔️",
-        "count": 10,
-        "new_count": 10,
+        "count": 9,
+        "new_count": 9,
         "articles": [
           {
-            "title": "The bombs are still falling. Does diplomacy even work?",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/26/the-bombs-are-still-falling-does-diplomacy-even-work?traffic_source=rss",
-            "source": "aljazeera",
+            "title": "We followed five people in Gaza from dawn to dusk – this is what the headlines don’t tell us",
+            "link": "https://www.theguardian.com/global-development/ng-interactive/2026/sep/26/we-followed-five-people-in-gaza-from-dawn-to-dusk-this-is-what-the-headlines-dont-tell-us",
+            "source": "guardian",
             "sources": [
-              "aljazeera"
+              "guardian"
             ],
-            "pubDate": "Sat, 26 Sep 2026 03:34:23 +0000",
-            "snippet": "Al Jazeera’s Emma Withrow asked Al Anoud Al Thani what diplomacy can achieve.",
-            "isNew": true
-          },
-          {
-            "title": "Mbappe goal overshadowed by knee injury to mar Zidane debut France win",
-            "link": "https://www.aljazeera.com/sports/2026/9/25/mbappe-goal-overshadowed-by-knee-injury-to-mar-zidane-debut-france-win?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Fri, 25 Sep 2026 21:32:43 +0000",
-            "snippet": "Kylian Mbappe scores the only goal of France&#039;s win in Turkiye, but Real Madrid striker immediately forced off by injury.",
+            "pubDate": "Sat, 26 Sep 2026 11:00:34 GMT",
+            "snippet": "Behind the stories of bombings and mass deaths, the everyday challenges facing Palestinians living under siege portray a quieter tragedy we rarely hear What does it take to make a morning cup of tea i",
             "isNew": true
           },
           {
@@ -792,6 +818,70 @@
         ]
       },
       {
+        "category_id": "other",
+        "category_name": "기타",
+        "category_icon": "📰",
+        "count": 7,
+        "new_count": 7,
+        "articles": [
+          {
+            "title": "UN adds 61 companies to settlements blacklist over alleged Palestinian human rights violations",
+            "link": "https://www.theguardian.com/world/2026/sep/26/un-companies-israeli-settlements-blacklist-alleged-palestinian-rights-violations",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Sat, 26 Sep 2026 11:10:09 GMT",
+            "snippet": "Human rights council names and shames businesses with ties to illegal Israeli settlements in West BankThe UN human rights office has added 61 more companies to a blacklist of firms that it says are in",
+            "isNew": true
+          },
+          {
+            "title": "Heroine or Public Enemy? The Israeli Blocking Much of Netanyahu’s Agenda.",
+            "link": "https://www.nytimes.com/2026/09/26/world/middleeast/israel-netanyahu-gali-baharav-miara-attorney-general.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Sat, 26 Sep 2026 09:00:10 +0000",
+            "snippet": "Gali Baharav-Miara, Israel’s first female attorney general, has stopped many of the government’s efforts to remove constraints on its power.",
+            "isNew": true
+          },
+          {
+            "title": "Could AI firms be held responsible for mass shootings?",
+            "link": "https://www.aljazeera.com/news/2026/9/26/could-ai-firms-be-held-responsible-for-mass-shootings?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Sat, 26 Sep 2026 07:46:45 +0000",
+            "snippet": "Canadian lawsuits against OpenAI raise questions about liability and duty to warn in the AI industry, say experts.",
+            "isNew": true
+          },
+          {
+            "title": "Gaza: a week in the life of five ordinary Palestinians",
+            "link": "https://www.theguardian.com/global-development/ng-interactive/2026/sep/26/gaza-a-week-in-the-life-of-five-ordinary-palestinians",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Sat, 26 Sep 2026 06:00:27 GMT",
+            "snippet": "As the war pushes deep into its third year, what does daily life look like for people living there and how has the conflict changed it?***We follow five ordinary people – a 12-year-old boy, a professo",
+            "isNew": true
+          },
+          {
+            "title": "Why an international arrest warrant didn't stop Netanyahu's US trip",
+            "link": "https://www.bbc.co.uk/news/videos/ckq633lm11jeo?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc"
+            ],
+            "pubDate": "Fri, 25 Sep 2026 18:41:13 GMT",
+            "snippet": "The BBC's Nada Tawfik explains why Israel's Benjamin Netanyahu was not arrested after speaking at the UN, despite an ICC arrest warrant.",
+            "isNew": true
+          }
+        ]
+      },
+      {
         "category_id": "diplomacy",
         "category_name": "외교/협상",
         "category_icon": "🤝",
@@ -799,25 +889,25 @@
         "new_count": 6,
         "articles": [
           {
-            "title": "미중정상 \"국제수로 통행료 반대\"…이란 호르무즈 통제 변수되나",
-            "link": "https://www.yna.co.kr/view/AKR20260926032900009",
-            "source": "yonhap",
+            "title": "Trump reportedly rejects Iran’s seven-day peace deal to reopen strait of Hormuz",
+            "link": "https://www.theguardian.com/world/2026/sep/26/trump-dismiss-iran-seven-day-peace-deal-hormuz",
+            "source": "guardian",
             "sources": [
-              "yonhap"
+              "guardian"
             ],
-            "pubDate": "Sat, 26 Sep 2026 15:10:46 +0900",
-            "snippet": "(서울=연합뉴스) 강훈상 기자 = 도널드 트럼프 미 대통령과 시진핑 국가주석이 정상회담에서 &apos;국제수로 통행료&apos;에 반대하기로 합의하면서 호르무즈 ...",
+            "pubDate": "Sat, 26 Sep 2026 09:31:47 GMT",
+            "snippet": "Tehran awaits official response to plan, but US president is said to expect renewed strikes after midtermsIran is ⁠awaiting an official US response to its proposal to reopen the strait of Hormuz and e",
             "isNew": true
           },
           {
-            "title": "Iran war live: Tehran offers US plan to reopen Hormuz within seven days",
-            "link": "https://www.aljazeera.com/news/liveblog/2026/9/26/iran-war-live-tehran-offers-us-plan-to-reopen-hormuz-within-seven-days?traffic_source=rss",
+            "title": "Trump ‘rejects’ Iran’s seven-day ceasefire proposal. What’s next?",
+            "link": "https://www.aljazeera.com/news/2026/9/26/trump-reportedly-rejects-irans-seven-day-ceasefire-proposal-whats-next?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Sat, 26 Sep 2026 00:00:00 +0000",
-            "snippet": "Iran&#039;s FM says the &quot;choice rests with the US&quot; to approve the proposed seven-day proposal to reopen Hormuz.",
+            "pubDate": "Sat, 26 Sep 2026 09:28:19 +0000",
+            "snippet": "Analysts say Trump may opt to resume attacks on Iran after November midterm elections.",
             "isNew": true
           },
           {
@@ -867,11 +957,75 @@
         ]
       },
       {
+        "category_id": "regional",
+        "category_name": "지역 정세",
+        "category_icon": "🌍",
+        "count": 5,
+        "new_count": 5,
+        "articles": [
+          {
+            "title": "Pezeshkian says Iran ‘no longer trusts talks with Washington’",
+            "link": "https://www.aljazeera.com/news/2026/9/26/pezeshkian-says-iran-no-longer-trusts-talks-with-washington?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Sat, 26 Sep 2026 11:06:28 +0000",
+            "snippet": "In an interview with Al Jazeera, the Iranian president says Qatar and Pakistan are relaying Tehran&#039;s messages to the US.",
+            "isNew": true
+          },
+          {
+            "title": "'에너지 위기' EU, 가스 수요 억제 조치 검토 촉구",
+            "link": "https://www.yna.co.kr/view/AKR20260926043900098",
+            "source": "yonhap",
+            "sources": [
+              "yonhap"
+            ],
+            "pubDate": "Sat, 26 Sep 2026 19:55:22 +0900",
+            "snippet": "(브뤼셀=연합뉴스) 현윤경 특파원 = 유럽연합(EU) 에너지 수장이 이란 전쟁의 여파로 인한 에너지 가격 급등으로 유럽이 에너지 위기에 직면했다...",
+            "isNew": true
+          },
+          {
+            "title": "It’s not hypothetical: the dangers of AI are already here | Granate Kim and Mohamed Hussein",
+            "link": "https://www.theguardian.com/commentisfree/2026/sep/25/ai-israel-gaza-iran-police-surveillance",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Fri, 25 Sep 2026 12:00:50 GMT",
+            "snippet": "Israel and the US have used AI to kill in Gaza and Iran, while law enforcement uses it in surveillance and arrests. The future is hereIn recent weeks, concerns about AI have forged unlikely alliances ",
+            "isNew": true
+          },
+          {
+            "title": "France to Send Soldiers to Saudi Arabia to Help Secure Energy Sites",
+            "link": "https://www.nytimes.com/2026/09/24/world/middleeast/france-saudi-arabia-red-sea-yemen-houthis.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Fri, 25 Sep 2026 02:59:36 +0000",
+            "snippet": "Attacks on Saudi cities on the Red Sea by the Iran-backed Houthi militia in Yemen have added to pressure on global oil supplies.",
+            "isNew": true
+          },
+          {
+            "title": "Saudi Arabia intercepts wave of Houthi missiles as oil climbs to one-week high",
+            "link": "https://www.theguardian.com/world/2026/sep/25/saudi-arabia-intercepts-houthi-missiles-oil-prices-climbs",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Fri, 25 Sep 2026 02:54:27 GMT",
+            "snippet": "The ⁠Saudi-led coalition in Yemen said the missiles were ⁠aimed at Taif and the Yanbu area on the Red Sea, the main alternative route for Saudi oilSaudi Arabia says it intercepted six ballistic missil",
+            "isNew": true
+          }
+        ]
+      },
+      {
         "category_id": "humanitarian",
         "category_name": "인도주의/피해",
         "category_icon": "🏥",
-        "count": 6,
-        "new_count": 6,
+        "count": 4,
+        "new_count": 4,
         "articles": [
           {
             "title": "‘Nowhere else to go’: Gaza families shelter in buildings that may collapse",
@@ -916,123 +1070,6 @@
             "pubDate": "Thu, 24 Sep 2026 10:00:05 GMT",
             "snippet": "Theatrical rollout across 56 territories planned for documentary about Israel’s mass killing of civilians in Gaza before film will stream on Guardian websiteNAZA, the award-winning documentary from Is",
             "isNew": true
-          },
-          {
-            "title": "Israel facing water shortages caused by destruction of Gaza’s treatment plants",
-            "link": "https://www.theguardian.com/world/2026/sep/24/israel-water-shortages-destruction-gaza-treatment-plants-pollution-sanitation-crisis",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Thu, 24 Sep 2026 05:00:08 GMT",
-            "snippet": "Five desalination plants shut down for days, while Gaza remains in grip of severe water and sanitation crisisIsrael is facing weeks of water shortages after an exceptional algae bloom crippled much of",
-            "isNew": true
-          },
-          {
-            "title": "Save the Children officially warned by regulator over staff put at risk in Yemen",
-            "link": "https://www.theguardian.com/society/2026/sep/23/save-the-children-officially-warned-by-regulator-over-staff-put-at-risk-in-yemen",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Wed, 23 Sep 2026 18:55:10 GMT",
-            "snippet": "Warning from Charity Commission for England and Wales concludes two-year investigation after death of Hisham al-Hakimi in October 2023The international aid charity Save the Children has been issued wi",
-            "isNew": true
-          }
-        ]
-      },
-      {
-        "category_id": "other",
-        "category_name": "기타",
-        "category_icon": "📰",
-        "count": 4,
-        "new_count": 4,
-        "articles": [
-          {
-            "title": "Gaza: a week in the life of five ordinary Palestinians",
-            "link": "https://www.theguardian.com/global-development/ng-interactive/2026/sep/26/gaza-a-week-in-the-life-of-five-ordinary-palestinians",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Sat, 26 Sep 2026 06:00:27 GMT",
-            "snippet": "As the war pushes deep into its third year, what does daily life look like for people living there and how has the conflict changed it?***We follow five ordinary people – a 12-year-old boy, a professo",
-            "isNew": true
-          },
-          {
-            "title": "Pope Leo XIV warns AI could undermine humanity during France visit",
-            "link": "https://www.aljazeera.com/news/2026/9/25/pope-leo-xiv-warns-ai-could-undermine-humanity-during-france-visit?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Fri, 25 Sep 2026 23:21:52 +0000",
-            "snippet": "Thousands gather in Paris as the pope warns against a &#039;paradise of machines&#039; at the Elysee Palace.",
-            "isNew": true
-          },
-          {
-            "title": "‘We skate on the rooftops of damaged buildings’: a day in the life of a skateboarder in Gaza",
-            "link": "https://www.theguardian.com/global-development/ng-interactive/2026/sep/25/we-skate-on-the-rooftops-of-damaged-buildings-a-day-in-the-life-a-skateboarder-in-gaza",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Fri, 25 Sep 2026 11:00:47 GMT",
-            "snippet": "As the war in Gaza approaches its fourth year, the Guardian follows five ordinary Palestinians as they go about their lives. Each tells the story of their day, revealing the terrible toll of the confl",
-            "isNew": true
-          },
-          {
-            "title": "Abbas Presses Case for Palestinian State in Taped General Assembly Address",
-            "link": "https://www.nytimes.com/2026/09/24/world/middleeast/abbas-general-assembly-palestinians.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Thu, 24 Sep 2026 19:33:09 +0000",
-            "snippet": "The Palestinian leader renewed his call for a two-state solution on Thursday, as he accused Israel of prosecuting “a genocidal war” against Palestinians.",
-            "isNew": true
-          }
-        ]
-      },
-      {
-        "category_id": "regional",
-        "category_name": "지역 정세",
-        "category_icon": "🌍",
-        "count": 3,
-        "new_count": 3,
-        "articles": [
-          {
-            "title": "It’s not hypothetical: the dangers of AI are already here | Granate Kim and Mohamed Hussein",
-            "link": "https://www.theguardian.com/commentisfree/2026/sep/25/ai-israel-gaza-iran-police-surveillance",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Fri, 25 Sep 2026 12:00:50 GMT",
-            "snippet": "Israel and the US have used AI to kill in Gaza and Iran, while law enforcement uses it in surveillance and arrests. The future is hereIn recent weeks, concerns about AI have forged unlikely alliances ",
-            "isNew": true
-          },
-          {
-            "title": "France to Send Soldiers to Saudi Arabia to Help Secure Energy Sites",
-            "link": "https://www.nytimes.com/2026/09/24/world/middleeast/france-saudi-arabia-red-sea-yemen-houthis.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Fri, 25 Sep 2026 02:59:36 +0000",
-            "snippet": "Attacks on Saudi cities on the Red Sea by the Iran-backed Houthi militia in Yemen have added to pressure on global oil supplies.",
-            "isNew": true
-          },
-          {
-            "title": "Saudi Arabia intercepts wave of Houthi missiles as oil climbs to one-week high",
-            "link": "https://www.theguardian.com/world/2026/sep/25/saudi-arabia-intercepts-houthi-missiles-oil-prices-climbs",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Fri, 25 Sep 2026 02:54:27 GMT",
-            "snippet": "The ⁠Saudi-led coalition in Yemen said the missiles were ⁠aimed at Taif and the Yanbu area on the Red Sea, the main alternative route for Saudi oilSaudi Arabia says it intercepted six ballistic missil",
-            "isNew": true
           }
         ]
       },
@@ -1040,9 +1077,31 @@
         "category_id": "economy",
         "category_name": "경제 영향",
         "category_icon": "📊",
-        "count": 1,
-        "new_count": 1,
+        "count": 3,
+        "new_count": 3,
         "articles": [
+          {
+            "title": "Israel bans Arab parties from election: Who they are, why it matters",
+            "link": "https://www.aljazeera.com/news/2026/9/26/israel-bans-arab-parties-from-election-who-they-are-why-it-matters?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Sat, 26 Sep 2026 10:27:11 +0000",
+            "snippet": "Israeli politicians subject to ICC arrest warrants or international sanctions remain eligible to run.",
+            "isNew": true
+          },
+          {
+            "title": "Iran war squeezes Iraq’s economy as oil revenues fall and prices rise",
+            "link": "https://www.aljazeera.com/news/2026/9/26/iran-war-squeezes-iraqs-economy-as-oil-revenues-fall-and-prices-rise?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Sat, 26 Sep 2026 08:13:06 +0000",
+            "snippet": "Disrupted oil exports, costlier imports, and a weaker dinar expose Iraq&#039;s economic dependence on oil, foreign goods. ",
+            "isNew": true
+          },
           {
             "title": "Iran awaiting response from Trump on proposal to open strait of Hormuz in six days",
             "link": "https://www.theguardian.com/world/2026/sep/24/ed-miliband-meets-iran-foreign-minister-us-ultimatum-strait-hormuz",
@@ -1061,13 +1120,128 @@
     "recent_30min": {
       "total_new": 50,
       "by_category": {
-        "diplomacy": {
+        "other": {
           "count": 8,
           "titles": [
             {
-              "title": "미중정상 \"국제수로 통행료 반대\"…이란 호르무즈 통제 변수되나",
-              "link": "https://www.yna.co.kr/view/AKR20260926032900009",
+              "title": "UN adds 61 companies to settlements blacklist over alleged Palestinian human rights violations",
+              "link": "https://www.theguardian.com/world/2026/sep/26/un-companies-israeli-settlements-blacklist-alleged-palestinian-rights-violations",
+              "source": "guardian"
+            },
+            {
+              "title": "Heroine or Public Enemy? The Israeli Blocking Much of Netanyahu’s Agenda.",
+              "link": "https://www.nytimes.com/2026/09/26/world/middleeast/israel-netanyahu-gali-baharav-miara-attorney-general.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Could AI firms be held responsible for mass shootings?",
+              "link": "https://www.aljazeera.com/news/2026/9/26/could-ai-firms-be-held-responsible-for-mass-shootings?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Gaza: a week in the life of five ordinary Palestinians",
+              "link": "https://www.theguardian.com/global-development/ng-interactive/2026/sep/26/gaza-a-week-in-the-life-of-five-ordinary-palestinians",
+              "source": "guardian"
+            },
+            {
+              "title": "Why an international arrest warrant didn't stop Netanyahu's US trip",
+              "link": "https://www.bbc.co.uk/news/videos/ckq633lm11jeo?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
+            }
+          ]
+        },
+        "regional": {
+          "count": 5,
+          "titles": [
+            {
+              "title": "Pezeshkian says Iran ‘no longer trusts talks with Washington’",
+              "link": "https://www.aljazeera.com/news/2026/9/26/pezeshkian-says-iran-no-longer-trusts-talks-with-washington?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "'에너지 위기' EU, 가스 수요 억제 조치 검토 촉구",
+              "link": "https://www.yna.co.kr/view/AKR20260926043900098",
               "source": "yonhap"
+            },
+            {
+              "title": "It’s not hypothetical: the dangers of AI are already here | Granate Kim and Mohamed Hussein",
+              "link": "https://www.theguardian.com/commentisfree/2026/sep/25/ai-israel-gaza-iran-police-surveillance",
+              "source": "guardian"
+            },
+            {
+              "title": "France to Send Soldiers to Saudi Arabia to Help Secure Energy Sites",
+              "link": "https://www.nytimes.com/2026/09/24/world/middleeast/france-saudi-arabia-red-sea-yemen-houthis.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Saudi Arabia intercepts wave of Houthi missiles as oil climbs to one-week high",
+              "link": "https://www.theguardian.com/world/2026/sep/25/saudi-arabia-intercepts-houthi-missiles-oil-prices-climbs",
+              "source": "guardian"
+            }
+          ]
+        },
+        "military": {
+          "count": 9,
+          "titles": [
+            {
+              "title": "We followed five people in Gaza from dawn to dusk – this is what the headlines don’t tell us",
+              "link": "https://www.theguardian.com/global-development/ng-interactive/2026/sep/26/we-followed-five-people-in-gaza-from-dawn-to-dusk-this-is-what-the-headlines-dont-tell-us",
+              "source": "guardian"
+            },
+            {
+              "title": "U.N. Releases New List of Companies It Says Do Business With Israeli Settlements",
+              "link": "https://www.nytimes.com/2026/09/25/world/middleeast/un-companies-westbank-settlements.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "The week around the world in 20 pictures",
+              "link": "https://www.theguardian.com/artanddesign/gallery/2026/sep/25/the-week-around-the-world-in-20-pictures",
+              "source": "guardian"
+            },
+            {
+              "title": "Netanyahu Said to Have Been Warned by Emirati Leader About Hamas Attack Before Oct. 7",
+              "link": "https://www.nytimes.com/2026/09/25/world/middleeast/netanyahu-warning-oct-7-uae.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Netanyahu defends Israeli military action as delegates walk out before UN speech",
+              "link": "https://www.bbc.co.uk/news/articles/c3y0z7kxlegdo?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
+            }
+          ]
+        },
+        "economy": {
+          "count": 3,
+          "titles": [
+            {
+              "title": "Israel bans Arab parties from election: Who they are, why it matters",
+              "link": "https://www.aljazeera.com/news/2026/9/26/israel-bans-arab-parties-from-election-who-they-are-why-it-matters?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Iran war squeezes Iraq’s economy as oil revenues fall and prices rise",
+              "link": "https://www.aljazeera.com/news/2026/9/26/iran-war-squeezes-iraqs-economy-as-oil-revenues-fall-and-prices-rise?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Iran awaiting response from Trump on proposal to open strait of Hormuz in six days",
+              "link": "https://www.theguardian.com/world/2026/sep/24/ed-miliband-meets-iran-foreign-minister-us-ultimatum-strait-hormuz",
+              "source": "guardian"
+            }
+          ]
+        },
+        "diplomacy": {
+          "count": 7,
+          "titles": [
+            {
+              "title": "Trump reportedly rejects Iran’s seven-day peace deal to reopen strait of Hormuz",
+              "link": "https://www.theguardian.com/world/2026/sep/26/trump-dismiss-iran-seven-day-peace-deal-hormuz",
+              "source": "guardian"
+            },
+            {
+              "title": "Trump ‘rejects’ Iran’s seven-day ceasefire proposal. What’s next?",
+              "link": "https://www.aljazeera.com/news/2026/9/26/trump-reportedly-rejects-irans-seven-day-ceasefire-proposal-whats-next?traffic_source=rss",
+              "source": "aljazeera"
             },
             {
               "title": "Iran pitches US a seven-day end to the war at UNGA",
@@ -1075,54 +1249,19 @@
               "source": "aljazeera"
             },
             {
-              "title": "Iran war live: Tehran offers US plan to reopen Hormuz within seven days",
-              "link": "https://www.aljazeera.com/news/liveblog/2026/9/26/iran-war-live-tehran-offers-us-plan-to-reopen-hormuz-within-seven-days?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Iran says it awaits US response on seven-day roadmap to end war",
-              "link": "https://www.aljazeera.com/news/2026/9/25/iran-says-it-awaits-us-response-on-seven-day-roadmap-to-end-war?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
               "title": "Trump faces tough choices as Iran dangles deal to reopen Hormuz before US midterms",
               "link": "https://www.theguardian.com/world/2026/sep/25/trump-tough-choices-iran-accelerated-deal-reopen-hormuz-midterm-elections",
               "source": "guardian"
-            }
-          ]
-        },
-        "other": {
-          "count": 5,
-          "titles": [
-            {
-              "title": "Gaza: a week in the life of five ordinary Palestinians",
-              "link": "https://www.theguardian.com/global-development/ng-interactive/2026/sep/26/gaza-a-week-in-the-life-of-five-ordinary-palestinians",
-              "source": "guardian"
             },
             {
-              "title": "Pope Leo XIV warns AI could undermine humanity during France visit",
-              "link": "https://www.aljazeera.com/news/2026/9/25/pope-leo-xiv-warns-ai-could-undermine-humanity-during-france-visit?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "‘We skate on the rooftops of damaged buildings’: a day in the life of a skateboarder in Gaza",
-              "link": "https://www.theguardian.com/global-development/ng-interactive/2026/sep/25/we-skate-on-the-rooftops-of-damaged-buildings-a-day-in-the-life-a-skateboarder-in-gaza",
-              "source": "guardian"
-            },
-            {
-              "title": "Abbas Presses Case for Palestinian State in Taped General Assembly Address",
-              "link": "https://www.nytimes.com/2026/09/24/world/middleeast/abbas-general-assembly-palestinians.html",
+              "title": "Iran Proposes 7-Day Plan to End War",
+              "link": "https://www.nytimes.com/2026/09/24/world/middleeast/iran-proposal.html",
               "source": "nytimes"
-            },
-            {
-              "title": "‘First there’s the gruelling task of trying to charge my laptop’: a day in the life of a university lecturer in Gaza",
-              "link": "https://www.theguardian.com/global-development/ng-interactive/2026/sep/24/first-theres-the-gruelling-task-of-trying-to-charge-my-laptop-a-day-in-the-life-of-a-university-lecturer-in-gaza",
-              "source": "guardian"
             }
           ]
         },
         "humanitarian": {
-          "count": 6,
+          "count": 4,
           "titles": [
             {
               "title": "‘Nowhere else to go’: Gaza families shelter in buildings that may collapse",
@@ -1143,16 +1282,11 @@
               "title": "Global release announced for acclaimed Gaza documentary NAZA",
               "link": "https://www.theguardian.com/film/2026/sep/24/global-release-announced-for-acclaimed-gaza-documentary-naza",
               "source": "guardian"
-            },
-            {
-              "title": "Israel facing water shortages caused by destruction of Gaza’s treatment plants",
-              "link": "https://www.theguardian.com/world/2026/sep/24/israel-water-shortages-destruction-gaza-treatment-plants-pollution-sanitation-crisis",
-              "source": "guardian"
             }
           ]
         },
         "politics": {
-          "count": 16,
+          "count": 14,
           "titles": [
             {
               "title": "Huckabee blames ‘biblical illiteracy’ for waning support for Israel in US",
@@ -1175,74 +1309,9 @@
               "source": "aljazeera"
             },
             {
-              "title": "Netanyahu calls Al Jazeera a ‘toxic media outlet’",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/9/25/netanyahu-calls-al-jazeera-a-toxic-media?traffic_source=rss",
-              "source": "aljazeera"
-            }
-          ]
-        },
-        "military": {
-          "count": 10,
-          "titles": [
-            {
-              "title": "The bombs are still falling. Does diplomacy even work?",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/9/26/the-bombs-are-still-falling-does-diplomacy-even-work?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Mbappe goal overshadowed by knee injury to mar Zidane debut France win",
-              "link": "https://www.aljazeera.com/sports/2026/9/25/mbappe-goal-overshadowed-by-knee-injury-to-mar-zidane-debut-france-win?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "U.N. Releases New List of Companies It Says Do Business With Israeli Settlements",
-              "link": "https://www.nytimes.com/2026/09/25/world/middleeast/un-companies-westbank-settlements.html",
+              "title": "Why a U.S. Diesel Export Ban May Not Lower Prices",
+              "link": "https://www.nytimes.com/2026/09/25/business/energy-environment/trump-diesel-export-ban.html",
               "source": "nytimes"
-            },
-            {
-              "title": "The week around the world in 20 pictures",
-              "link": "https://www.theguardian.com/artanddesign/gallery/2026/sep/25/the-week-around-the-world-in-20-pictures",
-              "source": "guardian"
-            },
-            {
-              "title": "Netanyahu Said to Have Been Warned by Emirati Leader About Hamas Attack Before Oct. 7",
-              "link": "https://www.nytimes.com/2026/09/25/world/middleeast/netanyahu-warning-oct-7-uae.html",
-              "source": "nytimes"
-            }
-          ]
-        },
-        "economy": {
-          "count": 2,
-          "titles": [
-            {
-              "title": "Iran to reopen Strait of Hormuz within a week if US agrees to plan",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/9/25/iran-to-reopen-strait-of-hormuz-within-a-week-if-us-agrees-to-plan?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Iran awaiting response from Trump on proposal to open strait of Hormuz in six days",
-              "link": "https://www.theguardian.com/world/2026/sep/24/ed-miliband-meets-iran-foreign-minister-us-ultimatum-strait-hormuz",
-              "source": "guardian"
-            }
-          ]
-        },
-        "regional": {
-          "count": 3,
-          "titles": [
-            {
-              "title": "It’s not hypothetical: the dangers of AI are already here | Granate Kim and Mohamed Hussein",
-              "link": "https://www.theguardian.com/commentisfree/2026/sep/25/ai-israel-gaza-iran-police-surveillance",
-              "source": "guardian"
-            },
-            {
-              "title": "France to Send Soldiers to Saudi Arabia to Help Secure Energy Sites",
-              "link": "https://www.nytimes.com/2026/09/24/world/middleeast/france-saudi-arabia-red-sea-yemen-houthis.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Saudi Arabia intercepts wave of Houthi missiles as oil climbs to one-week high",
-              "link": "https://www.theguardian.com/world/2026/sep/25/saudi-arabia-intercepts-houthi-missiles-oil-prices-climbs",
-              "source": "guardian"
             }
           ]
         }
@@ -1336,6 +1405,18 @@
     }
   ],
   "economic_indicators": {
+    "BRENT": {
+      "price": 97.44,
+      "change": -9.16,
+      "changePercent": -8.59,
+      "prev": 106.6
+    },
+    "DXY": {
+      "price": 101.03,
+      "change": -0.26,
+      "changePercent": -0.26,
+      "prev": 101.29
+    },
     "WTI": {
       "price": 92.41,
       "change": -2.2,
@@ -1347,18 +1428,6 @@
       "change": 0.02,
       "changePercent": 0.39,
       "prev": 5.16
-    },
-    "DXY": {
-      "price": 101.03,
-      "change": -0.26,
-      "changePercent": -0.26,
-      "prev": 101.29
-    },
-    "BRENT": {
-      "price": 97.44,
-      "change": -9.16,
-      "changePercent": -8.59,
-      "prev": 106.6
     },
     "US2Y": {
       "price": 4.07,
@@ -1391,6 +1460,14 @@
     {
       "id": "diplomatic_breakthrough",
       "name": "외교적 돌파구/강대국 중재",
+      "severity": "high",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "shorten"
+    },
+    {
+      "id": "capital_attack",
+      "name": "수도 직접 공격/포위",
       "severity": "high",
       "confidence": 0.6666666666666666,
       "matchCount": 2,
