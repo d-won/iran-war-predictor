@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-09-26T21:54:08.941Z",
-  "war_day": 210,
+  "timestamp": "2026-09-27T00:10:20.688Z",
+  "war_day": 211,
   "probabilities": {
-    "1개월 내 (~3월)": 23.2,
-    "2~3개월 (4~5월)": 36.5,
-    "4~6개월 (6~8월)": 22.4,
-    "7~12개월 (9월~27/2월)": 12.3,
-    "1년 초과": 5.6
+    "1개월 내 (~3월)": 16.7,
+    "2~3개월 (4~5월)": 36,
+    "4~6개월 (6~8월)": 27.7,
+    "7~12개월 (9월~27/2월)": 13.8,
+    "1년 초과": 5.8
   },
   "factors": [
     {
@@ -45,20 +45,20 @@
       "decay": 0.4
     },
     {
-      "factor": "확전 뉴스 우세 (확전2:휴전2)",
-      "impact": "전쟁 장기화 가능성 (확전비율 50%)",
-      "weight": "+0.02%p (4~6개월)",
-      "direction": "lengthen",
-      "detail": "언론에서 휴전보다 확전을 더 많이 보도하고 있습니다.",
+      "factor": "이란 미사일 능력 급감 (휴전6:확전2)",
+      "impact": "전쟁 지속 능력 약화로 단기 종전 가능성 증가",
+      "weight": "+0.0%p (1개월내), +0.0%p (2~3개월) (잔존40%)",
+      "direction": "shorten",
+      "detail": "이란의 보복 미사일 타격 능력이 약 90% 감소했습니다.",
       "keywords": [
-        "escalat",
-        "intensif",
-        "expand",
-        "widen"
+        "missile",
+        "ballistic",
+        "launch",
+        "strike capab"
       ],
-      "applied": "실시간",
+      "applied": "2026-03-02",
       "active": true,
-      "decay": 1
+      "decay": 0.4
     },
     {
       "factor": "호르무즈 해협 봉쇄 → 국제 경제 압력",
@@ -164,11 +164,11 @@
       "decay": 1
     },
     {
-      "factor": "협상/외교 뉴스 8건 감지",
-      "impact": "외교적 해결 움직임 포착",
-      "weight": "+0.02%p (1개월내), +0.01%p (2~3개월)",
+      "factor": "협상/외교 뉴스 2.2건 감지",
+      "impact": "외교 움직임 미약",
+      "weight": "+0.00%p (1개월내), +0.00%p (2~3개월)",
       "direction": "shorten",
-      "detail": "실시간 뉴스에서 협상 관련 기사 8건이 감지되었습니다.",
+      "detail": "실시간 뉴스에서 협상 관련 기사 2.2건이 감지되었습니다.",
       "keywords": [
         "negotiat",
         "talks",
@@ -181,11 +181,11 @@
       "decay": 1
     },
     {
-      "factor": "지역 확산 뉴스 14건 감지",
+      "factor": "지역 확산 뉴스 8.2건 감지",
       "impact": "주변국 연루 확대로 장기화 위험",
       "weight": "+0.01%p (4~6개월), +0.01%p (7~12개월)",
       "direction": "lengthen",
-      "detail": "주변국을 언급하는 기사 14건이 감지되었습니다.",
+      "detail": "주변국을 언급하는 기사 8.2건이 감지되었습니다.",
       "keywords": [
         "saudi",
         "uae",
@@ -234,37 +234,41 @@
       "decay": 0.3
     },
     {
-      "factor": "[중대 이벤트] 공식 휴전/평화 합의",
-      "impact": "공식 휴전 또는 평화 합의 체결. 휴전 합의는 전쟁 종결의 결정적 단계이며, 합의 후 이행까지 평균 1~2주 소요.",
-      "weight": "+13.0%p (1개월내), +8.7%p (2~3개월), -6.9%p (4~6개월), -5.2%p (7~12개월), -2.6%p (1년초과)",
+      "factor": "[중대 이벤트] 외교적 돌파구/강대국 중재",
+      "impact": "주요 외교적 돌파구 또는 강대국 중재. 데이턴(1995): 미국 중재 → 3주만에 합의. UN 안보리 결의는 평균 2~4주 내 휴전 이행.",
+      "weight": "+2.0%p (1개월내), +4.0%p (2~3개월), +1.3%p (4~6개월), -1.3%p (7~12개월), -0.7%p (1년초과)",
       "direction": "shorten",
-      "detail": "공식 휴전 또는 평화 합의 체결. 휴전 합의는 전쟁 종결의 결정적 단계이며, 합의 후 이행까지 평균 1~2주 소요.\n\n신뢰도: 확실 (87%), 관련 기사 2.6건 감지.\n관련: Trump rejects Iran’s seven-day peace deal to reopen strait of Hormuz",
+      "detail": "주요 외교적 돌파구 또는 강대국 중재. 데이턴(1995): 미국 중재 → 3주만에 합의. UN 안보리 결의는 평균 2~4주 내 휴전 이행.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: June 10, 2024 Israel-Hamas war",
       "keywords": [
-        "ceasefire",
+        "peace talk",
         "agree",
-        "ceasefire",
-        "deal",
-        "ceasefire",
-        "sign",
-        "truce",
-        "agree",
-        "armistice",
-        "sign",
-        "peace deal",
-        "ceasefire",
+        "diplomatic",
+        "breakthrough",
+        "summit",
+        "peace",
+        "mediati",
         "accept",
-        "peace agreement"
+        "un",
+        "resolution",
+        "ceasefire",
+        "broker",
+        "peace",
+        "negotiat",
+        "breakthrough",
+        "china",
+        "mediat",
+        "peace framework"
       ],
-      "applied": "2026-09-26",
+      "applied": "2026-09-27",
       "active": true,
-      "severity": "critical"
+      "severity": "high"
     },
     {
       "factor": "[중대 이벤트] 전선 확대/신규 참전국",
       "impact": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).",
       "weight": "-2.0%p (1개월내), -3.0%p (2~3개월), +4.0%p (4~6개월), +3.0%p (7~12개월), +2.0%p (1년초과)",
       "direction": "lengthen",
-      "detail": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).\n\n신뢰도: 확실 (100%), 관련 기사 6건 감지.\n관련: Women take up arms as sexual violence ravages eastern DRC | Iran awaiting response from Trump on proposal to open strait of Hormuz in six days | Family of Iranian twins sentenced to death and decades in jail ask UN for help",
+      "detail": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).\n\n신뢰도: 확실 (100%), 관련 기사 6건 감지.\n관련: Iran awaiting response from Trump on proposal to open strait of Hormuz in six days | Family of Iranian twins sentenced to death and decades in jail ask UN for help | Devastation in Gaza as Israel wages war on Hamas",
       "keywords": [
         "new front",
         "war spread",
@@ -281,39 +285,9 @@
         "second front",
         "new theater"
       ],
-      "applied": "2026-09-26",
+      "applied": "2026-09-27",
       "active": true,
       "severity": "moderate"
-    },
-    {
-      "factor": "[중대 이벤트] 대량살상무기(WMD)/핵 위협",
-      "impact": "WMD/핵 위협 감지. 핵 위협은 분쟁의 성격을 근본적으로 변화시키며, 국제사회 전체의 개입을 촉발하여 예측 불확실성이 극대화.",
-      "weight": "+2.6%p (1개월내), +2.6%p (2~3개월), +4.3%p (4~6개월), +3.5%p (7~12개월), +2.6%p (1년초과)",
-      "direction": "lengthen",
-      "detail": "WMD/핵 위협 감지. 핵 위협은 분쟁의 성격을 근본적으로 변화시키며, 국제사회 전체의 개입을 촉발하여 예측 불확실성이 극대화.\n\n신뢰도: 확실 (87%), 관련 기사 2.6건 감지.\n관련: Trump rejects Iran’s seven-day peace deal to reopen strait of Hormuz",
-      "keywords": [
-        "nuclear",
-        "strike",
-        "nuclear",
-        "weapon",
-        "use",
-        "nuclear",
-        "threat",
-        "chemical",
-        "weapon",
-        "use",
-        "biological",
-        "weapon",
-        "wmd",
-        "deploy",
-        "nuclear",
-        "option",
-        "atomic",
-        "bomb"
-      ],
-      "applied": "2026-09-26",
-      "active": true,
-      "severity": "critical"
     },
     {
       "factor": "유가 급등 (WTI $92.41/배럴)",
@@ -365,188 +339,190 @@
     }
   ],
   "news_signals": {
-    "ceasefire_mentions": 2,
+    "ceasefire_mentions": 6,
     "escalation_mentions": 2,
-    "negotiation_mentions": 8,
-    "casualty_mentions": 2,
-    "peace_mentions": 10.4,
-    "regional_spread": 14,
+    "negotiation_mentions": 2.2,
+    "casualty_mentions": 10,
+    "peace_mentions": 2,
+    "regional_spread": 8.2,
     "total_articles": 50,
-    "new_articles": 50,
-    "unique_events": 47,
-    "duplicates_removed": 3
+    "new_articles": 49,
+    "unique_events": 38,
+    "duplicates_removed": 12
   },
   "latest_news": [
     {
-      "title": "Trump Rejects Iran’s Cease-Fire Proposal to Reopen Strait of Hormuz",
-      "link": "https://www.nytimes.com/2026/09/26/us/politics/trump-iran-hormuz-strait.html",
-      "pubDate": "Sat, 26 Sep 2026 21:02:42 +0000",
-      "source": "nytimes",
-      "snippet": "The president said the deal was not “acceptable” and demurred on whether he would restart military strikes after the midterm elections.",
+      "title": "美연방대법원, 중간선거 앞 '비시민권자 투표 색출 도구' 허용",
+      "link": "https://www.yna.co.kr/view/AKR20260927010000009",
+      "pubDate": "Sun, 27 Sep 2026 08:28:11 +0900",
+      "source": "yonhap",
+      "snippet": "(서울=연합뉴스) 송진원 기자 = 미국 연방대법원이 오는 11월 중간 선거를 앞두고 트럼프 행정부가 추진한 &apos;비(非)시민권자 투표 색출 도구&apos;를...",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Powerful storm brings flooding, power outages to northeastern United States",
+      "link": "https://www.aljazeera.com/news/2026/9/26/powerful-storm-brings-flooding-power-outages-to-northeastern-united-states?traffic_source=rss",
+      "pubDate": "Sat, 26 Sep 2026 22:51:57 +0000",
+      "source": "aljazeera",
+      "snippet": "Authorities warn residents that extreme conditions in the region could pose risks.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Protests erupt as Netanyahu gives inflammatory UN speech - The Latest",
+      "link": "https://www.theguardian.com/news/audio/2026/sep/25/protests-erupt-as-netanyahu-gives-inflammatory-un-speech-the-latest",
+      "pubDate": "Fri, 25 Sep 2026 18:22:27 GMT",
+      "source": "guardian",
+      "snippet": "More than 100 people were arrested at large protests against the Israeli prime minister Benjamin Netanyahu’s address to the UN general assembly. Susan Sarandon, Chelsea Manning and Caleb Hearon were a",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "The week around the world in 20 pictures",
+      "link": "https://www.theguardian.com/artanddesign/gallery/2026/sep/25/the-week-around-the-world-in-20-pictures",
+      "pubDate": "Fri, 25 Sep 2026 18:18:58 GMT",
+      "source": "guardian",
+      "snippet": "Russian strikes in Kyiv, Netanyahu in New York, floods in Japan and the Asian Games – the past seven days as captured by the world’s leading photojournalists Continue reading...",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Trump faces tough choices as Iran dangles deal to reopen Hormuz before US midterms",
+      "link": "https://www.theguardian.com/world/2026/sep/25/trump-tough-choices-iran-accelerated-deal-reopen-hormuz-midterm-elections",
+      "pubDate": "Fri, 25 Sep 2026 15:43:59 GMT",
+      "source": "guardian",
+      "snippet": "Iran’s seven-day timetable would restart nuclear talks, but will the US be willing to deliver on terms that include reining in Israel in Lebanon?Iran’s seven-day timetable to reopen the strait of Horm",
+      "isNew": true,
+      "_sourceCount": 2,
+      "_isDuplicated": true,
+      "_clusterSize": 2,
+      "_isDuplicate": false
+    },
+    {
+      "title": "It’s not hypothetical: the dangers of AI are already here | Granate Kim and Mohamed Hussein",
+      "link": "https://www.theguardian.com/commentisfree/2026/sep/25/ai-israel-gaza-iran-police-surveillance",
+      "pubDate": "Fri, 25 Sep 2026 12:00:50 GMT",
+      "source": "guardian",
+      "snippet": "Israel and the US have used AI to kill in Gaza and Iran, while law enforcement uses it in surveillance and arrests. The future is hereIn recent weeks, concerns about AI have forged unlikely alliances ",
+      "isNew": true,
+      "_sourceCount": 2,
+      "_isDuplicated": true,
+      "_clusterSize": 2,
+      "_isDuplicate": false
+    },
+    {
+      "title": "‘We skate on the rooftops of damaged buildings’: a day in the life of a skateboarder in Gaza",
+      "link": "https://www.theguardian.com/global-development/ng-interactive/2026/sep/25/we-skate-on-the-rooftops-of-damaged-buildings-a-day-in-the-life-a-skateboarder-in-gaza",
+      "pubDate": "Fri, 25 Sep 2026 11:00:47 GMT",
+      "source": "guardian",
+      "snippet": "As the war in Gaza approaches its fourth year, the Guardian follows five ordinary Palestinians as they go about their lives. Each tells the story of their day, revealing the terrible toll of the confl",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": true,
+      "_clusterSize": 2,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Israel and the US have battered the international legal order. The impunity must stop | Varsha Gandikota",
+      "link": "https://www.theguardian.com/commentisfree/2026/sep/25/israel-us-un-icc-hague-netanyahu",
+      "pubDate": "Fri, 25 Sep 2026 10:00:47 GMT",
+      "source": "guardian",
+      "snippet": "A group of nations will gather on Friday to address the crisis. The only response to unilateral bullying is collective actionThe international legal order is in shambles. But from the ruins of impunit",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Saudi Arabia intercepts wave of Houthi missiles as oil climbs to one-week high",
+      "link": "https://www.theguardian.com/world/2026/sep/25/saudi-arabia-intercepts-houthi-missiles-oil-prices-climbs",
+      "pubDate": "Fri, 25 Sep 2026 02:54:27 GMT",
+      "source": "guardian",
+      "snippet": "The ⁠Saudi-led coalition in Yemen said the missiles were ⁠aimed at Taif and the Yanbu area on the Red Sea, the main alternative route for Saudi oilSaudi Arabia says it intercepted six ballistic missil",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Susan Sarandon and Hannah Einbinder arrested at anti-Netanyahu protest in New York",
+      "link": "https://www.theguardian.com/us-news/2026/sep/25/susan-sarandon-hannah-einbinder-arrested-anti-netanyahu-protest-new-york",
+      "pubDate": "Thu, 24 Sep 2026 23:23:34 GMT",
+      "source": "guardian",
+      "snippet": "Actors detained at Jewish Voice for Peace demonstration against Israeli prime minister’s address to the UN general assemblyOscar-winning actor Susan Sarandon and Hacks star Hannah Einbinder were among",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Iran awaiting response from Trump on proposal to open strait of Hormuz in six days",
+      "link": "https://www.theguardian.com/world/2026/sep/24/ed-miliband-meets-iran-foreign-minister-us-ultimatum-strait-hormuz",
+      "pubDate": "Thu, 24 Sep 2026 21:57:34 GMT",
+      "source": "guardian",
+      "snippet": "Country says US must lift sanctions on its oil exports and end the war on all fronts, including in LebanonIran said it has told Donald Trump it is willing to open the strait of Hormuz in six days, and",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "UN delegates walk out as Benjamin Netanyahu prepares to address general assembly – video",
+      "link": "https://www.theguardian.com/world/video/2026/sep/24/un-delegates-walkout-netanyahu-speech",
+      "pubDate": "Thu, 24 Sep 2026 18:53:37 GMT",
+      "source": "guardian",
+      "snippet": "Dozens of delegates left the room in support of Palestine as the Israeli prime minister walked to the podium on Thursday. Other delegates clapped and chanted 'Am Yisrael Chai' or 'the people of Israel",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Family of Iranian twins sentenced to death and decades in jail ask UN for help",
+      "link": "https://www.theguardian.com/world/2026/sep/24/twins-sentenced-to-death-and-jail-iran-un-appeal",
+      "pubDate": "Thu, 24 Sep 2026 13:15:48 GMT",
+      "source": "guardian",
+      "snippet": "Taraneh and Romina Rahimi were charged with ‘waging war against God’ after joining protests against Tehran regimeThe family of 21-year-old twins who have been sentenced respectively to death and decad",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "‘First there’s the gruelling task of trying to charge my laptop’: a day in the life of a university lecturer in Gaza",
+      "link": "https://www.theguardian.com/global-development/ng-interactive/2026/sep/24/first-theres-the-gruelling-task-of-trying-to-charge-my-laptop-a-day-in-the-life-of-a-university-lecturer-in-gaza",
+      "pubDate": "Thu, 24 Sep 2026 11:00:17 GMT",
+      "source": "guardian",
+      "snippet": "As the war in Gaza approaches its fourth year, the Guardian follows five ordinary Palestinians as they go about their lives. Each tells the story of their day, revealing the terrible toll of the confl",
       "isNew": true,
       "_isDuplicate": true,
       "_sourceCount": 1
     },
     {
-      "title": "Russia scales up strikes on Ukraine as largest steelmaker halts operations",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/9/26/russia-scales-up-strikes-on-ukraine-as-largest-steelmaker-halts-operations?traffic_source=rss",
-      "pubDate": "Sat, 26 Sep 2026 20:57:54 +0000",
-      "source": "aljazeera",
-      "snippet": "A wave of Russian strikes has hit various regions across Ukraine. ",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Why is violence between Pakistan and Afghanistan recurring?",
-      "link": "https://www.aljazeera.com/video/inside-story/2026/9/26/why-is-violence-between-pakistan-and-afghanistan-recurring?traffic_source=rss",
-      "pubDate": "Sat, 26 Sep 2026 20:55:44 +0000",
-      "source": "aljazeera",
-      "snippet": "Pakistan has carried out new strikes inside Afghanistan.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Hamas slams Board of Peace for refusal to work with UNRWA in Gaza",
-      "link": "https://www.aljazeera.com/news/2026/9/26/hamas-slams-board-of-peace-for-refusal-to-work-with-unrwa-in-gaza?traffic_source=rss",
-      "pubDate": "Sat, 26 Sep 2026 20:33:05 +0000",
-      "source": "aljazeera",
-      "snippet": "Hamas accuses Board of Peace of aligning with Israel after excluding UN agency for Palestinians from Gaza operations.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Saudi FM accuses Iran of ‘flagrant attacks’ and condemns Houthis at UNGA",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/9/26/saudi-fm-accuses-iran-of-flagrant-attacks-and-condemns-houthis-at-unga?traffic_source=rss",
-      "pubDate": "Sat, 26 Sep 2026 19:43:03 +0000",
-      "source": "aljazeera",
-      "snippet": "At the UN, Saudi Arabia accused Iran of attacks across the region and called for action against the Houthis.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Ireland decide to play Israel in Nations League after squad vote",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/9/26/ireland-decide-to-play-israel-in-nations-league-after-squad-vote?traffic_source=rss",
-      "pubDate": "Sat, 26 Sep 2026 19:42:57 +0000",
-      "source": "aljazeera",
-      "snippet": "Ireland&#039;s players have voted to proceed with their Nations League fixture against Israel on Sunday.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Lavrov: Russia’s war in Ukraine will continue ‘through to the end’",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/9/26/lavrov-russias-war-in-ukraine-will-continue-through-to-the?traffic_source=rss",
-      "pubDate": "Sat, 26 Sep 2026 19:40:14 +0000",
-      "source": "aljazeera",
-      "snippet": "Russian Foreign Minister Sergey Lavrov vowed that the objectives of Moscow’s military operation will be achieved.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Colombia extradites leader of armed group to US in shift towards Washington",
-      "link": "https://www.aljazeera.com/news/2026/9/26/colombia-extradites-leader-of-armed-group-to-us-in-shift-towards-washington?traffic_source=rss",
-      "pubDate": "Sat, 26 Sep 2026 19:21:53 +0000",
-      "source": "aljazeera",
-      "snippet": "Colombian President Abelardo De La Espriella has emerged as close ally the of Trump administration in South America. ",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Trump rejects Iranian offer to reopen Strait of Hormuz",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/9/26/trump-rejects-iranian-offer-to-reopen-strait-of-hormuz?traffic_source=rss",
-      "pubDate": "Sat, 26 Sep 2026 18:00:43 +0000",
-      "source": "aljazeera",
-      "snippet": "US President Donald Trump has rejected Iran’s latest proposal to reopen the Strait of Hormuz to shipping.",
-      "isNew": true,
-      "_isDuplicate": true,
-      "_sourceCount": 1
-    },
-    {
-      "title": "Cuba accuses US at UN of deliberately inflicting humanitarian suffering",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/9/26/09-26-cuba-fm-unga-clip-mp4?traffic_source=rss",
-      "pubDate": "Sat, 26 Sep 2026 17:55:22 +0000",
-      "source": "aljazeera",
-      "snippet": "Cuba’s FM, Bruno Rodriguez Parrilla, has accused the US at the UN of waging an economic war against the Cuban people.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Trump rejects combining US-China AI efforts",
-      "link": "https://www.aljazeera.com/news/2026/9/26/trump-rejects-combining-us-china-ai-efforts?traffic_source=rss",
-      "pubDate": "Sat, 26 Sep 2026 17:39:18 +0000",
-      "source": "aljazeera",
-      "snippet": "The US president said the fears over AI were just &#039;hoaxes&#039;.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Iraq seeks US exemption from ban on Iranian flights",
-      "link": "https://www.aljazeera.com/news/2026/9/26/iraq-seeks-us-exemption-from-ban-on-iranian-flights?traffic_source=rss",
-      "pubDate": "Sat, 26 Sep 2026 17:35:11 +0000",
-      "source": "aljazeera",
-      "snippet": "Ali al-Zaidi government urges dialogue to de-escalate regional tensions amid US sanctions on Iranian airlines.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "‘Stop arming Israel’: Pro-Palestine protesters march on Labour conference",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/9/26/stop-arming-israel-pro-palestine-protesters-march-on-labour-conference?traffic_source=rss",
-      "pubDate": "Sat, 26 Sep 2026 17:27:19 +0000",
-      "source": "aljazeera",
-      "snippet": "Pro-Palestine protesters have marched on Labour’s annual conference in Liverpool.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Cuba condemns US ‘collective punishment’ as Trump predicts deal",
-      "link": "https://www.aljazeera.com/news/2026/9/26/cuba-condemns-us-collective-punishment-as-trump-predicts-deal?traffic_source=rss",
-      "pubDate": "Sat, 26 Sep 2026 17:22:44 +0000",
-      "source": "aljazeera",
-      "snippet": "The Cuban foreign minister&#039;s comments come days after the US told the UN that ‘freedom will be coming’ to the country.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Venezuelan government, opposition agree to work towards reform of top court",
-      "link": "https://www.aljazeera.com/news/2026/9/26/venezuelan-government-opposition-agree-to-work-towards-reform-of-top-court?traffic_source=rss",
-      "pubDate": "Sat, 26 Sep 2026 16:42:38 +0000",
-      "source": "aljazeera",
-      "snippet": "The two sides appointed a committee to review selection of candidates for Supreme Court of Justice. ",
+      "title": "Global release announced for acclaimed Gaza documentary NAZA",
+      "link": "https://www.theguardian.com/film/2026/sep/24/global-release-announced-for-acclaimed-gaza-documentary-naza",
+      "pubDate": "Thu, 24 Sep 2026 10:00:05 GMT",
+      "source": "guardian",
+      "snippet": "Theatrical rollout across 56 territories planned for documentary about Israel’s mass killing of civilians in Gaza before film will stream on Guardian websiteNAZA, the award-winning documentary from Is",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -560,84 +536,18 @@
         "category_id": "politics",
         "category_name": "국내 정치",
         "category_icon": "🏛️",
-        "count": 15,
-        "new_count": 15,
+        "count": 11,
+        "new_count": 11,
         "articles": [
           {
-            "title": "Ireland decide to play Israel in Nations League after squad vote",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/26/ireland-decide-to-play-israel-in-nations-league-after-squad-vote?traffic_source=rss",
-            "source": "aljazeera",
+            "title": "美연방대법원, 중간선거 앞 '비시민권자 투표 색출 도구' 허용",
+            "link": "https://www.yna.co.kr/view/AKR20260927010000009",
+            "source": "yonhap",
             "sources": [
-              "aljazeera"
+              "yonhap"
             ],
-            "pubDate": "Sat, 26 Sep 2026 19:42:57 +0000",
-            "snippet": "Ireland&#039;s players have voted to proceed with their Nations League fixture against Israel on Sunday.",
-            "isNew": true
-          },
-          {
-            "title": "Colombia extradites leader of armed group to US in shift towards Washington",
-            "link": "https://www.aljazeera.com/news/2026/9/26/colombia-extradites-leader-of-armed-group-to-us-in-shift-towards-washington?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sat, 26 Sep 2026 19:21:53 +0000",
-            "snippet": "Colombian President Abelardo De La Espriella has emerged as close ally the of Trump administration in South America. ",
-            "isNew": true
-          },
-          {
-            "title": "Trump rejects combining US-China AI efforts",
-            "link": "https://www.aljazeera.com/news/2026/9/26/trump-rejects-combining-us-china-ai-efforts?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sat, 26 Sep 2026 17:39:18 +0000",
-            "snippet": "The US president said the fears over AI were just &#039;hoaxes&#039;.",
-            "isNew": true
-          },
-          {
-            "title": "‘Stop arming Israel’: Pro-Palestine protesters march on Labour conference",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/26/stop-arming-israel-pro-palestine-protesters-march-on-labour-conference?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sat, 26 Sep 2026 17:27:19 +0000",
-            "snippet": "Pro-Palestine protesters have marched on Labour’s annual conference in Liverpool.",
-            "isNew": true
-          },
-          {
-            "title": "Cuba condemns US ‘collective punishment’ as Trump predicts deal",
-            "link": "https://www.aljazeera.com/news/2026/9/26/cuba-condemns-us-collective-punishment-as-trump-predicts-deal?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sat, 26 Sep 2026 17:22:44 +0000",
-            "snippet": "The Cuban foreign minister&#039;s comments come days after the US told the UN that ‘freedom will be coming’ to the country.",
-            "isNew": true
-          },
-          {
-            "title": "Venezuelan government, opposition agree to work towards reform of top court",
-            "link": "https://www.aljazeera.com/news/2026/9/26/venezuelan-government-opposition-agree-to-work-towards-reform-of-top-court?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sat, 26 Sep 2026 16:42:38 +0000",
-            "snippet": "The two sides appointed a committee to review selection of candidates for Supreme Court of Justice. ",
-            "isNew": true
-          },
-          {
-            "title": "Why a U.S. Diesel Export Ban May Not Lower Prices",
-            "link": "https://www.nytimes.com/2026/09/25/business/energy-environment/trump-diesel-export-ban.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Fri, 25 Sep 2026 19:22:03 +0000",
-            "snippet": "President Trump has said he is considering restricting overseas sales of the fuel to bring down domestic prices, but experts say the policy will have many unintended effects.",
+            "pubDate": "Sun, 27 Sep 2026 08:28:11 +0900",
+            "snippet": "(서울=연합뉴스) 송진원 기자 = 미국 연방대법원이 오는 11월 중간 선거를 앞두고 트럼프 행정부가 추진한 &apos;비(非)시민권자 투표 색출 도구&apos;를...",
             "isNew": true
           },
           {
@@ -652,25 +562,188 @@
             "isNew": true
           },
           {
-            "title": "Netanyahu, Addressing U.N., Denounces Israel’s Critics as ‘Moral Cowards’",
-            "link": "https://www.nytimes.com/2026/09/24/world/middleeast/netanyahu-israel-un.html",
-            "source": "nytimes",
+            "title": "Susan Sarandon and Hannah Einbinder arrested at anti-Netanyahu protest in New York",
+            "link": "https://www.theguardian.com/us-news/2026/sep/25/susan-sarandon-hannah-einbinder-arrested-anti-netanyahu-protest-new-york",
+            "source": "guardian",
             "sources": [
-              "nytimes"
+              "guardian"
             ],
-            "pubDate": "Fri, 25 Sep 2026 00:40:57 +0000",
-            "snippet": "Prime Minister Benjamin Netanyahu also reserved some of his ire for the mayor of the city hosting him, Zohran Mamdani.",
+            "pubDate": "Thu, 24 Sep 2026 23:23:34 GMT",
+            "snippet": "Actors detained at Jewish Voice for Peace demonstration against Israeli prime minister’s address to the UN general assemblyOscar-winning actor Susan Sarandon and Hacks star Hannah Einbinder were among",
             "isNew": true
           },
           {
-            "title": "Netanyahu Lashes Out at Foes in U.N. Speech, Including Mamdani",
-            "link": "https://www.nytimes.com/2026/09/24/world/middleeast/netanyahu-speech-un-general-assembly.html",
-            "source": "nytimes",
+            "title": "UN delegates walk out as Benjamin Netanyahu prepares to address general assembly – video",
+            "link": "https://www.theguardian.com/world/video/2026/sep/24/un-delegates-walkout-netanyahu-speech",
+            "source": "guardian",
             "sources": [
-              "nytimes"
+              "guardian"
             ],
-            "pubDate": "Thu, 24 Sep 2026 23:34:39 +0000",
-            "snippet": "Prime Minister Benjamin Netanyahu of Israel lashed out at a litany of enemies but took particular verbal aim at Mayor Zohran Mamdani.",
+            "pubDate": "Thu, 24 Sep 2026 18:53:37 GMT",
+            "snippet": "Dozens of delegates left the room in support of Palestine as the Israeli prime minister walked to the podium on Thursday. Other delegates clapped and chanted 'Am Yisrael Chai' or 'the people of Israel",
+            "isNew": true
+          },
+          {
+            "title": "Family of Iranian twins sentenced to death and decades in jail ask UN for help",
+            "link": "https://www.theguardian.com/world/2026/sep/24/twins-sentenced-to-death-and-jail-iran-un-appeal",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Thu, 24 Sep 2026 13:15:48 GMT",
+            "snippet": "Taraneh and Romina Rahimi were charged with ‘waging war against God’ after joining protests against Tehran regimeThe family of 21-year-old twins who have been sentenced respectively to death and decad",
+            "isNew": true
+          },
+          {
+            "title": "Benjamin Netanyahu to deliver defiant UN speech while facing protests and political isolation",
+            "link": "https://www.theguardian.com/world/2026/sep/24/netanyahu-to-deliver-defiant-un-speech-facing-protests-political-isolation",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Thu, 24 Sep 2026 08:00:12 GMT",
+            "snippet": "Prime minister will ‘highlight Israel’s achievements’ as he heads towards his toughest re-election challengeWhen he takes the stage at the UN on Thursday, Benjamin Netanyahu will deliver a familiar me",
+            "isNew": true
+          },
+          {
+            "title": "June 1, 2024 - Israel-Gaza news",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-01-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "President Joe Biden has laid out a three-phase proposal to end the conflict in Gaza, as global condemnation of Israel's offensive in Rafah grows.",
+            "isNew": true
+          },
+          {
+            "title": "May 21, 2024 Israel-Hamas war, Iran president death news",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-21-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "Prime Minister Benjamin Netanyahu blasted the charges brought by the International Criminal Court against himself and Israel's defense minister as \"beyond outrageous\" in an interview Tuesday with CNN'",
+            "isNew": true
+          },
+          {
+            "title": "May 19, 2024 helicopter crash involving Iranian president",
+            "link": "https://www.cnn.com/middleeast/live-news/raisi-iran-president-helicopter-crash/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "A helicopter carrying Iranian President Ebrahim Raisi crashed while he was visiting a northern region in the country Sunday, according to the Iranian state news agency IRNA.",
+            "isNew": true
+          },
+          {
+            "title": "Trump says he is rolling back Biden-era US fuel economy rules for cars",
+            "link": "https://www.aljazeera.com/news/2026/9/26/trump-says-he-is-rolling-back-biden-era-us-fuel-economy-rules-for-cars?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Sat, 26 Sep 2026 21:51:56 +0000",
+            "snippet": "The US president said he would end a so-called &#039;EV mandate&#039; that steered consumers to electric vehicles.",
+            "isNew": true
+          }
+        ]
+      },
+      {
+        "category_id": "humanitarian",
+        "category_name": "인도주의/피해",
+        "category_icon": "🏥",
+        "count": 8,
+        "new_count": 8,
+        "articles": [
+          {
+            "title": "Israel and the US have battered the international legal order. The impunity must stop | Varsha Gandikota",
+            "link": "https://www.theguardian.com/commentisfree/2026/sep/25/israel-us-un-icc-hague-netanyahu",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Fri, 25 Sep 2026 10:00:47 GMT",
+            "snippet": "A group of nations will gather on Friday to address the crisis. The only response to unilateral bullying is collective actionThe international legal order is in shambles. But from the ruins of impunit",
+            "isNew": true
+          },
+          {
+            "title": "Global release announced for acclaimed Gaza documentary NAZA",
+            "link": "https://www.theguardian.com/film/2026/sep/24/global-release-announced-for-acclaimed-gaza-documentary-naza",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Thu, 24 Sep 2026 10:00:05 GMT",
+            "snippet": "Theatrical rollout across 56 territories planned for documentary about Israel’s mass killing of civilians in Gaza before film will stream on Guardian websiteNAZA, the award-winning documentary from Is",
+            "isNew": true
+          },
+          {
+            "title": "Several dead after Israeli joint security forces raid in West Bank",
+            "link": "https://www.cnn.com/2022/10/25/middleeast/israel-forces-raid-nablus-palestine-intl-hnk/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "Tue, 25 Oct 2022 13:58:46 GMT",
+            "snippet": "",
+            "isNew": true
+          },
+          {
+            "title": "June 9, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-09-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "Key Israeli war cabinet member Benny Gantz quit Prime Minister Benjamin Netanyahu's government Sunday. Meanwhile, the death toll from Israel's hostage rescue in central Gaza keeps rising. Follow for l",
+            "isNew": true
+          },
+          {
+            "title": "June 8, 2024 - Israel-Gaza news",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-08-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "The Israeli military says it rescued four hostages from central Gaza on Saturday. Palestinians report scenes of horror on the ground, and Gaza hospital officials say more than 200 people were killed.",
+            "isNew": true
+          },
+          {
+            "title": "May 19, 2024 - Israel-Gaza news",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-19-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "An Israeli airstrike on a refugee camp in central Gaza has killed at least 35 people, including seven children, according to hospital officials. Meanwhile, Israeli war cabinet divisions are spilling i",
+            "isNew": true
+          },
+          {
+            "title": "Devastation in Gaza as Israel wages war on Hamas",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-18-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "Gaza faces a \"dire\" food situation as barely more than 300 aid trucks have entered the strip since Israel began its offensive in Rafah, a UN agency said in a report published Friday. Follow live updat",
+            "isNew": true
+          },
+          {
+            "title": "May 14, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-14-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "Amid signs that Israel may launch a full-scale incursion in Rafah, aid agencies are warning any escalation in the southern Gaza city risks exacerbating the already deteriorating humanitarian situation",
             "isNew": true
           }
         ]
@@ -679,97 +752,9 @@
         "category_id": "military",
         "category_name": "군사 작전",
         "category_icon": "⚔️",
-        "count": 14,
-        "new_count": 14,
+        "count": 6,
+        "new_count": 6,
         "articles": [
-          {
-            "title": "Russia scales up strikes on Ukraine as largest steelmaker halts operations",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/26/russia-scales-up-strikes-on-ukraine-as-largest-steelmaker-halts-operations?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sat, 26 Sep 2026 20:57:54 +0000",
-            "snippet": "A wave of Russian strikes has hit various regions across Ukraine. ",
-            "isNew": true
-          },
-          {
-            "title": "Why is violence between Pakistan and Afghanistan recurring?",
-            "link": "https://www.aljazeera.com/video/inside-story/2026/9/26/why-is-violence-between-pakistan-and-afghanistan-recurring?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sat, 26 Sep 2026 20:55:44 +0000",
-            "snippet": "Pakistan has carried out new strikes inside Afghanistan.",
-            "isNew": true
-          },
-          {
-            "title": "Hamas slams Board of Peace for refusal to work with UNRWA in Gaza",
-            "link": "https://www.aljazeera.com/news/2026/9/26/hamas-slams-board-of-peace-for-refusal-to-work-with-unrwa-in-gaza?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sat, 26 Sep 2026 20:33:05 +0000",
-            "snippet": "Hamas accuses Board of Peace of aligning with Israel after excluding UN agency for Palestinians from Gaza operations.",
-            "isNew": true
-          },
-          {
-            "title": "Lavrov: Russia’s war in Ukraine will continue ‘through to the end’",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/26/lavrov-russias-war-in-ukraine-will-continue-through-to-the?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sat, 26 Sep 2026 19:40:14 +0000",
-            "snippet": "Russian Foreign Minister Sergey Lavrov vowed that the objectives of Moscow’s military operation will be achieved.",
-            "isNew": true
-          },
-          {
-            "title": "Women take up arms as sexual violence ravages eastern DRC",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/26/09-26-drc-women-fighters-sv-mp4?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sat, 26 Sep 2026 16:24:51 +0000",
-            "snippet": "As war and sexual violence rage in eastern DRC, women are joining pro-government Wazalendo fighters to defend themselves",
-            "isNew": true
-          },
-          {
-            "title": "At least 10 people killed in Russian and Ukrainian attacks",
-            "link": "https://www.aljazeera.com/news/2026/9/26/at-least-10-people-killed-in-russian-and-ukrainian-attacks?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sat, 26 Sep 2026 16:16:49 +0000",
-            "snippet": "New strikes come as Russian FM accuses Europe of doing &#039;everything it can to thwart peace talks&#039; with Ukraine.",
-            "isNew": true
-          },
-          {
-            "title": "We followed five people in Gaza from dawn to dusk – this is what the headlines don’t tell us",
-            "link": "https://www.theguardian.com/global-development/ng-interactive/2026/sep/26/we-followed-five-people-in-gaza-from-dawn-to-dusk-this-is-what-the-headlines-dont-tell-us",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Sat, 26 Sep 2026 11:00:34 GMT",
-            "snippet": "Behind the stories of bombings and mass deaths, the everyday challenges facing Palestinians living under siege portray a quieter tragedy we rarely hear What does it take to make a morning cup of tea i",
-            "isNew": true
-          },
-          {
-            "title": "U.N. Releases New List of Companies It Says Do Business With Israeli Settlements",
-            "link": "https://www.nytimes.com/2026/09/25/world/middleeast/un-companies-westbank-settlements.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Fri, 25 Sep 2026 19:55:36 +0000",
-            "snippet": "Israel condemned the database of firms tied to activity in the occupied West Bank as a “political tool” to advance “a smear campaign.”",
-            "isNew": true
-          },
           {
             "title": "The week around the world in 20 pictures",
             "link": "https://www.theguardian.com/artanddesign/gallery/2026/sep/25/the-week-around-the-world-in-20-pictures",
@@ -782,78 +767,112 @@
             "isNew": true
           },
           {
-            "title": "Netanyahu Said to Have Been Warned by Emirati Leader About Hamas Attack Before Oct. 7",
-            "link": "https://www.nytimes.com/2026/09/25/world/middleeast/netanyahu-warning-oct-7-uae.html",
-            "source": "nytimes",
+            "title": "The west is in freefall – and the worst part is that we were warned, but chose not to listen | Owen Jones",
+            "link": "https://www.theguardian.com/commentisfree/2026/sep/24/west-freefall-warned-wealth-power",
+            "source": "guardian",
             "sources": [
-              "nytimes"
+              "guardian"
             ],
-            "pubDate": "Fri, 25 Sep 2026 17:15:17 +0000",
-            "snippet": "The warning from the leader of the United Arab Emirates, which lacked specific details about the nature of an attack, never reached the chiefs of Israel’s security establishment, Israeli officials sai",
+            "pubDate": "Thu, 24 Sep 2026 07:00:12 GMT",
+            "snippet": "Endless pursuit of wealth and power by western leaders led us here. What strikes me most is how many saw what was comingThe symptoms of decline are everywhere you look. On Sunday, Germany’s far right ",
+            "isNew": true
+          },
+          {
+            "title": "June 12, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-12-24-intl/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "Israel launched strikes on Al-Mawasi in southern Gaza early Thursday, bombarding an area it had previously designated as a \"safe zone\" by land, sea and air, according to the official Palestinian news ",
+            "isNew": true
+          },
+          {
+            "title": "June 6, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-06-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "Dozens of people were killed in an Israeli airstrike on a United Nations-run school in central Gaza, authorities said, in an attack that CNN analysis found was conducted with a US-made weapon.",
+            "isNew": true
+          },
+          {
+            "title": "May 29, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-29-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "The Israeli military says it established \"operational control\" over the Philadelphi Corridor, a 14-kilometer (8.7 miles) strip of land along the border between Gaza and Egypt.",
+            "isNew": true
+          },
+          {
+            "title": "May 24, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-24-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "The United Nations' top court has ordered Israel to immediately halt its controversial military operation in the southern Gaza city of Rafah, further increasing international pressure on Israel over i",
             "isNew": true
           }
         ]
       },
       {
-        "category_id": "other",
-        "category_name": "기타",
-        "category_icon": "📰",
-        "count": 7,
-        "new_count": 7,
+        "category_id": "diplomacy",
+        "category_name": "외교/협상",
+        "category_icon": "🤝",
+        "count": 4,
+        "new_count": 4,
         "articles": [
           {
-            "title": "Jerusalem Daily: violence continues as the world watches the UNGA",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/26/jerusalem-daily-violence-continues-as-the-world-watches-the-unga?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sat, 26 Sep 2026 16:14:35 +0000",
-            "snippet": "As the UN General Assembly enters its fifth day, with world leaders denouncing Israeli violence against Palestinians.",
-            "isNew": true
-          },
-          {
-            "title": "UN adds 61 firms to settlements blacklist over alleged human rights violations against Palestinians",
-            "link": "https://www.theguardian.com/world/2026/sep/26/un-companies-israeli-settlements-blacklist-alleged-palestinian-rights-violations",
+            "title": "Trump faces tough choices as Iran dangles deal to reopen Hormuz before US midterms",
+            "link": "https://www.theguardian.com/world/2026/sep/25/trump-tough-choices-iran-accelerated-deal-reopen-hormuz-midterm-elections",
             "source": "guardian",
             "sources": [
-              "guardian"
+              "guardian",
+              "cnn"
             ],
-            "pubDate": "Sat, 26 Sep 2026 11:10:09 GMT",
-            "snippet": "Israel ‘categorically rejects’ publication and says businesses on database have committed no wrongdoingThe UN human rights office has added 61 more companies to a blacklist of firms that it says are i",
+            "pubDate": "Fri, 25 Sep 2026 15:43:59 GMT",
+            "snippet": "Iran’s seven-day timetable would restart nuclear talks, but will the US be willing to deliver on terms that include reining in Israel in Lebanon?Iran’s seven-day timetable to reopen the strait of Horm",
             "isNew": true
           },
           {
-            "title": "Heroine or Public Enemy? The Israeli Blocking Much of Netanyahu’s Agenda.",
-            "link": "https://www.nytimes.com/2026/09/26/world/middleeast/israel-netanyahu-gali-baharav-miara-attorney-general.html",
-            "source": "nytimes",
+            "title": "June 13, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-13-24/index.html",
+            "source": "cnn",
             "sources": [
-              "nytimes"
+              "cnn"
             ],
-            "pubDate": "Sat, 26 Sep 2026 09:00:10 +0000",
-            "snippet": "Gali Baharav-Miara, Israel’s first female attorney general, has stopped many of the government’s efforts to remove constraints on its power.",
+            "pubDate": "",
+            "snippet": "The US-backed Gaza ceasefire proposal doesn't meet Hamas' demands for an end to the war, a senior official has told CNN. Osama Hamdan also said that \"no one has an idea\" how many of the hostages held ",
             "isNew": true
           },
           {
-            "title": "Gaza: a week in the life of five ordinary Palestinians",
-            "link": "https://www.theguardian.com/global-development/ng-interactive/2026/sep/26/gaza-a-week-in-the-life-of-five-ordinary-palestinians",
-            "source": "guardian",
+            "title": "June 10, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-10-24/index.html",
+            "source": "cnn",
             "sources": [
-              "guardian"
+              "cnn"
             ],
-            "pubDate": "Sat, 26 Sep 2026 06:00:27 GMT",
-            "snippet": "As the war pushes deep into its third year, what does daily life look like for people living there and how has the conflict changed it?***We follow five ordinary people – a 12-year-old boy, a professo",
+            "pubDate": "",
+            "snippet": "The UN Security Council adopted a resolution proposed by the United States for a permanent ceasefire and release of the hostages in Gaza.",
             "isNew": true
           },
           {
-            "title": "Why an international arrest warrant didn't stop Netanyahu's US trip",
-            "link": "https://www.bbc.co.uk/news/videos/ckq633lm11jeo?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
+            "title": "이란 외무 '트럼프 거절'에도 \"확실한 입장 기다리는 중\"",
+            "link": "https://www.yna.co.kr/view/AKR20260927007100009",
+            "source": "yonhap",
             "sources": [
-              "bbc"
+              "yonhap"
             ],
-            "pubDate": "Fri, 25 Sep 2026 18:41:13 GMT",
-            "snippet": "The BBC's Nada Tawfik explains why Israel's Benjamin Netanyahu was not arrested after speaking at the UN, despite an ICC arrest warrant.",
+            "pubDate": "Sun, 27 Sep 2026 07:26:12 +0900",
+            "snippet": "(서울=연합뉴스) 강훈상 기자 = 아바스 아라그치 이란 외무장관은 호르무즈 해협 재개 등과 관련해 이란 측이 중재국을 통해 제안한 조건에 관한 ...",
             "isNew": true
           }
         ]
@@ -862,51 +881,19 @@
         "category_id": "regional",
         "category_name": "지역 정세",
         "category_icon": "🌍",
-        "count": 5,
-        "new_count": 5,
+        "count": 4,
+        "new_count": 4,
         "articles": [
-          {
-            "title": "Saudi FM accuses Iran of ‘flagrant attacks’ and condemns Houthis at UNGA",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/26/saudi-fm-accuses-iran-of-flagrant-attacks-and-condemns-houthis-at-unga?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sat, 26 Sep 2026 19:43:03 +0000",
-            "snippet": "At the UN, Saudi Arabia accused Iran of attacks across the region and called for action against the Houthis.",
-            "isNew": true
-          },
-          {
-            "title": "Iraq seeks US exemption from ban on Iranian flights",
-            "link": "https://www.aljazeera.com/news/2026/9/26/iraq-seeks-us-exemption-from-ban-on-iranian-flights?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sat, 26 Sep 2026 17:35:11 +0000",
-            "snippet": "Ali al-Zaidi government urges dialogue to de-escalate regional tensions amid US sanctions on Iranian airlines.",
-            "isNew": true
-          },
           {
             "title": "It’s not hypothetical: the dangers of AI are already here | Granate Kim and Mohamed Hussein",
             "link": "https://www.theguardian.com/commentisfree/2026/sep/25/ai-israel-gaza-iran-police-surveillance",
             "source": "guardian",
             "sources": [
-              "guardian"
+              "guardian",
+              "cnn"
             ],
             "pubDate": "Fri, 25 Sep 2026 12:00:50 GMT",
             "snippet": "Israel and the US have used AI to kill in Gaza and Iran, while law enforcement uses it in surveillance and arrests. The future is hereIn recent weeks, concerns about AI have forged unlikely alliances ",
-            "isNew": true
-          },
-          {
-            "title": "France to Send Soldiers to Saudi Arabia to Help Secure Energy Sites",
-            "link": "https://www.nytimes.com/2026/09/24/world/middleeast/france-saudi-arabia-red-sea-yemen-houthis.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Fri, 25 Sep 2026 02:59:36 +0000",
-            "snippet": "Attacks on Saudi cities on the Red Sea by the Iran-backed Houthi militia in Yemen have added to pressure on global oil supplies.",
             "isNew": true
           },
           {
@@ -919,80 +906,80 @@
             "pubDate": "Fri, 25 Sep 2026 02:54:27 GMT",
             "snippet": "The ⁠Saudi-led coalition in Yemen said the missiles were ⁠aimed at Taif and the Yanbu area on the Red Sea, the main alternative route for Saudi oilSaudi Arabia says it intercepted six ballistic missil",
             "isNew": true
-          }
-        ]
-      },
-      {
-        "category_id": "diplomacy",
-        "category_name": "외교/협상",
-        "category_icon": "🤝",
-        "count": 3,
-        "new_count": 3,
-        "articles": [
+          },
           {
-            "title": "Trump rejects Iran’s seven-day peace deal to reopen strait of Hormuz",
-            "link": "https://www.theguardian.com/world/2026/sep/26/trump-dismiss-iran-seven-day-peace-deal-hormuz",
-            "source": "guardian",
+            "title": "June 5, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-05-24/index.html",
+            "source": "cnn",
             "sources": [
-              "guardian",
-              "nytimes",
-              "aljazeera"
+              "cnn"
             ],
-            "pubDate": "Sat, 26 Sep 2026 12:38:46 GMT",
-            "snippet": "US president is said to expect renewed strikes after midtermsUS president Donald Trump has said he has rejected an Iranian proposal to reopen the strait of Hormuz within a week and resume nuclear talk",
+            "pubDate": "",
+            "snippet": "Tensions are ramping up at the Israel-Lebanon border, with Hezbollah claiming responsibility for a Wednesday evening attack in northern Israel that left multiple people injured.",
             "isNew": true
           },
           {
-            "title": "Trump faces tough choices as Iran dangles deal to reopen Hormuz before US midterms",
-            "link": "https://www.theguardian.com/world/2026/sep/25/trump-tough-choices-iran-accelerated-deal-reopen-hormuz-midterm-elections",
-            "source": "guardian",
+            "title": "러 외무 \"중동분쟁 해결 기여 준비돼…걸프국·이란 신뢰 필수\"(종합)",
+            "link": "https://www.yna.co.kr/view/AKR20260927001652079",
+            "source": "yonhap",
             "sources": [
-              "guardian"
+              "yonhap"
             ],
-            "pubDate": "Fri, 25 Sep 2026 15:43:59 GMT",
-            "snippet": "Iran’s seven-day timetable would restart nuclear talks, but will the US be willing to deliver on terms that include reining in Israel in Lebanon?Iran’s seven-day timetable to reopen the strait of Horm",
-            "isNew": true
-          },
-          {
-            "title": "Iran Proposes 7-Day Plan to End War",
-            "link": "https://www.nytimes.com/2026/09/24/world/middleeast/iran-proposal.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Fri, 25 Sep 2026 15:35:22 +0000",
-            "snippet": "Under the offer, the Strait of Hormuz would reopen and nuclear talks would be revived.",
+            "pubDate": "Sun, 27 Sep 2026 06:44:17 +0900",
+            "snippet": "(카이로·뉴욕=연합뉴스) 김상훈 임수정 특파원 = 세르게이 라브로프 러시아 외무장관은 26일(현지시간) 중동 위기를 해결하기 위한 필수 조건으로...",
             "isNew": true
           }
         ]
       },
       {
-        "category_id": "humanitarian",
-        "category_name": "인도주의/피해",
-        "category_icon": "🏥",
-        "count": 2,
-        "new_count": 2,
+        "category_id": "other",
+        "category_name": "기타",
+        "category_icon": "📰",
+        "count": 4,
+        "new_count": 4,
         "articles": [
           {
-            "title": "Cuba accuses US at UN of deliberately inflicting humanitarian suffering",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/26/09-26-cuba-fm-unga-clip-mp4?traffic_source=rss",
+            "title": "Powerful storm brings flooding, power outages to northeastern United States",
+            "link": "https://www.aljazeera.com/news/2026/9/26/powerful-storm-brings-flooding-power-outages-to-northeastern-united-states?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Sat, 26 Sep 2026 17:55:22 +0000",
-            "snippet": "Cuba’s FM, Bruno Rodriguez Parrilla, has accused the US at the UN of waging an economic war against the Cuban people.",
+            "pubDate": "Sat, 26 Sep 2026 22:51:57 +0000",
+            "snippet": "Authorities warn residents that extreme conditions in the region could pose risks.",
             "isNew": true
           },
           {
-            "title": "Israel and the US have battered the international legal order. The impunity must stop | Varsha Gandikota",
-            "link": "https://www.theguardian.com/commentisfree/2026/sep/25/israel-us-un-icc-hague-netanyahu",
+            "title": "‘We skate on the rooftops of damaged buildings’: a day in the life of a skateboarder in Gaza",
+            "link": "https://www.theguardian.com/global-development/ng-interactive/2026/sep/25/we-skate-on-the-rooftops-of-damaged-buildings-a-day-in-the-life-a-skateboarder-in-gaza",
             "source": "guardian",
             "sources": [
               "guardian"
             ],
-            "pubDate": "Fri, 25 Sep 2026 10:00:47 GMT",
-            "snippet": "A group of nations will gather on Friday to address the crisis. The only response to unilateral bullying is collective actionThe international legal order is in shambles. But from the ruins of impunit",
+            "pubDate": "Fri, 25 Sep 2026 11:00:47 GMT",
+            "snippet": "As the war in Gaza approaches its fourth year, the Guardian follows five ordinary Palestinians as they go about their lives. Each tells the story of their day, revealing the terrible toll of the confl",
+            "isNew": true
+          },
+          {
+            "title": "May 30, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-30-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "The war in Gaza will likely continue until at least the end of the year, an Israeli official warned.",
+            "isNew": true
+          },
+          {
+            "title": "May 22, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/iran-israel-hamas-war-gaza-news-05-22-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "Spain, Norway and Ireland announced plans to formally recognize a Palestinian state, in a move that is likely to bolster the global Palestinian cause but strain relations with Israel.",
             "isNew": true
           }
         ]
@@ -1019,175 +1006,185 @@
       }
     ],
     "recent_30min": {
-      "total_new": 50,
+      "total_new": 49,
       "by_category": {
         "politics": {
-          "count": 16,
+          "count": 13,
           "titles": [
             {
-              "title": "Trump Rejects Iran’s Cease-Fire Proposal to Reopen Strait of Hormuz",
-              "link": "https://www.nytimes.com/2026/09/26/us/politics/trump-iran-hormuz-strait.html",
-              "source": "nytimes"
+              "title": "美연방대법원, 중간선거 앞 '비시민권자 투표 색출 도구' 허용",
+              "link": "https://www.yna.co.kr/view/AKR20260927010000009",
+              "source": "yonhap"
             },
             {
-              "title": "Ireland decide to play Israel in Nations League after squad vote",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/9/26/ireland-decide-to-play-israel-in-nations-league-after-squad-vote?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Colombia extradites leader of armed group to US in shift towards Washington",
-              "link": "https://www.aljazeera.com/news/2026/9/26/colombia-extradites-leader-of-armed-group-to-us-in-shift-towards-washington?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Trump rejects combining US-China AI efforts",
-              "link": "https://www.aljazeera.com/news/2026/9/26/trump-rejects-combining-us-china-ai-efforts?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "‘Stop arming Israel’: Pro-Palestine protesters march on Labour conference",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/9/26/stop-arming-israel-pro-palestine-protesters-march-on-labour-conference?traffic_source=rss",
-              "source": "aljazeera"
-            }
-          ]
-        },
-        "military": {
-          "count": 14,
-          "titles": [
-            {
-              "title": "Russia scales up strikes on Ukraine as largest steelmaker halts operations",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/9/26/russia-scales-up-strikes-on-ukraine-as-largest-steelmaker-halts-operations?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Why is violence between Pakistan and Afghanistan recurring?",
-              "link": "https://www.aljazeera.com/video/inside-story/2026/9/26/why-is-violence-between-pakistan-and-afghanistan-recurring?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Hamas slams Board of Peace for refusal to work with UNRWA in Gaza",
-              "link": "https://www.aljazeera.com/news/2026/9/26/hamas-slams-board-of-peace-for-refusal-to-work-with-unrwa-in-gaza?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Lavrov: Russia’s war in Ukraine will continue ‘through to the end’",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/9/26/lavrov-russias-war-in-ukraine-will-continue-through-to-the?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Women take up arms as sexual violence ravages eastern DRC",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/9/26/09-26-drc-women-fighters-sv-mp4?traffic_source=rss",
-              "source": "aljazeera"
-            }
-          ]
-        },
-        "regional": {
-          "count": 5,
-          "titles": [
-            {
-              "title": "Saudi FM accuses Iran of ‘flagrant attacks’ and condemns Houthis at UNGA",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/9/26/saudi-fm-accuses-iran-of-flagrant-attacks-and-condemns-houthis-at-unga?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Iraq seeks US exemption from ban on Iranian flights",
-              "link": "https://www.aljazeera.com/news/2026/9/26/iraq-seeks-us-exemption-from-ban-on-iranian-flights?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "It’s not hypothetical: the dangers of AI are already here | Granate Kim and Mohamed Hussein",
-              "link": "https://www.theguardian.com/commentisfree/2026/sep/25/ai-israel-gaza-iran-police-surveillance",
+              "title": "Protests erupt as Netanyahu gives inflammatory UN speech - The Latest",
+              "link": "https://www.theguardian.com/news/audio/2026/sep/25/protests-erupt-as-netanyahu-gives-inflammatory-un-speech-the-latest",
               "source": "guardian"
             },
             {
-              "title": "France to Send Soldiers to Saudi Arabia to Help Secure Energy Sites",
-              "link": "https://www.nytimes.com/2026/09/24/world/middleeast/france-saudi-arabia-red-sea-yemen-houthis.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Saudi Arabia intercepts wave of Houthi missiles as oil climbs to one-week high",
-              "link": "https://www.theguardian.com/world/2026/sep/25/saudi-arabia-intercepts-houthi-missiles-oil-prices-climbs",
+              "title": "Susan Sarandon and Hannah Einbinder arrested at anti-Netanyahu protest in New York",
+              "link": "https://www.theguardian.com/us-news/2026/sep/25/susan-sarandon-hannah-einbinder-arrested-anti-netanyahu-protest-new-york",
               "source": "guardian"
-            }
-          ]
-        },
-        "economy": {
-          "count": 2,
-          "titles": [
-            {
-              "title": "Trump rejects Iranian offer to reopen Strait of Hormuz",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/9/26/trump-rejects-iranian-offer-to-reopen-strait-of-hormuz?traffic_source=rss",
-              "source": "aljazeera"
             },
             {
-              "title": "Iran awaiting response from Trump on proposal to open strait of Hormuz in six days",
-              "link": "https://www.theguardian.com/world/2026/sep/24/ed-miliband-meets-iran-foreign-minister-us-ultimatum-strait-hormuz",
+              "title": "UN delegates walk out as Benjamin Netanyahu prepares to address general assembly – video",
+              "link": "https://www.theguardian.com/world/video/2026/sep/24/un-delegates-walkout-netanyahu-speech",
               "source": "guardian"
-            }
-          ]
-        },
-        "humanitarian": {
-          "count": 2,
-          "titles": [
-            {
-              "title": "Cuba accuses US at UN of deliberately inflicting humanitarian suffering",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/9/26/09-26-cuba-fm-unga-clip-mp4?traffic_source=rss",
-              "source": "aljazeera"
             },
             {
-              "title": "Israel and the US have battered the international legal order. The impunity must stop | Varsha Gandikota",
-              "link": "https://www.theguardian.com/commentisfree/2026/sep/25/israel-us-un-icc-hague-netanyahu",
+              "title": "Family of Iranian twins sentenced to death and decades in jail ask UN for help",
+              "link": "https://www.theguardian.com/world/2026/sep/24/twins-sentenced-to-death-and-jail-iran-un-appeal",
               "source": "guardian"
             }
           ]
         },
         "other": {
-          "count": 8,
+          "count": 7,
           "titles": [
             {
-              "title": "Jerusalem Daily: violence continues as the world watches the UNGA",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/9/26/jerusalem-daily-violence-continues-as-the-world-watches-the-unga?traffic_source=rss",
+              "title": "Powerful storm brings flooding, power outages to northeastern United States",
+              "link": "https://www.aljazeera.com/news/2026/9/26/powerful-storm-brings-flooding-power-outages-to-northeastern-united-states?traffic_source=rss",
               "source": "aljazeera"
             },
             {
-              "title": "UN adds 61 firms to settlements blacklist over alleged human rights violations against Palestinians",
-              "link": "https://www.theguardian.com/world/2026/sep/26/un-companies-israeli-settlements-blacklist-alleged-palestinian-rights-violations",
+              "title": "‘We skate on the rooftops of damaged buildings’: a day in the life of a skateboarder in Gaza",
+              "link": "https://www.theguardian.com/global-development/ng-interactive/2026/sep/25/we-skate-on-the-rooftops-of-damaged-buildings-a-day-in-the-life-a-skateboarder-in-gaza",
               "source": "guardian"
             },
             {
-              "title": "Heroine or Public Enemy? The Israeli Blocking Much of Netanyahu’s Agenda.",
-              "link": "https://www.nytimes.com/2026/09/26/world/middleeast/israel-netanyahu-gali-baharav-miara-attorney-general.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Gaza: a week in the life of five ordinary Palestinians",
-              "link": "https://www.theguardian.com/global-development/ng-interactive/2026/sep/26/gaza-a-week-in-the-life-of-five-ordinary-palestinians",
+              "title": "‘First there’s the gruelling task of trying to charge my laptop’: a day in the life of a university lecturer in Gaza",
+              "link": "https://www.theguardian.com/global-development/ng-interactive/2026/sep/24/first-theres-the-gruelling-task-of-trying-to-charge-my-laptop-a-day-in-the-life-of-a-university-lecturer-in-gaza",
               "source": "guardian"
             },
             {
-              "title": "Why an international arrest warrant didn't stop Netanyahu's US trip",
-              "link": "https://www.bbc.co.uk/news/videos/ckq633lm11jeo?at_medium=RSS&at_campaign=rss",
-              "source": "bbc"
+              "title": "Iran",
+              "link": "https://www.cnn.com/specials/middleeast/iran?utm_source=section",
+              "source": "cnn"
+            },
+            {
+              "title": "Israel",
+              "link": "https://www.cnn.com/specials/middleeast/israel?utm_source=section",
+              "source": "cnn"
+            }
+          ]
+        },
+        "military": {
+          "count": 9,
+          "titles": [
+            {
+              "title": "The week around the world in 20 pictures",
+              "link": "https://www.theguardian.com/artanddesign/gallery/2026/sep/25/the-week-around-the-world-in-20-pictures",
+              "source": "guardian"
+            },
+            {
+              "title": "The west is in freefall – and the worst part is that we were warned, but chose not to listen | Owen Jones",
+              "link": "https://www.theguardian.com/commentisfree/2026/sep/24/west-freefall-warned-wealth-power",
+              "source": "guardian"
+            },
+            {
+              "title": "June 12, 2024 Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-12-24-intl/index.html",
+              "source": "cnn"
+            },
+            {
+              "title": "June 6, 2024 Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-06-24/index.html",
+              "source": "cnn"
+            },
+            {
+              "title": "May 29, 2024 Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-05-29-24/index.html",
+              "source": "cnn"
             }
           ]
         },
         "diplomacy": {
-          "count": 3,
+          "count": 4,
           "titles": [
-            {
-              "title": "Trump rejects Iran’s seven-day peace deal to reopen strait of Hormuz",
-              "link": "https://www.theguardian.com/world/2026/sep/26/trump-dismiss-iran-seven-day-peace-deal-hormuz",
-              "source": "guardian"
-            },
             {
               "title": "Trump faces tough choices as Iran dangles deal to reopen Hormuz before US midterms",
               "link": "https://www.theguardian.com/world/2026/sep/25/trump-tough-choices-iran-accelerated-deal-reopen-hormuz-midterm-elections",
               "source": "guardian"
             },
             {
-              "title": "Iran Proposes 7-Day Plan to End War",
-              "link": "https://www.nytimes.com/2026/09/24/world/middleeast/iran-proposal.html",
-              "source": "nytimes"
+              "title": "June 13, 2024 Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-13-24/index.html",
+              "source": "cnn"
+            },
+            {
+              "title": "June 10, 2024 Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-10-24/index.html",
+              "source": "cnn"
+            },
+            {
+              "title": "이란 외무 '트럼프 거절'에도 \"확실한 입장 기다리는 중\"",
+              "link": "https://www.yna.co.kr/view/AKR20260927007100009",
+              "source": "yonhap"
+            }
+          ]
+        },
+        "regional": {
+          "count": 4,
+          "titles": [
+            {
+              "title": "It’s not hypothetical: the dangers of AI are already here | Granate Kim and Mohamed Hussein",
+              "link": "https://www.theguardian.com/commentisfree/2026/sep/25/ai-israel-gaza-iran-police-surveillance",
+              "source": "guardian"
+            },
+            {
+              "title": "Saudi Arabia intercepts wave of Houthi missiles as oil climbs to one-week high",
+              "link": "https://www.theguardian.com/world/2026/sep/25/saudi-arabia-intercepts-houthi-missiles-oil-prices-climbs",
+              "source": "guardian"
+            },
+            {
+              "title": "June 5, 2024 Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-05-24/index.html",
+              "source": "cnn"
+            },
+            {
+              "title": "러 외무 \"중동분쟁 해결 기여 준비돼…걸프국·이란 신뢰 필수\"(종합)",
+              "link": "https://www.yna.co.kr/view/AKR20260927001652079",
+              "source": "yonhap"
+            }
+          ]
+        },
+        "humanitarian": {
+          "count": 11,
+          "titles": [
+            {
+              "title": "Israel and the US have battered the international legal order. The impunity must stop | Varsha Gandikota",
+              "link": "https://www.theguardian.com/commentisfree/2026/sep/25/israel-us-un-icc-hague-netanyahu",
+              "source": "guardian"
+            },
+            {
+              "title": "Global release announced for acclaimed Gaza documentary NAZA",
+              "link": "https://www.theguardian.com/film/2026/sep/24/global-release-announced-for-acclaimed-gaza-documentary-naza",
+              "source": "guardian"
+            },
+            {
+              "title": "Several dead after Israeli joint security forces raid in West Bank",
+              "link": "https://www.cnn.com/2022/10/25/middleeast/israel-forces-raid-nablus-palestine-intl-hnk/index.html",
+              "source": "cnn"
+            },
+            {
+              "title": "June 9, 2024 Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-09-24/index.html",
+              "source": "cnn"
+            },
+            {
+              "title": "June 8, 2024 - Israel-Gaza news",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-08-24/index.html",
+              "source": "cnn"
+            }
+          ]
+        },
+        "economy": {
+          "count": 1,
+          "titles": [
+            {
+              "title": "Iran awaiting response from Trump on proposal to open strait of Hormuz in six days",
+              "link": "https://www.theguardian.com/world/2026/sep/24/ed-miliband-meets-iran-foreign-minister-us-ultimatum-strait-hormuz",
+              "source": "guardian"
             }
           ]
         }
@@ -1281,11 +1278,11 @@
     }
   ],
   "economic_indicators": {
-    "DXY": {
-      "price": 101.03,
-      "change": -0.26,
-      "changePercent": -0.26,
-      "prev": 101.29
+    "WTI": {
+      "price": 92.41,
+      "change": -2.2,
+      "changePercent": -2.33,
+      "prev": 94.61
     },
     "GOLD": {
       "price": 4321.2,
@@ -1293,11 +1290,11 @@
       "changePercent": 0.54,
       "prev": 4298
     },
-    "WTI": {
-      "price": 92.41,
-      "change": -2.2,
-      "changePercent": -2.33,
-      "prev": 94.61
+    "US2Y": {
+      "price": 4.07,
+      "change": 0,
+      "changePercent": 0,
+      "prev": 4.07
     },
     "BRENT": {
       "price": 97.44,
@@ -1305,17 +1302,17 @@
       "changePercent": -8.59,
       "prev": 106.6
     },
-    "US2Y": {
-      "price": 4.07,
-      "change": 0,
-      "changePercent": 0,
-      "prev": 4.07
-    },
     "VIX": {
       "price": 14.87,
       "change": -0.8,
       "changePercent": -5.11,
       "prev": 15.67
+    },
+    "DXY": {
+      "price": 101.03,
+      "change": -0.26,
+      "changePercent": -0.26,
+      "prev": 101.29
     },
     "US10Y": {
       "price": 5.18,
@@ -1326,11 +1323,11 @@
   },
   "critical_events": [
     {
-      "id": "ceasefire_agreement",
-      "name": "공식 휴전/평화 합의",
-      "severity": "critical",
-      "confidence": 0.8666666666666667,
-      "matchCount": 2.6,
+      "id": "diplomatic_breakthrough",
+      "name": "외교적 돌파구/강대국 중재",
+      "severity": "high",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
       "direction": "shorten"
     },
     {
@@ -1339,14 +1336,6 @@
       "severity": "moderate",
       "confidence": 1,
       "matchCount": 6,
-      "direction": "lengthen"
-    },
-    {
-      "id": "wmd_threat",
-      "name": "대량살상무기(WMD)/핵 위협",
-      "severity": "critical",
-      "confidence": 0.8666666666666667,
-      "matchCount": 2.6,
       "direction": "lengthen"
     }
   ],
