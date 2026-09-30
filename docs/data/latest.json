@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-09-30T08:50:03.213Z",
+  "timestamp": "2026-09-30T15:34:13.527Z",
   "war_day": 214,
   "probabilities": {
-    "1개월 내 (~3월)": 26.2,
-    "2~3개월 (4~5월)": 40.6,
-    "4~6개월 (6~8월)": 19.4,
-    "7~12개월 (9월~27/2월)": 9.8,
-    "1년 초과": 4
+    "1개월 내 (~3월)": 21.4,
+    "2~3개월 (4~5월)": 42,
+    "4~6개월 (6~8월)": 22,
+    "7~12개월 (9월~27/2월)": 10.9,
+    "1년 초과": 3.7
   },
   "factors": [
     {
@@ -164,11 +164,11 @@
       "decay": 1
     },
     {
-      "factor": "협상/외교 뉴스 10.2건 감지",
+      "factor": "협상/외교 뉴스 6건 감지",
       "impact": "외교적 해결 움직임 포착",
-      "weight": "+0.02%p (1개월내), +0.02%p (2~3개월)",
+      "weight": "+0.01%p (1개월내), +0.01%p (2~3개월)",
       "direction": "shorten",
-      "detail": "실시간 뉴스에서 협상 관련 기사 10.2건이 감지되었습니다.",
+      "detail": "실시간 뉴스에서 협상 관련 기사 6건이 감지되었습니다.",
       "keywords": [
         "negotiat",
         "talks",
@@ -181,11 +181,11 @@
       "decay": 1
     },
     {
-      "factor": "지역 확산 뉴스 14.2건 감지",
-      "impact": "주변국 연루 확대로 장기화 위험",
-      "weight": "+0.01%p (4~6개월), +0.01%p (7~12개월)",
+      "factor": "지역 확산 뉴스 30.4건 감지",
+      "impact": "주변국 대규모 연루 → 장기화 위험 높음",
+      "weight": "+0.03%p (4~6개월), +0.03%p (7~12개월)",
       "direction": "lengthen",
-      "detail": "주변국을 언급하는 기사 14.2건이 감지되었습니다.",
+      "detail": "주변국을 언급하는 기사 30.4건이 감지되었습니다.",
       "keywords": [
         "saudi",
         "uae",
@@ -234,30 +234,38 @@
       "decay": 0.3
     },
     {
-      "factor": "[중대 이벤트] 공식 휴전/평화 합의",
-      "impact": "공식 휴전 또는 평화 합의 체결. 휴전 합의는 전쟁 종결의 결정적 단계이며, 합의 후 이행까지 평균 1~2주 소요.",
-      "weight": "+13.0%p (1개월내), +8.7%p (2~3개월), -6.9%p (4~6개월), -5.2%p (7~12개월), -2.6%p (1년초과)",
+      "factor": "[중대 이벤트] 일방적 전투 축소/자제 선언",
+      "impact": "교전국의 일방적 전투 축소 또는 자제 선언. 역사적으로 패전국의 자발적 전선 축소는 80% 이상 공식 항복의 전조.",
+      "weight": "+5.0%p (1개월내), +7.0%p (2~3개월), -3.0%p (4~6개월), -3.0%p (7~12개월), -1.0%p (1년초과)",
       "direction": "shorten",
-      "detail": "공식 휴전 또는 평화 합의 체결. 휴전 합의는 전쟁 종결의 결정적 단계이며, 합의 후 이행까지 평균 1~2주 소요.\n\n신뢰도: 확실 (87%), 관련 기사 2.6건 감지.\n관련: Trump rejects Iran’s seven-day peace deal to reopen strait of Hormuz",
+      "detail": "교전국의 일방적 전투 축소 또는 자제 선언. 역사적으로 패전국의 자발적 전선 축소는 80% 이상 공식 항복의 전조.\n\n신뢰도: 확실 (100%), 관련 기사 6건 감지.\n관련: American Forces Withdraw From Iraq 23 Years After Invading | How does Iraq’s security change after US forces withdraw? | Iraq celebrates National Sovereignty Day as US troops withdraw",
       "keywords": [
+        "halt",
+        "attack",
+        "stop",
+        "attack",
+        "neighb",
+        "no more",
+        "attack",
+        "withdraw",
+        "forces",
+        "pull back",
+        "troops",
+        "unilateral",
         "ceasefire",
-        "agree",
-        "ceasefire",
-        "deal",
-        "ceasefire",
-        "sign",
-        "truce",
-        "agree",
-        "armistice",
-        "sign",
-        "peace deal",
-        "ceasefire",
-        "accept",
-        "peace agreement"
+        "reduce",
+        "operation",
+        "de-escalat",
+        "announc",
+        "restrain",
+        "attack",
+        "not attack",
+        "suspend",
+        "operation"
       ],
       "applied": "2026-09-30",
       "active": true,
-      "severity": "critical"
+      "severity": "high"
     },
     {
       "factor": "[중대 이벤트] 수도 직접 공격/포위",
@@ -292,41 +300,28 @@
       "severity": "high"
     },
     {
-      "factor": "[중대 이벤트] 대량살상무기(WMD)/핵 위협",
-      "impact": "WMD/핵 위협 감지. 핵 위협은 분쟁의 성격을 근본적으로 변화시키며, 국제사회 전체의 개입을 촉발하여 예측 불확실성이 극대화.",
-      "weight": "+2.6%p (1개월내), +2.6%p (2~3개월), +4.3%p (4~6개월), +3.5%p (7~12개월), +2.6%p (1년초과)",
-      "direction": "lengthen",
-      "detail": "WMD/핵 위협 감지. 핵 위협은 분쟁의 성격을 근본적으로 변화시키며, 국제사회 전체의 개입을 촉발하여 예측 불확실성이 극대화.\n\n신뢰도: 확실 (87%), 관련 기사 2.6건 감지.\n관련: Trump rejects Iran’s seven-day peace deal to reopen strait of Hormuz",
+      "factor": "유가 급등 (WTI $91.9/배럴)",
+      "impact": "중간 수준 경제 압력",
+      "weight": "+2%p (1-2개월)",
+      "direction": "shorten",
+      "detail": "WTI 유가가 $91.9/배럴로 90달러 이상입니다. 호르무즈 해협 봉쇄와 맞물려 글로벌 에너지 시장에 큰 충격을 주고 있으며, 주요국들의 조기 종전 압력이 강화되고 있습니다.",
       "keywords": [
-        "nuclear",
-        "strike",
-        "nuclear",
-        "weapon",
-        "use",
-        "nuclear",
-        "threat",
-        "chemical",
-        "weapon",
-        "use",
-        "biological",
-        "weapon",
-        "wmd",
-        "deploy",
-        "nuclear",
-        "option",
-        "atomic",
-        "bomb"
+        "oil",
+        "crude",
+        "wti",
+        "brent",
+        "energy",
+        "gas price"
       ],
-      "applied": "2026-09-30",
-      "active": true,
-      "severity": "critical"
+      "applied": "실시간",
+      "active": true
     },
     {
-      "factor": "금값 사상최고 ($4232.9/oz)",
+      "factor": "금값 사상최고 ($4189.5/oz)",
       "impact": "안전자산 수요 폭증 → 글로벌 불안 심화",
       "weight": "+2%p (4-6개월)",
       "direction": "lengthen",
-      "detail": "금 가격이 온스당 $4232.9로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
+      "detail": "금 가격이 온스당 $4189.5로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
       "keywords": [
         "gold",
         "safe haven",
@@ -337,11 +332,11 @@
       "active": true
     },
     {
-      "factor": "미국 10년 국채금리 5.25% (고금리 지속)",
+      "factor": "미국 10년 국채금리 5.28% (고금리 지속)",
       "impact": "전쟁 자금 조달 비용 증가",
       "weight": "+1%p (4-6개월)",
       "direction": "mixed",
-      "detail": "미국 10년물 국채금리가 5.25%로 높은 수준을 유지하고 있습니다. 전쟁 자금 조달 비용이 증가하며, 장기전의 경제적 부담이 커지고 있습니다.",
+      "detail": "미국 10년물 국채금리가 5.28%로 높은 수준을 유지하고 있습니다. 전쟁 자금 조달 비용이 증가하며, 장기전의 경제적 부담이 커지고 있습니다.",
       "keywords": [
         "treasury",
         "yield",
@@ -356,10 +351,10 @@
   "news_signals": {
     "ceasefire_mentions": 2,
     "escalation_mentions": 2,
-    "negotiation_mentions": 10.2,
+    "negotiation_mentions": 6,
     "casualty_mentions": 4,
-    "peace_mentions": 2.2,
-    "regional_spread": 14.2,
+    "peace_mentions": 8.2,
+    "regional_spread": 30.4,
     "total_articles": 50,
     "new_articles": 50,
     "unique_events": 47,
@@ -367,21 +362,67 @@
   },
   "latest_news": [
     {
-      "title": "FlyDubai Flight to Tel Aviv Issues Distress Signal Before Landing in Saudi Arabia",
-      "link": "https://www.nytimes.com/2026/09/30/world/middleeast/flydubai-flight-tel-aviv-israel-fz1073-diverted-pilots.html",
-      "pubDate": "Wed, 30 Sep 2026 08:43:26 +0000",
-      "source": "nytimes",
-      "snippet": "The plane was traveling from Dubai to Israel when the pilot and co-pilot appear to have gotten into a fight, Israeli officials said.",
+      "title": "Netanyahu says pilot arrested after stabbing fellow pilot and apparently trying to crash Israel-bound plane – latest",
+      "link": "https://www.theguardian.com/world/live/2026/sep/30/dubai-israel-saudi-arabia-flydubai-flight-diversion-pilots-fight-latest-news-updates",
+      "pubDate": "Wed, 30 Sep 2026 15:30:06 GMT",
+      "source": "guardian",
+      "snippet": "Israeli PM issues statement on flydubai incident, which saw plane plummet mid-air before emergency landing in Saudi ArabiaFull report: Pilot on Israel-bound plane stabbed co-pilot and tried to crash a",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": true,
+      "_clusterSize": 2,
+      "_isDuplicate": false
+    },
+    {
+      "title": "What we know about stabbing on Flydubai flight to Israel",
+      "link": "https://www.bbc.co.uk/news/articles/cqjdv7pmj9dno?at_medium=RSS&at_campaign=rss",
+      "pubDate": "Wed, 30 Sep 2026 15:29:28 GMT",
+      "source": "bbc",
+      "snippet": "The captain and first officer were injured, and one pilot has been arrested, officials say.",
       "isNew": true,
       "_isDuplicate": true,
       "_sourceCount": 1
     },
     {
-      "title": "Flydubai flight to Israel diverted to Saudi Arabia after emergency alert",
-      "link": "https://www.aljazeera.com/news/2026/9/30/flydubai-flight-to-israel-diverted-to-saudi-arabia-after-emergency-alert?traffic_source=rss",
-      "pubDate": "Wed, 30 Sep 2026 08:00:10 +0000",
-      "source": "aljazeera",
-      "snippet": "Airline says plane experiences &#039;incident&#039; en route from Dubai to Tel Aviv, lands safely at Saudi Arabia&#039;s Tabuk airport.",
+      "title": "Pilot who stabbed co-pilot on Israel-bound plane may have tried to crash it, says Netanyahu",
+      "link": "https://www.theguardian.com/world/2026/sep/30/israel-bound-passenger-plane-emergency-landing-saudi-arabia-pilots-feud",
+      "pubDate": "Wed, 30 Sep 2026 15:16:37 GMT",
+      "source": "guardian",
+      "snippet": "Israeli officials investigating if incident, which forced plane to make emergency landing in Saudi Arabia, was attempted terror attackOne of the pilots of a plane flying from the UAE to Israel stabbed",
+      "isNew": true,
+      "_isDuplicate": true,
+      "_sourceCount": 1
+    },
+    {
+      "title": "Here’s the latest.",
+      "link": "https://www.nytimes.com/live/2026/09/30/world/dubai-flight-tel-aviv-israel-pilots/flydubai-flight-tel-aviv-israel-fz1073-diverted-pilots",
+      "pubDate": "Wed, 30 Sep 2026 15:08:20 +0000",
+      "source": "nytimes",
+      "snippet": "The plane was traveling from Dubai to Israel when the pilot and co-pilot appear to have gotten into a fight, Israeli officials said.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Passengers describe stabbing on Israel-bound plane",
+      "link": "https://www.bbc.co.uk/news/videos/cv70d22kd34do?at_medium=RSS&at_campaign=rss",
+      "pubDate": "Wed, 30 Sep 2026 15:07:00 GMT",
+      "source": "bbc",
+      "snippet": "Passengers on the Flydubai flight bound for Israel filmed the moments following the stabbing.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "What we know so far about alleged stabbing of pilot by co-pilot on flight to Israel",
+      "link": "https://www.theguardian.com/world/2026/sep/30/what-we-know-alleged-stabbing-pilot-copilot-flight-israel",
+      "pubDate": "Wed, 30 Sep 2026 15:00:54 GMT",
+      "source": "guardian",
+      "snippet": "Plane made emergency landing after pilot tried to crash aircraft, Israeli PM says, as officials investigate whether it was an attempted terror attackOne of the pilots of a plane flying from the UAE to",
       "isNew": true,
       "_sourceCount": 2,
       "_isDuplicated": true,
@@ -389,11 +430,11 @@
       "_isDuplicate": false
     },
     {
-      "title": "Israel-bound flight diverted after fight between pilots",
-      "link": "https://www.bbc.co.uk/news/articles/cqjdv7pmj9dno?at_medium=RSS&at_campaign=rss",
-      "pubDate": "Wed, 30 Sep 2026 07:51:26 GMT",
-      "source": "bbc",
-      "snippet": "Despite a brief emergency alert signalling a hijacking, the Israeli prime minister's office confirmed this had been ruled out.",
+      "title": "Israeli forces overwhelmed by violent settlers in ‘terrorist attack’ on Palestinian family",
+      "link": "https://www.theguardian.com/world/2026/sep/30/israeli-settler-violence-west-bank-attack-jalud-palestinians-icrc",
+      "pubDate": "Wed, 30 Sep 2026 14:54:06 GMT",
+      "source": "guardian",
+      "snippet": "Settler violence in West Bank makes everyday life ‘untenable’ for Palestinians, says ICRC after assault on family trying to return home in JaludThe International Committee of the Red Cross (ICRC) has ",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -401,131 +442,11 @@
       "_isDuplicate": false
     },
     {
-      "title": "‘Dire situation’: Lebanese prisoners on hunger strike for 18 days",
-      "link": "https://www.aljazeera.com/news/2026/9/30/dire-situation-lebanese-prisoners-on-hunger-strike-for-18-days?traffic_source=rss",
-      "pubDate": "Wed, 30 Sep 2026 07:40:07 +0000",
-      "source": "aljazeera",
-      "snippet": "The medical condition of dozens of prisoners has deteriorated as inmates protest against suspension of amnesty law.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Trump calls Kim Jong Un a ‘friend’ and plays down N Korea’s nuclear arsenal",
-      "link": "https://www.aljazeera.com/news/2026/9/30/trump-calls-kim-jong-un-a-friend-and-plays-down-n-koreas-nuclear-arsenal?traffic_source=rss",
-      "pubDate": "Wed, 30 Sep 2026 06:48:09 +0000",
-      "source": "aljazeera",
-      "snippet": "US president&#039;s comments came after he was asked why North Korea can have nuclear weapons when Iran cannot.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Girl has multiple surgeries to control infections after strike in Gaza",
-      "link": "https://www.bbc.co.uk/news/videos/c8n5d0e0n6wdo?at_medium=RSS&at_campaign=rss",
-      "pubDate": "Wed, 30 Sep 2026 05:02:50 GMT",
-      "source": "bbc",
-      "snippet": "Witnesses say Raseel's tent was hit by an Israeli helicopter strike. Israel’s military says it has no record of the attack.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Israel’s Lapid accuses Netanyahu of ‘fear-mongering’ over attack warning",
-      "link": "https://www.aljazeera.com/news/2026/9/30/israels-lapid-accuses-netanyahu-of-fear-mongering-over-attack-warning?traffic_source=rss",
-      "pubDate": "Wed, 30 Sep 2026 04:51:01 +0000",
-      "source": "aljazeera",
-      "snippet": "Opposition leader dismisses Netanyahu&#039;s warning of possible attacks during next month&#039;s general election.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Democrats hope anger at Trump enough to get young people to vote",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/9/30/democrats-hope-anger-at-trump-enough-to-get-young-people-to-vote?traffic_source=rss",
-      "pubDate": "Wed, 30 Sep 2026 04:36:27 +0000",
-      "source": "aljazeera",
-      "snippet": "Political strategist Celinda Lake says that young voters don’t usually cast their ballots in midterm elections.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Public workers in France strike over pay as student protests turn violent",
-      "link": "https://www.aljazeera.com/news/2026/9/30/french-public-workers-strike-over-pay-as-student-protests-turn-violent?traffic_source=rss",
-      "pubDate": "Wed, 30 Sep 2026 03:53:39 +0000",
-      "source": "aljazeera",
-      "snippet": "Tens of thousands of workers march nationwide, as police arrest 440 students in clashes at schools. ",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Trump backs AI self-regulation at tech summit but is it enough?",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/9/30/trump-backs-ai-self-regulation-at-tech-summit-but-is-it-enough?traffic_source=rss",
-      "pubDate": "Wed, 30 Sep 2026 03:00:59 +0000",
-      "source": "aljazeera",
-      "snippet": "US President Donald Trump and leading tech companies have signed a voluntary agreement to regulate AI development.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "US Senate blocks resolution seeking report on Americans killed in West Bank",
-      "link": "https://www.aljazeera.com/news/2026/9/30/us-senate-blocks-resolution-seeking-report-on-americans-killed-in-west-bank?traffic_source=rss",
-      "pubDate": "Wed, 30 Sep 2026 02:26:20 +0000",
-      "source": "aljazeera",
-      "snippet": "The resolution cites a &#039;lack of accountability&#039; by Israel&#039;s government and an &#039;inability to secure justice&#039; by the US.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Morocco’s pro-Palestine protests challenge Rabat’s deepening Israel ties",
-      "link": "https://www.aljazeera.com/news/2026/9/30/moroccos-pro-palestine-protests-challenge-rabats-deepening-israel-ties?traffic_source=rss",
-      "pubDate": "Wed, 30 Sep 2026 01:46:53 +0000",
-      "source": "aljazeera",
-      "snippet": "Protests across Morocco highlight gap between public opposition to normalisation and Rabat’s closer ties with Israel.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Indonesia suspends five officials over luxury apartments for inmates",
-      "link": "https://www.aljazeera.com/news/2026/9/30/indonesia-suspends-five-officials-over-luxury-apartments-for-inmates?traffic_source=rss",
-      "pubDate": "Wed, 30 Sep 2026 00:58:40 +0000",
-      "source": "aljazeera",
-      "snippet": "Warden among five officials suspended over the discovery of an apartment-style compound for inmates at Cibinong prison.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Democrats in Congress Embrace a More Punitive Posture Toward Israel",
-      "link": "https://www.nytimes.com/2026/09/29/us/politics/democrats-congress-israel.html",
-      "pubDate": "Wed, 30 Sep 2026 00:46:16 +0000",
+      "title": "FlyDubai Flight to Israel Diverted After Clash Between Pilots: What We Know and Don’t Know",
+      "link": "https://www.nytimes.com/2026/09/30/world/middleeast/flydubai-dubai-israel-flight-diverted.html",
+      "pubDate": "Wed, 30 Sep 2026 14:33:25 +0000",
       "source": "nytimes",
-      "snippet": "Nearly every Democratic senator voted to advance a measure calling for a human rights report on Israel’s conduct in the West Bank, as some in the party propose punishing settlement activity with sanct",
+      "snippet": "Prime Minister Benjamin Netanyahu of Israel said one pilot stabbed another and may have attempted to crash the flight from Dubai to Tel Aviv. The plane landed in Saudi Arabia and all passengers were s",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -533,11 +454,83 @@
       "_isDuplicate": false
     },
     {
-      "title": "Israeli Settlers Stop Soldiers From Returning Palestinians to Their Home",
-      "link": "https://www.nytimes.com/2026/09/29/world/middleeast/west-bank-israel-settlers-attack-soldiers-palestinians.html",
-      "pubDate": "Wed, 30 Sep 2026 00:19:18 +0000",
+      "title": "Pentagon says it has formally completed withdrawal of US troops from Iraq",
+      "link": "https://www.theguardian.com/us-news/2026/sep/30/pentagon-formal-withdrawal-troops-iraq",
+      "pubDate": "Wed, 30 Sep 2026 14:31:44 GMT",
+      "source": "guardian",
+      "snippet": "Announcement comes two years after withdrawal was agreed to and 12 years since US mission to fight IS began The Pentagon announced on Wednesday that it has formally completed its withdrawal of US troo",
+      "isNew": true,
+      "_sourceCount": 2,
+      "_isDuplicated": true,
+      "_clusterSize": 2,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Israel and Saudi Arabia don’t have formal ties, but Israelis have occasionally landed there.",
+      "link": "https://www.nytimes.com/live/2026/09/30/world/dubai-flight-tel-aviv-israel-pilots/israel-and-saudi-arabia-dont-have-formal-ties-but-israelis-have-occasionally-landed-there",
+      "pubDate": "Wed, 30 Sep 2026 14:18:58 +0000",
       "source": "nytimes",
-      "snippet": "The Supreme Court had ordered the military to ensure a West Bank family that fled violence could go back. But settlers blocked the effort, with the authorities accused of not doing enough to confront ",
+      "snippet": "",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Mother of passenger on Israel-bound flight describes incident – video",
+      "link": "https://www.theguardian.com/world/video/2026/sep/30/mother-of-passenger-on-israel-bound-flight-describes-incident-video",
+      "pubDate": "Wed, 30 Sep 2026 14:16:20 GMT",
+      "source": "guardian",
+      "snippet": "The mother of a passenger onboard a flydubai flight from Dubai to Israel said her daughter told her the plane lost control before other pilots took over and the aircraft landed in Saudi Arabia. Yasmin",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "네타냐후 \"이스라엘행 여객기 조종사, 동료 찌르고 추락 시도\"",
+      "link": "https://www.yna.co.kr/view/AKR20260930196700079",
+      "pubDate": "Wed, 30 Sep 2026 23:11:51 +0900",
+      "source": "yonhap",
+      "snippet": "(카이로=연합뉴스) 김상훈 특파원 = 베냐민 네타냐후 이스라엘 총리는 30일(현지시간) 아랍에미리트(UAE) 두바이발 텔아비브행 플라이두바이 소...",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Why Israel is interfering in Palestinian education",
+      "link": "https://www.aljazeera.com/opinions/2026/9/30/why-israel-is-interfering-in-palestinian-education?traffic_source=rss",
+      "pubDate": "Wed, 30 Sep 2026 13:22:33 +0000",
+      "source": "aljazeera",
+      "snippet": "The occupation authorities are trying to censor Palestinian school curricula because they teach national consciousness.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "FlyDubai Provides Key Link for Israeli Air Travelers",
+      "link": "https://www.nytimes.com/2026/09/30/world/middleeast/flydubai-flights-dubai-tel-aviv-israel.html",
+      "pubDate": "Wed, 30 Sep 2026 13:04:35 +0000",
+      "source": "nytimes",
+      "snippet": "The low-cost carrier operates up to 10 daily flights between Dubai and Tel Aviv.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "American Forces Withdraw From Iraq 23 Years After Invading",
+      "link": "https://www.nytimes.com/2026/09/30/world/middleeast/iraq-us-troop-withdrawal.html",
+      "pubDate": "Wed, 30 Sep 2026 12:58:56 +0000",
+      "source": "nytimes",
+      "snippet": "The Americans did not understand the country when they invaded in 2003. Over a correspondent’s many trips there, it was not clear that this ever changed much.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -551,117 +544,183 @@
         "category_id": "military",
         "category_name": "군사 작전",
         "category_icon": "⚔️",
-        "count": 15,
-        "new_count": 15,
+        "count": 20,
+        "new_count": 20,
         "articles": [
           {
-            "title": "‘Dire situation’: Lebanese prisoners on hunger strike for 18 days",
-            "link": "https://www.aljazeera.com/news/2026/9/30/dire-situation-lebanese-prisoners-on-hunger-strike-for-18-days?traffic_source=rss",
-            "source": "aljazeera",
+            "title": "What we know so far about alleged stabbing of pilot by co-pilot on flight to Israel",
+            "link": "https://www.theguardian.com/world/2026/sep/30/what-we-know-alleged-stabbing-pilot-copilot-flight-israel",
+            "source": "guardian",
             "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Wed, 30 Sep 2026 07:40:07 +0000",
-            "snippet": "The medical condition of dozens of prisoners has deteriorated as inmates protest against suspension of amnesty law.",
-            "isNew": true
-          },
-          {
-            "title": "Girl has multiple surgeries to control infections after strike in Gaza",
-            "link": "https://www.bbc.co.uk/news/videos/c8n5d0e0n6wdo?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
-            "sources": [
+              "guardian",
               "bbc"
             ],
-            "pubDate": "Wed, 30 Sep 2026 05:02:50 GMT",
-            "snippet": "Witnesses say Raseel's tent was hit by an Israeli helicopter strike. Israel’s military says it has no record of the attack.",
+            "pubDate": "Wed, 30 Sep 2026 15:00:54 GMT",
+            "snippet": "Plane made emergency landing after pilot tried to crash aircraft, Israeli PM says, as officials investigate whether it was an attempted terror attackOne of the pilots of a plane flying from the UAE to",
             "isNew": true
           },
           {
-            "title": "Public workers in France strike over pay as student protests turn violent",
-            "link": "https://www.aljazeera.com/news/2026/9/30/french-public-workers-strike-over-pay-as-student-protests-turn-violent?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Wed, 30 Sep 2026 03:53:39 +0000",
-            "snippet": "Tens of thousands of workers march nationwide, as police arrest 440 students in clashes at schools. ",
-            "isNew": true
-          },
-          {
-            "title": "Israeli Settlers Stop Soldiers From Returning Palestinians to Their Home",
-            "link": "https://www.nytimes.com/2026/09/29/world/middleeast/west-bank-israel-settlers-attack-soldiers-palestinians.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Wed, 30 Sep 2026 00:19:18 +0000",
-            "snippet": "The Supreme Court had ordered the military to ensure a West Bank family that fled violence could go back. But settlers blocked the effort, with the authorities accused of not doing enough to confront ",
-            "isNew": true
-          },
-          {
-            "title": "Tankers Are Loading Oil Again From a Vital Saudi Pipeline",
-            "link": "https://www.nytimes.com/2026/09/29/business/oil-saudi-east-west-pipeline.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Tue, 29 Sep 2026 19:59:11 +0000",
-            "snippet": "Saudi authorities had taken the pipeline offline this month after it was damaged in a drone attack by an Iranian-backed Iraqi militia.",
-            "isNew": true
-          },
-          {
-            "title": "Rubio Says Incident at UK Air Base RAF Fairford ‘Clearly Involved’ a Foreign Actor",
-            "link": "https://www.nytimes.com/2026/09/29/world/europe/uk-raf-fairford-air-base-incident-rubio-us.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Tue, 29 Sep 2026 17:27:20 +0000",
-            "snippet": "The U.S. secretary of state, Marco Rubio, told Fox News that what happened at a base used by U.S. bombers flying to Iran was “very serious,” without providing details.",
-            "isNew": true
-          },
-          {
-            "title": "Israeli settlers attack West Bank village and block Palestinian family's return home",
-            "link": "https://www.bbc.co.uk/news/articles/cvlylj41egxgo?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
-            "sources": [
-              "bbc"
-            ],
-            "pubDate": "Tue, 29 Sep 2026 12:39:18 GMT",
-            "snippet": "Two homes belonging to the al-Tubasi family were set on fire and Israeli security forces were also targeted by settlers. ",
-            "isNew": true
-          },
-          {
-            "title": "Netanyahu Visits Emirati Leader After Reports on Warning About Hamas Attack",
-            "link": "https://www.nytimes.com/2026/09/28/world/middleeast/netanyahu-emirati-leader-hamas-attack.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Tue, 29 Sep 2026 01:27:20 +0000",
-            "snippet": "Official statements said bilateral relations were discussed. But the question of who bears responsibility for failing to prevent the Oct. 7 attack is a major election issue in Israel.",
-            "isNew": true
-          },
-          {
-            "title": "Questions remain over Iran’s link to alleged RAF Fairford bomb plot",
-            "link": "https://www.theguardian.com/world/2026/sep/28/questions-remain-over-irans-link-to-alleged-raf-fairford-bomb-plot",
+            "title": "Israeli forces overwhelmed by violent settlers in ‘terrorist attack’ on Palestinian family",
+            "link": "https://www.theguardian.com/world/2026/sep/30/israeli-settler-violence-west-bank-attack-jalud-palestinians-icrc",
             "source": "guardian",
             "sources": [
               "guardian"
             ],
-            "pubDate": "Mon, 28 Sep 2026 21:36:40 GMT",
-            "snippet": "Tehran has been trying to step up attacks on targets in the west but its track record has been mixedInvestigators may be some way from determining exactly what led five men with three vans to a villag",
+            "pubDate": "Wed, 30 Sep 2026 14:54:06 GMT",
+            "snippet": "Settler violence in West Bank makes everyday life ‘untenable’ for Palestinians, says ICRC after assault on family trying to return home in JaludThe International Committee of the Red Cross (ICRC) has ",
             "isNew": true
           },
           {
-            "title": "Watch: BBC reports from the front-line of an escalating war in Yemen",
-            "link": "https://www.bbc.co.uk/news/videos/crp3kgjygnkeo?at_medium=RSS&at_campaign=rss",
+            "title": "Pentagon says it has formally completed withdrawal of US troops from Iraq",
+            "link": "https://www.theguardian.com/us-news/2026/sep/30/pentagon-formal-withdrawal-troops-iraq",
+            "source": "guardian",
+            "sources": [
+              "guardian",
+              "bbc"
+            ],
+            "pubDate": "Wed, 30 Sep 2026 14:31:44 GMT",
+            "snippet": "Announcement comes two years after withdrawal was agreed to and 12 years since US mission to fight IS began The Pentagon announced on Wednesday that it has formally completed its withdrawal of US troo",
+            "isNew": true
+          },
+          {
+            "title": "Israeli attacks on Gaza kill seven as ‘ceasefire’ violations continue",
+            "link": "https://www.aljazeera.com/news/2026/9/30/israeli-attacks-on-gaza-kill-several-as-ceasefire-violations-continue?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Wed, 30 Sep 2026 12:49:04 +0000",
+            "snippet": "At least six people killed in drone attack on passenger van and one person killed in strike on residential apartment.",
+            "isNew": true
+          },
+          {
+            "title": "How does Iraq’s security change after US forces withdraw?",
+            "link": "https://www.aljazeera.com/news/2026/9/30/how-does-iraqs-security-change-after-us-forces-withdraw?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Wed, 30 Sep 2026 12:33:05 +0000",
+            "snippet": "Iraq marks US troop withdrawal with &#039;Sovereignty Days&#039;, symbolising a shift after decades of foreign military presence.",
+            "isNew": true
+          },
+          {
+            "title": "After Two Decades, U.S. Forces Leave Iraq to an Uncertain Future",
+            "link": "https://www.nytimes.com/2026/09/30/world/middleeast/iraq-us-forces.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Wed, 30 Sep 2026 12:29:23 +0000",
+            "snippet": "Some Iraqis are celebrating the end of an American military presence that unleashed waves of bloodshed. Others fear what happens next for their country, trapped between Washington and Tehran.",
+            "isNew": true
+          },
+          {
+            "title": "Iraq celebrates National Sovereignty Day as US troops withdraw",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/30/iraq-celebrates-national-sovereignty-day-as-us-troops-withdraw?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Wed, 30 Sep 2026 12:17:00 +0000",
+            "snippet": "Iraq’s security forces held parades in Baghdad and Najaf to celebrate ‘Sovereignty Day’ as US troops withdraw.",
+            "isNew": true
+          },
+          {
+            "title": "Flydubai flight to Israel diverted after attack on pilot",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/30/flydubai-flight-to-israel-diverted-after-attack-on-pilot?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Wed, 30 Sep 2026 11:43:35 +0000",
+            "snippet": "Dramatic video shows the aftermath of an attack on a pilot on a Flydubai flight to the Israeli city of Tel Aviv. ",
+            "isNew": true
+          },
+          {
+            "title": "Passenger Describes Chaos Aboard FlyDubai Flight",
+            "link": "https://www.nytimes.com/2026/09/30/world/middleeast/flydubai-flight-israel-plane-passenger.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Wed, 30 Sep 2026 11:37:41 +0000",
+            "snippet": "The passenger, Miriam Ohayon, said people on board felt the jet lose control and heard screams. “When they opened the cockpit, there was a lot of blood,” she told Israeli television.",
+            "isNew": true
+          },
+          {
+            "title": "The October 7 warnings threatening Netanyahu’s Israeli election campaign",
+            "link": "https://www.aljazeera.com/news/2026/9/30/the-october-7-warnings-threatening-netanyahus-israel-election-campaign?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Wed, 30 Sep 2026 11:03:01 +0000",
+            "snippet": "Netanyahu faces continued pressure over alleged warnings before the 2023 Hamas attack as October 27 elections draw near.",
+            "isNew": true
+          }
+        ]
+      },
+      {
+        "category_id": "other",
+        "category_name": "기타",
+        "category_icon": "📰",
+        "count": 9,
+        "new_count": 9,
+        "articles": [
+          {
+            "title": "Passengers describe stabbing on Israel-bound plane",
+            "link": "https://www.bbc.co.uk/news/videos/cv70d22kd34do?at_medium=RSS&at_campaign=rss",
             "source": "bbc",
             "sources": [
               "bbc"
             ],
-            "pubDate": "Sun, 27 Sep 2026 21:00:06 GMT",
-            "snippet": "In rare access to Yemen's conflict zone the BBC travels to the front line with pro-government soldiers.\n\n",
+            "pubDate": "Wed, 30 Sep 2026 15:07:00 GMT",
+            "snippet": "Passengers on the Flydubai flight bound for Israel filmed the moments following the stabbing.",
+            "isNew": true
+          },
+          {
+            "title": "Why Israel is interfering in Palestinian education",
+            "link": "https://www.aljazeera.com/opinions/2026/9/30/why-israel-is-interfering-in-palestinian-education?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Wed, 30 Sep 2026 13:22:33 +0000",
+            "snippet": "The occupation authorities are trying to censor Palestinian school curricula because they teach national consciousness.",
+            "isNew": true
+          },
+          {
+            "title": "FlyDubai Provides Key Link for Israeli Air Travelers",
+            "link": "https://www.nytimes.com/2026/09/30/world/middleeast/flydubai-flights-dubai-tel-aviv-israel.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Wed, 30 Sep 2026 13:04:35 +0000",
+            "snippet": "The low-cost carrier operates up to 10 daily flights between Dubai and Tel Aviv.",
+            "isNew": true
+          },
+          {
+            "title": "Settlers closing in on Ramallah",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/30/settlers-closing-in-on-ramallah?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Wed, 30 Sep 2026 12:43:27 +0000",
+            "snippet": "Israeli settlers are encroaching ever closer to Ramallah,  the de facto capital of the occupied West Bank.",
+            "isNew": true
+          },
+          {
+            "title": "Former journalist crowned king of Uganda’s Tooro kingdom",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/30/30-09-sv-uganda-tooro-king-ug?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Wed, 30 Sep 2026 12:34:21 +0000",
+            "snippet": "Edward Rukidi Kijanangoma, a former journalist, has been crowned the king of Uganda’s Tooro Kingdom.",
             "isNew": true
           }
         ]
@@ -670,62 +729,18 @@
         "category_id": "politics",
         "category_name": "국내 정치",
         "category_icon": "🏛️",
-        "count": 14,
-        "new_count": 14,
+        "count": 6,
+        "new_count": 6,
         "articles": [
           {
-            "title": "Israel-bound flight diverted after fight between pilots",
-            "link": "https://www.bbc.co.uk/news/articles/cqjdv7pmj9dno?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
-            "sources": [
-              "bbc"
-            ],
-            "pubDate": "Wed, 30 Sep 2026 07:51:26 GMT",
-            "snippet": "Despite a brief emergency alert signalling a hijacking, the Israeli prime minister's office confirmed this had been ruled out.",
-            "isNew": true
-          },
-          {
-            "title": "Trump calls Kim Jong Un a ‘friend’ and plays down N Korea’s nuclear arsenal",
-            "link": "https://www.aljazeera.com/news/2026/9/30/trump-calls-kim-jong-un-a-friend-and-plays-down-n-koreas-nuclear-arsenal?traffic_source=rss",
+            "title": "Ireland vs Israel Nations League match will go ahead, coach confirms",
+            "link": "https://www.aljazeera.com/sports/2026/9/30/ireland-vs-israel-nations-league-match-will-go-ahead-coach-confirms?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Wed, 30 Sep 2026 06:48:09 +0000",
-            "snippet": "US president&#039;s comments came after he was asked why North Korea can have nuclear weapons when Iran cannot.",
-            "isNew": true
-          },
-          {
-            "title": "Israel’s Lapid accuses Netanyahu of ‘fear-mongering’ over attack warning",
-            "link": "https://www.aljazeera.com/news/2026/9/30/israels-lapid-accuses-netanyahu-of-fear-mongering-over-attack-warning?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Wed, 30 Sep 2026 04:51:01 +0000",
-            "snippet": "Opposition leader dismisses Netanyahu&#039;s warning of possible attacks during next month&#039;s general election.",
-            "isNew": true
-          },
-          {
-            "title": "Democrats hope anger at Trump enough to get young people to vote",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/30/democrats-hope-anger-at-trump-enough-to-get-young-people-to-vote?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Wed, 30 Sep 2026 04:36:27 +0000",
-            "snippet": "Political strategist Celinda Lake says that young voters don’t usually cast their ballots in midterm elections.",
-            "isNew": true
-          },
-          {
-            "title": "Morocco’s pro-Palestine protests challenge Rabat’s deepening Israel ties",
-            "link": "https://www.aljazeera.com/news/2026/9/30/moroccos-pro-palestine-protests-challenge-rabats-deepening-israel-ties?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Wed, 30 Sep 2026 01:46:53 +0000",
-            "snippet": "Protests across Morocco highlight gap between public opposition to normalisation and Rabat’s closer ties with Israel.",
+            "pubDate": "Wed, 30 Sep 2026 11:36:35 +0000",
+            "snippet": "The Football Association of Ireland says the team will fulfil the second fixture despite public opposition.",
             "isNew": true
           },
           {
@@ -737,28 +752,6 @@
             ],
             "pubDate": "Wed, 30 Sep 2026 00:46:16 +0000",
             "snippet": "Nearly every Democratic senator voted to advance a measure calling for a human rights report on Israel’s conduct in the West Bank, as some in the party propose punishing settlement activity with sanct",
-            "isNew": true
-          },
-          {
-            "title": "Iran war live: Trump claims war will end ‘very soon’, gives no details",
-            "link": "https://www.aljazeera.com/news/liveblog/2026/9/30/iran-war-live-trump-claims-war-will-end-very-soon-provides-no-details?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Wed, 30 Sep 2026 00:00:00 +0000",
-            "snippet": "US President Donald Trump reiterates that Tehran will not have a nuclear weapon.",
-            "isNew": true
-          },
-          {
-            "title": "Trump says he plans to campaign for 32 days before midterm elections",
-            "link": "https://www.aljazeera.com/news/2026/9/29/trump-says-he-plans-to-campaign-for-32-days-before-midterm-elections?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Tue, 29 Sep 2026 23:53:08 +0000",
-            "snippet": "US president brushes aside concerns about his popularity as voters express frustration over cost of living, war on Iran.",
             "isNew": true
           },
           {
@@ -782,69 +775,144 @@
             "pubDate": "Mon, 28 Sep 2026 14:00:36 GMT",
             "snippet": "The Israeli prime minister’s remarks at the UN weren’t just motivated by personal animosityIn a boastful and defiant speech to the United Nations on Thursday, Benjamin Netanyahu called out a list of v",
             "isNew": true
-          }
-        ]
-      },
-      {
-        "category_id": "other",
-        "category_name": "기타",
-        "category_icon": "📰",
-        "count": 8,
-        "new_count": 8,
-        "articles": [
+          },
           {
-            "title": "Indonesia suspends five officials over luxury apartments for inmates",
-            "link": "https://www.aljazeera.com/news/2026/9/30/indonesia-suspends-five-officials-over-luxury-apartments-for-inmates?traffic_source=rss",
-            "source": "aljazeera",
+            "title": "Iran Still Awaits ‘Official’ U.S. Response Despite Trump’s Rebuff of Cease-Fire Offer",
+            "link": "https://www.nytimes.com/2026/09/27/world/middleeast/iran-trump-ceasefire-strait-of-hormuz.html",
+            "source": "nytimes",
             "sources": [
-              "aljazeera"
+              "nytimes"
             ],
-            "pubDate": "Wed, 30 Sep 2026 00:58:40 +0000",
-            "snippet": "Warden among five officials suspended over the discovery of an apartment-style compound for inmates at Cibinong prison.",
+            "pubDate": "Sun, 27 Sep 2026 21:36:22 +0000",
+            "snippet": "Abbas Araghchi, Iran’s foreign minister, said a history of contradictory messaging meant that President Trump’s rejection might not be a final position.",
             "isNew": true
           },
           {
-            "title": "Iran court upholds lashes sentence for singer who performed without hijab",
-            "link": "https://www.bbc.co.uk/news/articles/crn45ed1kqqgo?at_medium=RSS&at_campaign=rss",
+            "title": "Iranian minister says only negotiation can end conflict after Trump rejects Hormuz deal",
+            "link": "https://www.bbc.co.uk/news/articles/cmvgyyw2jeego?at_medium=RSS&at_campaign=rss",
             "source": "bbc",
             "sources": [
               "bbc"
             ],
-            "pubDate": "Mon, 28 Sep 2026 17:15:00 GMT",
-            "snippet": "Parastoo Ahmadi was convicted of \"offending public decency\" after singing while wearing a sleeveless dress during a livestreamed concert.",
+            "pubDate": "Sun, 27 Sep 2026 07:44:11 GMT",
+            "snippet": "The foreign minister says Tehran is waiting for an official rejection of a deal, despite the US President's comments.",
             "isNew": true
-          },
+          }
+        ]
+      },
+      {
+        "category_id": "regional",
+        "category_name": "지역 정세",
+        "category_icon": "🌍",
+        "count": 5,
+        "new_count": 5,
+        "articles": [
           {
-            "title": "Israel does not have right to close UK consulate in Jerusalem, Foreign Office advised",
-            "link": "https://www.theguardian.com/politics/2026/sep/28/israel-no-right-close-jerusalem-uk-consulate-foreign-office-advised",
+            "title": "Netanyahu says pilot arrested after stabbing fellow pilot and apparently trying to crash Israel-bound plane – latest",
+            "link": "https://www.theguardian.com/world/live/2026/sep/30/dubai-israel-saudi-arabia-flydubai-flight-diversion-pilots-fight-latest-news-updates",
             "source": "guardian",
             "sources": [
               "guardian"
             ],
-            "pubDate": "Mon, 28 Sep 2026 11:28:12 GMT",
-            "snippet": "Former attorney general Dominic Grieve says Israel is not entitled to shut mission in occupied Palestinian territoryUK politics live – latest updatesIsrael does not have a legal right to act on its pl",
+            "pubDate": "Wed, 30 Sep 2026 15:30:06 GMT",
+            "snippet": "Israeli PM issues statement on flydubai incident, which saw plane plummet mid-air before emergency landing in Saudi ArabiaFull report: Pilot on Israel-bound plane stabbed co-pilot and tried to crash a",
             "isNew": true
           },
           {
-            "title": "Price of diesel on UK forecourts reaches all-time high",
-            "link": "https://www.theguardian.com/money/2026/sep/28/price-of-diesel-on-uk-forecourts-reaches-all-time-high",
+            "title": "Israel and Saudi Arabia don’t have formal ties, but Israelis have occasionally landed there.",
+            "link": "https://www.nytimes.com/live/2026/09/30/world/dubai-flight-tel-aviv-israel-pilots/israel-and-saudi-arabia-dont-have-formal-ties-but-israelis-have-occasionally-landed-there",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Wed, 30 Sep 2026 14:18:58 +0000",
+            "snippet": "",
+            "isNew": true
+          },
+          {
+            "title": "네타냐후 \"이스라엘행 여객기 조종사, 동료 찌르고 추락 시도\"",
+            "link": "https://www.yna.co.kr/view/AKR20260930196700079",
+            "source": "yonhap",
+            "sources": [
+              "yonhap"
+            ],
+            "pubDate": "Wed, 30 Sep 2026 23:11:51 +0900",
+            "snippet": "(카이로=연합뉴스) 김상훈 특파원 = 베냐민 네타냐후 이스라엘 총리는 30일(현지시간) 아랍에미리트(UAE) 두바이발 텔아비브행 플라이두바이 소...",
+            "isNew": true
+          },
+          {
+            "title": "American Forces Withdraw From Iraq 23 Years After Invading",
+            "link": "https://www.nytimes.com/2026/09/30/world/middleeast/iraq-us-troop-withdrawal.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Wed, 30 Sep 2026 12:58:56 +0000",
+            "snippet": "The Americans did not understand the country when they invaded in 2003. Over a correspondent’s many trips there, it was not clear that this ever changed much.",
+            "isNew": true
+          },
+          {
+            "title": "Children forced to give up school for work as fighting upends daily life in Yemen",
+            "link": "https://www.theguardian.com/world/2026/sep/28/yemen-fighting-houthis-families-flee-displacement",
             "source": "guardian",
             "sources": [
               "guardian"
             ],
-            "pubDate": "Mon, 28 Sep 2026 10:45:36 GMT",
-            "snippet": "Fallout from Iran conflict continues to drive up bill for motorists with record average cost now at 199.18p a litreBusiness live – latest updatesShare your experience of high diesel prices in Shetland",
+            "pubDate": "Mon, 28 Sep 2026 07:07:26 GMT",
+            "snippet": "Renewed fighting between Iran-aligned Houthis and Saudi-backed Yemeni forces has shattered four years of relative calmIn the mornings, 13-year-old Muneer Farie went to school, and in the afternoons he",
+            "isNew": true
+          }
+        ]
+      },
+      {
+        "category_id": "humanitarian",
+        "category_name": "인도주의/피해",
+        "category_icon": "🏥",
+        "count": 4,
+        "new_count": 4,
+        "articles": [
+          {
+            "title": "Here’s the latest.",
+            "link": "https://www.nytimes.com/live/2026/09/30/world/dubai-flight-tel-aviv-israel-pilots/flydubai-flight-tel-aviv-israel-fz1073-diverted-pilots",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Wed, 30 Sep 2026 15:08:20 +0000",
+            "snippet": "The plane was traveling from Dubai to Israel when the pilot and co-pilot appear to have gotten into a fight, Israeli officials said.",
             "isNew": true
           },
           {
-            "title": "UN adds 61 firms to settlements blacklist over alleged human rights violations against Palestinians",
-            "link": "https://www.theguardian.com/world/2026/sep/26/un-companies-israeli-settlements-blacklist-alleged-palestinian-rights-violations",
+            "title": "FlyDubai Flight to Israel Diverted After Clash Between Pilots: What We Know and Don’t Know",
+            "link": "https://www.nytimes.com/2026/09/30/world/middleeast/flydubai-dubai-israel-flight-diverted.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Wed, 30 Sep 2026 14:33:25 +0000",
+            "snippet": "Prime Minister Benjamin Netanyahu of Israel said one pilot stabbed another and may have attempted to crash the flight from Dubai to Tel Aviv. The plane landed in Saudi Arabia and all passengers were s",
+            "isNew": true
+          },
+          {
+            "title": "Mother of passenger on Israel-bound flight describes incident – video",
+            "link": "https://www.theguardian.com/world/video/2026/sep/30/mother-of-passenger-on-israel-bound-flight-describes-incident-video",
             "source": "guardian",
             "sources": [
               "guardian"
             ],
-            "pubDate": "Sat, 26 Sep 2026 11:10:09 GMT",
-            "snippet": "Israel ‘categorically rejects’ publication and says businesses on database have committed no wrongdoingThe UN human rights office has added 61 more companies to a blacklist of firms that it says are i",
+            "pubDate": "Wed, 30 Sep 2026 14:16:20 GMT",
+            "snippet": "The mother of a passenger onboard a flydubai flight from Dubai to Israel said her daughter told her the plane lost control before other pilots took over and the aircraft landed in Saudi Arabia. Yasmin",
+            "isNew": true
+          },
+          {
+            "title": "Over 800 Killed in Renewed Houthi-Saudi War in Yemen, W.H.O. Says",
+            "link": "https://www.nytimes.com/2026/09/28/world/middleeast/yemen-war-800-dead.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Mon, 28 Sep 2026 16:20:37 +0000",
+            "snippet": "The fighting between the Iran-backed Houthi militia and Saudi-backed government forces has exacerbated one of the world’s worst humanitarian crises, the World Health Organization said.",
             "isNew": true
           }
         ]
@@ -853,42 +921,9 @@
         "category_id": "diplomacy",
         "category_name": "외교/협상",
         "category_icon": "🤝",
-        "count": 7,
-        "new_count": 7,
+        "count": 2,
+        "new_count": 2,
         "articles": [
-          {
-            "title": "Trump backs AI self-regulation at tech summit but is it enough?",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/30/trump-backs-ai-self-regulation-at-tech-summit-but-is-it-enough?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Wed, 30 Sep 2026 03:00:59 +0000",
-            "snippet": "US President Donald Trump and leading tech companies have signed a voluntary agreement to regulate AI development.",
-            "isNew": true
-          },
-          {
-            "title": "US Senate blocks resolution seeking report on Americans killed in West Bank",
-            "link": "https://www.aljazeera.com/news/2026/9/30/us-senate-blocks-resolution-seeking-report-on-americans-killed-in-west-bank?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Wed, 30 Sep 2026 02:26:20 +0000",
-            "snippet": "The resolution cites a &#039;lack of accountability&#039; by Israel&#039;s government and an &#039;inability to secure justice&#039; by the US.",
-            "isNew": true
-          },
-          {
-            "title": "‘Nothing is justifying this’: Qatar’s PM slams Israel’s atrocities in Gaza",
-            "link": "https://www.aljazeera.com/news/2026/9/29/nothing-is-justifying-this-qatari-pm-slams-atrocities-in-gaza?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Tue, 29 Sep 2026 23:49:18 +0000",
-            "snippet": "Qatar&#039;s top diplomat says Israel has undermined Doha&#039;s efforts to broker a ceasefire in Gaza from &#039;day one&#039;. ",
-            "isNew": true
-          },
           {
             "title": "Oil Prices Climb on Continued Impasse in U.S.-Iran Talks",
             "link": "https://www.nytimes.com/2026/09/28/business/oil-stocks-gas-prices.html",
@@ -910,80 +945,25 @@
             "pubDate": "Sun, 27 Sep 2026 16:28:05 GMT",
             "snippet": "Waltz says Trump rejected Iran’s proposal to end war because they ‘were asking for everything up front’The Trump administration’s ambassador to the United Nations said the US rejected Iran’s proposal ",
             "isNew": true
-          },
-          {
-            "title": "Trump rejects Iran’s seven-day peace deal to reopen strait of Hormuz",
-            "link": "https://www.theguardian.com/world/2026/sep/26/trump-dismiss-iran-seven-day-peace-deal-hormuz",
-            "source": "guardian",
-            "sources": [
-              "guardian",
-              "nytimes"
-            ],
-            "pubDate": "Sun, 27 Sep 2026 06:34:43 GMT",
-            "snippet": "US president is said to expect renewed strikes after the midtermsDonald Trump has said he has rejected an Iranian proposal to reopen the strait of Hormuz within a week and resume nuclear talks in retu",
-            "isNew": true
-          },
-          {
-            "title": "Trump faces tough choices as Iran dangles deal to reopen Hormuz before US midterms",
-            "link": "https://www.theguardian.com/world/2026/sep/25/trump-tough-choices-iran-accelerated-deal-reopen-hormuz-midterm-elections",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Fri, 25 Sep 2026 15:43:59 GMT",
-            "snippet": "Iran’s seven-day timetable would restart nuclear talks, but will the US be willing to deliver on terms that include reining in Israel in Lebanon?Iran’s seven-day timetable to reopen the strait of Horm",
-            "isNew": true
           }
         ]
       },
       {
-        "category_id": "regional",
-        "category_name": "지역 정세",
-        "category_icon": "🌍",
-        "count": 2,
-        "new_count": 2,
-        "articles": [
-          {
-            "title": "Flydubai flight to Israel diverted to Saudi Arabia after emergency alert",
-            "link": "https://www.aljazeera.com/news/2026/9/30/flydubai-flight-to-israel-diverted-to-saudi-arabia-after-emergency-alert?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera",
-              "nytimes"
-            ],
-            "pubDate": "Wed, 30 Sep 2026 08:00:10 +0000",
-            "snippet": "Airline says plane experiences &#039;incident&#039; en route from Dubai to Tel Aviv, lands safely at Saudi Arabia&#039;s Tabuk airport.",
-            "isNew": true
-          },
-          {
-            "title": "Children forced to give up school for work as fighting upends daily life in Yemen",
-            "link": "https://www.theguardian.com/world/2026/sep/28/yemen-fighting-houthis-families-flee-displacement",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Mon, 28 Sep 2026 07:07:26 GMT",
-            "snippet": "Renewed fighting between Iran-aligned Houthis and Saudi-backed Yemeni forces has shattered four years of relative calmIn the mornings, 13-year-old Muneer Farie went to school, and in the afternoons he",
-            "isNew": true
-          }
-        ]
-      },
-      {
-        "category_id": "humanitarian",
-        "category_name": "인도주의/피해",
-        "category_icon": "🏥",
+        "category_id": "economy",
+        "category_name": "경제 영향",
+        "category_icon": "📊",
         "count": 1,
         "new_count": 1,
         "articles": [
           {
-            "title": "Over 800 Killed in Renewed Houthi-Saudi War in Yemen, W.H.O. Says",
-            "link": "https://www.nytimes.com/2026/09/28/world/middleeast/yemen-war-800-dead.html",
-            "source": "nytimes",
+            "title": "Is Iran losing its leverage over the Strait of Hormuz?",
+            "link": "https://www.aljazeera.com/news/2026/9/30/economic-war-is-iran-losing-its-leverage-over-the-strait-of-hormuz?traffic_source=rss",
+            "source": "aljazeera",
             "sources": [
-              "nytimes"
+              "aljazeera"
             ],
-            "pubDate": "Mon, 28 Sep 2026 16:20:37 +0000",
-            "snippet": "The fighting between the Iran-backed Houthi militia and Saudi-backed government forces has exacerbated one of the world’s worst humanitarian crises, the World Health Organization said.",
+            "pubDate": "Wed, 30 Sep 2026 12:05:45 +0000",
+            "snippet": "Crude flows through Hormuz have recovered, but tanker insurance costs and geopolitical risks remain barriers to a return to normality.",
             "isNew": true
           }
         ]
@@ -992,13 +972,83 @@
     "recent_30min": {
       "total_new": 50,
       "by_category": {
-        "humanitarian": {
-          "count": 2,
+        "regional": {
+          "count": 7,
           "titles": [
             {
-              "title": "FlyDubai Flight to Tel Aviv Issues Distress Signal Before Landing in Saudi Arabia",
-              "link": "https://www.nytimes.com/2026/09/30/world/middleeast/flydubai-flight-tel-aviv-israel-fz1073-diverted-pilots.html",
+              "title": "Netanyahu says pilot arrested after stabbing fellow pilot and apparently trying to crash Israel-bound plane – latest",
+              "link": "https://www.theguardian.com/world/live/2026/sep/30/dubai-israel-saudi-arabia-flydubai-flight-diversion-pilots-fight-latest-news-updates",
+              "source": "guardian"
+            },
+            {
+              "title": "Pilot who stabbed co-pilot on Israel-bound plane may have tried to crash it, says Netanyahu",
+              "link": "https://www.theguardian.com/world/2026/sep/30/israel-bound-passenger-plane-emergency-landing-saudi-arabia-pilots-feud",
+              "source": "guardian"
+            },
+            {
+              "title": "Israel and Saudi Arabia don’t have formal ties, but Israelis have occasionally landed there.",
+              "link": "https://www.nytimes.com/live/2026/09/30/world/dubai-flight-tel-aviv-israel-pilots/israel-and-saudi-arabia-dont-have-formal-ties-but-israelis-have-occasionally-landed-there",
               "source": "nytimes"
+            },
+            {
+              "title": "네타냐후 \"이스라엘행 여객기 조종사, 동료 찌르고 추락 시도\"",
+              "link": "https://www.yna.co.kr/view/AKR20260930196700079",
+              "source": "yonhap"
+            },
+            {
+              "title": "American Forces Withdraw From Iraq 23 Years After Invading",
+              "link": "https://www.nytimes.com/2026/09/30/world/middleeast/iraq-us-troop-withdrawal.html",
+              "source": "nytimes"
+            }
+          ]
+        },
+        "other": {
+          "count": 10,
+          "titles": [
+            {
+              "title": "What we know about stabbing on Flydubai flight to Israel",
+              "link": "https://www.bbc.co.uk/news/articles/cqjdv7pmj9dno?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
+            },
+            {
+              "title": "Passengers describe stabbing on Israel-bound plane",
+              "link": "https://www.bbc.co.uk/news/videos/cv70d22kd34do?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
+            },
+            {
+              "title": "Why Israel is interfering in Palestinian education",
+              "link": "https://www.aljazeera.com/opinions/2026/9/30/why-israel-is-interfering-in-palestinian-education?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "FlyDubai Provides Key Link for Israeli Air Travelers",
+              "link": "https://www.nytimes.com/2026/09/30/world/middleeast/flydubai-flights-dubai-tel-aviv-israel.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Settlers closing in on Ramallah",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/9/30/settlers-closing-in-on-ramallah?traffic_source=rss",
+              "source": "aljazeera"
+            }
+          ]
+        },
+        "humanitarian": {
+          "count": 4,
+          "titles": [
+            {
+              "title": "Here’s the latest.",
+              "link": "https://www.nytimes.com/live/2026/09/30/world/dubai-flight-tel-aviv-israel-pilots/flydubai-flight-tel-aviv-israel-fz1073-diverted-pilots",
+              "source": "nytimes"
+            },
+            {
+              "title": "FlyDubai Flight to Israel Diverted After Clash Between Pilots: What We Know and Don’t Know",
+              "link": "https://www.nytimes.com/2026/09/30/world/middleeast/flydubai-dubai-israel-flight-diverted.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Mother of passenger on Israel-bound flight describes incident – video",
+              "link": "https://www.theguardian.com/world/video/2026/sep/30/mother-of-passenger-on-israel-bound-flight-describes-incident-video",
+              "source": "guardian"
             },
             {
               "title": "Over 800 Killed in Renewed Houthi-Saudi War in Yemen, W.H.O. Says",
@@ -1007,99 +1057,79 @@
             }
           ]
         },
-        "regional": {
-          "count": 2,
+        "military": {
+          "count": 20,
           "titles": [
             {
-              "title": "Flydubai flight to Israel diverted to Saudi Arabia after emergency alert",
-              "link": "https://www.aljazeera.com/news/2026/9/30/flydubai-flight-to-israel-diverted-to-saudi-arabia-after-emergency-alert?traffic_source=rss",
+              "title": "What we know so far about alleged stabbing of pilot by co-pilot on flight to Israel",
+              "link": "https://www.theguardian.com/world/2026/sep/30/what-we-know-alleged-stabbing-pilot-copilot-flight-israel",
+              "source": "guardian"
+            },
+            {
+              "title": "Israeli forces overwhelmed by violent settlers in ‘terrorist attack’ on Palestinian family",
+              "link": "https://www.theguardian.com/world/2026/sep/30/israeli-settler-violence-west-bank-attack-jalud-palestinians-icrc",
+              "source": "guardian"
+            },
+            {
+              "title": "Pentagon says it has formally completed withdrawal of US troops from Iraq",
+              "link": "https://www.theguardian.com/us-news/2026/sep/30/pentagon-formal-withdrawal-troops-iraq",
+              "source": "guardian"
+            },
+            {
+              "title": "Israeli attacks on Gaza kill seven as ‘ceasefire’ violations continue",
+              "link": "https://www.aljazeera.com/news/2026/9/30/israeli-attacks-on-gaza-kill-several-as-ceasefire-violations-continue?traffic_source=rss",
               "source": "aljazeera"
             },
             {
-              "title": "Children forced to give up school for work as fighting upends daily life in Yemen",
-              "link": "https://www.theguardian.com/world/2026/sep/28/yemen-fighting-houthis-families-flee-displacement",
-              "source": "guardian"
+              "title": "How does Iraq’s security change after US forces withdraw?",
+              "link": "https://www.aljazeera.com/news/2026/9/30/how-does-iraqs-security-change-after-us-forces-withdraw?traffic_source=rss",
+              "source": "aljazeera"
+            }
+          ]
+        },
+        "economy": {
+          "count": 1,
+          "titles": [
+            {
+              "title": "Is Iran losing its leverage over the Strait of Hormuz?",
+              "link": "https://www.aljazeera.com/news/2026/9/30/economic-war-is-iran-losing-its-leverage-over-the-strait-of-hormuz?traffic_source=rss",
+              "source": "aljazeera"
             }
           ]
         },
         "politics": {
-          "count": 16,
+          "count": 6,
           "titles": [
             {
-              "title": "Israel-bound flight diverted after fight between pilots",
-              "link": "https://www.bbc.co.uk/news/articles/cqjdv7pmj9dno?at_medium=RSS&at_campaign=rss",
-              "source": "bbc"
-            },
-            {
-              "title": "Trump calls Kim Jong Un a ‘friend’ and plays down N Korea’s nuclear arsenal",
-              "link": "https://www.aljazeera.com/news/2026/9/30/trump-calls-kim-jong-un-a-friend-and-plays-down-n-koreas-nuclear-arsenal?traffic_source=rss",
+              "title": "Ireland vs Israel Nations League match will go ahead, coach confirms",
+              "link": "https://www.aljazeera.com/sports/2026/9/30/ireland-vs-israel-nations-league-match-will-go-ahead-coach-confirms?traffic_source=rss",
               "source": "aljazeera"
             },
             {
-              "title": "Israel’s Lapid accuses Netanyahu of ‘fear-mongering’ over attack warning",
-              "link": "https://www.aljazeera.com/news/2026/9/30/israels-lapid-accuses-netanyahu-of-fear-mongering-over-attack-warning?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Democrats hope anger at Trump enough to get young people to vote",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/9/30/democrats-hope-anger-at-trump-enough-to-get-young-people-to-vote?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Morocco’s pro-Palestine protests challenge Rabat’s deepening Israel ties",
-              "link": "https://www.aljazeera.com/news/2026/9/30/moroccos-pro-palestine-protests-challenge-rabats-deepening-israel-ties?traffic_source=rss",
-              "source": "aljazeera"
-            }
-          ]
-        },
-        "military": {
-          "count": 15,
-          "titles": [
-            {
-              "title": "‘Dire situation’: Lebanese prisoners on hunger strike for 18 days",
-              "link": "https://www.aljazeera.com/news/2026/9/30/dire-situation-lebanese-prisoners-on-hunger-strike-for-18-days?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Girl has multiple surgeries to control infections after strike in Gaza",
-              "link": "https://www.bbc.co.uk/news/videos/c8n5d0e0n6wdo?at_medium=RSS&at_campaign=rss",
-              "source": "bbc"
-            },
-            {
-              "title": "Public workers in France strike over pay as student protests turn violent",
-              "link": "https://www.aljazeera.com/news/2026/9/30/french-public-workers-strike-over-pay-as-student-protests-turn-violent?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Israeli Settlers Stop Soldiers From Returning Palestinians to Their Home",
-              "link": "https://www.nytimes.com/2026/09/29/world/middleeast/west-bank-israel-settlers-attack-soldiers-palestinians.html",
+              "title": "Democrats in Congress Embrace a More Punitive Posture Toward Israel",
+              "link": "https://www.nytimes.com/2026/09/29/us/politics/democrats-congress-israel.html",
               "source": "nytimes"
             },
             {
-              "title": "Tankers Are Loading Oil Again From a Vital Saudi Pipeline",
-              "link": "https://www.nytimes.com/2026/09/29/business/oil-saudi-east-west-pipeline.html",
+              "title": "Why a U.S. Diesel Export Ban May Backfire",
+              "link": "https://www.nytimes.com/2026/09/25/business/energy-environment/trump-diesel-export-ban.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Netanyahu is using Mamdani as a foil in his re-election campaign | Mohamad Bazzi",
+              "link": "https://www.theguardian.com/commentisfree/2026/sep/28/netanyahu-re-election-mamdani",
+              "source": "guardian"
+            },
+            {
+              "title": "Iran Still Awaits ‘Official’ U.S. Response Despite Trump’s Rebuff of Cease-Fire Offer",
+              "link": "https://www.nytimes.com/2026/09/27/world/middleeast/iran-trump-ceasefire-strait-of-hormuz.html",
               "source": "nytimes"
             }
           ]
         },
         "diplomacy": {
-          "count": 7,
+          "count": 2,
           "titles": [
-            {
-              "title": "Trump backs AI self-regulation at tech summit but is it enough?",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/9/30/trump-backs-ai-self-regulation-at-tech-summit-but-is-it-enough?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "US Senate blocks resolution seeking report on Americans killed in West Bank",
-              "link": "https://www.aljazeera.com/news/2026/9/30/us-senate-blocks-resolution-seeking-report-on-americans-killed-in-west-bank?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "‘Nothing is justifying this’: Qatar’s PM slams Israel’s atrocities in Gaza",
-              "link": "https://www.aljazeera.com/news/2026/9/29/nothing-is-justifying-this-qatari-pm-slams-atrocities-in-gaza?traffic_source=rss",
-              "source": "aljazeera"
-            },
             {
               "title": "Oil Prices Climb on Continued Impasse in U.S.-Iran Talks",
               "link": "https://www.nytimes.com/2026/09/28/business/oil-stocks-gas-prices.html",
@@ -1108,36 +1138,6 @@
             {
               "title": "UN ambassador Waltz says Iran was not negotiating ‘in good faith’ to end war",
               "link": "https://www.theguardian.com/us-news/2026/sep/27/trump-un-ambassador-iran-war",
-              "source": "guardian"
-            }
-          ]
-        },
-        "other": {
-          "count": 8,
-          "titles": [
-            {
-              "title": "Indonesia suspends five officials over luxury apartments for inmates",
-              "link": "https://www.aljazeera.com/news/2026/9/30/indonesia-suspends-five-officials-over-luxury-apartments-for-inmates?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Iran court upholds lashes sentence for singer who performed without hijab",
-              "link": "https://www.bbc.co.uk/news/articles/crn45ed1kqqgo?at_medium=RSS&at_campaign=rss",
-              "source": "bbc"
-            },
-            {
-              "title": "Israel does not have right to close UK consulate in Jerusalem, Foreign Office advised",
-              "link": "https://www.theguardian.com/politics/2026/sep/28/israel-no-right-close-jerusalem-uk-consulate-foreign-office-advised",
-              "source": "guardian"
-            },
-            {
-              "title": "Price of diesel on UK forecourts reaches all-time high",
-              "link": "https://www.theguardian.com/money/2026/sep/28/price-of-diesel-on-uk-forecourts-reaches-all-time-high",
-              "source": "guardian"
-            },
-            {
-              "title": "UN adds 61 firms to settlements blacklist over alleged human rights violations against Palestinians",
-              "link": "https://www.theguardian.com/world/2026/sep/26/un-companies-israeli-settlements-blacklist-alleged-palestinian-rights-violations",
               "source": "guardian"
             }
           ]
@@ -1232,56 +1232,56 @@
     }
   ],
   "economic_indicators": {
-    "DXY": {
-      "price": 101.25,
-      "change": -0.12,
-      "changePercent": -0.12,
-      "prev": 101.37
-    },
-    "WTI": {
-      "price": 89.48,
-      "change": 0.1,
-      "changePercent": 0.11,
-      "prev": 89.38
-    },
-    "GOLD": {
-      "price": 4232.9,
-      "change": 53.2,
-      "changePercent": 1.27,
-      "prev": 4179.7
-    },
-    "BRENT": {
-      "price": 96.42,
-      "change": -6.17,
-      "changePercent": -6.01,
-      "prev": 102.59
-    },
     "VIX": {
-      "price": 15.89,
-      "change": -0.15,
-      "changePercent": -0.94,
+      "price": 15.92,
+      "change": -0.12,
+      "changePercent": -0.75,
       "prev": 16.04
     },
+    "GOLD": {
+      "price": 4189.5,
+      "change": 9.8,
+      "changePercent": 0.23,
+      "prev": 4179.7
+    },
     "US10Y": {
-      "price": 5.25,
+      "price": 5.28,
       "change": 0.02,
       "changePercent": 0.38,
-      "prev": 5.24
+      "prev": 5.26
     },
     "US2Y": {
-      "price": 4.07,
-      "change": 0.01,
-      "changePercent": 0.25,
-      "prev": 4.06
+      "price": 4.03,
+      "change": -0.03,
+      "changePercent": -0.74,
+      "prev": 4.07
+    },
+    "WTI": {
+      "price": 91.9,
+      "change": 2.52,
+      "changePercent": 2.82,
+      "prev": 89.38
+    },
+    "DXY": {
+      "price": 101.27,
+      "change": -0.1,
+      "changePercent": -0.1,
+      "prev": 101.37
+    },
+    "BRENT": {
+      "price": 99.19,
+      "change": -3.4,
+      "changePercent": -3.31,
+      "prev": 102.59
     }
   },
   "critical_events": [
     {
-      "id": "ceasefire_agreement",
-      "name": "공식 휴전/평화 합의",
-      "severity": "critical",
-      "confidence": 0.8666666666666667,
-      "matchCount": 2.6,
+      "id": "unilateral_deescalation",
+      "name": "일방적 전투 축소/자제 선언",
+      "severity": "high",
+      "confidence": 1,
+      "matchCount": 6,
       "direction": "shorten"
     },
     {
@@ -1291,14 +1291,6 @@
       "confidence": 0.6666666666666666,
       "matchCount": 2,
       "direction": "shorten"
-    },
-    {
-      "id": "wmd_threat",
-      "name": "대량살상무기(WMD)/핵 위협",
-      "severity": "critical",
-      "confidence": 0.8666666666666667,
-      "matchCount": 2.6,
-      "direction": "lengthen"
     }
   ],
   "feeds_loaded": 7,
