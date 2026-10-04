@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-10-04T06:09:41.554Z",
+  "timestamp": "2026-10-04T12:42:10.601Z",
   "war_day": 218,
   "probabilities": {
-    "1개월 내 (~3월)": 21.5,
-    "2~3개월 (4~5월)": 42.1,
-    "4~6개월 (6~8월)": 22.5,
-    "7~12개월 (9월~27/2월)": 10.2,
-    "1년 초과": 3.7
+    "1개월 내 (~3월)": 23.7,
+    "2~3개월 (4~5월)": 41.5,
+    "4~6개월 (6~8월)": 23.2,
+    "7~12개월 (9월~27/2월)": 8.9,
+    "1년 초과": 2.7
   },
   "factors": [
     {
@@ -45,8 +45,8 @@
       "decay": 0.4
     },
     {
-      "factor": "확전 뉴스 우세 (확전4:휴전4)",
-      "impact": "전쟁 장기화 가능성 (확전비율 50%)",
+      "factor": "확전 뉴스 우세 (확전6:휴전4)",
+      "impact": "전쟁 장기화 가능성 (확전비율 60%)",
       "weight": "+0.02%p (4~6개월)",
       "direction": "lengthen",
       "detail": "언론에서 휴전보다 확전을 더 많이 보도하고 있습니다.",
@@ -164,11 +164,11 @@
       "decay": 1
     },
     {
-      "factor": "협상/외교 뉴스 4건 감지",
+      "factor": "협상/외교 뉴스 6건 감지",
       "impact": "외교적 해결 움직임 포착",
       "weight": "+0.01%p (1개월내), +0.01%p (2~3개월)",
       "direction": "shorten",
-      "detail": "실시간 뉴스에서 협상 관련 기사 4건이 감지되었습니다.",
+      "detail": "실시간 뉴스에서 협상 관련 기사 6건이 감지되었습니다.",
       "keywords": [
         "negotiat",
         "talks",
@@ -181,11 +181,11 @@
       "decay": 1
     },
     {
-      "factor": "지역 확산 뉴스 14건 감지",
+      "factor": "지역 확산 뉴스 12건 감지",
       "impact": "주변국 연루 확대로 장기화 위험",
       "weight": "+0.01%p (4~6개월), +0.01%p (7~12개월)",
       "direction": "lengthen",
-      "detail": "주변국을 언급하는 기사 14건이 감지되었습니다.",
+      "detail": "주변국을 언급하는 기사 12건이 감지되었습니다.",
       "keywords": [
         "saudi",
         "uae",
@@ -234,11 +234,39 @@
       "decay": 0.3
     },
     {
+      "factor": "[중대 이벤트] 교전국 정권 붕괴/쿠데타",
+      "impact": "교전국 정권 붕괴 또는 쿠데타. 이라크(2003): 바그다드 함락 후 3주 내 주요 전투 종료. 리비아(2011): 트리폴리 함락 후 2개월 내 종전.",
+      "weight": "+6.7%p (1개월내), +5.3%p (2~3개월), +1.3%p (4~6개월), -3.3%p (7~12개월), -2.7%p (1년초과)",
+      "direction": "shorten",
+      "detail": "교전국 정권 붕괴 또는 쿠데타. 이라크(2003): 바그다드 함락 후 3주 내 주요 전투 종료. 리비아(2011): 트리폴리 함락 후 2개월 내 종전.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Ethiopian government forces seize Tigray capital Mekelle as TPLF withdraws",
+      "keywords": [
+        "regime",
+        "collaps",
+        "regime",
+        "fall",
+        "government",
+        "fall",
+        "capital",
+        "fall",
+        "capital",
+        "captur",
+        "coup",
+        "detat",
+        "government",
+        "overthrow",
+        "regime",
+        "change"
+      ],
+      "applied": "2026-10-04",
+      "active": true,
+      "severity": "critical"
+    },
+    {
       "factor": "[중대 이벤트] 일방적 전투 축소/자제 선언",
       "impact": "교전국의 일방적 전투 축소 또는 자제 선언. 역사적으로 패전국의 자발적 전선 축소는 80% 이상 공식 항복의 전조.",
       "weight": "+5.0%p (1개월내), +7.0%p (2~3개월), -3.0%p (4~6개월), -3.0%p (7~12개월), -1.0%p (1년초과)",
       "direction": "shorten",
-      "detail": "교전국의 일방적 전투 축소 또는 자제 선언. 역사적으로 패전국의 자발적 전선 축소는 80% 이상 공식 항복의 전조.\n\n신뢰도: 확실 (100%), 관련 기사 4건 감지.\n관련: Airlines Set to Bring Israelis Back From U.A.E. After FlyDubai Cockpit Attack | Last UK and US troops leave Iraq as anti-Islamic State mission ends",
+      "detail": "교전국의 일방적 전투 축소 또는 자제 선언. 역사적으로 패전국의 자발적 전선 축소는 80% 이상 공식 항복의 전조.\n\n신뢰도: 확실 (100%), 관련 기사 6건 감지.\n관련: Ethiopian government forces seize Tigray capital Mekelle as TPLF withdraws | Airlines Set to Bring Israelis Back From U.A.E. After FlyDubai Cockpit Attack | Last UK and US troops leave Iraq as anti-Islamic State mission ends",
       "keywords": [
         "halt",
         "attack",
@@ -272,7 +300,7 @@
       "impact": "수도 직접 공격. 베오그라드(1999): 78일 폭격 후 항복. 바그다드(2003): 21일만에 함락. 수도 타격은 전쟁 지속 의지를 급격히 약화.",
       "weight": "+4.0%p (1개월내), +6.0%p (2~3개월), -2.0%p (4~6개월), -2.0%p (7~12개월), -1.0%p (1년초과)",
       "direction": "shorten",
-      "detail": "수도 직접 공격. 베오그라드(1999): 78일 폭격 후 항복. 바그다드(2003): 21일만에 함락. 수도 타격은 전쟁 지속 의지를 급격히 약화.\n\n신뢰도: 확실 (100%), 관련 기사 4건 감지.\n관련: Iran war live: Yemeni forces strike Sanaa as Trump warns Tehran of hard way | Fighting Intensifies in Yemen, Raising Fresh Fears of All-Out War",
+      "detail": "수도 직접 공격. 베오그라드(1999): 78일 폭격 후 항복. 바그다드(2003): 21일만에 함락. 수도 타격은 전쟁 지속 의지를 급격히 약화.\n\n신뢰도: 확실 (100%), 관련 기사 6건 감지.\n관련: Russia hits Kyiv bridge as Germany’s Merz visits Ukraine’s capital | Houthis Claim Attack on Aramco as Yemen Conflict Escalates | Fighting Intensifies in Yemen, Raising Fresh Fears of All-Out War",
       "keywords": [
         "capital",
         "bomb",
@@ -300,37 +328,11 @@
       "severity": "high"
     },
     {
-      "factor": "[중대 이벤트] 대규모 인도주의 위기",
-      "impact": "대규모 인도주의 위기. 국제사회 개입 압력 증가. 코소보(1999): 난민 위기가 NATO 작전 가속화. 인도적 위기는 국제 종전 압력을 2~3배 강화.",
-      "weight": "+1.3%p (1개월내), +2.7%p (2~3개월), +0.7%p (4~6개월), -0.7%p (7~12개월), -0.7%p (1년초과)",
-      "direction": "shorten",
-      "detail": "대규모 인도주의 위기. 국제사회 개입 압력 증가. 코소보(1999): 난민 위기가 NATO 작전 가속화. 인도적 위기는 국제 종전 압력을 2~3배 강화.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Pelosi-backed US candidate calls for ‘full arms embargo’ on Israel",
-      "keywords": [
-        "humanitarian",
-        "catastroph",
-        "civilian",
-        "massacre",
-        "genocide",
-        "refugee",
-        "crisis",
-        "humanitarian",
-        "crisis",
-        "war crime",
-        "evidence",
-        "civilian death",
-        "thousand",
-        "ethnic cleansing"
-      ],
-      "applied": "2026-10-04",
-      "active": true,
-      "severity": "high"
-    },
-    {
       "factor": "[중대 이벤트] 전선 확대/신규 참전국",
       "impact": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).",
-      "weight": "-1.3%p (1개월내), -2.0%p (2~3개월), +2.7%p (4~6개월), +2.0%p (7~12개월), +1.3%p (1년초과)",
+      "weight": "-2.0%p (1개월내), -3.0%p (2~3개월), +4.0%p (4~6개월), +3.0%p (7~12개월), +2.0%p (1년초과)",
       "direction": "lengthen",
-      "detail": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: AI weapons systems are already here. Algorithms must not decide who lives and dies | Kenneth Roth",
+      "detail": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).\n\n신뢰도: 확실 (100%), 관련 기사 4건 감지.\n관련: Houthis Claim Attack on Aramco as Yemen Conflict Escalates | AI weapons systems are already here. Algorithms must not decide who lives and dies | Kenneth Roth",
       "keywords": [
         "new front",
         "war spread",
@@ -402,23 +404,143 @@
   ],
   "news_signals": {
     "ceasefire_mentions": 4,
-    "escalation_mentions": 4,
-    "negotiation_mentions": 4,
+    "escalation_mentions": 6,
+    "negotiation_mentions": 6,
     "casualty_mentions": 6,
     "peace_mentions": 4,
-    "regional_spread": 14,
+    "regional_spread": 12,
     "total_articles": 50,
     "new_articles": 50,
-    "unique_events": 47,
-    "duplicates_removed": 3
+    "unique_events": 49,
+    "duplicates_removed": 1
   },
   "latest_news": [
     {
-      "title": "Somalia President: Houthis ‘not in a position’ to bring Yemen peace",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/10/4/somalia-president-houthis-not-in-a-position-to-bring-yemen-peace?traffic_source=rss",
-      "pubDate": "Sun, 04 Oct 2026 05:00:40 +0000",
+      "title": "Russia hits Kyiv bridge as Germany’s Merz visits Ukraine’s capital",
+      "link": "https://www.aljazeera.com/news/2026/10/4/russian-strike-hits-kyiv-bridge-as-german-chancellor-visits-ukraine?traffic_source=rss",
+      "pubDate": "Sun, 04 Oct 2026 11:58:14 +0000",
       "source": "aljazeera",
-      "snippet": "Somalia’s president accuses the Houthis of destabilising the region and disrupting navigation through the Bab al-Mandeb ",
+      "snippet": "German chancellor visits Kyiv amid air raid sirens, pledging strong support as Russian strikes disrupt the capital.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Israeli Authorities Trade Blame for Failure to Flag FlyDubai Co-Pilot",
+      "link": "https://www.nytimes.com/2026/10/04/world/middleeast/flydubai-israel-debate-pilot-security.html",
+      "pubDate": "Sun, 04 Oct 2026 11:34:40 +0000",
+      "source": "nytimes",
+      "snippet": "The Omani co-pilot who officials said tried to crash the plane was said to have embraced extremist Islamist views.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Iran says Hormuz to remain closed until US meets conditions",
+      "link": "https://www.aljazeera.com/news/2026/10/4/iran-says-strait-of-hormuz-to-remain-closed-until-us-meets-conditions?traffic_source=rss",
+      "pubDate": "Sun, 04 Oct 2026 11:11:30 +0000",
+      "source": "aljazeera",
+      "snippet": "Tehran says reopening Strait of Hormuz has been its main goal, while the US continues to focus on nuclear talks.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Ethiopian government forces seize Tigray capital Mekelle as TPLF withdraws",
+      "link": "https://www.aljazeera.com/news/2026/10/4/government-forces-seize-capital-of-ethiopias-tigray-region-from-rebels?traffic_source=rss",
+      "pubDate": "Sun, 04 Oct 2026 11:05:02 +0000",
+      "source": "aljazeera",
+      "snippet": "Federal troops and allied fighters seen in control of the city after capturing main regional airport.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Houthis Claim Attack on Aramco as Yemen Conflict Escalates",
+      "link": "https://www.nytimes.com/2026/10/04/world/middleeast/houthis-oil-attack-saudi-arabia-yemen.html",
+      "pubDate": "Sun, 04 Oct 2026 10:45:50 +0000",
+      "source": "nytimes",
+      "snippet": "The Iran-backed militia said it targeted an Aramco site in Saudi Arabia’s capital, Riyadh, and fresh airstrikes hit the Yemeni capital, raising fears of a widening war.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Russia’s nuclear plants are ageing. Who will pay to dismantle them?",
+      "link": "https://www.aljazeera.com/opinions/2026/10/4/russias-nuclear-plants-are-ageing-who-will-pay-to-dismantle-them?traffic_source=rss",
+      "pubDate": "Sun, 04 Oct 2026 10:44:23 +0000",
+      "source": "aljazeera",
+      "snippet": "Moscow faces a huge decommissioning bill at home even as it expands its nuclear industry abroad.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Tributes as Bosnian football star Edin Dzeko retires",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/10/4/tributes-as-bosnian-football-star-edin-dzeko-retires?traffic_source=rss",
+      "pubDate": "Sun, 04 Oct 2026 10:04:54 +0000",
+      "source": "aljazeera",
+      "snippet": "Bosnia and Herzegovina&#039;s legendary striker Edin Dzeko has bid farewell to international football after a final match.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Omani Co-Pilot on FlyDubai Flight Is Said to Have Extremist Views",
+      "link": "https://www.nytimes.com/2026/10/03/world/middleeast/oman-flydubai-flight-1073-pilot-radicalized.html",
+      "pubDate": "Sun, 04 Oct 2026 08:31:45 +0000",
+      "source": "nytimes",
+      "snippet": "It was unclear what background checks had been carried out before he was allowed to fly to Israel.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Gaza’s Christians mourn mother and daughter killed in Israeli attack",
+      "link": "https://www.aljazeera.com/news/2026/10/4/gazas-christians-mourn-mother-and-daughter-killed-in-israeli-attack?traffic_source=rss",
+      "pubDate": "Sun, 04 Oct 2026 08:02:38 +0000",
+      "source": "aljazeera",
+      "snippet": "Maysa Abu Daoud and her daughter Mary al-Najjar among five Palestinians killed in Gaza City attack.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Fury to invite US President Trump to lead ring walk before Joshua fight",
+      "link": "https://www.aljazeera.com/sports/2026/10/4/fury-to-invite-us-president-trump-to-lead-ring-walk-before-joshua-fight?traffic_source=rss",
+      "pubDate": "Sun, 04 Oct 2026 07:21:19 +0000",
+      "source": "aljazeera",
+      "snippet": "Tyson Fury is keen for his &#039;old pal&#039; to join his procession to the ring for the fight on December 11 in Cardiff.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Australia investigating Flydubai co-pilot's links to country",
+      "link": "https://www.bbc.co.uk/news/articles/cxly4nym57q9o?at_medium=RSS&at_campaign=rss",
+      "pubDate": "Sun, 04 Oct 2026 06:19:17 GMT",
+      "source": "bbc",
+      "snippet": "State police and the country's security agency are looking into the co-pilot, who attempted to take control of a Flydubai plane travelling to Israel.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -431,102 +553,6 @@
       "pubDate": "Sun, 04 Oct 2026 04:57:20 GMT",
       "source": "bbc",
       "snippet": "The man accused of trying to take over the Israel-bound jet is named as Hamam al-Hammami by several media outlets.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Trump defiant about midterm chances as he rallies for Republicans in Ohio",
-      "link": "https://www.aljazeera.com/news/2026/10/4/trump-defiant-about-midterm-chances-as-he-rallies-for-republicans-in-ohio?traffic_source=rss",
-      "pubDate": "Sun, 04 Oct 2026 04:10:17 +0000",
-      "source": "aljazeera",
-      "snippet": "US president tells a rally in Ohio that he believes there will be a &#039;big surprise&#039; in the upcoming elections.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Houthis claim strike on Aramco site as Yemen fighting intensifies",
-      "link": "https://www.aljazeera.com/news/2026/10/4/houthis-claim-strike-on-saudi-energy-facility-as-yemen-fighting-intensifies?traffic_source=rss",
-      "pubDate": "Sun, 04 Oct 2026 03:33:49 +0000",
-      "source": "aljazeera",
-      "snippet": "Spokesman for Saudi-led coalition supporting Yemen government says Houthi claims of targeting Riyadh are &#039;misleading&#039;.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Iran war live: Yemeni forces strike Sanaa as Trump warns Tehran of hard way",
-      "link": "https://www.aljazeera.com/news/liveblog/2026/10/4/iran-war-live-yemeni-forces-strike-sanaa-as-trump-warns-tehran-of-hard-way?traffic_source=rss",
-      "pubDate": "Sun, 04 Oct 2026 00:00:29 +0000",
-      "source": "aljazeera",
-      "snippet": "Fighting in Yemen displaces more civilians, as Trump says a decision on Iran is coming. ",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Pelosi-backed US candidate calls for ‘full arms embargo’ on Israel",
-      "link": "https://www.aljazeera.com/news/2026/10/3/pelosi-backed-us-candidate-calls-for-full-arms-embargo-on-israel?traffic_source=rss",
-      "pubDate": "Sat, 03 Oct 2026 22:43:58 +0000",
-      "source": "aljazeera",
-      "snippet": "Connie Chan, endorsed by Nancy Pelosi to succeed her in California, says she will vote to &#039;end a genocide in Gaza&#039;.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Israeli settlers attack Palestinian farmers during olive harvest",
-      "link": "https://www.aljazeera.com/video/2026/10/3/israeli-settlers-attack-palestinian-farmers-during-olive-harvest-2?traffic_source=rss",
-      "pubDate": "Sat, 03 Oct 2026 21:15:05 +0000",
-      "source": "aljazeera",
-      "snippet": "Israeli settlers attack Palestinian farmers during olive harvest",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Trump ramps up pressure on US Republicans to end US clock switching",
-      "link": "https://www.aljazeera.com/news/2026/10/3/trump-ramps-up-pressure-on-us-republicans-to-end-us-clock-switching?traffic_source=rss",
-      "pubDate": "Sat, 03 Oct 2026 20:16:50 +0000",
-      "source": "aljazeera",
-      "snippet": "The US president published a lawmaker&#039;s cell phone number as he called for the passage of a bill making DST permanent.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Funeral held at Gaza church for mother and daughter killed in Gaza strike",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/10/3/funeral-held-at-gaza-church-for-mother-and-daughter-killed-in-gaza-strike?traffic_source=rss",
-      "pubDate": "Sat, 03 Oct 2026 20:10:17 +0000",
-      "source": "aljazeera",
-      "snippet": "Funeral prayers were held at Gaza City’s Saint Porphyrius Greek Orthodox Church for a Palestinian mother and daughter.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Al Jazeera speaks to Palestinian schoolboy from viral photograph",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/10/3/al-jazeera-speaks-to-palestinian-schoolboy-from-viral-photograph?traffic_source=rss",
-      "pubDate": "Sat, 03 Oct 2026 18:49:03 +0000",
-      "source": "aljazeera",
-      "snippet": "A photo went viral of a Palestinian boy hiding from Israeli forces on his way home from class in the occupied West Bank.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -568,30 +594,6 @@
       "_isDuplicated": false,
       "_clusterSize": 1,
       "_isDuplicate": false
-    },
-    {
-      "title": "Omani Co-Pilot on FlyDubai Flight Is Said to Have Extremist Views",
-      "link": "https://www.nytimes.com/2026/10/03/world/middleeast/oman-flydubai-flight-1073-pilot-radicalized.html",
-      "pubDate": "Sat, 03 Oct 2026 12:58:53 +0000",
-      "source": "nytimes",
-      "snippet": "It was unclear what background checks had been carried out before he was allowed to fly to Israel.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Iraq Wins U.S. Permission to Resume Iran Flights, Prime Minister Says",
-      "link": "https://www.nytimes.com/2026/10/03/world/middleeast/iraq-iran-flights-us-sanctions.html",
-      "pubDate": "Sat, 03 Oct 2026 10:25:33 +0000",
-      "source": "nytimes",
-      "snippet": "Flights between the neighboring countries had been halted after broad U.S. penalties on Iran’s aviation industry.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
     }
   ],
   "news_digest": {
@@ -600,9 +602,75 @@
         "category_id": "military",
         "category_name": "군사 작전",
         "category_icon": "⚔️",
-        "count": 28,
-        "new_count": 28,
+        "count": 30,
+        "new_count": 30,
         "articles": [
+          {
+            "title": "Russia hits Kyiv bridge as Germany’s Merz visits Ukraine’s capital",
+            "link": "https://www.aljazeera.com/news/2026/10/4/russian-strike-hits-kyiv-bridge-as-german-chancellor-visits-ukraine?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Sun, 04 Oct 2026 11:58:14 +0000",
+            "snippet": "German chancellor visits Kyiv amid air raid sirens, pledging strong support as Russian strikes disrupt the capital.",
+            "isNew": true
+          },
+          {
+            "title": "Ethiopian government forces seize Tigray capital Mekelle as TPLF withdraws",
+            "link": "https://www.aljazeera.com/news/2026/10/4/government-forces-seize-capital-of-ethiopias-tigray-region-from-rebels?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Sun, 04 Oct 2026 11:05:02 +0000",
+            "snippet": "Federal troops and allied fighters seen in control of the city after capturing main regional airport.",
+            "isNew": true
+          },
+          {
+            "title": "Houthis Claim Attack on Aramco as Yemen Conflict Escalates",
+            "link": "https://www.nytimes.com/2026/10/04/world/middleeast/houthis-oil-attack-saudi-arabia-yemen.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Sun, 04 Oct 2026 10:45:50 +0000",
+            "snippet": "The Iran-backed militia said it targeted an Aramco site in Saudi Arabia’s capital, Riyadh, and fresh airstrikes hit the Yemeni capital, raising fears of a widening war.",
+            "isNew": true
+          },
+          {
+            "title": "Tributes as Bosnian football star Edin Dzeko retires",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/10/4/tributes-as-bosnian-football-star-edin-dzeko-retires?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Sun, 04 Oct 2026 10:04:54 +0000",
+            "snippet": "Bosnia and Herzegovina&#039;s legendary striker Edin Dzeko has bid farewell to international football after a final match.",
+            "isNew": true
+          },
+          {
+            "title": "Omani Co-Pilot on FlyDubai Flight Is Said to Have Extremist Views",
+            "link": "https://www.nytimes.com/2026/10/03/world/middleeast/oman-flydubai-flight-1073-pilot-radicalized.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Sun, 04 Oct 2026 08:31:45 +0000",
+            "snippet": "It was unclear what background checks had been carried out before he was allowed to fly to Israel.",
+            "isNew": true
+          },
+          {
+            "title": "Gaza’s Christians mourn mother and daughter killed in Israeli attack",
+            "link": "https://www.aljazeera.com/news/2026/10/4/gazas-christians-mourn-mother-and-daughter-killed-in-israeli-attack?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Sun, 04 Oct 2026 08:02:38 +0000",
+            "snippet": "Maysa Abu Daoud and her daughter Mary al-Najjar among five Palestinians killed in Gaza City attack.",
+            "isNew": true
+          },
           {
             "title": "Flydubai co-pilot attacked captain with axe, UAE official says",
             "link": "https://www.bbc.co.uk/news/articles/c61wv7lgex13o?at_medium=RSS&at_campaign=rss",
@@ -612,39 +680,6 @@
             ],
             "pubDate": "Sun, 04 Oct 2026 04:57:20 GMT",
             "snippet": "The man accused of trying to take over the Israel-bound jet is named as Hamam al-Hammami by several media outlets.",
-            "isNew": true
-          },
-          {
-            "title": "Iran war live: Yemeni forces strike Sanaa as Trump warns Tehran of hard way",
-            "link": "https://www.aljazeera.com/news/liveblog/2026/10/4/iran-war-live-yemeni-forces-strike-sanaa-as-trump-warns-tehran-of-hard-way?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sun, 04 Oct 2026 00:00:29 +0000",
-            "snippet": "Fighting in Yemen displaces more civilians, as Trump says a decision on Iran is coming. ",
-            "isNew": true
-          },
-          {
-            "title": "Israeli settlers attack Palestinian farmers during olive harvest",
-            "link": "https://www.aljazeera.com/video/2026/10/3/israeli-settlers-attack-palestinian-farmers-during-olive-harvest-2?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sat, 03 Oct 2026 21:15:05 +0000",
-            "snippet": "Israeli settlers attack Palestinian farmers during olive harvest",
-            "isNew": true
-          },
-          {
-            "title": "Funeral held at Gaza church for mother and daughter killed in Gaza strike",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/10/3/funeral-held-at-gaza-church-for-mother-and-daughter-killed-in-gaza-strike?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sat, 03 Oct 2026 20:10:17 +0000",
-            "snippet": "Funeral prayers were held at Gaza City’s Saint Porphyrius Greek Orthodox Church for a Palestinian mother and daughter.",
             "isNew": true
           },
           {
@@ -679,91 +714,122 @@
             "pubDate": "Sat, 03 Oct 2026 14:52:27 +0000",
             "snippet": "The violent midair assault on a FlyDubai flight to Tel Aviv has deepened concerns about the safety of Israelis traveling abroad.",
             "isNew": true
+          }
+        ]
+      },
+      {
+        "category_id": "other",
+        "category_name": "기타",
+        "category_icon": "📰",
+        "count": 5,
+        "new_count": 5,
+        "articles": [
+          {
+            "title": "Australia investigating Flydubai co-pilot's links to country",
+            "link": "https://www.bbc.co.uk/news/articles/cxly4nym57q9o?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc"
+            ],
+            "pubDate": "Sun, 04 Oct 2026 06:19:17 GMT",
+            "snippet": "State police and the country's security agency are looking into the co-pilot, who attempted to take control of a Flydubai plane travelling to Israel.",
+            "isNew": true
           },
           {
-            "title": "Omani Co-Pilot on FlyDubai Flight Is Said to Have Extremist Views",
-            "link": "https://www.nytimes.com/2026/10/03/world/middleeast/oman-flydubai-flight-1073-pilot-radicalized.html",
+            "title": "Israelis Take Pride in Bravery of Passengers Who Saved FlyDubai Flight",
+            "link": "https://www.nytimes.com/2026/10/01/world/middleeast/israel-passengers-flight-1073.html",
             "source": "nytimes",
             "sources": [
               "nytimes"
             ],
-            "pubDate": "Sat, 03 Oct 2026 12:58:53 +0000",
-            "snippet": "It was unclear what background checks had been carried out before he was allowed to fly to Israel.",
+            "pubDate": "Thu, 01 Oct 2026 18:00:07 +0000",
+            "snippet": "The events evoked days decades ago when Israel was widely admired for its plucky survival against the odds and for taking on hijackers.",
             "isNew": true
           },
           {
-            "title": "Libyan unity talks upended as warlord’s son linked to drone attacks on fuel facilities",
-            "link": "https://www.theguardian.com/world/2026/oct/03/libyan-unity-talks-warlord-son-linked-drone-attack-khalifa-haftar",
-            "source": "guardian",
+            "title": "What we know about stabbing on Flydubai flight to Israel",
+            "link": "https://www.bbc.co.uk/news/articles/cqjdv7pmj9dno?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
             "sources": [
-              "guardian"
+              "bbc"
             ],
-            "pubDate": "Sat, 03 Oct 2026 09:00:56 GMT",
-            "snippet": "Western Libya’s GNU say working with Saddam Haftar ‘impossible’ as US-backed merger plan breaks downAllegations that the son of the Libyan warlord Khalifa Haftar oversaw a “terror cell” that launched ",
+            "pubDate": "Thu, 01 Oct 2026 14:22:14 GMT",
+            "snippet": "A pilot has been arrested and is being questioned after another pilot was stabbed, officials say. ",
             "isNew": true
           },
           {
-            "title": "Fighting Intensifies in Yemen, Raising Fresh Fears of All-Out War",
-            "link": "https://www.nytimes.com/2026/10/02/world/middleeast/yemen-houthis-saudi-arabia-sanaa-taiz.html",
-            "source": "nytimes",
+            "title": "'Shaken and emotional' passengers arrive at Israeli airport",
+            "link": "https://www.bbc.co.uk/news/videos/cmx2z29wx32vo?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
             "sources": [
-              "nytimes"
+              "bbc"
             ],
-            "pubDate": "Fri, 02 Oct 2026 18:06:54 +0000",
-            "snippet": "Yemen’s capital, Sanaa, was bombarded overnight, after government forces reported some of the most intense clashes in years around Taiz, the country’s third largest city.",
+            "pubDate": "Wed, 30 Sep 2026 19:11:20 GMT",
+            "snippet": "The BBC's Yogita Limaye is at Ben Gurion Airport as passengers from the Flydubai flight arrive in Israel.",
+            "isNew": true
+          },
+          {
+            "title": "Passengers describe stabbing on Israel-bound plane",
+            "link": "https://www.bbc.co.uk/news/videos/cv70d22kd34do?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc"
+            ],
+            "pubDate": "Wed, 30 Sep 2026 15:07:00 GMT",
+            "snippet": "Passengers on the Flydubai flight bound for Israel filmed the moments following the stabbing.",
             "isNew": true
           }
         ]
       },
       {
-        "category_id": "politics",
-        "category_name": "국내 정치",
-        "category_icon": "🏛️",
+        "category_id": "economy",
+        "category_name": "경제 영향",
+        "category_icon": "📊",
         "count": 4,
         "new_count": 4,
         "articles": [
           {
-            "title": "Trump defiant about midterm chances as he rallies for Republicans in Ohio",
-            "link": "https://www.aljazeera.com/news/2026/10/4/trump-defiant-about-midterm-chances-as-he-rallies-for-republicans-in-ohio?traffic_source=rss",
-            "source": "aljazeera",
+            "title": "Israeli Authorities Trade Blame for Failure to Flag FlyDubai Co-Pilot",
+            "link": "https://www.nytimes.com/2026/10/04/world/middleeast/flydubai-israel-debate-pilot-security.html",
+            "source": "nytimes",
             "sources": [
-              "aljazeera"
+              "nytimes"
             ],
-            "pubDate": "Sun, 04 Oct 2026 04:10:17 +0000",
-            "snippet": "US president tells a rally in Ohio that he believes there will be a &#039;big surprise&#039; in the upcoming elections.",
+            "pubDate": "Sun, 04 Oct 2026 11:34:40 +0000",
+            "snippet": "The Omani co-pilot who officials said tried to crash the plane was said to have embraced extremist Islamist views.",
             "isNew": true
           },
           {
-            "title": "Pelosi-backed US candidate calls for ‘full arms embargo’ on Israel",
-            "link": "https://www.aljazeera.com/news/2026/10/3/pelosi-backed-us-candidate-calls-for-full-arms-embargo-on-israel?traffic_source=rss",
-            "source": "aljazeera",
+            "title": "US Sanctions A7, a Russia Firm That Helps Sidestep Economic Restrictions",
+            "link": "https://www.nytimes.com/2026/10/01/business/a7-russia-us-sanctions.html",
+            "source": "nytimes",
             "sources": [
-              "aljazeera"
+              "nytimes"
             ],
-            "pubDate": "Sat, 03 Oct 2026 22:43:58 +0000",
-            "snippet": "Connie Chan, endorsed by Nancy Pelosi to succeed her in California, says she will vote to &#039;end a genocide in Gaza&#039;.",
+            "pubDate": "Sat, 03 Oct 2026 00:34:29 +0000",
+            "snippet": "The move followed reports detailing how A7, a Moscow firm, uses shell companies around the world to move funds for clients who are themselves subject to sanctions.",
             "isNew": true
           },
           {
-            "title": "Trump ramps up pressure on US Republicans to end US clock switching",
-            "link": "https://www.aljazeera.com/news/2026/10/3/trump-ramps-up-pressure-on-us-republicans-to-end-us-clock-switching?traffic_source=rss",
-            "source": "aljazeera",
+            "title": "Three reasons Middle East oil supply is nearly back to pre-Iran war levels",
+            "link": "https://www.bbc.co.uk/news/articles/cwp8gn13lmygo?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
             "sources": [
-              "aljazeera"
+              "bbc"
             ],
-            "pubDate": "Sat, 03 Oct 2026 20:16:50 +0000",
-            "snippet": "The US president published a lawmaker&#039;s cell phone number as he called for the passage of a bill making DST permanent.",
+            "pubDate": "Fri, 02 Oct 2026 15:29:28 GMT",
+            "snippet": "Experts say US military assistance, using shuttle tankers and pipelines bypassing the Strait of Hormuz mean exports have rebounded.",
             "isNew": true
           },
           {
-            "title": "From Robert Kraft to Netanyahu, Israel’s supporters keep helping its critics | Peter Beinart",
-            "link": "https://www.theguardian.com/commentisfree/2026/oct/01/robert-kraft-netanyahu-israel-supporters",
+            "title": "Crude oil exports from strait of Hormuz largely return to pre-war levels",
+            "link": "https://www.theguardian.com/business/2026/oct/01/crude-oil-exports-strait-of-hormuz-transport-gulf-region-diesel",
             "source": "guardian",
             "sources": [
               "guardian"
             ],
-            "pubDate": "Thu, 01 Oct 2026 12:00:51 GMT",
-            "snippet": "These men’s actions aren’t just morally loathsome; they’re politically stupid. Social science may explain the phenomenonIsrael’s supporters keep proving its detractors right. Over the last couple of y",
+            "pubDate": "Thu, 01 Oct 2026 15:52:14 GMT",
+            "snippet": "Alternative ways being used to move fuel out of Gulf region, but flows of refined products such as diesel still constrainedExports of crude from the strait of Hormuz have largely returned to levels se",
             "isNew": true
           }
         ]
@@ -776,14 +842,14 @@
         "new_count": 4,
         "articles": [
           {
-            "title": "Houthis claim strike on Aramco site as Yemen fighting intensifies",
-            "link": "https://www.aljazeera.com/news/2026/10/4/houthis-claim-strike-on-saudi-energy-facility-as-yemen-fighting-intensifies?traffic_source=rss",
+            "title": "Russia’s nuclear plants are ageing. Who will pay to dismantle them?",
+            "link": "https://www.aljazeera.com/opinions/2026/10/4/russias-nuclear-plants-are-ageing-who-will-pay-to-dismantle-them?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Sun, 04 Oct 2026 03:33:49 +0000",
-            "snippet": "Spokesman for Saudi-led coalition supporting Yemen government says Houthi claims of targeting Riyadh are &#039;misleading&#039;.",
+            "pubDate": "Sun, 04 Oct 2026 10:44:23 +0000",
+            "snippet": "Moscow faces a huge decommissioning bill at home even as it expands its nuclear industry abroad.",
             "isNew": true
           },
           {
@@ -822,96 +888,43 @@
         ]
       },
       {
-        "category_id": "other",
-        "category_name": "기타",
-        "category_icon": "📰",
-        "count": 4,
-        "new_count": 4,
-        "articles": [
-          {
-            "title": "Al Jazeera speaks to Palestinian schoolboy from viral photograph",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/10/3/al-jazeera-speaks-to-palestinian-schoolboy-from-viral-photograph?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sat, 03 Oct 2026 18:49:03 +0000",
-            "snippet": "A photo went viral of a Palestinian boy hiding from Israeli forces on his way home from class in the occupied West Bank.",
-            "isNew": true
-          },
-          {
-            "title": "Israelis Take Pride in Bravery of Passengers Who Saved FlyDubai Flight",
-            "link": "https://www.nytimes.com/2026/10/01/world/middleeast/israel-passengers-flight-1073.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Thu, 01 Oct 2026 18:00:07 +0000",
-            "snippet": "The events evoked days decades ago when Israel was widely admired for its plucky survival against the odds and for taking on hijackers.",
-            "isNew": true
-          },
-          {
-            "title": "'Shaken and emotional' passengers arrive at Israeli airport",
-            "link": "https://www.bbc.co.uk/news/videos/cmx2z29wx32vo?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
-            "sources": [
-              "bbc"
-            ],
-            "pubDate": "Wed, 30 Sep 2026 19:11:20 GMT",
-            "snippet": "The BBC's Yogita Limaye is at Ben Gurion Airport as passengers from the Flydubai flight arrive in Israel.",
-            "isNew": true
-          },
-          {
-            "title": "Passengers describe stabbing on Israel-bound plane",
-            "link": "https://www.bbc.co.uk/news/videos/cv70d22kd34do?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
-            "sources": [
-              "bbc"
-            ],
-            "pubDate": "Wed, 30 Sep 2026 15:07:00 GMT",
-            "snippet": "Passengers on the Flydubai flight bound for Israel filmed the moments following the stabbing.",
-            "isNew": true
-          }
-        ]
-      },
-      {
-        "category_id": "economy",
-        "category_name": "경제 영향",
-        "category_icon": "📊",
+        "category_id": "politics",
+        "category_name": "국내 정치",
+        "category_icon": "🏛️",
         "count": 3,
         "new_count": 3,
         "articles": [
           {
-            "title": "US Sanctions A7, a Russia Firm That Helps Sidestep Economic Restrictions",
-            "link": "https://www.nytimes.com/2026/10/01/business/a7-russia-us-sanctions.html",
-            "source": "nytimes",
+            "title": "Fury to invite US President Trump to lead ring walk before Joshua fight",
+            "link": "https://www.aljazeera.com/sports/2026/10/4/fury-to-invite-us-president-trump-to-lead-ring-walk-before-joshua-fight?traffic_source=rss",
+            "source": "aljazeera",
             "sources": [
-              "nytimes"
+              "aljazeera"
             ],
-            "pubDate": "Sat, 03 Oct 2026 00:34:29 +0000",
-            "snippet": "The move followed reports detailing how A7, a Moscow firm, uses shell companies around the world to move funds for clients who are themselves subject to sanctions.",
+            "pubDate": "Sun, 04 Oct 2026 07:21:19 +0000",
+            "snippet": "Tyson Fury is keen for his &#039;old pal&#039; to join his procession to the ring for the fight on December 11 in Cardiff.",
             "isNew": true
           },
           {
-            "title": "Three reasons Middle East oil supply is nearly back to pre-Iran war levels",
-            "link": "https://www.bbc.co.uk/news/articles/cwp8gn13lmygo?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
-            "sources": [
-              "bbc"
-            ],
-            "pubDate": "Fri, 02 Oct 2026 15:29:28 GMT",
-            "snippet": "Experts say US military assistance, using shuttle tankers and pipelines bypassing the Strait of Hormuz mean exports have rebounded.",
-            "isNew": true
-          },
-          {
-            "title": "Crude oil exports from strait of Hormuz largely return to pre-war levels",
-            "link": "https://www.theguardian.com/business/2026/oct/01/crude-oil-exports-strait-of-hormuz-transport-gulf-region-diesel",
+            "title": "From Robert Kraft to Netanyahu, Israel’s supporters keep helping its critics | Peter Beinart",
+            "link": "https://www.theguardian.com/commentisfree/2026/oct/01/robert-kraft-netanyahu-israel-supporters",
             "source": "guardian",
             "sources": [
               "guardian"
             ],
-            "pubDate": "Thu, 01 Oct 2026 15:52:14 GMT",
-            "snippet": "Alternative ways being used to move fuel out of Gulf region, but flows of refined products such as diesel still constrainedExports of crude from the strait of Hormuz have largely returned to levels se",
+            "pubDate": "Thu, 01 Oct 2026 12:00:51 GMT",
+            "snippet": "These men’s actions aren’t just morally loathsome; they’re politically stupid. Social science may explain the phenomenonIsrael’s supporters keep proving its detractors right. Over the last couple of y",
+            "isNew": true
+          },
+          {
+            "title": "UK believes Iran involved in RAF Fairford incident, Burnham says",
+            "link": "https://www.bbc.co.uk/news/articles/cjwyz59k5y75o?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc"
+            ],
+            "pubDate": "Wed, 30 Sep 2026 21:26:59 GMT",
+            "snippet": "Iran's foreign minister has responded, saying the PM was \"barking up the wrong tree\". ",
             "isNew": true
           }
         ]
@@ -924,14 +937,14 @@
         "new_count": 2,
         "articles": [
           {
-            "title": "Somalia President: Houthis ‘not in a position’ to bring Yemen peace",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/10/4/somalia-president-houthis-not-in-a-position-to-bring-yemen-peace?traffic_source=rss",
+            "title": "Iran says Hormuz to remain closed until US meets conditions",
+            "link": "https://www.aljazeera.com/news/2026/10/4/iran-says-strait-of-hormuz-to-remain-closed-until-us-meets-conditions?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Sun, 04 Oct 2026 05:00:40 +0000",
-            "snippet": "Somalia’s president accuses the Houthis of destabilising the region and disrupting navigation through the Bab al-Mandeb ",
+            "pubDate": "Sun, 04 Oct 2026 11:11:30 +0000",
+            "snippet": "Tehran says reopening Strait of Hormuz has been its main goal, while the US continues to focus on nuclear talks.",
             "isNew": true
           },
           {
@@ -951,8 +964,8 @@
         "category_id": "humanitarian",
         "category_name": "인도주의/피해",
         "category_icon": "🏥",
-        "count": 2,
-        "new_count": 2,
+        "count": 1,
+        "new_count": 1,
         "articles": [
           {
             "title": "Israel Lists 170 Killed in Gaza It Says Were Militants Posing as Media Workers",
@@ -964,18 +977,6 @@
             "pubDate": "Fri, 02 Oct 2026 20:48:07 +0000",
             "snippet": "The Israeli military published an investigation it said rebuts accusations that it intentionally targeted journalists. But it and a journalists group disagree over 78 people who are on the list.",
             "isNew": true
-          },
-          {
-            "title": "UK Believes Iran Played a Part in RAF Fairford Air Base Incident, Burnham Says",
-            "link": "https://www.nytimes.com/2026/09/30/world/europe/uk-iran-raf-fairford-burnham.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes",
-              "bbc"
-            ],
-            "pubDate": "Wed, 30 Sep 2026 21:31:42 +0000",
-            "snippet": "The British prime minister, Andy Burnham, said there were “strong indications” Iran played a part in the events at R.A.F. Fairford on Sunday, without providing details why.",
-            "isNew": true
           }
         ]
       }
@@ -983,12 +984,67 @@
     "recent_30min": {
       "total_new": 50,
       "by_category": {
+        "military": {
+          "count": 31,
+          "titles": [
+            {
+              "title": "Russia hits Kyiv bridge as Germany’s Merz visits Ukraine’s capital",
+              "link": "https://www.aljazeera.com/news/2026/10/4/russian-strike-hits-kyiv-bridge-as-german-chancellor-visits-ukraine?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Ethiopian government forces seize Tigray capital Mekelle as TPLF withdraws",
+              "link": "https://www.aljazeera.com/news/2026/10/4/government-forces-seize-capital-of-ethiopias-tigray-region-from-rebels?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Houthis Claim Attack on Aramco as Yemen Conflict Escalates",
+              "link": "https://www.nytimes.com/2026/10/04/world/middleeast/houthis-oil-attack-saudi-arabia-yemen.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Tributes as Bosnian football star Edin Dzeko retires",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/10/4/tributes-as-bosnian-football-star-edin-dzeko-retires?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Omani Co-Pilot on FlyDubai Flight Is Said to Have Extremist Views",
+              "link": "https://www.nytimes.com/2026/10/03/world/middleeast/oman-flydubai-flight-1073-pilot-radicalized.html",
+              "source": "nytimes"
+            }
+          ]
+        },
+        "economy": {
+          "count": 4,
+          "titles": [
+            {
+              "title": "Israeli Authorities Trade Blame for Failure to Flag FlyDubai Co-Pilot",
+              "link": "https://www.nytimes.com/2026/10/04/world/middleeast/flydubai-israel-debate-pilot-security.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "US Sanctions A7, a Russia Firm That Helps Sidestep Economic Restrictions",
+              "link": "https://www.nytimes.com/2026/10/01/business/a7-russia-us-sanctions.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Three reasons Middle East oil supply is nearly back to pre-Iran war levels",
+              "link": "https://www.bbc.co.uk/news/articles/cwp8gn13lmygo?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
+            },
+            {
+              "title": "Crude oil exports from strait of Hormuz largely return to pre-war levels",
+              "link": "https://www.theguardian.com/business/2026/oct/01/crude-oil-exports-strait-of-hormuz-transport-gulf-region-diesel",
+              "source": "guardian"
+            }
+          ]
+        },
         "diplomacy": {
           "count": 2,
           "titles": [
             {
-              "title": "Somalia President: Houthis ‘not in a position’ to bring Yemen peace",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/10/4/somalia-president-houthis-not-in-a-position-to-bring-yemen-peace?traffic_source=rss",
+              "title": "Iran says Hormuz to remain closed until US meets conditions",
+              "link": "https://www.aljazeera.com/news/2026/10/4/iran-says-strait-of-hormuz-to-remain-closed-until-us-meets-conditions?traffic_source=rss",
               "source": "aljazeera"
             },
             {
@@ -998,72 +1054,12 @@
             }
           ]
         },
-        "military": {
-          "count": 29,
-          "titles": [
-            {
-              "title": "Flydubai co-pilot attacked captain with axe, UAE official says",
-              "link": "https://www.bbc.co.uk/news/articles/c61wv7lgex13o?at_medium=RSS&at_campaign=rss",
-              "source": "bbc"
-            },
-            {
-              "title": "Iran war live: Yemeni forces strike Sanaa as Trump warns Tehran of hard way",
-              "link": "https://www.aljazeera.com/news/liveblog/2026/10/4/iran-war-live-yemeni-forces-strike-sanaa-as-trump-warns-tehran-of-hard-way?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Israeli settlers attack Palestinian farmers during olive harvest",
-              "link": "https://www.aljazeera.com/video/2026/10/3/israeli-settlers-attack-palestinian-farmers-during-olive-harvest-2?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Funeral held at Gaza church for mother and daughter killed in Gaza strike",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/10/3/funeral-held-at-gaza-church-for-mother-and-daughter-killed-in-gaza-strike?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "How RAF Fairford in a Quiet Corner of England Became a U.S.-Iran Flashpoint",
-              "link": "https://www.nytimes.com/2026/10/03/world/europe/raf-fairford-air-base-incident-iran.html",
-              "source": "nytimes"
-            }
-          ]
-        },
-        "politics": {
-          "count": 5,
-          "titles": [
-            {
-              "title": "Trump defiant about midterm chances as he rallies for Republicans in Ohio",
-              "link": "https://www.aljazeera.com/news/2026/10/4/trump-defiant-about-midterm-chances-as-he-rallies-for-republicans-in-ohio?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Pelosi-backed US candidate calls for ‘full arms embargo’ on Israel",
-              "link": "https://www.aljazeera.com/news/2026/10/3/pelosi-backed-us-candidate-calls-for-full-arms-embargo-on-israel?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Trump ramps up pressure on US Republicans to end US clock switching",
-              "link": "https://www.aljazeera.com/news/2026/10/3/trump-ramps-up-pressure-on-us-republicans-to-end-us-clock-switching?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "From Robert Kraft to Netanyahu, Israel’s supporters keep helping its critics | Peter Beinart",
-              "link": "https://www.theguardian.com/commentisfree/2026/oct/01/robert-kraft-netanyahu-israel-supporters",
-              "source": "guardian"
-            },
-            {
-              "title": "UK believes Iran involved in RAF Fairford incident, Burnham says",
-              "link": "https://www.bbc.co.uk/news/articles/cjwyz59k5y75o?at_medium=RSS&at_campaign=rss",
-              "source": "bbc"
-            }
-          ]
-        },
         "regional": {
           "count": 4,
           "titles": [
             {
-              "title": "Houthis claim strike on Aramco site as Yemen fighting intensifies",
-              "link": "https://www.aljazeera.com/news/2026/10/4/houthis-claim-strike-on-saudi-energy-facility-as-yemen-fighting-intensifies?traffic_source=rss",
+              "title": "Russia’s nuclear plants are ageing. Who will pay to dismantle them?",
+              "link": "https://www.aljazeera.com/opinions/2026/10/4/russias-nuclear-plants-are-ageing-who-will-pay-to-dismantle-them?traffic_source=rss",
               "source": "aljazeera"
             },
             {
@@ -1083,13 +1079,33 @@
             }
           ]
         },
+        "politics": {
+          "count": 3,
+          "titles": [
+            {
+              "title": "Fury to invite US President Trump to lead ring walk before Joshua fight",
+              "link": "https://www.aljazeera.com/sports/2026/10/4/fury-to-invite-us-president-trump-to-lead-ring-walk-before-joshua-fight?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "From Robert Kraft to Netanyahu, Israel’s supporters keep helping its critics | Peter Beinart",
+              "link": "https://www.theguardian.com/commentisfree/2026/oct/01/robert-kraft-netanyahu-israel-supporters",
+              "source": "guardian"
+            },
+            {
+              "title": "UK believes Iran involved in RAF Fairford incident, Burnham says",
+              "link": "https://www.bbc.co.uk/news/articles/cjwyz59k5y75o?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
+            }
+          ]
+        },
         "other": {
           "count": 5,
           "titles": [
             {
-              "title": "Al Jazeera speaks to Palestinian schoolboy from viral photograph",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/10/3/al-jazeera-speaks-to-palestinian-schoolboy-from-viral-photograph?traffic_source=rss",
-              "source": "aljazeera"
+              "title": "Australia investigating Flydubai co-pilot's links to country",
+              "link": "https://www.bbc.co.uk/news/articles/cxly4nym57q9o?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
             },
             {
               "title": "Israelis Take Pride in Bravery of Passengers Who Saved FlyDubai Flight",
@@ -1113,37 +1129,12 @@
             }
           ]
         },
-        "economy": {
-          "count": 3,
-          "titles": [
-            {
-              "title": "US Sanctions A7, a Russia Firm That Helps Sidestep Economic Restrictions",
-              "link": "https://www.nytimes.com/2026/10/01/business/a7-russia-us-sanctions.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Three reasons Middle East oil supply is nearly back to pre-Iran war levels",
-              "link": "https://www.bbc.co.uk/news/articles/cwp8gn13lmygo?at_medium=RSS&at_campaign=rss",
-              "source": "bbc"
-            },
-            {
-              "title": "Crude oil exports from strait of Hormuz largely return to pre-war levels",
-              "link": "https://www.theguardian.com/business/2026/oct/01/crude-oil-exports-strait-of-hormuz-transport-gulf-region-diesel",
-              "source": "guardian"
-            }
-          ]
-        },
         "humanitarian": {
-          "count": 2,
+          "count": 1,
           "titles": [
             {
               "title": "Israel Lists 170 Killed in Gaza It Says Were Militants Posing as Media Workers",
               "link": "https://www.nytimes.com/2026/10/02/world/middleeast/israel-gaza-militants-journalists-killed.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "UK Believes Iran Played a Part in RAF Fairford Air Base Incident, Burnham Says",
-              "link": "https://www.nytimes.com/2026/09/30/world/europe/uk-iran-raf-fairford-burnham.html",
               "source": "nytimes"
             }
           ]
@@ -1238,11 +1229,11 @@
     }
   ],
   "economic_indicators": {
-    "BRENT": {
-      "price": 102.25,
-      "change": -0.06,
-      "changePercent": -0.06,
-      "prev": 102.31
+    "WTI": {
+      "price": 91.11,
+      "change": -1.76,
+      "changePercent": -1.9,
+      "prev": 92.87
     },
     "GOLD": {
       "price": 4162.3,
@@ -1250,23 +1241,11 @@
       "changePercent": -0.95,
       "prev": 4202.3
     },
-    "WTI": {
-      "price": 91.11,
-      "change": -1.76,
-      "changePercent": -1.9,
-      "prev": 92.87
-    },
-    "VIX": {
-      "price": 15.31,
-      "change": -1.08,
-      "changePercent": -6.59,
-      "prev": 16.39
-    },
-    "US10Y": {
-      "price": 5.28,
-      "change": 0.04,
-      "changePercent": 0.76,
-      "prev": 5.24
+    "BRENT": {
+      "price": 102.25,
+      "change": -0.06,
+      "changePercent": -0.06,
+      "prev": 102.31
     },
     "DXY": {
       "price": 101.92,
@@ -1274,20 +1253,40 @@
       "changePercent": -0.18,
       "prev": 102.1
     },
+    "VIX": {
+      "price": 15.31,
+      "change": -1.08,
+      "changePercent": -6.59,
+      "prev": 16.39
+    },
     "US2Y": {
       "price": 3.99,
       "change": 0.01,
       "changePercent": 0.25,
       "prev": 3.98
+    },
+    "US10Y": {
+      "price": 5.28,
+      "change": 0.04,
+      "changePercent": 0.76,
+      "prev": 5.24
     }
   },
   "critical_events": [
+    {
+      "id": "regime_collapse",
+      "name": "교전국 정권 붕괴/쿠데타",
+      "severity": "critical",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "shorten"
+    },
     {
       "id": "unilateral_deescalation",
       "name": "일방적 전투 축소/자제 선언",
       "severity": "high",
       "confidence": 1,
-      "matchCount": 4,
+      "matchCount": 6,
       "direction": "shorten"
     },
     {
@@ -1295,23 +1294,15 @@
       "name": "수도 직접 공격/포위",
       "severity": "high",
       "confidence": 1,
-      "matchCount": 4,
-      "direction": "shorten"
-    },
-    {
-      "id": "humanitarian_crisis",
-      "name": "대규모 인도주의 위기",
-      "severity": "high",
-      "confidence": 0.6666666666666666,
-      "matchCount": 2,
+      "matchCount": 6,
       "direction": "shorten"
     },
     {
       "id": "conflict_expansion",
       "name": "전선 확대/신규 참전국",
       "severity": "moderate",
-      "confidence": 0.6666666666666666,
-      "matchCount": 2,
+      "confidence": 1,
+      "matchCount": 4,
       "direction": "lengthen"
     }
   ],
