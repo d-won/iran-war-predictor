@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-10-06T00:33:39.424Z",
+  "timestamp": "2026-10-06T07:08:39.188Z",
   "war_day": 220,
   "probabilities": {
-    "1개월 내 (~3월)": 20.3,
-    "2~3개월 (4~5월)": 39.9,
-    "4~6개월 (6~8월)": 24,
-    "7~12개월 (9월~27/2월)": 11.9,
-    "1년 초과": 3.9
+    "1개월 내 (~3월)": 19.9,
+    "2~3개월 (4~5월)": 39.3,
+    "4~6개월 (6~8월)": 25.1,
+    "7~12개월 (9월~27/2월)": 11.6,
+    "1년 초과": 4.1
   },
   "factors": [
     {
@@ -45,9 +45,9 @@
       "decay": 0.4
     },
     {
-      "factor": "확전 뉴스 우세 (확전8:휴전4)",
-      "impact": "전쟁 장기화 가능성 (확전비율 67%)",
-      "weight": "+0.03%p (4~6개월)",
+      "factor": "확전 뉴스 우세 (확전8:휴전6)",
+      "impact": "전쟁 장기화 가능성 (확전비율 57%)",
+      "weight": "+0.02%p (4~6개월)",
       "direction": "lengthen",
       "detail": "언론에서 휴전보다 확전을 더 많이 보도하고 있습니다.",
       "keywords": [
@@ -164,11 +164,11 @@
       "decay": 1
     },
     {
-      "factor": "협상/외교 뉴스 8.2건 감지",
+      "factor": "협상/외교 뉴스 8건 감지",
       "impact": "외교적 해결 움직임 포착",
       "weight": "+0.02%p (1개월내), +0.01%p (2~3개월)",
       "direction": "shorten",
-      "detail": "실시간 뉴스에서 협상 관련 기사 8.2건이 감지되었습니다.",
+      "detail": "실시간 뉴스에서 협상 관련 기사 8건이 감지되었습니다.",
       "keywords": [
         "negotiat",
         "talks",
@@ -181,11 +181,11 @@
       "decay": 1
     },
     {
-      "factor": "지역 확산 뉴스 20건 감지",
+      "factor": "지역 확산 뉴스 18건 감지",
       "impact": "주변국 대규모 연루 → 장기화 위험 높음",
       "weight": "+0.02%p (4~6개월), +0.02%p (7~12개월)",
       "direction": "lengthen",
-      "detail": "주변국을 언급하는 기사 20건이 감지되었습니다.",
+      "detail": "주변국을 언급하는 기사 18건이 감지되었습니다.",
       "keywords": [
         "saudi",
         "uae",
@@ -268,6 +268,36 @@
       "severity": "high"
     },
     {
+      "factor": "[중대 이벤트] 외교적 돌파구/강대국 중재",
+      "impact": "주요 외교적 돌파구 또는 강대국 중재. 데이턴(1995): 미국 중재 → 3주만에 합의. UN 안보리 결의는 평균 2~4주 내 휴전 이행.",
+      "weight": "+2.0%p (1개월내), +4.0%p (2~3개월), +1.3%p (4~6개월), -1.3%p (7~12개월), -0.7%p (1년초과)",
+      "direction": "shorten",
+      "detail": "주요 외교적 돌파구 또는 강대국 중재. 데이턴(1995): 미국 중재 → 3주만에 합의. UN 안보리 결의는 평균 2~4주 내 휴전 이행.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: UN rights council condemns attacks on civilians in Sudan, calls for truce",
+      "keywords": [
+        "peace talk",
+        "agree",
+        "diplomatic",
+        "breakthrough",
+        "summit",
+        "peace",
+        "mediati",
+        "accept",
+        "un",
+        "resolution",
+        "ceasefire",
+        "broker",
+        "peace",
+        "negotiat",
+        "breakthrough",
+        "china",
+        "mediat",
+        "peace framework"
+      ],
+      "applied": "2026-10-06",
+      "active": true,
+      "severity": "high"
+    },
+    {
       "factor": "[중대 이벤트] 수도 직접 공격/포위",
       "impact": "수도 직접 공격. 베오그라드(1999): 78일 폭격 후 항복. 바그다드(2003): 21일만에 함락. 수도 타격은 전쟁 지속 의지를 급격히 약화.",
       "weight": "+2.7%p (1개월내), +4.0%p (2~3개월), -1.3%p (4~6개월), -1.3%p (7~12개월), -0.7%p (1년초과)",
@@ -300,11 +330,37 @@
       "severity": "high"
     },
     {
-      "factor": "금값 사상최고 ($4168.4/oz)",
+      "factor": "[중대 이벤트] 전선 확대/신규 참전국",
+      "impact": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).",
+      "weight": "-1.3%p (1개월내), -2.0%p (2~3개월), +2.7%p (4~6개월), +2.0%p (7~12개월), +1.3%p (1년초과)",
+      "direction": "lengthen",
+      "detail": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Mexican and Colombian cartel mercenaries filmed fighting in Ukraine",
+      "keywords": [
+        "new front",
+        "war spread",
+        "conflict expand",
+        "join",
+        "war",
+        "enter",
+        "war",
+        "open",
+        "front",
+        "declare war",
+        "widen",
+        "conflict",
+        "second front",
+        "new theater"
+      ],
+      "applied": "2026-10-06",
+      "active": true,
+      "severity": "moderate"
+    },
+    {
+      "factor": "금값 사상최고 ($4159/oz)",
       "impact": "안전자산 수요 폭증 → 글로벌 불안 심화",
       "weight": "+2%p (4-6개월)",
       "direction": "lengthen",
-      "detail": "금 가격이 온스당 $4168.4로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
+      "detail": "금 가격이 온스당 $4159로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
       "keywords": [
         "gold",
         "safe haven",
@@ -332,18 +388,78 @@
     }
   ],
   "news_signals": {
-    "ceasefire_mentions": 4,
+    "ceasefire_mentions": 6,
     "escalation_mentions": 8,
-    "negotiation_mentions": 8.2,
+    "negotiation_mentions": 8,
     "casualty_mentions": 6,
     "peace_mentions": 2,
-    "regional_spread": 20,
+    "regional_spread": 18,
     "total_articles": 50,
     "new_articles": 49,
-    "unique_events": 47,
-    "duplicates_removed": 3
+    "unique_events": 48,
+    "duplicates_removed": 2
   },
   "latest_news": [
+    {
+      "title": "Widowed twice: A Gaza mother’s story of loss and survival",
+      "link": "https://www.aljazeera.com/features/2026/10/6/widowed-twice-a-gaza-mothers-story-of-loss-and-survival?traffic_source=rss",
+      "pubDate": "Tue, 06 Oct 2026 05:44:39 +0000",
+      "source": "aljazeera",
+      "snippet": "A young mother has lost two husbands and two children during Israel&#039;s genocidal war on Gaza.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Mexican and Colombian cartel mercenaries filmed fighting in Ukraine",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/10/6/mexican-and-colombian-cartel-mercenaries-filmed-fighting-in-ukraine?traffic_source=rss",
+      "pubDate": "Tue, 06 Oct 2026 04:07:48 +0000",
+      "source": "aljazeera",
+      "snippet": "Members of Mexican and Colombian cartels are reportedly joining Ukraine’s International Legion to learn drone warfare.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "UN rights council condemns attacks on civilians in Sudan, calls for truce",
+      "link": "https://www.aljazeera.com/news/2026/10/6/un-rights-council-condemns-attacks-on-civilians-in-sudan-calls-for-truce?traffic_source=rss",
+      "pubDate": "Tue, 06 Oct 2026 02:54:31 +0000",
+      "source": "aljazeera",
+      "snippet": "Resolution demands an immediate ceasefire and extends the mandate of the mission investigating abuses in Sudan.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Trump says taxpayers will no longer fund TV ads that praise him",
+      "link": "https://www.aljazeera.com/news/2026/10/6/trump-says-taxpayers-will-no-longer-fund-tv-ads-that-praise-him?traffic_source=rss",
+      "pubDate": "Tue, 06 Oct 2026 01:51:32 +0000",
+      "source": "aljazeera",
+      "snippet": "Move comes after ethics experts criticised three nationally broadcast ads and called for independent investigations.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "War With Iran Is Forcing the World to Reckon With Geography’s Power",
+      "link": "https://www.nytimes.com/2026/10/05/business/economy/iran-war-oil-geography.html",
+      "pubDate": "Tue, 06 Oct 2026 01:41:22 +0000",
+      "source": "nytimes",
+      "snippet": "Trade blockages in the Persian Gulf have reminded the world that there are forces as great as or greater than technology and globalization.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
     {
       "title": "Police clash with Kosovo protesters over bid to curb Hague war crimes court",
       "link": "https://www.aljazeera.com/news/2026/10/6/police-clash-with-kosovo-protesters-over-bid-to-curb-hague-war-crimes-court?traffic_source=rss",
@@ -429,18 +545,6 @@
       "_isDuplicate": false
     },
     {
-      "title": "War With Iran Is Forcing the World to Reckon With Geography’s Power",
-      "link": "https://www.nytimes.com/2026/10/05/business/economy/iran-war-oil-geography.html",
-      "pubDate": "Mon, 05 Oct 2026 21:43:29 +0000",
-      "source": "nytimes",
-      "snippet": "Trade blockages in the Persian Gulf have reminded the world that there are forces as great as or greater than technology and globalization.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
       "title": "Saudi and Yemeni Forces Attack Houthis to Retake Control of Red Sea Coast",
       "link": "https://www.nytimes.com/2026/10/05/world/middleeast/saudi-arabia-yemen-houthis-bab-al-mandab-strait.html",
       "pubDate": "Mon, 05 Oct 2026 21:22:29 +0000",
@@ -453,7 +557,7 @@
       "_isDuplicate": false
     },
     {
-      "title": "Ethiopia’s PM insists on access to Red Sea despite regional conflict threat",
+      "title": "Ethiopian PM Abiy demands Red Sea access as tensions with neighbours rise",
       "link": "https://www.aljazeera.com/news/2026/10/5/ethiopias-pm-insists-on-access-to-red-sea-despite-regional-conflict-threat?traffic_source=rss",
       "pubDate": "Mon, 05 Oct 2026 21:10:43 +0000",
       "source": "aljazeera",
@@ -475,54 +579,6 @@
       "_isDuplicated": false,
       "_clusterSize": 1,
       "_isDuplicate": false
-    },
-    {
-      "title": "Israeli forces kill one, injure several in occupied West Bank",
-      "link": "https://www.aljazeera.com/news/2026/10/5/israeli-forces-kill-one-injure-several-in-occupied-west-bank?traffic_source=rss",
-      "pubDate": "Mon, 05 Oct 2026 20:49:35 +0000",
-      "source": "aljazeera",
-      "snippet": "Palestinians in West Bank are suffering increasing Israeli violence and repression.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Ukraine says Russian drone attack sinks ship in Romanian waters",
-      "link": "https://www.aljazeera.com/news/2026/10/5/ukraine-says-russian-drone-attack-sinks-ship-in-romanian-waters?traffic_source=rss",
-      "pubDate": "Mon, 05 Oct 2026 20:03:06 +0000",
-      "source": "aljazeera",
-      "snippet": "The latest suspected incursion on NATO&#039;s eastern flank increases fears that the war in Ukraine threatens to spill over.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Freed Syrians recount torture in Israeli detention centre",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/10/5/freed-syrians-recount-torture-in-israeli-detention-centre?traffic_source=rss",
-      "pubDate": "Mon, 05 Oct 2026 19:57:29 +0000",
-      "source": "aljazeera",
-      "snippet": "Syrians released from Israeli detention have described abuse behind bars. ",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Trump blames Democrats and Ukraine for soaring US fuel prices, not Iran war",
-      "link": "https://www.aljazeera.com/economy/2026/10/5/trump-blames-democrats-and-ukraine-for-soaring-us-fuel-prices-not-iran-war?traffic_source=rss",
-      "pubDate": "Mon, 05 Oct 2026 19:01:32 +0000",
-      "source": "aljazeera",
-      "snippet": "Trump shifts blame for fuel price hikes to blue states like California and Ukraine strikes on Russian oil refineries.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
     }
   ],
   "news_digest": {
@@ -535,6 +591,17 @@
         "new_count": 20,
         "articles": [
           {
+            "title": "Mexican and Colombian cartel mercenaries filmed fighting in Ukraine",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/10/6/mexican-and-colombian-cartel-mercenaries-filmed-fighting-in-ukraine?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Tue, 06 Oct 2026 04:07:48 +0000",
+            "snippet": "Members of Mexican and Colombian cartels are reportedly joining Ukraine’s International Legion to learn drone warfare.",
+            "isNew": true
+          },
+          {
             "title": "Saudi and Yemeni Forces Attack Houthis to Retake Control of Red Sea Coast",
             "link": "https://www.nytimes.com/2026/10/05/world/middleeast/saudi-arabia-yemen-houthis-bab-al-mandab-strait.html",
             "source": "nytimes",
@@ -543,28 +610,6 @@
             ],
             "pubDate": "Mon, 05 Oct 2026 21:22:29 +0000",
             "snippet": "The offensive is an effort to wrest control of the Bab al-Mandab Strait from the Houthis, a militia in Yemen backed by Iran.",
-            "isNew": true
-          },
-          {
-            "title": "Ukraine says Russian drone attack sinks ship in Romanian waters",
-            "link": "https://www.aljazeera.com/news/2026/10/5/ukraine-says-russian-drone-attack-sinks-ship-in-romanian-waters?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Mon, 05 Oct 2026 20:03:06 +0000",
-            "snippet": "The latest suspected incursion on NATO&#039;s eastern flank increases fears that the war in Ukraine threatens to spill over.",
-            "isNew": true
-          },
-          {
-            "title": "Trump blames Democrats and Ukraine for soaring US fuel prices, not Iran war",
-            "link": "https://www.aljazeera.com/economy/2026/10/5/trump-blames-democrats-and-ukraine-for-soaring-us-fuel-prices-not-iran-war?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Mon, 05 Oct 2026 19:01:32 +0000",
-            "snippet": "Trump shifts blame for fuel price hikes to blue states like California and Ukraine strikes on Russian oil refineries.",
             "isNew": true
           },
           {
@@ -643,6 +688,17 @@
             "pubDate": "Sun, 04 Oct 2026 04:57:20 GMT",
             "snippet": "The man accused of trying to take over the Israel-bound jet is named as Hamam al-Hammami by several media outlets.",
             "isNew": true
+          },
+          {
+            "title": "How FlyDubai Passengers and Crew Averted Disaster After Pilot Was Stabbed During Flight",
+            "link": "https://www.nytimes.com/2026/10/02/world/middleeast/flydubai-attack-timeline.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Sat, 03 Oct 2026 14:59:12 +0000",
+            "snippet": "A badly wounded Indian pilot managed to unlock the cockpit door. Four Israeli men teamed up to overwhelm an attacker and avert disaster.",
+            "isNew": true
           }
         ]
       },
@@ -654,6 +710,17 @@
         "new_count": 7,
         "articles": [
           {
+            "title": "War With Iran Is Forcing the World to Reckon With Geography’s Power",
+            "link": "https://www.nytimes.com/2026/10/05/business/economy/iran-war-oil-geography.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Tue, 06 Oct 2026 01:41:22 +0000",
+            "snippet": "Trade blockages in the Persian Gulf have reminded the world that there are forces as great as or greater than technology and globalization.",
+            "isNew": true
+          },
+          {
             "title": "Burst of Attacks in Gulf Heightens Fears Over Fragile Energy Trade",
             "link": "https://www.nytimes.com/2026/10/05/business/hormuz-saudi-iran-houthis.html",
             "source": "nytimes",
@@ -662,17 +729,6 @@
             ],
             "pubDate": "Mon, 05 Oct 2026 23:10:32 +0000",
             "snippet": "Strikes on tankers in the Strait of Hormuz and oil infrastructure in Saudi Arabia came as the region’s exporters were getting more oil to the world market.",
-            "isNew": true
-          },
-          {
-            "title": "War With Iran Is Forcing the World to Reckon With Geography’s Power",
-            "link": "https://www.nytimes.com/2026/10/05/business/economy/iran-war-oil-geography.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Mon, 05 Oct 2026 21:43:29 +0000",
-            "snippet": "Trade blockages in the Persian Gulf have reminded the world that there are forces as great as or greater than technology and globalization.",
             "isNew": true
           },
           {
@@ -733,151 +789,23 @@
         ]
       },
       {
-        "category_id": "regional",
-        "category_name": "지역 정세",
-        "category_icon": "🌍",
-        "count": 6,
-        "new_count": 6,
-        "articles": [
-          {
-            "title": "Iran war live: Yemen forces reclaim strategic port city Mocha from Houthis",
-            "link": "https://www.aljazeera.com/news/liveblog/2026/10/6/iran-war-live-yemen-forces-reclaim-strategic-port-city-mocha-from-houthis?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Tue, 06 Oct 2026 00:00:00 +0000",
-            "snippet": "Turkiye and Pakistan agree to rapidly deploy militaries to bolster Saudi security as part of the Mecca defence pact.",
-            "isNew": true
-          },
-          {
-            "title": "Ethiopia’s PM insists on access to Red Sea despite regional conflict threat",
-            "link": "https://www.aljazeera.com/news/2026/10/5/ethiopias-pm-insists-on-access-to-red-sea-despite-regional-conflict-threat?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Mon, 05 Oct 2026 21:10:43 +0000",
-            "snippet": "Neighbouring countries say coastal states must govern Red Sea as fighting escalates in northern Ethiopia.",
-            "isNew": true
-          },
-          {
-            "title": "Freed Syrians recount torture in Israeli detention centre",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/10/5/freed-syrians-recount-torture-in-israeli-detention-centre?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Mon, 05 Oct 2026 19:57:29 +0000",
-            "snippet": "Syrians released from Israeli detention have described abuse behind bars. ",
-            "isNew": true
-          },
-          {
-            "title": "Why Saudi Arabia’s Last War in Yemen Turned Into a Quagmire",
-            "link": "https://www.nytimes.com/2026/10/05/world/middleeast/saudi-arabia-war-yemen-houthis-quagmire.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Mon, 05 Oct 2026 15:32:44 +0000",
-            "snippet": "A Saudi-led coalition has announced a military campaign against the Iran-backed Houthi militia in the country, reviving memories of its previous effort.",
-            "isNew": true
-          },
-          {
-            "title": "Yemen's government announces all-out war to reclaim land from Houthis",
-            "link": "https://www.bbc.co.uk/news/articles/cx8dzj9vpp01o?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
-            "sources": [
-              "bbc"
-            ],
-            "pubDate": "Sun, 04 Oct 2026 16:51:30 GMT",
-            "snippet": "The Yemeni president's announcement comes amid an exchange of strikes between the Houthis and the Saudi-led coalition.",
-            "isNew": true
-          },
-          {
-            "title": "Iraq Wins U.S. Permission to Resume Iran Flights, Prime Minister Says",
-            "link": "https://www.nytimes.com/2026/10/03/world/middleeast/iraq-iran-flights-us-sanctions.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Sat, 03 Oct 2026 10:25:33 +0000",
-            "snippet": "Flights between the neighboring countries had been halted after broad U.S. penalties on Iran’s aviation industry.",
-            "isNew": true
-          }
-        ]
-      },
-      {
-        "category_id": "other",
-        "category_name": "기타",
-        "category_icon": "📰",
-        "count": 6,
-        "new_count": 6,
-        "articles": [
-          {
-            "title": "What’s happening in Ethiopia?",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/10/5/whats-happening-in-ethiopia?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Mon, 05 Oct 2026 23:38:51 +0000",
-            "snippet": "Ethiopia is facing renewed fighting in the north, just four years after the devastating Tigray war ended.",
-            "isNew": true
-          },
-          {
-            "title": "Whistleblower warns that humans don’t control AI",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/10/5/whistleblower-warns-that-humans-dont-control-ai?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Mon, 05 Oct 2026 23:23:47 +0000",
-            "snippet": "Former Anthropic researcher Jacob Coxon warns that AI companies ‘don’t fully control’ their models.",
-            "isNew": true
-          },
-          {
-            "title": "Israeli forces kill one, injure several in occupied West Bank",
-            "link": "https://www.aljazeera.com/news/2026/10/5/israeli-forces-kill-one-injure-several-in-occupied-west-bank?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Mon, 05 Oct 2026 20:49:35 +0000",
-            "snippet": "Palestinians in West Bank are suffering increasing Israeli violence and repression.",
-            "isNew": true
-          },
-          {
-            "title": "Australia investigating Flydubai co-pilot's links to country",
-            "link": "https://www.bbc.co.uk/news/articles/cxly4nym57q9o?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
-            "sources": [
-              "bbc"
-            ],
-            "pubDate": "Sun, 04 Oct 2026 06:19:17 GMT",
-            "snippet": "State police and the country's security agency are looking into the co-pilot, who attempted to take control of a Flydubai plane travelling to Israel.",
-            "isNew": true
-          },
-          {
-            "title": "Israelis Take Pride in Bravery of Passengers Who Saved FlyDubai Flight",
-            "link": "https://www.nytimes.com/2026/10/01/world/middleeast/israel-passengers-flight-1073.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Thu, 01 Oct 2026 18:00:07 +0000",
-            "snippet": "The events evoked days decades ago when Israel was widely admired for its plucky survival against the odds and for taking on hijackers.",
-            "isNew": true
-          }
-        ]
-      },
-      {
         "category_id": "politics",
         "category_name": "국내 정치",
         "category_icon": "🏛️",
-        "count": 4,
-        "new_count": 4,
+        "count": 6,
+        "new_count": 6,
         "articles": [
+          {
+            "title": "Trump says taxpayers will no longer fund TV ads that praise him",
+            "link": "https://www.aljazeera.com/news/2026/10/6/trump-says-taxpayers-will-no-longer-fund-tv-ads-that-praise-him?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Tue, 06 Oct 2026 01:51:32 +0000",
+            "snippet": "Move comes after ethics experts criticised three nationally broadcast ads and called for independent investigations.",
+            "isNew": true
+          },
           {
             "title": "Police clash with Kosovo protesters over bid to curb Hague war crimes court",
             "link": "https://www.aljazeera.com/news/2026/10/6/police-clash-with-kosovo-protesters-over-bid-to-curb-hague-war-crimes-court?traffic_source=rss",
@@ -921,6 +849,134 @@
             "pubDate": "Sun, 04 Oct 2026 16:32:00 GMT",
             "snippet": "Party formally adopts policy which equates Zionism with racism, as all Green party votes to adopt policy that equates Zionism with racismOn Friday the Times revealed that Katie Lam, the communities se",
             "isNew": true
+          },
+          {
+            "title": "UK believes Iran involved in RAF Fairford incident, Burnham says",
+            "link": "https://www.bbc.co.uk/news/articles/cjwyz59k5y75o?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc"
+            ],
+            "pubDate": "Wed, 30 Sep 2026 21:26:59 GMT",
+            "snippet": "Iran's foreign minister has responded, saying the PM was \"barking up the wrong tree\". ",
+            "isNew": true
+          }
+        ]
+      },
+      {
+        "category_id": "other",
+        "category_name": "기타",
+        "category_icon": "📰",
+        "count": 6,
+        "new_count": 6,
+        "articles": [
+          {
+            "title": "Widowed twice: A Gaza mother’s story of loss and survival",
+            "link": "https://www.aljazeera.com/features/2026/10/6/widowed-twice-a-gaza-mothers-story-of-loss-and-survival?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Tue, 06 Oct 2026 05:44:39 +0000",
+            "snippet": "A young mother has lost two husbands and two children during Israel&#039;s genocidal war on Gaza.",
+            "isNew": true
+          },
+          {
+            "title": "What’s happening in Ethiopia?",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/10/5/whats-happening-in-ethiopia?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Mon, 05 Oct 2026 23:38:51 +0000",
+            "snippet": "Ethiopia is facing renewed fighting in the north, just four years after the devastating Tigray war ended.",
+            "isNew": true
+          },
+          {
+            "title": "Whistleblower warns that humans don’t control AI",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/10/5/whistleblower-warns-that-humans-dont-control-ai?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Mon, 05 Oct 2026 23:23:47 +0000",
+            "snippet": "Former Anthropic researcher Jacob Coxon warns that AI companies ‘don’t fully control’ their models.",
+            "isNew": true
+          },
+          {
+            "title": "Ethiopian PM Abiy demands Red Sea access as tensions with neighbours rise",
+            "link": "https://www.aljazeera.com/news/2026/10/5/ethiopias-pm-insists-on-access-to-red-sea-despite-regional-conflict-threat?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Mon, 05 Oct 2026 21:10:43 +0000",
+            "snippet": "Neighbouring countries say coastal states must govern Red Sea as fighting escalates in northern Ethiopia.",
+            "isNew": true
+          },
+          {
+            "title": "Australia investigating Flydubai co-pilot's links to country",
+            "link": "https://www.bbc.co.uk/news/articles/cxly4nym57q9o?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc"
+            ],
+            "pubDate": "Sun, 04 Oct 2026 06:19:17 GMT",
+            "snippet": "State police and the country's security agency are looking into the co-pilot, who attempted to take control of a Flydubai plane travelling to Israel.",
+            "isNew": true
+          }
+        ]
+      },
+      {
+        "category_id": "regional",
+        "category_name": "지역 정세",
+        "category_icon": "🌍",
+        "count": 4,
+        "new_count": 4,
+        "articles": [
+          {
+            "title": "Iran war live: Yemen forces reclaim strategic port city Mocha from Houthis",
+            "link": "https://www.aljazeera.com/news/liveblog/2026/10/6/iran-war-live-yemen-forces-reclaim-strategic-port-city-mocha-from-houthis?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Tue, 06 Oct 2026 00:00:00 +0000",
+            "snippet": "Turkiye and Pakistan agree to rapidly deploy militaries to bolster Saudi security as part of the Mecca defence pact.",
+            "isNew": true
+          },
+          {
+            "title": "Why Saudi Arabia’s Last War in Yemen Turned Into a Quagmire",
+            "link": "https://www.nytimes.com/2026/10/05/world/middleeast/saudi-arabia-war-yemen-houthis-quagmire.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Mon, 05 Oct 2026 15:32:44 +0000",
+            "snippet": "A Saudi-led coalition has announced a military campaign against the Iran-backed Houthi militia in the country, reviving memories of its previous effort.",
+            "isNew": true
+          },
+          {
+            "title": "Yemen's government announces all-out war to reclaim land from Houthis",
+            "link": "https://www.bbc.co.uk/news/articles/cx8dzj9vpp01o?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc"
+            ],
+            "pubDate": "Sun, 04 Oct 2026 16:51:30 GMT",
+            "snippet": "The Yemeni president's announcement comes amid an exchange of strikes between the Houthis and the Saudi-led coalition.",
+            "isNew": true
+          },
+          {
+            "title": "Iraq Wins U.S. Permission to Resume Iran Flights, Prime Minister Says",
+            "link": "https://www.nytimes.com/2026/10/03/world/middleeast/iraq-iran-flights-us-sanctions.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Sat, 03 Oct 2026 10:25:33 +0000",
+            "snippet": "Flights between the neighboring countries had been halted after broad U.S. penalties on Iran’s aviation industry.",
+            "isNew": true
           }
         ]
       },
@@ -928,16 +984,26 @@
         "category_id": "diplomacy",
         "category_name": "외교/협상",
         "category_icon": "🤝",
-        "count": 2,
-        "new_count": 2,
+        "count": 3,
+        "new_count": 3,
         "articles": [
+          {
+            "title": "UN rights council condemns attacks on civilians in Sudan, calls for truce",
+            "link": "https://www.aljazeera.com/news/2026/10/6/un-rights-council-condemns-attacks-on-civilians-in-sudan-calls-for-truce?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Tue, 06 Oct 2026 02:54:31 +0000",
+            "snippet": "Resolution demands an immediate ceasefire and extends the mandate of the mission investigating abuses in Sudan.",
+            "isNew": true
+          },
           {
             "title": "UK threatens to expel Israeli diplomats over planned East Jerusalem consulate closure",
             "link": "https://www.theguardian.com/world/2026/oct/05/uk-threatens-to-expel-israeli-diplomats-after-closing-of-east-jerusalem-consulate",
             "source": "guardian",
             "sources": [
-              "guardian",
-              "aljazeera"
+              "guardian"
             ],
             "pubDate": "Mon, 05 Oct 2026 17:53:46 GMT",
             "snippet": "Tit-for-tat expulsions expected after relations deteriorate as a result of UK ban on goods from illegal settlementsThe UK has threatened to expel one Israeli diplomat for every British diplomat forced",
@@ -991,9 +1057,94 @@
     "recent_30min": {
       "total_new": 49,
       "by_category": {
-        "politics": {
-          "count": 4,
+        "other": {
+          "count": 6,
           "titles": [
+            {
+              "title": "Widowed twice: A Gaza mother’s story of loss and survival",
+              "link": "https://www.aljazeera.com/features/2026/10/6/widowed-twice-a-gaza-mothers-story-of-loss-and-survival?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "What’s happening in Ethiopia?",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/10/5/whats-happening-in-ethiopia?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Whistleblower warns that humans don’t control AI",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/10/5/whistleblower-warns-that-humans-dont-control-ai?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Ethiopian PM Abiy demands Red Sea access as tensions with neighbours rise",
+              "link": "https://www.aljazeera.com/news/2026/10/5/ethiopias-pm-insists-on-access-to-red-sea-despite-regional-conflict-threat?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Australia investigating Flydubai co-pilot's links to country",
+              "link": "https://www.bbc.co.uk/news/articles/cxly4nym57q9o?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
+            }
+          ]
+        },
+        "military": {
+          "count": 21,
+          "titles": [
+            {
+              "title": "Mexican and Colombian cartel mercenaries filmed fighting in Ukraine",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/10/6/mexican-and-colombian-cartel-mercenaries-filmed-fighting-in-ukraine?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Saudi and Yemeni Forces Attack Houthis to Retake Control of Red Sea Coast",
+              "link": "https://www.nytimes.com/2026/10/05/world/middleeast/saudi-arabia-yemen-houthis-bab-al-mandab-strait.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Why did the US rush to withdraw bombers from RAF Fairford? - The Latest",
+              "link": "https://www.theguardian.com/news/audio/2026/oct/05/why-did-us-withdraw-bombers-from-raf-fairford-the-latest",
+              "source": "guardian"
+            },
+            {
+              "title": "Guardian readers fund life-changing surgery for Somali boy injured in US airstrike",
+              "link": "https://www.theguardian.com/global-development/2026/oct/05/guardian-readers-fundraising-somalian-boy-injured-in-us-strike-surgery-abdiqadir-salah",
+              "source": "guardian"
+            },
+            {
+              "title": "Yemen’s Saudi-backed government launches military drive to retake all Houthi-held territory",
+              "link": "https://www.theguardian.com/world/2026/oct/05/saudi-backed-yemen-government-military-drive-retake-houthi-territory",
+              "source": "guardian"
+            }
+          ]
+        },
+        "diplomacy": {
+          "count": 3,
+          "titles": [
+            {
+              "title": "UN rights council condemns attacks on civilians in Sudan, calls for truce",
+              "link": "https://www.aljazeera.com/news/2026/10/6/un-rights-council-condemns-attacks-on-civilians-in-sudan-calls-for-truce?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "UK threatens to expel Israeli diplomats over planned East Jerusalem consulate closure",
+              "link": "https://www.theguardian.com/world/2026/oct/05/uk-threatens-to-expel-israeli-diplomats-after-closing-of-east-jerusalem-consulate",
+              "source": "guardian"
+            },
+            {
+              "title": "Iran Jails Hard-Line Lawmaker, Exposing Deep Rifts in Its Leadership",
+              "link": "https://www.nytimes.com/2026/10/02/world/middleeast/iran-hard-line-lawmaker-jail-rift.html",
+              "source": "nytimes"
+            }
+          ]
+        },
+        "politics": {
+          "count": 6,
+          "titles": [
+            {
+              "title": "Trump says taxpayers will no longer fund TV ads that praise him",
+              "link": "https://www.aljazeera.com/news/2026/10/6/trump-says-taxpayers-will-no-longer-fund-tv-ads-that-praise-him?traffic_source=rss",
+              "source": "aljazeera"
+            },
             {
               "title": "Police clash with Kosovo protesters over bid to curb Hague war crimes court",
               "link": "https://www.aljazeera.com/news/2026/10/6/police-clash-with-kosovo-protesters-over-bid-to-curb-hague-war-crimes-court?traffic_source=rss",
@@ -1016,77 +1167,17 @@
             }
           ]
         },
-        "regional": {
-          "count": 6,
-          "titles": [
-            {
-              "title": "Iran war live: Yemen forces reclaim strategic port city Mocha from Houthis",
-              "link": "https://www.aljazeera.com/news/liveblog/2026/10/6/iran-war-live-yemen-forces-reclaim-strategic-port-city-mocha-from-houthis?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Ethiopia’s PM insists on access to Red Sea despite regional conflict threat",
-              "link": "https://www.aljazeera.com/news/2026/10/5/ethiopias-pm-insists-on-access-to-red-sea-despite-regional-conflict-threat?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Freed Syrians recount torture in Israeli detention centre",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/10/5/freed-syrians-recount-torture-in-israeli-detention-centre?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Why Saudi Arabia’s Last War in Yemen Turned Into a Quagmire",
-              "link": "https://www.nytimes.com/2026/10/05/world/middleeast/saudi-arabia-war-yemen-houthis-quagmire.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Yemen's government announces all-out war to reclaim land from Houthis",
-              "link": "https://www.bbc.co.uk/news/articles/cx8dzj9vpp01o?at_medium=RSS&at_campaign=rss",
-              "source": "bbc"
-            }
-          ]
-        },
-        "other": {
-          "count": 6,
-          "titles": [
-            {
-              "title": "What’s happening in Ethiopia?",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/10/5/whats-happening-in-ethiopia?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Whistleblower warns that humans don’t control AI",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/10/5/whistleblower-warns-that-humans-dont-control-ai?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Israeli forces kill one, injure several in occupied West Bank",
-              "link": "https://www.aljazeera.com/news/2026/10/5/israeli-forces-kill-one-injure-several-in-occupied-west-bank?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Australia investigating Flydubai co-pilot's links to country",
-              "link": "https://www.bbc.co.uk/news/articles/cxly4nym57q9o?at_medium=RSS&at_campaign=rss",
-              "source": "bbc"
-            },
-            {
-              "title": "Israelis Take Pride in Bravery of Passengers Who Saved FlyDubai Flight",
-              "link": "https://www.nytimes.com/2026/10/01/world/middleeast/israel-passengers-flight-1073.html",
-              "source": "nytimes"
-            }
-          ]
-        },
         "economy": {
           "count": 7,
           "titles": [
             {
-              "title": "Burst of Attacks in Gulf Heightens Fears Over Fragile Energy Trade",
-              "link": "https://www.nytimes.com/2026/10/05/business/hormuz-saudi-iran-houthis.html",
+              "title": "War With Iran Is Forcing the World to Reckon With Geography’s Power",
+              "link": "https://www.nytimes.com/2026/10/05/business/economy/iran-war-oil-geography.html",
               "source": "nytimes"
             },
             {
-              "title": "War With Iran Is Forcing the World to Reckon With Geography’s Power",
-              "link": "https://www.nytimes.com/2026/10/05/business/economy/iran-war-oil-geography.html",
+              "title": "Burst of Attacks in Gulf Heightens Fears Over Fragile Energy Trade",
+              "link": "https://www.nytimes.com/2026/10/05/business/hormuz-saudi-iran-houthis.html",
               "source": "nytimes"
             },
             {
@@ -1106,33 +1197,28 @@
             }
           ]
         },
-        "military": {
-          "count": 21,
+        "regional": {
+          "count": 4,
           "titles": [
             {
-              "title": "Saudi and Yemeni Forces Attack Houthis to Retake Control of Red Sea Coast",
-              "link": "https://www.nytimes.com/2026/10/05/world/middleeast/saudi-arabia-yemen-houthis-bab-al-mandab-strait.html",
+              "title": "Iran war live: Yemen forces reclaim strategic port city Mocha from Houthis",
+              "link": "https://www.aljazeera.com/news/liveblog/2026/10/6/iran-war-live-yemen-forces-reclaim-strategic-port-city-mocha-from-houthis?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Why Saudi Arabia’s Last War in Yemen Turned Into a Quagmire",
+              "link": "https://www.nytimes.com/2026/10/05/world/middleeast/saudi-arabia-war-yemen-houthis-quagmire.html",
               "source": "nytimes"
             },
             {
-              "title": "Ukraine says Russian drone attack sinks ship in Romanian waters",
-              "link": "https://www.aljazeera.com/news/2026/10/5/ukraine-says-russian-drone-attack-sinks-ship-in-romanian-waters?traffic_source=rss",
-              "source": "aljazeera"
+              "title": "Yemen's government announces all-out war to reclaim land from Houthis",
+              "link": "https://www.bbc.co.uk/news/articles/cx8dzj9vpp01o?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
             },
             {
-              "title": "Trump blames Democrats and Ukraine for soaring US fuel prices, not Iran war",
-              "link": "https://www.aljazeera.com/economy/2026/10/5/trump-blames-democrats-and-ukraine-for-soaring-us-fuel-prices-not-iran-war?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Why did the US rush to withdraw bombers from RAF Fairford? - The Latest",
-              "link": "https://www.theguardian.com/news/audio/2026/oct/05/why-did-us-withdraw-bombers-from-raf-fairford-the-latest",
-              "source": "guardian"
-            },
-            {
-              "title": "Guardian readers fund life-changing surgery for Somali boy injured in US airstrike",
-              "link": "https://www.theguardian.com/global-development/2026/oct/05/guardian-readers-fundraising-somalian-boy-injured-in-us-strike-surgery-abdiqadir-salah",
-              "source": "guardian"
+              "title": "Iraq Wins U.S. Permission to Resume Iran Flights, Prime Minister Says",
+              "link": "https://www.nytimes.com/2026/10/03/world/middleeast/iraq-iran-flights-us-sanctions.html",
+              "source": "nytimes"
             }
           ]
         },
@@ -1147,26 +1233,6 @@
             {
               "title": "Israel Lists 170 Killed in Gaza It Says Were Militants Posing as Media Workers",
               "link": "https://www.nytimes.com/2026/10/02/world/middleeast/israel-gaza-militants-journalists-killed.html",
-              "source": "nytimes"
-            }
-          ]
-        },
-        "diplomacy": {
-          "count": 3,
-          "titles": [
-            {
-              "title": "UK ‘threatens to expel 27 Israeli diplomats’ over Jerusalem consulate",
-              "link": "https://www.aljazeera.com/news/2026/10/5/uk-threatens-to-expel-27-israeli-diplomats-over-jerusalem-consulate?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "UK threatens to expel Israeli diplomats over planned East Jerusalem consulate closure",
-              "link": "https://www.theguardian.com/world/2026/oct/05/uk-threatens-to-expel-israeli-diplomats-after-closing-of-east-jerusalem-consulate",
-              "source": "guardian"
-            },
-            {
-              "title": "Iran Jails Hard-Line Lawmaker, Exposing Deep Rifts in Its Leadership",
-              "link": "https://www.nytimes.com/2026/10/02/world/middleeast/iran-hard-line-lawmaker-jail-rift.html",
               "source": "nytimes"
             }
           ]
@@ -1262,16 +1328,28 @@
   ],
   "economic_indicators": {
     "GOLD": {
-      "price": 4168.4,
-      "change": 6.1,
-      "changePercent": 0.15,
-      "prev": 4162.3
+      "price": 4159,
+      "change": 2.2,
+      "changePercent": 0.05,
+      "prev": 4156.8
     },
     "WTI": {
-      "price": 89.26,
-      "change": -1.85,
-      "changePercent": -2.03,
-      "prev": 91.11
+      "price": 88.7,
+      "change": -0.73,
+      "changePercent": -0.82,
+      "prev": 89.43
+    },
+    "DXY": {
+      "price": 102.23,
+      "change": 0.06,
+      "changePercent": 0.06,
+      "prev": 102.17
+    },
+    "BRENT": {
+      "price": 99.71,
+      "change": -0.61,
+      "changePercent": -0.61,
+      "prev": 100.32
     },
     "VIX": {
       "price": 15.52,
@@ -1279,29 +1357,17 @@
       "changePercent": 1.37,
       "prev": 15.31
     },
-    "DXY": {
-      "price": 102.16,
-      "change": 0.23,
-      "changePercent": 0.23,
-      "prev": 101.93
-    },
-    "BRENT": {
-      "price": 100.28,
-      "change": -1.97,
-      "changePercent": -1.93,
-      "prev": 102.25
+    "US10Y": {
+      "price": 5.31,
+      "change": 0.03,
+      "changePercent": 0.57,
+      "prev": 5.28
     },
     "US2Y": {
       "price": 4.02,
       "change": 0.02,
       "changePercent": 0.5,
       "prev": 3.99
-    },
-    "US10Y": {
-      "price": 5.31,
-      "change": 0.03,
-      "changePercent": 0.57,
-      "prev": 5.28
     }
   },
   "critical_events": [
@@ -1314,12 +1380,28 @@
       "direction": "shorten"
     },
     {
+      "id": "diplomatic_breakthrough",
+      "name": "외교적 돌파구/강대국 중재",
+      "severity": "high",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "shorten"
+    },
+    {
       "id": "capital_attack",
       "name": "수도 직접 공격/포위",
       "severity": "high",
       "confidence": 0.6666666666666666,
       "matchCount": 2,
       "direction": "shorten"
+    },
+    {
+      "id": "conflict_expansion",
+      "name": "전선 확대/신규 참전국",
+      "severity": "moderate",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "lengthen"
     }
   ],
   "feeds_loaded": 7,
