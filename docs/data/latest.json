@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-10-07T11:13:37.889Z",
+  "timestamp": "2026-10-07T17:53:15.685Z",
   "war_day": 221,
   "probabilities": {
-    "1개월 내 (~3월)": 19.1,
-    "2~3개월 (4~5월)": 39.1,
-    "4~6개월 (6~8월)": 25.4,
-    "7~12개월 (9월~27/2월)": 12.5,
-    "1년 초과": 3.9
+    "1개월 내 (~3월)": 21.1,
+    "2~3개월 (4~5월)": 41.5,
+    "4~6개월 (6~8월)": 23.7,
+    "7~12개월 (9월~27/2월)": 10.6,
+    "1년 초과": 3.1
   },
   "factors": [
     {
@@ -45,9 +45,9 @@
       "decay": 0.4
     },
     {
-      "factor": "확전 뉴스 우세 (확전6:휴전6)",
-      "impact": "전쟁 장기화 가능성 (확전비율 50%)",
-      "weight": "+0.02%p (4~6개월)",
+      "factor": "확전 뉴스 우세 (확전8:휴전4)",
+      "impact": "전쟁 장기화 가능성 (확전비율 67%)",
+      "weight": "+0.03%p (4~6개월)",
       "direction": "lengthen",
       "detail": "언론에서 휴전보다 확전을 더 많이 보도하고 있습니다.",
       "keywords": [
@@ -164,11 +164,11 @@
       "decay": 1
     },
     {
-      "factor": "협상/외교 뉴스 4건 감지",
+      "factor": "협상/외교 뉴스 8건 감지",
       "impact": "외교적 해결 움직임 포착",
-      "weight": "+0.01%p (1개월내), +0.01%p (2~3개월)",
+      "weight": "+0.02%p (1개월내), +0.01%p (2~3개월)",
       "direction": "shorten",
-      "detail": "실시간 뉴스에서 협상 관련 기사 4건이 감지되었습니다.",
+      "detail": "실시간 뉴스에서 협상 관련 기사 8건이 감지되었습니다.",
       "keywords": [
         "negotiat",
         "talks",
@@ -181,11 +181,11 @@
       "decay": 1
     },
     {
-      "factor": "지역 확산 뉴스 16건 감지",
-      "impact": "주변국 대규모 연루 → 장기화 위험 높음",
-      "weight": "+0.02%p (4~6개월), +0.02%p (7~12개월)",
+      "factor": "지역 확산 뉴스 14건 감지",
+      "impact": "주변국 연루 확대로 장기화 위험",
+      "weight": "+0.01%p (4~6개월), +0.01%p (7~12개월)",
       "direction": "lengthen",
-      "detail": "주변국을 언급하는 기사 16건이 감지되었습니다.",
+      "detail": "주변국을 언급하는 기사 14건이 감지되었습니다.",
       "keywords": [
         "saudi",
         "uae",
@@ -234,6 +234,40 @@
       "decay": 0.3
     },
     {
+      "factor": "[중대 이벤트] 일방적 전투 축소/자제 선언",
+      "impact": "교전국의 일방적 전투 축소 또는 자제 선언. 역사적으로 패전국의 자발적 전선 축소는 80% 이상 공식 항복의 전조.",
+      "weight": "+3.3%p (1개월내), +4.7%p (2~3개월), -2.0%p (4~6개월), -2.0%p (7~12개월), -0.7%p (1년초과)",
+      "direction": "shorten",
+      "detail": "교전국의 일방적 전투 축소 또는 자제 선언. 역사적으로 패전국의 자발적 전선 축소는 80% 이상 공식 항복의 전조.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Airlines Set to Bring Israelis Back From U.A.E. After FlyDubai Cockpit Attack",
+      "keywords": [
+        "halt",
+        "attack",
+        "stop",
+        "attack",
+        "neighb",
+        "no more",
+        "attack",
+        "withdraw",
+        "forces",
+        "pull back",
+        "troops",
+        "unilateral",
+        "ceasefire",
+        "reduce",
+        "operation",
+        "de-escalat",
+        "announc",
+        "restrain",
+        "attack",
+        "not attack",
+        "suspend",
+        "operation"
+      ],
+      "applied": "2026-10-07",
+      "active": true,
+      "severity": "high"
+    },
+    {
       "factor": "[중대 이벤트] 수도 직접 공격/포위",
       "impact": "수도 직접 공격. 베오그라드(1999): 78일 폭격 후 항복. 바그다드(2003): 21일만에 함락. 수도 타격은 전쟁 지속 의지를 급격히 약화.",
       "weight": "+2.7%p (1개월내), +4.0%p (2~3개월), -1.3%p (4~6개월), -1.3%p (7~12개월), -0.7%p (1년초과)",
@@ -268,9 +302,9 @@
     {
       "factor": "[중대 이벤트] 대규모 인도주의 위기",
       "impact": "대규모 인도주의 위기. 국제사회 개입 압력 증가. 코소보(1999): 난민 위기가 NATO 작전 가속화. 인도적 위기는 국제 종전 압력을 2~3배 강화.",
-      "weight": "+1.3%p (1개월내), +2.7%p (2~3개월), +0.7%p (4~6개월), -0.7%p (7~12개월), -0.7%p (1년초과)",
+      "weight": "+2.0%p (1개월내), +4.0%p (2~3개월), +1.0%p (4~6개월), -1.0%p (7~12개월), -1.0%p (1년초과)",
       "direction": "shorten",
-      "detail": "대규모 인도주의 위기. 국제사회 개입 압력 증가. 코소보(1999): 난민 위기가 NATO 작전 가속화. 인도적 위기는 국제 종전 압력을 2~3배 강화.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: How has Israel’s genocide changed Gaza?",
+      "detail": "대규모 인도주의 위기. 국제사회 개입 압력 증가. 코소보(1999): 난민 위기가 NATO 작전 가속화. 인도적 위기는 국제 종전 압력을 2~3배 강화.\n\n신뢰도: 확실 (100%), 관련 기사 4건 감지.\n관련: How Israel’s genocide in Gaza pulled Britons into the Palestine movement | US military aid to Israel continues three years into Gaza genocide",
       "keywords": [
         "humanitarian",
         "catastroph",
@@ -292,11 +326,11 @@
       "severity": "high"
     },
     {
-      "factor": "금값 사상최고 ($4144.5/oz)",
+      "factor": "금값 사상최고 ($4137.8/oz)",
       "impact": "안전자산 수요 폭증 → 글로벌 불안 심화",
       "weight": "+2%p (4-6개월)",
       "direction": "lengthen",
-      "detail": "금 가격이 온스당 $4144.5로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
+      "detail": "금 가격이 온스당 $4137.8로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
       "keywords": [
         "gold",
         "safe haven",
@@ -307,11 +341,11 @@
       "active": true
     },
     {
-      "factor": "미국 10년 국채금리 5.27% (고금리 지속)",
+      "factor": "미국 10년 국채금리 5.28% (고금리 지속)",
       "impact": "전쟁 자금 조달 비용 증가",
       "weight": "+1%p (4-6개월)",
       "direction": "mixed",
-      "detail": "미국 10년물 국채금리가 5.27%로 높은 수준을 유지하고 있습니다. 전쟁 자금 조달 비용이 증가하며, 장기전의 경제적 부담이 커지고 있습니다.",
+      "detail": "미국 10년물 국채금리가 5.28%로 높은 수준을 유지하고 있습니다. 전쟁 자금 조달 비용이 증가하며, 장기전의 경제적 부담이 커지고 있습니다.",
       "keywords": [
         "treasury",
         "yield",
@@ -324,24 +358,84 @@
     }
   ],
   "news_signals": {
-    "ceasefire_mentions": 6,
-    "escalation_mentions": 6,
-    "negotiation_mentions": 4,
-    "casualty_mentions": 12,
+    "ceasefire_mentions": 4,
+    "escalation_mentions": 8,
+    "negotiation_mentions": 8,
+    "casualty_mentions": 8,
     "peace_mentions": 4,
-    "regional_spread": 16,
+    "regional_spread": 14,
     "total_articles": 50,
     "new_articles": 49,
-    "unique_events": 49,
-    "duplicates_removed": 1
+    "unique_events": 48,
+    "duplicates_removed": 2
   },
   "latest_news": [
     {
-      "title": "US sets new demands for Iran deal: What are they?",
-      "link": "https://www.aljazeera.com/news/2026/10/7/us-sets-new-demands-for-iran-deal-what-are-they?traffic_source=rss",
-      "pubDate": "Wed, 07 Oct 2026 10:58:23 +0000",
+      "title": "The US has backed Libya’s Haftar clan. The UK should not make the same mistake | Letters",
+      "link": "https://www.theguardian.com/world/2026/oct/07/the-us-has-backed-libyas-haftar-clan-the-uk-should-not-make-the-same-mistake",
+      "pubDate": "Wed, 07 Oct 2026 17:00:21 GMT",
+      "source": "guardian",
+      "snippet": "Steven Kay says Britain should act independently and in a role consistent with its status as a member of the UN security councilPatrick Wintour’s report (Libyan unity talks upended as warlord’s son li",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "More than 200,000 displaced as fighting escalates in Yemen, UN says",
+      "link": "https://www.aljazeera.com/gallery/2026/10/7/more-than-200000-displaced-as-fighting-escalates-in-yemen-un-says-2?traffic_source=rss",
+      "pubDate": "Wed, 07 Oct 2026 16:02:17 +0000",
       "source": "aljazeera",
-      "snippet": "US Vice President Vance’s call for reduced nuclear enrichment suggests room for compromise, but major obstacles remain.",
+      "snippet": "With 3,700 fleeing to Djibouti amid Houthi clashes, the UN warns three in four families in parts of Yemen face hunger.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Israelis demand accountability over 7 October failures three years after attacks",
+      "link": "https://www.bbc.co.uk/news/articles/c5zjx7xx3487o?at_medium=RSS&at_campaign=rss",
+      "pubDate": "Wed, 07 Oct 2026 16:00:18 GMT",
+      "source": "bbc",
+      "snippet": "Prime Minister Benjamin Netanyahu has refused to take any personal responsibility for what happened or order a state inquiry.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "The mass killing does not mean Israel’s winning",
+      "link": "https://www.aljazeera.com/opinions/2026/10/7/the-mass-killing-does-not-mean-israels-winning?traffic_source=rss",
+      "pubDate": "Wed, 07 Oct 2026 15:25:06 +0000",
+      "source": "aljazeera",
+      "snippet": "Israel’s military might has failed to achieve the political goals in Gaza it was supposed to.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "‘Palestinians will bear the cost’: UK consulate in East Jerusalem prepares to shut its doors",
+      "link": "https://www.theguardian.com/world/2026/oct/07/uk-consulate-east-jerusalem-prepares-close-israel",
+      "pubDate": "Wed, 07 Oct 2026 15:14:12 GMT",
+      "source": "guardian",
+      "snippet": "Forced closure marks low point in UK-Israeli relations, with reports UK is considering retaliatory expulsion of Israeli diplomats from LondonIsrael marks three years since 7 October attack – liveThe U",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "How Israel’s genocide in Gaza pulled Britons into the Palestine movement",
+      "link": "https://www.aljazeera.com/news/2026/10/7/how-israels-genocide-in-gaza-pulled-britons-into-the-palestine-movement?traffic_source=rss",
+      "pubDate": "Wed, 07 Oct 2026 15:13:21 +0000",
+      "source": "aljazeera",
+      "snippet": "Britons are risking freedom and reputations to stand with Palestinians and challenge government policy.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -351,7 +445,7 @@
     {
       "title": "What Life in Gaza Is Like Now",
       "link": "https://www.nytimes.com/video/world/middleeast/100000011168313/what-life-in-gaza-is-like-now.html",
-      "pubDate": "Wed, 07 Oct 2026 10:32:34 +0000",
+      "pubDate": "Wed, 07 Oct 2026 14:19:16 +0000",
       "source": "nytimes",
       "snippet": "Nearly a year after Israel and Hamas agreed to end the war in Gaza, Saher Alghorra, a photographer for The New York Times, documents how residents are coping and working to rebuild their lives.",
       "isNew": true,
@@ -361,11 +455,11 @@
       "_isDuplicate": false
     },
     {
-      "title": "CAS to hear Senegal appeal over AFCON title awarded to Morocco",
-      "link": "https://www.aljazeera.com/sports/2026/10/7/cas-to-hear-senegal-appeal-over-afcon-title-awarded-to-morocco?traffic_source=rss",
-      "pubDate": "Wed, 07 Oct 2026 10:28:32 +0000",
+      "title": "Why Paramount-Warner merger has sparked fears about press freedom",
+      "link": "https://www.aljazeera.com/news/2026/10/7/why-paramount-warner-merger-has-sparked-fears-about-press-freedom?traffic_source=rss",
+      "pubDate": "Wed, 07 Oct 2026 13:56:27 +0000",
       "source": "aljazeera",
-      "snippet": "Court of Arbitration for Sport (CAS) hearing set to begin after Senegal stripped of Africa Cup of Nations title by CAF.",
+      "snippet": "Chairman&#039;s family ties to Trump and Israel raise questions over editorial independence at CNN and CBS.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -373,11 +467,11 @@
       "_isDuplicate": false
     },
     {
-      "title": "Bulgaria ends search for missing crew after drone strike sinks cargo ship",
-      "link": "https://www.aljazeera.com/news/2026/10/7/bulgaria-ends-search-for-missing-crew-after-drone-strike-sinks-cargo-ship?traffic_source=rss",
-      "pubDate": "Wed, 07 Oct 2026 10:12:04 +0000",
-      "source": "aljazeera",
-      "snippet": "Rescuers halt operation off the coast after finding no survivors.",
+      "title": "Why Saudi Arabia’s Last War in Yemen Turned Into a Quagmire",
+      "link": "https://www.nytimes.com/2026/10/05/world/middleeast/saudi-arabia-war-yemen-houthis-quagmire.html",
+      "pubDate": "Wed, 07 Oct 2026 13:28:19 +0000",
+      "source": "nytimes",
+      "snippet": "A Saudi-led coalition launched a military campaign this week against the Iran-backed Houthi militia in the country, reviving memories of its previous effort.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -385,11 +479,33 @@
       "_isDuplicate": false
     },
     {
-      "title": "Photos: Three years of Israel’s war on Gaza as tent cities spread amid ruin",
-      "link": "https://www.aljazeera.com/gallery/2026/10/7/photos-three-years-of-israels-war-on-gaza-as-tent-cities-spread-amid-ruin?traffic_source=rss",
-      "pubDate": "Wed, 07 Oct 2026 09:55:26 +0000",
+      "title": "Israeli soldier assaults Palestinian woman in occupied West Bank",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/10/7/israeli-soldier-assaults-palestinian-woman-in-occupied-west-bank?traffic_source=rss",
+      "pubDate": "Wed, 07 Oct 2026 12:39:07 +0000",
       "source": "aljazeera",
-      "snippet": "Tent cities in Gaza grow as families mourn the dead, care for the injured, and endure relentless displacement.",
+      "snippet": "An Israeli soldier was filmed assaulting a Palestinian woman during a raid on a family home in the occupied West Bank.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": true,
+      "_clusterSize": 2,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Palestinian killed, 16 wounded in Israeli pogrom in occupied West Bank",
+      "link": "https://www.aljazeera.com/news/2026/10/7/palestinian-killed-several-injured-in-israeli-pogrom-in-occupied-west-bank?traffic_source=rss",
+      "pubDate": "Wed, 07 Oct 2026 12:38:31 +0000",
+      "source": "aljazeera",
+      "snippet": "A 44-year-old Palestinian man was killed during Israeli settler assaults on olive harvesters in the West Bank.",
+      "isNew": true,
+      "_isDuplicate": true,
+      "_sourceCount": 1
+    },
+    {
+      "title": "US military aid to Israel continues three years into Gaza genocide",
+      "link": "https://www.aljazeera.com/news/2026/10/7/how-us-military-aid-to-israel-continues-three-years-into-gaza-genocide?traffic_source=rss",
+      "pubDate": "Wed, 07 Oct 2026 11:23:48 +0000",
+      "source": "aljazeera",
+      "snippet": "US military aid and arms transfer continue unchanged, as US public sentiment shifts. ",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -409,11 +525,11 @@
       "_isDuplicate": false
     },
     {
-      "title": "What does a year-long ceasefire in Gaza look like?",
-      "link": "https://www.aljazeera.com/video/by-the-numbers-3/2026/10/7/what-does-a-year-long-ceasefire-in-gaza-look-like?traffic_source=rss",
-      "pubDate": "Wed, 07 Oct 2026 08:55:12 +0000",
-      "source": "aljazeera",
-      "snippet": "Israel attacked Gaza nine days out of 10 during a so-called ceasefire.",
+      "title": "Candles lit in memory of those killed in October 7 attacks",
+      "link": "https://www.bbc.co.uk/news/videos/cme8r9ke1n9yo?at_medium=RSS&at_campaign=rss",
+      "pubDate": "Wed, 07 Oct 2026 04:34:20 GMT",
+      "source": "bbc",
+      "snippet": "Israelis are marking three years since the Hamas-led attack on 7 October 2023.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -421,95 +537,11 @@
       "_isDuplicate": false
     },
     {
-      "title": "Fear and a far-right lurch: How October 7 reshaped Israel",
-      "link": "https://www.aljazeera.com/news/2026/10/7/fear-and-a-far-right-lurch-how-october-7-reshaped-israel?traffic_source=rss",
-      "pubDate": "Wed, 07 Oct 2026 08:53:23 +0000",
-      "source": "aljazeera",
-      "snippet": "Three years on, the trauma of October 7, 2023, continues to reshape Israel’s politics, wars and place in the world.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Three years of Israel’s mass dispossession of West Bank Palestinians",
-      "link": "https://www.aljazeera.com/features/2026/10/7/three-years-of-israels-mass-dispossession-of-west-bank-palestinians?traffic_source=rss",
-      "pubDate": "Wed, 07 Oct 2026 08:22:19 +0000",
-      "source": "aljazeera",
-      "snippet": "Bedouin families uprooted by Israeli settlers describe a state-backed project of forced transfer in the West Bank.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Israeli troops seen smashing memorial in occupied West Bank",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/10/7/israeli-troops-seen-smashing-memorial-in-occupied-west-bank?traffic_source=rss",
-      "pubDate": "Wed, 07 Oct 2026 08:16:17 +0000",
-      "source": "aljazeera",
-      "snippet": "An Israeli soldier was spotted smashing a memorial to Palestinians during raids in the occupied West Bank.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Yemen’s Houthis attack Aden airport; Saudi forces down missile near Riyadh",
-      "link": "https://www.aljazeera.com/news/2026/10/7/yemens-houthis-attack-aden-airport-saudi-forces-down-missile-near-riyadh?traffic_source=rss",
-      "pubDate": "Wed, 07 Oct 2026 06:41:11 +0000",
-      "source": "aljazeera",
-      "snippet": "Yemeni government says one of the missiles hit Aden airport&#039;s runway minutes before a flight from Cairo was due to land.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Has Russia’s fuel crisis given Iranian oil an opening in Central Asia?",
-      "link": "https://www.aljazeera.com/news/2026/10/7/has-russias-fuel-crisis-given-iranian-oil-an-opening-in-central-asia?traffic_source=rss",
-      "pubDate": "Wed, 07 Oct 2026 06:33:54 +0000",
-      "source": "aljazeera",
-      "snippet": "Iran&#039;s oil exports have struggled amid a US blockade. A Russian energy crisis because of Ukrainian attacks could help. ",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "How has Israel’s genocide changed Gaza?",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/10/7/how-has-israels-genocide-changed-gaza?traffic_source=rss",
-      "pubDate": "Wed, 07 Oct 2026 06:27:18 +0000",
-      "source": "aljazeera",
-      "snippet": "Gaza City’s port was a hub for fishing and tourism before the genocide. Al Jazeera’s Maram Humaid shows what’s left.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "At least 11 killed as Russia launches ‘massive’ attack on Ukraine",
-      "link": "https://www.aljazeera.com/news/2026/10/7/at-least-two-killed-in-kyiv-as-russia-launches-massive-attack-on-ukraine?traffic_source=rss",
-      "pubDate": "Wed, 07 Oct 2026 06:19:26 +0000",
-      "source": "aljazeera",
-      "snippet": "Ukraine&#039;s air force says Russia launched 130 drones, 48 cruise missiles and ballistic missiles in overnight attack.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "How three years of Israel’s genocidal war have changed Gaza",
-      "link": "https://www.aljazeera.com/news/2026/10/7/how-three-years-of-israels-genocidal-war-have-changed-gaza?traffic_source=rss",
-      "pubDate": "Wed, 07 Oct 2026 05:41:54 +0000",
-      "source": "aljazeera",
-      "snippet": "War has devastated Gaza’s economy, education, healthcare, infrastructure and public services, transforming life. ",
+      "title": "Yemen civil war: what sparked latest escalation and who is involved?",
+      "link": "https://www.theguardian.com/world/2026/oct/07/yemen-civil-war-what-sparked-latest-escalation-and-who-is-involved",
+      "pubDate": "Wed, 07 Oct 2026 04:00:34 GMT",
+      "source": "guardian",
+      "snippet": "Conflict between UN-recognised government and Iran-backed Houthis has impacts far beyond country’s bordersYemen has been plunged into a civil war that has extended to one of the world’s most vital mar",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -523,62 +555,73 @@
         "category_id": "military",
         "category_name": "군사 작전",
         "category_icon": "⚔️",
-        "count": 17,
-        "new_count": 17,
+        "count": 20,
+        "new_count": 20,
         "articles": [
           {
-            "title": "Bulgaria ends search for missing crew after drone strike sinks cargo ship",
-            "link": "https://www.aljazeera.com/news/2026/10/7/bulgaria-ends-search-for-missing-crew-after-drone-strike-sinks-cargo-ship?traffic_source=rss",
-            "source": "aljazeera",
+            "title": "Israelis demand accountability over 7 October failures three years after attacks",
+            "link": "https://www.bbc.co.uk/news/articles/c5zjx7xx3487o?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
             "sources": [
-              "aljazeera"
+              "bbc"
             ],
-            "pubDate": "Wed, 07 Oct 2026 10:12:04 +0000",
-            "snippet": "Rescuers halt operation off the coast after finding no survivors.",
+            "pubDate": "Wed, 07 Oct 2026 16:00:18 GMT",
+            "snippet": "Prime Minister Benjamin Netanyahu has refused to take any personal responsibility for what happened or order a state inquiry.",
             "isNew": true
           },
           {
-            "title": "What does a year-long ceasefire in Gaza look like?",
-            "link": "https://www.aljazeera.com/video/by-the-numbers-3/2026/10/7/what-does-a-year-long-ceasefire-in-gaza-look-like?traffic_source=rss",
+            "title": "The mass killing does not mean Israel’s winning",
+            "link": "https://www.aljazeera.com/opinions/2026/10/7/the-mass-killing-does-not-mean-israels-winning?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Wed, 07 Oct 2026 08:55:12 +0000",
-            "snippet": "Israel attacked Gaza nine days out of 10 during a so-called ceasefire.",
+            "pubDate": "Wed, 07 Oct 2026 15:25:06 +0000",
+            "snippet": "Israel’s military might has failed to achieve the political goals in Gaza it was supposed to.",
             "isNew": true
           },
           {
-            "title": "Israeli troops seen smashing memorial in occupied West Bank",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/10/7/israeli-troops-seen-smashing-memorial-in-occupied-west-bank?traffic_source=rss",
-            "source": "aljazeera",
+            "title": "‘Palestinians will bear the cost’: UK consulate in East Jerusalem prepares to shut its doors",
+            "link": "https://www.theguardian.com/world/2026/oct/07/uk-consulate-east-jerusalem-prepares-close-israel",
+            "source": "guardian",
             "sources": [
-              "aljazeera"
+              "guardian"
             ],
-            "pubDate": "Wed, 07 Oct 2026 08:16:17 +0000",
-            "snippet": "An Israeli soldier was spotted smashing a memorial to Palestinians during raids in the occupied West Bank.",
+            "pubDate": "Wed, 07 Oct 2026 15:14:12 GMT",
+            "snippet": "Forced closure marks low point in UK-Israeli relations, with reports UK is considering retaliatory expulsion of Israeli diplomats from LondonIsrael marks three years since 7 October attack – liveThe U",
             "isNew": true
           },
           {
-            "title": "Yemen’s Houthis attack Aden airport; Saudi forces down missile near Riyadh",
-            "link": "https://www.aljazeera.com/news/2026/10/7/yemens-houthis-attack-aden-airport-saudi-forces-down-missile-near-riyadh?traffic_source=rss",
+            "title": "Israeli soldier assaults Palestinian woman in occupied West Bank",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/10/7/israeli-soldier-assaults-palestinian-woman-in-occupied-west-bank?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Wed, 07 Oct 2026 06:41:11 +0000",
-            "snippet": "Yemeni government says one of the missiles hit Aden airport&#039;s runway minutes before a flight from Cairo was due to land.",
+            "pubDate": "Wed, 07 Oct 2026 12:39:07 +0000",
+            "snippet": "An Israeli soldier was filmed assaulting a Palestinian woman during a raid on a family home in the occupied West Bank.",
             "isNew": true
           },
           {
-            "title": "At least 11 killed as Russia launches ‘massive’ attack on Ukraine",
-            "link": "https://www.aljazeera.com/news/2026/10/7/at-least-two-killed-in-kyiv-as-russia-launches-massive-attack-on-ukraine?traffic_source=rss",
+            "title": "US military aid to Israel continues three years into Gaza genocide",
+            "link": "https://www.aljazeera.com/news/2026/10/7/how-us-military-aid-to-israel-continues-three-years-into-gaza-genocide?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Wed, 07 Oct 2026 06:19:26 +0000",
-            "snippet": "Ukraine&#039;s air force says Russia launched 130 drones, 48 cruise missiles and ballistic missiles in overnight attack.",
+            "pubDate": "Wed, 07 Oct 2026 11:23:48 +0000",
+            "snippet": "US military aid and arms transfer continue unchanged, as US public sentiment shifts. ",
+            "isNew": true
+          },
+          {
+            "title": "Candles lit in memory of those killed in October 7 attacks",
+            "link": "https://www.bbc.co.uk/news/videos/cme8r9ke1n9yo?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc"
+            ],
+            "pubDate": "Wed, 07 Oct 2026 04:34:20 GMT",
+            "snippet": "Israelis are marking three years since the Hamas-led attack on 7 October 2023.",
             "isNew": true
           },
           {
@@ -624,17 +667,6 @@
             "pubDate": "Mon, 05 Oct 2026 15:45:46 GMT",
             "snippet": "The US withdrew its bombers from RAF Fairford after an investigation into an alleged planned terrorist attack on the base. At least 10 B-1 bombers used by the US military in the Iran conflict flew out",
             "isNew": true
-          },
-          {
-            "title": "Guardian readers fund life-changing surgery for Somali boy injured in US airstrike",
-            "link": "https://www.theguardian.com/global-development/2026/oct/05/guardian-readers-fundraising-somalian-boy-injured-in-us-strike-surgery-abdiqadir-salah",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Mon, 05 Oct 2026 12:00:24 GMT",
-            "snippet": "After Guardian investigation uncovered drone strike that killed 12 civilians and injured many more, seven-year-old Abdiqadir Salah underwent vital operation in MogadishuOn the rickshaw ride to the hos",
-            "isNew": true
           }
         ]
       },
@@ -642,9 +674,20 @@
         "category_id": "economy",
         "category_name": "경제 영향",
         "category_icon": "📊",
-        "count": 11,
-        "new_count": 11,
+        "count": 9,
+        "new_count": 9,
         "articles": [
+          {
+            "title": "Why Paramount-Warner merger has sparked fears about press freedom",
+            "link": "https://www.aljazeera.com/news/2026/10/7/why-paramount-warner-merger-has-sparked-fears-about-press-freedom?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Wed, 07 Oct 2026 13:56:27 +0000",
+            "snippet": "Chairman&#039;s family ties to Trump and Israel raise questions over editorial independence at CNN and CBS.",
+            "isNew": true
+          },
           {
             "title": "How a Small Business Got Entangled in U.S. Sanctions on Iranian Oil",
             "link": "https://www.nytimes.com/2026/10/07/world/asia/malaysia-shipping-iran-oil-us-sanctions.html",
@@ -654,28 +697,6 @@
             ],
             "pubDate": "Wed, 07 Oct 2026 09:02:02 +0000",
             "snippet": "The case of a small Malaysian shipping agency illustrates the challenges Washington faces in its effort to stanch the flow of Iranian oil.",
-            "isNew": true
-          },
-          {
-            "title": "Has Russia’s fuel crisis given Iranian oil an opening in Central Asia?",
-            "link": "https://www.aljazeera.com/news/2026/10/7/has-russias-fuel-crisis-given-iranian-oil-an-opening-in-central-asia?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Wed, 07 Oct 2026 06:33:54 +0000",
-            "snippet": "Iran&#039;s oil exports have struggled amid a US blockade. A Russian energy crisis because of Ukrainian attacks could help. ",
-            "isNew": true
-          },
-          {
-            "title": "How three years of Israel’s genocidal war have changed Gaza",
-            "link": "https://www.aljazeera.com/news/2026/10/7/how-three-years-of-israels-genocidal-war-have-changed-gaza?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Wed, 07 Oct 2026 05:41:54 +0000",
-            "snippet": "War has devastated Gaza’s economy, education, healthcare, infrastructure and public services, transforming life. ",
             "isNew": true
           },
           {
@@ -712,17 +733,6 @@
             "isNew": true
           },
           {
-            "title": "Iran’s oil minister resigns as country’s economic crisis worsens",
-            "link": "https://www.theguardian.com/world/2026/oct/05/iran-oil-minister-resigns-economic-crisis",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Mon, 05 Oct 2026 14:16:14 GMT",
-            "snippet": "Departure comes amid large drop in oil receipts, rampant inflation and shrinking economyIran’s oil minister has resigned days after allegations that an intermediary trust selling Iranian oil abroad ow",
-            "isNew": true
-          },
-          {
             "title": "Iran’s Top Security Official Warns of Dire Economic Crisis",
             "link": "https://www.nytimes.com/2026/10/04/world/middleeast/iran-economy-rial.html",
             "source": "nytimes",
@@ -754,6 +764,17 @@
             "pubDate": "Sat, 03 Oct 2026 00:34:29 +0000",
             "snippet": "The move followed reports detailing how A7, a Moscow firm, uses shell companies around the world to move funds for clients who are themselves subject to sanctions.",
             "isNew": true
+          },
+          {
+            "title": "Three reasons Middle East oil supply is nearly back to pre-Iran war levels",
+            "link": "https://www.bbc.co.uk/news/articles/cwp8gn13lmygo?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc"
+            ],
+            "pubDate": "Fri, 02 Oct 2026 15:29:28 GMT",
+            "snippet": "Experts say US military assistance, using shuttle tankers and pipelines bypassing the Strait of Hormuz mean exports have rebounded.",
+            "isNew": true
           }
         ]
       },
@@ -761,9 +782,20 @@
         "category_id": "other",
         "category_name": "기타",
         "category_icon": "📰",
-        "count": 7,
-        "new_count": 7,
+        "count": 5,
+        "new_count": 5,
         "articles": [
+          {
+            "title": "How Israel’s genocide in Gaza pulled Britons into the Palestine movement",
+            "link": "https://www.aljazeera.com/news/2026/10/7/how-israels-genocide-in-gaza-pulled-britons-into-the-palestine-movement?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Wed, 07 Oct 2026 15:13:21 +0000",
+            "snippet": "Britons are risking freedom and reputations to stand with Palestinians and challenge government policy.",
+            "isNew": true
+          },
           {
             "title": "What Life in Gaza Is Like Now",
             "link": "https://www.nytimes.com/video/world/middleeast/100000011168313/what-life-in-gaza-is-like-now.html",
@@ -771,41 +803,8 @@
             "sources": [
               "nytimes"
             ],
-            "pubDate": "Wed, 07 Oct 2026 10:32:34 +0000",
+            "pubDate": "Wed, 07 Oct 2026 14:19:16 +0000",
             "snippet": "Nearly a year after Israel and Hamas agreed to end the war in Gaza, Saher Alghorra, a photographer for The New York Times, documents how residents are coping and working to rebuild their lives.",
-            "isNew": true
-          },
-          {
-            "title": "CAS to hear Senegal appeal over AFCON title awarded to Morocco",
-            "link": "https://www.aljazeera.com/sports/2026/10/7/cas-to-hear-senegal-appeal-over-afcon-title-awarded-to-morocco?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Wed, 07 Oct 2026 10:28:32 +0000",
-            "snippet": "Court of Arbitration for Sport (CAS) hearing set to begin after Senegal stripped of Africa Cup of Nations title by CAF.",
-            "isNew": true
-          },
-          {
-            "title": "Fear and a far-right lurch: How October 7 reshaped Israel",
-            "link": "https://www.aljazeera.com/news/2026/10/7/fear-and-a-far-right-lurch-how-october-7-reshaped-israel?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Wed, 07 Oct 2026 08:53:23 +0000",
-            "snippet": "Three years on, the trauma of October 7, 2023, continues to reshape Israel’s politics, wars and place in the world.",
-            "isNew": true
-          },
-          {
-            "title": "Three years of Israel’s mass dispossession of West Bank Palestinians",
-            "link": "https://www.aljazeera.com/features/2026/10/7/three-years-of-israels-mass-dispossession-of-west-bank-palestinians?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Wed, 07 Oct 2026 08:22:19 +0000",
-            "snippet": "Bedouin families uprooted by Israeli settlers describe a state-backed project of forced transfer in the West Bank.",
             "isNew": true
           },
           {
@@ -818,111 +817,27 @@
             "pubDate": "Tue, 06 Oct 2026 21:00:28 GMT",
             "snippet": "Jaafar Ashtiyeh was covering violence against olive farmers when settlers set upon him with the butts of their rifles Armed Israeli settlers beat a photographer in the presence of Israeli soldiers, ho",
             "isNew": true
-          }
-        ]
-      },
-      {
-        "category_id": "humanitarian",
-        "category_name": "인도주의/피해",
-        "category_icon": "🏥",
-        "count": 4,
-        "new_count": 4,
-        "articles": [
-          {
-            "title": "Photos: Three years of Israel’s war on Gaza as tent cities spread amid ruin",
-            "link": "https://www.aljazeera.com/gallery/2026/10/7/photos-three-years-of-israels-war-on-gaza-as-tent-cities-spread-amid-ruin?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Wed, 07 Oct 2026 09:55:26 +0000",
-            "snippet": "Tent cities in Gaza grow as families mourn the dead, care for the injured, and endure relentless displacement.",
-            "isNew": true
           },
           {
-            "title": "How has Israel’s genocide changed Gaza?",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/10/7/how-has-israels-genocide-changed-gaza?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Wed, 07 Oct 2026 06:27:18 +0000",
-            "snippet": "Gaza City’s port was a hub for fishing and tourism before the genocide. Al Jazeera’s Maram Humaid shows what’s left.",
-            "isNew": true
-          },
-          {
-            "title": "NGOs say Israel bombed a journalist and appeared to attack ambulances trying to aid her – explainer",
-            "link": "https://www.theguardian.com/global-development/video/2026/oct/06/ngos-say-israel-bombed-a-journalist-and-appeared-to-attack-ambulances-trying-to-aid-her-explainer",
+            "title": "‘A return to prison is always looming’: Iran’s Nobel laureate recounts torture in jail and hopes for the future",
+            "link": "https://www.theguardian.com/global-development/2026/oct/06/iranian-nobel-laureate-narges-mohammadi-recounts-prison-beating",
             "source": "guardian",
             "sources": [
               "guardian"
             ],
-            "pubDate": "Tue, 06 Oct 2026 14:13:55 GMT",
-            "snippet": "Journalist Amal Khalil was killed in April in what colleagues described as a sustained attack by Israeli forces. Rescuers attempted to dig her out of the rubble of a building that had been targeted by",
+            "pubDate": "Tue, 06 Oct 2026 08:00:06 GMT",
+            "snippet": "The human rights activist Narges Mohammadi was severely beaten by security forces and denied medical care. In an interview with the Guardian, she discusses her shifting sense of identity and being a m",
             "isNew": true
           },
           {
-            "title": "Israel Lists 170 Killed in Gaza It Says Were Militants Posing as Media Workers",
-            "link": "https://www.nytimes.com/2026/10/02/world/middleeast/israel-gaza-militants-journalists-killed.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Fri, 02 Oct 2026 20:48:07 +0000",
-            "snippet": "The Israeli military published an investigation it said rebuts accusations that it intentionally targeted journalists. But it and a journalists group disagree over 78 people who are on the list.",
-            "isNew": true
-          }
-        ]
-      },
-      {
-        "category_id": "regional",
-        "category_name": "지역 정세",
-        "category_icon": "🌍",
-        "count": 4,
-        "new_count": 4,
-        "articles": [
-          {
-            "title": "Yemen civil war: what sparked latest escalation and who is involved?",
-            "link": "https://www.theguardian.com/world/2026/oct/07/yemen-civil-war-what-sparked-latest-escalation-and-who-is-involved",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Wed, 07 Oct 2026 04:00:34 GMT",
-            "snippet": "Conflict between UN-recognised government and Iran-backed Houthis has impacts far beyond country’s bordersYemen has been plunged into a civil war that has extended to one of the world’s most vital mar",
-            "isNew": true
-          },
-          {
-            "title": "Why Saudi Arabia’s Last War in Yemen Turned Into a Quagmire",
-            "link": "https://www.nytimes.com/2026/10/05/world/middleeast/saudi-arabia-war-yemen-houthis-quagmire.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Tue, 06 Oct 2026 18:23:51 +0000",
-            "snippet": "A Saudi-led coalition launched a military campaign against the Iran-backed Houthi militia in the country, reviving memories of its previous effort.",
-            "isNew": true
-          },
-          {
-            "title": "Yemen's government announces all-out war to reclaim land from Houthis",
-            "link": "https://www.bbc.co.uk/news/articles/cx8dzj9vpp01o?at_medium=RSS&at_campaign=rss",
+            "title": "Australia investigating Flydubai co-pilot's links to country",
+            "link": "https://www.bbc.co.uk/news/articles/cxly4nym57q9o?at_medium=RSS&at_campaign=rss",
             "source": "bbc",
             "sources": [
               "bbc"
             ],
-            "pubDate": "Sun, 04 Oct 2026 16:51:30 GMT",
-            "snippet": "The Yemeni president's announcement comes amid an exchange of strikes between the Houthis and the Saudi-led coalition.",
-            "isNew": true
-          },
-          {
-            "title": "Iraq Wins U.S. Permission to Resume Iran Flights, Prime Minister Says",
-            "link": "https://www.nytimes.com/2026/10/03/world/middleeast/iraq-iran-flights-us-sanctions.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Sat, 03 Oct 2026 10:25:33 +0000",
-            "snippet": "Flights between the neighboring countries had been halted after broad U.S. penalties on Iran’s aviation industry.",
+            "pubDate": "Sun, 04 Oct 2026 06:19:17 GMT",
+            "snippet": "State police and the country's security agency are looking into the co-pilot, who attempted to take control of a Flydubai plane travelling to Israel.",
             "isNew": true
           }
         ]
@@ -931,9 +846,20 @@
         "category_id": "diplomacy",
         "category_name": "외교/협상",
         "category_icon": "🤝",
-        "count": 3,
-        "new_count": 3,
+        "count": 4,
+        "new_count": 4,
         "articles": [
+          {
+            "title": "The US has backed Libya’s Haftar clan. The UK should not make the same mistake | Letters",
+            "link": "https://www.theguardian.com/world/2026/oct/07/the-us-has-backed-libyas-haftar-clan-the-uk-should-not-make-the-same-mistake",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Wed, 07 Oct 2026 17:00:21 GMT",
+            "snippet": "Steven Kay says Britain should act independently and in a role consistent with its status as a member of the UN security councilPatrick Wintour’s report (Libyan unity talks upended as warlord’s son li",
+            "isNew": true
+          },
           {
             "title": "The Guardian view on the Green party and Palestine: rejecting two states is no shortcut to peace | Editorial",
             "link": "https://www.theguardian.com/commentisfree/2026/oct/06/the-guardian-view-on-the-green-party-and-palestine-rejecting-two-states-is-no-shortcut-to-peace",
@@ -970,6 +896,112 @@
         ]
       },
       {
+        "category_id": "humanitarian",
+        "category_name": "인도주의/피해",
+        "category_icon": "🏥",
+        "count": 4,
+        "new_count": 4,
+        "articles": [
+          {
+            "title": "More than 200,000 displaced as fighting escalates in Yemen, UN says",
+            "link": "https://www.aljazeera.com/gallery/2026/10/7/more-than-200000-displaced-as-fighting-escalates-in-yemen-un-says-2?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Wed, 07 Oct 2026 16:02:17 +0000",
+            "snippet": "With 3,700 fleeing to Djibouti amid Houthi clashes, the UN warns three in four families in parts of Yemen face hunger.",
+            "isNew": true
+          },
+          {
+            "title": "White House defends Trump comment to let Iran 'take out' LA and San Diego",
+            "link": "https://www.bbc.co.uk/news/articles/c6r7yn8pknyxo?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc"
+            ],
+            "pubDate": "Tue, 06 Oct 2026 20:15:31 GMT",
+            "snippet": "Gavin Newsom called the remarks \"deranged\", but the White House said Trump was warning of the risk of a nuclear Iran. ",
+            "isNew": true
+          },
+          {
+            "title": "NGOs say Israel bombed a journalist and appeared to attack ambulances trying to aid her – explainer",
+            "link": "https://www.theguardian.com/global-development/video/2026/oct/06/ngos-say-israel-bombed-a-journalist-and-appeared-to-attack-ambulances-trying-to-aid-her-explainer",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Tue, 06 Oct 2026 14:13:55 GMT",
+            "snippet": "Journalist Amal Khalil was killed in April in what colleagues described as a sustained attack by Israeli forces. Rescuers attempted to dig her out of the rubble of a building that had been targeted by",
+            "isNew": true
+          },
+          {
+            "title": "Israel Lists 170 Killed in Gaza It Says Were Militants Posing as Media Workers",
+            "link": "https://www.nytimes.com/2026/10/02/world/middleeast/israel-gaza-militants-journalists-killed.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Fri, 02 Oct 2026 20:48:07 +0000",
+            "snippet": "The Israeli military published an investigation it said rebuts accusations that it intentionally targeted journalists. But it and a journalists group disagree over 78 people who are on the list.",
+            "isNew": true
+          }
+        ]
+      },
+      {
+        "category_id": "regional",
+        "category_name": "지역 정세",
+        "category_icon": "🌍",
+        "count": 4,
+        "new_count": 4,
+        "articles": [
+          {
+            "title": "Why Saudi Arabia’s Last War in Yemen Turned Into a Quagmire",
+            "link": "https://www.nytimes.com/2026/10/05/world/middleeast/saudi-arabia-war-yemen-houthis-quagmire.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Wed, 07 Oct 2026 13:28:19 +0000",
+            "snippet": "A Saudi-led coalition launched a military campaign this week against the Iran-backed Houthi militia in the country, reviving memories of its previous effort.",
+            "isNew": true
+          },
+          {
+            "title": "Yemen civil war: what sparked latest escalation and who is involved?",
+            "link": "https://www.theguardian.com/world/2026/oct/07/yemen-civil-war-what-sparked-latest-escalation-and-who-is-involved",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Wed, 07 Oct 2026 04:00:34 GMT",
+            "snippet": "Conflict between UN-recognised government and Iran-backed Houthis has impacts far beyond country’s bordersYemen has been plunged into a civil war that has extended to one of the world’s most vital mar",
+            "isNew": true
+          },
+          {
+            "title": "Yemen's government announces all-out war to reclaim land from Houthis",
+            "link": "https://www.bbc.co.uk/news/articles/cx8dzj9vpp01o?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc"
+            ],
+            "pubDate": "Sun, 04 Oct 2026 16:51:30 GMT",
+            "snippet": "The Yemeni president's announcement comes amid an exchange of strikes between the Houthis and the Saudi-led coalition.",
+            "isNew": true
+          },
+          {
+            "title": "Iraq Wins U.S. Permission to Resume Iran Flights, Prime Minister Says",
+            "link": "https://www.nytimes.com/2026/10/03/world/middleeast/iraq-iran-flights-us-sanctions.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Sat, 03 Oct 2026 10:25:33 +0000",
+            "snippet": "Flights between the neighboring countries had been halted after broad U.S. penalties on Iran’s aviation industry.",
+            "isNew": true
+          }
+        ]
+      },
+      {
         "category_id": "politics",
         "category_name": "국내 정치",
         "category_icon": "🏛️",
@@ -999,113 +1031,53 @@
             "isNew": true
           }
         ]
-      },
-      {
-        "category_id": "nuclear",
-        "category_name": "핵/WMD",
-        "category_icon": "☢️",
-        "count": 1,
-        "new_count": 1,
-        "articles": [
-          {
-            "title": "US sets new demands for Iran deal: What are they?",
-            "link": "https://www.aljazeera.com/news/2026/10/7/us-sets-new-demands-for-iran-deal-what-are-they?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Wed, 07 Oct 2026 10:58:23 +0000",
-            "snippet": "US Vice President Vance’s call for reduced nuclear enrichment suggests room for compromise, but major obstacles remain.",
-            "isNew": true
-          }
-        ]
       }
     ],
     "recent_30min": {
       "total_new": 49,
       "by_category": {
-        "nuclear": {
-          "count": 1,
+        "diplomacy": {
+          "count": 4,
           "titles": [
             {
-              "title": "US sets new demands for Iran deal: What are they?",
-              "link": "https://www.aljazeera.com/news/2026/10/7/us-sets-new-demands-for-iran-deal-what-are-they?traffic_source=rss",
-              "source": "aljazeera"
-            }
-          ]
-        },
-        "other": {
-          "count": 7,
-          "titles": [
-            {
-              "title": "What Life in Gaza Is Like Now",
-              "link": "https://www.nytimes.com/video/world/middleeast/100000011168313/what-life-in-gaza-is-like-now.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "CAS to hear Senegal appeal over AFCON title awarded to Morocco",
-              "link": "https://www.aljazeera.com/sports/2026/10/7/cas-to-hear-senegal-appeal-over-afcon-title-awarded-to-morocco?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Fear and a far-right lurch: How October 7 reshaped Israel",
-              "link": "https://www.aljazeera.com/news/2026/10/7/fear-and-a-far-right-lurch-how-october-7-reshaped-israel?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Three years of Israel’s mass dispossession of West Bank Palestinians",
-              "link": "https://www.aljazeera.com/features/2026/10/7/three-years-of-israels-mass-dispossession-of-west-bank-palestinians?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Israeli settlers beat press photographer as soldiers watch in West Bank",
-              "link": "https://www.theguardian.com/world/2026/oct/06/israeli-settlers-beat-press-photographer-as-soldiers-watch-in-west-bank",
+              "title": "The US has backed Libya’s Haftar clan. The UK should not make the same mistake | Letters",
+              "link": "https://www.theguardian.com/world/2026/oct/07/the-us-has-backed-libyas-haftar-clan-the-uk-should-not-make-the-same-mistake",
               "source": "guardian"
-            }
-          ]
-        },
-        "military": {
-          "count": 17,
-          "titles": [
-            {
-              "title": "Bulgaria ends search for missing crew after drone strike sinks cargo ship",
-              "link": "https://www.aljazeera.com/news/2026/10/7/bulgaria-ends-search-for-missing-crew-after-drone-strike-sinks-cargo-ship?traffic_source=rss",
-              "source": "aljazeera"
             },
             {
-              "title": "What does a year-long ceasefire in Gaza look like?",
-              "link": "https://www.aljazeera.com/video/by-the-numbers-3/2026/10/7/what-does-a-year-long-ceasefire-in-gaza-look-like?traffic_source=rss",
-              "source": "aljazeera"
+              "title": "The Guardian view on the Green party and Palestine: rejecting two states is no shortcut to peace | Editorial",
+              "link": "https://www.theguardian.com/commentisfree/2026/oct/06/the-guardian-view-on-the-green-party-and-palestine-rejecting-two-states-is-no-shortcut-to-peace",
+              "source": "guardian"
             },
             {
-              "title": "Israeli troops seen smashing memorial in occupied West Bank",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/10/7/israeli-troops-seen-smashing-memorial-in-occupied-west-bank?traffic_source=rss",
-              "source": "aljazeera"
+              "title": "UK threatens to expel Israeli diplomats over planned East Jerusalem consulate closure",
+              "link": "https://www.theguardian.com/world/2026/oct/05/uk-threatens-to-expel-israeli-diplomats-after-closing-of-east-jerusalem-consulate",
+              "source": "guardian"
             },
             {
-              "title": "Yemen’s Houthis attack Aden airport; Saudi forces down missile near Riyadh",
-              "link": "https://www.aljazeera.com/news/2026/10/7/yemens-houthis-attack-aden-airport-saudi-forces-down-missile-near-riyadh?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "At least 11 killed as Russia launches ‘massive’ attack on Ukraine",
-              "link": "https://www.aljazeera.com/news/2026/10/7/at-least-two-killed-in-kyiv-as-russia-launches-massive-attack-on-ukraine?traffic_source=rss",
-              "source": "aljazeera"
+              "title": "Iran Jails Hard-Line Lawmaker, Exposing Deep Rifts in Its Leadership",
+              "link": "https://www.nytimes.com/2026/10/02/world/middleeast/iran-hard-line-lawmaker-jail-rift.html",
+              "source": "nytimes"
             }
           ]
         },
         "humanitarian": {
-          "count": 4,
+          "count": 5,
           "titles": [
             {
-              "title": "Photos: Three years of Israel’s war on Gaza as tent cities spread amid ruin",
-              "link": "https://www.aljazeera.com/gallery/2026/10/7/photos-three-years-of-israels-war-on-gaza-as-tent-cities-spread-amid-ruin?traffic_source=rss",
+              "title": "More than 200,000 displaced as fighting escalates in Yemen, UN says",
+              "link": "https://www.aljazeera.com/gallery/2026/10/7/more-than-200000-displaced-as-fighting-escalates-in-yemen-un-says-2?traffic_source=rss",
               "source": "aljazeera"
             },
             {
-              "title": "How has Israel’s genocide changed Gaza?",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/10/7/how-has-israels-genocide-changed-gaza?traffic_source=rss",
+              "title": "Palestinian killed, 16 wounded in Israeli pogrom in occupied West Bank",
+              "link": "https://www.aljazeera.com/news/2026/10/7/palestinian-killed-several-injured-in-israeli-pogrom-in-occupied-west-bank?traffic_source=rss",
               "source": "aljazeera"
+            },
+            {
+              "title": "White House defends Trump comment to let Iran 'take out' LA and San Diego",
+              "link": "https://www.bbc.co.uk/news/articles/c6r7yn8pknyxo?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
             },
             {
               "title": "NGOs say Israel bombed a journalist and appeared to attack ambulances trying to aid her – explainer",
@@ -1119,23 +1091,78 @@
             }
           ]
         },
-        "economy": {
-          "count": 11,
+        "military": {
+          "count": 20,
           "titles": [
+            {
+              "title": "Israelis demand accountability over 7 October failures three years after attacks",
+              "link": "https://www.bbc.co.uk/news/articles/c5zjx7xx3487o?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
+            },
+            {
+              "title": "The mass killing does not mean Israel’s winning",
+              "link": "https://www.aljazeera.com/opinions/2026/10/7/the-mass-killing-does-not-mean-israels-winning?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "‘Palestinians will bear the cost’: UK consulate in East Jerusalem prepares to shut its doors",
+              "link": "https://www.theguardian.com/world/2026/oct/07/uk-consulate-east-jerusalem-prepares-close-israel",
+              "source": "guardian"
+            },
+            {
+              "title": "Israeli soldier assaults Palestinian woman in occupied West Bank",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/10/7/israeli-soldier-assaults-palestinian-woman-in-occupied-west-bank?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "US military aid to Israel continues three years into Gaza genocide",
+              "link": "https://www.aljazeera.com/news/2026/10/7/how-us-military-aid-to-israel-continues-three-years-into-gaza-genocide?traffic_source=rss",
+              "source": "aljazeera"
+            }
+          ]
+        },
+        "other": {
+          "count": 5,
+          "titles": [
+            {
+              "title": "How Israel’s genocide in Gaza pulled Britons into the Palestine movement",
+              "link": "https://www.aljazeera.com/news/2026/10/7/how-israels-genocide-in-gaza-pulled-britons-into-the-palestine-movement?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "What Life in Gaza Is Like Now",
+              "link": "https://www.nytimes.com/video/world/middleeast/100000011168313/what-life-in-gaza-is-like-now.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Israeli settlers beat press photographer as soldiers watch in West Bank",
+              "link": "https://www.theguardian.com/world/2026/oct/06/israeli-settlers-beat-press-photographer-as-soldiers-watch-in-west-bank",
+              "source": "guardian"
+            },
+            {
+              "title": "‘A return to prison is always looming’: Iran’s Nobel laureate recounts torture in jail and hopes for the future",
+              "link": "https://www.theguardian.com/global-development/2026/oct/06/iranian-nobel-laureate-narges-mohammadi-recounts-prison-beating",
+              "source": "guardian"
+            },
+            {
+              "title": "Australia investigating Flydubai co-pilot's links to country",
+              "link": "https://www.bbc.co.uk/news/articles/cxly4nym57q9o?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
+            }
+          ]
+        },
+        "economy": {
+          "count": 9,
+          "titles": [
+            {
+              "title": "Why Paramount-Warner merger has sparked fears about press freedom",
+              "link": "https://www.aljazeera.com/news/2026/10/7/why-paramount-warner-merger-has-sparked-fears-about-press-freedom?traffic_source=rss",
+              "source": "aljazeera"
+            },
             {
               "title": "How a Small Business Got Entangled in U.S. Sanctions on Iranian Oil",
               "link": "https://www.nytimes.com/2026/10/07/world/asia/malaysia-shipping-iran-oil-us-sanctions.html",
               "source": "nytimes"
-            },
-            {
-              "title": "Has Russia’s fuel crisis given Iranian oil an opening in Central Asia?",
-              "link": "https://www.aljazeera.com/news/2026/10/7/has-russias-fuel-crisis-given-iranian-oil-an-opening-in-central-asia?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "How three years of Israel’s genocidal war have changed Gaza",
-              "link": "https://www.aljazeera.com/news/2026/10/7/how-three-years-of-israels-genocidal-war-have-changed-gaza?traffic_source=rss",
-              "source": "aljazeera"
             },
             {
               "title": "UK to make last-ditch effort to stop Israel closing East Jerusalem consulate",
@@ -1146,6 +1173,11 @@
               "title": "War With Iran Is Forcing the World to Reckon With Geography’s Power",
               "link": "https://www.nytimes.com/2026/10/05/business/economy/iran-war-oil-geography.html",
               "source": "nytimes"
+            },
+            {
+              "title": "Burst of Attacks in Gulf Heightens Fears Over Fragile Energy Trade",
+              "link": "https://www.nytimes.com/2026/10/05/business/hormuz-saudi-iran-houthis.html",
+              "source": "nytimes"
             }
           ]
         },
@@ -1153,14 +1185,14 @@
           "count": 4,
           "titles": [
             {
-              "title": "Yemen civil war: what sparked latest escalation and who is involved?",
-              "link": "https://www.theguardian.com/world/2026/oct/07/yemen-civil-war-what-sparked-latest-escalation-and-who-is-involved",
-              "source": "guardian"
-            },
-            {
               "title": "Why Saudi Arabia’s Last War in Yemen Turned Into a Quagmire",
               "link": "https://www.nytimes.com/2026/10/05/world/middleeast/saudi-arabia-war-yemen-houthis-quagmire.html",
               "source": "nytimes"
+            },
+            {
+              "title": "Yemen civil war: what sparked latest escalation and who is involved?",
+              "link": "https://www.theguardian.com/world/2026/oct/07/yemen-civil-war-what-sparked-latest-escalation-and-who-is-involved",
+              "source": "guardian"
             },
             {
               "title": "Yemen's government announces all-out war to reclaim land from Houthis",
@@ -1186,26 +1218,6 @@
               "title": "US, Israeli and European far-right figures to gather for conference in Israel",
               "link": "https://www.theguardian.com/us-news/2026/oct/06/us-israel-far-right-conference",
               "source": "guardian"
-            }
-          ]
-        },
-        "diplomacy": {
-          "count": 3,
-          "titles": [
-            {
-              "title": "The Guardian view on the Green party and Palestine: rejecting two states is no shortcut to peace | Editorial",
-              "link": "https://www.theguardian.com/commentisfree/2026/oct/06/the-guardian-view-on-the-green-party-and-palestine-rejecting-two-states-is-no-shortcut-to-peace",
-              "source": "guardian"
-            },
-            {
-              "title": "UK threatens to expel Israeli diplomats over planned East Jerusalem consulate closure",
-              "link": "https://www.theguardian.com/world/2026/oct/05/uk-threatens-to-expel-israeli-diplomats-after-closing-of-east-jerusalem-consulate",
-              "source": "guardian"
-            },
-            {
-              "title": "Iran Jails Hard-Line Lawmaker, Exposing Deep Rifts in Its Leadership",
-              "link": "https://www.nytimes.com/2026/10/02/world/middleeast/iran-hard-line-lawmaker-jail-rift.html",
-              "source": "nytimes"
             }
           ]
         }
@@ -1299,50 +1311,58 @@
     }
   ],
   "economic_indicators": {
-    "WTI": {
-      "price": 89.92,
-      "change": 0.48,
-      "changePercent": 0.54,
-      "prev": 89.44
+    "VIX": {
+      "price": 15.15,
+      "change": 0.14,
+      "changePercent": 0.93,
+      "prev": 15.01
+    },
+    "BRENT": {
+      "price": 99.86,
+      "change": -0.72,
+      "changePercent": -0.72,
+      "prev": 100.58
+    },
+    "US10Y": {
+      "price": 5.28,
+      "change": 0.01,
+      "changePercent": 0.19,
+      "prev": 5.27
+    },
+    "GOLD": {
+      "price": 4137.8,
+      "change": -49.3,
+      "changePercent": -1.18,
+      "prev": 4187.1
+    },
+    "DXY": {
+      "price": 102.28,
+      "change": 0.45,
+      "changePercent": 0.44,
+      "prev": 101.83
     },
     "US2Y": {
       "price": 4.04,
-      "change": 0.02,
-      "changePercent": 0.5,
-      "prev": 4.02
+      "change": 0,
+      "changePercent": 0,
+      "prev": 4.04
     },
-    "BRENT": {
-      "price": 101.81,
-      "change": 1.23,
-      "changePercent": 1.22,
-      "prev": 100.58
-    },
-    "VIX": {
-      "price": 15.7,
-      "change": 0.69,
-      "changePercent": 4.6,
-      "prev": 15.01
-    },
-    "DXY": {
-      "price": 102.33,
-      "change": 0.5,
-      "changePercent": 0.49,
-      "prev": 101.83
-    },
-    "GOLD": {
-      "price": 4144.5,
-      "change": -42.6,
-      "changePercent": -1.02,
-      "prev": 4187.1
-    },
-    "US10Y": {
-      "price": 5.27,
-      "change": -0.04,
-      "changePercent": -0.75,
-      "prev": 5.31
+    "WTI": {
+      "price": 88.16,
+      "change": -1.28,
+      "changePercent": -1.43,
+      "prev": 89.44
     }
   },
   "critical_events": [
+    {
+      "id": "unilateral_deescalation",
+      "name": "일방적 전투 축소/자제 선언",
+      "severity": "high",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "shorten"
+    },
     {
       "id": "capital_attack",
       "name": "수도 직접 공격/포위",
@@ -1355,8 +1375,8 @@
       "id": "humanitarian_crisis",
       "name": "대규모 인도주의 위기",
       "severity": "high",
-      "confidence": 0.6666666666666666,
-      "matchCount": 2,
+      "confidence": 1,
+      "matchCount": 4,
       "direction": "shorten"
     }
   ],
