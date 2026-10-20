@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-10-20T01:31:22.649Z",
+  "timestamp": "2026-10-20T07:05:40.032Z",
   "war_day": 234,
   "probabilities": {
-    "1개월 내 (~3월)": 16,
-    "2~3개월 (4~5월)": 34.8,
-    "4~6개월 (6~8월)": 28,
-    "7~12개월 (9월~27/2월)": 15.2,
-    "1년 초과": 6
+    "1개월 내 (~3월)": 18.4,
+    "2~3개월 (4~5월)": 35.6,
+    "4~6개월 (6~8월)": 25.8,
+    "7~12개월 (9월~27/2월)": 14,
+    "1년 초과": 6.2
   },
   "factors": [
     {
@@ -45,9 +45,9 @@
       "decay": 0.4
     },
     {
-      "factor": "확전 뉴스 우세 (확전6:휴전0)",
-      "impact": "전쟁 장기화 가능성 (확전비율 100%)",
-      "weight": "+0.04%p (4~6개월)",
+      "factor": "확전 뉴스 우세 (확전6:휴전2)",
+      "impact": "전쟁 장기화 가능성 (확전비율 75%)",
+      "weight": "+0.03%p (4~6개월)",
       "direction": "lengthen",
       "detail": "언론에서 휴전보다 확전을 더 많이 보도하고 있습니다.",
       "keywords": [
@@ -164,11 +164,11 @@
       "decay": 1
     },
     {
-      "factor": "협상/외교 뉴스 8.600000000000001건 감지",
+      "factor": "협상/외교 뉴스 12.600000000000001건 감지",
       "impact": "외교적 해결 움직임 포착",
-      "weight": "+0.02%p (1개월내), +0.01%p (2~3개월)",
+      "weight": "+0.03%p (1개월내), +0.02%p (2~3개월)",
       "direction": "shorten",
-      "detail": "실시간 뉴스에서 협상 관련 기사 8.600000000000001건이 감지되었습니다.",
+      "detail": "실시간 뉴스에서 협상 관련 기사 12.600000000000001건이 감지되었습니다.",
       "keywords": [
         "negotiat",
         "talks",
@@ -181,11 +181,11 @@
       "decay": 1
     },
     {
-      "factor": "지역 확산 뉴스 8건 감지",
+      "factor": "지역 확산 뉴스 10건 감지",
       "impact": "주변국 연루 확대로 장기화 위험",
       "weight": "+0.01%p (4~6개월), +0.01%p (7~12개월)",
       "direction": "lengthen",
-      "detail": "주변국을 언급하는 기사 8건이 감지되었습니다.",
+      "detail": "주변국을 언급하는 기사 10건이 감지되었습니다.",
       "keywords": [
         "saudi",
         "uae",
@@ -234,6 +234,40 @@
       "decay": 0.3
     },
     {
+      "factor": "[중대 이벤트] 일방적 전투 축소/자제 선언",
+      "impact": "교전국의 일방적 전투 축소 또는 자제 선언. 역사적으로 패전국의 자발적 전선 축소는 80% 이상 공식 항복의 전조.",
+      "weight": "+3.3%p (1개월내), +4.7%p (2~3개월), -2.0%p (4~6개월), -2.0%p (7~12개월), -0.7%p (1년초과)",
+      "direction": "shorten",
+      "detail": "교전국의 일방적 전투 축소 또는 자제 선언. 역사적으로 패전국의 자발적 전선 축소는 80% 이상 공식 항복의 전조.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Palestine weekly: Israeli settlers attack journalist and diplomats",
+      "keywords": [
+        "halt",
+        "attack",
+        "stop",
+        "attack",
+        "neighb",
+        "no more",
+        "attack",
+        "withdraw",
+        "forces",
+        "pull back",
+        "troops",
+        "unilateral",
+        "ceasefire",
+        "reduce",
+        "operation",
+        "de-escalat",
+        "announc",
+        "restrain",
+        "attack",
+        "not attack",
+        "suspend",
+        "operation"
+      ],
+      "applied": "2026-10-20",
+      "active": true,
+      "severity": "high"
+    },
+    {
       "factor": "[중대 이벤트] 전선 확대/신규 참전국",
       "impact": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).",
       "weight": "-1.3%p (1개월내), -2.0%p (2~3개월), +2.7%p (4~6개월), +2.0%p (7~12개월), +1.3%p (1년초과)",
@@ -260,11 +294,41 @@
       "severity": "moderate"
     },
     {
-      "factor": "유가 급등 (WTI $98.9/배럴)",
+      "factor": "[중대 이벤트] 대량살상무기(WMD)/핵 위협",
+      "impact": "WMD/핵 위협 감지. 핵 위협은 분쟁의 성격을 근본적으로 변화시키며, 국제사회 전체의 개입을 촉발하여 예측 불확실성이 극대화.",
+      "weight": "+2.0%p (1개월내), +2.0%p (2~3개월), +3.3%p (4~6개월), +2.7%p (7~12개월), +2.0%p (1년초과)",
+      "direction": "lengthen",
+      "detail": "WMD/핵 위협 감지. 핵 위협은 분쟁의 성격을 근본적으로 변화시키며, 국제사회 전체의 개입을 촉발하여 예측 불확실성이 극대화.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: How Top Trump Officials Stoked Fears of a Nuke That Could Fry the Power Grid",
+      "keywords": [
+        "nuclear",
+        "strike",
+        "nuclear",
+        "weapon",
+        "use",
+        "nuclear",
+        "threat",
+        "chemical",
+        "weapon",
+        "use",
+        "biological",
+        "weapon",
+        "wmd",
+        "deploy",
+        "nuclear",
+        "option",
+        "atomic",
+        "bomb"
+      ],
+      "applied": "2026-10-20",
+      "active": true,
+      "severity": "critical"
+    },
+    {
+      "factor": "유가 급등 (WTI $98.58/배럴)",
       "impact": "중간 수준 경제 압력",
       "weight": "+2%p (1-2개월)",
       "direction": "shorten",
-      "detail": "WTI 유가가 $98.9/배럴로 90달러 이상입니다. 호르무즈 해협 봉쇄와 맞물려 글로벌 에너지 시장에 큰 충격을 주고 있으며, 주요국들의 조기 종전 압력이 강화되고 있습니다.",
+      "detail": "WTI 유가가 $98.58/배럴로 90달러 이상입니다. 호르무즈 해협 봉쇄와 맞물려 글로벌 에너지 시장에 큰 충격을 주고 있으며, 주요국들의 조기 종전 압력이 강화되고 있습니다.",
       "keywords": [
         "oil",
         "crude",
@@ -277,11 +341,11 @@
       "active": true
     },
     {
-      "factor": "금값 사상최고 ($4137.9/oz)",
+      "factor": "금값 사상최고 ($4155.2/oz)",
       "impact": "안전자산 수요 폭증 → 글로벌 불안 심화",
       "weight": "+2%p (4-6개월)",
       "direction": "lengthen",
-      "detail": "금 가격이 온스당 $4137.9로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
+      "detail": "금 가격이 온스당 $4155.2로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
       "keywords": [
         "gold",
         "safe haven",
@@ -309,12 +373,12 @@
     }
   ],
   "news_signals": {
-    "ceasefire_mentions": 0,
+    "ceasefire_mentions": 2,
     "escalation_mentions": 6,
-    "negotiation_mentions": 8.600000000000001,
-    "casualty_mentions": 12,
-    "peace_mentions": 2,
-    "regional_spread": 8,
+    "negotiation_mentions": 12.600000000000001,
+    "casualty_mentions": 8,
+    "peace_mentions": 0,
+    "regional_spread": 10,
     "total_articles": 50,
     "new_articles": 50,
     "unique_events": 45,
@@ -322,7 +386,67 @@
   },
   "latest_news": [
     {
-      "title": "Rashida Tlaib demands arrest of Israeli soldier linked to Hind Rajab death",
+      "title": "US-Ukraine relations sour as Trump, Zelenskyy clash over talks, arms",
+      "link": "https://www.aljazeera.com/news/2026/10/20/us-ukraine-relations-sour-as-trump-zelenskyy-clash-over-talks-arms?traffic_source=rss",
+      "pubDate": "Tue, 20 Oct 2026 06:23:44 +0000",
+      "source": "aljazeera",
+      "snippet": "Trump calls for Zelenskyy to be replaced as negotiator, while Ukraine&#039;s president says arms shipments delayed.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Palestine weekly: Israeli settlers attack journalist and diplomats",
+      "link": "https://www.aljazeera.com/news/2026/10/20/palestine-weekly-israeli-settlers-attack-journalist-and-diplomats?traffic_source=rss",
+      "pubDate": "Tue, 20 Oct 2026 06:22:33 +0000",
+      "source": "aljazeera",
+      "snippet": "Settler olive harvest attacks top 2025 total, journalist and diplomats attacked as Israel halts Gaza commercial imports.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Egypt’s Hassan and Zico suspended over FIFA World Cup refereeing criticism",
+      "link": "https://www.aljazeera.com/sports/2026/10/20/egypts-hassan-and-zico-suspended-over-fifa-world-cup-refereeing-criticism?traffic_source=rss",
+      "pubDate": "Tue, 20 Oct 2026 06:21:56 +0000",
+      "source": "aljazeera",
+      "snippet": "FIFA punishes Egypt&#039;s head coach, forward and team manager for their comments after their World Cup loss to Argentina.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Israel’s elections 2026 explained in maps and charts",
+      "link": "https://www.aljazeera.com/news/2026/10/20/israels-elections-2026-explained-in-maps-and-charts?traffic_source=rss",
+      "pubDate": "Tue, 20 Oct 2026 05:25:31 +0000",
+      "source": "aljazeera",
+      "snippet": "Israelis vote on October 27 in the sixth election since 2019. Here’s how the system works and who gets left out.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "The human cost of surging US air strikes in Somalia",
+      "link": "https://www.aljazeera.com/news/2026/10/20/us-air-strikes-surge-in-somalia-as-families-seek-answers?traffic_source=rss",
+      "pubDate": "Tue, 20 Oct 2026 01:52:32 +0000",
+      "source": "aljazeera",
+      "snippet": "Families recount deaths, injuries and displacement as Trump accelerates US strikes against armed groups in Somalia.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Rashida Tlaib demands arrest of Israeli soldier tied to Hind Rajab killing",
       "link": "https://www.aljazeera.com/news/2026/10/20/rashida-tlaib-demands-arrest-of-israeli-soldier-linked-to-hind-rajab-death?traffic_source=rss",
       "pubDate": "Tue, 20 Oct 2026 00:18:20 +0000",
       "source": "aljazeera",
@@ -338,7 +462,7 @@
       "link": "https://www.aljazeera.com/news/2026/10/20/hegseth-meets-netanyahu-in-unannounced-israel-visit?traffic_source=rss",
       "pubDate": "Tue, 20 Oct 2026 00:08:01 +0000",
       "source": "aljazeera",
-      "snippet": "Hegseth has travelled to Israel to meet Netanyahu ahead of a closely contested election, Axios reported, citing sources.",
+      "snippet": "Hegseth has travelled to Israel to meet Netanyahu before a closely contested election, Axios reported, citing sources.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -358,119 +482,11 @@
       "_isDuplicate": false
     },
     {
-      "title": "Tehran rejects any role in plot to kill leaders of German Jewish groups",
-      "link": "https://www.aljazeera.com/news/2026/10/19/tehran-rejects-any-role-in-plot-to-kill-leaders-of-jewish-groups?traffic_source=rss",
-      "pubDate": "Mon, 19 Oct 2026 23:16:01 +0000",
-      "source": "aljazeera",
-      "snippet": "Tehran summons German envoy after two men convicted of trying to kill leaders of Jewish groups, rejects any role.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Children among six killed in Russian drone strike on Ukraine park",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/10/19/children-among-six-killed-in-russian-drone-strike-on-ukraine-park?traffic_source=rss",
-      "pubDate": "Mon, 19 Oct 2026 23:12:42 +0000",
-      "source": "aljazeera",
-      "snippet": "Children among six killed in Russian drone strike on Ukraine park",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Trump: ‘Paris is going to be a Muslim city very soon’",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/10/19/trump-paris-is-going-to-be-a-muslim-city-very?traffic_source=rss",
-      "pubDate": "Mon, 19 Oct 2026 22:37:19 +0000",
-      "source": "aljazeera",
-      "snippet": "US President Donald Trump blamed immigrants for the unrest in France, claiming Paris would soon become a ‘Muslim city’.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "160 people reported killed in escalating drone attacks across Sudan",
-      "link": "https://www.aljazeera.com/news/2026/10/19/160-reported-killed-in-escalating-drone-attacks-across-sudan?traffic_source=rss",
-      "pubDate": "Mon, 19 Oct 2026 21:38:46 +0000",
-      "source": "aljazeera",
-      "snippet": "Rights groups warn increasing attacks by unmanned aircraft are targeting civilians and infrastructure.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Could your halal pension be funding Israel’s military?",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/10/19/could-your-halal-pension-be-funding-israels-military?traffic_source=rss",
-      "pubDate": "Mon, 19 Oct 2026 21:28:02 +0000",
-      "source": "aljazeera",
-      "snippet": "HSBC’s ‘sharia-compliant’ fund invested over $100 million in companies linked to Israel’s military.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Israeli police say they arrested 10 in connection with settler attacks",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/10/19/israeli-police-say-they-arrested-10-in-connection-with-settler-attacks?traffic_source=rss",
-      "pubDate": "Mon, 19 Oct 2026 21:00:03 +0000",
-      "source": "aljazeera",
-      "snippet": "Israeli police released a video they say shows the arrest of 10 suspects over weekend settler violence.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Trump approval hits record-low 31 percent, polls show Republican struggles",
-      "link": "https://www.aljazeera.com/news/2026/10/19/trump-approval-hits-record-low-31-percent-polls-show-republican-struggles?traffic_source=rss",
-      "pubDate": "Mon, 19 Oct 2026 20:59:05 +0000",
-      "source": "aljazeera",
-      "snippet": "Reuters/Ipsos poll shows Democrats leading by 12 points in generic US congressional ballot surveys against Republicans. ",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Trump signs order launching women’s health division at NIH, White House",
-      "link": "https://www.aljazeera.com/news/2026/10/19/trump-signs-order-launching-womens-health-division-at-nih-white-house?traffic_source=rss",
-      "pubDate": "Mon, 19 Oct 2026 20:29:46 +0000",
-      "source": "aljazeera",
-      "snippet": "First Lady Melania Trump has championed the executive action as a &#039;transformative moment&#039; for US women&#039;s health.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
       "title": "For Israelis and Jews in the U.A.E., an Eroding Sense of Security",
       "link": "https://www.nytimes.com/2026/10/19/world/middleeast/israel-uae-jews-dubai-fear.html",
-      "pubDate": "Mon, 19 Oct 2026 20:14:21 +0000",
+      "pubDate": "Mon, 19 Oct 2026 20:14:22 +0000",
       "source": "nytimes",
       "snippet": "The Emirates’ reputation as a haven was shaken by what the authorities said was a plot last month aimed at crashing a flight from Dubai to Tel Aviv.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Finland seeking one million land mines as it eyes Russian threat",
-      "link": "https://www.aljazeera.com/news/2026/10/19/finland-seeking-one-million-land-mines-as-it-eyes-russian-threat?traffic_source=rss",
-      "pubDate": "Mon, 19 Oct 2026 19:57:10 +0000",
-      "source": "aljazeera",
-      "snippet": "Helsinki recently joined regional peers in withdrawing from UN Charter banning munitions as it eyes its eastern border.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -490,11 +506,59 @@
       "_isDuplicate": false
     },
     {
-      "title": "Florida issues arrest warrant for Cuban leader Raul Castro",
-      "link": "https://www.aljazeera.com/news/2026/10/19/florida-issues-arrest-warrant-for-cuban-leader-raul-castro?traffic_source=rss",
-      "pubDate": "Mon, 19 Oct 2026 19:48:53 +0000",
-      "source": "aljazeera",
-      "snippet": "The announcement mirrors a federal indictment from May as the US steps up pressure on the Cuban government.",
+      "title": "Israeli police detain 10 people in rare raid against West Bank settlers",
+      "link": "https://www.theguardian.com/world/2026/oct/19/israeli-police-detain-10-people-in-rare-raid-against-west-bank-settlers",
+      "pubDate": "Mon, 19 Oct 2026 18:05:14 GMT",
+      "source": "guardian",
+      "snippet": "Move comes after US photojournalist and group of European diplomats and Palestinians were assaulted in separate attacksIsraeli police have detained 10 people in a rare raid against settlers, after a w",
+      "isNew": true,
+      "_sourceCount": 3,
+      "_isDuplicated": true,
+      "_clusterSize": 3,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Israeli Police Detain 10 Over Violent Settler Attacks in West Bank",
+      "link": "https://www.nytimes.com/2026/10/19/world/middleeast/israel-west-bank-settlers-palestinians.html",
+      "pubDate": "Mon, 19 Oct 2026 17:33:24 +0000",
+      "source": "nytimes",
+      "snippet": "Israel has faced pressure, including from the United States, to investigate the attacks. Rights groups say most inquiries into extremist assaults on Palestinians go nowhere.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Houthi attack kills 53 in biggest single loss of life since Yemen civil war reignited",
+      "link": "https://www.theguardian.com/world/2026/oct/19/houthi-attack-yemen-al-alam-camp-biggest-single-loss-of-life-civil-war",
+      "pubDate": "Mon, 19 Oct 2026 17:15:23 GMT",
+      "source": "guardian",
+      "snippet": "More than 200 mostly young people said to be injured after ballistic missile attack on training camp for government forces At least 53 people have been killed in a Houthi ballistic missile attack on a",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Houthi missile strike on Yemen camp kills 50 security recruits, local authorities say",
+      "link": "https://www.bbc.co.uk/news/articles/cv0ld6lrr2zeo?at_medium=RSS&at_campaign=rss",
+      "pubDate": "Mon, 19 Oct 2026 16:20:51 GMT",
+      "source": "bbc",
+      "snippet": "Three missiles hit a camp in government-controlled Shabwa province that officials say was being used as a training centre for new recruits.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "People scour strait of Hormuz for spilt cargo after Iran attacks container ships",
+      "link": "https://www.theguardian.com/world/2026/oct/19/strait-of-hormuz-spilt-cargo-iran-attacks-container-ships",
+      "pubDate": "Mon, 19 Oct 2026 14:48:56 GMT",
+      "source": "guardian",
+      "snippet": "At least 15 vessels struck in waterway in past 10 days, with rumours that they were carrying valuable goodsPeople have been scouring the strait of Hormuz for spilt cargo after Iran attacked at least 1",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -508,11 +572,33 @@
         "category_id": "military",
         "category_name": "군사 작전",
         "category_icon": "⚔️",
-        "count": 24,
-        "new_count": 24,
+        "count": 26,
+        "new_count": 26,
         "articles": [
           {
-            "title": "Rashida Tlaib demands arrest of Israeli soldier linked to Hind Rajab death",
+            "title": "Palestine weekly: Israeli settlers attack journalist and diplomats",
+            "link": "https://www.aljazeera.com/news/2026/10/20/palestine-weekly-israeli-settlers-attack-journalist-and-diplomats?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Tue, 20 Oct 2026 06:22:33 +0000",
+            "snippet": "Settler olive harvest attacks top 2025 total, journalist and diplomats attacked as Israel halts Gaza commercial imports.",
+            "isNew": true
+          },
+          {
+            "title": "The human cost of surging US air strikes in Somalia",
+            "link": "https://www.aljazeera.com/news/2026/10/20/us-air-strikes-surge-in-somalia-as-families-seek-answers?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Tue, 20 Oct 2026 01:52:32 +0000",
+            "snippet": "Families recount deaths, injuries and displacement as Trump accelerates US strikes against armed groups in Somalia.",
+            "isNew": true
+          },
+          {
+            "title": "Rashida Tlaib demands arrest of Israeli soldier tied to Hind Rajab killing",
             "link": "https://www.aljazeera.com/news/2026/10/20/rashida-tlaib-demands-arrest-of-israeli-soldier-linked-to-hind-rajab-death?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
@@ -520,50 +606,6 @@
             ],
             "pubDate": "Tue, 20 Oct 2026 00:18:20 +0000",
             "snippet": "US lawmaker says that government must arrest Israeli commander allegedly responsible for attack while he is in the US.",
-            "isNew": true
-          },
-          {
-            "title": "Children among six killed in Russian drone strike on Ukraine park",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/10/19/children-among-six-killed-in-russian-drone-strike-on-ukraine-park?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Mon, 19 Oct 2026 23:12:42 +0000",
-            "snippet": "Children among six killed in Russian drone strike on Ukraine park",
-            "isNew": true
-          },
-          {
-            "title": "160 people reported killed in escalating drone attacks across Sudan",
-            "link": "https://www.aljazeera.com/news/2026/10/19/160-reported-killed-in-escalating-drone-attacks-across-sudan?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Mon, 19 Oct 2026 21:38:46 +0000",
-            "snippet": "Rights groups warn increasing attacks by unmanned aircraft are targeting civilians and infrastructure.",
-            "isNew": true
-          },
-          {
-            "title": "Could your halal pension be funding Israel’s military?",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/10/19/could-your-halal-pension-be-funding-israels-military?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Mon, 19 Oct 2026 21:28:02 +0000",
-            "snippet": "HSBC’s ‘sharia-compliant’ fund invested over $100 million in companies linked to Israel’s military.",
-            "isNew": true
-          },
-          {
-            "title": "Israeli police say they arrested 10 in connection with settler attacks",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/10/19/israeli-police-say-they-arrested-10-in-connection-with-settler-attacks?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Mon, 19 Oct 2026 21:00:03 +0000",
-            "snippet": "Israeli police released a video they say shows the arrest of 10 suspects over weekend settler violence.",
             "isNew": true
           },
           {
@@ -613,6 +655,17 @@
             "isNew": true
           },
           {
+            "title": "Houthi missile strike on Yemen camp kills 50 security recruits, local authorities say",
+            "link": "https://www.bbc.co.uk/news/articles/cv0ld6lrr2zeo?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc"
+            ],
+            "pubDate": "Mon, 19 Oct 2026 16:20:51 GMT",
+            "snippet": "Three missiles hit a camp in government-controlled Shabwa province that officials say was being used as a training centre for new recruits.",
+            "isNew": true
+          },
+          {
             "title": "People scour strait of Hormuz for spilt cargo after Iran attacks container ships",
             "link": "https://www.theguardian.com/world/2026/oct/19/strait-of-hormuz-spilt-cargo-iran-attacks-container-ships",
             "source": "guardian",
@@ -622,6 +675,17 @@
             "pubDate": "Mon, 19 Oct 2026 14:48:56 GMT",
             "snippet": "At least 15 vessels struck in waterway in past 10 days, with rumours that they were carrying valuable goodsPeople have been scouring the strait of Hormuz for spilt cargo after Iran attacked at least 1",
             "isNew": true
+          },
+          {
+            "title": "U.S. Officials Condemn West Bank Attacks as Netanyahu Casts Doubt on Them",
+            "link": "https://www.nytimes.com/2026/10/18/world/middleeast/netanyahu-settler-attacks-west-bank-palestinians.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Mon, 19 Oct 2026 12:08:04 +0000",
+            "snippet": "Prime Minister Benjamin Netanyahu of Israel has downplayed accounts of recent extremist attacks on Palestinians in the West Bank amid the annual olive harvest.",
+            "isNew": true
           }
         ]
       },
@@ -629,9 +693,20 @@
         "category_id": "politics",
         "category_name": "국내 정치",
         "category_icon": "🏛️",
-        "count": 9,
-        "new_count": 9,
+        "count": 7,
+        "new_count": 7,
         "articles": [
+          {
+            "title": "Israel’s elections 2026 explained in maps and charts",
+            "link": "https://www.aljazeera.com/news/2026/10/20/israels-elections-2026-explained-in-maps-and-charts?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Tue, 20 Oct 2026 05:25:31 +0000",
+            "snippet": "Israelis vote on October 27 in the sixth election since 2019. Here’s how the system works and who gets left out.",
+            "isNew": true
+          },
           {
             "title": "Hegseth meets Netanyahu in unannounced Israel visit",
             "link": "https://www.aljazeera.com/news/2026/10/20/hegseth-meets-netanyahu-in-unannounced-israel-visit?traffic_source=rss",
@@ -640,40 +715,7 @@
               "aljazeera"
             ],
             "pubDate": "Tue, 20 Oct 2026 00:08:01 +0000",
-            "snippet": "Hegseth has travelled to Israel to meet Netanyahu ahead of a closely contested election, Axios reported, citing sources.",
-            "isNew": true
-          },
-          {
-            "title": "Trump: ‘Paris is going to be a Muslim city very soon’",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/10/19/trump-paris-is-going-to-be-a-muslim-city-very?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Mon, 19 Oct 2026 22:37:19 +0000",
-            "snippet": "US President Donald Trump blamed immigrants for the unrest in France, claiming Paris would soon become a ‘Muslim city’.",
-            "isNew": true
-          },
-          {
-            "title": "Trump approval hits record-low 31 percent, polls show Republican struggles",
-            "link": "https://www.aljazeera.com/news/2026/10/19/trump-approval-hits-record-low-31-percent-polls-show-republican-struggles?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Mon, 19 Oct 2026 20:59:05 +0000",
-            "snippet": "Reuters/Ipsos poll shows Democrats leading by 12 points in generic US congressional ballot surveys against Republicans. ",
-            "isNew": true
-          },
-          {
-            "title": "Trump signs order launching women’s health division at NIH, White House",
-            "link": "https://www.aljazeera.com/news/2026/10/19/trump-signs-order-launching-womens-health-division-at-nih-white-house?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Mon, 19 Oct 2026 20:29:46 +0000",
-            "snippet": "First Lady Melania Trump has championed the executive action as a &#039;transformative moment&#039; for US women&#039;s health.",
+            "snippet": "Hegseth has travelled to Israel to meet Netanyahu before a closely contested election, Axios reported, citing sources.",
             "isNew": true
           },
           {
@@ -741,14 +783,14 @@
         "new_count": 4,
         "articles": [
           {
-            "title": "Finland seeking one million land mines as it eyes Russian threat",
-            "link": "https://www.aljazeera.com/news/2026/10/19/finland-seeking-one-million-land-mines-as-it-eyes-russian-threat?traffic_source=rss",
+            "title": "Egypt’s Hassan and Zico suspended over FIFA World Cup refereeing criticism",
+            "link": "https://www.aljazeera.com/sports/2026/10/20/egypts-hassan-and-zico-suspended-over-fifa-world-cup-refereeing-criticism?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Mon, 19 Oct 2026 19:57:10 +0000",
-            "snippet": "Helsinki recently joined regional peers in withdrawing from UN Charter banning munitions as it eyes its eastern border.",
+            "pubDate": "Tue, 20 Oct 2026 06:21:56 +0000",
+            "snippet": "FIFA punishes Egypt&#039;s head coach, forward and team manager for their comments after their World Cup loss to Argentina.",
             "isNew": true
           },
           {
@@ -811,7 +853,7 @@
             "sources": [
               "nytimes"
             ],
-            "pubDate": "Mon, 19 Oct 2026 20:14:21 +0000",
+            "pubDate": "Mon, 19 Oct 2026 20:14:22 +0000",
             "snippet": "The Emirates’ reputation as a haven was shaken by what the authorities said was a plot last month aimed at crashing a flight from Dubai to Tel Aviv.",
             "isNew": true
           },
@@ -829,23 +871,43 @@
         ]
       },
       {
+        "category_id": "economy",
+        "category_name": "경제 영향",
+        "category_icon": "📊",
+        "count": 2,
+        "new_count": 2,
+        "articles": [
+          {
+            "title": "Ship attack reports near Hormuz reach record high as oil exports slow",
+            "link": "https://www.bbc.co.uk/news/articles/cmde8dpg8g0no?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc"
+            ],
+            "pubDate": "Fri, 16 Oct 2026 05:00:17 GMT",
+            "snippet": "BBC Verify analysis of data from a UK maritime agency shows 12 vessels were struck in a week.",
+            "isNew": true
+          },
+          {
+            "title": "Container ship hit by projectile sinks in Strait of Hormuz, Singapore says",
+            "link": "https://www.bbc.co.uk/news/articles/crkg7q97z078o?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc"
+            ],
+            "pubDate": "Wed, 14 Oct 2026 15:34:19 GMT",
+            "snippet": "All 21 sailors on the Singapore-flagged GFS Pride were evacuated safely after it was hit by an projectile on Tuesday, maritime authorities say.",
+            "isNew": true
+          }
+        ]
+      },
+      {
         "category_id": "other",
         "category_name": "기타",
         "category_icon": "📰",
-        "count": 3,
-        "new_count": 3,
+        "count": 2,
+        "new_count": 2,
         "articles": [
-          {
-            "title": "Florida issues arrest warrant for Cuban leader Raul Castro",
-            "link": "https://www.aljazeera.com/news/2026/10/19/florida-issues-arrest-warrant-for-cuban-leader-raul-castro?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Mon, 19 Oct 2026 19:48:53 +0000",
-            "snippet": "The announcement mirrors a federal indictment from May as the US steps up pressure on the Cuban government.",
-            "isNew": true
-          },
           {
             "title": "‘I cannot carry all of this alone’: the couples kept apart by the war in Gaza",
             "link": "https://www.theguardian.com/world/2026/oct/17/couples-families-separated-war-in-gaza",
@@ -878,34 +940,14 @@
         "new_count": 1,
         "articles": [
           {
-            "title": "Tehran rejects any role in plot to kill leaders of German Jewish groups",
-            "link": "https://www.aljazeera.com/news/2026/10/19/tehran-rejects-any-role-in-plot-to-kill-leaders-of-jewish-groups?traffic_source=rss",
+            "title": "US-Ukraine relations sour as Trump, Zelenskyy clash over talks, arms",
+            "link": "https://www.aljazeera.com/news/2026/10/20/us-ukraine-relations-sour-as-trump-zelenskyy-clash-over-talks-arms?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Mon, 19 Oct 2026 23:16:01 +0000",
-            "snippet": "Tehran summons German envoy after two men convicted of trying to kill leaders of Jewish groups, rejects any role.",
-            "isNew": true
-          }
-        ]
-      },
-      {
-        "category_id": "economy",
-        "category_name": "경제 영향",
-        "category_icon": "📊",
-        "count": 1,
-        "new_count": 1,
-        "articles": [
-          {
-            "title": "Ship attack reports near Hormuz reach record high as oil exports slow",
-            "link": "https://www.bbc.co.uk/news/articles/cmde8dpg8g0no?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
-            "sources": [
-              "bbc"
-            ],
-            "pubDate": "Fri, 16 Oct 2026 05:00:17 GMT",
-            "snippet": "BBC Verify analysis of data from a UK maritime agency shows 12 vessels were struck in a week.",
+            "pubDate": "Tue, 20 Oct 2026 06:23:44 +0000",
+            "snippet": "Trump calls for Zelenskyy to be replaced as negotiator, while Ukraine&#039;s president says arms shipments delayed.",
             "isNew": true
           }
         ]
@@ -914,62 +956,97 @@
     "recent_30min": {
       "total_new": 50,
       "by_category": {
-        "military": {
-          "count": 29,
+        "diplomacy": {
+          "count": 1,
           "titles": [
             {
-              "title": "Rashida Tlaib demands arrest of Israeli soldier linked to Hind Rajab death",
-              "link": "https://www.aljazeera.com/news/2026/10/20/rashida-tlaib-demands-arrest-of-israeli-soldier-linked-to-hind-rajab-death?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Children among six killed in Russian drone strike on Ukraine park",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/10/19/children-among-six-killed-in-russian-drone-strike-on-ukraine-park?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "160 people reported killed in escalating drone attacks across Sudan",
-              "link": "https://www.aljazeera.com/news/2026/10/19/160-reported-killed-in-escalating-drone-attacks-across-sudan?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Could your halal pension be funding Israel’s military?",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/10/19/could-your-halal-pension-be-funding-israels-military?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Israeli police say they arrested 10 in connection with settler attacks",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/10/19/israeli-police-say-they-arrested-10-in-connection-with-settler-attacks?traffic_source=rss",
+              "title": "US-Ukraine relations sour as Trump, Zelenskyy clash over talks, arms",
+              "link": "https://www.aljazeera.com/news/2026/10/20/us-ukraine-relations-sour-as-trump-zelenskyy-clash-over-talks-arms?traffic_source=rss",
               "source": "aljazeera"
             }
           ]
         },
-        "politics": {
-          "count": 9,
+        "military": {
+          "count": 31,
           "titles": [
+            {
+              "title": "Palestine weekly: Israeli settlers attack journalist and diplomats",
+              "link": "https://www.aljazeera.com/news/2026/10/20/palestine-weekly-israeli-settlers-attack-journalist-and-diplomats?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "The human cost of surging US air strikes in Somalia",
+              "link": "https://www.aljazeera.com/news/2026/10/20/us-air-strikes-surge-in-somalia-as-families-seek-answers?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Rashida Tlaib demands arrest of Israeli soldier tied to Hind Rajab killing",
+              "link": "https://www.aljazeera.com/news/2026/10/20/rashida-tlaib-demands-arrest-of-israeli-soldier-linked-to-hind-rajab-death?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Houthi Strikes Kill Dozens in Yemeni Desert Military Camp, Officials Say",
+              "link": "https://www.nytimes.com/2026/10/19/world/middleeast/houthis-strike-yemen-military-camp.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Israeli police detain 10 people in rare raid against West Bank settlers",
+              "link": "https://www.theguardian.com/world/2026/oct/19/israeli-police-detain-10-people-in-rare-raid-against-west-bank-settlers",
+              "source": "guardian"
+            }
+          ]
+        },
+        "regional": {
+          "count": 4,
+          "titles": [
+            {
+              "title": "Egypt’s Hassan and Zico suspended over FIFA World Cup refereeing criticism",
+              "link": "https://www.aljazeera.com/sports/2026/10/20/egypts-hassan-and-zico-suspended-over-fifa-world-cup-refereeing-criticism?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Saudi Arabia is learning the hard way: they can’t count on Trump for protection | Mohamad Bazzi",
+              "link": "https://www.theguardian.com/commentisfree/2026/oct/19/saudi-arabia-trump-relationship",
+              "source": "guardian"
+            },
+            {
+              "title": "UAE agrees with Saudi Arabia to re-enter Yemen conflict amid Houthi gains",
+              "link": "https://www.theguardian.com/world/2026/oct/17/uae-yemen-conflict-agreement-saudi-arabia-houthi-gains",
+              "source": "guardian"
+            },
+            {
+              "title": "Houthi Attacks on Saudi Arabia Put In Doubt Kingdom’s Sports and Business Events",
+              "link": "https://www.nytimes.com/2026/10/16/world/middleeast/saudi-arabia-houthi-attack-fii-events.html",
+              "source": "nytimes"
+            }
+          ]
+        },
+        "politics": {
+          "count": 7,
+          "titles": [
+            {
+              "title": "Israel’s elections 2026 explained in maps and charts",
+              "link": "https://www.aljazeera.com/news/2026/10/20/israels-elections-2026-explained-in-maps-and-charts?traffic_source=rss",
+              "source": "aljazeera"
+            },
             {
               "title": "Hegseth meets Netanyahu in unannounced Israel visit",
               "link": "https://www.aljazeera.com/news/2026/10/20/hegseth-meets-netanyahu-in-unannounced-israel-visit?traffic_source=rss",
               "source": "aljazeera"
             },
             {
-              "title": "Trump: ‘Paris is going to be a Muslim city very soon’",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/10/19/trump-paris-is-going-to-be-a-muslim-city-very?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Trump approval hits record-low 31 percent, polls show Republican struggles",
-              "link": "https://www.aljazeera.com/news/2026/10/19/trump-approval-hits-record-low-31-percent-polls-show-republican-struggles?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Trump signs order launching women’s health division at NIH, White House",
-              "link": "https://www.aljazeera.com/news/2026/10/19/trump-signs-order-launching-womens-health-division-at-nih-white-house?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
               "title": "Will Trump’s Endorsement of Netanyahu Fire Up His Campaign or Fizzle?",
               "link": "https://www.nytimes.com/2026/10/19/world/middleeast/trump-netanyahu-endorsement-election.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "‘There’s a lot of racism, a lot of hatred’: Far right gains predicted as Israel heads to the polls",
+              "link": "https://www.theguardian.com/world/2026/oct/18/theres-a-lot-of-racism-a-lot-of-hatred-far-right-gains-predicted-as-israel-heads-to-the-polls",
+              "source": "guardian"
+            },
+            {
+              "title": "The Arab Kingmaker in Israel’s Election Who Wants a Partnership With Jews",
+              "link": "https://www.nytimes.com/2026/10/16/world/middleeast/israel-mansour-abbas.html",
               "source": "nytimes"
             }
           ]
@@ -994,49 +1071,9 @@
             }
           ]
         },
-        "diplomacy": {
-          "count": 1,
-          "titles": [
-            {
-              "title": "Tehran rejects any role in plot to kill leaders of German Jewish groups",
-              "link": "https://www.aljazeera.com/news/2026/10/19/tehran-rejects-any-role-in-plot-to-kill-leaders-of-jewish-groups?traffic_source=rss",
-              "source": "aljazeera"
-            }
-          ]
-        },
-        "regional": {
-          "count": 4,
-          "titles": [
-            {
-              "title": "Finland seeking one million land mines as it eyes Russian threat",
-              "link": "https://www.aljazeera.com/news/2026/10/19/finland-seeking-one-million-land-mines-as-it-eyes-russian-threat?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Saudi Arabia is learning the hard way: they can’t count on Trump for protection | Mohamad Bazzi",
-              "link": "https://www.theguardian.com/commentisfree/2026/oct/19/saudi-arabia-trump-relationship",
-              "source": "guardian"
-            },
-            {
-              "title": "UAE agrees with Saudi Arabia to re-enter Yemen conflict amid Houthi gains",
-              "link": "https://www.theguardian.com/world/2026/oct/17/uae-yemen-conflict-agreement-saudi-arabia-houthi-gains",
-              "source": "guardian"
-            },
-            {
-              "title": "Houthi Attacks on Saudi Arabia Put In Doubt Kingdom’s Sports and Business Events",
-              "link": "https://www.nytimes.com/2026/10/16/world/middleeast/saudi-arabia-houthi-attack-fii-events.html",
-              "source": "nytimes"
-            }
-          ]
-        },
         "other": {
-          "count": 3,
+          "count": 2,
           "titles": [
-            {
-              "title": "Florida issues arrest warrant for Cuban leader Raul Castro",
-              "link": "https://www.aljazeera.com/news/2026/10/19/florida-issues-arrest-warrant-for-cuban-leader-raul-castro?traffic_source=rss",
-              "source": "aljazeera"
-            },
             {
               "title": "‘I cannot carry all of this alone’: the couples kept apart by the war in Gaza",
               "link": "https://www.theguardian.com/world/2026/oct/17/couples-families-separated-war-in-gaza",
@@ -1050,11 +1087,16 @@
           ]
         },
         "economy": {
-          "count": 1,
+          "count": 2,
           "titles": [
             {
               "title": "Ship attack reports near Hormuz reach record high as oil exports slow",
               "link": "https://www.bbc.co.uk/news/articles/cmde8dpg8g0no?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
+            },
+            {
+              "title": "Container ship hit by projectile sinks in Strait of Hormuz, Singapore says",
+              "link": "https://www.bbc.co.uk/news/articles/crkg7q97z078o?at_medium=RSS&at_campaign=rss",
               "source": "bbc"
             }
           ]
@@ -1149,17 +1191,17 @@
     }
   ],
   "economic_indicators": {
-    "GOLD": {
-      "price": 4137.9,
-      "change": -43.2,
-      "changePercent": -1.03,
-      "prev": 4181.1
-    },
     "WTI": {
-      "price": 98.9,
-      "change": -2.51,
-      "changePercent": -2.48,
-      "prev": 101.41
+      "price": 98.58,
+      "change": -5.08,
+      "changePercent": -4.9,
+      "prev": 103.66
+    },
+    "BRENT": {
+      "price": 109.85,
+      "change": 0.3,
+      "changePercent": 0.27,
+      "prev": 109.55
     },
     "VIX": {
       "price": 18.44,
@@ -1179,24 +1221,40 @@
       "changePercent": 0.78,
       "prev": 5.1
     },
-    "BRENT": {
-      "price": 109.94,
-      "change": 0.08,
-      "changePercent": 0.07,
-      "prev": 109.86
-    },
     "DXY": {
-      "price": 101.92,
-      "change": 0.08,
-      "changePercent": 0.08,
-      "prev": 101.84
+      "price": 101.79,
+      "change": -0.19,
+      "changePercent": -0.19,
+      "prev": 101.98
+    },
+    "GOLD": {
+      "price": 4155.2,
+      "change": -4.9,
+      "changePercent": -0.12,
+      "prev": 4160.1
     }
   },
   "critical_events": [
     {
+      "id": "unilateral_deescalation",
+      "name": "일방적 전투 축소/자제 선언",
+      "severity": "high",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "shorten"
+    },
+    {
       "id": "conflict_expansion",
       "name": "전선 확대/신규 참전국",
       "severity": "moderate",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "lengthen"
+    },
+    {
+      "id": "wmd_threat",
+      "name": "대량살상무기(WMD)/핵 위협",
+      "severity": "critical",
       "confidence": 0.6666666666666666,
       "matchCount": 2,
       "direction": "lengthen"
