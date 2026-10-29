@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-10-29T19:23:32.521Z",
+  "timestamp": "2026-10-29T23:28:38.096Z",
   "war_day": 243,
   "probabilities": {
-    "1개월 내 (~3월)": 24.9,
-    "2~3개월 (4~5월)": 41.5,
+    "1개월 내 (~3월)": 27.9,
+    "2~3개월 (4~5월)": 43.1,
     "4~6개월 (6~8월)": 20.3,
-    "7~12개월 (9월~27/2월)": 9.8,
-    "1년 초과": 3.5
+    "7~12개월 (9월~27/2월)": 7.1,
+    "1년 초과": 1.6
   },
   "factors": [
     {
@@ -45,9 +45,9 @@
       "decay": 0.4
     },
     {
-      "factor": "확전 뉴스 우세 (확전2:휴전2)",
-      "impact": "전쟁 장기화 가능성 (확전비율 50%)",
-      "weight": "+0.02%p (4~6개월)",
+      "factor": "확전 뉴스 우세 (확전2:휴전0)",
+      "impact": "전쟁 장기화 가능성 (확전비율 100%)",
+      "weight": "+0.04%p (4~6개월)",
       "direction": "lengthen",
       "detail": "언론에서 휴전보다 확전을 더 많이 보도하고 있습니다.",
       "keywords": [
@@ -164,11 +164,11 @@
       "decay": 1
     },
     {
-      "factor": "협상/외교 뉴스 10건 감지",
+      "factor": "협상/외교 뉴스 8건 감지",
       "impact": "외교적 해결 움직임 포착",
       "weight": "+0.02%p (1개월내), +0.01%p (2~3개월)",
       "direction": "shorten",
-      "detail": "실시간 뉴스에서 협상 관련 기사 10건이 감지되었습니다.",
+      "detail": "실시간 뉴스에서 협상 관련 기사 8건이 감지되었습니다.",
       "keywords": [
         "negotiat",
         "talks",
@@ -181,11 +181,11 @@
       "decay": 1
     },
     {
-      "factor": "지역 확산 뉴스 6건 감지",
-      "impact": "주변국 연루 확대로 장기화 위험",
-      "weight": "+0.01%p (4~6개월), +0.01%p (7~12개월)",
+      "factor": "지역 확산 뉴스 4건 감지",
+      "impact": "주변국 연루 제한적",
+      "weight": "+0.00%p (4~6개월), +0.00%p (7~12개월)",
       "direction": "lengthen",
-      "detail": "주변국을 언급하는 기사 6건이 감지되었습니다.",
+      "detail": "주변국을 언급하는 기사 4건이 감지되었습니다.",
       "keywords": [
         "saudi",
         "uae",
@@ -260,11 +260,39 @@
       "severity": "critical"
     },
     {
-      "factor": "유가 급등 (WTI $102.23/배럴)",
+      "factor": "[중대 이벤트] 교전국 정권 붕괴/쿠데타",
+      "impact": "교전국 정권 붕괴 또는 쿠데타. 이라크(2003): 바그다드 함락 후 3주 내 주요 전투 종료. 리비아(2011): 트리폴리 함락 후 2개월 내 종전.",
+      "weight": "+6.7%p (1개월내), +5.3%p (2~3개월), +1.3%p (4~6개월), -3.3%p (7~12개월), -2.7%p (1년초과)",
+      "direction": "shorten",
+      "detail": "교전국 정권 붕괴 또는 쿠데타. 이라크(2003): 바그다드 함락 후 3주 내 주요 전투 종료. 리비아(2011): 트리폴리 함락 후 2개월 내 종전.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: No Clear Winner in Israel Election, Final Results Show",
+      "keywords": [
+        "regime",
+        "collaps",
+        "regime",
+        "fall",
+        "government",
+        "fall",
+        "capital",
+        "fall",
+        "capital",
+        "captur",
+        "coup",
+        "detat",
+        "government",
+        "overthrow",
+        "regime",
+        "change"
+      ],
+      "applied": "2026-10-29",
+      "active": true,
+      "severity": "critical"
+    },
+    {
+      "factor": "유가 급등 (WTI $102.82/배럴)",
       "impact": "높은 경제 압력 → 빠른 해결 요구 증가",
       "weight": "+4%p (1-2개월)",
       "direction": "shorten",
-      "detail": "WTI 유가가 $102.23/배럴로 100달러 돌파입니다. 호르무즈 해협 봉쇄와 맞물려 글로벌 에너지 시장에 큰 충격을 주고 있으며, 주요국들의 조기 종전 압력이 강화되고 있습니다.",
+      "detail": "WTI 유가가 $102.82/배럴로 100달러 돌파입니다. 호르무즈 해협 봉쇄와 맞물려 글로벌 에너지 시장에 큰 충격을 주고 있으며, 주요국들의 조기 종전 압력이 강화되고 있습니다.",
       "keywords": [
         "oil",
         "crude",
@@ -277,11 +305,11 @@
       "active": true
     },
     {
-      "factor": "금값 사상최고 ($4022.4/oz)",
+      "factor": "금값 사상최고 ($4024.1/oz)",
       "impact": "안전자산 수요 폭증 → 글로벌 불안 심화",
       "weight": "+2%p (4-6개월)",
       "direction": "lengthen",
-      "detail": "금 가격이 온스당 $4022.4로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
+      "detail": "금 가격이 온스당 $4024.1로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
       "keywords": [
         "gold",
         "safe haven",
@@ -309,18 +337,162 @@
     }
   ],
   "news_signals": {
-    "ceasefire_mentions": 2,
+    "ceasefire_mentions": 0,
     "escalation_mentions": 2,
-    "negotiation_mentions": 10,
+    "negotiation_mentions": 8,
     "casualty_mentions": 10,
     "peace_mentions": 4,
-    "regional_spread": 6,
+    "regional_spread": 4,
     "total_articles": 50,
     "new_articles": 50,
-    "unique_events": 47,
-    "duplicates_removed": 3
+    "unique_events": 48,
+    "duplicates_removed": 2
   },
   "latest_news": [
+    {
+      "title": "Netanyahu accused of smearing Arab voters to hold on to power",
+      "link": "https://www.theguardian.com/world/2026/oct/29/israeli-leader-netanyahu-accused-of-using-ugly-smear-tactics-to-cling-to-power",
+      "pubDate": "Thu, 29 Oct 2026 23:14:53 GMT",
+      "source": "guardian",
+      "snippet": "Prime minister claims Arab Israeli parties used foreign backing to steal elections, in which his coalition lost its majorityBenjamin Netanyahu has been accused of using smear tactics to cling to power",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "What Israeli Election Results Reveal About the Electorate",
+      "link": "https://www.nytimes.com/2026/10/29/world/middleeast/israel-voter-data-takeaways.html",
+      "pubDate": "Thu, 29 Oct 2026 23:11:25 +0000",
+      "source": "nytimes",
+      "snippet": "Some groups stood by Prime Minister Benjamin Netanyahu’s party, but support fell off among others. Turnout was also a striking factor in the election.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "No Clear Winner in Israel Election, Final Results Show",
+      "link": "https://www.nytimes.com/2026/10/29/world/middleeast/israel-election-results-netanyahu-eisenkot.html",
+      "pubDate": "Thu, 29 Oct 2026 23:07:49 +0000",
+      "source": "nytimes",
+      "snippet": "Prime Minister Benjamin Netanyahu’s party and its allies won 53 seats in Parliament, falling short of the outright majority needed to form a government. The main opposition bloc, led by Gadi Eisenkot,",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Patrick Stewart, ‘Star Trek’ Captain Picard and ‘X-Men’ actor, dies at 86",
+      "link": "https://www.aljazeera.com/editorial/2026/10/29/patrick-stewart-star-trek-captain-picard-and-x-men-actor-dies-at-86?traffic_source=rss",
+      "pubDate": "Thu, 29 Oct 2026 22:36:06 +0000",
+      "source": "aljazeera",
+      "snippet": "Stewart died in Los Angeles after living with Alzheimer&#039;s disease and Lewy body dementia.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Trump administration attempts to take down leak of ICE personnel data",
+      "link": "https://www.aljazeera.com/news/2026/10/29/trump-administration-attempts-to-take-down-leak-of-ice-personnel-data?traffic_source=rss",
+      "pubDate": "Thu, 29 Oct 2026 22:16:51 +0000",
+      "source": "aljazeera",
+      "snippet": "An Icelandic web company, FlokiNET, has defended the data&#039;s publication as satisfying a &#039;legitimate&#039; public interest.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Palestinians face growing bans from Al-Aqsa as Israel tightens control",
+      "link": "https://www.aljazeera.com/news/2026/10/29/palestinians-face-growing-bans-from-al-aqsa-as-israel-tightens-control?traffic_source=rss",
+      "pubDate": "Thu, 29 Oct 2026 21:16:26 +0000",
+      "source": "aljazeera",
+      "snippet": "As Israel renews a ban on Al-Aqsa imam, Islamic Waqf officials warn of shrinking authority at Muslim holy site.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Israel bans travel for Brad Lander after detention in occupied West Bank",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/10/29/israel-bans-travel-for-brad-lander-after-detention-in-occupied-west-bank?traffic_source=rss",
+      "pubDate": "Thu, 29 Oct 2026 21:10:13 +0000",
+      "source": "aljazeera",
+      "snippet": "Israel has revoked travel authorisation for US Democratic congressional candidate Brad Lander after he was detained.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Palestinians injured, arrested in Israeli raids across West Bank",
+      "link": "https://www.aljazeera.com/news/2026/10/29/palestinians-injured-arrested-in-israeli-raids-across-west-bank?traffic_source=rss",
+      "pubDate": "Thu, 29 Oct 2026 20:40:03 +0000",
+      "source": "aljazeera",
+      "snippet": "This comes as more than 3,300 Palestinians are forced from homes in Hebron as Israel&#039;s military offensive continues.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Israel election result shows no overall majority as vote count complete",
+      "link": "https://www.aljazeera.com/news/2026/10/29/israel-election-result-shows-no-overall-majority-as-vote-count-complete?traffic_source=rss",
+      "pubDate": "Thu, 29 Oct 2026 20:22:04 +0000",
+      "source": "aljazeera",
+      "snippet": "Opposition explores options to form coalition as no party secures the 61 seats required for parliamentary majority.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Israeli opposition accuses Netanyahu of trying to 'delegitimise' election",
+      "link": "https://www.bbc.co.uk/news/articles/ckdd8qdl9e0eo?at_medium=RSS&at_campaign=rss",
+      "pubDate": "Thu, 29 Oct 2026 20:21:54 GMT",
+      "source": "bbc",
+      "snippet": "The PM's Likud party has alleged foreign interference and said Arab-led parties \"stole\" the election after his coalition lost its majority.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "JD Vance letter may offer last chance to avert fresh conflict between US and Iran",
+      "link": "https://www.theguardian.com/world/2026/oct/29/jd-vance-letter-may-offer-last-chance-to-avert-fresh-conflict-between-us-and-iran",
+      "pubDate": "Thu, 29 Oct 2026 19:32:24 GMT",
+      "source": "guardian",
+      "snippet": "US vice-president writes to top Iranian security official in sign Washington has not abandoned diplomacyHopes of averting a major new conflagration between Iran and the US soon after Tuesday’s midterm",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Trump says won’t ‘take sides’ in Brazil election, but calls it a ‘disgrace’",
+      "link": "https://www.aljazeera.com/news/2026/10/29/trump-says-wont-take-sides-in-brazil-election-but-calls-it-a-disgrace?traffic_source=rss",
+      "pubDate": "Thu, 29 Oct 2026 19:21:19 +0000",
+      "source": "aljazeera",
+      "snippet": "Comments come after Trump ally Flavio Bolsonaro fled to Miami in US and claimed, without evidence, that vote was stolen.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
     {
       "title": "Netanyahu attacks Palestinian-Israeli parties as he falls short of majority",
       "link": "https://www.aljazeera.com/video/newsfeed/2026/10/29/netanyahu-attacks-palestinian-israeli-parties-as-he-falls-short-of-majority?traffic_source=rss",
@@ -356,150 +528,6 @@
       "_isDuplicated": false,
       "_clusterSize": 1,
       "_isDuplicate": false
-    },
-    {
-      "title": "At least 14 people killed in attack on Ukraine train station",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/10/29/aje-onl-nf_russian-drone-strike-at-dnipro-train-platform-291026?traffic_source=rss",
-      "pubDate": "Thu, 29 Oct 2026 18:03:21 +0000",
-      "source": "aljazeera",
-      "snippet": "A Russian drone strike killed at least 14 people at Dnipro’s main railway station in central Ukraine.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Israel election results: Qatar says accusations of election interference in Israel ‘ridiculous and dangerous’ – as it happened",
-      "link": "https://www.theguardian.com/world/live/2026/oct/29/israel-election-results-live-updates-poll-netanyahu-eisenkot-bloc-coalition-latest-news",
-      "pubDate": "Thu, 29 Oct 2026 17:49:57 GMT",
-      "source": "guardian",
-      "snippet": "Netanyahu’s claim of interference in election also dismissed by Israeli police and opposition partiesIsrael’s choice: Netanyahu remaining in power or a Palestinian-backed coalitionGadi Eisenkot, leade",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Israeli leader Netanyahu accused of using ‘ugly’ smear tactics to cling to power",
-      "link": "https://www.theguardian.com/world/2026/oct/29/israeli-leader-netanyahu-accused-of-using-ugly-smear-tactics-to-cling-to-power",
-      "pubDate": "Thu, 29 Oct 2026 17:26:06 GMT",
-      "source": "guardian",
-      "snippet": "Prime minister claims Arab Israeli parties used foreign backing to steal elections, in which his coalition lost its majorityBenjamin Netanyahu has been accused of using smear tactics to cling to power",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "UAE sentences eight people to life over arms supplies to Sudan’s army",
-      "link": "https://www.aljazeera.com/news/2026/10/29/uae-sentences-eight-people-to-life-over-arms-supplies-to-sudans-army?traffic_source=rss",
-      "pubDate": "Thu, 29 Oct 2026 17:25:17 +0000",
-      "source": "aljazeera",
-      "snippet": "Defendants handed ⁠life sentences amid tensions between Khartoum and Abu Dhabi over Sudan&#039;s war and the RSF.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "How Israel’s Election Could End",
-      "link": "https://www.nytimes.com/video/world/middleeast/100000011242127/how-israels-election-could-end.html",
-      "pubDate": "Thu, 29 Oct 2026 17:01:22 +0000",
-      "source": "nytimes",
-      "snippet": "Neither Benjamin Netanyahu nor Gadi Eisenkot won a majority in Israel’s Parliament, leaving both with a chance to form a government. Our Jerusalem bureau chief, David M. Halbfinger, explains the possi",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Netanyahu's bloc leading Israel election but short of majority, partial results show",
-      "link": "https://www.bbc.co.uk/news/articles/cmdx3knq1xexo?at_medium=RSS&at_campaign=rss",
-      "pubDate": "Thu, 29 Oct 2026 15:47:20 GMT",
-      "source": "bbc",
-      "snippet": "With 99% of ballots counted, Netanyahu's Likud party and its allies are set to win 53 seats in the 120-seat Knesset.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Israel’s anti-Qatar campaign bleeds into elections",
-      "link": "https://www.aljazeera.com/news/2026/10/29/israels-anti-qatar-campaign-bleeds-into-elections?traffic_source=rss",
-      "pubDate": "Thu, 29 Oct 2026 15:35:53 +0000",
-      "source": "aljazeera",
-      "snippet": "Qatar&#039;s Foreign Ministry spokesman rejects &#039;disinformation&#039; amid allegations by some Israelis of voting interference.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Israeli strikes hit Gaza as Health Ministry urges Rafah opening",
-      "link": "https://www.aljazeera.com/news/2026/10/29/israeli-strikes-hit-gaza-as-health-ministry-urges-rafah-opening?traffic_source=rss",
-      "pubDate": "Thu, 29 Oct 2026 15:12:36 +0000",
-      "source": "aljazeera",
-      "snippet": "Gaza&#039;s Health Ministry says dozens died awaiting treatment abroad as Israeli attacks continue despite a &#039;ceasefire&#039;.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "The beautiful, shocking work of artist Hoda Afshar: ‘I don’t take freedom of speech for granted’",
-      "link": "https://www.theguardian.com/artanddesign/2026/oct/30/artist-hoda-afshar-interview-photography-exhibition-buxton-contemporary",
-      "pubDate": "Thu, 29 Oct 2026 14:00:46 GMT",
-      "source": "guardian",
-      "snippet": "Afshar’s experiences as a young woman in Iran have shaped her artistic career in Australia, focusing her eye on the humanity within inhumane systemsGet our weekend culture and lifestyle emailWhen Hoda",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "With No Clear Winner, How Could Israel Get a Prime Minister?",
-      "link": "https://www.nytimes.com/2026/10/29/world/middleeast/israel-election-coalition-scenarios.html",
-      "pubDate": "Thu, 29 Oct 2026 12:30:50 +0000",
-      "source": "nytimes",
-      "snippet": "Deadlock is possible, as neither the bloc of Prime Minister Benjamin Netanyahu nor his main challenger appear likely to win a majority. But there are still paths to a new government.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "How Arab Voters in Israel Shifted the Political Landscape",
-      "link": "https://www.nytimes.com/2026/10/28/world/middleeast/israel-election-arab-parties.html",
-      "pubDate": "Thu, 29 Oct 2026 11:44:03 +0000",
-      "source": "nytimes",
-      "snippet": "The Arab parties have long been kept on the political sidelines. But stunning turnout by their supporters makes the Arab minority an Israeli political reality that cannot be ignored.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "How Netanyahu Used Fear, Again, to Win Votes in the Israel Elections",
-      "link": "https://www.nytimes.com/2026/10/29/world/middleeast/netanyahu-fear-election-votes.html",
-      "pubDate": "Thu, 29 Oct 2026 10:29:01 +0000",
-      "source": "nytimes",
-      "snippet": "Despite years of political baggage, the Israeli prime minister outperformed expectations, and his rivals, by playing on Jewish voters’ fears of Arab political power and potential security threats.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
     }
   ],
   "news_digest": {
@@ -508,9 +536,108 @@
         "category_id": "politics",
         "category_name": "국내 정치",
         "category_icon": "🏛️",
-        "count": 34,
-        "new_count": 34,
+        "count": 32,
+        "new_count": 32,
         "articles": [
+          {
+            "title": "Netanyahu accused of smearing Arab voters to hold on to power",
+            "link": "https://www.theguardian.com/world/2026/oct/29/israeli-leader-netanyahu-accused-of-using-ugly-smear-tactics-to-cling-to-power",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Thu, 29 Oct 2026 23:14:53 GMT",
+            "snippet": "Prime minister claims Arab Israeli parties used foreign backing to steal elections, in which his coalition lost its majorityBenjamin Netanyahu has been accused of using smear tactics to cling to power",
+            "isNew": true
+          },
+          {
+            "title": "What Israeli Election Results Reveal About the Electorate",
+            "link": "https://www.nytimes.com/2026/10/29/world/middleeast/israel-voter-data-takeaways.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Thu, 29 Oct 2026 23:11:25 +0000",
+            "snippet": "Some groups stood by Prime Minister Benjamin Netanyahu’s party, but support fell off among others. Turnout was also a striking factor in the election.",
+            "isNew": true
+          },
+          {
+            "title": "No Clear Winner in Israel Election, Final Results Show",
+            "link": "https://www.nytimes.com/2026/10/29/world/middleeast/israel-election-results-netanyahu-eisenkot.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Thu, 29 Oct 2026 23:07:49 +0000",
+            "snippet": "Prime Minister Benjamin Netanyahu’s party and its allies won 53 seats in Parliament, falling short of the outright majority needed to form a government. The main opposition bloc, led by Gadi Eisenkot,",
+            "isNew": true
+          },
+          {
+            "title": "Trump administration attempts to take down leak of ICE personnel data",
+            "link": "https://www.aljazeera.com/news/2026/10/29/trump-administration-attempts-to-take-down-leak-of-ice-personnel-data?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Thu, 29 Oct 2026 22:16:51 +0000",
+            "snippet": "An Icelandic web company, FlokiNET, has defended the data&#039;s publication as satisfying a &#039;legitimate&#039; public interest.",
+            "isNew": true
+          },
+          {
+            "title": "Israel bans travel for Brad Lander after detention in occupied West Bank",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/10/29/israel-bans-travel-for-brad-lander-after-detention-in-occupied-west-bank?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Thu, 29 Oct 2026 21:10:13 +0000",
+            "snippet": "Israel has revoked travel authorisation for US Democratic congressional candidate Brad Lander after he was detained.",
+            "isNew": true
+          },
+          {
+            "title": "Israel election result shows no overall majority as vote count complete",
+            "link": "https://www.aljazeera.com/news/2026/10/29/israel-election-result-shows-no-overall-majority-as-vote-count-complete?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Thu, 29 Oct 2026 20:22:04 +0000",
+            "snippet": "Opposition explores options to form coalition as no party secures the 61 seats required for parliamentary majority.",
+            "isNew": true
+          },
+          {
+            "title": "Israeli opposition accuses Netanyahu of trying to 'delegitimise' election",
+            "link": "https://www.bbc.co.uk/news/articles/ckdd8qdl9e0eo?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc"
+            ],
+            "pubDate": "Thu, 29 Oct 2026 20:21:54 GMT",
+            "snippet": "The PM's Likud party has alleged foreign interference and said Arab-led parties \"stole\" the election after his coalition lost its majority.",
+            "isNew": true
+          },
+          {
+            "title": "JD Vance letter may offer last chance to avert fresh conflict between US and Iran",
+            "link": "https://www.theguardian.com/world/2026/oct/29/jd-vance-letter-may-offer-last-chance-to-avert-fresh-conflict-between-us-and-iran",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Thu, 29 Oct 2026 19:32:24 GMT",
+            "snippet": "US vice-president writes to top Iranian security official in sign Washington has not abandoned diplomacyHopes of averting a major new conflagration between Iran and the US soon after Tuesday’s midterm",
+            "isNew": true
+          },
+          {
+            "title": "Trump says won’t ‘take sides’ in Brazil election, but calls it a ‘disgrace’",
+            "link": "https://www.aljazeera.com/news/2026/10/29/trump-says-wont-take-sides-in-brazil-election-but-calls-it-a-disgrace?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Thu, 29 Oct 2026 19:21:19 +0000",
+            "snippet": "Comments come after Trump ally Flavio Bolsonaro fled to Miami in US and claimed, without evidence, that vote was stolen.",
+            "isNew": true
+          },
           {
             "title": "Netanyahu attacks Palestinian-Israeli parties as he falls short of majority",
             "link": "https://www.aljazeera.com/video/newsfeed/2026/10/29/netanyahu-attacks-palestinian-israeli-parties-as-he-falls-short-of-majority?traffic_source=rss",
@@ -521,105 +648,6 @@
             "pubDate": "Thu, 29 Oct 2026 19:06:00 +0000",
             "snippet": "With all votes now counted, opposition parties could join forces with Palestinian-Israeli parties to unseat Netanyahu.",
             "isNew": true
-          },
-          {
-            "title": "‘Arab voice doesn’t count’: Jewish Israeli blocs reject Palestinian support",
-            "link": "https://www.aljazeera.com/news/2026/10/29/arab-voice-doesnt-count-jewish-israeli-blocs-reject-palestinian-support?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Thu, 29 Oct 2026 19:02:33 +0000",
-            "snippet": "Palestinian voters could decide Israel’s future, but its political class refuses to accept their mandate",
-            "isNew": true
-          },
-          {
-            "title": "Israel election results: Qatar says accusations of election interference in Israel ‘ridiculous and dangerous’ – as it happened",
-            "link": "https://www.theguardian.com/world/live/2026/oct/29/israel-election-results-live-updates-poll-netanyahu-eisenkot-bloc-coalition-latest-news",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Thu, 29 Oct 2026 17:49:57 GMT",
-            "snippet": "Netanyahu’s claim of interference in election also dismissed by Israeli police and opposition partiesIsrael’s choice: Netanyahu remaining in power or a Palestinian-backed coalitionGadi Eisenkot, leade",
-            "isNew": true
-          },
-          {
-            "title": "Israeli leader Netanyahu accused of using ‘ugly’ smear tactics to cling to power",
-            "link": "https://www.theguardian.com/world/2026/oct/29/israeli-leader-netanyahu-accused-of-using-ugly-smear-tactics-to-cling-to-power",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Thu, 29 Oct 2026 17:26:06 GMT",
-            "snippet": "Prime minister claims Arab Israeli parties used foreign backing to steal elections, in which his coalition lost its majorityBenjamin Netanyahu has been accused of using smear tactics to cling to power",
-            "isNew": true
-          },
-          {
-            "title": "How Israel’s Election Could End",
-            "link": "https://www.nytimes.com/video/world/middleeast/100000011242127/how-israels-election-could-end.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Thu, 29 Oct 2026 17:01:22 +0000",
-            "snippet": "Neither Benjamin Netanyahu nor Gadi Eisenkot won a majority in Israel’s Parliament, leaving both with a chance to form a government. Our Jerusalem bureau chief, David M. Halbfinger, explains the possi",
-            "isNew": true
-          },
-          {
-            "title": "Netanyahu's bloc leading Israel election but short of majority, partial results show",
-            "link": "https://www.bbc.co.uk/news/articles/cmdx3knq1xexo?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
-            "sources": [
-              "bbc"
-            ],
-            "pubDate": "Thu, 29 Oct 2026 15:47:20 GMT",
-            "snippet": "With 99% of ballots counted, Netanyahu's Likud party and its allies are set to win 53 seats in the 120-seat Knesset.",
-            "isNew": true
-          },
-          {
-            "title": "Israel’s anti-Qatar campaign bleeds into elections",
-            "link": "https://www.aljazeera.com/news/2026/10/29/israels-anti-qatar-campaign-bleeds-into-elections?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Thu, 29 Oct 2026 15:35:53 +0000",
-            "snippet": "Qatar&#039;s Foreign Ministry spokesman rejects &#039;disinformation&#039; amid allegations by some Israelis of voting interference.",
-            "isNew": true
-          },
-          {
-            "title": "How Arab Voters in Israel Shifted the Political Landscape",
-            "link": "https://www.nytimes.com/2026/10/28/world/middleeast/israel-election-arab-parties.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Thu, 29 Oct 2026 11:44:03 +0000",
-            "snippet": "The Arab parties have long been kept on the political sidelines. But stunning turnout by their supporters makes the Arab minority an Israeli political reality that cannot be ignored.",
-            "isNew": true
-          },
-          {
-            "title": "How Netanyahu Used Fear, Again, to Win Votes in the Israel Elections",
-            "link": "https://www.nytimes.com/2026/10/29/world/middleeast/netanyahu-fear-election-votes.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Thu, 29 Oct 2026 10:29:01 +0000",
-            "snippet": "Despite years of political baggage, the Israeli prime minister outperformed expectations, and his rivals, by playing on Jewish voters’ fears of Arab political power and potential security threats.",
-            "isNew": true
-          },
-          {
-            "title": "How could Israel break election deadlock? Here are four scenarios",
-            "link": "https://www.bbc.co.uk/news/articles/cm62y46d97wwo?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
-            "sources": [
-              "bbc"
-            ],
-            "pubDate": "Thu, 29 Oct 2026 09:06:48 GMT",
-            "snippet": "With more than 90% of votes counted, all signs point to an impasse. The most likely outcome may be new elections. ",
-            "isNew": true
           }
         ]
       },
@@ -627,9 +655,20 @@
         "category_id": "military",
         "category_name": "군사 작전",
         "category_icon": "⚔️",
-        "count": 5,
-        "new_count": 5,
+        "count": 6,
+        "new_count": 6,
         "articles": [
+          {
+            "title": "Palestinians injured, arrested in Israeli raids across West Bank",
+            "link": "https://www.aljazeera.com/news/2026/10/29/palestinians-injured-arrested-in-israeli-raids-across-west-bank?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Thu, 29 Oct 2026 20:40:03 +0000",
+            "snippet": "This comes as more than 3,300 Palestinians are forced from homes in Hebron as Israel&#039;s military offensive continues.",
+            "isNew": true
+          },
           {
             "title": "Pentagon fires general it says leaked classified information to media",
             "link": "https://www.aljazeera.com/news/2026/10/29/pentagon-fires-general-it-says-leaked-classified-information-to-media?traffic_source=rss",
@@ -664,14 +703,14 @@
             "isNew": true
           },
           {
-            "title": "Israeli strikes hit Gaza as Health Ministry urges Rafah opening",
-            "link": "https://www.aljazeera.com/news/2026/10/29/israeli-strikes-hit-gaza-as-health-ministry-urges-rafah-opening?traffic_source=rss",
-            "source": "aljazeera",
+            "title": "Serbian shot dead after attacking officer outside Israeli embassy, minister says",
+            "link": "https://www.bbc.co.uk/news/articles/ck5ynj4eeyj2o?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
             "sources": [
-              "aljazeera"
+              "bbc"
             ],
-            "pubDate": "Thu, 29 Oct 2026 15:12:36 +0000",
-            "snippet": "Gaza&#039;s Health Ministry says dozens died awaiting treatment abroad as Israeli attacks continue despite a &#039;ceasefire&#039;.",
+            "pubDate": "Wed, 28 Oct 2026 10:17:54 GMT",
+            "snippet": "Authorities say the attacker in Belgrade was an underage male who was being monitored by security services.",
             "isNew": true
           },
           {
@@ -683,6 +722,59 @@
             ],
             "pubDate": "Wed, 28 Oct 2026 01:09:55 +0000",
             "snippet": "The estimate through Oct. 16 shows that bombs, missiles and other munitions accounted for more than 60 percent of expenses.",
+            "isNew": true
+          }
+        ]
+      },
+      {
+        "category_id": "other",
+        "category_name": "기타",
+        "category_icon": "📰",
+        "count": 4,
+        "new_count": 4,
+        "articles": [
+          {
+            "title": "Patrick Stewart, ‘Star Trek’ Captain Picard and ‘X-Men’ actor, dies at 86",
+            "link": "https://www.aljazeera.com/editorial/2026/10/29/patrick-stewart-star-trek-captain-picard-and-x-men-actor-dies-at-86?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Thu, 29 Oct 2026 22:36:06 +0000",
+            "snippet": "Stewart died in Los Angeles after living with Alzheimer&#039;s disease and Lewy body dementia.",
+            "isNew": true
+          },
+          {
+            "title": "Palestinians face growing bans from Al-Aqsa as Israel tightens control",
+            "link": "https://www.aljazeera.com/news/2026/10/29/palestinians-face-growing-bans-from-al-aqsa-as-israel-tightens-control?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Thu, 29 Oct 2026 21:16:26 +0000",
+            "snippet": "As Israel renews a ban on Al-Aqsa imam, Islamic Waqf officials warn of shrinking authority at Muslim holy site.",
+            "isNew": true
+          },
+          {
+            "title": "The beautiful, shocking work of artist Hoda Afshar: ‘I don’t take freedom of speech for granted’",
+            "link": "https://www.theguardian.com/artanddesign/2026/oct/30/artist-hoda-afshar-interview-photography-exhibition-buxton-contemporary",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Thu, 29 Oct 2026 14:00:46 GMT",
+            "snippet": "Afshar’s experiences as a young woman in Iran have shaped her artistic career in Australia, focusing her eye on the humanity within inhumane systemsGet our weekend culture and lifestyle emailWhen Hoda",
+            "isNew": true
+          },
+          {
+            "title": "Iranian film-maker Jafar Panahi given new prison sentence",
+            "link": "https://www.theguardian.com/film/2026/oct/28/iran-film-maker-jafar-panahi-new-prison-sentence-assets-seized",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Wed, 28 Oct 2026 16:56:10 GMT",
+            "snippet": "Charges against him are unclear after return to Iran despite being sentenced last year for ‘propaganda activities’An Iranian court has handed the award-winning film director Jafar Panahi a new prison ",
             "isNew": true
           }
         ]
@@ -761,37 +853,6 @@
         ]
       },
       {
-        "category_id": "other",
-        "category_name": "기타",
-        "category_icon": "📰",
-        "count": 2,
-        "new_count": 2,
-        "articles": [
-          {
-            "title": "The beautiful, shocking work of artist Hoda Afshar: ‘I don’t take freedom of speech for granted’",
-            "link": "https://www.theguardian.com/artanddesign/2026/oct/30/artist-hoda-afshar-interview-photography-exhibition-buxton-contemporary",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Thu, 29 Oct 2026 14:00:46 GMT",
-            "snippet": "Afshar’s experiences as a young woman in Iran have shaped her artistic career in Australia, focusing her eye on the humanity within inhumane systemsGet our weekend culture and lifestyle emailWhen Hoda",
-            "isNew": true
-          },
-          {
-            "title": "Iranian film-maker Jafar Panahi given new prison sentence",
-            "link": "https://www.theguardian.com/film/2026/oct/28/iran-film-maker-jafar-panahi-new-prison-sentence-assets-seized",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Wed, 28 Oct 2026 16:56:10 GMT",
-            "snippet": "Charges against him are unclear after return to Iran despite being sentenced last year for ‘propaganda activities’An Iranian court has handed the award-winning film director Jafar Panahi a new prison ",
-            "isNew": true
-          }
-        ]
-      },
-      {
         "category_id": "regional",
         "category_name": "지역 정세",
         "category_icon": "🌍",
@@ -816,38 +877,68 @@
       "total_new": 50,
       "by_category": {
         "politics": {
-          "count": 37,
+          "count": 34,
           "titles": [
             {
-              "title": "Netanyahu attacks Palestinian-Israeli parties as he falls short of majority",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/10/29/netanyahu-attacks-palestinian-israeli-parties-as-he-falls-short-of-majority?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "‘Arab voice doesn’t count’: Jewish Israeli blocs reject Palestinian support",
-              "link": "https://www.aljazeera.com/news/2026/10/29/arab-voice-doesnt-count-jewish-israeli-blocs-reject-palestinian-support?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Israel election results: Qatar says accusations of election interference in Israel ‘ridiculous and dangerous’ – as it happened",
-              "link": "https://www.theguardian.com/world/live/2026/oct/29/israel-election-results-live-updates-poll-netanyahu-eisenkot-bloc-coalition-latest-news",
-              "source": "guardian"
-            },
-            {
-              "title": "Israeli leader Netanyahu accused of using ‘ugly’ smear tactics to cling to power",
+              "title": "Netanyahu accused of smearing Arab voters to hold on to power",
               "link": "https://www.theguardian.com/world/2026/oct/29/israeli-leader-netanyahu-accused-of-using-ugly-smear-tactics-to-cling-to-power",
               "source": "guardian"
             },
             {
-              "title": "How Israel’s Election Could End",
-              "link": "https://www.nytimes.com/video/world/middleeast/100000011242127/how-israels-election-could-end.html",
+              "title": "What Israeli Election Results Reveal About the Electorate",
+              "link": "https://www.nytimes.com/2026/10/29/world/middleeast/israel-voter-data-takeaways.html",
               "source": "nytimes"
+            },
+            {
+              "title": "No Clear Winner in Israel Election, Final Results Show",
+              "link": "https://www.nytimes.com/2026/10/29/world/middleeast/israel-election-results-netanyahu-eisenkot.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Trump administration attempts to take down leak of ICE personnel data",
+              "link": "https://www.aljazeera.com/news/2026/10/29/trump-administration-attempts-to-take-down-leak-of-ice-personnel-data?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Israel bans travel for Brad Lander after detention in occupied West Bank",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/10/29/israel-bans-travel-for-brad-lander-after-detention-in-occupied-west-bank?traffic_source=rss",
+              "source": "aljazeera"
+            }
+          ]
+        },
+        "other": {
+          "count": 4,
+          "titles": [
+            {
+              "title": "Patrick Stewart, ‘Star Trek’ Captain Picard and ‘X-Men’ actor, dies at 86",
+              "link": "https://www.aljazeera.com/editorial/2026/10/29/patrick-stewart-star-trek-captain-picard-and-x-men-actor-dies-at-86?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Palestinians face growing bans from Al-Aqsa as Israel tightens control",
+              "link": "https://www.aljazeera.com/news/2026/10/29/palestinians-face-growing-bans-from-al-aqsa-as-israel-tightens-control?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "The beautiful, shocking work of artist Hoda Afshar: ‘I don’t take freedom of speech for granted’",
+              "link": "https://www.theguardian.com/artanddesign/2026/oct/30/artist-hoda-afshar-interview-photography-exhibition-buxton-contemporary",
+              "source": "guardian"
+            },
+            {
+              "title": "Iranian film-maker Jafar Panahi given new prison sentence",
+              "link": "https://www.theguardian.com/film/2026/oct/28/iran-film-maker-jafar-panahi-new-prison-sentence-assets-seized",
+              "source": "guardian"
             }
           ]
         },
         "military": {
-          "count": 5,
+          "count": 6,
           "titles": [
+            {
+              "title": "Palestinians injured, arrested in Israeli raids across West Bank",
+              "link": "https://www.aljazeera.com/news/2026/10/29/palestinians-injured-arrested-in-israeli-raids-across-west-bank?traffic_source=rss",
+              "source": "aljazeera"
+            },
             {
               "title": "Pentagon fires general it says leaked classified information to media",
               "link": "https://www.aljazeera.com/news/2026/10/29/pentagon-fires-general-it-says-leaked-classified-information-to-media?traffic_source=rss",
@@ -864,29 +955,9 @@
               "source": "aljazeera"
             },
             {
-              "title": "Israeli strikes hit Gaza as Health Ministry urges Rafah opening",
-              "link": "https://www.aljazeera.com/news/2026/10/29/israeli-strikes-hit-gaza-as-health-ministry-urges-rafah-opening?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Iran War Cost Rises to $47.1 Billion, Pentagon Told Lawmakers",
-              "link": "https://www.nytimes.com/2026/10/27/us/politics/iran-war-cost-rises.html",
-              "source": "nytimes"
-            }
-          ]
-        },
-        "other": {
-          "count": 2,
-          "titles": [
-            {
-              "title": "The beautiful, shocking work of artist Hoda Afshar: ‘I don’t take freedom of speech for granted’",
-              "link": "https://www.theguardian.com/artanddesign/2026/oct/30/artist-hoda-afshar-interview-photography-exhibition-buxton-contemporary",
-              "source": "guardian"
-            },
-            {
-              "title": "Iranian film-maker Jafar Panahi given new prison sentence",
-              "link": "https://www.theguardian.com/film/2026/oct/28/iran-film-maker-jafar-panahi-new-prison-sentence-assets-seized",
-              "source": "guardian"
+              "title": "Serbian shot dead after attacking officer outside Israeli embassy, minister says",
+              "link": "https://www.bbc.co.uk/news/articles/ck5ynj4eeyj2o?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
             }
           ]
         },
@@ -1025,11 +1096,23 @@
     }
   ],
   "economic_indicators": {
+    "GOLD": {
+      "price": 4024.1,
+      "change": -27.5,
+      "changePercent": -0.68,
+      "prev": 4051.6
+    },
     "WTI": {
-      "price": 102.23,
-      "change": -0.55,
-      "changePercent": -0.54,
+      "price": 102.82,
+      "change": 0.04,
+      "changePercent": 0.04,
       "prev": 102.78
+    },
+    "VIX": {
+      "price": 17.2,
+      "change": 0.29,
+      "changePercent": 1.71,
+      "prev": 16.91
     },
     "US2Y": {
       "price": 4,
@@ -1037,41 +1120,37 @@
       "changePercent": 0,
       "prev": 3.99
     },
-    "GOLD": {
-      "price": 4022.4,
-      "change": -29.2,
-      "changePercent": -0.72,
-      "prev": 4051.6
+    "DXY": {
+      "price": 101.85,
+      "change": -0.34,
+      "changePercent": -0.33,
+      "prev": 102.19
+    },
+    "BRENT": {
+      "price": 111.47,
+      "change": -3.85,
+      "changePercent": -3.34,
+      "prev": 115.32
     },
     "US10Y": {
       "price": 4.99,
       "change": -0.06,
       "changePercent": -1.19,
       "prev": 5.05
-    },
-    "DXY": {
-      "price": 102.03,
-      "change": -0.16,
-      "changePercent": -0.16,
-      "prev": 102.19
-    },
-    "BRENT": {
-      "price": 111.03,
-      "change": -4.29,
-      "changePercent": -3.72,
-      "prev": 115.32
-    },
-    "VIX": {
-      "price": 16.87,
-      "change": -0.04,
-      "changePercent": -0.24,
-      "prev": 16.91
     }
   },
   "critical_events": [
     {
       "id": "ceasefire_agreement",
       "name": "공식 휴전/평화 합의",
+      "severity": "critical",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "shorten"
+    },
+    {
+      "id": "regime_collapse",
+      "name": "교전국 정권 붕괴/쿠데타",
       "severity": "critical",
       "confidence": 0.6666666666666666,
       "matchCount": 2,
