@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-10-30T09:33:00.715Z",
+  "timestamp": "2026-10-30T16:30:31.738Z",
   "war_day": 244,
   "probabilities": {
-    "1개월 내 (~3월)": 21.7,
-    "2~3개월 (4~5월)": 40,
-    "4~6개월 (6~8월)": 25,
-    "7~12개월 (9월~27/2월)": 10.2,
-    "1년 초과": 3.1
+    "1개월 내 (~3월)": 28.6,
+    "2~3개월 (4~5월)": 44.2,
+    "4~6개월 (6~8월)": 19.8,
+    "7~12개월 (9월~27/2월)": 6.3,
+    "1년 초과": 1.1
   },
   "factors": [
     {
@@ -45,20 +45,20 @@
       "decay": 0.4
     },
     {
-      "factor": "확전 뉴스 우세 (확전2:휴전0)",
-      "impact": "전쟁 장기화 가능성 (확전비율 100%)",
-      "weight": "+0.04%p (4~6개월)",
-      "direction": "lengthen",
-      "detail": "언론에서 휴전보다 확전을 더 많이 보도하고 있습니다.",
+      "factor": "이란 미사일 능력 급감 (휴전4:확전0)",
+      "impact": "전쟁 지속 능력 약화로 단기 종전 가능성 증가",
+      "weight": "+0.1%p (1개월내), +0.0%p (2~3개월) (잔존40%)",
+      "direction": "shorten",
+      "detail": "이란의 보복 미사일 타격 능력이 약 90% 감소했습니다.",
       "keywords": [
-        "escalat",
-        "intensif",
-        "expand",
-        "widen"
+        "missile",
+        "ballistic",
+        "launch",
+        "strike capab"
       ],
-      "applied": "실시간",
+      "applied": "2026-03-02",
       "active": true,
-      "decay": 1
+      "decay": 0.4
     },
     {
       "factor": "호르무즈 해협 봉쇄 → 국제 경제 압력",
@@ -164,11 +164,11 @@
       "decay": 1
     },
     {
-      "factor": "협상/외교 뉴스 6건 감지",
+      "factor": "협상/외교 뉴스 8건 감지",
       "impact": "외교적 해결 움직임 포착",
-      "weight": "+0.01%p (1개월내), +0.01%p (2~3개월)",
+      "weight": "+0.02%p (1개월내), +0.01%p (2~3개월)",
       "direction": "shorten",
-      "detail": "실시간 뉴스에서 협상 관련 기사 6건이 감지되었습니다.",
+      "detail": "실시간 뉴스에서 협상 관련 기사 8건이 감지되었습니다.",
       "keywords": [
         "negotiat",
         "talks",
@@ -181,11 +181,11 @@
       "decay": 1
     },
     {
-      "factor": "지역 확산 뉴스 4건 감지",
-      "impact": "주변국 연루 제한적",
-      "weight": "+0.00%p (4~6개월), +0.00%p (7~12개월)",
+      "factor": "지역 확산 뉴스 7건 감지",
+      "impact": "주변국 연루 확대로 장기화 위험",
+      "weight": "+0.01%p (4~6개월), +0.01%p (7~12개월)",
       "direction": "lengthen",
-      "detail": "주변국을 언급하는 기사 4건이 감지되었습니다.",
+      "detail": "주변국을 언급하는 기사 7건이 감지되었습니다.",
       "keywords": [
         "saudi",
         "uae",
@@ -234,6 +234,32 @@
       "decay": 0.3
     },
     {
+      "factor": "[중대 이벤트] 공식 휴전/평화 합의",
+      "impact": "공식 휴전 또는 평화 합의 체결. 휴전 합의는 전쟁 종결의 결정적 단계이며, 합의 후 이행까지 평균 1~2주 소요.",
+      "weight": "+10.0%p (1개월내), +6.7%p (2~3개월), -5.3%p (4~6개월), -4.0%p (7~12개월), -2.0%p (1년초과)",
+      "direction": "shorten",
+      "detail": "공식 휴전 또는 평화 합의 체결. 휴전 합의는 전쟁 종결의 결정적 단계이며, 합의 후 이행까지 평균 1~2주 소요.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Qatari officials in Iran in bid to revive ceasefire deal with US",
+      "keywords": [
+        "ceasefire",
+        "agree",
+        "ceasefire",
+        "deal",
+        "ceasefire",
+        "sign",
+        "truce",
+        "agree",
+        "armistice",
+        "sign",
+        "peace deal",
+        "ceasefire",
+        "accept",
+        "peace agreement"
+      ],
+      "applied": "2026-10-30",
+      "active": true,
+      "severity": "critical"
+    },
+    {
       "factor": "[중대 이벤트] 교전국 정권 붕괴/쿠데타",
       "impact": "교전국 정권 붕괴 또는 쿠데타. 이라크(2003): 바그다드 함락 후 3주 내 주요 전투 종료. 리비아(2011): 트리폴리 함락 후 2개월 내 종전.",
       "weight": "+6.7%p (1개월내), +5.3%p (2~3개월), +1.3%p (4~6개월), -3.3%p (7~12개월), -2.7%p (1년초과)",
@@ -262,11 +288,37 @@
       "severity": "critical"
     },
     {
-      "factor": "유가 급등 (WTI $103.5/배럴)",
+      "factor": "[중대 이벤트] 대규모 인도주의 위기",
+      "impact": "대규모 인도주의 위기. 국제사회 개입 압력 증가. 코소보(1999): 난민 위기가 NATO 작전 가속화. 인도적 위기는 국제 종전 압력을 2~3배 강화.",
+      "weight": "+1.3%p (1개월내), +2.7%p (2~3개월), +0.7%p (4~6개월), -0.7%p (7~12개월), -0.7%p (1년초과)",
+      "direction": "shorten",
+      "detail": "대규모 인도주의 위기. 국제사회 개입 압력 증가. 코소보(1999): 난민 위기가 NATO 작전 가속화. 인도적 위기는 국제 종전 압력을 2~3배 강화.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Ethnic cleansing fears rise as Israel squeezes space in Gaza: UN",
+      "keywords": [
+        "humanitarian",
+        "catastroph",
+        "civilian",
+        "massacre",
+        "genocide",
+        "refugee",
+        "crisis",
+        "humanitarian",
+        "crisis",
+        "war crime",
+        "evidence",
+        "civilian death",
+        "thousand",
+        "ethnic cleansing"
+      ],
+      "applied": "2026-10-30",
+      "active": true,
+      "severity": "high"
+    },
+    {
+      "factor": "유가 급등 (WTI $104.42/배럴)",
       "impact": "높은 경제 압력 → 빠른 해결 요구 증가",
       "weight": "+4%p (1-2개월)",
       "direction": "shorten",
-      "detail": "WTI 유가가 $103.5/배럴로 100달러 돌파입니다. 호르무즈 해협 봉쇄와 맞물려 글로벌 에너지 시장에 큰 충격을 주고 있으며, 주요국들의 조기 종전 압력이 강화되고 있습니다.",
+      "detail": "WTI 유가가 $104.42/배럴로 100달러 돌파입니다. 호르무즈 해협 봉쇄와 맞물려 글로벌 에너지 시장에 큰 충격을 주고 있으며, 주요국들의 조기 종전 압력이 강화되고 있습니다.",
       "keywords": [
         "oil",
         "crude",
@@ -279,11 +331,11 @@
       "active": true
     },
     {
-      "factor": "금값 사상최고 ($4001.2/oz)",
+      "factor": "금값 사상최고 ($3906.5/oz)",
       "impact": "안전자산 수요 폭증 → 글로벌 불안 심화",
       "weight": "+2%p (4-6개월)",
       "direction": "lengthen",
-      "detail": "금 가격이 온스당 $4001.2로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
+      "detail": "금 가격이 온스당 $3906.5로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
       "keywords": [
         "gold",
         "safe haven",
@@ -294,11 +346,11 @@
       "active": true
     },
     {
-      "factor": "미국 10년 국채금리 4.99% (고금리 지속)",
+      "factor": "미국 10년 국채금리 4.95% (고금리 지속)",
       "impact": "전쟁 자금 조달 비용 증가",
       "weight": "+1%p (4-6개월)",
       "direction": "mixed",
-      "detail": "미국 10년물 국채금리가 4.99%로 높은 수준을 유지하고 있습니다. 전쟁 자금 조달 비용이 증가하며, 장기전의 경제적 부담이 커지고 있습니다.",
+      "detail": "미국 10년물 국채금리가 4.95%로 높은 수준을 유지하고 있습니다. 전쟁 자금 조달 비용이 증가하며, 장기전의 경제적 부담이 커지고 있습니다.",
       "keywords": [
         "treasury",
         "yield",
@@ -311,36 +363,24 @@
     }
   ],
   "news_signals": {
-    "ceasefire_mentions": 0,
-    "escalation_mentions": 2,
-    "negotiation_mentions": 6,
-    "casualty_mentions": 12,
-    "peace_mentions": 2,
-    "regional_spread": 4,
+    "ceasefire_mentions": 4,
+    "escalation_mentions": 0,
+    "negotiation_mentions": 8,
+    "casualty_mentions": 8,
+    "peace_mentions": 6,
+    "regional_spread": 7,
     "total_articles": 50,
-    "new_articles": 50,
+    "new_articles": 49,
     "unique_events": 47,
     "duplicates_removed": 3
   },
   "latest_news": [
     {
-      "title": "Who Killed Alex Odeh?’ Asks Good Questions About a Terrible Death",
-      "link": "https://www.nytimes.com/2026/10/30/movies/who-killed-alex-odeh-review.html",
-      "pubDate": "Fri, 30 Oct 2026 09:02:03 +0000",
-      "source": "nytimes",
-      "snippet": "The film by Jason Osder and William Lafi Youmans examines the 1985 pipe-bombing of a Palestinian activist in California, tracing the case to suspects in Israel.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Oil flows are up as Iran war turmoil eases. Why do prices keep rising?",
-      "link": "https://www.aljazeera.com/economy/2026/10/30/oil-flows-are-up-as-iran-war-turmoil-eases-why-do-prices-keep-rising?traffic_source=rss",
-      "pubDate": "Fri, 30 Oct 2026 08:36:11 +0000",
+      "title": "Jerusalem Daily: Israel’s siege on Hebron displaces thousands",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/10/30/jerusalem-daily-israels-siege-on-hebron-displaces-thousands?traffic_source=rss",
+      "pubDate": "Fri, 30 Oct 2026 15:50:23 +0000",
       "source": "aljazeera",
-      "snippet": "Brent crude prices are up more than 60 percent compared with pre-war levels, despite rebound in supply. ",
+      "snippet": "Israel has announced its final election results, tightened its siege on Hebron, and arrested people returning to Gaza.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -348,11 +388,11 @@
       "_isDuplicate": false
     },
     {
-      "title": "Sudan investigation maps commanders linked to wartime rape",
-      "link": "https://www.aljazeera.com/features/2026/10/30/sudan-investigation-maps-commanders-linked-wartime-rape?traffic_source=rss",
-      "pubDate": "Fri, 30 Oct 2026 08:20:40 +0000",
+      "title": "Trump reverses course, reinstates cancelled campaign rallies",
+      "link": "https://www.aljazeera.com/news/2026/10/30/trump-reverses-course-reinstates-cancelled-campaign-rallies?traffic_source=rss",
+      "pubDate": "Fri, 30 Oct 2026 15:35:39 +0000",
       "source": "aljazeera",
-      "snippet": "Investigative unit CIR identifies 25 commanders present at five sites during periods of reported sexual violence.",
+      "snippet": "The decision marks a sharp reversal after the US president said he didn&#039;t feel like he had to hold the events.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -360,11 +400,11 @@
       "_isDuplicate": false
     },
     {
-      "title": "‘My life is buried here’: Iranian man whose 12 family members were killed",
-      "link": "https://www.aljazeera.com/news/2026/10/30/my-life-is-buried-here-iranian-man-whose-12-family-members-were-killed?traffic_source=rss",
-      "pubDate": "Fri, 30 Oct 2026 07:51:08 +0000",
+      "title": "‘Need a Plan B’: Yemenis in Aden prepare for another war as missiles fall",
+      "link": "https://www.aljazeera.com/news/2026/10/30/need-a-plan-b-yemenis-in-aden-prepare-for-another-war-as-missiles-fall?traffic_source=rss",
+      "pubDate": "Fri, 30 Oct 2026 15:26:00 +0000",
       "source": "aljazeera",
-      "snippet": "Hamed Mirzaei lost his wife, parents and many others in a devastating US-Israeli attack on Tehran.",
+      "snippet": "As Houthi missiles strike Aden, residents stockpile food and prepare escape plans, fearing a return to all-out war.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -372,11 +412,11 @@
       "_isDuplicate": false
     },
     {
-      "title": "AI’s real bottleneck is electricity. Who will pay for it?",
-      "link": "https://www.aljazeera.com/opinions/2026/10/30/ais-real-bottleneck-is-electricity-who-will-pay-for-it?traffic_source=rss",
-      "pubDate": "Fri, 30 Oct 2026 07:13:47 +0000",
-      "source": "aljazeera",
-      "snippet": "Big Tech’s nuclear power deals raise urgent questions about who will bear the cost of AI’s growing energy demands.",
+      "title": "트럼프, 위기의 캔자스·아이오와 유세 취소했다 재개키로",
+      "link": "https://www.yna.co.kr/view/AKR20261031000300071",
+      "pubDate": "Sat, 31 Oct 2026 00:24:44 +0900",
+      "source": "yonhap",
+      "snippet": "(워싱턴=연합뉴스) 박성민 특파원 = 도널드 트럼프 미국 대통령이 이번 주말 연방 상원의원 선거 초박빙 접전지인 캔자스주와 아이오와주 현지 유세...",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -384,35 +424,11 @@
       "_isDuplicate": false
     },
     {
-      "title": "Britain must sanction Israel, not just its settlers",
-      "link": "https://www.aljazeera.com/opinions/2026/10/30/britain-must-sanction-israel-not-just-its-settlers?traffic_source=rss",
-      "pubDate": "Fri, 30 Oct 2026 07:10:50 +0000",
-      "source": "aljazeera",
-      "snippet": "Israeli forces detained our parliamentary delegation and barred us from the West Bank. The violence is state policy.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "How Israel choked off Hebron at 10 entrances, as 5,000 forced to flee",
-      "link": "https://www.aljazeera.com/economy/2026/10/30/how-israel-choked-off-hebron-at-10-entrances-as-5000-forced-to-flee?traffic_source=rss",
-      "pubDate": "Fri, 30 Oct 2026 07:07:36 +0000",
-      "source": "aljazeera",
-      "snippet": "Our analysis exposes the heavy humanitarian and economic toll of the military siege suffocating Palestinians in Hebron.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Friday briefing: Israel has a dilemma - can its opposition govern with Palestinian parties?",
-      "link": "https://www.theguardian.com/world/2026/oct/30/friday-briefing-israel-has-a-dilemma-can-its-opposition-govern-with-palestinian-parties",
-      "pubDate": "Fri, 30 Oct 2026 06:44:29 GMT",
+      "title": "This is the hard lesson from Israel’s election: to stop national populists, you can’t play by gentlemen’s rules | Jonathan Freedland",
+      "link": "https://www.theguardian.com/commentisfree/2026/oct/30/israel-election-national-populists-benjamin-netanyahu-arab-parties",
+      "pubDate": "Fri, 30 Oct 2026 15:12:57 GMT",
       "source": "guardian",
-      "snippet": "In today’s newsletter: Benjamin Netanyahu has been left without a majority, now it is up to the coalition to find out whether the desire for change will prove to be a defining political momentGood mor",
+      "snippet": "The opposition can’t win unless they join forces with Arab parties. Benjamin Netanyahu knows this, and will use every ruse to stay in powerIt’s less an election result than a philosophical puzzle: wha",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -420,11 +436,23 @@
       "_isDuplicate": false
     },
     {
-      "title": "US midterms: 4 days to go – What the polls say as Trump cancels two rallies",
-      "link": "https://www.aljazeera.com/news/2026/10/30/us-midterms-4-days-to-go-what-the-polls-say-as-trump-cancels-two-rallies?traffic_source=rss",
-      "pubDate": "Fri, 30 Oct 2026 06:36:11 +0000",
+      "title": "Israeli opposition accuses Netanyahu of trying to 'delegitimise' election",
+      "link": "https://www.bbc.co.uk/news/articles/ckdd8qdl9e0eo?at_medium=RSS&at_campaign=rss",
+      "pubDate": "Fri, 30 Oct 2026 15:09:29 GMT",
+      "source": "bbc",
+      "snippet": "The PM's Likud party has alleged foreign interference and said Arab-led parties \"stole\" the election after his coalition lost its majority.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Israeli forces blow up homes of Palestinians accused of killing soldiers",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/10/30/israeli-forces-blow-up-homes-of-palestinians-accused-of-killing-soldiers?traffic_source=rss",
+      "pubDate": "Fri, 30 Oct 2026 15:06:00 +0000",
       "source": "aljazeera",
-      "snippet": "Trump cancels Kansas and Iowa rallies, opting for telephone events across nearly 20 states over the weekend.",
+      "snippet": "Israeli forces demolished the homes of two Palestinians accused of killing two Israeli soldiers in Hebron last week.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -432,11 +460,33 @@
       "_isDuplicate": false
     },
     {
-      "title": "With No Clear Winner, How Could Israel Get a Prime Minister?",
-      "link": "https://www.nytimes.com/2026/10/29/world/middleeast/israel-election-coalition-scenarios.html",
-      "pubDate": "Fri, 30 Oct 2026 06:31:57 +0000",
+      "title": "No Clear Winner in Israel Election, Final Results Show",
+      "link": "https://www.nytimes.com/2026/10/29/world/middleeast/israel-election-results-netanyahu-eisenkot.html",
+      "pubDate": "Fri, 30 Oct 2026 15:02:51 +0000",
       "source": "nytimes",
-      "snippet": "Deadlock is possible, as neither the bloc of Prime Minister Benjamin Netanyahu nor his main challenger have won a majority. But there are still paths to a new government.",
+      "snippet": "Prime Minister Benjamin Netanyahu’s party and its allies won 53 seats in Parliament, falling short of the outright majority needed to form a government. The main opposition bloc, led by Gadi Eisenkot,",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": true,
+      "_clusterSize": 2,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Senators briefed on Trump’s ‘insane’ plan to restart war on Iran",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/10/30/senators-briefed-on-trumps-insane-plan-to-restart-war-on-iran-2?traffic_source=rss",
+      "pubDate": "Fri, 30 Oct 2026 14:40:19 +0000",
+      "source": "aljazeera",
+      "snippet": "Senator Chris Murphy says he’s been briefed on Trump’s plan to restart the war on Iran.",
+      "isNew": true,
+      "_isDuplicate": true,
+      "_sourceCount": 1
+    },
+    {
+      "title": "Ethnic cleansing fears rise as Israel squeezes space in Gaza: UN",
+      "link": "https://www.aljazeera.com/news/2026/10/30/ethnic-cleansing-fears-rise-as-israel-squeezes-space-in-gaza-un?traffic_source=rss",
+      "pubDate": "Fri, 30 Oct 2026 14:18:07 +0000",
+      "source": "aljazeera",
+      "snippet": "Israeli forces are treating the &#039;Yellow Line&#039;, which is encroaching westward, as &#039;a kill zone&#039;, the OHCHR says.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -444,11 +494,11 @@
       "_isDuplicate": false
     },
     {
-      "title": "What Israeli Election Results Reveal About the Electorate",
-      "link": "https://www.nytimes.com/2026/10/29/world/middleeast/israel-voter-data-takeaways.html",
-      "pubDate": "Fri, 30 Oct 2026 06:31:44 +0000",
-      "source": "nytimes",
-      "snippet": "Some groups stood by Prime Minister Benjamin Netanyahu’s party, but support fell off among others. Turnout was also a striking factor in the election.",
+      "title": "Palestinian child survives Israeli gunshot to the head",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/10/30/palestinian-child-survives-israeli-gunshot-to-the-head?traffic_source=rss",
+      "pubDate": "Fri, 30 Oct 2026 13:32:24 +0000",
+      "source": "aljazeera",
+      "snippet": "Imad Salem Zahra, the Palestinian child whose photo went viral after he was shot in the head by Israeli soldiers.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -456,47 +506,47 @@
       "_isDuplicate": false
     },
     {
-      "title": "Sudanese diaspora and human rights groups denounce UAE nominee for UN top job",
-      "link": "https://www.theguardian.com/world/2026/oct/30/sudanese-diaspora-human-rights-groups-denounce-uae-nominee-un-top-job",
-      "pubDate": "Fri, 30 Oct 2026 05:00:45 GMT",
+      "title": "Ukraine invests in firepower as it inflicts a new Russian casualty record",
+      "link": "https://www.aljazeera.com/news/2026/10/30/ukraine-invests-in-firepower-as-it-inflicts-a-new-russian-casualty-record?traffic_source=rss",
+      "pubDate": "Fri, 30 Oct 2026 13:29:57 +0000",
+      "source": "aljazeera",
+      "snippet": "Recent Starlink suspension did not much affect Ukrainian lethality, but Kyiv shows it is losing trust in the US.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Italy tightens security as students, unions launch nationwide protests",
+      "link": "https://www.aljazeera.com/news/2026/10/30/italy-tightens-security-as-students-unions-launch-nationwide-protests?traffic_source=rss",
+      "pubDate": "Fri, 30 Oct 2026 13:14:11 +0000",
+      "source": "aljazeera",
+      "snippet": "Rallies across the country target living costs, investment in education and the wars in the Middle East.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Senators briefed on Trump’s ‘insane’ plan to restart war on Iran",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/10/30/senators-briefed-on-trumps-insane-plan-to-restart-war-on-iran?traffic_source=rss",
+      "pubDate": "Fri, 30 Oct 2026 13:01:43 +0000",
+      "source": "aljazeera",
+      "snippet": "Senator Chris Murphy warns Trump’s reported plan to restart war with Iran could have devastating consequences.",
+      "isNew": false,
+      "_sourceCount": 1,
+      "_isDuplicated": true,
+      "_clusterSize": 2,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Gulf states must rethink trillion-dollar defence in light of US-Iran war, says report",
+      "link": "https://www.theguardian.com/world/2026/oct/30/gulf-states-rethink-trillion-dollar-defence-us-iran-war-iiss-report",
+      "pubDate": "Fri, 30 Oct 2026 12:49:56 GMT",
       "source": "guardian",
-      "snippet": "Critics cite Lana Nusseibeh’s denial of accusations the UAE is fuelling Sudan war by supporting paramilitary RSFMembers of the Sudanese diaspora and international human rights monitors have denounced ",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Venezuela’s Machado lauds Trump for ‘freedom’, urges 2027 elections",
-      "link": "https://www.aljazeera.com/news/2026/10/30/machado-lauds-trump-for-freedom-floodgate-urges-2027-elections?traffic_source=rss",
-      "pubDate": "Fri, 30 Oct 2026 04:40:07 +0000",
-      "source": "aljazeera",
-      "snippet": "Nobel winner returns to Venezuela from exile, urging elections and criticising a controversial US oil deal with Caracas.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "US judge blocks Trump’s Medicaid rule forcing ill to prove impairment",
-      "link": "https://www.aljazeera.com/news/2026/10/30/us-judge-blocks-trumps-medicaid-rule-forcing-ill-to-prove-impairment?traffic_source=rss",
-      "pubDate": "Fri, 30 Oct 2026 04:38:24 +0000",
-      "source": "aljazeera",
-      "snippet": "A US district judge sided with 25 states and the District of Columbia, which sued the administration.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "‘You look like hell’, Trump lashes out at reporter in tarmac tirade",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/10/30/you-look-like-hell-trump-lashes-out-at-reporter-in-tarmac-tirade?traffic_source=rss",
-      "pubDate": "Fri, 30 Oct 2026 04:31:16 +0000",
-      "source": "aljazeera",
-      "snippet": "US President Donald Trump has lashed out at a reporter’s appearance.",
+      "snippet": "IISS study questions overreliance on American support and ‘overdependence on expensive, high-end systems’Gulf states are going to have to reconfigure their trillion-dollar defences given the damage in",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -511,8 +561,107 @@
         "category_name": "국내 정치",
         "category_icon": "🏛️",
         "count": 29,
-        "new_count": 29,
+        "new_count": 28,
         "articles": [
+          {
+            "title": "Jerusalem Daily: Israel’s siege on Hebron displaces thousands",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/10/30/jerusalem-daily-israels-siege-on-hebron-displaces-thousands?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Fri, 30 Oct 2026 15:50:23 +0000",
+            "snippet": "Israel has announced its final election results, tightened its siege on Hebron, and arrested people returning to Gaza.",
+            "isNew": true
+          },
+          {
+            "title": "Trump reverses course, reinstates cancelled campaign rallies",
+            "link": "https://www.aljazeera.com/news/2026/10/30/trump-reverses-course-reinstates-cancelled-campaign-rallies?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Fri, 30 Oct 2026 15:35:39 +0000",
+            "snippet": "The decision marks a sharp reversal after the US president said he didn&#039;t feel like he had to hold the events.",
+            "isNew": true
+          },
+          {
+            "title": "트럼프, 위기의 캔자스·아이오와 유세 취소했다 재개키로",
+            "link": "https://www.yna.co.kr/view/AKR20261031000300071",
+            "source": "yonhap",
+            "sources": [
+              "yonhap"
+            ],
+            "pubDate": "Sat, 31 Oct 2026 00:24:44 +0900",
+            "snippet": "(워싱턴=연합뉴스) 박성민 특파원 = 도널드 트럼프 미국 대통령이 이번 주말 연방 상원의원 선거 초박빙 접전지인 캔자스주와 아이오와주 현지 유세...",
+            "isNew": true
+          },
+          {
+            "title": "This is the hard lesson from Israel’s election: to stop national populists, you can’t play by gentlemen’s rules | Jonathan Freedland",
+            "link": "https://www.theguardian.com/commentisfree/2026/oct/30/israel-election-national-populists-benjamin-netanyahu-arab-parties",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Fri, 30 Oct 2026 15:12:57 GMT",
+            "snippet": "The opposition can’t win unless they join forces with Arab parties. Benjamin Netanyahu knows this, and will use every ruse to stay in powerIt’s less an election result than a philosophical puzzle: wha",
+            "isNew": true
+          },
+          {
+            "title": "Israeli opposition accuses Netanyahu of trying to 'delegitimise' election",
+            "link": "https://www.bbc.co.uk/news/articles/ckdd8qdl9e0eo?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc"
+            ],
+            "pubDate": "Fri, 30 Oct 2026 15:09:29 GMT",
+            "snippet": "The PM's Likud party has alleged foreign interference and said Arab-led parties \"stole\" the election after his coalition lost its majority.",
+            "isNew": true
+          },
+          {
+            "title": "No Clear Winner in Israel Election, Final Results Show",
+            "link": "https://www.nytimes.com/2026/10/29/world/middleeast/israel-election-results-netanyahu-eisenkot.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Fri, 30 Oct 2026 15:02:51 +0000",
+            "snippet": "Prime Minister Benjamin Netanyahu’s party and its allies won 53 seats in Parliament, falling short of the outright majority needed to form a government. The main opposition bloc, led by Gadi Eisenkot,",
+            "isNew": true
+          },
+          {
+            "title": "Senators briefed on Trump’s ‘insane’ plan to restart war on Iran",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/10/30/senators-briefed-on-trumps-insane-plan-to-restart-war-on-iran?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Fri, 30 Oct 2026 13:01:43 +0000",
+            "snippet": "Senator Chris Murphy warns Trump’s reported plan to restart war with Iran could have devastating consequences.",
+            "isNew": false
+          },
+          {
+            "title": "Italy tightens security as students, unions launch nationwide protests",
+            "link": "https://www.aljazeera.com/news/2026/10/30/italy-tightens-security-as-students-unions-launch-nationwide-protests?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Fri, 30 Oct 2026 13:14:11 +0000",
+            "snippet": "Rallies across the country target living costs, investment in education and the wars in the Middle East.",
+            "isNew": true
+          },
+          {
+            "title": "Palestinian voter turnout exposes Israel’s attitude towards Arab citizens",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/10/30/palestinian-turnout-exposes-israels-treatment-of-arab-citizens?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Fri, 30 Oct 2026 11:43:17 +0000",
+            "snippet": "The strong Palestinian turnout has exposed how Arab citizens are treated within Israel&#039;s democracy, says Xavier Abu Eid.",
+            "isNew": true
+          },
           {
             "title": "Friday briefing: Israel has a dilemma - can its opposition govern with Palestinian parties?",
             "link": "https://www.theguardian.com/world/2026/oct/30/friday-briefing-israel-has-a-dilemma-can-its-opposition-govern-with-palestinian-parties",
@@ -523,105 +672,69 @@
             "pubDate": "Fri, 30 Oct 2026 06:44:29 GMT",
             "snippet": "In today’s newsletter: Benjamin Netanyahu has been left without a majority, now it is up to the coalition to find out whether the desire for change will prove to be a defining political momentGood mor",
             "isNew": true
-          },
+          }
+        ]
+      },
+      {
+        "category_id": "other",
+        "category_name": "기타",
+        "category_icon": "📰",
+        "count": 7,
+        "new_count": 7,
+        "articles": [
           {
-            "title": "US midterms: 4 days to go – What the polls say as Trump cancels two rallies",
-            "link": "https://www.aljazeera.com/news/2026/10/30/us-midterms-4-days-to-go-what-the-polls-say-as-trump-cancels-two-rallies?traffic_source=rss",
+            "title": "Israeli forces blow up homes of Palestinians accused of killing soldiers",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/10/30/israeli-forces-blow-up-homes-of-palestinians-accused-of-killing-soldiers?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Fri, 30 Oct 2026 06:36:11 +0000",
-            "snippet": "Trump cancels Kansas and Iowa rallies, opting for telephone events across nearly 20 states over the weekend.",
+            "pubDate": "Fri, 30 Oct 2026 15:06:00 +0000",
+            "snippet": "Israeli forces demolished the homes of two Palestinians accused of killing two Israeli soldiers in Hebron last week.",
             "isNew": true
           },
           {
-            "title": "What Israeli Election Results Reveal About the Electorate",
-            "link": "https://www.nytimes.com/2026/10/29/world/middleeast/israel-voter-data-takeaways.html",
+            "title": "Ethnic cleansing fears rise as Israel squeezes space in Gaza: UN",
+            "link": "https://www.aljazeera.com/news/2026/10/30/ethnic-cleansing-fears-rise-as-israel-squeezes-space-in-gaza-un?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Fri, 30 Oct 2026 14:18:07 +0000",
+            "snippet": "Israeli forces are treating the &#039;Yellow Line&#039;, which is encroaching westward, as &#039;a kill zone&#039;, the OHCHR says.",
+            "isNew": true
+          },
+          {
+            "title": "Palestinian child survives Israeli gunshot to the head",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/10/30/palestinian-child-survives-israeli-gunshot-to-the-head?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Fri, 30 Oct 2026 13:32:24 +0000",
+            "snippet": "Imad Salem Zahra, the Palestinian child whose photo went viral after he was shot in the head by Israeli soldiers.",
+            "isNew": true
+          },
+          {
+            "title": "Binance says $6.3bn stolen in biggest crypto heist in history: What we know",
+            "link": "https://www.aljazeera.com/news/2026/10/30/binance-says-6-3bn-stolen-in-biggest-crypto-heist-in-history-what-we-know?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Fri, 30 Oct 2026 12:38:47 +0000",
+            "snippet": "The world’s largest crypto exchange halts withdrawals as the theft is linked to North Korean hackers.",
+            "isNew": true
+          },
+          {
+            "title": "U.S. Oil Industry Earned Over $130 Billion in Profit During Iran War",
+            "link": "https://www.nytimes.com/2026/10/30/business/energy-environment/exxon-chevron-oil-profits-iran-war.html",
             "source": "nytimes",
             "sources": [
               "nytimes"
             ],
-            "pubDate": "Fri, 30 Oct 2026 06:31:44 +0000",
-            "snippet": "Some groups stood by Prime Minister Benjamin Netanyahu’s party, but support fell off among others. Turnout was also a striking factor in the election.",
-            "isNew": true
-          },
-          {
-            "title": "Venezuela’s Machado lauds Trump for ‘freedom’, urges 2027 elections",
-            "link": "https://www.aljazeera.com/news/2026/10/30/machado-lauds-trump-for-freedom-floodgate-urges-2027-elections?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Fri, 30 Oct 2026 04:40:07 +0000",
-            "snippet": "Nobel winner returns to Venezuela from exile, urging elections and criticising a controversial US oil deal with Caracas.",
-            "isNew": true
-          },
-          {
-            "title": "‘You look like hell’, Trump lashes out at reporter in tarmac tirade",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/10/30/you-look-like-hell-trump-lashes-out-at-reporter-in-tarmac-tirade?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Fri, 30 Oct 2026 04:31:16 +0000",
-            "snippet": "US President Donald Trump has lashed out at a reporter’s appearance.",
-            "isNew": true
-          },
-          {
-            "title": "An Arab Town in Israel Celebrates the Election but Wonders What Will Change",
-            "link": "https://www.nytimes.com/2026/10/30/world/middleeast/arab-voters-israel-election-taibe.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Fri, 30 Oct 2026 04:01:20 +0000",
-            "snippet": "Gains for Arab-led parties have electrified Taibe, in central Israel, even as voters elsewhere in Israel say they have no place in any future government.",
-            "isNew": true
-          },
-          {
-            "title": "Why are Detroit gas stations selling discounted fuel in Trump’s name?",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/10/30/why-are-detroit-gas-stations-selling-discounted-fuel-in-trumps-name?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Fri, 30 Oct 2026 03:31:30 +0000",
-            "snippet": "Gas stations promoted by President Trump are selling discounted fuel in Detroit as Americans grapple with rising prices.",
-            "isNew": true
-          },
-          {
-            "title": "Netanyahu accused of smearing Arab voters to hold on to power",
-            "link": "https://www.theguardian.com/world/2026/oct/29/israeli-leader-netanyahu-accused-of-using-ugly-smear-tactics-to-cling-to-power",
-            "source": "guardian",
-            "sources": [
-              "guardian",
-              "aljazeera"
-            ],
-            "pubDate": "Thu, 29 Oct 2026 23:14:53 GMT",
-            "snippet": "Prime minister claims Arab Israeli parties used foreign backing to steal elections, in which his coalition lost its majorityBenjamin Netanyahu has been accused of using smear tactics to cling to power",
-            "isNew": true
-          },
-          {
-            "title": "No Clear Winner in Israel Election, Final Results Show",
-            "link": "https://www.nytimes.com/2026/10/29/world/middleeast/israel-election-results-netanyahu-eisenkot.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Thu, 29 Oct 2026 23:07:49 +0000",
-            "snippet": "Prime Minister Benjamin Netanyahu’s party and its allies won 53 seats in Parliament, falling short of the outright majority needed to form a government. The main opposition bloc, led by Gadi Eisenkot,",
-            "isNew": true
-          },
-          {
-            "title": "Israeli opposition accuses Netanyahu of trying to 'delegitimise' election",
-            "link": "https://www.bbc.co.uk/news/articles/ckdd8qdl9e0eo?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
-            "sources": [
-              "bbc"
-            ],
-            "pubDate": "Thu, 29 Oct 2026 20:21:54 GMT",
-            "snippet": "The PM's Likud party has alleged foreign interference and said Arab-led parties \"stole\" the election after his coalition lost its majority.",
+            "pubDate": "Fri, 30 Oct 2026 10:35:33 +0000",
+            "snippet": "That was almost three times as much as what businesses producing and refining oil in the United States made in the same period in 2025.",
             "isNew": true
           }
         ]
@@ -630,9 +743,31 @@
         "category_id": "military",
         "category_name": "군사 작전",
         "category_icon": "⚔️",
-        "count": 5,
-        "new_count": 5,
+        "count": 4,
+        "new_count": 4,
         "articles": [
+          {
+            "title": "‘Need a Plan B’: Yemenis in Aden prepare for another war as missiles fall",
+            "link": "https://www.aljazeera.com/news/2026/10/30/need-a-plan-b-yemenis-in-aden-prepare-for-another-war-as-missiles-fall?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Fri, 30 Oct 2026 15:26:00 +0000",
+            "snippet": "As Houthi missiles strike Aden, residents stockpile food and prepare escape plans, fearing a return to all-out war.",
+            "isNew": true
+          },
+          {
+            "title": "Georgia midterm elections: Why this is a key US battleground",
+            "link": "https://www.aljazeera.com/news/2026/10/30/georgia-midterm-elections-why-this-is-a-key-us-battleground?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Fri, 30 Oct 2026 12:09:03 +0000",
+            "snippet": "Obama and Trump campaign in key battleground state ahead of next week&#039;s midterm elections.",
+            "isNew": true
+          },
           {
             "title": "Who Killed Alex Odeh?’ Asks Good Questions About a Terrible Death",
             "link": "https://www.nytimes.com/2026/10/30/movies/who-killed-alex-odeh-review.html",
@@ -645,28 +780,6 @@
             "isNew": true
           },
           {
-            "title": "‘My life is buried here’: Iranian man whose 12 family members were killed",
-            "link": "https://www.aljazeera.com/news/2026/10/30/my-life-is-buried-here-iranian-man-whose-12-family-members-were-killed?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Fri, 30 Oct 2026 07:51:08 +0000",
-            "snippet": "Hamed Mirzaei lost his wife, parents and many others in a devastating US-Israeli attack on Tehran.",
-            "isNew": true
-          },
-          {
-            "title": "How Israel choked off Hebron at 10 entrances, as 5,000 forced to flee",
-            "link": "https://www.aljazeera.com/economy/2026/10/30/how-israel-choked-off-hebron-at-10-entrances-as-5000-forced-to-flee?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Fri, 30 Oct 2026 07:07:36 +0000",
-            "snippet": "Our analysis exposes the heavy humanitarian and economic toll of the military siege suffocating Palestinians in Hebron.",
-            "isNew": true
-          },
-          {
             "title": "Sudanese diaspora and human rights groups denounce UAE nominee for UN top job",
             "link": "https://www.theguardian.com/world/2026/oct/30/sudanese-diaspora-human-rights-groups-denounce-uae-nominee-un-top-job",
             "source": "guardian",
@@ -676,154 +789,6 @@
             "pubDate": "Fri, 30 Oct 2026 05:00:45 GMT",
             "snippet": "Critics cite Lana Nusseibeh’s denial of accusations the UAE is fuelling Sudan war by supporting paramilitary RSFMembers of the Sudanese diaspora and international human rights monitors have denounced ",
             "isNew": true
-          },
-          {
-            "title": "Serbian shot dead after attacking officer outside Israeli embassy, minister says",
-            "link": "https://www.bbc.co.uk/news/articles/ck5ynj4eeyj2o?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
-            "sources": [
-              "bbc"
-            ],
-            "pubDate": "Wed, 28 Oct 2026 10:17:54 GMT",
-            "snippet": "Authorities say the attacker in Belgrade was an underage male who was being monitored by security services.",
-            "isNew": true
-          }
-        ]
-      },
-      {
-        "category_id": "other",
-        "category_name": "기타",
-        "category_icon": "📰",
-        "count": 4,
-        "new_count": 4,
-        "articles": [
-          {
-            "title": "Sudan investigation maps commanders linked to wartime rape",
-            "link": "https://www.aljazeera.com/features/2026/10/30/sudan-investigation-maps-commanders-linked-wartime-rape?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Fri, 30 Oct 2026 08:20:40 +0000",
-            "snippet": "Investigative unit CIR identifies 25 commanders present at five sites during periods of reported sexual violence.",
-            "isNew": true
-          },
-          {
-            "title": "Israeli actress slams occupation in accidental ‘hot mic’ moment",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/10/30/israeli-actress-slams-occupation-in-accidental-hot-mic-moment?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Fri, 30 Oct 2026 04:14:09 +0000",
-            "snippet": "Veteran Israeli actress Chelli Goldenberg was left shocked after she was caught ripping into Israel&#039;s policies.",
-            "isNew": true
-          },
-          {
-            "title": "The beautiful, shocking work of artist Hoda Afshar: ‘I don’t take freedom of speech for granted’",
-            "link": "https://www.theguardian.com/artanddesign/2026/oct/30/artist-hoda-afshar-interview-photography-exhibition-buxton-contemporary",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Thu, 29 Oct 2026 14:00:46 GMT",
-            "snippet": "Afshar’s experiences as a young woman in Iran have shaped her artistic career in Australia, focusing her eye on the humanity within inhumane systemsGet our weekend culture and lifestyle emailWhen Hoda",
-            "isNew": true
-          },
-          {
-            "title": "Iranian film-maker Jafar Panahi given new prison sentence",
-            "link": "https://www.theguardian.com/film/2026/oct/28/iran-film-maker-jafar-panahi-new-prison-sentence-assets-seized",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Wed, 28 Oct 2026 16:56:10 GMT",
-            "snippet": "Charges against him are unclear after return to Iran despite being sentenced last year for ‘propaganda activities’An Iranian court has handed the award-winning film director Jafar Panahi a new prison ",
-            "isNew": true
-          }
-        ]
-      },
-      {
-        "category_id": "economy",
-        "category_name": "경제 영향",
-        "category_icon": "📊",
-        "count": 3,
-        "new_count": 3,
-        "articles": [
-          {
-            "title": "Oil flows are up as Iran war turmoil eases. Why do prices keep rising?",
-            "link": "https://www.aljazeera.com/economy/2026/10/30/oil-flows-are-up-as-iran-war-turmoil-eases-why-do-prices-keep-rising?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Fri, 30 Oct 2026 08:36:11 +0000",
-            "snippet": "Brent crude prices are up more than 60 percent compared with pre-war levels, despite rebound in supply. ",
-            "isNew": true
-          },
-          {
-            "title": "AI’s real bottleneck is electricity. Who will pay for it?",
-            "link": "https://www.aljazeera.com/opinions/2026/10/30/ais-real-bottleneck-is-electricity-who-will-pay-for-it?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Fri, 30 Oct 2026 07:13:47 +0000",
-            "snippet": "Big Tech’s nuclear power deals raise urgent questions about who will bear the cost of AI’s growing energy demands.",
-            "isNew": true
-          },
-          {
-            "title": "Britain must sanction Israel, not just its settlers",
-            "link": "https://www.aljazeera.com/opinions/2026/10/30/britain-must-sanction-israel-not-just-its-settlers?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Fri, 30 Oct 2026 07:10:50 +0000",
-            "snippet": "Israeli forces detained our parliamentary delegation and barred us from the West Bank. The violence is state policy.",
-            "isNew": true
-          }
-        ]
-      },
-      {
-        "category_id": "humanitarian",
-        "category_name": "인도주의/피해",
-        "category_icon": "🏥",
-        "count": 3,
-        "new_count": 3,
-        "articles": [
-          {
-            "title": "With No Clear Winner, How Could Israel Get a Prime Minister?",
-            "link": "https://www.nytimes.com/2026/10/29/world/middleeast/israel-election-coalition-scenarios.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Fri, 30 Oct 2026 06:31:57 +0000",
-            "snippet": "Deadlock is possible, as neither the bloc of Prime Minister Benjamin Netanyahu nor his main challenger have won a majority. But there are still paths to a new government.",
-            "isNew": true
-          },
-          {
-            "title": "US judge blocks Trump’s Medicaid rule forcing ill to prove impairment",
-            "link": "https://www.aljazeera.com/news/2026/10/30/us-judge-blocks-trumps-medicaid-rule-forcing-ill-to-prove-impairment?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Fri, 30 Oct 2026 04:38:24 +0000",
-            "snippet": "A US district judge sided with 25 states and the District of Columbia, which sued the administration.",
-            "isNew": true
-          },
-          {
-            "title": "Israel's election deadlock is a sign of the country's deep divisions",
-            "link": "https://www.bbc.co.uk/news/articles/cqz0ve94ygpjo?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
-            "sources": [
-              "bbc"
-            ],
-            "pubDate": "Wed, 28 Oct 2026 20:53:02 GMT",
-            "snippet": "The election was a celebration of democracy in some ways - but it has left Israel with no clear path to a new government, writes James Landale.",
-            "isNew": true
           }
         ]
       },
@@ -831,9 +796,20 @@
         "category_id": "diplomacy",
         "category_name": "외교/협상",
         "category_icon": "🤝",
-        "count": 2,
-        "new_count": 2,
+        "count": 3,
+        "new_count": 3,
         "articles": [
+          {
+            "title": "Qatari officials in Iran in bid to revive ceasefire deal with US",
+            "link": "https://www.aljazeera.com/news/2026/10/30/qatari-officials-in-iran-in-bid-to-revive-ceasefire-deal-with-us?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Fri, 30 Oct 2026 12:26:56 +0000",
+            "snippet": "The mediation mission comes amid speculation about a potential resumption of hostilities.",
+            "isNew": true
+          },
           {
             "title": "Vance Proposes Restarting Peace Talks in Outreach to Iranian Official",
             "link": "https://www.nytimes.com/2026/10/28/us/politics/vance-peace-talks-letter-iran.html",
@@ -859,6 +835,57 @@
         ]
       },
       {
+        "category_id": "humanitarian",
+        "category_name": "인도주의/피해",
+        "category_icon": "🏥",
+        "count": 2,
+        "new_count": 2,
+        "articles": [
+          {
+            "title": "Ukraine invests in firepower as it inflicts a new Russian casualty record",
+            "link": "https://www.aljazeera.com/news/2026/10/30/ukraine-invests-in-firepower-as-it-inflicts-a-new-russian-casualty-record?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Fri, 30 Oct 2026 13:29:57 +0000",
+            "snippet": "Recent Starlink suspension did not much affect Ukrainian lethality, but Kyiv shows it is losing trust in the US.",
+            "isNew": true
+          },
+          {
+            "title": "Israel's election deadlock is a sign of the country's deep divisions",
+            "link": "https://www.bbc.co.uk/news/articles/cqz0ve94ygpjo?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc"
+            ],
+            "pubDate": "Wed, 28 Oct 2026 20:53:02 GMT",
+            "snippet": "The election was a celebration of democracy in some ways - but it has left Israel with no clear path to a new government, writes James Landale.",
+            "isNew": true
+          }
+        ]
+      },
+      {
+        "category_id": "economy",
+        "category_name": "경제 영향",
+        "category_icon": "📊",
+        "count": 1,
+        "new_count": 1,
+        "articles": [
+          {
+            "title": "Gulf states must rethink trillion-dollar defence in light of US-Iran war, says report",
+            "link": "https://www.theguardian.com/world/2026/oct/30/gulf-states-rethink-trillion-dollar-defence-us-iran-war-iiss-report",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Fri, 30 Oct 2026 12:49:56 GMT",
+            "snippet": "IISS study questions overreliance on American support and ‘overdependence on expensive, high-end systems’Gulf states are going to have to reconfigure their trillion-dollar defences given the damage in",
+            "isNew": true
+          }
+        ]
+      },
+      {
         "category_id": "regional",
         "category_name": "지역 정세",
         "category_icon": "🌍",
@@ -866,138 +893,113 @@
         "new_count": 1,
         "articles": [
           {
-            "title": "Egypt fines prominent editor Lina Attalah and shuts independent news outlet Mada Masr",
-            "link": "https://www.theguardian.com/world/2026/oct/28/egypt-lina-attalah-mada-masr-press-freedom-clampdown",
-            "source": "guardian",
+            "title": "World number one Rybakina withdraws from Pan Pacific Open with neck injury",
+            "link": "https://www.aljazeera.com/sports/2026/10/30/world-number-one-rybakina-withdraws-from-pan-pacific-open-with-neck-injury?traffic_source=rss",
+            "source": "aljazeera",
             "sources": [
-              "guardian"
+              "aljazeera"
             ],
-            "pubDate": "Wed, 28 Oct 2026 14:16:24 GMT",
-            "snippet": "Warnings of escalating clampdown on press freedom come after Cairo court convicts Attalah of managing an unlicensed websiteLina Attalah, a prominent Egyptian journalist and the editor-in-chief of the ",
+            "pubDate": "Fri, 30 Oct 2026 12:42:56 +0000",
+            "snippet": "Elena Rybakina expects to return for next month&#039;s WTA Finals in Indian Wells after withdrawing from the Tokyo quarterfinals.",
             "isNew": true
           }
         ]
       }
     ],
     "recent_30min": {
-      "total_new": 50,
+      "total_new": 49,
       "by_category": {
-        "military": {
-          "count": 5,
+        "politics": {
+          "count": 31,
           "titles": [
+            {
+              "title": "Jerusalem Daily: Israel’s siege on Hebron displaces thousands",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/10/30/jerusalem-daily-israels-siege-on-hebron-displaces-thousands?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Trump reverses course, reinstates cancelled campaign rallies",
+              "link": "https://www.aljazeera.com/news/2026/10/30/trump-reverses-course-reinstates-cancelled-campaign-rallies?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "트럼프, 위기의 캔자스·아이오와 유세 취소했다 재개키로",
+              "link": "https://www.yna.co.kr/view/AKR20261031000300071",
+              "source": "yonhap"
+            },
+            {
+              "title": "This is the hard lesson from Israel’s election: to stop national populists, you can’t play by gentlemen’s rules | Jonathan Freedland",
+              "link": "https://www.theguardian.com/commentisfree/2026/oct/30/israel-election-national-populists-benjamin-netanyahu-arab-parties",
+              "source": "guardian"
+            },
+            {
+              "title": "Israeli opposition accuses Netanyahu of trying to 'delegitimise' election",
+              "link": "https://www.bbc.co.uk/news/articles/ckdd8qdl9e0eo?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
+            }
+          ]
+        },
+        "military": {
+          "count": 4,
+          "titles": [
+            {
+              "title": "‘Need a Plan B’: Yemenis in Aden prepare for another war as missiles fall",
+              "link": "https://www.aljazeera.com/news/2026/10/30/need-a-plan-b-yemenis-in-aden-prepare-for-another-war-as-missiles-fall?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Georgia midterm elections: Why this is a key US battleground",
+              "link": "https://www.aljazeera.com/news/2026/10/30/georgia-midterm-elections-why-this-is-a-key-us-battleground?traffic_source=rss",
+              "source": "aljazeera"
+            },
             {
               "title": "Who Killed Alex Odeh?’ Asks Good Questions About a Terrible Death",
               "link": "https://www.nytimes.com/2026/10/30/movies/who-killed-alex-odeh-review.html",
               "source": "nytimes"
             },
             {
-              "title": "‘My life is buried here’: Iranian man whose 12 family members were killed",
-              "link": "https://www.aljazeera.com/news/2026/10/30/my-life-is-buried-here-iranian-man-whose-12-family-members-were-killed?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "How Israel choked off Hebron at 10 entrances, as 5,000 forced to flee",
-              "link": "https://www.aljazeera.com/economy/2026/10/30/how-israel-choked-off-hebron-at-10-entrances-as-5000-forced-to-flee?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
               "title": "Sudanese diaspora and human rights groups denounce UAE nominee for UN top job",
               "link": "https://www.theguardian.com/world/2026/oct/30/sudanese-diaspora-human-rights-groups-denounce-uae-nominee-un-top-job",
               "source": "guardian"
-            },
-            {
-              "title": "Serbian shot dead after attacking officer outside Israeli embassy, minister says",
-              "link": "https://www.bbc.co.uk/news/articles/ck5ynj4eeyj2o?at_medium=RSS&at_campaign=rss",
-              "source": "bbc"
-            }
-          ]
-        },
-        "economy": {
-          "count": 3,
-          "titles": [
-            {
-              "title": "Oil flows are up as Iran war turmoil eases. Why do prices keep rising?",
-              "link": "https://www.aljazeera.com/economy/2026/10/30/oil-flows-are-up-as-iran-war-turmoil-eases-why-do-prices-keep-rising?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "AI’s real bottleneck is electricity. Who will pay for it?",
-              "link": "https://www.aljazeera.com/opinions/2026/10/30/ais-real-bottleneck-is-electricity-who-will-pay-for-it?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Britain must sanction Israel, not just its settlers",
-              "link": "https://www.aljazeera.com/opinions/2026/10/30/britain-must-sanction-israel-not-just-its-settlers?traffic_source=rss",
-              "source": "aljazeera"
             }
           ]
         },
         "other": {
-          "count": 4,
+          "count": 7,
           "titles": [
             {
-              "title": "Sudan investigation maps commanders linked to wartime rape",
-              "link": "https://www.aljazeera.com/features/2026/10/30/sudan-investigation-maps-commanders-linked-wartime-rape?traffic_source=rss",
+              "title": "Israeli forces blow up homes of Palestinians accused of killing soldiers",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/10/30/israeli-forces-blow-up-homes-of-palestinians-accused-of-killing-soldiers?traffic_source=rss",
               "source": "aljazeera"
             },
             {
-              "title": "Israeli actress slams occupation in accidental ‘hot mic’ moment",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/10/30/israeli-actress-slams-occupation-in-accidental-hot-mic-moment?traffic_source=rss",
+              "title": "Ethnic cleansing fears rise as Israel squeezes space in Gaza: UN",
+              "link": "https://www.aljazeera.com/news/2026/10/30/ethnic-cleansing-fears-rise-as-israel-squeezes-space-in-gaza-un?traffic_source=rss",
               "source": "aljazeera"
             },
             {
-              "title": "The beautiful, shocking work of artist Hoda Afshar: ‘I don’t take freedom of speech for granted’",
-              "link": "https://www.theguardian.com/artanddesign/2026/oct/30/artist-hoda-afshar-interview-photography-exhibition-buxton-contemporary",
-              "source": "guardian"
-            },
-            {
-              "title": "Iranian film-maker Jafar Panahi given new prison sentence",
-              "link": "https://www.theguardian.com/film/2026/oct/28/iran-film-maker-jafar-panahi-new-prison-sentence-assets-seized",
-              "source": "guardian"
-            }
-          ]
-        },
-        "politics": {
-          "count": 32,
-          "titles": [
-            {
-              "title": "Friday briefing: Israel has a dilemma - can its opposition govern with Palestinian parties?",
-              "link": "https://www.theguardian.com/world/2026/oct/30/friday-briefing-israel-has-a-dilemma-can-its-opposition-govern-with-palestinian-parties",
-              "source": "guardian"
-            },
-            {
-              "title": "US midterms: 4 days to go – What the polls say as Trump cancels two rallies",
-              "link": "https://www.aljazeera.com/news/2026/10/30/us-midterms-4-days-to-go-what-the-polls-say-as-trump-cancels-two-rallies?traffic_source=rss",
+              "title": "Palestinian child survives Israeli gunshot to the head",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/10/30/palestinian-child-survives-israeli-gunshot-to-the-head?traffic_source=rss",
               "source": "aljazeera"
             },
             {
-              "title": "What Israeli Election Results Reveal About the Electorate",
-              "link": "https://www.nytimes.com/2026/10/29/world/middleeast/israel-voter-data-takeaways.html",
+              "title": "Binance says $6.3bn stolen in biggest crypto heist in history: What we know",
+              "link": "https://www.aljazeera.com/news/2026/10/30/binance-says-6-3bn-stolen-in-biggest-crypto-heist-in-history-what-we-know?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "U.S. Oil Industry Earned Over $130 Billion in Profit During Iran War",
+              "link": "https://www.nytimes.com/2026/10/30/business/energy-environment/exxon-chevron-oil-profits-iran-war.html",
               "source": "nytimes"
-            },
-            {
-              "title": "Venezuela’s Machado lauds Trump for ‘freedom’, urges 2027 elections",
-              "link": "https://www.aljazeera.com/news/2026/10/30/machado-lauds-trump-for-freedom-floodgate-urges-2027-elections?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "‘You look like hell’, Trump lashes out at reporter in tarmac tirade",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/10/30/you-look-like-hell-trump-lashes-out-at-reporter-in-tarmac-tirade?traffic_source=rss",
-              "source": "aljazeera"
             }
           ]
         },
         "humanitarian": {
-          "count": 3,
+          "count": 2,
           "titles": [
             {
-              "title": "With No Clear Winner, How Could Israel Get a Prime Minister?",
-              "link": "https://www.nytimes.com/2026/10/29/world/middleeast/israel-election-coalition-scenarios.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "US judge blocks Trump’s Medicaid rule forcing ill to prove impairment",
-              "link": "https://www.aljazeera.com/news/2026/10/30/us-judge-blocks-trumps-medicaid-rule-forcing-ill-to-prove-impairment?traffic_source=rss",
+              "title": "Ukraine invests in firepower as it inflicts a new Russian casualty record",
+              "link": "https://www.aljazeera.com/news/2026/10/30/ukraine-invests-in-firepower-as-it-inflicts-a-new-russian-casualty-record?traffic_source=rss",
               "source": "aljazeera"
             },
             {
@@ -1007,17 +1009,12 @@
             }
           ]
         },
-        "diplomacy": {
-          "count": 2,
+        "economy": {
+          "count": 1,
           "titles": [
             {
-              "title": "Vance Proposes Restarting Peace Talks in Outreach to Iranian Official",
-              "link": "https://www.nytimes.com/2026/10/28/us/politics/vance-peace-talks-letter-iran.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Israel’s choice: Netanyahu remaining in power or a Palestinian-backed coalition",
-              "link": "https://www.theguardian.com/world/2026/oct/28/israel-elections-choice-netanyahu-remaining-power-or-palestinian-backed-coalition",
+              "title": "Gulf states must rethink trillion-dollar defence in light of US-Iran war, says report",
+              "link": "https://www.theguardian.com/world/2026/oct/30/gulf-states-rethink-trillion-dollar-defence-us-iran-war-iiss-report",
               "source": "guardian"
             }
           ]
@@ -1026,8 +1023,28 @@
           "count": 1,
           "titles": [
             {
-              "title": "Egypt fines prominent editor Lina Attalah and shuts independent news outlet Mada Masr",
-              "link": "https://www.theguardian.com/world/2026/oct/28/egypt-lina-attalah-mada-masr-press-freedom-clampdown",
+              "title": "World number one Rybakina withdraws from Pan Pacific Open with neck injury",
+              "link": "https://www.aljazeera.com/sports/2026/10/30/world-number-one-rybakina-withdraws-from-pan-pacific-open-with-neck-injury?traffic_source=rss",
+              "source": "aljazeera"
+            }
+          ]
+        },
+        "diplomacy": {
+          "count": 3,
+          "titles": [
+            {
+              "title": "Qatari officials in Iran in bid to revive ceasefire deal with US",
+              "link": "https://www.aljazeera.com/news/2026/10/30/qatari-officials-in-iran-in-bid-to-revive-ceasefire-deal-with-us?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Vance Proposes Restarting Peace Talks in Outreach to Iranian Official",
+              "link": "https://www.nytimes.com/2026/10/28/us/politics/vance-peace-talks-letter-iran.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Israel’s choice: Netanyahu remaining in power or a Palestinian-backed coalition",
+              "link": "https://www.theguardian.com/world/2026/oct/28/israel-elections-choice-netanyahu-remaining-power-or-palestinian-backed-coalition",
               "source": "guardian"
             }
           ]
@@ -1123,53 +1140,69 @@
   ],
   "economic_indicators": {
     "GOLD": {
-      "price": 4001.2,
-      "change": -30.2,
-      "changePercent": -0.75,
+      "price": 3906.5,
+      "change": -124.9,
+      "changePercent": -3.1,
       "prev": 4031.4
     },
-    "VIX": {
-      "price": 18.17,
-      "change": 0.97,
-      "changePercent": 5.64,
-      "prev": 17.2
-    },
-    "DXY": {
-      "price": 101.69,
-      "change": -0.35,
-      "changePercent": -0.34,
-      "prev": 102.04
-    },
     "WTI": {
-      "price": 103.5,
-      "change": 1.5,
-      "changePercent": 1.47,
+      "price": 104.42,
+      "change": 2.42,
+      "changePercent": 2.37,
       "prev": 102
     },
-    "US10Y": {
-      "price": 4.99,
-      "change": -0.06,
-      "changePercent": -1.19,
-      "prev": 5.05
+    "BRENT": {
+      "price": 113.91,
+      "change": -0.97,
+      "changePercent": -0.84,
+      "prev": 114.88
     },
     "US2Y": {
-      "price": 4,
-      "change": 0,
-      "changePercent": 0,
-      "prev": 3.99
+      "price": 3.98,
+      "change": -0.02,
+      "changePercent": -0.5,
+      "prev": 4
     },
-    "BRENT": {
-      "price": 112.62,
-      "change": -2.26,
-      "changePercent": -1.97,
-      "prev": 114.88
+    "US10Y": {
+      "price": 4.95,
+      "change": -0.04,
+      "changePercent": -0.8,
+      "prev": 4.99
+    },
+    "DXY": {
+      "price": 101.87,
+      "change": -0.17,
+      "changePercent": -0.17,
+      "prev": 102.04
+    },
+    "VIX": {
+      "price": 20.12,
+      "change": 2.92,
+      "changePercent": 16.98,
+      "prev": 17.2
     }
   },
   "critical_events": [
     {
+      "id": "ceasefire_agreement",
+      "name": "공식 휴전/평화 합의",
+      "severity": "critical",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "shorten"
+    },
+    {
       "id": "regime_collapse",
       "name": "교전국 정권 붕괴/쿠데타",
       "severity": "critical",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "shorten"
+    },
+    {
+      "id": "humanitarian_crisis",
+      "name": "대규모 인도주의 위기",
+      "severity": "high",
       "confidence": 0.6666666666666666,
       "matchCount": 2,
       "direction": "shorten"
