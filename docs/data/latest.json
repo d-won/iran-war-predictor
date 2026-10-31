@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-10-31T13:15:51.748Z",
+  "timestamp": "2026-10-31T17:51:11.921Z",
   "war_day": 245,
   "probabilities": {
-    "1개월 내 (~3월)": 21.6,
-    "2~3개월 (4~5월)": 39.8,
-    "4~6개월 (6~8월)": 25.1,
-    "7~12개월 (9월~27/2월)": 10.4,
-    "1년 초과": 3.1
+    "1개월 내 (~3월)": 20.7,
+    "2~3개월 (4~5월)": 38.2,
+    "4~6개월 (6~8월)": 26.7,
+    "7~12개월 (9월~27/2월)": 11.1,
+    "1년 초과": 3.3
   },
   "factors": [
     {
@@ -45,7 +45,7 @@
       "decay": 0.4
     },
     {
-      "factor": "확전 뉴스 우세 (확전2:휴전0)",
+      "factor": "확전 뉴스 우세 (확전4:휴전0)",
       "impact": "전쟁 장기화 가능성 (확전비율 100%)",
       "weight": "+0.04%p (4~6개월)",
       "direction": "lengthen",
@@ -164,11 +164,11 @@
       "decay": 1
     },
     {
-      "factor": "협상/외교 뉴스 6건 감지",
+      "factor": "협상/외교 뉴스 8건 감지",
       "impact": "외교적 해결 움직임 포착",
-      "weight": "+0.01%p (1개월내), +0.01%p (2~3개월)",
+      "weight": "+0.02%p (1개월내), +0.01%p (2~3개월)",
       "direction": "shorten",
-      "detail": "실시간 뉴스에서 협상 관련 기사 6건이 감지되었습니다.",
+      "detail": "실시간 뉴스에서 협상 관련 기사 8건이 감지되었습니다.",
       "keywords": [
         "negotiat",
         "talks",
@@ -262,6 +262,58 @@
       "severity": "critical"
     },
     {
+      "factor": "[중대 이벤트] 대규모 인도주의 위기",
+      "impact": "대규모 인도주의 위기. 국제사회 개입 압력 증가. 코소보(1999): 난민 위기가 NATO 작전 가속화. 인도적 위기는 국제 종전 압력을 2~3배 강화.",
+      "weight": "+1.3%p (1개월내), +2.7%p (2~3개월), +0.7%p (4~6개월), -0.7%p (7~12개월), -0.7%p (1년초과)",
+      "direction": "shorten",
+      "detail": "대규모 인도주의 위기. 국제사회 개입 압력 증가. 코소보(1999): 난민 위기가 NATO 작전 가속화. 인도적 위기는 국제 종전 압력을 2~3배 강화.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Israel voted for Israel: Why Gaza wasn’t on the ballot",
+      "keywords": [
+        "humanitarian",
+        "catastroph",
+        "civilian",
+        "massacre",
+        "genocide",
+        "refugee",
+        "crisis",
+        "humanitarian",
+        "crisis",
+        "war crime",
+        "evidence",
+        "civilian death",
+        "thousand",
+        "ethnic cleansing"
+      ],
+      "applied": "2026-10-31",
+      "active": true,
+      "severity": "high"
+    },
+    {
+      "factor": "[중대 이벤트] 전선 확대/신규 참전국",
+      "impact": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).",
+      "weight": "-1.3%p (1개월내), -2.0%p (2~3개월), +2.7%p (4~6개월), +2.0%p (7~12개월), +1.3%p (1년초과)",
+      "direction": "lengthen",
+      "detail": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Syria Weighs Joining Saudi Mutual Defense Pact as Yemen War Rages",
+      "keywords": [
+        "new front",
+        "war spread",
+        "conflict expand",
+        "join",
+        "war",
+        "enter",
+        "war",
+        "open",
+        "front",
+        "declare war",
+        "widen",
+        "conflict",
+        "second front",
+        "new theater"
+      ],
+      "applied": "2026-10-31",
+      "active": true,
+      "severity": "moderate"
+    },
+    {
       "factor": "유가 급등 (WTI $104.12/배럴)",
       "impact": "높은 경제 압력 → 빠른 해결 요구 증가",
       "weight": "+4%p (1-2개월)",
@@ -312,23 +364,71 @@
   ],
   "news_signals": {
     "ceasefire_mentions": 0,
-    "escalation_mentions": 2,
-    "negotiation_mentions": 6,
+    "escalation_mentions": 4,
+    "negotiation_mentions": 8,
     "casualty_mentions": 6,
-    "peace_mentions": 8,
+    "peace_mentions": 6,
     "regional_spread": 8,
     "total_articles": 50,
     "new_articles": 50,
-    "unique_events": 48,
-    "duplicates_removed": 2
+    "unique_events": 47,
+    "duplicates_removed": 3
   },
   "latest_news": [
     {
-      "title": "Studios destroyed, traditions saved: Artists fight to save Sudan’s culture",
-      "link": "https://www.aljazeera.com/features/2026/10/31/studios-destroyed-traditions-saved-artists-fight-to-save-sudans-culture?traffic_source=rss",
-      "pubDate": "Sat, 31 Oct 2026 12:49:04 +0000",
+      "title": "Jerusalem Daily: Who will form Israel’s next government?",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/10/31/jerusalem-daily-who-will-form-israels-next-government?traffic_source=rss",
+      "pubDate": "Sat, 31 Oct 2026 17:29:00 +0000",
       "source": "aljazeera",
-      "snippet": "Artists in Sudan are working to save culture and traditions amid the country&#039;s war.",
+      "snippet": "Netanyahu and Eisenkot are locked in a struggle to form a governing coalition in the Knesset. ",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "A cure for Trump? Why Democratic doctors are running in the 2026 midterms",
+      "link": "https://www.aljazeera.com/news/longform/2026/10/31/a-cure-for-trump-why-democratic-doctors-are-running-in-the-2026-midterms?traffic_source=rss",
+      "pubDate": "Sat, 31 Oct 2026 17:19:44 +0000",
+      "source": "aljazeera",
+      "snippet": "Democratic doctors aim to convert the backlash against the Trump administration’s health policies into midterm votes.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Syria Weighs Joining Saudi Mutual Defense Pact as Yemen War Rages",
+      "link": "https://www.nytimes.com/2026/10/31/world/middleeast/syria-saudi-defense-pact.html",
+      "pubDate": "Sat, 31 Oct 2026 17:18:30 +0000",
+      "source": "nytimes",
+      "snippet": "A move to join Saudi Arabia’s agreement with Turkey and Pakistan could entangle more countries in the kingdom’s escalating conflict between the Iran-backed Houthis.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "‘You need the power of all your votes’: Bedouin women secure success for Arab parties in Israeli election",
+      "link": "https://www.theguardian.com/world/2026/oct/31/bedouin-women-success-arab-parties-israel-election",
+      "pubDate": "Sat, 31 Oct 2026 17:16:24 GMT",
+      "source": "guardian",
+      "snippet": "With 180,000 eligible voters, Bedouin turnout was key in Palestinian-led parties winning unprecedented 19 seats Last year, Umm Khaled Fatoun returned from volunteering in a Jewish-Arab support centre ",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Iran FM says US outreach a ‘positive step’ as delegation in Qatar for talks",
+      "link": "https://www.aljazeera.com/news/2026/10/31/iran-fm-says-us-outreach-a-positive-step-as-delegation-in-qatar-for-talks?traffic_source=rss",
+      "pubDate": "Sat, 31 Oct 2026 14:31:37 +0000",
+      "source": "aljazeera",
+      "snippet": "Iran’s Foreign Minister Abbas Araghchi tells Al Jazeera Tehran doesn&#039;t rule out attack, is ‘prepared for all scenarios’.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -338,9 +438,45 @@
     {
       "title": "Iran Braces for More War, No Matter the Outcome of the U.S. and Israeli Elections",
       "link": "https://www.nytimes.com/2026/10/31/world/middleeast/iran-war-israel-us-elections-trump-netanyahu.html",
-      "pubDate": "Sat, 31 Oct 2026 12:26:58 +0000",
+      "pubDate": "Sat, 31 Oct 2026 14:22:20 +0000",
       "source": "nytimes",
       "snippet": "With Prime Minister Benjamin Netanyahu fighting to stay in power and President Trump facing a tough midterm, Iran’s leaders expect no major shift in policy.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Israel voted for Israel: Why Gaza wasn’t on the ballot",
+      "link": "https://www.aljazeera.com/news/2026/10/31/israel-voted-for-israel-why-gaza-wasnt-on-the-ballot?traffic_source=rss",
+      "pubDate": "Sat, 31 Oct 2026 13:35:51 +0000",
+      "source": "aljazeera",
+      "snippet": "Despite genocide, regional war and isolation, Israel&#039;s election revealed little appetite for political alternatives.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "On the Norway-Russia border, the Sámi people face a growing divide",
+      "link": "https://www.aljazeera.com/features/longform/2026/10/31/on-the-norway-russia-border-the-sami-people-face-a-growing-divide?traffic_source=rss",
+      "pubDate": "Sat, 31 Oct 2026 12:58:28 +0000",
+      "source": "aljazeera",
+      "snippet": "As Russia’s war in Ukraine reshapes this Arctic frontier, Sámi communities struggle to sustain cross-border traditions.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Studios destroyed, traditions saved: Artists fight to save Sudan’s culture",
+      "link": "https://www.aljazeera.com/features/2026/10/31/studios-destroyed-traditions-saved-artists-fight-to-save-sudans-culture?traffic_source=rss",
+      "pubDate": "Sat, 31 Oct 2026 12:49:04 +0000",
+      "source": "aljazeera",
+      "snippet": "Artists in Sudan are working to save culture and traditions amid the country&#039;s war.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -372,114 +508,6 @@
       "_isDuplicate": false
     },
     {
-      "title": "Hundreds from Russian-occupied Oleshky land in Belarus en route to Ukraine",
-      "link": "https://www.aljazeera.com/news/2026/10/31/hundreds-from-russian-occupied-oleshky-land-in-belarus-en-route-to-ukraine?traffic_source=rss",
-      "pubDate": "Sat, 31 Oct 2026 10:53:55 +0000",
-      "source": "aljazeera",
-      "snippet": "Four planes transporting evacuees from the war-ravaged city have arrived in Belarus&#039;s Gomel.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Swiss commentary on Israeli Olympic bobsleigh team termed ‘discriminatory’",
-      "link": "https://www.aljazeera.com/sports/2026/10/31/swiss-commentary-on-israeli-olympic-bobsleigh-team-termed-discriminatory?traffic_source=rss",
-      "pubDate": "Sat, 31 Oct 2026 10:49:19 +0000",
-      "source": "aljazeera",
-      "snippet": "Criticism of Israel&#039;s captain Adam Edelman at Winter Olympics breached discrimination rules, Swiss complaints body says.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Can Democrats win the US Senate? 10 key midterm races to watch",
-      "link": "https://www.aljazeera.com/news/2026/10/31/can-democrats-win-the-us-senate-10-key-midterm-races-to-watch?traffic_source=rss",
-      "pubDate": "Sat, 31 Oct 2026 10:38:43 +0000",
-      "source": "aljazeera",
-      "snippet": "From Texas to Maine, rising prices and the Iran war put key Senate races in play as Democrats fight for control.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "‘Paycheck to paycheck’: Texas border voters shed parties amid economic woes",
-      "link": "https://www.aljazeera.com/news/2026/10/31/paycheck-to-paycheck-texas-border-voters-shed-parties-amid-economic-woes?traffic_source=rss",
-      "pubDate": "Sat, 31 Oct 2026 10:24:21 +0000",
-      "source": "aljazeera",
-      "snippet": "Voters reassess 2024 swing towards Trump as Republicans and Democrats grapple for Rio Grande Valley votes. ",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Education under fire: Gaza’s children face death on their way to school",
-      "link": "https://www.aljazeera.com/features/2026/10/31/education-under-fire-gazas-children-face-death-on-their-way-to-school?traffic_source=rss",
-      "pubDate": "Sat, 31 Oct 2026 10:00:17 +0000",
-      "source": "aljazeera",
-      "snippet": "Children have faced Israeli bombs and sniper fire since the academic year resumed in Gaza.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Rival US and Russian resolutions on Western Sahara fail at UN",
-      "link": "https://www.aljazeera.com/news/2026/10/31/rival-us-and-russian-resolutions-on-western-sahara-fail-at-un?traffic_source=rss",
-      "pubDate": "Sat, 31 Oct 2026 09:35:21 +0000",
-      "source": "aljazeera",
-      "snippet": "UN Security Council rejected the competing proposals, leaving the peacekeeping mission without an approved extension.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Lebanon charges 13 over confiscated Hezbollah explosives",
-      "link": "https://www.aljazeera.com/news/2026/10/31/lebanon-charges-13-over-hezbollah-confiscated-explosives?traffic_source=rss",
-      "pubDate": "Sat, 31 Oct 2026 09:26:46 +0000",
-      "source": "aljazeera",
-      "snippet": "Group calls charges &#039;unjust&#039;, says weapons were meant to be used against Israeli forces in south Lebanon.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "‘You need the power of all your votes’: Bedouin women secure success for Arab parties in Israeli election",
-      "link": "https://www.theguardian.com/world/2026/oct/31/bedouin-women-success-arab-parties-israel-election",
-      "pubDate": "Sat, 31 Oct 2026 09:25:16 GMT",
-      "source": "guardian",
-      "snippet": "With 180,000 eligible voters, Bedouin turnout was key in Palestinian-led parties winning unprecedented 19 seats Last year, Umm Khaled Fatoun returned from volunteering in a Jewish-Arab support centre ",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "A UN protection force must be urgently deployed to Palestine",
-      "link": "https://www.aljazeera.com/opinions/2026/10/31/a-un-protection-force-must-be-urgently-deployed-to-palestine?traffic_source=rss",
-      "pubDate": "Sat, 31 Oct 2026 08:57:35 +0000",
-      "source": "aljazeera",
-      "snippet": "Israel is making Palestinian existence in Palestine increasingly impossible.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
       "title": "As Trump fans the flames of a world on fire, can diplomacy take back control?",
       "link": "https://www.theguardian.com/us-news/2026/oct/31/as-trump-fans-the-flames-of-a-world-on-fire-can-diplomacy-take-back-control",
       "pubDate": "Sat, 31 Oct 2026 06:00:38 GMT",
@@ -502,6 +530,30 @@
       "_isDuplicated": false,
       "_clusterSize": 1,
       "_isDuplicate": false
+    },
+    {
+      "title": "This is the hard lesson from Israel’s election: to stop national populists, you can’t play by gentlemen’s rules | Jonathan Freedland",
+      "link": "https://www.theguardian.com/commentisfree/2026/oct/30/israel-election-national-populists-benjamin-netanyahu-arab-parties",
+      "pubDate": "Fri, 30 Oct 2026 15:12:57 GMT",
+      "source": "guardian",
+      "snippet": "The opposition can’t win unless they join forces with Arab parties. Benjamin Netanyahu knows this, and will use every ruse to stay in powerIt’s less an election result than a philosophical puzzle: wha",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Israeli opposition accuses Netanyahu of trying to 'delegitimise' election",
+      "link": "https://www.bbc.co.uk/news/articles/ckdd8qdl9e0eo?at_medium=RSS&at_campaign=rss",
+      "pubDate": "Fri, 30 Oct 2026 15:09:29 GMT",
+      "source": "bbc",
+      "snippet": "The PM's Likud party has alleged foreign interference and said Arab-led parties \"stole\" the election after his coalition lost its majority.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
     }
   ],
   "news_digest": {
@@ -510,40 +562,18 @@
         "category_id": "politics",
         "category_name": "국내 정치",
         "category_icon": "🏛️",
-        "count": 29,
-        "new_count": 29,
+        "count": 30,
+        "new_count": 30,
         "articles": [
           {
-            "title": "Iran Braces for More War, No Matter the Outcome of the U.S. and Israeli Elections",
-            "link": "https://www.nytimes.com/2026/10/31/world/middleeast/iran-war-israel-us-elections-trump-netanyahu.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Sat, 31 Oct 2026 12:26:58 +0000",
-            "snippet": "With Prime Minister Benjamin Netanyahu fighting to stay in power and President Trump facing a tough midterm, Iran’s leaders expect no major shift in policy.",
-            "isNew": true
-          },
-          {
-            "title": "Can Democrats win the US Senate? 10 key midterm races to watch",
-            "link": "https://www.aljazeera.com/news/2026/10/31/can-democrats-win-the-us-senate-10-key-midterm-races-to-watch?traffic_source=rss",
+            "title": "A cure for Trump? Why Democratic doctors are running in the 2026 midterms",
+            "link": "https://www.aljazeera.com/news/longform/2026/10/31/a-cure-for-trump-why-democratic-doctors-are-running-in-the-2026-midterms?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Sat, 31 Oct 2026 10:38:43 +0000",
-            "snippet": "From Texas to Maine, rising prices and the Iran war put key Senate races in play as Democrats fight for control.",
-            "isNew": true
-          },
-          {
-            "title": "‘Paycheck to paycheck’: Texas border voters shed parties amid economic woes",
-            "link": "https://www.aljazeera.com/news/2026/10/31/paycheck-to-paycheck-texas-border-voters-shed-parties-amid-economic-woes?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sat, 31 Oct 2026 10:24:21 +0000",
-            "snippet": "Voters reassess 2024 swing towards Trump as Republicans and Democrats grapple for Rio Grande Valley votes. ",
+            "pubDate": "Sat, 31 Oct 2026 17:19:44 +0000",
+            "snippet": "Democratic doctors aim to convert the backlash against the Trump administration’s health policies into midterm votes.",
             "isNew": true
           },
           {
@@ -553,8 +583,30 @@
             "sources": [
               "guardian"
             ],
-            "pubDate": "Sat, 31 Oct 2026 09:25:16 GMT",
+            "pubDate": "Sat, 31 Oct 2026 17:16:24 GMT",
             "snippet": "With 180,000 eligible voters, Bedouin turnout was key in Palestinian-led parties winning unprecedented 19 seats Last year, Umm Khaled Fatoun returned from volunteering in a Jewish-Arab support centre ",
+            "isNew": true
+          },
+          {
+            "title": "Iran Braces for More War, No Matter the Outcome of the U.S. and Israeli Elections",
+            "link": "https://www.nytimes.com/2026/10/31/world/middleeast/iran-war-israel-us-elections-trump-netanyahu.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Sat, 31 Oct 2026 14:22:20 +0000",
+            "snippet": "With Prime Minister Benjamin Netanyahu fighting to stay in power and President Trump facing a tough midterm, Iran’s leaders expect no major shift in policy.",
+            "isNew": true
+          },
+          {
+            "title": "Israel voted for Israel: Why Gaza wasn’t on the ballot",
+            "link": "https://www.aljazeera.com/news/2026/10/31/israel-voted-for-israel-why-gaza-wasnt-on-the-ballot?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Sat, 31 Oct 2026 13:35:51 +0000",
+            "snippet": "Despite genocide, regional war and isolation, Israel&#039;s election revealed little appetite for political alternatives.",
             "isNew": true
           },
           {
@@ -629,9 +681,20 @@
         "category_id": "military",
         "category_name": "군사 작전",
         "category_icon": "⚔️",
-        "count": 5,
-        "new_count": 5,
+        "count": 4,
+        "new_count": 4,
         "articles": [
+          {
+            "title": "Iran FM says US outreach a ‘positive step’ as delegation in Qatar for talks",
+            "link": "https://www.aljazeera.com/news/2026/10/31/iran-fm-says-us-outreach-a-positive-step-as-delegation-in-qatar-for-talks?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Sat, 31 Oct 2026 14:31:37 +0000",
+            "snippet": "Iran’s Foreign Minister Abbas Araghchi tells Al Jazeera Tehran doesn&#039;t rule out attack, is ‘prepared for all scenarios’.",
+            "isNew": true
+          },
           {
             "title": "Iran warns of unfettered retaliation if attacked as mediators try for peace",
             "link": "https://www.aljazeera.com/news/2026/10/31/iran-warns-of-unfettered-retaliation-if-attacked-as-mediators-try-for-peace?traffic_source=rss",
@@ -641,28 +704,6 @@
             ],
             "pubDate": "Sat, 31 Oct 2026 12:13:42 +0000",
             "snippet": "Iran’s supreme leader says Tehran’s potential response will not be restricted by geography.",
-            "isNew": true
-          },
-          {
-            "title": "Education under fire: Gaza’s children face death on their way to school",
-            "link": "https://www.aljazeera.com/features/2026/10/31/education-under-fire-gazas-children-face-death-on-their-way-to-school?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sat, 31 Oct 2026 10:00:17 +0000",
-            "snippet": "Children have faced Israeli bombs and sniper fire since the academic year resumed in Gaza.",
-            "isNew": true
-          },
-          {
-            "title": "A UN protection force must be urgently deployed to Palestine",
-            "link": "https://www.aljazeera.com/opinions/2026/10/31/a-un-protection-force-must-be-urgently-deployed-to-palestine?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sat, 31 Oct 2026 08:57:35 +0000",
-            "snippet": "Israel is making Palestinian existence in Palestine increasingly impossible.",
             "isNew": true
           },
           {
@@ -690,59 +731,6 @@
         ]
       },
       {
-        "category_id": "diplomacy",
-        "category_name": "외교/협상",
-        "category_icon": "🤝",
-        "count": 4,
-        "new_count": 4,
-        "articles": [
-          {
-            "title": "Iran lawmakers call for withdrawal from NPT: Will we have war or peace?",
-            "link": "https://www.aljazeera.com/news/2026/10/31/iran-lawmakers-call-for-withdrawal-from-npt-will-we-have-war-or-peace?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sat, 31 Oct 2026 12:22:45 +0000",
-            "snippet": "Withdrawal from the nuclear treaty doses not mean that Iran would build a nuclear weapon, observers say.",
-            "isNew": true
-          },
-          {
-            "title": "Rival US and Russian resolutions on Western Sahara fail at UN",
-            "link": "https://www.aljazeera.com/news/2026/10/31/rival-us-and-russian-resolutions-on-western-sahara-fail-at-un?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sat, 31 Oct 2026 09:35:21 +0000",
-            "snippet": "UN Security Council rejected the competing proposals, leaving the peacekeeping mission without an approved extension.",
-            "isNew": true
-          },
-          {
-            "title": "Vance Proposes Restarting Peace Talks in Outreach to Iranian Official",
-            "link": "https://www.nytimes.com/2026/10/28/us/politics/vance-peace-talks-letter-iran.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Thu, 29 Oct 2026 02:15:20 +0000",
-            "snippet": "In his letter, the vice president suggested an immediate resumption of comprehensive talks, including about Iran’s nuclear program.",
-            "isNew": true
-          },
-          {
-            "title": "Israel’s choice: Netanyahu remaining in power or a Palestinian-backed coalition",
-            "link": "https://www.theguardian.com/world/2026/oct/28/israel-elections-choice-netanyahu-remaining-power-or-palestinian-backed-coalition",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Wed, 28 Oct 2026 18:54:10 GMT",
-            "snippet": "Incumbent could turn defeat into another term in office as rival parties erect confected barrier to unseating himIsrael election results – live updatesFull report: Coalition talks loom in IsraelAnalys",
-            "isNew": true
-          }
-        ]
-      },
-      {
         "category_id": "regional",
         "category_name": "지역 정세",
         "category_icon": "🌍",
@@ -750,36 +738,36 @@
         "new_count": 4,
         "articles": [
           {
-            "title": "Hundreds from Russian-occupied Oleshky land in Belarus en route to Ukraine",
-            "link": "https://www.aljazeera.com/news/2026/10/31/hundreds-from-russian-occupied-oleshky-land-in-belarus-en-route-to-ukraine?traffic_source=rss",
+            "title": "Jerusalem Daily: Who will form Israel’s next government?",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/10/31/jerusalem-daily-who-will-form-israels-next-government?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Sat, 31 Oct 2026 10:53:55 +0000",
-            "snippet": "Four planes transporting evacuees from the war-ravaged city have arrived in Belarus&#039;s Gomel.",
+            "pubDate": "Sat, 31 Oct 2026 17:29:00 +0000",
+            "snippet": "Netanyahu and Eisenkot are locked in a struggle to form a governing coalition in the Knesset. ",
             "isNew": true
           },
           {
-            "title": "Swiss commentary on Israeli Olympic bobsleigh team termed ‘discriminatory’",
-            "link": "https://www.aljazeera.com/sports/2026/10/31/swiss-commentary-on-israeli-olympic-bobsleigh-team-termed-discriminatory?traffic_source=rss",
-            "source": "aljazeera",
+            "title": "Syria Weighs Joining Saudi Mutual Defense Pact as Yemen War Rages",
+            "link": "https://www.nytimes.com/2026/10/31/world/middleeast/syria-saudi-defense-pact.html",
+            "source": "nytimes",
             "sources": [
-              "aljazeera"
+              "nytimes"
             ],
-            "pubDate": "Sat, 31 Oct 2026 10:49:19 +0000",
-            "snippet": "Criticism of Israel&#039;s captain Adam Edelman at Winter Olympics breached discrimination rules, Swiss complaints body says.",
+            "pubDate": "Sat, 31 Oct 2026 17:18:30 +0000",
+            "snippet": "A move to join Saudi Arabia’s agreement with Turkey and Pakistan could entangle more countries in the kingdom’s escalating conflict between the Iran-backed Houthis.",
             "isNew": true
           },
           {
-            "title": "Lebanon charges 13 over confiscated Hezbollah explosives",
-            "link": "https://www.aljazeera.com/news/2026/10/31/lebanon-charges-13-over-hezbollah-confiscated-explosives?traffic_source=rss",
+            "title": "On the Norway-Russia border, the Sámi people face a growing divide",
+            "link": "https://www.aljazeera.com/features/longform/2026/10/31/on-the-norway-russia-border-the-sami-people-face-a-growing-divide?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Sat, 31 Oct 2026 09:26:46 +0000",
-            "snippet": "Group calls charges &#039;unjust&#039;, says weapons were meant to be used against Israeli forces in south Lebanon.",
+            "pubDate": "Sat, 31 Oct 2026 12:58:28 +0000",
+            "snippet": "As Russia’s war in Ukraine reshapes this Arctic frontier, Sámi communities struggle to sustain cross-border traditions.",
             "isNew": true
           },
           {
@@ -849,6 +837,48 @@
         ]
       },
       {
+        "category_id": "diplomacy",
+        "category_name": "외교/협상",
+        "category_icon": "🤝",
+        "count": 3,
+        "new_count": 3,
+        "articles": [
+          {
+            "title": "Iran lawmakers call for withdrawal from NPT: Will we have war or peace?",
+            "link": "https://www.aljazeera.com/news/2026/10/31/iran-lawmakers-call-for-withdrawal-from-npt-will-we-have-war-or-peace?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Sat, 31 Oct 2026 12:22:45 +0000",
+            "snippet": "Withdrawal from the nuclear treaty doses not mean that Iran would build a nuclear weapon, observers say.",
+            "isNew": true
+          },
+          {
+            "title": "Vance Proposes Restarting Peace Talks in Outreach to Iranian Official",
+            "link": "https://www.nytimes.com/2026/10/28/us/politics/vance-peace-talks-letter-iran.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Thu, 29 Oct 2026 02:15:20 +0000",
+            "snippet": "In his letter, the vice president suggested an immediate resumption of comprehensive talks, including about Iran’s nuclear program.",
+            "isNew": true
+          },
+          {
+            "title": "Israel’s choice: Netanyahu remaining in power or a Palestinian-backed coalition",
+            "link": "https://www.theguardian.com/world/2026/oct/28/israel-elections-choice-netanyahu-remaining-power-or-palestinian-backed-coalition",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Wed, 28 Oct 2026 18:54:10 GMT",
+            "snippet": "Incumbent could turn defeat into another term in office as rival parties erect confected barrier to unseating himIsrael election results – live updatesFull report: Coalition talks loom in IsraelAnalys",
+            "isNew": true
+          }
+        ]
+      },
+      {
         "category_id": "economy",
         "category_name": "경제 영향",
         "category_icon": "📊",
@@ -892,6 +922,86 @@
     "recent_30min": {
       "total_new": 50,
       "by_category": {
+        "regional": {
+          "count": 4,
+          "titles": [
+            {
+              "title": "Jerusalem Daily: Who will form Israel’s next government?",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/10/31/jerusalem-daily-who-will-form-israels-next-government?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Syria Weighs Joining Saudi Mutual Defense Pact as Yemen War Rages",
+              "link": "https://www.nytimes.com/2026/10/31/world/middleeast/syria-saudi-defense-pact.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "On the Norway-Russia border, the Sámi people face a growing divide",
+              "link": "https://www.aljazeera.com/features/longform/2026/10/31/on-the-norway-russia-border-the-sami-people-face-a-growing-divide?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Egypt fines prominent editor Lina Attalah and shuts independent news outlet Mada Masr",
+              "link": "https://www.theguardian.com/world/2026/oct/28/egypt-lina-attalah-mada-masr-press-freedom-clampdown",
+              "source": "guardian"
+            }
+          ]
+        },
+        "politics": {
+          "count": 33,
+          "titles": [
+            {
+              "title": "A cure for Trump? Why Democratic doctors are running in the 2026 midterms",
+              "link": "https://www.aljazeera.com/news/longform/2026/10/31/a-cure-for-trump-why-democratic-doctors-are-running-in-the-2026-midterms?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "‘You need the power of all your votes’: Bedouin women secure success for Arab parties in Israeli election",
+              "link": "https://www.theguardian.com/world/2026/oct/31/bedouin-women-success-arab-parties-israel-election",
+              "source": "guardian"
+            },
+            {
+              "title": "Iran Braces for More War, No Matter the Outcome of the U.S. and Israeli Elections",
+              "link": "https://www.nytimes.com/2026/10/31/world/middleeast/iran-war-israel-us-elections-trump-netanyahu.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Israel voted for Israel: Why Gaza wasn’t on the ballot",
+              "link": "https://www.aljazeera.com/news/2026/10/31/israel-voted-for-israel-why-gaza-wasnt-on-the-ballot?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "As Trump fans the flames of a world on fire, can diplomacy take back control?",
+              "link": "https://www.theguardian.com/us-news/2026/oct/31/as-trump-fans-the-flames-of-a-world-on-fire-can-diplomacy-take-back-control",
+              "source": "guardian"
+            }
+          ]
+        },
+        "military": {
+          "count": 4,
+          "titles": [
+            {
+              "title": "Iran FM says US outreach a ‘positive step’ as delegation in Qatar for talks",
+              "link": "https://www.aljazeera.com/news/2026/10/31/iran-fm-says-us-outreach-a-positive-step-as-delegation-in-qatar-for-talks?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Iran warns of unfettered retaliation if attacked as mediators try for peace",
+              "link": "https://www.aljazeera.com/news/2026/10/31/iran-warns-of-unfettered-retaliation-if-attacked-as-mediators-try-for-peace?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Who Killed Alex Odeh?’ Asks Good Questions About a Terrible Death",
+              "link": "https://www.nytimes.com/2026/10/30/movies/who-killed-alex-odeh-review.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Sudanese diaspora and human rights groups denounce UAE nominee for UN top job",
+              "link": "https://www.theguardian.com/world/2026/oct/30/sudanese-diaspora-human-rights-groups-denounce-uae-nominee-un-top-job",
+              "source": "guardian"
+            }
+          ]
+        },
         "other": {
           "count": 4,
           "titles": [
@@ -917,47 +1027,12 @@
             }
           ]
         },
-        "politics": {
-          "count": 31,
-          "titles": [
-            {
-              "title": "Iran Braces for More War, No Matter the Outcome of the U.S. and Israeli Elections",
-              "link": "https://www.nytimes.com/2026/10/31/world/middleeast/iran-war-israel-us-elections-trump-netanyahu.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Can Democrats win the US Senate? 10 key midterm races to watch",
-              "link": "https://www.aljazeera.com/news/2026/10/31/can-democrats-win-the-us-senate-10-key-midterm-races-to-watch?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "‘Paycheck to paycheck’: Texas border voters shed parties amid economic woes",
-              "link": "https://www.aljazeera.com/news/2026/10/31/paycheck-to-paycheck-texas-border-voters-shed-parties-amid-economic-woes?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "‘You need the power of all your votes’: Bedouin women secure success for Arab parties in Israeli election",
-              "link": "https://www.theguardian.com/world/2026/oct/31/bedouin-women-success-arab-parties-israel-election",
-              "source": "guardian"
-            },
-            {
-              "title": "As Trump fans the flames of a world on fire, can diplomacy take back control?",
-              "link": "https://www.theguardian.com/us-news/2026/oct/31/as-trump-fans-the-flames-of-a-world-on-fire-can-diplomacy-take-back-control",
-              "source": "guardian"
-            }
-          ]
-        },
         "diplomacy": {
-          "count": 4,
+          "count": 3,
           "titles": [
             {
               "title": "Iran lawmakers call for withdrawal from NPT: Will we have war or peace?",
               "link": "https://www.aljazeera.com/news/2026/10/31/iran-lawmakers-call-for-withdrawal-from-npt-will-we-have-war-or-peace?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Rival US and Russian resolutions on Western Sahara fail at UN",
-              "link": "https://www.aljazeera.com/news/2026/10/31/rival-us-and-russian-resolutions-on-western-sahara-fail-at-un?traffic_source=rss",
               "source": "aljazeera"
             },
             {
@@ -968,61 +1043,6 @@
             {
               "title": "Israel’s choice: Netanyahu remaining in power or a Palestinian-backed coalition",
               "link": "https://www.theguardian.com/world/2026/oct/28/israel-elections-choice-netanyahu-remaining-power-or-palestinian-backed-coalition",
-              "source": "guardian"
-            }
-          ]
-        },
-        "military": {
-          "count": 5,
-          "titles": [
-            {
-              "title": "Iran warns of unfettered retaliation if attacked as mediators try for peace",
-              "link": "https://www.aljazeera.com/news/2026/10/31/iran-warns-of-unfettered-retaliation-if-attacked-as-mediators-try-for-peace?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Education under fire: Gaza’s children face death on their way to school",
-              "link": "https://www.aljazeera.com/features/2026/10/31/education-under-fire-gazas-children-face-death-on-their-way-to-school?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "A UN protection force must be urgently deployed to Palestine",
-              "link": "https://www.aljazeera.com/opinions/2026/10/31/a-un-protection-force-must-be-urgently-deployed-to-palestine?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Who Killed Alex Odeh?’ Asks Good Questions About a Terrible Death",
-              "link": "https://www.nytimes.com/2026/10/30/movies/who-killed-alex-odeh-review.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Sudanese diaspora and human rights groups denounce UAE nominee for UN top job",
-              "link": "https://www.theguardian.com/world/2026/oct/30/sudanese-diaspora-human-rights-groups-denounce-uae-nominee-un-top-job",
-              "source": "guardian"
-            }
-          ]
-        },
-        "regional": {
-          "count": 4,
-          "titles": [
-            {
-              "title": "Hundreds from Russian-occupied Oleshky land in Belarus en route to Ukraine",
-              "link": "https://www.aljazeera.com/news/2026/10/31/hundreds-from-russian-occupied-oleshky-land-in-belarus-en-route-to-ukraine?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Swiss commentary on Israeli Olympic bobsleigh team termed ‘discriminatory’",
-              "link": "https://www.aljazeera.com/sports/2026/10/31/swiss-commentary-on-israeli-olympic-bobsleigh-team-termed-discriminatory?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Lebanon charges 13 over confiscated Hezbollah explosives",
-              "link": "https://www.aljazeera.com/news/2026/10/31/lebanon-charges-13-over-hezbollah-confiscated-explosives?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Egypt fines prominent editor Lina Attalah and shuts independent news outlet Mada Masr",
-              "link": "https://www.theguardian.com/world/2026/oct/28/egypt-lina-attalah-mada-masr-press-freedom-clampdown",
               "source": "guardian"
             }
           ]
@@ -1137,11 +1157,11 @@
     }
   ],
   "economic_indicators": {
-    "US10Y": {
-      "price": 4.93,
-      "change": -0.06,
-      "changePercent": -1.2,
-      "prev": 4.99
+    "BRENT": {
+      "price": 113.43,
+      "change": -1.45,
+      "changePercent": -1.26,
+      "prev": 114.88
     },
     "DXY": {
       "price": 101.96,
@@ -1149,17 +1169,11 @@
       "changePercent": -0.08,
       "prev": 102.04
     },
-    "VIX": {
-      "price": 19.42,
-      "change": 2.22,
-      "changePercent": 12.91,
-      "prev": 17.2
-    },
-    "BRENT": {
-      "price": 113.43,
-      "change": -1.45,
-      "changePercent": -1.26,
-      "prev": 114.88
+    "WTI": {
+      "price": 104.12,
+      "change": 2.12,
+      "changePercent": 2.08,
+      "prev": 102
     },
     "GOLD": {
       "price": 3898.9,
@@ -1167,17 +1181,23 @@
       "changePercent": -3.29,
       "prev": 4031.4
     },
+    "US10Y": {
+      "price": 4.93,
+      "change": -0.06,
+      "changePercent": -1.2,
+      "prev": 4.99
+    },
     "US2Y": {
       "price": 3.97,
       "change": -0.02,
       "changePercent": -0.5,
       "prev": 4
     },
-    "WTI": {
-      "price": 104.12,
-      "change": 2.12,
-      "changePercent": 2.08,
-      "prev": 102
+    "VIX": {
+      "price": 19.42,
+      "change": 2.22,
+      "changePercent": 12.91,
+      "prev": 17.2
     }
   },
   "critical_events": [
@@ -1188,6 +1208,22 @@
       "confidence": 0.6666666666666666,
       "matchCount": 2,
       "direction": "shorten"
+    },
+    {
+      "id": "humanitarian_crisis",
+      "name": "대규모 인도주의 위기",
+      "severity": "high",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "shorten"
+    },
+    {
+      "id": "conflict_expansion",
+      "name": "전선 확대/신규 참전국",
+      "severity": "moderate",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "lengthen"
     }
   ],
   "feeds_loaded": 7,
