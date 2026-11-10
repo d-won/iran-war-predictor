@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-11-09T20:55:32.227Z",
-  "war_day": 254,
+  "timestamp": "2026-11-10T03:07:56.135Z",
+  "war_day": 255,
   "probabilities": {
-    "1개월 내 (~3월)": 17.2,
-    "2~3개월 (4~5월)": 34.4,
-    "4~6개월 (6~8월)": 26.5,
-    "7~12개월 (9월~27/2월)": 15.1,
-    "1년 초과": 6.8
+    "1개월 내 (~3월)": 24.1,
+    "2~3개월 (4~5월)": 39.3,
+    "4~6개월 (6~8월)": 20.8,
+    "7~12개월 (9월~27/2월)": 11.2,
+    "1년 초과": 4.6
   },
   "factors": [
     {
@@ -45,20 +45,20 @@
       "decay": 0.4
     },
     {
-      "factor": "확전 뉴스 우세 (확전2:휴전0)",
-      "impact": "전쟁 장기화 가능성 (확전비율 100%)",
-      "weight": "+0.04%p (4~6개월)",
-      "direction": "lengthen",
-      "detail": "언론에서 휴전보다 확전을 더 많이 보도하고 있습니다.",
+      "factor": "이란 미사일 능력 급감 (휴전2:확전0)",
+      "impact": "전쟁 지속 능력 약화로 단기 종전 가능성 증가",
+      "weight": "+0.1%p (1개월내), +0.0%p (2~3개월) (잔존40%)",
+      "direction": "shorten",
+      "detail": "이란의 보복 미사일 타격 능력이 약 90% 감소했습니다.",
       "keywords": [
-        "escalat",
-        "intensif",
-        "expand",
-        "widen"
+        "missile",
+        "ballistic",
+        "launch",
+        "strike capab"
       ],
-      "applied": "실시간",
+      "applied": "2026-03-02",
       "active": true,
-      "decay": 1
+      "decay": 0.4
     },
     {
       "factor": "호르무즈 해협 봉쇄 → 국제 경제 압력",
@@ -164,11 +164,11 @@
       "decay": 1
     },
     {
-      "factor": "협상/외교 뉴스 8건 감지",
+      "factor": "협상/외교 뉴스 6건 감지",
       "impact": "외교적 해결 움직임 포착",
-      "weight": "+0.02%p (1개월내), +0.01%p (2~3개월)",
+      "weight": "+0.01%p (1개월내), +0.01%p (2~3개월)",
       "direction": "shorten",
-      "detail": "실시간 뉴스에서 협상 관련 기사 8건이 감지되었습니다.",
+      "detail": "실시간 뉴스에서 협상 관련 기사 6건이 감지되었습니다.",
       "keywords": [
         "negotiat",
         "talks",
@@ -181,11 +181,11 @@
       "decay": 1
     },
     {
-      "factor": "지역 확산 뉴스 18건 감지",
+      "factor": "지역 확산 뉴스 24건 감지",
       "impact": "주변국 대규모 연루 → 장기화 위험 높음",
       "weight": "+0.02%p (4~6개월), +0.02%p (7~12개월)",
       "direction": "lengthen",
-      "detail": "주변국을 언급하는 기사 18건이 감지되었습니다.",
+      "detail": "주변국을 언급하는 기사 24건이 감지되었습니다.",
       "keywords": [
         "saudi",
         "uae",
@@ -234,6 +234,32 @@
       "decay": 0.3
     },
     {
+      "factor": "[중대 이벤트] 공식 휴전/평화 합의",
+      "impact": "공식 휴전 또는 평화 합의 체결. 휴전 합의는 전쟁 종결의 결정적 단계이며, 합의 후 이행까지 평균 1~2주 소요.",
+      "weight": "+10.0%p (1개월내), +6.7%p (2~3개월), -5.3%p (4~6개월), -4.0%p (7~12개월), -2.0%p (1년초과)",
+      "direction": "shorten",
+      "detail": "공식 휴전 또는 평화 합의 체결. 휴전 합의는 전쟁 종결의 결정적 단계이며, 합의 후 이행까지 평균 1~2주 소요.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Trump signals ‘positive momentum’ with Iran after meeting Qatari PM",
+      "keywords": [
+        "ceasefire",
+        "agree",
+        "ceasefire",
+        "deal",
+        "ceasefire",
+        "sign",
+        "truce",
+        "agree",
+        "armistice",
+        "sign",
+        "peace deal",
+        "ceasefire",
+        "accept",
+        "peace agreement"
+      ],
+      "applied": "2026-11-10",
+      "active": true,
+      "severity": "critical"
+    },
+    {
       "factor": "[중대 이벤트] 수도 직접 공격/포위",
       "impact": "수도 직접 공격. 베오그라드(1999): 78일 폭격 후 항복. 바그다드(2003): 21일만에 함락. 수도 타격은 전쟁 지속 의지를 급격히 약화.",
       "weight": "+2.7%p (1개월내), +4.0%p (2~3개월), -1.3%p (4~6개월), -1.3%p (7~12개월), -0.7%p (1년초과)",
@@ -261,35 +287,9 @@
         "tehran",
         "explosion"
       ],
-      "applied": "2026-11-09",
+      "applied": "2026-11-10",
       "active": true,
       "severity": "high"
-    },
-    {
-      "factor": "[중대 이벤트] 전선 확대/신규 참전국",
-      "impact": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).",
-      "weight": "-1.3%p (1개월내), -2.0%p (2~3개월), +2.7%p (4~6개월), +2.0%p (7~12개월), +1.3%p (1년초과)",
-      "direction": "lengthen",
-      "detail": "분쟁 확대 또는 신규 참전. 역사적으로 참전국 1개 추가 시 평균 전쟁 기간 30~50% 증가 (Correlates of War 데이터).\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: South Africa detains foreigners suspected of heading to join Russian forces",
-      "keywords": [
-        "new front",
-        "war spread",
-        "conflict expand",
-        "join",
-        "war",
-        "enter",
-        "war",
-        "open",
-        "front",
-        "declare war",
-        "widen",
-        "conflict",
-        "second front",
-        "new theater"
-      ],
-      "applied": "2026-11-09",
-      "active": true,
-      "severity": "moderate"
     },
     {
       "factor": "[중대 이벤트] 대량살상무기(WMD)/핵 위협",
@@ -317,16 +317,16 @@
         "atomic",
         "bomb"
       ],
-      "applied": "2026-11-09",
+      "applied": "2026-11-10",
       "active": true,
       "severity": "critical"
     },
     {
-      "factor": "금값 사상최고 ($4149/oz)",
+      "factor": "금값 사상최고 ($4119.8/oz)",
       "impact": "안전자산 수요 폭증 → 글로벌 불안 심화",
       "weight": "+2%p (4-6개월)",
       "direction": "lengthen",
-      "detail": "금 가격이 온스당 $4149로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
+      "detail": "금 가격이 온스당 $4119.8로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
       "keywords": [
         "gold",
         "safe haven",
@@ -354,96 +354,178 @@
     }
   ],
   "news_signals": {
-    "ceasefire_mentions": 0,
-    "escalation_mentions": 2,
-    "negotiation_mentions": 8,
-    "casualty_mentions": 10,
-    "peace_mentions": 2,
-    "regional_spread": 18,
+    "ceasefire_mentions": 2,
+    "escalation_mentions": 0,
+    "negotiation_mentions": 6,
+    "casualty_mentions": 8,
+    "peace_mentions": 4,
+    "regional_spread": 24,
     "total_articles": 50,
     "new_articles": 50,
-    "unique_events": 48,
-    "duplicates_removed": 2
+    "unique_events": 47,
+    "duplicates_removed": 3
   },
   "latest_news": [
+    {
+      "title": "Russia, Ukraine and US to meet as Zelenskyy claims battlefield successes",
+      "link": "https://www.aljazeera.com/news/2026/11/10/russia-ukraine-and-us-to-meet-as-zelenskyy-claims-battlefield-successes?traffic_source=rss",
+      "pubDate": "Tue, 10 Nov 2026 02:45:14 +0000",
+      "source": "aljazeera",
+      "snippet": "Zelenskyy claims Russia &#039;suffering record losses&#039; as Trump says US seeing &#039;strong inclination&#039; to end war in Ukraine.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Israel’s Shin Bet finds no evidence of foreign election interference",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/11/10/israels-shin-bet-finds-no-evidence-of-foreign-election-interference?traffic_source=rss",
+      "pubDate": "Tue, 10 Nov 2026 01:59:59 +0000",
+      "source": "aljazeera",
+      "snippet": "Israel&#039;s internal security service has found no evidence of foreign interference in last month’s election.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Poll finds Americans less likely to back pro-war candidates by 3-1 margin",
+      "link": "https://www.aljazeera.com/news/2026/11/10/poll-finds-voters-preferred-candidates-who-opposed-iran-war-by-3-1-margin?traffic_source=rss",
+      "pubDate": "Tue, 10 Nov 2026 01:56:47 +0000",
+      "source": "aljazeera",
+      "snippet": "Americans say the US should prioritise avoiding higher prices over achieving Trump&#039;s military goals in Iran.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "France blames Iran for October supermarket cyberattack",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/11/10/france-blames-iran-for-october-supermarket-cyberattack?traffic_source=rss",
+      "pubDate": "Tue, 10 Nov 2026 01:01:47 +0000",
+      "source": "aljazeera",
+      "snippet": "French Foreign Minister Jean-Noël Barrot has blamed the Iranian Islamic Revolutionary Guard Corps for the cyberattack.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Trump signals ‘positive momentum’ with Iran after meeting Qatari PM",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/11/10/trump-signals-positive-momentum-with-iran-after-meeting-qatari-pm?traffic_source=rss",
+      "pubDate": "Tue, 10 Nov 2026 01:00:00 +0000",
+      "source": "aljazeera",
+      "snippet": "Trump says there is ‘positive momentum’ towards ending the war on Iran following a ceasefire proposal delivered by Qatar",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Trump says FBI probing Nvidia CEO Huang’s affair with alleged spy",
+      "link": "https://www.aljazeera.com/economy/2026/11/10/trump-says-fbi-probing-nvidia-ceos-affair-with-alleged-spy?traffic_source=rss",
+      "pubDate": "Tue, 10 Nov 2026 00:44:28 +0000",
+      "source": "aljazeera",
+      "snippet": "US president says he believes CEO Jensen Huang had no knowledge of woman&#039;s alleged work for Chinese intelligence.",
+      "isNew": true,
+      "_isDuplicate": true,
+      "_sourceCount": 1
+    },
+    {
+      "title": "Iran war live: Iran demands US ‘surrender’ to its conditions",
+      "link": "https://www.aljazeera.com/news/liveblog/2026/11/9/iran-war-live-trump-says-war-effectively-over-iran-demands-surrender?traffic_source=rss",
+      "pubDate": "Mon, 09 Nov 2026 23:55:23 +0000",
+      "source": "aljazeera",
+      "snippet": "US President Donald Trump said the war was &quot;effectively over&quot; after meeting Qatar&#039;s prime minister in Washington, DC.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Trump, Rubio defend Hegseth as impeachment bid nears",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/11/9/trump-rubio-defend-hegseth-as-impeachment-bid-nears?traffic_source=rss",
+      "pubDate": "Mon, 09 Nov 2026 23:47:11 +0000",
+      "source": "aljazeera",
+      "snippet": "President Trump has lashed out at efforts to impeach Defense Secretary Pete Hegseth over the US war on Iran.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Trump defends Nvidia’s Huang after calling about spy scandal",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/11/9/trump-defends-nvidias-huang-after-calling-about-spy-scandal?traffic_source=rss",
+      "pubDate": "Mon, 09 Nov 2026 23:13:44 +0000",
+      "source": "aljazeera",
+      "snippet": "Trump told reporters he believes Nvidia’s CEO Jensen Huang had no idea his alleged mistress was a suspected Chinese spy.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": true,
+      "_clusterSize": 2,
+      "_isDuplicate": false
+    },
+    {
+      "title": "After meeting Qatar PM, Trump calls Iran war ‘effectively over’ militarily",
+      "link": "https://www.aljazeera.com/news/2026/11/9/trump-calls-iran-war-effectively-over-after-talks-with-qatar-pm?traffic_source=rss",
+      "pubDate": "Mon, 09 Nov 2026 22:31:19 +0000",
+      "source": "aljazeera",
+      "snippet": "Iranian officials dismissed Trump&#039;s remarks as &#039;fake news&#039; after he suggested keeping the &#039;status quo&#039;.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Saudi Arabia reports new attack on key East-West pipeline",
+      "link": "https://www.aljazeera.com/news/2026/11/9/saudi-arabia-reports-new-attack-on-key-east-west-pipeline?traffic_source=rss",
+      "pubDate": "Mon, 09 Nov 2026 22:10:52 +0000",
+      "source": "aljazeera",
+      "snippet": "The oil pipeline runs through the desert to the coast and is essential for bypassing the Strait of Hormuz.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Oil Prices Fall on Hopes for Peace Between U.S. and Iran",
+      "link": "https://www.nytimes.com/2026/11/09/business/energy-environment/oil-price-iran-trump-war.html",
+      "pubDate": "Mon, 09 Nov 2026 21:24:16 +0000",
+      "source": "nytimes",
+      "snippet": "The global benchmark price is down roughly $20 a barrel since late October, when it traded for around $113.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "COP31 opens amid energy crisis as activists demand climate action",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/11/9/cop31-opens-amid-energy-crisis-as-activists-demand-climate-action?traffic_source=rss",
+      "pubDate": "Mon, 09 Nov 2026 21:18:25 +0000",
+      "source": "aljazeera",
+      "snippet": "COP31 has opened in Turkiye amid war-driven energy disruptions and a renewed reliance on fossil fuels.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
     {
       "title": "France accuses Iran of supermarket fridge hacking",
       "link": "https://www.bbc.co.uk/news/articles/cmg474vk6dyqo?at_medium=RSS&at_campaign=rss",
       "pubDate": "Mon, 09 Nov 2026 20:20:08 GMT",
       "source": "bbc",
       "snippet": "Tons of chilled and frozen food was spoiled last month as fridges and freezers in hundreds of supermarkets heated up.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "South Africa detains foreigners suspected of heading to join Russian forces",
-      "link": "https://www.aljazeera.com/news/2026/11/9/south-africa-detains-foreigners-suspected-of-heading-to-join-russian-forces?traffic_source=rss",
-      "pubDate": "Mon, 09 Nov 2026 19:56:45 +0000",
-      "source": "aljazeera",
-      "snippet": "Africans and others continue to be recruited to fight for Russia in its war on Ukraine.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Trump reverses stance, alleges fraud in recent US midterm elections",
-      "link": "https://www.aljazeera.com/news/2026/11/9/trump-reverses-stance-alleges-fraud-in-recent-us-midterm-elections?traffic_source=rss",
-      "pubDate": "Mon, 09 Nov 2026 19:07:42 +0000",
-      "source": "aljazeera",
-      "snippet": "Democratic Senate leader Schumer criticises Trump&#039;s poll denialism, calling it an avoidable return to baseless claims.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "What’s next for US Republicans and Trumpism?",
-      "link": "https://www.aljazeera.com/video/the-bottom-line/2026/11/9/whats-next-for-us-republicans-and-trumpism?traffic_source=rss",
-      "pubDate": "Mon, 09 Nov 2026 19:02:54 +0000",
-      "source": "aljazeera",
-      "snippet": "Republican politician Tom Garrett argues his party lost US midterm elections because it made promises it couldn’t keep.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Al Jazeera.net co-founder and cartoonist Shujaat Ali dies aged 54",
-      "link": "https://www.aljazeera.com/news/2026/11/9/al-jazeera-net-co-founder-and-cartoonist-shujaat-ali-dies-aged-54?traffic_source=rss",
-      "pubDate": "Mon, 09 Nov 2026 18:50:29 +0000",
-      "source": "aljazeera",
-      "snippet": "Ali was an award-winning pioneer of animated political caricatures and Pakistan&#039;s first court artist.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Qatar PM meets with Trump for talks on ending war on Iran",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/11/9/qatar-pm-meets-with-trump-for-talks-on-ending-war-on-iran?traffic_source=rss",
-      "pubDate": "Mon, 09 Nov 2026 18:48:00 +0000",
-      "source": "aljazeera",
-      "snippet": "Qatari Prime Minister Sheikh Mohammed bin Abdulrahman bin Jassim Al Thani has met with US President Donald Trump.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Russian investigative newspaper Novaya Gazeta closes citing gov’t clampdown",
-      "link": "https://www.aljazeera.com/news/2026/11/9/russian-investigative-newspaper-novaya-gazeta-closes-citing-govt-clampdown?traffic_source=rss",
-      "pubDate": "Mon, 09 Nov 2026 18:21:38 +0000",
-      "source": "aljazeera",
-      "snippet": "The paper was one of the few remaining outlets in Russia that criticised Moscow&#039;s war on Ukraine.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -461,90 +543,6 @@
       "_isDuplicated": false,
       "_clusterSize": 1,
       "_isDuplicate": false
-    },
-    {
-      "title": "Israeli tourists spark outrage over video pushing tour guide into sea",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/11/9/israeli-tourists-spark-outrage-over-video-pushing-tour-guide-into-sea?traffic_source=rss",
-      "pubDate": "Mon, 09 Nov 2026 17:17:39 +0000",
-      "source": "aljazeera",
-      "snippet": "A video of an Israeli tourist pushing a Sri Lankan tour guide off a boat has sparked outrage. Here is what we know.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Oil Prices Fall on Hopes for Peace Between U.S. and Iran",
-      "link": "https://www.nytimes.com/2026/11/09/business/energy-environment/oil-price-iran-trump-war.html",
-      "pubDate": "Mon, 09 Nov 2026 17:02:37 +0000",
-      "source": "nytimes",
-      "snippet": "The global benchmark price is now down roughly $20 a barrel since late October, when it traded for around $113.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "France accuses Iran of cyberattack on supermarket fridges",
-      "link": "https://www.aljazeera.com/news/2026/11/9/france-accuses-iran-of-cyberattack-on-european-fridges?traffic_source=rss",
-      "pubDate": "Mon, 09 Nov 2026 16:33:33 +0000",
-      "source": "aljazeera",
-      "snippet": "Paris says a cyber unit linked to Iran&#039;s Revolutionary Guard was behind hack, which hit more than 1,000 stores.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Israel’s Shin Bet finds no evidence of foreign election meddling: Report",
-      "link": "https://www.aljazeera.com/news/2026/11/9/israels-shin-bet-finds-no-evidence-of-foreign-election-meddling-report?traffic_source=rss",
-      "pubDate": "Mon, 09 Nov 2026 16:18:28 +0000",
-      "source": "aljazeera",
-      "snippet": "Netanyahu and Zini&#039;s interference claims lack evidence, according to law enforcement officials quoted by Haaretz.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Trump says Iran is sealed off. But can new US task force stop weapons flow?",
-      "link": "https://www.aljazeera.com/news-analysis/2026/11/9/trump-says-iran-is-sealed-off-but-can-new-us-task-force-stop-weapons-flow?traffic_source=rss",
-      "pubDate": "Mon, 09 Nov 2026 15:31:37 +0000",
-      "source": "aljazeera",
-      "snippet": "Analysts say a small intelligence-focused unit cannot seal Iran’s borders, and others warn it could expand the war.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Bipartisan Support for Israel Erodes as Both Sides Push for New Limits",
-      "link": "https://www.nytimes.com/2026/11/09/us/politics/us-israel-midterm-elections.html",
-      "pubDate": "Mon, 09 Nov 2026 13:48:04 +0000",
-      "source": "nytimes",
-      "snippet": "Vice President JD Vance is among Republicans calling for change. Many Democratic lawmakers have been driving a campaign to restrict military aid to Israel.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "‘I’m surrounded by millions of people but I could still die from the heat’ – This is climate breakdown",
-      "link": "https://www.theguardian.com/environment/ng-interactive/2026/nov/09/extreme-heat-mecca-hajj-pilgrimage-this-is-climate-breakdown-saudi-arabia",
-      "pubDate": "Mon, 09 Nov 2026 12:00:08 GMT",
-      "source": "guardian",
-      "snippet": "He went to Saudi Arabia to perform the sacred hajj pilgrimage – then the heat came. This is Zirrar Ali’s storyLocation: Mecca, Saudi ArabiaDisaster: Heatwave, 2024After a transformative trip to Iran a",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
     }
   ],
   "news_digest": {
@@ -553,62 +551,73 @@
         "category_id": "politics",
         "category_name": "국내 정치",
         "category_icon": "🏛️",
-        "count": 20,
-        "new_count": 20,
+        "count": 19,
+        "new_count": 19,
         "articles": [
           {
-            "title": "Trump reverses stance, alleges fraud in recent US midterm elections",
-            "link": "https://www.aljazeera.com/news/2026/11/9/trump-reverses-stance-alleges-fraud-in-recent-us-midterm-elections?traffic_source=rss",
+            "title": "Israel’s Shin Bet finds no evidence of foreign election interference",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/11/10/israels-shin-bet-finds-no-evidence-of-foreign-election-interference?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Mon, 09 Nov 2026 19:07:42 +0000",
-            "snippet": "Democratic Senate leader Schumer criticises Trump&#039;s poll denialism, calling it an avoidable return to baseless claims.",
+            "pubDate": "Tue, 10 Nov 2026 01:59:59 +0000",
+            "snippet": "Israel&#039;s internal security service has found no evidence of foreign interference in last month’s election.",
             "isNew": true
           },
           {
-            "title": "What’s next for US Republicans and Trumpism?",
-            "link": "https://www.aljazeera.com/video/the-bottom-line/2026/11/9/whats-next-for-us-republicans-and-trumpism?traffic_source=rss",
+            "title": "Poll finds Americans less likely to back pro-war candidates by 3-1 margin",
+            "link": "https://www.aljazeera.com/news/2026/11/10/poll-finds-voters-preferred-candidates-who-opposed-iran-war-by-3-1-margin?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Mon, 09 Nov 2026 19:02:54 +0000",
-            "snippet": "Republican politician Tom Garrett argues his party lost US midterm elections because it made promises it couldn’t keep.",
+            "pubDate": "Tue, 10 Nov 2026 01:56:47 +0000",
+            "snippet": "Americans say the US should prioritise avoiding higher prices over achieving Trump&#039;s military goals in Iran.",
             "isNew": true
           },
           {
-            "title": "Al Jazeera.net co-founder and cartoonist Shujaat Ali dies aged 54",
-            "link": "https://www.aljazeera.com/news/2026/11/9/al-jazeera-net-co-founder-and-cartoonist-shujaat-ali-dies-aged-54?traffic_source=rss",
+            "title": "Trump defends Nvidia’s Huang after calling about spy scandal",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/11/9/trump-defends-nvidias-huang-after-calling-about-spy-scandal?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Mon, 09 Nov 2026 18:50:29 +0000",
-            "snippet": "Ali was an award-winning pioneer of animated political caricatures and Pakistan&#039;s first court artist.",
+            "pubDate": "Mon, 09 Nov 2026 23:13:44 +0000",
+            "snippet": "Trump told reporters he believes Nvidia’s CEO Jensen Huang had no idea his alleged mistress was a suspected Chinese spy.",
             "isNew": true
           },
           {
-            "title": "Qatar PM meets with Trump for talks on ending war on Iran",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/11/9/qatar-pm-meets-with-trump-for-talks-on-ending-war-on-iran?traffic_source=rss",
+            "title": "Iran war live: Iran demands US ‘surrender’ to its conditions",
+            "link": "https://www.aljazeera.com/news/liveblog/2026/11/9/iran-war-live-trump-says-war-effectively-over-iran-demands-surrender?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Mon, 09 Nov 2026 18:48:00 +0000",
-            "snippet": "Qatari Prime Minister Sheikh Mohammed bin Abdulrahman bin Jassim Al Thani has met with US President Donald Trump.",
+            "pubDate": "Mon, 09 Nov 2026 23:55:23 +0000",
+            "snippet": "US President Donald Trump said the war was &quot;effectively over&quot; after meeting Qatar&#039;s prime minister in Washington, DC.",
             "isNew": true
           },
           {
-            "title": "Israel’s Shin Bet finds no evidence of foreign election meddling: Report",
-            "link": "https://www.aljazeera.com/news/2026/11/9/israels-shin-bet-finds-no-evidence-of-foreign-election-meddling-report?traffic_source=rss",
+            "title": "Trump, Rubio defend Hegseth as impeachment bid nears",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/11/9/trump-rubio-defend-hegseth-as-impeachment-bid-nears?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Mon, 09 Nov 2026 16:18:28 +0000",
-            "snippet": "Netanyahu and Zini&#039;s interference claims lack evidence, according to law enforcement officials quoted by Haaretz.",
+            "pubDate": "Mon, 09 Nov 2026 23:47:11 +0000",
+            "snippet": "President Trump has lashed out at efforts to impeach Defense Secretary Pete Hegseth over the US war on Iran.",
+            "isNew": true
+          },
+          {
+            "title": "After meeting Qatar PM, Trump calls Iran war ‘effectively over’ militarily",
+            "link": "https://www.aljazeera.com/news/2026/11/9/trump-calls-iran-war-effectively-over-after-talks-with-qatar-pm?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Mon, 09 Nov 2026 22:31:19 +0000",
+            "snippet": "Iranian officials dismissed Trump&#039;s remarks as &#039;fake news&#039; after he suggested keeping the &#039;status quo&#039;.",
             "isNew": true
           },
           {
@@ -654,17 +663,6 @@
             "pubDate": "Sun, 08 Nov 2026 06:00:32 GMT",
             "snippet": "With the global tide turning against him, the US president’s lame duck status could still aggravate old tensions and spark new explosionsIt was a victory for the world, too. People in the many countri",
             "isNew": true
-          },
-          {
-            "title": "Israel's president tasks opposition leader Eisenkot with forming government",
-            "link": "https://www.bbc.co.uk/news/articles/cmy8367lj5xlo?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
-            "sources": [
-              "bbc"
-            ],
-            "pubDate": "Sat, 07 Nov 2026 22:19:59 GMT",
-            "snippet": "Neither PM Benjamin Netanyahu's bloc nor that of his rival secured a majority in last week's election.",
-            "isNew": true
           }
         ]
       },
@@ -672,29 +670,40 @@
         "category_id": "military",
         "category_name": "군사 작전",
         "category_icon": "⚔️",
-        "count": 9,
-        "new_count": 9,
+        "count": 10,
+        "new_count": 10,
         "articles": [
           {
-            "title": "France accuses Iran of cyberattack on supermarket fridges",
-            "link": "https://www.aljazeera.com/news/2026/11/9/france-accuses-iran-of-cyberattack-on-european-fridges?traffic_source=rss",
+            "title": "Russia, Ukraine and US to meet as Zelenskyy claims battlefield successes",
+            "link": "https://www.aljazeera.com/news/2026/11/10/russia-ukraine-and-us-to-meet-as-zelenskyy-claims-battlefield-successes?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Mon, 09 Nov 2026 16:33:33 +0000",
-            "snippet": "Paris says a cyber unit linked to Iran&#039;s Revolutionary Guard was behind hack, which hit more than 1,000 stores.",
+            "pubDate": "Tue, 10 Nov 2026 02:45:14 +0000",
+            "snippet": "Zelenskyy claims Russia &#039;suffering record losses&#039; as Trump says US seeing &#039;strong inclination&#039; to end war in Ukraine.",
             "isNew": true
           },
           {
-            "title": "Trump says Iran is sealed off. But can new US task force stop weapons flow?",
-            "link": "https://www.aljazeera.com/news-analysis/2026/11/9/trump-says-iran-is-sealed-off-but-can-new-us-task-force-stop-weapons-flow?traffic_source=rss",
+            "title": "France blames Iran for October supermarket cyberattack",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/11/10/france-blames-iran-for-october-supermarket-cyberattack?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Mon, 09 Nov 2026 15:31:37 +0000",
-            "snippet": "Analysts say a small intelligence-focused unit cannot seal Iran’s borders, and others warn it could expand the war.",
+            "pubDate": "Tue, 10 Nov 2026 01:01:47 +0000",
+            "snippet": "French Foreign Minister Jean-Noël Barrot has blamed the Iranian Islamic Revolutionary Guard Corps for the cyberattack.",
+            "isNew": true
+          },
+          {
+            "title": "Saudi Arabia reports new attack on key East-West pipeline",
+            "link": "https://www.aljazeera.com/news/2026/11/9/saudi-arabia-reports-new-attack-on-key-east-west-pipeline?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Mon, 09 Nov 2026 22:10:52 +0000",
+            "snippet": "The oil pipeline runs through the desert to the coast and is essential for bypassing the Strait of Hormuz.",
             "isNew": true
           },
           {
@@ -777,6 +786,81 @@
         ]
       },
       {
+        "category_id": "economy",
+        "category_name": "경제 영향",
+        "category_icon": "📊",
+        "count": 6,
+        "new_count": 6,
+        "articles": [
+          {
+            "title": "Oil Prices Fall on Hopes for Peace Between U.S. and Iran",
+            "link": "https://www.nytimes.com/2026/11/09/business/energy-environment/oil-price-iran-trump-war.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Mon, 09 Nov 2026 21:24:16 +0000",
+            "snippet": "The global benchmark price is down roughly $20 a barrel since late October, when it traded for around $113.",
+            "isNew": true
+          },
+          {
+            "title": "COP31 opens amid energy crisis as activists demand climate action",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/11/9/cop31-opens-amid-energy-crisis-as-activists-demand-climate-action?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Mon, 09 Nov 2026 21:18:25 +0000",
+            "snippet": "COP31 has opened in Turkiye amid war-driven energy disruptions and a renewed reliance on fossil fuels.",
+            "isNew": true
+          },
+          {
+            "title": "France accuses Iran of supermarket fridge hacking",
+            "link": "https://www.bbc.co.uk/news/articles/cmg474vk6dyqo?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc"
+            ],
+            "pubDate": "Mon, 09 Nov 2026 20:20:08 GMT",
+            "snippet": "Tons of chilled and frozen food was spoiled last month as fridges and freezers in hundreds of supermarkets heated up.",
+            "isNew": true
+          },
+          {
+            "title": "Iran was behind cyber-attack on French supermarket freezers, Paris says",
+            "link": "https://www.theguardian.com/world/2026/nov/09/france-blames-irans-revolutionary-guards-for-cyber-attacks-on-supermarket-fridges",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Mon, 09 Nov 2026 17:54:40 GMT",
+            "snippet": "French foreign minister vows European sanctions against Tehran over ‘unprecedented’ hacks last monthFrance has said Iran was responsible for a massive cyber-attack on supermarket freezers and chiller ",
+            "isNew": true
+          },
+          {
+            "title": "Why the Iran War Has Spurred Both Clean Energy and Fossil Fuels",
+            "link": "https://www.nytimes.com/2026/11/08/business/cop-31-iran-war-oil.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Sun, 08 Nov 2026 15:39:13 +0000",
+            "snippet": "The shock to global oil prices has caused a surge in demand for electric vehicles while propelling a race for immediate, secure power supplies.",
+            "isNew": true
+          },
+          {
+            "title": "Strait of Hormuz could reopen as part of Qatari plan for Iran nuclear inspections",
+            "link": "https://www.theguardian.com/world/2026/nov/07/strait-of-hormuz-qatar-plan-iran-nuclear-inspections",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Sat, 07 Nov 2026 07:00:04 GMT",
+            "snippet": "Trump still considering new assault on Iran nuclear sites – though threats less credible after Vance remarksQatar, the lead mediator in the US-Iran conflict, is seeking to persuade Tehran to allow UN ",
+            "isNew": true
+          }
+        ]
+      },
+      {
         "category_id": "humanitarian",
         "category_name": "인도주의/피해",
         "category_icon": "🏥",
@@ -852,98 +936,12 @@
         ]
       },
       {
-        "category_id": "economy",
-        "category_name": "경제 영향",
-        "category_icon": "📊",
-        "count": 5,
-        "new_count": 5,
-        "articles": [
-          {
-            "title": "France accuses Iran of supermarket fridge hacking",
-            "link": "https://www.bbc.co.uk/news/articles/cmg474vk6dyqo?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
-            "sources": [
-              "bbc"
-            ],
-            "pubDate": "Mon, 09 Nov 2026 20:20:08 GMT",
-            "snippet": "Tons of chilled and frozen food was spoiled last month as fridges and freezers in hundreds of supermarkets heated up.",
-            "isNew": true
-          },
-          {
-            "title": "Iran was behind cyber-attack on French supermarket freezers, Paris says",
-            "link": "https://www.theguardian.com/world/2026/nov/09/france-blames-irans-revolutionary-guards-for-cyber-attacks-on-supermarket-fridges",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Mon, 09 Nov 2026 17:54:40 GMT",
-            "snippet": "French foreign minister vows European sanctions against Tehran over ‘unprecedented’ hacks last monthFrance has said Iran was responsible for a massive cyber-attack on supermarket freezers and chiller ",
-            "isNew": true
-          },
-          {
-            "title": "Oil Prices Fall on Hopes for Peace Between U.S. and Iran",
-            "link": "https://www.nytimes.com/2026/11/09/business/energy-environment/oil-price-iran-trump-war.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Mon, 09 Nov 2026 17:02:37 +0000",
-            "snippet": "The global benchmark price is now down roughly $20 a barrel since late October, when it traded for around $113.",
-            "isNew": true
-          },
-          {
-            "title": "Why the Iran War Has Spurred Both Clean Energy and Fossil Fuels",
-            "link": "https://www.nytimes.com/2026/11/08/business/cop-31-iran-war-oil.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Sun, 08 Nov 2026 15:39:13 +0000",
-            "snippet": "The shock to global oil prices has caused a surge in demand for electric vehicles while propelling a race for immediate, secure power supplies.",
-            "isNew": true
-          },
-          {
-            "title": "Strait of Hormuz could reopen as part of Qatari plan for Iran nuclear inspections",
-            "link": "https://www.theguardian.com/world/2026/nov/07/strait-of-hormuz-qatar-plan-iran-nuclear-inspections",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Sat, 07 Nov 2026 07:00:04 GMT",
-            "snippet": "Trump still considering new assault on Iran nuclear sites – though threats less credible after Vance remarksQatar, the lead mediator in the US-Iran conflict, is seeking to persuade Tehran to allow UN ",
-            "isNew": true
-          }
-        ]
-      },
-      {
         "category_id": "regional",
         "category_name": "지역 정세",
         "category_icon": "🌍",
-        "count": 5,
-        "new_count": 5,
+        "count": 3,
+        "new_count": 3,
         "articles": [
-          {
-            "title": "South Africa detains foreigners suspected of heading to join Russian forces",
-            "link": "https://www.aljazeera.com/news/2026/11/9/south-africa-detains-foreigners-suspected-of-heading-to-join-russian-forces?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Mon, 09 Nov 2026 19:56:45 +0000",
-            "snippet": "Africans and others continue to be recruited to fight for Russia in its war on Ukraine.",
-            "isNew": true
-          },
-          {
-            "title": "Russian investigative newspaper Novaya Gazeta closes citing gov’t clampdown",
-            "link": "https://www.aljazeera.com/news/2026/11/9/russian-investigative-newspaper-novaya-gazeta-closes-citing-govt-clampdown?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Mon, 09 Nov 2026 18:21:38 +0000",
-            "snippet": "The paper was one of the few remaining outlets in Russia that criticised Moscow&#039;s war on Ukraine.",
-            "isNew": true
-          },
           {
             "title": "‘I’m surrounded by millions of people but I could still die from the heat’ – This is climate breakdown",
             "link": "https://www.theguardian.com/environment/ng-interactive/2026/nov/09/extreme-heat-mecca-hajj-pilgrimage-this-is-climate-breakdown-saudi-arabia",
@@ -980,43 +978,23 @@
         ]
       },
       {
-        "category_id": "other",
-        "category_name": "기타",
-        "category_icon": "📰",
+        "category_id": "diplomacy",
+        "category_name": "외교/협상",
+        "category_icon": "🤝",
         "count": 2,
         "new_count": 2,
         "articles": [
           {
-            "title": "Israeli tourists spark outrage over video pushing tour guide into sea",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/11/9/israeli-tourists-spark-outrage-over-video-pushing-tour-guide-into-sea?traffic_source=rss",
+            "title": "Trump signals ‘positive momentum’ with Iran after meeting Qatari PM",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/11/10/trump-signals-positive-momentum-with-iran-after-meeting-qatari-pm?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Mon, 09 Nov 2026 17:17:39 +0000",
-            "snippet": "A video of an Israeli tourist pushing a Sri Lankan tour guide off a boat has sparked outrage. Here is what we know.",
+            "pubDate": "Tue, 10 Nov 2026 01:00:00 +0000",
+            "snippet": "Trump says there is ‘positive momentum’ towards ending the war on Iran following a ceasefire proposal delivered by Qatar",
             "isNew": true
           },
-          {
-            "title": "US midterm results spark fears in Israel over future of two countries' ties",
-            "link": "https://www.bbc.co.uk/news/articles/cx30ee8018lvo?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
-            "sources": [
-              "bbc"
-            ],
-            "pubDate": "Fri, 06 Nov 2026 13:23:44 GMT",
-            "snippet": "Staunch US support of Israel has been raised as one of the reasons why Republicans performed so badly.",
-            "isNew": true
-          }
-        ]
-      },
-      {
-        "category_id": "diplomacy",
-        "category_name": "외교/협상",
-        "category_icon": "🤝",
-        "count": 1,
-        "new_count": 1,
-        "articles": [
           {
             "title": "Iran is Reviewing ‘Concrete Proposals’ on Nuclear Program, Officials Say",
             "link": "https://www.nytimes.com/2026/11/05/world/middleeast/peace-talks-iran-united-states-qatar-nuclear-program.html",
@@ -1029,14 +1007,119 @@
             "isNew": true
           }
         ]
+      },
+      {
+        "category_id": "other",
+        "category_name": "기타",
+        "category_icon": "📰",
+        "count": 1,
+        "new_count": 1,
+        "articles": [
+          {
+            "title": "US midterm results spark fears in Israel over future of two countries' ties",
+            "link": "https://www.bbc.co.uk/news/articles/cx30ee8018lvo?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc"
+            ],
+            "pubDate": "Fri, 06 Nov 2026 13:23:44 GMT",
+            "snippet": "Staunch US support of Israel has been raised as one of the reasons why Republicans performed so badly.",
+            "isNew": true
+          }
+        ]
       }
     ],
     "recent_30min": {
       "total_new": 50,
       "by_category": {
-        "economy": {
-          "count": 5,
+        "military": {
+          "count": 10,
           "titles": [
+            {
+              "title": "Russia, Ukraine and US to meet as Zelenskyy claims battlefield successes",
+              "link": "https://www.aljazeera.com/news/2026/11/10/russia-ukraine-and-us-to-meet-as-zelenskyy-claims-battlefield-successes?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "France blames Iran for October supermarket cyberattack",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/11/10/france-blames-iran-for-october-supermarket-cyberattack?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Saudi Arabia reports new attack on key East-West pipeline",
+              "link": "https://www.aljazeera.com/news/2026/11/9/saudi-arabia-reports-new-attack-on-key-east-west-pipeline?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Bipartisan Support for Israel Erodes as Both Sides Push for New Limits",
+              "link": "https://www.nytimes.com/2026/11/09/us/politics/us-israel-midterm-elections.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Gadi Eisenkot reaches out to Netanyahu allies as he strives to form government",
+              "link": "https://www.theguardian.com/world/2026/nov/08/gadi-eisenkot-netanyahu-allies-form-israel-government",
+              "source": "guardian"
+            }
+          ]
+        },
+        "politics": {
+          "count": 22,
+          "titles": [
+            {
+              "title": "Israel’s Shin Bet finds no evidence of foreign election interference",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/11/10/israels-shin-bet-finds-no-evidence-of-foreign-election-interference?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Poll finds Americans less likely to back pro-war candidates by 3-1 margin",
+              "link": "https://www.aljazeera.com/news/2026/11/10/poll-finds-voters-preferred-candidates-who-opposed-iran-war-by-3-1-margin?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Trump says FBI probing Nvidia CEO Huang’s affair with alleged spy",
+              "link": "https://www.aljazeera.com/economy/2026/11/10/trump-says-fbi-probing-nvidia-ceos-affair-with-alleged-spy?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Iran war live: Iran demands US ‘surrender’ to its conditions",
+              "link": "https://www.aljazeera.com/news/liveblog/2026/11/9/iran-war-live-trump-says-war-effectively-over-iran-demands-surrender?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Trump, Rubio defend Hegseth as impeachment bid nears",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/11/9/trump-rubio-defend-hegseth-as-impeachment-bid-nears?traffic_source=rss",
+              "source": "aljazeera"
+            }
+          ]
+        },
+        "diplomacy": {
+          "count": 2,
+          "titles": [
+            {
+              "title": "Trump signals ‘positive momentum’ with Iran after meeting Qatari PM",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/11/10/trump-signals-positive-momentum-with-iran-after-meeting-qatari-pm?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Iran is Reviewing ‘Concrete Proposals’ on Nuclear Program, Officials Say",
+              "link": "https://www.nytimes.com/2026/11/05/world/middleeast/peace-talks-iran-united-states-qatar-nuclear-program.html",
+              "source": "nytimes"
+            }
+          ]
+        },
+        "economy": {
+          "count": 6,
+          "titles": [
+            {
+              "title": "Oil Prices Fall on Hopes for Peace Between U.S. and Iran",
+              "link": "https://www.nytimes.com/2026/11/09/business/energy-environment/oil-price-iran-trump-war.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "COP31 opens amid energy crisis as activists demand climate action",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/11/9/cop31-opens-amid-energy-crisis-as-activists-demand-climate-action?traffic_source=rss",
+              "source": "aljazeera"
+            },
             {
               "title": "France accuses Iran of supermarket fridge hacking",
               "link": "https://www.bbc.co.uk/news/articles/cmg474vk6dyqo?at_medium=RSS&at_campaign=rss",
@@ -1048,35 +1131,15 @@
               "source": "guardian"
             },
             {
-              "title": "Oil Prices Fall on Hopes for Peace Between U.S. and Iran",
-              "link": "https://www.nytimes.com/2026/11/09/business/energy-environment/oil-price-iran-trump-war.html",
-              "source": "nytimes"
-            },
-            {
               "title": "Why the Iran War Has Spurred Both Clean Energy and Fossil Fuels",
               "link": "https://www.nytimes.com/2026/11/08/business/cop-31-iran-war-oil.html",
               "source": "nytimes"
-            },
-            {
-              "title": "Strait of Hormuz could reopen as part of Qatari plan for Iran nuclear inspections",
-              "link": "https://www.theguardian.com/world/2026/nov/07/strait-of-hormuz-qatar-plan-iran-nuclear-inspections",
-              "source": "guardian"
             }
           ]
         },
         "regional": {
-          "count": 5,
+          "count": 3,
           "titles": [
-            {
-              "title": "South Africa detains foreigners suspected of heading to join Russian forces",
-              "link": "https://www.aljazeera.com/news/2026/11/9/south-africa-detains-foreigners-suspected-of-heading-to-join-russian-forces?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Russian investigative newspaper Novaya Gazeta closes citing gov’t clampdown",
-              "link": "https://www.aljazeera.com/news/2026/11/9/russian-investigative-newspaper-novaya-gazeta-closes-citing-govt-clampdown?traffic_source=rss",
-              "source": "aljazeera"
-            },
             {
               "title": "‘I’m surrounded by millions of people but I could still die from the heat’ – This is climate breakdown",
               "link": "https://www.theguardian.com/environment/ng-interactive/2026/nov/09/extreme-heat-mecca-hajj-pilgrimage-this-is-climate-breakdown-saudi-arabia",
@@ -1090,81 +1153,6 @@
             {
               "title": "Houthis say at least 33 killed in Saudi air strike",
               "link": "https://www.bbc.co.uk/news/articles/c65yn1v99ypmo?at_medium=RSS&at_campaign=rss",
-              "source": "bbc"
-            }
-          ]
-        },
-        "politics": {
-          "count": 22,
-          "titles": [
-            {
-              "title": "Trump reverses stance, alleges fraud in recent US midterm elections",
-              "link": "https://www.aljazeera.com/news/2026/11/9/trump-reverses-stance-alleges-fraud-in-recent-us-midterm-elections?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "What’s next for US Republicans and Trumpism?",
-              "link": "https://www.aljazeera.com/video/the-bottom-line/2026/11/9/whats-next-for-us-republicans-and-trumpism?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Al Jazeera.net co-founder and cartoonist Shujaat Ali dies aged 54",
-              "link": "https://www.aljazeera.com/news/2026/11/9/al-jazeera-net-co-founder-and-cartoonist-shujaat-ali-dies-aged-54?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Qatar PM meets with Trump for talks on ending war on Iran",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/11/9/qatar-pm-meets-with-trump-for-talks-on-ending-war-on-iran?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Israel’s Shin Bet finds no evidence of foreign election meddling: Report",
-              "link": "https://www.aljazeera.com/news/2026/11/9/israels-shin-bet-finds-no-evidence-of-foreign-election-meddling-report?traffic_source=rss",
-              "source": "aljazeera"
-            }
-          ]
-        },
-        "other": {
-          "count": 2,
-          "titles": [
-            {
-              "title": "Israeli tourists spark outrage over video pushing tour guide into sea",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/11/9/israeli-tourists-spark-outrage-over-video-pushing-tour-guide-into-sea?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "US midterm results spark fears in Israel over future of two countries' ties",
-              "link": "https://www.bbc.co.uk/news/articles/cx30ee8018lvo?at_medium=RSS&at_campaign=rss",
-              "source": "bbc"
-            }
-          ]
-        },
-        "military": {
-          "count": 9,
-          "titles": [
-            {
-              "title": "France accuses Iran of cyberattack on supermarket fridges",
-              "link": "https://www.aljazeera.com/news/2026/11/9/france-accuses-iran-of-cyberattack-on-european-fridges?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Trump says Iran is sealed off. But can new US task force stop weapons flow?",
-              "link": "https://www.aljazeera.com/news-analysis/2026/11/9/trump-says-iran-is-sealed-off-but-can-new-us-task-force-stop-weapons-flow?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Bipartisan Support for Israel Erodes as Both Sides Push for New Limits",
-              "link": "https://www.nytimes.com/2026/11/09/us/politics/us-israel-midterm-elections.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Gadi Eisenkot reaches out to Netanyahu allies as he strives to form government",
-              "link": "https://www.theguardian.com/world/2026/nov/08/gadi-eisenkot-netanyahu-allies-form-israel-government",
-              "source": "guardian"
-            },
-            {
-              "title": "US offers $20m reward for information about Iran's nuclear programme",
-              "link": "https://www.bbc.co.uk/news/articles/c6d091ev3p0jo?at_medium=RSS&at_campaign=rss",
               "source": "bbc"
             }
           ]
@@ -1199,13 +1187,13 @@
             }
           ]
         },
-        "diplomacy": {
+        "other": {
           "count": 1,
           "titles": [
             {
-              "title": "Iran is Reviewing ‘Concrete Proposals’ on Nuclear Program, Officials Say",
-              "link": "https://www.nytimes.com/2026/11/05/world/middleeast/peace-talks-iran-united-states-qatar-nuclear-program.html",
-              "source": "nytimes"
+              "title": "US midterm results spark fears in Israel over future of two countries' ties",
+              "link": "https://www.bbc.co.uk/news/articles/cx30ee8018lvo?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
             }
           ]
         }
@@ -1299,29 +1287,11 @@
     }
   ],
   "economic_indicators": {
-    "GOLD": {
-      "price": 4149,
-      "change": 74.1,
-      "changePercent": 1.82,
-      "prev": 4074.9
-    },
-    "WTI": {
-      "price": 87.18,
-      "change": -3.65,
-      "changePercent": -4.02,
-      "prev": 90.83
-    },
-    "BRENT": {
-      "price": 92.94,
-      "change": -5.38,
-      "changePercent": -5.47,
-      "prev": 98.32
-    },
-    "VIX": {
-      "price": 19.85,
-      "change": -5.79,
-      "changePercent": -22.58,
-      "prev": 25.64
+    "US2Y": {
+      "price": 4.04,
+      "change": 0.04,
+      "changePercent": 1,
+      "prev": 4
     },
     "US10Y": {
       "price": 4.86,
@@ -1329,20 +1299,46 @@
       "changePercent": 0,
       "prev": 4.86
     },
-    "US2Y": {
-      "price": 4.04,
-      "change": 0.04,
-      "changePercent": 1,
-      "prev": 4
-    },
     "DXY": {
-      "price": 101.69,
-      "change": -0.61,
-      "changePercent": -0.6,
-      "prev": 102.3
+      "price": 101.71,
+      "change": 0.06,
+      "changePercent": 0.06,
+      "prev": 101.65
+    },
+    "BRENT": {
+      "price": 91.7,
+      "change": -0.87,
+      "changePercent": -0.94,
+      "prev": 92.57
+    },
+    "GOLD": {
+      "price": 4119.8,
+      "change": 5.3,
+      "changePercent": 0.13,
+      "prev": 4114.5
+    },
+    "VIX": {
+      "price": 19.92,
+      "change": -5.72,
+      "changePercent": -22.31,
+      "prev": 25.64
+    },
+    "WTI": {
+      "price": 85.96,
+      "change": -0.89,
+      "changePercent": -1.02,
+      "prev": 86.85
     }
   },
   "critical_events": [
+    {
+      "id": "ceasefire_agreement",
+      "name": "공식 휴전/평화 합의",
+      "severity": "critical",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "shorten"
+    },
     {
       "id": "capital_attack",
       "name": "수도 직접 공격/포위",
@@ -1350,14 +1346,6 @@
       "confidence": 0.6666666666666666,
       "matchCount": 2,
       "direction": "shorten"
-    },
-    {
-      "id": "conflict_expansion",
-      "name": "전선 확대/신규 참전국",
-      "severity": "moderate",
-      "confidence": 0.6666666666666666,
-      "matchCount": 2,
-      "direction": "lengthen"
     },
     {
       "id": "wmd_threat",
