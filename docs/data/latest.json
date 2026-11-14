@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-11-14T18:56:02.608Z",
+  "timestamp": "2026-11-14T22:52:13.498Z",
   "war_day": 259,
   "probabilities": {
-    "1개월 내 (~3월)": 18.9,
-    "2~3개월 (4~5월)": 40.5,
-    "4~6개월 (6~8월)": 24.7,
-    "7~12개월 (9월~27/2월)": 11.7,
-    "1년 초과": 4.2
+    "1개월 내 (~3월)": 19.6,
+    "2~3개월 (4~5월)": 41.4,
+    "4~6개월 (6~8월)": 25,
+    "7~12개월 (9월~27/2월)": 10.5,
+    "1년 초과": 3.5
   },
   "factors": [
     {
@@ -45,9 +45,9 @@
       "decay": 0.4
     },
     {
-      "factor": "확전 뉴스 우세 (확전2:휴전2)",
-      "impact": "전쟁 장기화 가능성 (확전비율 50%)",
-      "weight": "+0.02%p (4~6개월)",
+      "factor": "확전 뉴스 우세 (확전4:휴전2)",
+      "impact": "전쟁 장기화 가능성 (확전비율 67%)",
+      "weight": "+0.03%p (4~6개월)",
       "direction": "lengthen",
       "detail": "언론에서 휴전보다 확전을 더 많이 보도하고 있습니다.",
       "keywords": [
@@ -164,11 +164,11 @@
       "decay": 1
     },
     {
-      "factor": "협상/외교 뉴스 0건 감지",
-      "impact": "외교 움직임 부재",
+      "factor": "협상/외교 뉴스 2건 감지",
+      "impact": "외교 움직임 미약",
       "weight": "+0.00%p (1개월내), +0.00%p (2~3개월)",
       "direction": "shorten",
-      "detail": "실시간 뉴스에서 협상 관련 기사 0건이 감지되었습니다.",
+      "detail": "실시간 뉴스에서 협상 관련 기사 2건이 감지되었습니다.",
       "keywords": [
         "negotiat",
         "talks",
@@ -232,6 +232,36 @@
       "applied": "2026-03-03",
       "active": true,
       "decay": 0.3
+    },
+    {
+      "factor": "[중대 이벤트] 외교적 돌파구/강대국 중재",
+      "impact": "주요 외교적 돌파구 또는 강대국 중재. 데이턴(1995): 미국 중재 → 3주만에 합의. UN 안보리 결의는 평균 2~4주 내 휴전 이행.",
+      "weight": "+2.0%p (1개월내), +4.0%p (2~3개월), +1.3%p (4~6개월), -1.3%p (7~12개월), -0.7%p (1년초과)",
+      "direction": "shorten",
+      "detail": "주요 외교적 돌파구 또는 강대국 중재. 데이턴(1995): 미국 중재 → 3주만에 합의. UN 안보리 결의는 평균 2~4주 내 휴전 이행.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: US envoy Kushner says he aims to broker Europe-Russia talks on Ukraine",
+      "keywords": [
+        "peace talk",
+        "agree",
+        "diplomatic",
+        "breakthrough",
+        "summit",
+        "peace",
+        "mediati",
+        "accept",
+        "un",
+        "resolution",
+        "ceasefire",
+        "broker",
+        "peace",
+        "negotiat",
+        "breakthrough",
+        "china",
+        "mediat",
+        "peace framework"
+      ],
+      "applied": "2026-11-14",
+      "active": true,
+      "severity": "high"
     },
     {
       "factor": "[중대 이벤트] 수도 직접 공격/포위",
@@ -325,10 +355,10 @@
   ],
   "news_signals": {
     "ceasefire_mentions": 2,
-    "escalation_mentions": 2,
-    "negotiation_mentions": 0,
-    "casualty_mentions": 6,
-    "peace_mentions": 4,
+    "escalation_mentions": 4,
+    "negotiation_mentions": 2,
+    "casualty_mentions": 4,
+    "peace_mentions": 6,
     "regional_spread": 6,
     "total_articles": 50,
     "new_articles": 50,
@@ -336,6 +366,18 @@
     "duplicates_removed": 1
   },
   "latest_news": [
+    {
+      "title": "US envoy Kushner says he aims to broker Europe-Russia talks on Ukraine",
+      "link": "https://www.aljazeera.com/news/2026/11/14/us-envoy-kushner-says-he-aims-to-broker-europe-russia-talks-on-ukraine?traffic_source=rss",
+      "pubDate": "Sat, 14 Nov 2026 21:10:26 +0000",
+      "source": "aljazeera",
+      "snippet": "Europe&#039;s direct engagement with Moscow as part of Ukraine-Russia peace talks is edging closer to becoming a reality.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
     {
       "title": "Myanmar airstrike kills 12 at displacement camp in Rakhine state",
       "link": "https://www.aljazeera.com/video/newsfeed/2026/11/14/myanmar-airstrike-displacement-camp-rakhine?traffic_source=rss",
@@ -397,59 +439,11 @@
       "_isDuplicate": false
     },
     {
-      "title": "How does Iran view shift in US approach after JD Vance ordered away?",
-      "link": "https://www.aljazeera.com/news/2026/11/14/how-does-iran-view-shift-in-us-approach-after-vance-ordered-away?traffic_source=rss",
-      "pubDate": "Sat, 14 Nov 2026 13:24:44 +0000",
-      "source": "aljazeera",
-      "snippet": "Washington believes maritime blockade, overland border disruptions, air restrictions and isolating sanctions are working",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Russian casualties ‘reach 450,000’: What that means for the Ukraine war",
-      "link": "https://www.aljazeera.com/news/2026/11/14/russian-casualties-reach-450000-what-that-means-for-the-ukraine-war?traffic_source=rss",
-      "pubDate": "Sat, 14 Nov 2026 12:57:36 +0000",
-      "source": "aljazeera",
-      "snippet": "Leaked Russian records reveal a war toll that falls hardest on older men, poorer regions and foreign recruits.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Trump-Xi-Putin trilateral meeting at APEC: What to expect",
-      "link": "https://www.aljazeera.com/news/2026/11/14/trump-xi-putin-trilateral-meeting-at-apec-what-to-expect?traffic_source=rss",
-      "pubDate": "Sat, 14 Nov 2026 12:14:14 +0000",
-      "source": "aljazeera",
-      "snippet": "A nuclear treaty and the US&#039;s war on Iran are among priority topics for China, Russia and US leaders.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
       "title": "Eisenkot condemns Netanyahu’s ‘racist’ campaign against Israel’s Arab citizens",
       "link": "https://www.theguardian.com/world/2026/nov/13/eisenkot-accuses-netanyahu-of-racist-campaign-against-israels-arab-minority",
       "pubDate": "Sat, 14 Nov 2026 11:11:03 GMT",
       "source": "guardian",
       "snippet": "Prime ministerial hopeful calls Arab minority ‘an integral part of the Israeli story’ as he seeks to form governmentIsraeli prime ministerial hopeful Gadi Eisenkot condemned a “racist and aggressive c",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Ukraine, Russia race to build military satellite networks as war rages on",
-      "link": "https://www.aljazeera.com/news/2026/11/14/ukraine-russia-race-to-build-military-satellite-networks-as-war-rages-on?traffic_source=rss",
-      "pubDate": "Sat, 14 Nov 2026 11:00:39 +0000",
-      "source": "aljazeera",
-      "snippet": "Kyiv seeks to break reliance on Starlink as Moscow develops its own satellite constellation for military communications.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -515,6 +509,42 @@
       "_isDuplicated": false,
       "_clusterSize": 1,
       "_isDuplicate": false
+    },
+    {
+      "title": "Iran says it targeted US military radar in Bahrain in retaliatory strike",
+      "link": "https://www.theguardian.com/world/2026/nov/13/iran-us-radar-bahrain-sirik-hormuz",
+      "pubDate": "Fri, 13 Nov 2026 13:52:11 GMT",
+      "source": "guardian",
+      "snippet": "First direct attack on US military installations for months was in response to US airstrike on communications towerIran’s Islamic Revolutionary Guard Corps says it has targeted and destroyed a US earl",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "UN watchdog 'increasingly concerned' over uninspected Iran nuclear site",
+      "link": "https://www.bbc.co.uk/news/articles/cm75261e3pdko?at_medium=RSS&at_campaign=rss",
+      "pubDate": "Fri, 13 Nov 2026 12:28:28 GMT",
+      "source": "bbc",
+      "snippet": "It says it has never been able to visit a uranium enrichment plant at Isfahan which Iran announced over a year ago.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "The U.S.-Israel Relationship Is Broken. Here’s How Eisenkot Could Fix It.",
+      "link": "https://www.nytimes.com/2026/11/13/world/middleeast/israel-trump-eisenkot.html",
+      "pubDate": "Fri, 13 Nov 2026 09:45:38 +0000",
+      "source": "nytimes",
+      "snippet": "Former Israeli and U.S. ambassadors, lawmakers and analysts largely agree on steps Gadi Eisenkot could take if he becomes prime minister. But they are risky.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
     }
   ],
   "news_digest": {
@@ -535,17 +565,6 @@
             ],
             "pubDate": "Sat, 14 Nov 2026 16:13:43 +0000",
             "snippet": "A Myanmar military airstrike on a displacement camp in Rakhine state killed 12 people.",
-            "isNew": true
-          },
-          {
-            "title": "Ukraine, Russia race to build military satellite networks as war rages on",
-            "link": "https://www.aljazeera.com/news/2026/11/14/ukraine-russia-race-to-build-military-satellite-networks-as-war-rages-on?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sat, 14 Nov 2026 11:00:39 +0000",
-            "snippet": "Kyiv seeks to break reliance on Starlink as Moscow develops its own satellite constellation for military communications.",
             "isNew": true
           },
           {
@@ -635,6 +654,17 @@
             "pubDate": "Wed, 11 Nov 2026 16:59:34 GMT",
             "snippet": "The US Department of Justice says the men were involved in a string of plots, including a major incident near the UK airbase that is used by US armed forces.",
             "isNew": true
+          },
+          {
+            "title": "US Treasury Secretary Scott Bessent relocated after alleged Iranian threats",
+            "link": "https://www.bbc.co.uk/news/articles/cqr7gr0010r2o?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc"
+            ],
+            "pubDate": "Wed, 11 Nov 2026 16:45:11 GMT",
+            "snippet": "Bessent is now one of several Trump administration officials to live on military bases due to safety concerns. ",
+            "isNew": true
           }
         ]
       },
@@ -642,8 +672,8 @@
         "category_id": "humanitarian",
         "category_name": "인도주의/피해",
         "category_icon": "🏥",
-        "count": 10,
-        "new_count": 10,
+        "count": 9,
+        "new_count": 9,
         "articles": [
           {
             "title": "EU calls for immediate humanitarian access to Gaza",
@@ -654,17 +684,6 @@
             ],
             "pubDate": "Sat, 14 Nov 2026 15:57:22 +0000",
             "snippet": "The EU said that “Israel must enable the work of the UN and its agencies&quot; after the group was blocked access into Gaza.",
-            "isNew": true
-          },
-          {
-            "title": "Russian casualties ‘reach 450,000’: What that means for the Ukraine war",
-            "link": "https://www.aljazeera.com/news/2026/11/14/russian-casualties-reach-450000-what-that-means-for-the-ukraine-war?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sat, 14 Nov 2026 12:57:36 +0000",
-            "snippet": "Leaked Russian records reveal a war toll that falls hardest on older men, poorer regions and foreign recruits.",
             "isNew": true
           },
           {
@@ -761,8 +780,8 @@
         "category_id": "other",
         "category_name": "기타",
         "category_icon": "📰",
-        "count": 6,
-        "new_count": 6,
+        "count": 7,
+        "new_count": 7,
         "articles": [
           {
             "title": "Jerusalem Daily: Israeli forces occupy Palestinian-American’s home",
@@ -822,23 +841,129 @@
         ]
       },
       {
-        "category_id": "economy",
-        "category_name": "경제 영향",
-        "category_icon": "📊",
+        "category_id": "politics",
+        "category_name": "국내 정치",
+        "category_icon": "🏛️",
         "count": 5,
         "new_count": 5,
         "articles": [
           {
-            "title": "How does Iran view shift in US approach after JD Vance ordered away?",
-            "link": "https://www.aljazeera.com/news/2026/11/14/how-does-iran-view-shift-in-us-approach-after-vance-ordered-away?traffic_source=rss",
+            "title": "Yalta became a byword for betrayal. Will Trump, Xi and Putin enact another carve-up?",
+            "link": "https://www.theguardian.com/world/2026/nov/14/yalta-trump-xi-putin-china-apec",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Sat, 14 Nov 2026 07:00:40 GMT",
+            "snippet": "Russia and US approach potential summit seeking China’s help to extricate them from wars of choice, as Putin hopes to find consensus on new global orderThe Ukrainian president, Volodymyr Zelenskyy, is",
+            "isNew": true
+          },
+          {
+            "title": "Trump Signals New Strategy on Iran: A Waiting Game",
+            "link": "https://www.nytimes.com/2026/11/13/us/politics/trump-iran-strategy.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Fri, 13 Nov 2026 18:20:50 +0000",
+            "snippet": "The administration appears to be moving toward a long-term economic pressure campaign as President Trump expresses little urgency in securing a nuclear agreement.",
+            "isNew": true
+          },
+          {
+            "title": "Israeli Opposition Pushes for Oct. 7 Inquiry at First Session of New Parliament",
+            "link": "https://www.nytimes.com/2026/11/10/world/middleeast/israel-parliament-eisenkot.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Wed, 11 Nov 2026 03:33:32 +0000",
+            "snippet": "Dozens of first-time lawmakers were sworn into the Knesset, where the opposition, led by Gadi Eisenkot, now has a majority.",
+            "isNew": true
+          },
+          {
+            "title": "Israel's new parliament sworn in as leaders compete to form government",
+            "link": "https://www.bbc.co.uk/news/articles/crd939lpzjp9o?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc"
+            ],
+            "pubDate": "Tue, 10 Nov 2026 17:03:16 GMT",
+            "snippet": "Benjamin Netanyahu's main political rival, Gadi Eisenkot, has first chance to build a new government and oust the prime minister.",
+            "isNew": true
+          },
+          {
+            "title": "Trump says more US attacks on Iran 'highly unlikely'",
+            "link": "https://www.bbc.co.uk/news/articles/cq5yny4nl2d3o?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc"
+            ],
+            "pubDate": "Tue, 10 Nov 2026 09:40:31 GMT",
+            "snippet": "The president says the US is keeping \"status quo\" with Iran but remains “locked and loaded” should the situation change.",
+            "isNew": true
+          }
+        ]
+      },
+      {
+        "category_id": "diplomacy",
+        "category_name": "외교/협상",
+        "category_icon": "🤝",
+        "count": 4,
+        "new_count": 4,
+        "articles": [
+          {
+            "title": "US envoy Kushner says he aims to broker Europe-Russia talks on Ukraine",
+            "link": "https://www.aljazeera.com/news/2026/11/14/us-envoy-kushner-says-he-aims-to-broker-europe-russia-talks-on-ukraine?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Sat, 14 Nov 2026 13:24:44 +0000",
-            "snippet": "Washington believes maritime blockade, overland border disruptions, air restrictions and isolating sanctions are working",
+            "pubDate": "Sat, 14 Nov 2026 21:10:26 +0000",
+            "snippet": "Europe&#039;s direct engagement with Moscow as part of Ukraine-Russia peace talks is edging closer to becoming a reality.",
             "isNew": true
           },
+          {
+            "title": "Empower conference: officials and youth discuss peace and security",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/11/14/empower-conference-officials-and-youth-discuss-peace-and-security?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Sat, 14 Nov 2026 14:49:37 +0000",
+            "snippet": "At the Empower Conference in Doha, officials gathered with youth to discuss initiatives for global peace and security.",
+            "isNew": true
+          },
+          {
+            "title": "The U.S.-Israel Relationship Is Broken. Here’s How Eisenkot Could Fix It.",
+            "link": "https://www.nytimes.com/2026/11/13/world/middleeast/israel-trump-eisenkot.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Fri, 13 Nov 2026 09:45:38 +0000",
+            "snippet": "Former Israeli and U.S. ambassadors, lawmakers and analysts largely agree on steps Gadi Eisenkot could take if he becomes prime minister. But they are risky.",
+            "isNew": true
+          },
+          {
+            "title": "The Guardian view on Gaza’s misery: don’t let Palestinian deaths mount in this bleak winter | Editorial",
+            "link": "https://www.theguardian.com/commentisfree/2026/nov/12/the-guardian-view-on-gazas-misery-dont-let-palestinian-deaths-mount-in-this-bleak-winter",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Thu, 12 Nov 2026 18:54:58 GMT",
+            "snippet": "The formation of a new Israeli government won’t stop the killing, but sustained international pressure must be appliedWhat do you call a ceasefire when the firing has not ceased? The killings in&nbsp;",
+            "isNew": true
+          }
+        ]
+      },
+      {
+        "category_id": "economy",
+        "category_name": "경제 영향",
+        "category_icon": "📊",
+        "count": 4,
+        "new_count": 4,
+        "articles": [
           {
             "title": "Eisenkot condemns Netanyahu’s ‘racist’ campaign against Israel’s Arab citizens",
             "link": "https://www.theguardian.com/world/2026/nov/13/eisenkot-accuses-netanyahu-of-racist-campaign-against-israels-arab-minority",
@@ -889,20 +1014,9 @@
         "category_id": "regional",
         "category_name": "지역 정세",
         "category_icon": "🌍",
-        "count": 5,
-        "new_count": 5,
+        "count": 4,
+        "new_count": 4,
         "articles": [
-          {
-            "title": "Trump-Xi-Putin trilateral meeting at APEC: What to expect",
-            "link": "https://www.aljazeera.com/news/2026/11/14/trump-xi-putin-trilateral-meeting-at-apec-what-to-expect?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sat, 14 Nov 2026 12:14:14 +0000",
-            "snippet": "A nuclear treaty and the US&#039;s war on Iran are among priority topics for China, Russia and US leaders.",
-            "isNew": true
-          },
           {
             "title": "They Left Iran, but Now the Regime Is Seizing Their Assets to Silence Them",
             "link": "https://www.nytimes.com/2026/11/12/world/middleeast/iran-confiscations-assets-dissidents.html",
@@ -950,101 +1064,6 @@
         ]
       },
       {
-        "category_id": "politics",
-        "category_name": "국내 정치",
-        "category_icon": "🏛️",
-        "count": 4,
-        "new_count": 4,
-        "articles": [
-          {
-            "title": "Yalta became a byword for betrayal. Will Trump, Xi and Putin enact another carve-up?",
-            "link": "https://www.theguardian.com/world/2026/nov/14/yalta-trump-xi-putin-china-apec",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Sat, 14 Nov 2026 07:00:40 GMT",
-            "snippet": "Russia and US approach potential summit seeking China’s help to extricate them from wars of choice, as Putin hopes to find consensus on new global orderThe Ukrainian president, Volodymyr Zelenskyy, is",
-            "isNew": true
-          },
-          {
-            "title": "Trump Signals New Strategy on Iran: A Waiting Game",
-            "link": "https://www.nytimes.com/2026/11/13/us/politics/trump-iran-strategy.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Fri, 13 Nov 2026 18:20:50 +0000",
-            "snippet": "The administration appears to be moving toward a long-term economic pressure campaign as President Trump expresses little urgency in securing a nuclear agreement.",
-            "isNew": true
-          },
-          {
-            "title": "Israeli Opposition Pushes for Oct. 7 Inquiry at First Session of New Parliament",
-            "link": "https://www.nytimes.com/2026/11/10/world/middleeast/israel-parliament-eisenkot.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Wed, 11 Nov 2026 03:33:32 +0000",
-            "snippet": "Dozens of first-time lawmakers were sworn into the Knesset, where the opposition, led by Gadi Eisenkot, now has a majority.",
-            "isNew": true
-          },
-          {
-            "title": "Israel's new parliament sworn in as leaders compete to form government",
-            "link": "https://www.bbc.co.uk/news/articles/crd939lpzjp9o?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
-            "sources": [
-              "bbc"
-            ],
-            "pubDate": "Tue, 10 Nov 2026 17:03:16 GMT",
-            "snippet": "Benjamin Netanyahu's main political rival, Gadi Eisenkot, has first chance to build a new government and oust the prime minister.",
-            "isNew": true
-          }
-        ]
-      },
-      {
-        "category_id": "diplomacy",
-        "category_name": "외교/협상",
-        "category_icon": "🤝",
-        "count": 3,
-        "new_count": 3,
-        "articles": [
-          {
-            "title": "Empower conference: officials and youth discuss peace and security",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/11/14/empower-conference-officials-and-youth-discuss-peace-and-security?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Sat, 14 Nov 2026 14:49:37 +0000",
-            "snippet": "At the Empower Conference in Doha, officials gathered with youth to discuss initiatives for global peace and security.",
-            "isNew": true
-          },
-          {
-            "title": "The U.S.-Israel Relationship Is Broken. Here’s How Eisenkot Could Fix It.",
-            "link": "https://www.nytimes.com/2026/11/13/world/middleeast/israel-trump-eisenkot.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Fri, 13 Nov 2026 09:45:38 +0000",
-            "snippet": "Former Israeli and U.S. ambassadors, lawmakers and analysts largely agree on steps Gadi Eisenkot could take if he becomes prime minister. But they are risky.",
-            "isNew": true
-          },
-          {
-            "title": "The Guardian view on Gaza’s misery: don’t let Palestinian deaths mount in this bleak winter | Editorial",
-            "link": "https://www.theguardian.com/commentisfree/2026/nov/12/the-guardian-view-on-gazas-misery-dont-let-palestinian-deaths-mount-in-this-bleak-winter",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Thu, 12 Nov 2026 18:54:58 GMT",
-            "snippet": "The formation of a new Israeli government won’t stop the killing, but sustained international pressure must be appliedWhat do you call a ceasefire when the firing has not ceased? The killings in&nbsp;",
-            "isNew": true
-          }
-        ]
-      },
-      {
         "category_id": "nuclear",
         "category_name": "핵/WMD",
         "category_icon": "☢️",
@@ -1068,17 +1087,37 @@
     "recent_30min": {
       "total_new": 50,
       "by_category": {
+        "diplomacy": {
+          "count": 4,
+          "titles": [
+            {
+              "title": "US envoy Kushner says he aims to broker Europe-Russia talks on Ukraine",
+              "link": "https://www.aljazeera.com/news/2026/11/14/us-envoy-kushner-says-he-aims-to-broker-europe-russia-talks-on-ukraine?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Empower conference: officials and youth discuss peace and security",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/11/14/empower-conference-officials-and-youth-discuss-peace-and-security?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "The U.S.-Israel Relationship Is Broken. Here’s How Eisenkot Could Fix It.",
+              "link": "https://www.nytimes.com/2026/11/13/world/middleeast/israel-trump-eisenkot.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "The Guardian view on Gaza’s misery: don’t let Palestinian deaths mount in this bleak winter | Editorial",
+              "link": "https://www.theguardian.com/commentisfree/2026/nov/12/the-guardian-view-on-gazas-misery-dont-let-palestinian-deaths-mount-in-this-bleak-winter",
+              "source": "guardian"
+            }
+          ]
+        },
         "military": {
           "count": 16,
           "titles": [
             {
               "title": "Myanmar airstrike kills 12 at displacement camp in Rakhine state",
               "link": "https://www.aljazeera.com/video/newsfeed/2026/11/14/myanmar-airstrike-displacement-camp-rakhine?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Ukraine, Russia race to build military satellite networks as war rages on",
-              "link": "https://www.aljazeera.com/news/2026/11/14/ukraine-russia-race-to-build-military-satellite-networks-as-war-rages-on?traffic_source=rss",
               "source": "aljazeera"
             },
             {
@@ -1095,20 +1134,20 @@
               "title": "Iran says it targeted US military radar in Bahrain in retaliatory strike",
               "link": "https://www.theguardian.com/world/2026/nov/13/iran-us-radar-bahrain-sirik-hormuz",
               "source": "guardian"
+            },
+            {
+              "title": "Israeli strike on Gaza hospital kills six Palestinians, health ministry says",
+              "link": "https://www.bbc.co.uk/news/articles/ckzd9p7e4eqeo?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
             }
           ]
         },
         "humanitarian": {
-          "count": 10,
+          "count": 9,
           "titles": [
             {
               "title": "EU calls for immediate humanitarian access to Gaza",
               "link": "https://www.aljazeera.com/news/2026/11/14/eu-calls-for-immediate-humanitarian-access-to-gaza?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Russian casualties ‘reach 450,000’: What that means for the Ukraine war",
-              "link": "https://www.aljazeera.com/news/2026/11/14/russian-casualties-reach-450000-what-that-means-for-the-ukraine-war?traffic_source=rss",
               "source": "aljazeera"
             },
             {
@@ -1125,11 +1164,16 @@
               "title": "Israeli Strikes on Gaza Hospital Kill 6 and Injure Dozens, Health Officials Say",
               "link": "https://www.nytimes.com/2026/11/11/world/middleeast/nasser-hospital-gaza-strike-israel.html",
               "source": "nytimes"
+            },
+            {
+              "title": "NAZA: how and where to watch the Guardian’s acclaimed Gaza documentary",
+              "link": "https://www.theguardian.com/global/2026/nov/12/naza-how-to-watch-guardian-acclaimed-gaza-documentary",
+              "source": "guardian"
             }
           ]
         },
         "other": {
-          "count": 6,
+          "count": 7,
           "titles": [
             {
               "title": "Jerusalem Daily: Israeli forces occupy Palestinian-American’s home",
@@ -1158,34 +1202,9 @@
             }
           ]
         },
-        "diplomacy": {
-          "count": 3,
-          "titles": [
-            {
-              "title": "Empower conference: officials and youth discuss peace and security",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/11/14/empower-conference-officials-and-youth-discuss-peace-and-security?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "The U.S.-Israel Relationship Is Broken. Here’s How Eisenkot Could Fix It.",
-              "link": "https://www.nytimes.com/2026/11/13/world/middleeast/israel-trump-eisenkot.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "The Guardian view on Gaza’s misery: don’t let Palestinian deaths mount in this bleak winter | Editorial",
-              "link": "https://www.theguardian.com/commentisfree/2026/nov/12/the-guardian-view-on-gazas-misery-dont-let-palestinian-deaths-mount-in-this-bleak-winter",
-              "source": "guardian"
-            }
-          ]
-        },
         "economy": {
-          "count": 5,
+          "count": 4,
           "titles": [
-            {
-              "title": "How does Iran view shift in US approach after JD Vance ordered away?",
-              "link": "https://www.aljazeera.com/news/2026/11/14/how-does-iran-view-shift-in-us-approach-after-vance-ordered-away?traffic_source=rss",
-              "source": "aljazeera"
-            },
             {
               "title": "Eisenkot condemns Netanyahu’s ‘racist’ campaign against Israel’s Arab citizens",
               "link": "https://www.theguardian.com/world/2026/nov/13/eisenkot-accuses-netanyahu-of-racist-campaign-against-israels-arab-minority",
@@ -1208,38 +1227,8 @@
             }
           ]
         },
-        "regional": {
-          "count": 5,
-          "titles": [
-            {
-              "title": "Trump-Xi-Putin trilateral meeting at APEC: What to expect",
-              "link": "https://www.aljazeera.com/news/2026/11/14/trump-xi-putin-trilateral-meeting-at-apec-what-to-expect?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "They Left Iran, but Now the Regime Is Seizing Their Assets to Silence Them",
-              "link": "https://www.nytimes.com/2026/11/12/world/middleeast/iran-confiscations-assets-dissidents.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "U.S. Efforts to Tighten Blockade of Iran Rely on Reluctant Neighbors",
-              "link": "https://www.nytimes.com/2026/11/11/world/middleeast/us-blockade-iran-taskforce-iron-gate.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Lebanon Faces Economic ‘Catastrophe’ After War and Years of Mismanagement",
-              "link": "https://www.nytimes.com/2026/11/11/world/middleeast/lebanon-economy-crisis-corruption-war.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Syria Weighs Sending Troops to Aid Saudi War With Houthis",
-              "link": "https://www.nytimes.com/2026/11/10/world/middleeast/syria-weighs-sending-troops-to-aid-saudi-war-with-houthis.html",
-              "source": "nytimes"
-            }
-          ]
-        },
         "politics": {
-          "count": 4,
+          "count": 5,
           "titles": [
             {
               "title": "Yalta became a byword for betrayal. Will Trump, Xi and Putin enact another carve-up?",
@@ -1260,6 +1249,11 @@
               "title": "Israel's new parliament sworn in as leaders compete to form government",
               "link": "https://www.bbc.co.uk/news/articles/crd939lpzjp9o?at_medium=RSS&at_campaign=rss",
               "source": "bbc"
+            },
+            {
+              "title": "Trump says more US attacks on Iran 'highly unlikely'",
+              "link": "https://www.bbc.co.uk/news/articles/cq5yny4nl2d3o?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
             }
           ]
         },
@@ -1270,6 +1264,31 @@
               "title": "UN watchdog 'increasingly concerned' over uninspected Iran nuclear site",
               "link": "https://www.bbc.co.uk/news/articles/cm75261e3pdko?at_medium=RSS&at_campaign=rss",
               "source": "bbc"
+            }
+          ]
+        },
+        "regional": {
+          "count": 4,
+          "titles": [
+            {
+              "title": "They Left Iran, but Now the Regime Is Seizing Their Assets to Silence Them",
+              "link": "https://www.nytimes.com/2026/11/12/world/middleeast/iran-confiscations-assets-dissidents.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "U.S. Efforts to Tighten Blockade of Iran Rely on Reluctant Neighbors",
+              "link": "https://www.nytimes.com/2026/11/11/world/middleeast/us-blockade-iran-taskforce-iron-gate.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Lebanon Faces Economic ‘Catastrophe’ After War and Years of Mismanagement",
+              "link": "https://www.nytimes.com/2026/11/11/world/middleeast/lebanon-economy-crisis-corruption-war.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Syria Weighs Sending Troops to Aid Saudi War With Houthis",
+              "link": "https://www.nytimes.com/2026/11/10/world/middleeast/syria-weighs-sending-troops-to-aid-saudi-war-with-houthis.html",
+              "source": "nytimes"
             }
           ]
         }
@@ -1369,6 +1388,30 @@
       "changePercent": -0.2,
       "prev": 88.74
     },
+    "DXY": {
+      "price": 103.41,
+      "change": 0.24,
+      "changePercent": 0.23,
+      "prev": 103.17
+    },
+    "GOLD": {
+      "price": 3886.3,
+      "change": 1,
+      "changePercent": 0.03,
+      "prev": 3885.3
+    },
+    "US2Y": {
+      "price": 4.12,
+      "change": -0.01,
+      "changePercent": -0.24,
+      "prev": 4.13
+    },
+    "US10Y": {
+      "price": 5.15,
+      "change": 0.05,
+      "changePercent": 0.98,
+      "prev": 5.1
+    },
     "BRENT": {
       "price": 95.84,
       "change": 0.02,
@@ -1380,33 +1423,17 @@
       "change": 0.6,
       "changePercent": 3.21,
       "prev": 18.7
-    },
-    "GOLD": {
-      "price": 3886.3,
-      "change": 1,
-      "changePercent": 0.03,
-      "prev": 3885.3
-    },
-    "US10Y": {
-      "price": 5.15,
-      "change": 0.05,
-      "changePercent": 0.98,
-      "prev": 5.1
-    },
-    "DXY": {
-      "price": 103.41,
-      "change": 0.24,
-      "changePercent": 0.23,
-      "prev": 103.17
-    },
-    "US2Y": {
-      "price": 4.12,
-      "change": -0.01,
-      "changePercent": -0.24,
-      "prev": 4.13
     }
   },
   "critical_events": [
+    {
+      "id": "diplomatic_breakthrough",
+      "name": "외교적 돌파구/강대국 중재",
+      "severity": "high",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "shorten"
+    },
     {
       "id": "capital_attack",
       "name": "수도 직접 공격/포위",
