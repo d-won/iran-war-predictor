@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-11-16T18:45:23.697Z",
-  "war_day": 261,
+  "timestamp": "2026-11-17T02:16:12.758Z",
+  "war_day": 262,
   "probabilities": {
-    "1개월 내 (~3월)": 18.9,
-    "2~3개월 (4~5월)": 39.7,
-    "4~6개월 (6~8월)": 25.4,
-    "7~12개월 (9월~27/2월)": 12.3,
-    "1년 초과": 3.7
+    "1개월 내 (~3월)": 21.6,
+    "2~3개월 (4~5월)": 42.7,
+    "4~6개월 (6~8월)": 23.6,
+    "7~12개월 (9월~27/2월)": 9.5,
+    "1년 초과": 2.6
   },
   "factors": [
     {
@@ -45,9 +45,9 @@
       "decay": 0.4
     },
     {
-      "factor": "확전 뉴스 우세 (확전4:휴전2)",
-      "impact": "전쟁 장기화 가능성 (확전비율 67%)",
-      "weight": "+0.03%p (4~6개월)",
+      "factor": "확전 뉴스 우세 (확전6:휴전4)",
+      "impact": "전쟁 장기화 가능성 (확전비율 60%)",
+      "weight": "+0.02%p (4~6개월)",
       "direction": "lengthen",
       "detail": "언론에서 휴전보다 확전을 더 많이 보도하고 있습니다.",
       "keywords": [
@@ -164,11 +164,11 @@
       "decay": 1
     },
     {
-      "factor": "협상/외교 뉴스 4건 감지",
+      "factor": "협상/외교 뉴스 8건 감지",
       "impact": "외교적 해결 움직임 포착",
-      "weight": "+0.01%p (1개월내), +0.01%p (2~3개월)",
+      "weight": "+0.02%p (1개월내), +0.01%p (2~3개월)",
       "direction": "shorten",
-      "detail": "실시간 뉴스에서 협상 관련 기사 4건이 감지되었습니다.",
+      "detail": "실시간 뉴스에서 협상 관련 기사 8건이 감지되었습니다.",
       "keywords": [
         "negotiat",
         "talks",
@@ -234,6 +234,70 @@
       "decay": 0.3
     },
     {
+      "factor": "[중대 이벤트] 일방적 전투 축소/자제 선언",
+      "impact": "교전국의 일방적 전투 축소 또는 자제 선언. 역사적으로 패전국의 자발적 전선 축소는 80% 이상 공식 항복의 전조.",
+      "weight": "+3.3%p (1개월내), +4.7%p (2~3개월), -2.0%p (4~6개월), -2.0%p (7~12개월), -0.7%p (1년초과)",
+      "direction": "shorten",
+      "detail": "교전국의 일방적 전투 축소 또는 자제 선언. 역사적으로 패전국의 자발적 전선 축소는 80% 이상 공식 항복의 전조.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Saudi Arabia dismisses commander of coalition forces fighting Houthis",
+      "keywords": [
+        "halt",
+        "attack",
+        "stop",
+        "attack",
+        "neighb",
+        "no more",
+        "attack",
+        "withdraw",
+        "forces",
+        "pull back",
+        "troops",
+        "unilateral",
+        "ceasefire",
+        "reduce",
+        "operation",
+        "de-escalat",
+        "announc",
+        "restrain",
+        "attack",
+        "not attack",
+        "suspend",
+        "operation"
+      ],
+      "applied": "2026-11-17",
+      "active": true,
+      "severity": "high"
+    },
+    {
+      "factor": "[중대 이벤트] 외교적 돌파구/강대국 중재",
+      "impact": "주요 외교적 돌파구 또는 강대국 중재. 데이턴(1995): 미국 중재 → 3주만에 합의. UN 안보리 결의는 평균 2~4주 내 휴전 이행.",
+      "weight": "+2.0%p (1개월내), +4.0%p (2~3개월), +1.3%p (4~6개월), -1.3%p (7~12개월), -0.7%p (1년초과)",
+      "direction": "shorten",
+      "detail": "주요 외교적 돌파구 또는 강대국 중재. 데이턴(1995): 미국 중재 → 3주만에 합의. UN 안보리 결의는 평균 2~4주 내 휴전 이행.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Ukraine holds peace talks with US, Europe as conflict escalates",
+      "keywords": [
+        "peace talk",
+        "agree",
+        "diplomatic",
+        "breakthrough",
+        "summit",
+        "peace",
+        "mediati",
+        "accept",
+        "un",
+        "resolution",
+        "ceasefire",
+        "broker",
+        "peace",
+        "negotiat",
+        "breakthrough",
+        "china",
+        "mediat",
+        "peace framework"
+      ],
+      "applied": "2026-11-17",
+      "active": true,
+      "severity": "high"
+    },
+    {
       "factor": "[중대 이벤트] 수도 직접 공격/포위",
       "impact": "수도 직접 공격. 베오그라드(1999): 78일 폭격 후 항복. 바그다드(2003): 21일만에 함락. 수도 타격은 전쟁 지속 의지를 급격히 약화.",
       "weight": "+2.7%p (1개월내), +4.0%p (2~3개월), -1.3%p (4~6개월), -1.3%p (7~12개월), -0.7%p (1년초과)",
@@ -261,7 +325,7 @@
         "tehran",
         "explosion"
       ],
-      "applied": "2026-11-16",
+      "applied": "2026-11-17",
       "active": true,
       "severity": "high"
     },
@@ -287,16 +351,16 @@
         "thousand",
         "ethnic cleansing"
       ],
-      "applied": "2026-11-16",
+      "applied": "2026-11-17",
       "active": true,
       "severity": "high"
     },
     {
-      "factor": "금값 사상최고 ($3849.6/oz)",
+      "factor": "금값 사상최고 ($3869.5/oz)",
       "impact": "안전자산 수요 폭증 → 글로벌 불안 심화",
       "weight": "+2%p (4-6개월)",
       "direction": "lengthen",
-      "detail": "금 가격이 온스당 $3849.6로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
+      "detail": "금 가격이 온스당 $3869.5로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
       "keywords": [
         "gold",
         "safe haven",
@@ -324,18 +388,162 @@
     }
   ],
   "news_signals": {
-    "ceasefire_mentions": 2,
-    "escalation_mentions": 4,
-    "negotiation_mentions": 4,
-    "casualty_mentions": 4,
-    "peace_mentions": 6,
+    "ceasefire_mentions": 4,
+    "escalation_mentions": 6,
+    "negotiation_mentions": 8,
+    "casualty_mentions": 6,
+    "peace_mentions": 10,
     "regional_spread": 22,
     "total_articles": 50,
     "new_articles": 49,
-    "unique_events": 48,
-    "duplicates_removed": 2
+    "unique_events": 49,
+    "duplicates_removed": 1
   },
   "latest_news": [
+    {
+      "title": "Yemeni army reports 661 attacks on Houthis as group advances towards Aden",
+      "link": "https://www.aljazeera.com/news/2026/11/17/yemen-army-reports-661-attacks-on-houthis-amid-houthi-push-towards-aden?traffic_source=rss",
+      "pubDate": "Tue, 17 Nov 2026 01:38:13 +0000",
+      "source": "aljazeera",
+      "snippet": "Yemen&#039;s army reports 173 Houthi fighters killed or wounded as government forces reposition to defend Aden.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Ukraine holds peace talks with US, Europe as conflict escalates",
+      "link": "https://www.aljazeera.com/news/2026/11/17/ukraine-holds-peace-talks-with-us-europe-as-conflict-escalates?traffic_source=rss",
+      "pubDate": "Tue, 17 Nov 2026 00:45:11 +0000",
+      "source": "aljazeera",
+      "snippet": "Kushner reports progress towards a deal, but Moscow says it has not agreed to European participation in the next talks.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Iran war live: Houthis advance in Yemen as Vance rejects ‘forever war’",
+      "link": "https://www.aljazeera.com/news/liveblog/2026/11/16/live-houthis-advance-in-yemen-as-tankers-hit-sea-mines-in-strait-of-hormuz?traffic_source=rss",
+      "pubDate": "Mon, 16 Nov 2026 23:57:49 +0000",
+      "source": "aljazeera",
+      "snippet": "Iran-aligned Houthi fighters kept up their push in southern Yemen as JD Vance ruled out a US &#039;forever war&#039; in Iran.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Trump departs for ASEAN on summit with Xi and Putin",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/11/16/trump-departs-for-asean-on-summit-with-xi-and-putin?traffic_source=rss",
+      "pubDate": "Mon, 16 Nov 2026 23:42:03 +0000",
+      "source": "aljazeera",
+      "snippet": "Donald Trump is heading to the Philippines where he’s scheduled to speak at a meeting of ASEAN leaders in Manila.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Bahrain court sentences dozens of Shia Muslims to life in prison, activists say",
+      "link": "https://www.bbc.co.uk/news/articles/cmx20pyew3zxo?at_medium=RSS&at_campaign=rss",
+      "pubDate": "Mon, 16 Nov 2026 23:01:47 GMT",
+      "source": "bbc",
+      "snippet": "Most of those jailed on Iran-linked terrorism charges are clerics, a UK-based human rights group, claiming confessions were forced.\n\nBahraini authorities accused the 69 unnamed defendants of establish",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Houthi rebel advance in Yemen may further destabilise global economy",
+      "link": "https://www.bbc.co.uk/news/articles/cmy97qperq9eo?at_medium=RSS&at_campaign=rss",
+      "pubDate": "Mon, 16 Nov 2026 21:40:07 GMT",
+      "source": "bbc",
+      "snippet": "The Iran-backed Houthis are gaining ground and their advance could have dangerous consequences, writes the BBC's security correspondent. ",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Third US aircraft carrier brings thousands more troops to Middle East",
+      "link": "https://www.theguardian.com/us-news/2026/nov/16/aircraft-middle-east-trump-military",
+      "pubDate": "Mon, 16 Nov 2026 21:13:02 GMT",
+      "source": "guardian",
+      "snippet": "The US president oscillates between strike threats on Iran and insisting the war ‘militarily is effectively over’A third US aircraft carrier has arrived in the Middle East, US Central Command said in ",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Photos: California residents gather to watch massive El Nino-fuelled waves",
+      "link": "https://www.aljazeera.com/gallery/2026/11/16/photos-california-residents-gather-to-watch-massive-el-nino-fuelled-waves?traffic_source=rss",
+      "pubDate": "Mon, 16 Nov 2026 20:42:18 +0000",
+      "source": "aljazeera",
+      "snippet": "National Weather Service warns that waves of more than 10 metres high could impact some parts of US&#039;s California coast.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "What will Europe do next in Ukraine?",
+      "link": "https://www.aljazeera.com/video/inside-story/2026/11/16/what-will-europe-do-next-in-ukraine?traffic_source=rss",
+      "pubDate": "Mon, 16 Nov 2026 20:12:21 +0000",
+      "source": "aljazeera",
+      "snippet": "There is division within the European Union over diplomatic strategy for efforts to end the Russia-Ukraine war.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Israeli opposition accuses Netanyahu of attempted ‘coup’",
+      "link": "https://www.aljazeera.com/news/2026/11/16/israeli-opposition-accuses-netanyahu-of-attempted-coup?traffic_source=rss",
+      "pubDate": "Mon, 16 Nov 2026 20:00:07 +0000",
+      "source": "aljazeera",
+      "snippet": "Rivals call for investigation into reports that PM&#039;s office tried to frame Arab parties.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Saudi Arabia dismisses commander of coalition forces fighting Houthis",
+      "link": "https://www.aljazeera.com/news/2026/11/16/saudi-arabia-dismisses-commander-of-coalition-forces-fighting-houthis?traffic_source=rss",
+      "pubDate": "Mon, 16 Nov 2026 19:19:21 +0000",
+      "source": "aljazeera",
+      "snippet": "Move comes as government forces withdraw from Red Sea coast to halt Houthi approach to interim capital Aden.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Bahrain Convicts Dozens of Shiite Clerics in Sweeping Terrorism Trial",
+      "link": "https://www.nytimes.com/2026/11/16/world/middleeast/bahrain-shiite-clerics-convicted.html",
+      "pubDate": "Mon, 16 Nov 2026 18:58:10 +0000",
+      "source": "nytimes",
+      "snippet": "The defendants were accused of colluding with Iran. Rights groups said the case was marred by torture allegations and raised concerns about religious persecution.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
     {
       "title": "‘Let the aid in’: Deadly winter approaches in Gaza - The Latest",
       "link": "https://www.theguardian.com/news/video/2026/nov/16/let-the-aid-in-deadly-winter-approaches-in-gaza-the-latest",
@@ -346,18 +554,6 @@
       "_sourceCount": 1,
       "_isDuplicated": true,
       "_clusterSize": 2,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Israeli court upholds detention of Palestinian land activist Ghassan Najjar",
-      "link": "https://www.aljazeera.com/news/2026/11/16/israeli-court-upholds-detention-of-palestinian-land-activist-ghassan-najjar?traffic_source=rss",
-      "pubDate": "Mon, 16 Nov 2026 17:49:16 +0000",
-      "source": "aljazeera",
-      "snippet": "Occupied West Bank land defender is set to remain in detention until at least February 26 next year.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
       "_isDuplicate": false
     },
     {
@@ -373,18 +569,6 @@
       "_isDuplicate": false
     },
     {
-      "title": "Iraq deploys army to stronghold of Iran-backed Kataib Hezbollah",
-      "link": "https://www.aljazeera.com/news/2026/11/16/iran-deploys-army-to-stronghold-of-iran-backed-kataib-hezbollah?traffic_source=rss",
-      "pubDate": "Mon, 16 Nov 2026 17:18:14 +0000",
-      "source": "aljazeera",
-      "snippet": "US pressure on Iraq to curb Tehran&#039;s influence leaves potential for direct confrontation with Iran-linked armed group.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
       "title": "‘Let the aid in’: deadly winter approaches in Gaza – The Latest",
       "link": "https://www.theguardian.com/news/audio/2026/nov/16/let-the-aid-in-deadly-winter-approaches-in-gaza-the-latest",
       "pubDate": "Mon, 16 Nov 2026 17:16:27 GMT",
@@ -393,124 +577,6 @@
       "isNew": false,
       "_isDuplicate": true,
       "_sourceCount": 1
-    },
-    {
-      "title": "Trump denies responsibility for FAA nationwide ground stop",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/11/16/trump-denies-responsibility-for-faa-nationwide-ground-stop?traffic_source=rss",
-      "pubDate": "Mon, 16 Nov 2026 17:08:10 +0000",
-      "source": "aljazeera",
-      "snippet": "Trump denies responsibility for FAA nationwide ground stop",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Iran braces for natural gas shortages during winter energy imbalance",
-      "link": "https://www.aljazeera.com/news/2026/11/16/iran-braces-for-natural-gas-shortages-during-winter-energy-imbalance?traffic_source=rss",
-      "pubDate": "Mon, 16 Nov 2026 16:58:46 +0000",
-      "source": "aljazeera",
-      "snippet": "The gas infrastructure in Iran has suffered from underdevelopment and sanctions, and now damage from the war.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Israeli forces demolish the homes of two Palestinian prisoners",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/11/16/israeli-forces-demolish-the-homes-of-two-palestinian-prisoners?traffic_source=rss",
-      "pubDate": "Mon, 16 Nov 2026 16:56:54 +0000",
-      "source": "aljazeera",
-      "snippet": "Israeli forces demolished the homes of two Palestinian prisoners as Al Jazeera’s Nida Ibrahim was reporting ",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Jerusalem Daily: Eisenkot wants Netanyahu out",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/11/16/jerusalem-daily-eisenkot-wants-netanyahu-out?traffic_source=rss",
-      "pubDate": "Mon, 16 Nov 2026 16:56:46 +0000",
-      "source": "aljazeera",
-      "snippet": "Israeli opposition leader Gadi Eisenkot appears to be pushing to oust Benjamin Netanyahu as Prime Minister.",
-      "isNew": true,
-      "_isDuplicate": true,
-      "_sourceCount": 1
-    },
-    {
-      "title": "Bahrain court sentences dozens of Shia Muslims to life in prison, activists say",
-      "link": "https://www.bbc.co.uk/news/articles/cmx20pyew3zxo?at_medium=RSS&at_campaign=rss",
-      "pubDate": "Mon, 16 Nov 2026 15:46:21 GMT",
-      "source": "bbc",
-      "snippet": "Most of those jailed on Iran-linked terrorism charges are clerics, a UK-based human rights group, claiming confessions were forced.\n\nBahraini authorities accused the 69 unnamed defendants of establish",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Oil tankers hit sea mines in the Strait of Hormuz",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/11/16/oil-tankers-hit-sea-mines-in-the-strait-of-hormuz?traffic_source=rss",
-      "pubDate": "Mon, 16 Nov 2026 15:37:49 +0000",
-      "source": "aljazeera",
-      "snippet": "Oil tankers hit sea mines in the Strait of Hormuz",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Bahrain Convicts Dozens of Shiite Clerics in Sweeping Terrorism Trial",
-      "link": "https://www.nytimes.com/2026/11/16/world/middleeast/bahrain-shiite-clerics-convicted.html",
-      "pubDate": "Mon, 16 Nov 2026 15:25:21 +0000",
-      "source": "nytimes",
-      "snippet": "The defendants were accused of colluding with Iran. Rights groups said the case was marred by torture allegations and raised concerns about religious persecution.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Though Trump is giving him the cold shoulder, Netanyahu is pulling out all the stops to cling to power. And he just might | Simon Tisdall",
-      "link": "https://www.theguardian.com/commentisfree/2026/nov/16/donald-trump-benjamin-netanyahu-power-israel-pm",
-      "pubDate": "Mon, 16 Nov 2026 15:00:46 GMT",
-      "source": "guardian",
-      "snippet": "The downfall of the Israeli PM may seem inevitable now; it is anything but. He must be ejected from office and brought to justiceIt’s unsporting to kick a man when he’s down. But let’s make an excepti",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "‘My arms are empty’: Tragedy strikes Gaza family after baby dies from cold",
-      "link": "https://www.aljazeera.com/features/2026/11/16/my-arms-are-empty-gaza-mothers-brace-for-another-winter-of-cold-and-fear?traffic_source=rss",
-      "pubDate": "Mon, 16 Nov 2026 14:20:43 +0000",
-      "source": "aljazeera",
-      "snippet": "A nine-month-old baby has died from hypothermia inside his family’s displacement tent in Gaza, as winter returns.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Russian attacks kill three in Ukraine, EU accuses Moscow of prolonging war",
-      "link": "https://www.aljazeera.com/news/2026/11/16/russian-attacks-kill-three-in-ukraine-eu-accuses-moscow-of-prolonging-war?traffic_source=rss",
-      "pubDate": "Mon, 16 Nov 2026 13:28:23 +0000",
-      "source": "aljazeera",
-      "snippet": "EU foreign policy chief Kaja Kallas says Russian President Vladimir Putin is making maximalist demands.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
     }
   ],
   "news_digest": {
@@ -519,9 +585,53 @@
         "category_id": "military",
         "category_name": "군사 작전",
         "category_icon": "⚔️",
-        "count": 16,
-        "new_count": 16,
+        "count": 15,
+        "new_count": 15,
         "articles": [
+          {
+            "title": "Yemeni army reports 661 attacks on Houthis as group advances towards Aden",
+            "link": "https://www.aljazeera.com/news/2026/11/17/yemen-army-reports-661-attacks-on-houthis-amid-houthi-push-towards-aden?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Tue, 17 Nov 2026 01:38:13 +0000",
+            "snippet": "Yemen&#039;s army reports 173 Houthi fighters killed or wounded as government forces reposition to defend Aden.",
+            "isNew": true
+          },
+          {
+            "title": "Iran war live: Houthis advance in Yemen as Vance rejects ‘forever war’",
+            "link": "https://www.aljazeera.com/news/liveblog/2026/11/16/live-houthis-advance-in-yemen-as-tankers-hit-sea-mines-in-strait-of-hormuz?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Mon, 16 Nov 2026 23:57:49 +0000",
+            "snippet": "Iran-aligned Houthi fighters kept up their push in southern Yemen as JD Vance ruled out a US &#039;forever war&#039; in Iran.",
+            "isNew": true
+          },
+          {
+            "title": "Houthi rebel advance in Yemen may further destabilise global economy",
+            "link": "https://www.bbc.co.uk/news/articles/cmy97qperq9eo?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc"
+            ],
+            "pubDate": "Mon, 16 Nov 2026 21:40:07 GMT",
+            "snippet": "The Iran-backed Houthis are gaining ground and their advance could have dangerous consequences, writes the BBC's security correspondent. ",
+            "isNew": true
+          },
+          {
+            "title": "Third US aircraft carrier brings thousands more troops to Middle East",
+            "link": "https://www.theguardian.com/us-news/2026/nov/16/aircraft-middle-east-trump-military",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Mon, 16 Nov 2026 21:13:02 GMT",
+            "snippet": "The US president oscillates between strike threats on Iran and insisting the war ‘militarily is effectively over’A third US aircraft carrier has arrived in the Middle East, US Central Command said in ",
+            "isNew": true
+          },
           {
             "title": "Airstrikes on Iran Missile Sites May Shed Light on Justification for Dams",
             "link": "https://www.nytimes.com/2026/11/16/world/middleeast/iran-dams-missile-sites-environmentalists.html",
@@ -531,62 +641,6 @@
             ],
             "pubDate": "Mon, 16 Nov 2026 17:24:04 +0000",
             "snippet": "Environmentalists have long puzzled over a wide network of water projects lacking any obvious justification. Then their areas were targeted in airstrikes.",
-            "isNew": true
-          },
-          {
-            "title": "Iraq deploys army to stronghold of Iran-backed Kataib Hezbollah",
-            "link": "https://www.aljazeera.com/news/2026/11/16/iran-deploys-army-to-stronghold-of-iran-backed-kataib-hezbollah?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Mon, 16 Nov 2026 17:18:14 +0000",
-            "snippet": "US pressure on Iraq to curb Tehran&#039;s influence leaves potential for direct confrontation with Iran-linked armed group.",
-            "isNew": true
-          },
-          {
-            "title": "Trump denies responsibility for FAA nationwide ground stop",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/11/16/trump-denies-responsibility-for-faa-nationwide-ground-stop?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Mon, 16 Nov 2026 17:08:10 +0000",
-            "snippet": "Trump denies responsibility for FAA nationwide ground stop",
-            "isNew": true
-          },
-          {
-            "title": "Eisenkot Accuses Netanyahu of Fueling ‘Racist’ Hostility Against Arabs",
-            "link": "https://www.nytimes.com/2026/11/13/world/middleeast/eisenkot-netanyahu-racism-arabs.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes",
-              "aljazeera"
-            ],
-            "pubDate": "Fri, 13 Nov 2026 21:50:12 +0000",
-            "snippet": "Gadi Eisenkot sharply criticized Prime Minister Benjamin Netanyahu days after the Israeli leader attacked Arab lawmakers in a divisive speech.",
-            "isNew": true
-          },
-          {
-            "title": "‘My arms are empty’: Tragedy strikes Gaza family after baby dies from cold",
-            "link": "https://www.aljazeera.com/features/2026/11/16/my-arms-are-empty-gaza-mothers-brace-for-another-winter-of-cold-and-fear?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Mon, 16 Nov 2026 14:20:43 +0000",
-            "snippet": "A nine-month-old baby has died from hypothermia inside his family’s displacement tent in Gaza, as winter returns.",
-            "isNew": true
-          },
-          {
-            "title": "Russian attacks kill three in Ukraine, EU accuses Moscow of prolonging war",
-            "link": "https://www.aljazeera.com/news/2026/11/16/russian-attacks-kill-three-in-ukraine-eu-accuses-moscow-of-prolonging-war?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Mon, 16 Nov 2026 13:28:23 +0000",
-            "snippet": "EU foreign policy chief Kaja Kallas says Russian President Vladimir Putin is making maximalist demands.",
             "isNew": true
           },
           {
@@ -632,6 +686,17 @@
             "pubDate": "Sun, 15 Nov 2026 08:17:41 GMT",
             "snippet": "Both Hamas and IDF officials confirm the death of Samir Abu Younis, commander of the Rafah Brigade.",
             "isNew": true
+          },
+          {
+            "title": "Terror from the skies: drones are redefining warfare in Sudan, and massacring its civilians",
+            "link": "https://www.theguardian.com/world/2026/nov/14/drones-redefining-warfare-sudan-massacring-civilians",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Sat, 14 Nov 2026 06:00:37 GMT",
+            "snippet": "Strikes with huge death tolls are an increasing occurrence as UAVs ‘bring the war to places that were once safe’The first drone struck the busy transport hub near a market in Al-Dibab as hundreds of p",
+            "isNew": true
           }
         ]
       },
@@ -639,8 +704,8 @@
         "category_id": "regional",
         "category_name": "지역 정세",
         "category_icon": "🌍",
-        "count": 7,
-        "new_count": 7,
+        "count": 8,
+        "new_count": 8,
         "articles": [
           {
             "title": "Bahrain court sentences dozens of Shia Muslims to life in prison, activists say",
@@ -649,8 +714,19 @@
             "sources": [
               "bbc"
             ],
-            "pubDate": "Mon, 16 Nov 2026 15:46:21 GMT",
+            "pubDate": "Mon, 16 Nov 2026 23:01:47 GMT",
             "snippet": "Most of those jailed on Iran-linked terrorism charges are clerics, a UK-based human rights group, claiming confessions were forced.\n\nBahraini authorities accused the 69 unnamed defendants of establish",
+            "isNew": true
+          },
+          {
+            "title": "Saudi Arabia dismisses commander of coalition forces fighting Houthis",
+            "link": "https://www.aljazeera.com/news/2026/11/16/saudi-arabia-dismisses-commander-of-coalition-forces-fighting-houthis?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Mon, 16 Nov 2026 19:19:21 +0000",
+            "snippet": "Move comes as government forces withdraw from Red Sea coast to halt Houthi approach to interim capital Aden.",
             "isNew": true
           },
           {
@@ -722,76 +798,76 @@
         ]
       },
       {
-        "category_id": "economy",
-        "category_name": "경제 영향",
-        "category_icon": "📊",
+        "category_id": "diplomacy",
+        "category_name": "외교/협상",
+        "category_icon": "🤝",
         "count": 6,
         "new_count": 6,
         "articles": [
           {
-            "title": "Iran braces for natural gas shortages during winter energy imbalance",
-            "link": "https://www.aljazeera.com/news/2026/11/16/iran-braces-for-natural-gas-shortages-during-winter-energy-imbalance?traffic_source=rss",
+            "title": "Ukraine holds peace talks with US, Europe as conflict escalates",
+            "link": "https://www.aljazeera.com/news/2026/11/17/ukraine-holds-peace-talks-with-us-europe-as-conflict-escalates?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Mon, 16 Nov 2026 16:58:46 +0000",
-            "snippet": "The gas infrastructure in Iran has suffered from underdevelopment and sanctions, and now damage from the war.",
+            "pubDate": "Tue, 17 Nov 2026 00:45:11 +0000",
+            "snippet": "Kushner reports progress towards a deal, but Moscow says it has not agreed to European participation in the next talks.",
             "isNew": true
           },
           {
-            "title": "Oil tankers hit sea mines in the Strait of Hormuz",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/11/16/oil-tankers-hit-sea-mines-in-the-strait-of-hormuz?traffic_source=rss",
+            "title": "Trump departs for ASEAN on summit with Xi and Putin",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/11/16/trump-departs-for-asean-on-summit-with-xi-and-putin?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Mon, 16 Nov 2026 15:37:49 +0000",
-            "snippet": "Oil tankers hit sea mines in the Strait of Hormuz",
+            "pubDate": "Mon, 16 Nov 2026 23:42:03 +0000",
+            "snippet": "Donald Trump is heading to the Philippines where he’s scheduled to speak at a meeting of ASEAN leaders in Manila.",
             "isNew": true
           },
           {
-            "title": "Bahrain Convicts Dozens of Shiite Clerics in Sweeping Terrorism Trial",
-            "link": "https://www.nytimes.com/2026/11/16/world/middleeast/bahrain-shiite-clerics-convicted.html",
+            "title": "What will Europe do next in Ukraine?",
+            "link": "https://www.aljazeera.com/video/inside-story/2026/11/16/what-will-europe-do-next-in-ukraine?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Mon, 16 Nov 2026 20:12:21 +0000",
+            "snippet": "There is division within the European Union over diplomatic strategy for efforts to end the Russia-Ukraine war.",
+            "isNew": true
+          },
+          {
+            "title": "Iran Attacks Bahrain for the Second Time in Days",
+            "link": "https://www.nytimes.com/2026/11/15/world/middleeast/bahrain-iran-israel.html",
             "source": "nytimes",
             "sources": [
               "nytimes"
             ],
-            "pubDate": "Mon, 16 Nov 2026 15:25:21 +0000",
-            "snippet": "The defendants were accused of colluding with Iran. Rights groups said the case was marred by torture allegations and raised concerns about religious persecution.",
+            "pubDate": "Sun, 15 Nov 2026 15:55:09 +0000",
+            "snippet": "The resumption of attacks after a two-month lull comes as peace talks between the U.S. and Iran appear to have stalled.",
             "isNew": true
           },
           {
-            "title": "Eisenkot condemns Netanyahu’s ‘racist’ campaign against Israel’s Arab citizens",
-            "link": "https://www.theguardian.com/world/2026/nov/13/eisenkot-accuses-netanyahu-of-racist-campaign-against-israels-arab-minority",
+            "title": "The U.S.-Israel Relationship Is Broken. Here’s How Eisenkot Could Fix It.",
+            "link": "https://www.nytimes.com/2026/11/13/world/middleeast/israel-trump-eisenkot.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Fri, 13 Nov 2026 09:45:38 +0000",
+            "snippet": "Former Israeli and U.S. ambassadors, lawmakers and analysts largely agree on steps Gadi Eisenkot could take if he becomes prime minister. But they are risky.",
+            "isNew": true
+          },
+          {
+            "title": "The Guardian view on Gaza’s misery: don’t let Palestinian deaths mount in this bleak winter | Editorial",
+            "link": "https://www.theguardian.com/commentisfree/2026/nov/12/the-guardian-view-on-gazas-misery-dont-let-palestinian-deaths-mount-in-this-bleak-winter",
             "source": "guardian",
             "sources": [
               "guardian"
             ],
-            "pubDate": "Sat, 14 Nov 2026 11:11:03 GMT",
-            "snippet": "Prime ministerial hopeful calls Arab minority ‘an integral part of the Israeli story’ as he seeks to form governmentIsraeli prime ministerial hopeful Gadi Eisenkot condemned a “racist and aggressive c",
-            "isNew": true
-          },
-          {
-            "title": "The Guardian view on press freedom: authoritarians target journalism because it matters | Editorial",
-            "link": "https://www.theguardian.com/commentisfree/2026/nov/13/the-guardian-view-on-press-freedom-authoritarians-target-journalism-because-it-matters",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Fri, 13 Nov 2026 18:01:46 GMT",
-            "snippet": "From Cairo to Moscow to Washington, governments are turning up the pressure on media workersLina Attalah is an influential Egyptian journalist. Yet until last month, even she was unaware of a major an",
-            "isNew": true
-          },
-          {
-            "title": "Egyptian journalist's retrial adjourned as UN warns of 'assaults on press freedom'",
-            "link": "https://www.bbc.co.uk/news/articles/cmkg5jr59835o?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
-            "sources": [
-              "bbc"
-            ],
-            "pubDate": "Wed, 11 Nov 2026 13:25:47 GMT",
-            "snippet": "Mada Masr editor-in-chief Lina Attalah is being tried on the charge of \"publishing false news\" and potentially faces imprisonment.",
+            "pubDate": "Thu, 12 Nov 2026 18:54:58 GMT",
+            "snippet": "The formation of a new Israeli government won’t stop the killing, but sustained international pressure must be appliedWhat do you call a ceasefire when the firing has not ceased? The killings in&nbsp;",
             "isNew": true
           }
         ]
@@ -800,8 +876,8 @@
         "category_id": "humanitarian",
         "category_name": "인도주의/피해",
         "category_icon": "🏥",
-        "count": 6,
-        "new_count": 6,
+        "count": 5,
+        "new_count": 5,
         "articles": [
           {
             "title": "‘Let the aid in’: Deadly winter approaches in Gaza - The Latest",
@@ -857,16 +933,69 @@
             "pubDate": "Thu, 12 Nov 2026 17:38:28 +0000",
             "snippet": "The Israeli authorities said that Hamas had established a command center at the hospital complex. Hamas said the attack was “a heinous crime targeting a civilian medical facility.”",
             "isNew": true
+          }
+        ]
+      },
+      {
+        "category_id": "politics",
+        "category_name": "국내 정치",
+        "category_icon": "🏛️",
+        "count": 5,
+        "new_count": 5,
+        "articles": [
+          {
+            "title": "Israeli opposition accuses Netanyahu of attempted ‘coup’",
+            "link": "https://www.aljazeera.com/news/2026/11/16/israeli-opposition-accuses-netanyahu-of-attempted-coup?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Mon, 16 Nov 2026 20:00:07 +0000",
+            "snippet": "Rivals call for investigation into reports that PM&#039;s office tried to frame Arab parties.",
+            "isNew": true
           },
           {
-            "title": "NAZA: how and where to watch the Guardian’s acclaimed Gaza documentary",
-            "link": "https://www.theguardian.com/global/2026/nov/12/naza-how-to-watch-guardian-acclaimed-gaza-documentary",
+            "title": "Though Trump is giving him the cold shoulder, Netanyahu is pulling out all the stops to cling to power. And he just might | Simon Tisdall",
+            "link": "https://www.theguardian.com/commentisfree/2026/nov/16/donald-trump-benjamin-netanyahu-power-israel-pm",
             "source": "guardian",
             "sources": [
               "guardian"
             ],
-            "pubDate": "Thu, 12 Nov 2026 14:23:50 GMT",
-            "snippet": "Film features testimony from 24 Israeli officials involved in surveillance and remote killing of Palestinian civilians• NAZA is in cinemas worldwide and will screen for free on the Guardian’s website ",
+            "pubDate": "Mon, 16 Nov 2026 15:00:46 GMT",
+            "snippet": "The downfall of the Israeli PM may seem inevitable now; it is anything but. He must be ejected from office and brought to justiceIt’s unsporting to kick a man when he’s down. But let’s make an excepti",
+            "isNew": true
+          },
+          {
+            "title": "Yalta became a byword for betrayal. Will Trump, Xi and Putin enact another carve-up?",
+            "link": "https://www.theguardian.com/world/2026/nov/14/yalta-trump-xi-putin-china-apec",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Sat, 14 Nov 2026 07:00:40 GMT",
+            "snippet": "Russia and US approach potential summit seeking China’s help to extricate them from wars of choice, as Putin hopes to find consensus on new global orderThe Ukrainian president, Volodymyr Zelenskyy, is",
+            "isNew": true
+          },
+          {
+            "title": "Trump Signals New Strategy on Iran: A Waiting Game",
+            "link": "https://www.nytimes.com/2026/11/13/us/politics/trump-iran-strategy.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Fri, 13 Nov 2026 18:20:50 +0000",
+            "snippet": "The administration appears to be moving toward a long-term economic pressure campaign as President Trump expresses little urgency in securing a nuclear agreement.",
+            "isNew": true
+          },
+          {
+            "title": "Israeli Opposition Pushes for Oct. 7 Inquiry at First Session of New Parliament",
+            "link": "https://www.nytimes.com/2026/11/10/world/middleeast/israel-parliament-eisenkot.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Wed, 11 Nov 2026 03:33:32 +0000",
+            "snippet": "Dozens of first-time lawmakers were sworn into the Knesset, where the opposition, led by Gadi Eisenkot, now has a majority.",
             "isNew": true
           }
         ]
@@ -875,29 +1004,18 @@
         "category_id": "other",
         "category_name": "기타",
         "category_icon": "📰",
-        "count": 6,
-        "new_count": 6,
+        "count": 5,
+        "new_count": 5,
         "articles": [
           {
-            "title": "Israeli court upholds detention of Palestinian land activist Ghassan Najjar",
-            "link": "https://www.aljazeera.com/news/2026/11/16/israeli-court-upholds-detention-of-palestinian-land-activist-ghassan-najjar?traffic_source=rss",
+            "title": "Photos: California residents gather to watch massive El Nino-fuelled waves",
+            "link": "https://www.aljazeera.com/gallery/2026/11/16/photos-california-residents-gather-to-watch-massive-el-nino-fuelled-waves?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Mon, 16 Nov 2026 17:49:16 +0000",
-            "snippet": "Occupied West Bank land defender is set to remain in detention until at least February 26 next year.",
-            "isNew": true
-          },
-          {
-            "title": "Israeli forces demolish the homes of two Palestinian prisoners",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/11/16/israeli-forces-demolish-the-homes-of-two-palestinian-prisoners?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Mon, 16 Nov 2026 16:56:54 +0000",
-            "snippet": "Israeli forces demolished the homes of two Palestinian prisoners as Al Jazeera’s Nida Ibrahim was reporting ",
+            "pubDate": "Mon, 16 Nov 2026 20:42:18 +0000",
+            "snippet": "National Weather Service warns that waves of more than 10 metres high could impact some parts of US&#039;s California coast.",
             "isNew": true
           },
           {
@@ -932,89 +1050,69 @@
             "pubDate": "Thu, 12 Nov 2026 18:54:00 GMT",
             "snippet": "The men were convicted of engaging in conduct likely to assist an Iranian intelligence service.",
             "isNew": true
-          }
-        ]
-      },
-      {
-        "category_id": "diplomacy",
-        "category_name": "외교/협상",
-        "category_icon": "🤝",
-        "count": 3,
-        "new_count": 3,
-        "articles": [
+          },
           {
-            "title": "Iran Attacks Bahrain for the Second Time in Days",
-            "link": "https://www.nytimes.com/2026/11/15/world/middleeast/bahrain-iran-israel.html",
+            "title": "Israel’s Arrest of Journalist Abed Abu Shehadeh Raises Concerns",
+            "link": "https://www.nytimes.com/2026/11/12/world/middleeast/israel-shin-bet-shehadeh-netanyahu.html",
             "source": "nytimes",
             "sources": [
               "nytimes"
             ],
-            "pubDate": "Sun, 15 Nov 2026 15:55:09 +0000",
-            "snippet": "The resumption of attacks after a two-month lull comes as peace talks between the U.S. and Iran appear to have stalled.",
-            "isNew": true
-          },
-          {
-            "title": "The U.S.-Israel Relationship Is Broken. Here’s How Eisenkot Could Fix It.",
-            "link": "https://www.nytimes.com/2026/11/13/world/middleeast/israel-trump-eisenkot.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Fri, 13 Nov 2026 09:45:38 +0000",
-            "snippet": "Former Israeli and U.S. ambassadors, lawmakers and analysts largely agree on steps Gadi Eisenkot could take if he becomes prime minister. But they are risky.",
-            "isNew": true
-          },
-          {
-            "title": "The Guardian view on Gaza’s misery: don’t let Palestinian deaths mount in this bleak winter | Editorial",
-            "link": "https://www.theguardian.com/commentisfree/2026/nov/12/the-guardian-view-on-gazas-misery-dont-let-palestinian-deaths-mount-in-this-bleak-winter",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Thu, 12 Nov 2026 18:54:58 GMT",
-            "snippet": "The formation of a new Israeli government won’t stop the killing, but sustained international pressure must be appliedWhat do you call a ceasefire when the firing has not ceased? The killings in&nbsp;",
+            "pubDate": "Thu, 12 Nov 2026 14:43:08 +0000",
+            "snippet": "Abed Abu Shehadeh, a Palestinian citizen of Israel, was detained without being charged with a crime, raising concerns that the domestic security service is overstepping its authority.",
             "isNew": true
           }
         ]
       },
       {
-        "category_id": "politics",
-        "category_name": "국내 정치",
-        "category_icon": "🏛️",
-        "count": 3,
-        "new_count": 3,
+        "category_id": "economy",
+        "category_name": "경제 영향",
+        "category_icon": "📊",
+        "count": 4,
+        "new_count": 4,
         "articles": [
           {
-            "title": "Though Trump is giving him the cold shoulder, Netanyahu is pulling out all the stops to cling to power. And he just might | Simon Tisdall",
-            "link": "https://www.theguardian.com/commentisfree/2026/nov/16/donald-trump-benjamin-netanyahu-power-israel-pm",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Mon, 16 Nov 2026 15:00:46 GMT",
-            "snippet": "The downfall of the Israeli PM may seem inevitable now; it is anything but. He must be ejected from office and brought to justiceIt’s unsporting to kick a man when he’s down. But let’s make an excepti",
-            "isNew": true
-          },
-          {
-            "title": "Yalta became a byword for betrayal. Will Trump, Xi and Putin enact another carve-up?",
-            "link": "https://www.theguardian.com/world/2026/nov/14/yalta-trump-xi-putin-china-apec",
-            "source": "guardian",
-            "sources": [
-              "guardian"
-            ],
-            "pubDate": "Sat, 14 Nov 2026 07:00:40 GMT",
-            "snippet": "Russia and US approach potential summit seeking China’s help to extricate them from wars of choice, as Putin hopes to find consensus on new global orderThe Ukrainian president, Volodymyr Zelenskyy, is",
-            "isNew": true
-          },
-          {
-            "title": "Trump Signals New Strategy on Iran: A Waiting Game",
-            "link": "https://www.nytimes.com/2026/11/13/us/politics/trump-iran-strategy.html",
+            "title": "Bahrain Convicts Dozens of Shiite Clerics in Sweeping Terrorism Trial",
+            "link": "https://www.nytimes.com/2026/11/16/world/middleeast/bahrain-shiite-clerics-convicted.html",
             "source": "nytimes",
             "sources": [
               "nytimes"
             ],
-            "pubDate": "Fri, 13 Nov 2026 18:20:50 +0000",
-            "snippet": "The administration appears to be moving toward a long-term economic pressure campaign as President Trump expresses little urgency in securing a nuclear agreement.",
+            "pubDate": "Mon, 16 Nov 2026 18:58:10 +0000",
+            "snippet": "The defendants were accused of colluding with Iran. Rights groups said the case was marred by torture allegations and raised concerns about religious persecution.",
+            "isNew": true
+          },
+          {
+            "title": "Eisenkot condemns Netanyahu’s ‘racist’ campaign against Israel’s Arab citizens",
+            "link": "https://www.theguardian.com/world/2026/nov/13/eisenkot-accuses-netanyahu-of-racist-campaign-against-israels-arab-minority",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Sat, 14 Nov 2026 11:11:03 GMT",
+            "snippet": "Prime ministerial hopeful calls Arab minority ‘an integral part of the Israeli story’ as he seeks to form governmentIsraeli prime ministerial hopeful Gadi Eisenkot condemned a “racist and aggressive c",
+            "isNew": true
+          },
+          {
+            "title": "The Guardian view on press freedom: authoritarians target journalism because it matters | Editorial",
+            "link": "https://www.theguardian.com/commentisfree/2026/nov/13/the-guardian-view-on-press-freedom-authoritarians-target-journalism-because-it-matters",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Fri, 13 Nov 2026 18:01:46 GMT",
+            "snippet": "From Cairo to Moscow to Washington, governments are turning up the pressure on media workersLina Attalah is an influential Egyptian journalist. Yet until last month, even she was unaware of a major an",
+            "isNew": true
+          },
+          {
+            "title": "Egyptian journalist's retrial adjourned as UN warns of 'assaults on press freedom'",
+            "link": "https://www.bbc.co.uk/news/articles/cmkg5jr59835o?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc"
+            ],
+            "pubDate": "Wed, 11 Nov 2026 13:25:47 GMT",
+            "snippet": "Mada Masr editor-in-chief Lina Attalah is being tried on the charge of \"publishing false news\" and potentially faces imprisonment.",
             "isNew": true
           }
         ]
@@ -1043,8 +1141,183 @@
     "recent_30min": {
       "total_new": 49,
       "by_category": {
-        "humanitarian": {
+        "military": {
+          "count": 15,
+          "titles": [
+            {
+              "title": "Yemeni army reports 661 attacks on Houthis as group advances towards Aden",
+              "link": "https://www.aljazeera.com/news/2026/11/17/yemen-army-reports-661-attacks-on-houthis-amid-houthi-push-towards-aden?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Iran war live: Houthis advance in Yemen as Vance rejects ‘forever war’",
+              "link": "https://www.aljazeera.com/news/liveblog/2026/11/16/live-houthis-advance-in-yemen-as-tankers-hit-sea-mines-in-strait-of-hormuz?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Houthi rebel advance in Yemen may further destabilise global economy",
+              "link": "https://www.bbc.co.uk/news/articles/cmy97qperq9eo?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
+            },
+            {
+              "title": "Third US aircraft carrier brings thousands more troops to Middle East",
+              "link": "https://www.theguardian.com/us-news/2026/nov/16/aircraft-middle-east-trump-military",
+              "source": "guardian"
+            },
+            {
+              "title": "Airstrikes on Iran Missile Sites May Shed Light on Justification for Dams",
+              "link": "https://www.nytimes.com/2026/11/16/world/middleeast/iran-dams-missile-sites-environmentalists.html",
+              "source": "nytimes"
+            }
+          ]
+        },
+        "diplomacy": {
           "count": 6,
+          "titles": [
+            {
+              "title": "Ukraine holds peace talks with US, Europe as conflict escalates",
+              "link": "https://www.aljazeera.com/news/2026/11/17/ukraine-holds-peace-talks-with-us-europe-as-conflict-escalates?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Trump departs for ASEAN on summit with Xi and Putin",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/11/16/trump-departs-for-asean-on-summit-with-xi-and-putin?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "What will Europe do next in Ukraine?",
+              "link": "https://www.aljazeera.com/video/inside-story/2026/11/16/what-will-europe-do-next-in-ukraine?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Iran Attacks Bahrain for the Second Time in Days",
+              "link": "https://www.nytimes.com/2026/11/15/world/middleeast/bahrain-iran-israel.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "The U.S.-Israel Relationship Is Broken. Here’s How Eisenkot Could Fix It.",
+              "link": "https://www.nytimes.com/2026/11/13/world/middleeast/israel-trump-eisenkot.html",
+              "source": "nytimes"
+            }
+          ]
+        },
+        "regional": {
+          "count": 8,
+          "titles": [
+            {
+              "title": "Bahrain court sentences dozens of Shia Muslims to life in prison, activists say",
+              "link": "https://www.bbc.co.uk/news/articles/cmx20pyew3zxo?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
+            },
+            {
+              "title": "Saudi Arabia dismisses commander of coalition forces fighting Houthis",
+              "link": "https://www.aljazeera.com/news/2026/11/16/saudi-arabia-dismisses-commander-of-coalition-forces-fighting-houthis?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Saudi-Backed Forces Retreat in Yemen, Leaving Key Strait in Houthi Control",
+              "link": "https://www.nytimes.com/2026/11/15/world/middleeast/saudi-houthis-yemen-red-sea.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Saudi Arabia, Qatar, Jordan, Egypt condemn Iranian attack on Bahrain - as it happened",
+              "link": "https://www.theguardian.com/world/live/2026/nov/15/middle-east-crisis-live-iran-bahrain-strikes-gulf-donald-trump-us-israel-yemen-houthis",
+              "source": "guardian"
+            },
+            {
+              "title": "Britain’s veto could stop the UAE’s choice from running the United Nations. Miliband must use it | Steve Bloomfield",
+              "link": "https://www.theguardian.com/commentisfree/2026/nov/15/britain-veto-uae-united-nations-miliband-lana-nusseibeh-russia-us-sudan",
+              "source": "guardian"
+            }
+          ]
+        },
+        "other": {
+          "count": 5,
+          "titles": [
+            {
+              "title": "Photos: California residents gather to watch massive El Nino-fuelled waves",
+              "link": "https://www.aljazeera.com/gallery/2026/11/16/photos-california-residents-gather-to-watch-massive-el-nino-fuelled-waves?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "In Europe, an Emboldened Iran Contributes to a Sense of Anxiety",
+              "link": "https://www.nytimes.com/2026/11/15/world/europe/iran-attacks-threats-europe.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Two men found guilty of helping Iran try to ‘eliminate’ UK-based journalists",
+              "link": "https://www.theguardian.com/uk-news/2026/nov/12/two-men-found-guilty-over-iranian-attempts-to-eliminate-uk-based-journalists",
+              "source": "guardian"
+            },
+            {
+              "title": "Two men guilty of spying for Iran over plan to target journalists and lawyer",
+              "link": "https://www.bbc.co.uk/news/articles/ck9q8g8209l2o?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
+            },
+            {
+              "title": "Israel’s Arrest of Journalist Abed Abu Shehadeh Raises Concerns",
+              "link": "https://www.nytimes.com/2026/11/12/world/middleeast/israel-shin-bet-shehadeh-netanyahu.html",
+              "source": "nytimes"
+            }
+          ]
+        },
+        "politics": {
+          "count": 5,
+          "titles": [
+            {
+              "title": "Israeli opposition accuses Netanyahu of attempted ‘coup’",
+              "link": "https://www.aljazeera.com/news/2026/11/16/israeli-opposition-accuses-netanyahu-of-attempted-coup?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Though Trump is giving him the cold shoulder, Netanyahu is pulling out all the stops to cling to power. And he just might | Simon Tisdall",
+              "link": "https://www.theguardian.com/commentisfree/2026/nov/16/donald-trump-benjamin-netanyahu-power-israel-pm",
+              "source": "guardian"
+            },
+            {
+              "title": "Yalta became a byword for betrayal. Will Trump, Xi and Putin enact another carve-up?",
+              "link": "https://www.theguardian.com/world/2026/nov/14/yalta-trump-xi-putin-china-apec",
+              "source": "guardian"
+            },
+            {
+              "title": "Trump Signals New Strategy on Iran: A Waiting Game",
+              "link": "https://www.nytimes.com/2026/11/13/us/politics/trump-iran-strategy.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Israeli Opposition Pushes for Oct. 7 Inquiry at First Session of New Parliament",
+              "link": "https://www.nytimes.com/2026/11/10/world/middleeast/israel-parliament-eisenkot.html",
+              "source": "nytimes"
+            }
+          ]
+        },
+        "economy": {
+          "count": 4,
+          "titles": [
+            {
+              "title": "Bahrain Convicts Dozens of Shiite Clerics in Sweeping Terrorism Trial",
+              "link": "https://www.nytimes.com/2026/11/16/world/middleeast/bahrain-shiite-clerics-convicted.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Eisenkot condemns Netanyahu’s ‘racist’ campaign against Israel’s Arab citizens",
+              "link": "https://www.theguardian.com/world/2026/nov/13/eisenkot-accuses-netanyahu-of-racist-campaign-against-israels-arab-minority",
+              "source": "guardian"
+            },
+            {
+              "title": "The Guardian view on press freedom: authoritarians target journalism because it matters | Editorial",
+              "link": "https://www.theguardian.com/commentisfree/2026/nov/13/the-guardian-view-on-press-freedom-authoritarians-target-journalism-because-it-matters",
+              "source": "guardian"
+            },
+            {
+              "title": "Egyptian journalist's retrial adjourned as UN warns of 'assaults on press freedom'",
+              "link": "https://www.bbc.co.uk/news/articles/cmkg5jr59835o?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
+            }
+          ]
+        },
+        "humanitarian": {
+          "count": 5,
           "titles": [
             {
               "title": "‘Let the aid in’: Deadly winter approaches in Gaza - The Latest",
@@ -1070,171 +1343,6 @@
               "title": "Israeli Strikes on Gaza Hospital Kill 6 and Injure Dozens, Health Officials Say",
               "link": "https://www.nytimes.com/2026/11/11/world/middleeast/nasser-hospital-gaza-strike-israel.html",
               "source": "nytimes"
-            }
-          ]
-        },
-        "other": {
-          "count": 6,
-          "titles": [
-            {
-              "title": "Israeli court upholds detention of Palestinian land activist Ghassan Najjar",
-              "link": "https://www.aljazeera.com/news/2026/11/16/israeli-court-upholds-detention-of-palestinian-land-activist-ghassan-najjar?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Israeli forces demolish the homes of two Palestinian prisoners",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/11/16/israeli-forces-demolish-the-homes-of-two-palestinian-prisoners?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "In Europe, an Emboldened Iran Contributes to a Sense of Anxiety",
-              "link": "https://www.nytimes.com/2026/11/15/world/europe/iran-attacks-threats-europe.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Two men found guilty of helping Iran try to ‘eliminate’ UK-based journalists",
-              "link": "https://www.theguardian.com/uk-news/2026/nov/12/two-men-found-guilty-over-iranian-attempts-to-eliminate-uk-based-journalists",
-              "source": "guardian"
-            },
-            {
-              "title": "Two men guilty of spying for Iran over plan to target journalists and lawyer",
-              "link": "https://www.bbc.co.uk/news/articles/ck9q8g8209l2o?at_medium=RSS&at_campaign=rss",
-              "source": "bbc"
-            }
-          ]
-        },
-        "military": {
-          "count": 16,
-          "titles": [
-            {
-              "title": "Airstrikes on Iran Missile Sites May Shed Light on Justification for Dams",
-              "link": "https://www.nytimes.com/2026/11/16/world/middleeast/iran-dams-missile-sites-environmentalists.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Iraq deploys army to stronghold of Iran-backed Kataib Hezbollah",
-              "link": "https://www.aljazeera.com/news/2026/11/16/iran-deploys-army-to-stronghold-of-iran-backed-kataib-hezbollah?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Trump denies responsibility for FAA nationwide ground stop",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/11/16/trump-denies-responsibility-for-faa-nationwide-ground-stop?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "‘My arms are empty’: Tragedy strikes Gaza family after baby dies from cold",
-              "link": "https://www.aljazeera.com/features/2026/11/16/my-arms-are-empty-gaza-mothers-brace-for-another-winter-of-cold-and-fear?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Russian attacks kill three in Ukraine, EU accuses Moscow of prolonging war",
-              "link": "https://www.aljazeera.com/news/2026/11/16/russian-attacks-kill-three-in-ukraine-eu-accuses-moscow-of-prolonging-war?traffic_source=rss",
-              "source": "aljazeera"
-            }
-          ]
-        },
-        "economy": {
-          "count": 6,
-          "titles": [
-            {
-              "title": "Iran braces for natural gas shortages during winter energy imbalance",
-              "link": "https://www.aljazeera.com/news/2026/11/16/iran-braces-for-natural-gas-shortages-during-winter-energy-imbalance?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Oil tankers hit sea mines in the Strait of Hormuz",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/11/16/oil-tankers-hit-sea-mines-in-the-strait-of-hormuz?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Bahrain Convicts Dozens of Shiite Clerics in Sweeping Terrorism Trial",
-              "link": "https://www.nytimes.com/2026/11/16/world/middleeast/bahrain-shiite-clerics-convicted.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Eisenkot condemns Netanyahu’s ‘racist’ campaign against Israel’s Arab citizens",
-              "link": "https://www.theguardian.com/world/2026/nov/13/eisenkot-accuses-netanyahu-of-racist-campaign-against-israels-arab-minority",
-              "source": "guardian"
-            },
-            {
-              "title": "The Guardian view on press freedom: authoritarians target journalism because it matters | Editorial",
-              "link": "https://www.theguardian.com/commentisfree/2026/nov/13/the-guardian-view-on-press-freedom-authoritarians-target-journalism-because-it-matters",
-              "source": "guardian"
-            }
-          ]
-        },
-        "politics": {
-          "count": 4,
-          "titles": [
-            {
-              "title": "Jerusalem Daily: Eisenkot wants Netanyahu out",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/11/16/jerusalem-daily-eisenkot-wants-netanyahu-out?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Though Trump is giving him the cold shoulder, Netanyahu is pulling out all the stops to cling to power. And he just might | Simon Tisdall",
-              "link": "https://www.theguardian.com/commentisfree/2026/nov/16/donald-trump-benjamin-netanyahu-power-israel-pm",
-              "source": "guardian"
-            },
-            {
-              "title": "Yalta became a byword for betrayal. Will Trump, Xi and Putin enact another carve-up?",
-              "link": "https://www.theguardian.com/world/2026/nov/14/yalta-trump-xi-putin-china-apec",
-              "source": "guardian"
-            },
-            {
-              "title": "Trump Signals New Strategy on Iran: A Waiting Game",
-              "link": "https://www.nytimes.com/2026/11/13/us/politics/trump-iran-strategy.html",
-              "source": "nytimes"
-            }
-          ]
-        },
-        "regional": {
-          "count": 7,
-          "titles": [
-            {
-              "title": "Bahrain court sentences dozens of Shia Muslims to life in prison, activists say",
-              "link": "https://www.bbc.co.uk/news/articles/cmx20pyew3zxo?at_medium=RSS&at_campaign=rss",
-              "source": "bbc"
-            },
-            {
-              "title": "Saudi-Backed Forces Retreat in Yemen, Leaving Key Strait in Houthi Control",
-              "link": "https://www.nytimes.com/2026/11/15/world/middleeast/saudi-houthis-yemen-red-sea.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Saudi Arabia, Qatar, Jordan, Egypt condemn Iranian attack on Bahrain - as it happened",
-              "link": "https://www.theguardian.com/world/live/2026/nov/15/middle-east-crisis-live-iran-bahrain-strikes-gulf-donald-trump-us-israel-yemen-houthis",
-              "source": "guardian"
-            },
-            {
-              "title": "Britain’s veto could stop the UAE’s choice from running the United Nations. Miliband must use it | Steve Bloomfield",
-              "link": "https://www.theguardian.com/commentisfree/2026/nov/15/britain-veto-uae-united-nations-miliband-lana-nusseibeh-russia-us-sudan",
-              "source": "guardian"
-            },
-            {
-              "title": "They Left Iran, but Now the Regime Is Seizing Their Assets to Silence Them",
-              "link": "https://www.nytimes.com/2026/11/12/world/middleeast/iran-confiscations-assets-dissidents.html",
-              "source": "nytimes"
-            }
-          ]
-        },
-        "diplomacy": {
-          "count": 3,
-          "titles": [
-            {
-              "title": "Iran Attacks Bahrain for the Second Time in Days",
-              "link": "https://www.nytimes.com/2026/11/15/world/middleeast/bahrain-iran-israel.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "The U.S.-Israel Relationship Is Broken. Here’s How Eisenkot Could Fix It.",
-              "link": "https://www.nytimes.com/2026/11/13/world/middleeast/israel-trump-eisenkot.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "The Guardian view on Gaza’s misery: don’t let Palestinian deaths mount in this bleak winter | Editorial",
-              "link": "https://www.theguardian.com/commentisfree/2026/nov/12/the-guardian-view-on-gazas-misery-dont-let-palestinian-deaths-mount-in-this-bleak-winter",
-              "source": "guardian"
             }
           ]
         },
@@ -1338,50 +1446,66 @@
     }
   ],
   "economic_indicators": {
-    "BRENT": {
-      "price": 92.7,
-      "change": -3.14,
-      "changePercent": -3.28,
-      "prev": 95.84
-    },
-    "VIX": {
-      "price": 23.12,
-      "change": 3.82,
-      "changePercent": 19.79,
-      "prev": 19.3
-    },
-    "GOLD": {
-      "price": 3849.6,
-      "change": -36.7,
-      "changePercent": -0.94,
-      "prev": 3886.3
+    "WTI": {
+      "price": 85,
+      "change": -0.72,
+      "changePercent": -0.84,
+      "prev": 85.72
     },
     "US10Y": {
       "price": 5.12,
-      "change": -0.04,
-      "changePercent": -0.78,
+      "change": -0.03,
+      "changePercent": -0.58,
       "prev": 5.15
-    },
-    "DXY": {
-      "price": 103.6,
-      "change": 0.19,
-      "changePercent": 0.18,
-      "prev": 103.41
     },
     "US2Y": {
       "price": 4.13,
-      "change": 0.01,
-      "changePercent": 0.24,
+      "change": 0,
+      "changePercent": 0,
       "prev": 4.12
     },
-    "WTI": {
-      "price": 85.7,
-      "change": -2.86,
-      "changePercent": -3.23,
-      "prev": 88.56
+    "VIX": {
+      "price": 22.91,
+      "change": 3.61,
+      "changePercent": 18.7,
+      "prev": 19.3
+    },
+    "BRENT": {
+      "price": 91.64,
+      "change": -4.2,
+      "changePercent": -4.38,
+      "prev": 95.84
+    },
+    "DXY": {
+      "price": 103.64,
+      "change": 0.23,
+      "changePercent": 0.22,
+      "prev": 103.41
+    },
+    "GOLD": {
+      "price": 3869.5,
+      "change": 16.5,
+      "changePercent": 0.43,
+      "prev": 3853
     }
   },
   "critical_events": [
+    {
+      "id": "unilateral_deescalation",
+      "name": "일방적 전투 축소/자제 선언",
+      "severity": "high",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "shorten"
+    },
+    {
+      "id": "diplomatic_breakthrough",
+      "name": "외교적 돌파구/강대국 중재",
+      "severity": "high",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "shorten"
+    },
     {
       "id": "capital_attack",
       "name": "수도 직접 공격/포위",
