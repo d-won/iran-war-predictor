@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-11-18T18:58:48.134Z",
-  "war_day": 263,
+  "timestamp": "2026-11-19T01:01:13.377Z",
+  "war_day": 264,
   "probabilities": {
-    "1개월 내 (~3월)": 20,
-    "2~3개월 (4~5월)": 40.3,
-    "4~6개월 (6~8월)": 24.3,
-    "7~12개월 (9월~27/2월)": 11.7,
-    "1년 초과": 3.7
+    "1개월 내 (~3월)": 25.8,
+    "2~3개월 (4~5월)": 43.2,
+    "4~6개월 (6~8월)": 20,
+    "7~12개월 (9월~27/2월)": 8.9,
+    "1년 초과": 2.1
   },
   "factors": [
     {
@@ -164,11 +164,11 @@
       "decay": 1
     },
     {
-      "factor": "협상/외교 뉴스 8건 감지",
+      "factor": "협상/외교 뉴스 6건 감지",
       "impact": "외교적 해결 움직임 포착",
-      "weight": "+0.02%p (1개월내), +0.01%p (2~3개월)",
+      "weight": "+0.01%p (1개월내), +0.01%p (2~3개월)",
       "direction": "shorten",
-      "detail": "실시간 뉴스에서 협상 관련 기사 8건이 감지되었습니다.",
+      "detail": "실시간 뉴스에서 협상 관련 기사 6건이 감지되었습니다.",
       "keywords": [
         "negotiat",
         "talks",
@@ -181,11 +181,11 @@
       "decay": 1
     },
     {
-      "factor": "지역 확산 뉴스 20.2건 감지",
+      "factor": "지역 확산 뉴스 16건 감지",
       "impact": "주변국 대규모 연루 → 장기화 위험 높음",
       "weight": "+0.02%p (4~6개월), +0.02%p (7~12개월)",
       "direction": "lengthen",
-      "detail": "주변국을 언급하는 기사 20.2건이 감지되었습니다.",
+      "detail": "주변국을 언급하는 기사 16건이 감지되었습니다.",
       "keywords": [
         "saudi",
         "uae",
@@ -234,6 +234,32 @@
       "decay": 0.3
     },
     {
+      "factor": "[중대 이벤트] 공식 휴전/평화 합의",
+      "impact": "공식 휴전 또는 평화 합의 체결. 휴전 합의는 전쟁 종결의 결정적 단계이며, 합의 후 이행까지 평균 1~2주 소요.",
+      "weight": "+10.0%p (1개월내), +6.7%p (2~3개월), -5.3%p (4~6개월), -4.0%p (7~12개월), -2.0%p (1년초과)",
+      "direction": "shorten",
+      "detail": "공식 휴전 또는 평화 합의 체결. 휴전 합의는 전쟁 종결의 결정적 단계이며, 합의 후 이행까지 평균 1~2주 소요.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: Israeli tanks cross ‘yellow line’ boundary into Hamas-controlled central Gaza",
+      "keywords": [
+        "ceasefire",
+        "agree",
+        "ceasefire",
+        "deal",
+        "ceasefire",
+        "sign",
+        "truce",
+        "agree",
+        "armistice",
+        "sign",
+        "peace deal",
+        "ceasefire",
+        "accept",
+        "peace agreement"
+      ],
+      "applied": "2026-11-19",
+      "active": true,
+      "severity": "critical"
+    },
+    {
       "factor": "[중대 이벤트] 수도 직접 공격/포위",
       "impact": "수도 직접 공격. 베오그라드(1999): 78일 폭격 후 항복. 바그다드(2003): 21일만에 함락. 수도 타격은 전쟁 지속 의지를 급격히 약화.",
       "weight": "+2.7%p (1개월내), +4.0%p (2~3개월), -1.3%p (4~6개월), -1.3%p (7~12개월), -0.7%p (1년초과)",
@@ -261,7 +287,7 @@
         "tehran",
         "explosion"
       ],
-      "applied": "2026-11-18",
+      "applied": "2026-11-19",
       "active": true,
       "severity": "high"
     },
@@ -287,16 +313,39 @@
         "thousand",
         "ethnic cleansing"
       ],
-      "applied": "2026-11-18",
+      "applied": "2026-11-19",
       "active": true,
       "severity": "high"
     },
     {
-      "factor": "금값 사상최고 ($3742.1/oz)",
+      "factor": "[중대 이벤트] 적국 영토 지상 침공 개시",
+      "impact": "지상 침공 개시. 걸프전(1991): 지상전 100시간만에 종결. 이라크(2003): 3주 진격 후 바그다드 함락. 지상전 전환은 전쟁의 결정적 국면.",
+      "weight": "+2.0%p (1개월내), +3.3%p (2~3개월), +2.0%p (4~6개월), +1.3%p (7~12개월)",
+      "direction": "mixed",
+      "detail": "지상 침공 개시. 걸프전(1991): 지상전 100시간만에 종결. 이라크(2003): 3주 진격 후 바그다드 함락. 지상전 전환은 전쟁의 결정적 국면.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: What does Israel’s new ground offensive mean for Palestinians in Gaza?",
+      "keywords": [
+        "ground invasion",
+        "ground troops",
+        "enter",
+        "ground offensive",
+        "boots on the ground",
+        "land invasion",
+        "ground assault",
+        "launch",
+        "ground force",
+        "cross",
+        "border"
+      ],
+      "applied": "2026-11-19",
+      "active": true,
+      "severity": "high"
+    },
+    {
+      "factor": "금값 사상최고 ($3756.9/oz)",
       "impact": "안전자산 수요 폭증 → 글로벌 불안 심화",
       "weight": "+2%p (4-6개월)",
       "direction": "lengthen",
-      "detail": "금 가격이 온스당 $3742.1로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
+      "detail": "금 가격이 온스당 $3756.9로 사상 최고 수준입니다. 투자자들이 안전자산으로 대거 이동하고 있으며, 이는 전쟁 장기화에 대한 시장의 우려를 반영합니다.",
       "keywords": [
         "gold",
         "safe haven",
@@ -307,11 +356,11 @@
       "active": true
     },
     {
-      "factor": "미국 10년 국채금리 5.06% (고금리 지속)",
+      "factor": "미국 10년 국채금리 5.07% (고금리 지속)",
       "impact": "전쟁 자금 조달 비용 증가",
       "weight": "+1%p (4-6개월)",
       "direction": "mixed",
-      "detail": "미국 10년물 국채금리가 5.06%로 높은 수준을 유지하고 있습니다. 전쟁 자금 조달 비용이 증가하며, 장기전의 경제적 부담이 커지고 있습니다.",
+      "detail": "미국 10년물 국채금리가 5.07%로 높은 수준을 유지하고 있습니다. 전쟁 자금 조달 비용이 증가하며, 장기전의 경제적 부담이 커지고 있습니다.",
       "keywords": [
         "treasury",
         "yield",
@@ -326,22 +375,22 @@
   "news_signals": {
     "ceasefire_mentions": 6,
     "escalation_mentions": 2,
-    "negotiation_mentions": 8,
-    "casualty_mentions": 8.2,
-    "peace_mentions": 8,
-    "regional_spread": 20.2,
+    "negotiation_mentions": 6,
+    "casualty_mentions": 6.2,
+    "peace_mentions": 6,
+    "regional_spread": 16,
     "total_articles": 50,
     "new_articles": 49,
-    "unique_events": 46,
-    "duplicates_removed": 4
+    "unique_events": 47,
+    "duplicates_removed": 3
   },
   "latest_news": [
     {
-      "title": "Israeli court extends Gaza doctor Abu Safia’s detention without charge",
-      "link": "https://www.aljazeera.com/news/2026/11/18/israeli-court-extends-gaza-doctor-abu-safias-detention-without-charge?traffic_source=rss",
-      "pubDate": "Wed, 18 Nov 2026 18:22:26 +0000",
+      "title": "EU governments approve trade deal with Indonesia to offset Trump tariffs",
+      "link": "https://www.aljazeera.com/economy/2026/11/19/eu-governments-approve-trade-deal-with-indonesia-to-offset-trump-tariffs?traffic_source=rss",
+      "pubDate": "Thu, 19 Nov 2026 00:11:40 +0000",
       "source": "aljazeera",
-      "snippet": "An Israeli court extended the detention of Abu Safia nearly two years after Israel&#039;s army detained him.",
+      "snippet": "The deal, initially concluded in 2025, will see both sides remove import duties on more than 90 percent of products.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -349,11 +398,11 @@
       "_isDuplicate": false
     },
     {
-      "title": "Israeli forces launch new military operation in central Gaza",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/11/18/israeli-forces-launch-new-military-operation-in-central-gaza?traffic_source=rss",
-      "pubDate": "Wed, 18 Nov 2026 18:12:42 +0000",
+      "title": "Iran war live: Saudi-led coalition strikes Yemen; ships on fire in Hormuz",
+      "link": "https://www.aljazeera.com/news/liveblog/2026/11/19/iran-war-live-saudi-led-coalition-strikes-yemen-ships-on-fire-in-hormuz?traffic_source=rss",
+      "pubDate": "Thu, 19 Nov 2026 00:01:02 +0000",
       "source": "aljazeera",
-      "snippet": " Israeli forces have launched a new military operation in central Gaza, advancing west of the Yellow Line ",
+      "snippet": "Saudi-led coalition says it destroyed a missile platform in Saada, Yemen, as Iran claims three ships hit mines.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -361,11 +410,71 @@
       "_isDuplicate": false
     },
     {
-      "title": "Donald Trump meets ‘longtime friend’ Imelda Marcos during Philippines visit",
-      "link": "https://www.aljazeera.com/news/2026/11/18/donald-trump-meets-longtime-friend-imelda-marcos-during-philippines-visit?traffic_source=rss",
-      "pubDate": "Wed, 18 Nov 2026 18:09:57 +0000",
+      "title": "Israel uses Gaza swimming video to minimise winter hardships",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/11/18/israel-uses-gaza-swimming-video-to-minimise-winter-hardships?traffic_source=rss",
+      "pubDate": "Wed, 18 Nov 2026 23:53:21 +0000",
       "source": "aljazeera",
-      "snippet": "Trump told Philippine President Marcos he knew his parents &#039;very well&#039;.",
+      "snippet": "Israel shared an Al Jazeera video of Palestinians swimming, to suggest winter storms in Gaza can’t be that bad.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Israeli tanks cross ‘yellow line’ boundary into Hamas-controlled central Gaza",
+      "link": "https://www.theguardian.com/world/2026/nov/18/israeli-tanks-cross-yellow-line-boundary-into-hamas-controlled-central-gaza",
+      "pubDate": "Wed, 18 Nov 2026 23:25:25 GMT",
+      "source": "guardian",
+      "snippet": "First incursion across boundary since ceasefire deal comes as Eisenkot seeks to form government without NetanyahuThe Israeli military crossed into Hamas-controlled central Gaza on Wednesday in its fir",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "US steps up pressure on Iran-backed Hezbollah with new sanctions",
+      "link": "https://www.aljazeera.com/news/2026/11/18/us-steps-up-pressure-on-iran-backed-hezbollah-with-new-sanctions?traffic_source=rss",
+      "pubDate": "Wed, 18 Nov 2026 22:56:19 +0000",
+      "source": "aljazeera",
+      "snippet": "The US Treasury has accused Hezbollah of using charitable organisations as &#039;fronts&#039; for fundraising.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Israeli military launches rare ground operation in Gaza beyond Yellow Line",
+      "link": "https://www.bbc.co.uk/news/articles/cw8r7510degno?at_medium=RSS&at_campaign=rss",
+      "pubDate": "Wed, 18 Nov 2026 22:34:56 GMT",
+      "source": "bbc",
+      "snippet": "Hamas condemns the incursion, which the Israeli military says is dismantling a \"terror tunnel\", as a \"flagrant\" ceasefire violation.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Youssef M. Ibrahim, Who Covered Iran’s Revolution for The Times, Dies at 83",
+      "link": "https://www.nytimes.com/2026/11/17/world/middleeast/youssef-ibrahim-correspondent-obituary.html",
+      "pubDate": "Wed, 18 Nov 2026 22:05:53 +0000",
+      "source": "nytimes",
+      "snippet": "The Egyptian-born correspondent wrote about the Middle East during a time of dizzying transformation, and was expelled by Iran for his coverage.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "What does Israel’s new ground offensive mean for Palestinians in Gaza?",
+      "link": "https://www.aljazeera.com/news/2026/11/18/what-does-israels-new-ground-offensive-mean-for-palestinians-in-gaza?traffic_source=rss",
+      "pubDate": "Wed, 18 Nov 2026 20:38:06 +0000",
+      "source": "aljazeera",
+      "snippet": "Israeli tanks advance beyond the &#039;Yellow Line&#039;, forcing Palestinians to flee again in Gaza. ",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -375,7 +484,7 @@
     {
       "title": "Israeli Tanks Advance Across Gaza Cease-Fire Line in Rare Incursion",
       "link": "https://www.nytimes.com/2026/11/18/world/middleeast/israel-gaza-war-ground-operation.html",
-      "pubDate": "Wed, 18 Nov 2026 17:47:13 +0000",
+      "pubDate": "Wed, 18 Nov 2026 20:29:31 +0000",
       "source": "nytimes",
       "snippet": "The Israeli military said it was conducting a limited raid into territory controlled by Hamas to address a threat. The militant group accused Israel of violating the truce.",
       "isNew": true,
@@ -385,11 +494,11 @@
       "_isDuplicate": false
     },
     {
-      "title": "What has happened to the $18bn pledged to Trump’s Board of Peace for Gaza?",
-      "link": "https://www.aljazeera.com/news/2026/11/18/what-has-happened-to-the-18bn-pledged-to-trumps-board-of-peace-for-gaza?traffic_source=rss",
-      "pubDate": "Wed, 18 Nov 2026 17:45:09 +0000",
+      "title": "Putin’s nuclear briefcase makes surprise appearance at China summit",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/11/18/putins-nuclear-briefcase-makes-surprise-appearance-at-china-summit?traffic_source=rss",
+      "pubDate": "Wed, 18 Nov 2026 20:24:50 +0000",
       "source": "aljazeera",
-      "snippet": "Billions have been pledged for Gaza since a 2025 &#039;ceasefire&#039;, but rebuilding hasn’t begun and Israeli attacks continue.\n",
+      "snippet": "Russian President Vladimir Putin’s nuclear briefcase was spotted at the APEC summit in China.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -397,21 +506,11 @@
       "_isDuplicate": false
     },
     {
-      "title": "Kuwait, Bahrain face new Iran attacks after US strike on Qeshm Island",
-      "link": "https://www.aljazeera.com/news/2026/11/18/kuwait-bahrain-face-new-iran-attacks-after-us-strike-on-qeshm-island?traffic_source=rss",
-      "pubDate": "Wed, 18 Nov 2026 16:47:26 +0000",
+      "title": "Trump and Putin to meet one-on-one in China Thursday",
+      "link": "https://www.aljazeera.com/news/2026/11/18/trump-and-putin-to-meet-one-on-one-in-china-thursday?traffic_source=rss",
+      "pubDate": "Wed, 18 Nov 2026 20:12:20 +0000",
       "source": "aljazeera",
-      "snippet": "Iranian attacks on the Gulf countries draw condemnation from across the region.",
-      "isNew": true,
-      "_isDuplicate": true,
-      "_sourceCount": 1
-    },
-    {
-      "title": "World Bank official says Lebanon reconstruction making slow progress",
-      "link": "https://www.aljazeera.com/news/2026/11/18/world-bank-official-says-lebanon-reconstruction-making-slow-progress?traffic_source=rss",
-      "pubDate": "Wed, 18 Nov 2026 16:44:59 +0000",
-      "source": "aljazeera",
-      "snippet": "Beirut blames Israel&#039;s occupation and attacks on southern Lebanon for reconstruction delays.",
+      "snippet": "US and Russia leaders meet in China amid efforts to resolve Ukraine crisis and enhance post-war security guarantees.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -419,11 +518,11 @@
       "_isDuplicate": false
     },
     {
-      "title": "Crowds gather as Trump arrives in China ahead of talks with Xi and Putin",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/11/18/crowds-gather-as-trump-arrives-in-china-ahead-of-talks-with-xi-and-putin?traffic_source=rss",
-      "pubDate": "Wed, 18 Nov 2026 16:40:03 +0000",
+      "title": "Heated debate escalates into on-air fight on Armenian TV",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/11/18/heated-debate-escalates-into-on-air-fight-on-armenian-tv?traffic_source=rss",
+      "pubDate": "Wed, 18 Nov 2026 19:56:17 +0000",
       "source": "aljazeera",
-      "snippet": "Crowds gathered in Shenzhen, China,  to welcome US President Donald Trump as he arrived for the APEC summit",
+      "snippet": "A heated political debate on Armenia’s Public Television escalated into a physical altercation",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -431,23 +530,11 @@
       "_isDuplicate": false
     },
     {
-      "title": "Jerusalem Daily: Chaos in the Knesset as new speaker elected",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/11/18/jerusalem-daily-chaos-in-the-knesset-as-new-speaker-elected?traffic_source=rss",
-      "pubDate": "Wed, 18 Nov 2026 16:28:54 +0000",
+      "title": "Four killed as Russian strikes hit Ukraine’s Odesa",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/11/18/four-killed-as-russian-strikes-hit-ukraines-odesa?traffic_source=rss",
+      "pubDate": "Wed, 18 Nov 2026 19:31:31 +0000",
       "source": "aljazeera",
-      "snippet": "Israel’s army beat a journalist covering a settler attack near Jericho.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Canada’s PM calls out ‘lying’ Putin for downplaying sanctions",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/11/18/canadas-pm-calls-out-lying-putin-for-downplaying-sanctions?traffic_source=rss",
-      "pubDate": "Wed, 18 Nov 2026 16:16:48 +0000",
-      "source": "aljazeera",
-      "snippet": "Carney accuses Putin of ‘lying’ after the Russian leader dismissed Western sanctions as a ‘thing of the past’.",
+      "snippet": "At least four people have been killed and thirteen more injured after Russian strikes hit Ukraine’s port city of Odesa.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -467,47 +554,11 @@
       "_isDuplicate": false
     },
     {
-      "title": "Russian attacks on Ukraine kill at least five people",
-      "link": "https://www.aljazeera.com/news/2026/11/18/russian-attacks-on-ukraine-kill-at-least-five-people?traffic_source=rss",
-      "pubDate": "Wed, 18 Nov 2026 15:32:01 +0000",
-      "source": "aljazeera",
-      "snippet": "Most of the casualties were in strikes on Odesa that President Volodymyr Zelenskyy described as &#039;brutal&#039;.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "What is Iraq’s Jurf al-Sakhar and what is behind gov’t push to control it?",
-      "link": "https://www.aljazeera.com/news/2026/11/18/what-is-iraqs-jurf-al-sakhar-and-what-is-behind-govt-push-to-control-it?traffic_source=rss",
-      "pubDate": "Wed, 18 Nov 2026 15:00:34 +0000",
-      "source": "aljazeera",
-      "snippet": "Tensions surge between PM al-Zaidi&#039;s government and Kataib Hezbollah amid oil-smuggling scandal.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "Israeli forces demolish homes in southern Lebanon",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/11/18/israeli-forces-demolish-homes-in-southern-lebanon?traffic_source=rss",
-      "pubDate": "Wed, 18 Nov 2026 14:52:31 +0000",
-      "source": "aljazeera",
-      "snippet": "Israeli excavators demolished homes in Zawtar al-Sharqiye in southern Lebanon.",
-      "isNew": true,
-      "_sourceCount": 1,
-      "_isDuplicated": false,
-      "_clusterSize": 1,
-      "_isDuplicate": false
-    },
-    {
-      "title": "US official says Hormuz insurance hits $64m: Is the strait really open?",
-      "link": "https://www.aljazeera.com/news/2026/11/18/us-official-says-hormuz-insurance-hits-64m-is-the-strait-really-open?traffic_source=rss",
-      "pubDate": "Wed, 18 Nov 2026 14:47:34 +0000",
-      "source": "aljazeera",
-      "snippet": "Hung Cao says shipping insurance costs have soared to $64m for a single transit, challenging claims the strait is open.",
+      "title": "Israel delays building contracts for West Bank settlement after UK sanctions",
+      "link": "https://www.theguardian.com/world/2026/nov/18/israel-construction-contracts-e1-west-bank-settlement-uk-sanctions",
+      "pubDate": "Wed, 18 Nov 2026 14:05:38 GMT",
+      "source": "guardian",
+      "snippet": "Attorney general says E1 settlement decision should not be taken by caretaker government led by NetanyahuIsrael has postponed issuing contracts for the construction of a large settlement on the West B",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -521,29 +572,62 @@
         "category_id": "military",
         "category_name": "군사 작전",
         "category_icon": "⚔️",
-        "count": 23,
-        "new_count": 23,
+        "count": 22,
+        "new_count": 22,
         "articles": [
           {
-            "title": "Israeli court extends Gaza doctor Abu Safia’s detention without charge",
-            "link": "https://www.aljazeera.com/news/2026/11/18/israeli-court-extends-gaza-doctor-abu-safias-detention-without-charge?traffic_source=rss",
+            "title": "Iran war live: Saudi-led coalition strikes Yemen; ships on fire in Hormuz",
+            "link": "https://www.aljazeera.com/news/liveblog/2026/11/19/iran-war-live-saudi-led-coalition-strikes-yemen-ships-on-fire-in-hormuz?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Wed, 18 Nov 2026 18:22:26 +0000",
-            "snippet": "An Israeli court extended the detention of Abu Safia nearly two years after Israel&#039;s army detained him.",
+            "pubDate": "Thu, 19 Nov 2026 00:01:02 +0000",
+            "snippet": "Saudi-led coalition says it destroyed a missile platform in Saada, Yemen, as Iran claims three ships hit mines.",
             "isNew": true
           },
           {
-            "title": "Israeli forces launch new military operation in central Gaza",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/11/18/israeli-forces-launch-new-military-operation-in-central-gaza?traffic_source=rss",
+            "title": "Israeli tanks cross ‘yellow line’ boundary into Hamas-controlled central Gaza",
+            "link": "https://www.theguardian.com/world/2026/nov/18/israeli-tanks-cross-yellow-line-boundary-into-hamas-controlled-central-gaza",
+            "source": "guardian",
+            "sources": [
+              "guardian"
+            ],
+            "pubDate": "Wed, 18 Nov 2026 23:25:25 GMT",
+            "snippet": "First incursion across boundary since ceasefire deal comes as Eisenkot seeks to form government without NetanyahuThe Israeli military crossed into Hamas-controlled central Gaza on Wednesday in its fir",
+            "isNew": true
+          },
+          {
+            "title": "US steps up pressure on Iran-backed Hezbollah with new sanctions",
+            "link": "https://www.aljazeera.com/news/2026/11/18/us-steps-up-pressure-on-iran-backed-hezbollah-with-new-sanctions?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Wed, 18 Nov 2026 18:12:42 +0000",
-            "snippet": " Israeli forces have launched a new military operation in central Gaza, advancing west of the Yellow Line ",
+            "pubDate": "Wed, 18 Nov 2026 22:56:19 +0000",
+            "snippet": "The US Treasury has accused Hezbollah of using charitable organisations as &#039;fronts&#039; for fundraising.",
+            "isNew": true
+          },
+          {
+            "title": "Israeli military launches rare ground operation in Gaza beyond Yellow Line",
+            "link": "https://www.bbc.co.uk/news/articles/cw8r7510degno?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc"
+            ],
+            "pubDate": "Wed, 18 Nov 2026 22:34:56 GMT",
+            "snippet": "Hamas condemns the incursion, which the Israeli military says is dismantling a \"terror tunnel\", as a \"flagrant\" ceasefire violation.",
+            "isNew": true
+          },
+          {
+            "title": "What does Israel’s new ground offensive mean for Palestinians in Gaza?",
+            "link": "https://www.aljazeera.com/news/2026/11/18/what-does-israels-new-ground-offensive-mean-for-palestinians-in-gaza?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Wed, 18 Nov 2026 20:38:06 +0000",
+            "snippet": "Israeli tanks advance beyond the &#039;Yellow Line&#039;, forcing Palestinians to flee again in Gaza. ",
             "isNew": true
           },
           {
@@ -553,42 +637,19 @@
             "sources": [
               "nytimes"
             ],
-            "pubDate": "Wed, 18 Nov 2026 17:47:13 +0000",
+            "pubDate": "Wed, 18 Nov 2026 20:29:31 +0000",
             "snippet": "The Israeli military said it was conducting a limited raid into territory controlled by Hamas to address a threat. The militant group accused Israel of violating the truce.",
             "isNew": true
           },
           {
-            "title": "Kuwait says it repelled first Iranian attack in two months after US strikes island",
-            "link": "https://www.bbc.co.uk/news/articles/cw4gn9jeqjq7o?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
-            "sources": [
-              "bbc",
-              "aljazeera"
-            ],
-            "pubDate": "Wed, 18 Nov 2026 13:04:48 GMT",
-            "snippet": "Bahrain says it was also attacked by Iran following a US air strike on the Iranian island of Qeshm in the Gulf on Tuesday.",
-            "isNew": true
-          },
-          {
-            "title": "World Bank official says Lebanon reconstruction making slow progress",
-            "link": "https://www.aljazeera.com/news/2026/11/18/world-bank-official-says-lebanon-reconstruction-making-slow-progress?traffic_source=rss",
+            "title": "Four killed as Russian strikes hit Ukraine’s Odesa",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/11/18/four-killed-as-russian-strikes-hit-ukraines-odesa?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Wed, 18 Nov 2026 16:44:59 +0000",
-            "snippet": "Beirut blames Israel&#039;s occupation and attacks on southern Lebanon for reconstruction delays.",
-            "isNew": true
-          },
-          {
-            "title": "Jerusalem Daily: Chaos in the Knesset as new speaker elected",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/11/18/jerusalem-daily-chaos-in-the-knesset-as-new-speaker-elected?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Wed, 18 Nov 2026 16:28:54 +0000",
-            "snippet": "Israel’s army beat a journalist covering a settler attack near Jericho.",
+            "pubDate": "Wed, 18 Nov 2026 19:31:31 +0000",
+            "snippet": "At least four people have been killed and thirteen more injured after Russian strikes hit Ukraine’s port city of Odesa.",
             "isNew": true
           },
           {
@@ -603,36 +664,25 @@
             "isNew": true
           },
           {
-            "title": "Russian attacks on Ukraine kill at least five people",
-            "link": "https://www.aljazeera.com/news/2026/11/18/russian-attacks-on-ukraine-kill-at-least-five-people?traffic_source=rss",
-            "source": "aljazeera",
+            "title": "Kuwait says it repelled first Iranian attack in two months after US strikes island",
+            "link": "https://www.bbc.co.uk/news/articles/cw4gn9jeqjq7o?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
             "sources": [
-              "aljazeera"
+              "bbc"
             ],
-            "pubDate": "Wed, 18 Nov 2026 15:32:01 +0000",
-            "snippet": "Most of the casualties were in strikes on Odesa that President Volodymyr Zelenskyy described as &#039;brutal&#039;.",
+            "pubDate": "Wed, 18 Nov 2026 13:04:48 GMT",
+            "snippet": "Bahrain says it was also attacked by Iran following a US air strike on the Iranian island of Qeshm in the Gulf on Tuesday.",
             "isNew": true
           },
           {
-            "title": "Three killed as Israel launches first ground push since ‘ceasefire’ began",
-            "link": "https://www.aljazeera.com/news/2026/11/18/palestinians-flee-refugee-camp-as-israel-begins-operation-in-central-gaza?traffic_source=rss",
-            "source": "aljazeera",
+            "title": "‘They want silence’: how the film NAZA is shaking Israel",
+            "link": "https://www.theguardian.com/world/2026/nov/18/wednesday-briefing-how-naza-shook-israel-and-sparked-a-debate-the-country-had-ignored",
+            "source": "guardian",
             "sources": [
-              "aljazeera"
+              "guardian"
             ],
-            "pubDate": "Wed, 18 Nov 2026 14:39:09 +0000",
-            "snippet": "Many Palestinians started to flee refugee camps as the Israeli offensive got underway.",
-            "isNew": true
-          },
-          {
-            "title": "‘Status quo’ between US and Iran could break out into war, analysts warn",
-            "link": "https://www.aljazeera.com/news/2026/11/18/status-quo-between-us-and-iran-could-break-out-into-war-analysts-warn?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Wed, 18 Nov 2026 14:36:20 +0000",
-            "snippet": "Iran and the US have continued to exchange strikes in recent days, but all-out war has so far been avoided.",
+            "pubDate": "Wed, 18 Nov 2026 06:44:25 GMT",
+            "snippet": "The documentary has triggered fierce backlash, but by exposing the army’s conduct in Gaza it’s proved impossible to ignoreIt was on Yom Kippur this year that Nadav Weiman first sensed the documentary ",
             "isNew": true
           }
         ]
@@ -641,29 +691,18 @@
         "category_id": "economy",
         "category_name": "경제 영향",
         "category_icon": "📊",
-        "count": 7,
-        "new_count": 7,
+        "count": 6,
+        "new_count": 6,
         "articles": [
           {
-            "title": "Canada’s PM calls out ‘lying’ Putin for downplaying sanctions",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/11/18/canadas-pm-calls-out-lying-putin-for-downplaying-sanctions?traffic_source=rss",
+            "title": "EU governments approve trade deal with Indonesia to offset Trump tariffs",
+            "link": "https://www.aljazeera.com/economy/2026/11/19/eu-governments-approve-trade-deal-with-indonesia-to-offset-trump-tariffs?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Wed, 18 Nov 2026 16:16:48 +0000",
-            "snippet": "Carney accuses Putin of ‘lying’ after the Russian leader dismissed Western sanctions as a ‘thing of the past’.",
-            "isNew": true
-          },
-          {
-            "title": "US official says Hormuz insurance hits $64m: Is the strait really open?",
-            "link": "https://www.aljazeera.com/news/2026/11/18/us-official-says-hormuz-insurance-hits-64m-is-the-strait-really-open?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Wed, 18 Nov 2026 14:47:34 +0000",
-            "snippet": "Hung Cao says shipping insurance costs have soared to $64m for a single transit, challenging claims the strait is open.",
+            "pubDate": "Thu, 19 Nov 2026 00:11:40 +0000",
+            "snippet": "The deal, initially concluded in 2025, will see both sides remove import duties on more than 90 percent of products.",
             "isNew": true
           },
           {
@@ -728,18 +767,18 @@
         "category_id": "politics",
         "category_name": "국내 정치",
         "category_icon": "🏛️",
-        "count": 5,
-        "new_count": 5,
+        "count": 6,
+        "new_count": 6,
         "articles": [
           {
-            "title": "Donald Trump meets ‘longtime friend’ Imelda Marcos during Philippines visit",
-            "link": "https://www.aljazeera.com/news/2026/11/18/donald-trump-meets-longtime-friend-imelda-marcos-during-philippines-visit?traffic_source=rss",
+            "title": "Heated debate escalates into on-air fight on Armenian TV",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/11/18/heated-debate-escalates-into-on-air-fight-on-armenian-tv?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Wed, 18 Nov 2026 18:09:57 +0000",
-            "snippet": "Trump told Philippine President Marcos he knew his parents &#039;very well&#039;.",
+            "pubDate": "Wed, 18 Nov 2026 19:56:17 +0000",
+            "snippet": "A heated political debate on Armenia’s Public Television escalated into a physical altercation",
             "isNew": true
           },
           {
@@ -785,6 +824,17 @@
             "pubDate": "Tue, 17 Nov 2026 21:54:22 +0000",
             "snippet": "Matan Kahana, a lawmaker from Gadi Eisenkot’s party, will take control of the legislative process as the opposition looks to press Prime Minister Benjamin Netanyahu on multiple fronts.",
             "isNew": true
+          },
+          {
+            "title": "Trump Signals New Strategy on Iran: A Waiting Game",
+            "link": "https://www.nytimes.com/2026/11/13/us/politics/trump-iran-strategy.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Fri, 13 Nov 2026 18:20:50 +0000",
+            "snippet": "The administration appears to be moving toward a long-term economic pressure campaign as President Trump expresses little urgency in securing a nuclear agreement.",
+            "isNew": true
           }
         ]
       },
@@ -796,36 +846,36 @@
         "new_count": 5,
         "articles": [
           {
-            "title": "What is Iraq’s Jurf al-Sakhar and what is behind gov’t push to control it?",
-            "link": "https://www.aljazeera.com/news/2026/11/18/what-is-iraqs-jurf-al-sakhar-and-what-is-behind-govt-push-to-control-it?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Wed, 18 Nov 2026 15:00:34 +0000",
-            "snippet": "Tensions surge between PM al-Zaidi&#039;s government and Kataib Hezbollah amid oil-smuggling scandal.",
-            "isNew": true
-          },
-          {
-            "title": "Israeli forces demolish homes in southern Lebanon",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/11/18/israeli-forces-demolish-homes-in-southern-lebanon?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Wed, 18 Nov 2026 14:52:31 +0000",
-            "snippet": "Israeli excavators demolished homes in Zawtar al-Sharqiye in southern Lebanon.",
-            "isNew": true
-          },
-          {
             "title": "Youssef M. Ibrahim, Who Covered Iran’s Revolution for The Times, Dies at 83",
             "link": "https://www.nytimes.com/2026/11/17/world/middleeast/youssef-ibrahim-correspondent-obituary.html",
             "source": "nytimes",
             "sources": [
               "nytimes"
             ],
-            "pubDate": "Tue, 17 Nov 2026 23:26:17 +0000",
+            "pubDate": "Wed, 18 Nov 2026 22:05:53 +0000",
             "snippet": "The Egyptian-born correspondent wrote about the Middle East during a time of dizzying transformation, and was expelled by Iran for his coverage.",
+            "isNew": true
+          },
+          {
+            "title": "Putin’s nuclear briefcase makes surprise appearance at China summit",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/11/18/putins-nuclear-briefcase-makes-surprise-appearance-at-china-summit?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Wed, 18 Nov 2026 20:24:50 +0000",
+            "snippet": "Russian President Vladimir Putin’s nuclear briefcase was spotted at the APEC summit in China.",
+            "isNew": true
+          },
+          {
+            "title": "Trump and Putin to meet one-on-one in China Thursday",
+            "link": "https://www.aljazeera.com/news/2026/11/18/trump-and-putin-to-meet-one-on-one-in-china-thursday?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Wed, 18 Nov 2026 20:12:20 +0000",
+            "snippet": "US and Russia leaders meet in China amid efforts to resolve Ukraine crisis and enhance post-war security guarantees.",
             "isNew": true
           },
           {
@@ -853,53 +903,11 @@
         ]
       },
       {
-        "category_id": "diplomacy",
-        "category_name": "외교/협상",
-        "category_icon": "🤝",
-        "count": 3,
-        "new_count": 3,
-        "articles": [
-          {
-            "title": "What has happened to the $18bn pledged to Trump’s Board of Peace for Gaza?",
-            "link": "https://www.aljazeera.com/news/2026/11/18/what-has-happened-to-the-18bn-pledged-to-trumps-board-of-peace-for-gaza?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Wed, 18 Nov 2026 17:45:09 +0000",
-            "snippet": "Billions have been pledged for Gaza since a 2025 &#039;ceasefire&#039;, but rebuilding hasn’t begun and Israeli attacks continue.\n",
-            "isNew": true
-          },
-          {
-            "title": "Crowds gather as Trump arrives in China ahead of talks with Xi and Putin",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/11/18/crowds-gather-as-trump-arrives-in-china-ahead-of-talks-with-xi-and-putin?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Wed, 18 Nov 2026 16:40:03 +0000",
-            "snippet": "Crowds gathered in Shenzhen, China,  to welcome US President Donald Trump as he arrived for the APEC summit",
-            "isNew": true
-          },
-          {
-            "title": "Iran Attacks Bahrain for the Second Time in Days",
-            "link": "https://www.nytimes.com/2026/11/15/world/middleeast/bahrain-iran-israel.html",
-            "source": "nytimes",
-            "sources": [
-              "nytimes"
-            ],
-            "pubDate": "Sun, 15 Nov 2026 15:55:09 +0000",
-            "snippet": "The resumption of attacks after a two-month lull comes as peace talks between the U.S. and Iran appear to have stalled.",
-            "isNew": true
-          }
-        ]
-      },
-      {
         "category_id": "humanitarian",
         "category_name": "인도주의/피해",
         "category_icon": "🏥",
-        "count": 2,
-        "new_count": 2,
+        "count": 3,
+        "new_count": 3,
         "articles": [
           {
             "title": "‘Let the aid in’: Deadly winter approaches in Gaza - The Latest",
@@ -922,6 +930,48 @@
             "pubDate": "Mon, 16 Nov 2026 08:56:04 GMT",
             "snippet": "The UK, Australia, Canada and Italy say Israeli authorities are holding back vital supplies at the borders, including 150,00 tents.",
             "isNew": true
+          },
+          {
+            "title": "Israeli Strikes on Gaza Hospital Kill 6 and Injure Dozens, Health Officials Say",
+            "link": "https://www.nytimes.com/2026/11/11/world/middleeast/nasser-hospital-gaza-strike-israel.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Thu, 12 Nov 2026 17:38:28 +0000",
+            "snippet": "The Israeli authorities said that Hamas had established a command center at the hospital complex. Hamas said the attack was “a heinous crime targeting a civilian medical facility.”",
+            "isNew": true
+          }
+        ]
+      },
+      {
+        "category_id": "diplomacy",
+        "category_name": "외교/협상",
+        "category_icon": "🤝",
+        "count": 2,
+        "new_count": 2,
+        "articles": [
+          {
+            "title": "Iran Attacks Bahrain for the Second Time in Days",
+            "link": "https://www.nytimes.com/2026/11/15/world/middleeast/bahrain-iran-israel.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Sun, 15 Nov 2026 15:55:09 +0000",
+            "snippet": "The resumption of attacks after a two-month lull comes as peace talks between the U.S. and Iran appear to have stalled.",
+            "isNew": true
+          },
+          {
+            "title": "The U.S.-Israel Relationship Is Broken. Here’s How Eisenkot Could Fix It.",
+            "link": "https://www.nytimes.com/2026/11/13/world/middleeast/israel-trump-eisenkot.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Fri, 13 Nov 2026 09:45:38 +0000",
+            "snippet": "Former Israeli and U.S. ambassadors, lawmakers and analysts largely agree on steps Gadi Eisenkot could take if he becomes prime minister. But they are risky.",
+            "isNew": true
           }
         ]
       },
@@ -929,9 +979,20 @@
         "category_id": "other",
         "category_name": "기타",
         "category_icon": "📰",
-        "count": 1,
-        "new_count": 1,
+        "count": 2,
+        "new_count": 2,
         "articles": [
+          {
+            "title": "Israel uses Gaza swimming video to minimise winter hardships",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/11/18/israel-uses-gaza-swimming-video-to-minimise-winter-hardships?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Wed, 18 Nov 2026 23:53:21 +0000",
+            "snippet": "Israel shared an Al Jazeera video of Palestinians swimming, to suggest winter storms in Gaza can’t be that bad.",
+            "isNew": true
+          },
           {
             "title": "In Europe, an Emboldened Iran Contributes to a Sense of Anxiety",
             "link": "https://www.nytimes.com/2026/11/15/world/europe/iran-attacks-threats-europe.html",
@@ -944,47 +1005,142 @@
             "isNew": true
           }
         ]
+      },
+      {
+        "category_id": "nuclear",
+        "category_name": "핵/WMD",
+        "category_icon": "☢️",
+        "count": 1,
+        "new_count": 1,
+        "articles": [
+          {
+            "title": "UN watchdog 'increasingly concerned' over uninspected Iran nuclear site",
+            "link": "https://www.bbc.co.uk/news/articles/cm75261e3pdko?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc"
+            ],
+            "pubDate": "Fri, 13 Nov 2026 12:28:28 GMT",
+            "snippet": "It says it has never been able to visit a uranium enrichment plant at Isfahan which Iran announced over a year ago.",
+            "isNew": true
+          }
+        ]
       }
     ],
     "recent_30min": {
       "total_new": 49,
       "by_category": {
-        "military": {
-          "count": 25,
+        "economy": {
+          "count": 7,
           "titles": [
             {
-              "title": "Israeli court extends Gaza doctor Abu Safia’s detention without charge",
-              "link": "https://www.aljazeera.com/news/2026/11/18/israeli-court-extends-gaza-doctor-abu-safias-detention-without-charge?traffic_source=rss",
+              "title": "EU governments approve trade deal with Indonesia to offset Trump tariffs",
+              "link": "https://www.aljazeera.com/economy/2026/11/19/eu-governments-approve-trade-deal-with-indonesia-to-offset-trump-tariffs?traffic_source=rss",
               "source": "aljazeera"
             },
             {
-              "title": "Israeli forces launch new military operation in central Gaza",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/11/18/israeli-forces-launch-new-military-operation-in-central-gaza?traffic_source=rss",
+              "title": "Israel delays building contracts for West Bank settlement after UK sanctions",
+              "link": "https://www.theguardian.com/world/2026/nov/18/israel-construction-contracts-e1-west-bank-settlement-uk-sanctions",
+              "source": "guardian"
+            },
+            {
+              "title": "Fears grow that US will put Nobel-winning judge under sanctions after Myanmar genocide ruling",
+              "link": "https://www.theguardian.com/world/2026/nov/18/us-sanctions-icj-judges-myanmar-genocide-ruling-israel-gaza-court",
+              "source": "guardian"
+            },
+            {
+              "title": "‘Godmother’ of illegal Israeli West Bank settler project Daniella Weiss among group sanctioned by Australia",
+              "link": "https://www.theguardian.com/world/2026/nov/18/australia-sanctions-construction-company-west-bank-settlement-expansion-ntwnfb",
+              "source": "guardian"
+            },
+            {
+              "title": "UK sanctions firms over Israeli West Bank settlements",
+              "link": "https://www.bbc.co.uk/news/articles/cvglr977x3z0o?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
+            }
+          ]
+        },
+        "military": {
+          "count": 23,
+          "titles": [
+            {
+              "title": "Iran war live: Saudi-led coalition strikes Yemen; ships on fire in Hormuz",
+              "link": "https://www.aljazeera.com/news/liveblog/2026/11/19/iran-war-live-saudi-led-coalition-strikes-yemen-ships-on-fire-in-hormuz?traffic_source=rss",
               "source": "aljazeera"
             },
             {
-              "title": "Israeli Tanks Advance Across Gaza Cease-Fire Line in Rare Incursion",
-              "link": "https://www.nytimes.com/2026/11/18/world/middleeast/israel-gaza-war-ground-operation.html",
-              "source": "nytimes"
+              "title": "Israeli tanks cross ‘yellow line’ boundary into Hamas-controlled central Gaza",
+              "link": "https://www.theguardian.com/world/2026/nov/18/israeli-tanks-cross-yellow-line-boundary-into-hamas-controlled-central-gaza",
+              "source": "guardian"
             },
             {
-              "title": "Kuwait, Bahrain face new Iran attacks after US strike on Qeshm Island",
-              "link": "https://www.aljazeera.com/news/2026/11/18/kuwait-bahrain-face-new-iran-attacks-after-us-strike-on-qeshm-island?traffic_source=rss",
+              "title": "US steps up pressure on Iran-backed Hezbollah with new sanctions",
+              "link": "https://www.aljazeera.com/news/2026/11/18/us-steps-up-pressure-on-iran-backed-hezbollah-with-new-sanctions?traffic_source=rss",
               "source": "aljazeera"
             },
             {
-              "title": "World Bank official says Lebanon reconstruction making slow progress",
-              "link": "https://www.aljazeera.com/news/2026/11/18/world-bank-official-says-lebanon-reconstruction-making-slow-progress?traffic_source=rss",
+              "title": "Israeli military launches rare ground operation in Gaza beyond Yellow Line",
+              "link": "https://www.bbc.co.uk/news/articles/cw8r7510degno?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
+            },
+            {
+              "title": "What does Israel’s new ground offensive mean for Palestinians in Gaza?",
+              "link": "https://www.aljazeera.com/news/2026/11/18/what-does-israels-new-ground-offensive-mean-for-palestinians-in-gaza?traffic_source=rss",
               "source": "aljazeera"
             }
           ]
         },
-        "politics": {
+        "other": {
+          "count": 2,
+          "titles": [
+            {
+              "title": "Israel uses Gaza swimming video to minimise winter hardships",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/11/18/israel-uses-gaza-swimming-video-to-minimise-winter-hardships?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "In Europe, an Emboldened Iran Contributes to a Sense of Anxiety",
+              "link": "https://www.nytimes.com/2026/11/15/world/europe/iran-attacks-threats-europe.html",
+              "source": "nytimes"
+            }
+          ]
+        },
+        "regional": {
           "count": 5,
           "titles": [
             {
-              "title": "Donald Trump meets ‘longtime friend’ Imelda Marcos during Philippines visit",
-              "link": "https://www.aljazeera.com/news/2026/11/18/donald-trump-meets-longtime-friend-imelda-marcos-during-philippines-visit?traffic_source=rss",
+              "title": "Youssef M. Ibrahim, Who Covered Iran’s Revolution for The Times, Dies at 83",
+              "link": "https://www.nytimes.com/2026/11/17/world/middleeast/youssef-ibrahim-correspondent-obituary.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Putin’s nuclear briefcase makes surprise appearance at China summit",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/11/18/putins-nuclear-briefcase-makes-surprise-appearance-at-china-summit?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Trump and Putin to meet one-on-one in China Thursday",
+              "link": "https://www.aljazeera.com/news/2026/11/18/trump-and-putin-to-meet-one-on-one-in-china-thursday?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Bahrain court sentences dozens of Shia Muslims to life in prison, activists say",
+              "link": "https://www.bbc.co.uk/news/articles/cmx20pyew3zxo?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
+            },
+            {
+              "title": "Saudi-Backed Forces Retreat in Yemen, Leaving Key Strait in Houthi Control",
+              "link": "https://www.nytimes.com/2026/11/15/world/middleeast/saudi-houthis-yemen-red-sea.html",
+              "source": "nytimes"
+            }
+          ]
+        },
+        "politics": {
+          "count": 6,
+          "titles": [
+            {
+              "title": "Heated debate escalates into on-air fight on Armenian TV",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/11/18/heated-debate-escalates-into-on-air-fight-on-armenian-tv?traffic_source=rss",
               "source": "aljazeera"
             },
             {
@@ -1009,88 +1165,8 @@
             }
           ]
         },
-        "diplomacy": {
-          "count": 3,
-          "titles": [
-            {
-              "title": "What has happened to the $18bn pledged to Trump’s Board of Peace for Gaza?",
-              "link": "https://www.aljazeera.com/news/2026/11/18/what-has-happened-to-the-18bn-pledged-to-trumps-board-of-peace-for-gaza?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Crowds gather as Trump arrives in China ahead of talks with Xi and Putin",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/11/18/crowds-gather-as-trump-arrives-in-china-ahead-of-talks-with-xi-and-putin?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Iran Attacks Bahrain for the Second Time in Days",
-              "link": "https://www.nytimes.com/2026/11/15/world/middleeast/bahrain-iran-israel.html",
-              "source": "nytimes"
-            }
-          ]
-        },
-        "economy": {
-          "count": 8,
-          "titles": [
-            {
-              "title": "Canada’s PM calls out ‘lying’ Putin for downplaying sanctions",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/11/18/canadas-pm-calls-out-lying-putin-for-downplaying-sanctions?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "US official says Hormuz insurance hits $64m: Is the strait really open?",
-              "link": "https://www.aljazeera.com/news/2026/11/18/us-official-says-hormuz-insurance-hits-64m-is-the-strait-really-open?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Israel delays building contracts for West Bank settlement after UK sanctions",
-              "link": "https://www.theguardian.com/world/2026/nov/18/israel-construction-contracts-e1-west-bank-settlement-uk-sanctions",
-              "source": "guardian"
-            },
-            {
-              "title": "Fears grow that US will put Nobel-winning judge under sanctions after Myanmar genocide ruling",
-              "link": "https://www.theguardian.com/world/2026/nov/18/us-sanctions-icj-judges-myanmar-genocide-ruling-israel-gaza-court",
-              "source": "guardian"
-            },
-            {
-              "title": "‘Godmother’ of illegal Israeli West Bank settler project Daniella Weiss among group sanctioned by Australia",
-              "link": "https://www.theguardian.com/world/2026/nov/18/australia-sanctions-construction-company-west-bank-settlement-expansion-ntwnfb",
-              "source": "guardian"
-            }
-          ]
-        },
-        "regional": {
-          "count": 5,
-          "titles": [
-            {
-              "title": "What is Iraq’s Jurf al-Sakhar and what is behind gov’t push to control it?",
-              "link": "https://www.aljazeera.com/news/2026/11/18/what-is-iraqs-jurf-al-sakhar-and-what-is-behind-govt-push-to-control-it?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Israeli forces demolish homes in southern Lebanon",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/11/18/israeli-forces-demolish-homes-in-southern-lebanon?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Youssef M. Ibrahim, Who Covered Iran’s Revolution for The Times, Dies at 83",
-              "link": "https://www.nytimes.com/2026/11/17/world/middleeast/youssef-ibrahim-correspondent-obituary.html",
-              "source": "nytimes"
-            },
-            {
-              "title": "Bahrain court sentences dozens of Shia Muslims to life in prison, activists say",
-              "link": "https://www.bbc.co.uk/news/articles/cmx20pyew3zxo?at_medium=RSS&at_campaign=rss",
-              "source": "bbc"
-            },
-            {
-              "title": "Saudi-Backed Forces Retreat in Yemen, Leaving Key Strait in Houthi Control",
-              "link": "https://www.nytimes.com/2026/11/15/world/middleeast/saudi-houthis-yemen-red-sea.html",
-              "source": "nytimes"
-            }
-          ]
-        },
         "humanitarian": {
-          "count": 2,
+          "count": 3,
           "titles": [
             {
               "title": "‘Let the aid in’: Deadly winter approaches in Gaza - The Latest",
@@ -1101,16 +1177,36 @@
               "title": "UK and allies urge Israel to allow rapid humanitarian access to Gaza",
               "link": "https://www.bbc.co.uk/news/articles/cwm2mllj1pp8o?at_medium=RSS&at_campaign=rss",
               "source": "bbc"
+            },
+            {
+              "title": "Israeli Strikes on Gaza Hospital Kill 6 and Injure Dozens, Health Officials Say",
+              "link": "https://www.nytimes.com/2026/11/11/world/middleeast/nasser-hospital-gaza-strike-israel.html",
+              "source": "nytimes"
             }
           ]
         },
-        "other": {
+        "diplomacy": {
+          "count": 2,
+          "titles": [
+            {
+              "title": "Iran Attacks Bahrain for the Second Time in Days",
+              "link": "https://www.nytimes.com/2026/11/15/world/middleeast/bahrain-iran-israel.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "The U.S.-Israel Relationship Is Broken. Here’s How Eisenkot Could Fix It.",
+              "link": "https://www.nytimes.com/2026/11/13/world/middleeast/israel-trump-eisenkot.html",
+              "source": "nytimes"
+            }
+          ]
+        },
+        "nuclear": {
           "count": 1,
           "titles": [
             {
-              "title": "In Europe, an Emboldened Iran Contributes to a Sense of Anxiety",
-              "link": "https://www.nytimes.com/2026/11/15/world/europe/iran-attacks-threats-europe.html",
-              "source": "nytimes"
+              "title": "UN watchdog 'increasingly concerned' over uninspected Iran nuclear site",
+              "link": "https://www.bbc.co.uk/news/articles/cm75261e3pdko?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
             }
           ]
         }
@@ -1204,50 +1300,58 @@
     }
   ],
   "economic_indicators": {
-    "BRENT": {
-      "price": 88.53,
-      "change": -4.61,
-      "changePercent": -4.95,
-      "prev": 93.14
-    },
-    "GOLD": {
-      "price": 3742.1,
-      "change": -122.1,
-      "changePercent": -3.16,
-      "prev": 3864.2
-    },
-    "US2Y": {
-      "price": 4.14,
-      "change": 0,
-      "changePercent": 0,
-      "prev": 4.14
-    },
     "VIX": {
-      "price": 23.46,
-      "change": -2,
-      "changePercent": -7.86,
+      "price": 24.56,
+      "change": -0.9,
+      "changePercent": -3.53,
       "prev": 25.46
     },
-    "DXY": {
-      "price": 103.77,
-      "change": 0.28,
-      "changePercent": 0.27,
-      "prev": 103.49
+    "WTI": {
+      "price": 81.87,
+      "change": -4.14,
+      "changePercent": -4.81,
+      "prev": 86.01
     },
     "US10Y": {
-      "price": 5.06,
+      "price": 5.07,
       "change": -0.04,
       "changePercent": -0.78,
       "prev": 5.1
     },
-    "WTI": {
-      "price": 81.8,
-      "change": -4.21,
-      "changePercent": -4.89,
-      "prev": 86.01
+    "BRENT": {
+      "price": 88.61,
+      "change": -4.53,
+      "changePercent": -4.86,
+      "prev": 93.14
+    },
+    "GOLD": {
+      "price": 3756.9,
+      "change": -107.3,
+      "changePercent": -2.78,
+      "prev": 3864.2
+    },
+    "DXY": {
+      "price": 103.79,
+      "change": 0.3,
+      "changePercent": 0.29,
+      "prev": 103.49
+    },
+    "US2Y": {
+      "price": 4.14,
+      "change": 0.01,
+      "changePercent": 0.24,
+      "prev": 4.14
     }
   },
   "critical_events": [
+    {
+      "id": "ceasefire_agreement",
+      "name": "공식 휴전/평화 합의",
+      "severity": "critical",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "shorten"
+    },
     {
       "id": "capital_attack",
       "name": "수도 직접 공격/포위",
@@ -1263,6 +1367,14 @@
       "confidence": 1,
       "matchCount": 4,
       "direction": "shorten"
+    },
+    {
+      "id": "ground_invasion",
+      "name": "적국 영토 지상 침공 개시",
+      "severity": "high",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "mixed"
     }
   ],
   "feeds_loaded": 7,
