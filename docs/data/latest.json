@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-11-28T04:50:08.755Z",
+  "timestamp": "2026-11-28T13:50:43.737Z",
   "war_day": 273,
   "probabilities": {
-    "1개월 내 (~3월)": 19.5,
-    "2~3개월 (4~5월)": 40.3,
-    "4~6개월 (6~8월)": 24.2,
-    "7~12개월 (9월~27/2월)": 12,
-    "1년 초과": 4
+    "1개월 내 (~3월)": 27,
+    "2~3개월 (4~5월)": 45.4,
+    "4~6개월 (6~8월)": 18.6,
+    "7~12개월 (9월~27/2월)": 7,
+    "1년 초과": 2
   },
   "factors": [
     {
@@ -45,9 +45,9 @@
       "decay": 0.4
     },
     {
-      "factor": "확전 뉴스 우세 (확전6:휴전0)",
-      "impact": "전쟁 장기화 가능성 (확전비율 100%)",
-      "weight": "+0.04%p (4~6개월)",
+      "factor": "확전 뉴스 우세 (확전2:휴전2)",
+      "impact": "전쟁 장기화 가능성 (확전비율 50%)",
+      "weight": "+0.02%p (4~6개월)",
       "direction": "lengthen",
       "detail": "언론에서 휴전보다 확전을 더 많이 보도하고 있습니다.",
       "keywords": [
@@ -164,11 +164,11 @@
       "decay": 1
     },
     {
-      "factor": "협상/외교 뉴스 2건 감지",
-      "impact": "외교 움직임 미약",
-      "weight": "+0.00%p (1개월내), +0.00%p (2~3개월)",
+      "factor": "협상/외교 뉴스 6.2건 감지",
+      "impact": "외교적 해결 움직임 포착",
+      "weight": "+0.01%p (1개월내), +0.01%p (2~3개월)",
       "direction": "shorten",
-      "detail": "실시간 뉴스에서 협상 관련 기사 2건이 감지되었습니다.",
+      "detail": "실시간 뉴스에서 협상 관련 기사 6.2건이 감지되었습니다.",
       "keywords": [
         "negotiat",
         "talks",
@@ -181,11 +181,11 @@
       "decay": 1
     },
     {
-      "factor": "지역 확산 뉴스 20.2건 감지",
+      "factor": "지역 확산 뉴스 20건 감지",
       "impact": "주변국 대규모 연루 → 장기화 위험 높음",
       "weight": "+0.02%p (4~6개월), +0.02%p (7~12개월)",
       "direction": "lengthen",
-      "detail": "주변국을 언급하는 기사 20.2건이 감지되었습니다.",
+      "detail": "주변국을 언급하는 기사 20건이 감지되었습니다.",
       "keywords": [
         "saudi",
         "uae",
@@ -234,6 +234,32 @@
       "decay": 0.3
     },
     {
+      "factor": "[중대 이벤트] 공식 휴전/평화 합의",
+      "impact": "공식 휴전 또는 평화 합의 체결. 휴전 합의는 전쟁 종결의 결정적 단계이며, 합의 후 이행까지 평균 1~2주 소요.",
+      "weight": "+10.0%p (1개월내), +6.7%p (2~3개월), -5.3%p (4~6개월), -4.0%p (7~12개월), -2.0%p (1년초과)",
+      "direction": "shorten",
+      "detail": "공식 휴전 또는 평화 합의 체결. 휴전 합의는 전쟁 종결의 결정적 단계이며, 합의 후 이행까지 평균 1~2주 소요.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: What can we learn from successful peace deals? | Episode 2",
+      "keywords": [
+        "ceasefire",
+        "agree",
+        "ceasefire",
+        "deal",
+        "ceasefire",
+        "sign",
+        "truce",
+        "agree",
+        "armistice",
+        "sign",
+        "peace deal",
+        "ceasefire",
+        "accept",
+        "peace agreement"
+      ],
+      "applied": "2026-11-28",
+      "active": true,
+      "severity": "critical"
+    },
+    {
       "factor": "[중대 이벤트] 일방적 전투 축소/자제 선언",
       "impact": "교전국의 일방적 전투 축소 또는 자제 선언. 역사적으로 패전국의 자발적 전선 축소는 80% 이상 공식 항복의 전조.",
       "weight": "+3.3%p (1개월내), +4.7%p (2~3개월), -2.0%p (4~6개월), -2.0%p (7~12개월), -0.7%p (1년초과)",
@@ -262,6 +288,36 @@
         "not attack",
         "suspend",
         "operation"
+      ],
+      "applied": "2026-11-28",
+      "active": true,
+      "severity": "high"
+    },
+    {
+      "factor": "[중대 이벤트] 외교적 돌파구/강대국 중재",
+      "impact": "주요 외교적 돌파구 또는 강대국 중재. 데이턴(1995): 미국 중재 → 3주만에 합의. UN 안보리 결의는 평균 2~4주 내 휴전 이행.",
+      "weight": "+2.0%p (1개월내), +4.0%p (2~3개월), +1.3%p (4~6개월), -1.3%p (7~12개월), -0.7%p (1년초과)",
+      "direction": "shorten",
+      "detail": "주요 외교적 돌파구 또는 강대국 중재. 데이턴(1995): 미국 중재 → 3주만에 합의. UN 안보리 결의는 평균 2~4주 내 휴전 이행.\n\n신뢰도: 높음 (67%), 관련 기사 2건 감지.\n관련: What can we learn from successful peace deals? | Episode 2",
+      "keywords": [
+        "peace talk",
+        "agree",
+        "diplomatic",
+        "breakthrough",
+        "summit",
+        "peace",
+        "mediati",
+        "accept",
+        "un",
+        "resolution",
+        "ceasefire",
+        "broker",
+        "peace",
+        "negotiat",
+        "breakthrough",
+        "china",
+        "mediat",
+        "peace framework"
       ],
       "applied": "2026-11-28",
       "active": true,
@@ -332,46 +388,36 @@
     }
   ],
   "news_signals": {
-    "ceasefire_mentions": 0,
-    "escalation_mentions": 6,
-    "negotiation_mentions": 2,
-    "casualty_mentions": 32.4,
-    "peace_mentions": 2,
-    "regional_spread": 20.2,
+    "ceasefire_mentions": 2,
+    "escalation_mentions": 2,
+    "negotiation_mentions": 6.2,
+    "casualty_mentions": 32.2,
+    "peace_mentions": 4,
+    "regional_spread": 20,
     "total_articles": 50,
     "new_articles": 50,
-    "unique_events": 45,
-    "duplicates_removed": 5
+    "unique_events": 48,
+    "duplicates_removed": 2
   },
   "latest_news": [
     {
-      "title": "Israeli strike on Doctors Without Borders clinic in Gaza kills two staff",
-      "link": "https://www.aljazeera.com/news/2026/11/28/israeli-strike-on-doctors-without-borders-clinic-in-gaza-kills-two-staff?traffic_source=rss",
-      "pubDate": "Sat, 28 Nov 2026 03:45:58 +0000",
+      "title": "Putin unveils new nuclear submarine",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/11/28/putin-unveils-new-nuclear-submarine?traffic_source=rss",
+      "pubDate": "Sat, 28 Nov 2026 13:32:51 +0000",
       "source": "aljazeera",
-      "snippet": "MSF says Israeli attack on Gaza clinic a &#039;direct hit&#039; and calls for those responsible to be held accountable.",
+      "snippet": "Russian President Vladimir Putin attended the commissioning of the nuclear-powered submarine in Russia.",
       "isNew": true,
       "_sourceCount": 1,
-      "_isDuplicated": true,
-      "_clusterSize": 2,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
       "_isDuplicate": false
     },
     {
-      "title": "Israel kills two MSF staff in targeted strike on Gaza clinic",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/11/28/israel-kills-two-msf-staff-in-targeted-strike-on-gaza-clinic?traffic_source=rss",
-      "pubDate": "Sat, 28 Nov 2026 01:55:03 +0000",
+      "title": "Bootleg alcohol poisonings in Iran see dozens dead and badly injured",
+      "link": "https://www.aljazeera.com/news/2026/11/28/bootleg-alcohol-poisonings-in-iran-see-dozens-dead-and-badly-injured?traffic_source=rss",
+      "pubDate": "Sat, 28 Nov 2026 13:12:56 +0000",
       "source": "aljazeera",
-      "snippet": "An Israeli strike on a clinic operated by Doctors Without Borders (MSF) in Gaza has killed two watchmen.",
-      "isNew": true,
-      "_isDuplicate": true,
-      "_sourceCount": 1
-    },
-    {
-      "title": "Iran war live: Italy says drone in deadly Kuwait attack was made in Iran",
-      "link": "https://www.aljazeera.com/news/liveblog/2026/11/28/iran-war-live-italy-says-drone-in-deadly-kuwait-attack-was-made-in-iran?traffic_source=rss",
-      "pubDate": "Sat, 28 Nov 2026 00:00:00 +0000",
-      "source": "aljazeera",
-      "snippet": "Italian Foreign Minister Antonio Tajani says the drone behind the deadly Kuwait strike was made in Iran.",
+      "snippet": "A spate of alcohol poisonings in Iran has led to deaths and serious injuries including blindness.",
       "isNew": true,
       "_sourceCount": 2,
       "_isDuplicated": true,
@@ -379,23 +425,35 @@
       "_isDuplicate": false
     },
     {
-      "title": "US disables ship attempting to breach Iran blockade",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/11/27/us-disables-ship-attempting-to-breach-iran-blockade?traffic_source=rss",
-      "pubDate": "Fri, 27 Nov 2026 23:55:16 +0000",
+      "title": "Norse Atlantic ends flights: How Iran war continues to batter aviation",
+      "link": "https://www.aljazeera.com/news/2026/11/28/norse-atlantic-ends-flights-how-iran-war-continues-to-batter-aviation?traffic_source=rss",
+      "pubDate": "Sat, 28 Nov 2026 12:56:53 +0000",
       "source": "aljazeera",
-      "snippet": "The US military says it disabled a commercial ship after it left an Iranian port and ignored warnings to stop.",
+      "snippet": "The Norwegian budget carrier is the latest airline to fold under fuel costs driven by the Strait of Hormuz crisis.",
       "isNew": true,
       "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Israel unity government talks stall: What happens now?",
+      "link": "https://www.aljazeera.com/news/2026/11/28/israel-unity-government-talks-stall-what-happens-now?traffic_source=rss",
+      "pubDate": "Sat, 28 Nov 2026 11:29:21 +0000",
+      "source": "aljazeera",
+      "snippet": "Eisenkot struggles to form a government as talks with Netanyahu stall over rotation deal and coalition compromises.",
+      "isNew": true,
+      "_sourceCount": 2,
       "_isDuplicated": true,
       "_clusterSize": 2,
       "_isDuplicate": false
     },
     {
-      "title": "Will Taiwan vote to revive nuclear power – and why does that matter for AI?",
-      "link": "https://www.aljazeera.com/news/2026/11/27/will-taiwan-vote-to-revive-nuclear-power-and-why-does-that-matter-for-ai?traffic_source=rss",
-      "pubDate": "Fri, 27 Nov 2026 23:09:04 +0000",
+      "title": "The perfect storm behind Congo’s deadliest Ebola outbreak",
+      "link": "https://www.aljazeera.com/features/longform/2026/11/28/the-perfect-storm-behind-congos-deadliest-ebola-outbreak?traffic_source=rss",
+      "pubDate": "Sat, 28 Nov 2026 11:27:34 +0000",
       "source": "aljazeera",
-      "snippet": "Voters will decide on Saturday whether to scrap the country&#039;s &#039;nuclear-free homeland&#039; policy.",
+      "snippet": "Patients and health workers pay a staggering cost as war and a failing health system collide with a deadly virus.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -403,21 +461,11 @@
       "_isDuplicate": false
     },
     {
-      "title": "US military says it disabled merchant ship trying to breach Iran blockade",
-      "link": "https://www.aljazeera.com/news/2026/11/27/us-military-says-it-disabled-merchant-ship-trying-to-breach-iran-blockade?traffic_source=rss",
-      "pubDate": "Fri, 27 Nov 2026 22:22:02 +0000",
+      "title": "Why is Trump backing Iraq’s anti-smuggling campaign?",
+      "link": "https://www.aljazeera.com/news/2026/11/28/why-is-trump-backing-iraqs-anti-smuggling-campaign?traffic_source=rss",
+      "pubDate": "Sat, 28 Nov 2026 10:32:42 +0000",
       "source": "aljazeera",
-      "snippet": "The US military says it disabled the Palau-flagged ship’s propulsion but its crew was unharmed.",
-      "isNew": true,
-      "_isDuplicate": true,
-      "_sourceCount": 1
-    },
-    {
-      "title": "OpenAI countersues Apple over trade secrets as AI race heats up",
-      "link": "https://www.aljazeera.com/economy/2026/11/27/openai-countersues-apple-over-trade-secrets-as-ai-race-heats-up?traffic_source=rss",
-      "pubDate": "Fri, 27 Nov 2026 20:40:51 +0000",
-      "source": "aljazeera",
-      "snippet": "Tensions between the two tech companies have escalated as intensifying race to develop AI products fuels competition.",
+      "snippet": "Baghdad&#039;s push to seize control of smuggling routes, border crossings and oilfields has Washington&#039;s support. ",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -425,11 +473,11 @@
       "_isDuplicate": false
     },
     {
-      "title": "Putin unveils new Russian nuclear-powered submarine with hypersonic weapons",
-      "link": "https://www.aljazeera.com/news/2026/11/27/putin-unveils-new-russian-nuclear-powered-submarine-with-hypersonic-weapons?traffic_source=rss",
-      "pubDate": "Fri, 27 Nov 2026 20:39:57 +0000",
+      "title": "Yemen government forces hit Houthi positions as UN warns of hunger crisis",
+      "link": "https://www.aljazeera.com/news/2026/11/28/yemen-governmen-forces-hit-houthi-positions-as-un-warns-of-hunger-crisis?traffic_source=rss",
+      "pubDate": "Sat, 28 Nov 2026 09:35:15 +0000",
       "source": "aljazeera",
-      "snippet": "The Kremlin plans to expand its naval fleet with five new nuclear submarines by 2030.",
+      "snippet": "About 1.8 million people face emergency levels of hunger in government-held areas, according to the UN.",
       "isNew": true,
       "_sourceCount": 1,
       "_isDuplicated": false,
@@ -437,25 +485,39 @@
       "_isDuplicate": false
     },
     {
-      "title": "Hamas chief’s last surviving son escapes Israeli strike in Gaza",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/11/27/aje-onl-nf_-hamas-chiefs-son-escapes-israeli-strike-gaza-271126?traffic_source=rss",
-      "pubDate": "Fri, 27 Nov 2026 20:18:45 +0000",
+      "title": "What can we learn from successful peace deals? | Episode 2",
+      "link": "https://www.aljazeera.com/video/the-art-of-negotiation/2026/11/28/what-can-we-learn-from-successful-peace-deals-episode-2?traffic_source=rss",
+      "pubDate": "Sat, 28 Nov 2026 08:30:00 +0000",
       "source": "aljazeera",
-      "snippet": "Hamas leader Khalil al-Hayya&#039;s last surviving son Izzeldeen survived an Israeli assassination attempt on Friday.",
+      "snippet": "Top conflict negotiators who brokered historic peace deals reveal the secrets to ending intractable wars.",
       "isNew": true,
-      "_isDuplicate": true,
-      "_sourceCount": 1
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
     },
     {
-      "title": "Israel kills four in Gaza as Hamas chief al-Hayya’s son survives strike",
-      "link": "https://www.aljazeera.com/news/2026/11/27/israel-kills-four-in-gaza-as-hamas-chief-al-hayyas-son-survives-strike?traffic_source=rss",
-      "pubDate": "Fri, 27 Nov 2026 19:53:25 +0000",
+      "title": "How Israel is fast-tracking data centres in bid to become ‘AI superpower’",
+      "link": "https://www.aljazeera.com/news/2026/11/28/how-israel-is-fast-tracking-data-centres-in-bid-to-become-ai-superpower?traffic_source=rss",
+      "pubDate": "Sat, 28 Nov 2026 07:21:22 +0000",
       "source": "aljazeera",
-      "snippet": "Four of Khalil al-Hayya&#039;s other sons were previously killed by Israeli forces, according to the Palestinian group.",
+      "snippet": "Israel is looking to data centres to boost its data processing, military strength and global clout.",
       "isNew": true,
-      "_sourceCount": 2,
-      "_isDuplicated": true,
-      "_clusterSize": 3,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
+      "_isDuplicate": false
+    },
+    {
+      "title": "Trump’s tariffs have become America’s new normal",
+      "link": "https://www.aljazeera.com/opinions/2026/11/28/trumps-tariffs-have-become-americas-new-normal?traffic_source=rss",
+      "pubDate": "Sat, 28 Nov 2026 06:57:19 +0000",
+      "source": "aljazeera",
+      "snippet": "Even a Democratic administration may struggle to reverse tariffs that help finance Trump&#039;s tax cuts.",
+      "isNew": true,
+      "_sourceCount": 1,
+      "_isDuplicated": false,
+      "_clusterSize": 1,
       "_isDuplicate": false
     },
     {
@@ -525,64 +587,18 @@
         "category_id": "military",
         "category_name": "군사 작전",
         "category_icon": "⚔️",
-        "count": 23,
-        "new_count": 23,
+        "count": 19,
+        "new_count": 19,
         "articles": [
           {
-            "title": "Israeli strike on Doctors Without Borders clinic in Gaza kills two staff",
-            "link": "https://www.aljazeera.com/news/2026/11/28/israeli-strike-on-doctors-without-borders-clinic-in-gaza-kills-two-staff?traffic_source=rss",
+            "title": "How Israel is fast-tracking data centres in bid to become ‘AI superpower’",
+            "link": "https://www.aljazeera.com/news/2026/11/28/how-israel-is-fast-tracking-data-centres-in-bid-to-become-ai-superpower?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Sat, 28 Nov 2026 03:45:58 +0000",
-            "snippet": "MSF says Israeli attack on Gaza clinic a &#039;direct hit&#039; and calls for those responsible to be held accountable.",
-            "isNew": true
-          },
-          {
-            "title": "Iran war live: Italy says drone in deadly Kuwait attack was made in Iran",
-            "link": "https://www.aljazeera.com/news/liveblog/2026/11/28/iran-war-live-italy-says-drone-in-deadly-kuwait-attack-was-made-in-iran?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera",
-              "cnn"
-            ],
-            "pubDate": "Sat, 28 Nov 2026 00:00:00 +0000",
-            "snippet": "Italian Foreign Minister Antonio Tajani says the drone behind the deadly Kuwait strike was made in Iran.",
-            "isNew": true
-          },
-          {
-            "title": "US disables ship attempting to breach Iran blockade",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/11/27/us-disables-ship-attempting-to-breach-iran-blockade?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Fri, 27 Nov 2026 23:55:16 +0000",
-            "snippet": "The US military says it disabled a commercial ship after it left an Iranian port and ignored warnings to stop.",
-            "isNew": true
-          },
-          {
-            "title": "Putin unveils new Russian nuclear-powered submarine with hypersonic weapons",
-            "link": "https://www.aljazeera.com/news/2026/11/27/putin-unveils-new-russian-nuclear-powered-submarine-with-hypersonic-weapons?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Fri, 27 Nov 2026 20:39:57 +0000",
-            "snippet": "The Kremlin plans to expand its naval fleet with five new nuclear submarines by 2030.",
-            "isNew": true
-          },
-          {
-            "title": "Israel kills four in Gaza as Hamas chief al-Hayya’s son survives strike",
-            "link": "https://www.aljazeera.com/news/2026/11/27/israel-kills-four-in-gaza-as-hamas-chief-al-hayyas-son-survives-strike?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera",
-              "cnn"
-            ],
-            "pubDate": "Fri, 27 Nov 2026 19:53:25 +0000",
-            "snippet": "Four of Khalil al-Hayya&#039;s other sons were previously killed by Israeli forces, according to the Palestinian group.",
+            "pubDate": "Sat, 28 Nov 2026 07:21:22 +0000",
+            "snippet": "Israel is looking to data centres to boost its data processing, military strength and global clout.",
             "isNew": true
           },
           {
@@ -639,102 +655,49 @@
             "pubDate": "Wed, 25 Nov 2026 19:02:51 +0000",
             "snippet": "The Ukrainian drone strike off Libya’s coast killed two Libyan naval officers, according to the forces controlling the country’s east.",
             "isNew": true
-          }
-        ]
-      },
-      {
-        "category_id": "politics",
-        "category_name": "국내 정치",
-        "category_icon": "🏛️",
-        "count": 8,
-        "new_count": 8,
-        "articles": [
-          {
-            "title": "Will Taiwan vote to revive nuclear power – and why does that matter for AI?",
-            "link": "https://www.aljazeera.com/news/2026/11/27/will-taiwan-vote-to-revive-nuclear-power-and-why-does-that-matter-for-ai?traffic_source=rss",
-            "source": "aljazeera",
-            "sources": [
-              "aljazeera"
-            ],
-            "pubDate": "Fri, 27 Nov 2026 23:09:04 +0000",
-            "snippet": "Voters will decide on Saturday whether to scrap the country&#039;s &#039;nuclear-free homeland&#039; policy.",
-            "isNew": true
           },
           {
-            "title": "Desperate appeals from women on death row in Iran after protests",
-            "link": "https://www.bbc.co.uk/news/articles/cm8x0ve4yd7wo?at_medium=RSS&at_campaign=rss",
+            "title": "Israeli strike kills senior Hamas security official and family in Gaza City",
+            "link": "https://www.bbc.co.uk/news/articles/cmd718zydz9qo?at_medium=RSS&at_campaign=rss",
             "source": "bbc",
             "sources": [
               "bbc"
             ],
-            "pubDate": "Thu, 26 Nov 2026 06:01:58 GMT",
-            "snippet": "Female protesters and dissidents are being sentenced to death in numbers not seen for decades, a rights group says.",
+            "pubDate": "Wed, 25 Nov 2026 14:06:13 GMT",
+            "snippet": "Mohammed Abu al-Ouf, head of Hamas's internal security service in northern Gaza, was killed with his wife and two teenage daughters, doctors say.",
             "isNew": true
           },
           {
-            "title": "Protesters call on Israel to free Palestinian student held without charge",
-            "link": "https://www.bbc.co.uk/news/articles/cw62p8z9edjlo?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
-            "sources": [
-              "bbc"
-            ],
-            "pubDate": "Wed, 25 Nov 2026 10:03:42 GMT",
-            "snippet": "Mahdi Tunsi, 26, was taken from his university dormitory earlier this month and has since been held without charge.",
-            "isNew": true
-          },
-          {
-            "title": "Netanyahu Associates Acknowledge Role in Setting Off Election Day Arrests",
-            "link": "https://www.nytimes.com/2026/11/19/world/middleeast/netanyahu-arab-activists-arrests-israel-election.html",
+            "title": "Defending Aden, Yemen’s Holdout Against the Houthis",
+            "link": "https://www.nytimes.com/video/world/middleeast/100000011300541/defending-aden-yemens-holdout-against-the-houthis.html",
             "source": "nytimes",
             "sources": [
               "nytimes"
             ],
-            "pubDate": "Fri, 20 Nov 2026 19:53:41 +0000",
-            "snippet": "After a historic result for Israel’s Arab-led parties, Prime Minister Benjamin Netanyahu said the vote was rigged, pointing to the detention of three opposition activists. His chief of staff has admit",
+            "pubDate": "Wed, 25 Nov 2026 13:39:46 +0000",
+            "snippet": "The war in Iran has reignited Yemen’s decade-old civil war. Saudi-backed troops are scrambling to defend against advancing Houthi fighters as the wounded are taken to the port city of Aden, the govern",
             "isNew": true
           },
           {
-            "title": "Could Democrats in Congress end the war in Iran?",
-            "link": "https://www.bbc.co.uk/news/videos/cqg7xkv1rze1o?at_medium=RSS&at_campaign=rss",
+            "title": "Houthi Attack on Skyscraper in Saudi Capital Wounds 11, Officials Say",
+            "link": "https://www.nytimes.com/2026/11/24/world/middleeast/saudi-skyscraper-houthi-strike.html",
+            "source": "nytimes",
+            "sources": [
+              "nytimes"
+            ],
+            "pubDate": "Tue, 24 Nov 2026 19:18:16 +0000",
+            "snippet": "The people were wounded in the strike on a building in Riyadh, the Saudi authorities said. The Iran-backed militia and Saudi Arabia have been exchanging escalating attacks for weeks.",
+            "isNew": true
+          },
+          {
+            "title": "Israeli air strike kills Hamas internal security chief in Gaza",
+            "link": "https://www.bbc.co.uk/news/articles/c6rrg7ggq190o?at_medium=RSS&at_campaign=rss",
             "source": "bbc",
             "sources": [
               "bbc"
             ],
-            "pubDate": "Wed, 04 Nov 2026 22:14:41 GMT",
-            "snippet": "The BBC's Asma Khalid looks at how the two chambers of the US Congress could put an end to the months-long conflict, which began in February.",
-            "isNew": true
-          },
-          {
-            "title": "How could Israel break election deadlock? Here are four scenarios",
-            "link": "https://www.bbc.co.uk/news/articles/cm62y46d97wwo?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
-            "sources": [
-              "bbc"
-            ],
-            "pubDate": "Thu, 29 Oct 2026 09:06:48 GMT",
-            "snippet": "With more than 90% of votes counted, all signs point to an impasse. The most likely outcome may be new elections. ",
-            "isNew": true
-          },
-          {
-            "title": "How Arab parties could hold critical balance of power in Israeli election",
-            "link": "https://www.bbc.co.uk/news/articles/cx8dzrp768j8o?at_medium=RSS&at_campaign=rss",
-            "source": "bbc",
-            "sources": [
-              "bbc"
-            ],
-            "pubDate": "Thu, 22 Oct 2026 05:30:22 GMT",
-            "snippet": "Disaffection has often driven down turnout among Arab Israelis, but there is a strong push to get rid of the right-wing governing coalition.",
-            "isNew": true
-          },
-          {
-            "title": "June 17, 2024 - Israel-Gaza news",
-            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-17-24/index.html",
-            "source": "cnn",
-            "sources": [
-              "cnn"
-            ],
-            "pubDate": "",
-            "snippet": "Israeli Prime Minister Benjamin Netanyahu has disbanded the country's war cabinet, an Israeli official says, just over a week after opposition leader Benny Gantz withdrew from the body.",
+            "pubDate": "Tue, 24 Nov 2026 15:35:53 GMT",
+            "snippet": "Naeem Abu Nahel, who had been in the post for two months, is among seven Palestinians reportedly killed in Israeli strikes on Tuesday.",
             "isNew": true
           }
         ]
@@ -743,9 +706,43 @@
         "category_id": "humanitarian",
         "category_name": "인도주의/피해",
         "category_icon": "🏥",
-        "count": 5,
-        "new_count": 5,
+        "count": 8,
+        "new_count": 8,
         "articles": [
+          {
+            "title": "Bootleg alcohol poisonings in Iran see dozens dead and badly injured",
+            "link": "https://www.aljazeera.com/news/2026/11/28/bootleg-alcohol-poisonings-in-iran-see-dozens-dead-and-badly-injured?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera",
+              "cnn"
+            ],
+            "pubDate": "Sat, 28 Nov 2026 13:12:56 +0000",
+            "snippet": "A spate of alcohol poisonings in Iran has led to deaths and serious injuries including blindness.",
+            "isNew": true
+          },
+          {
+            "title": "The perfect storm behind Congo’s deadliest Ebola outbreak",
+            "link": "https://www.aljazeera.com/features/longform/2026/11/28/the-perfect-storm-behind-congos-deadliest-ebola-outbreak?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Sat, 28 Nov 2026 11:27:34 +0000",
+            "snippet": "Patients and health workers pay a staggering cost as war and a failing health system collide with a deadly virus.",
+            "isNew": true
+          },
+          {
+            "title": "Yemen government forces hit Houthi positions as UN warns of hunger crisis",
+            "link": "https://www.aljazeera.com/news/2026/11/28/yemen-governmen-forces-hit-houthi-positions-as-un-warns-of-hunger-crisis?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Sat, 28 Nov 2026 09:35:15 +0000",
+            "snippet": "About 1.8 million people face emergency levels of hunger in government-held areas, according to the UN.",
+            "isNew": true
+          },
           {
             "title": "Opposition Makes Progress Toward Ousting Netanyahu, Party Leader Says",
             "link": "https://www.nytimes.com/2026/11/25/world/middleeast/israel-opposition-netanyahu-new-government.html",
@@ -804,6 +801,103 @@
         ]
       },
       {
+        "category_id": "politics",
+        "category_name": "국내 정치",
+        "category_icon": "🏛️",
+        "count": 8,
+        "new_count": 8,
+        "articles": [
+          {
+            "title": "Putin unveils new nuclear submarine",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/11/28/putin-unveils-new-nuclear-submarine?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Sat, 28 Nov 2026 13:32:51 +0000",
+            "snippet": "Russian President Vladimir Putin attended the commissioning of the nuclear-powered submarine in Russia.",
+            "isNew": true
+          },
+          {
+            "title": "Trump’s tariffs have become America’s new normal",
+            "link": "https://www.aljazeera.com/opinions/2026/11/28/trumps-tariffs-have-become-americas-new-normal?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Sat, 28 Nov 2026 06:57:19 +0000",
+            "snippet": "Even a Democratic administration may struggle to reverse tariffs that help finance Trump&#039;s tax cuts.",
+            "isNew": true
+          },
+          {
+            "title": "Desperate appeals from women on death row in Iran after protests",
+            "link": "https://www.bbc.co.uk/news/articles/cm8x0ve4yd7wo?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc"
+            ],
+            "pubDate": "Thu, 26 Nov 2026 06:01:58 GMT",
+            "snippet": "Female protesters and dissidents are being sentenced to death in numbers not seen for decades, a rights group says.",
+            "isNew": true
+          },
+          {
+            "title": "Protesters call on Israel to free Palestinian student held without charge",
+            "link": "https://www.bbc.co.uk/news/articles/cw62p8z9edjlo?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc"
+            ],
+            "pubDate": "Wed, 25 Nov 2026 10:03:42 GMT",
+            "snippet": "Mahdi Tunsi, 26, was taken from his university dormitory earlier this month and has since been held without charge.",
+            "isNew": true
+          },
+          {
+            "title": "Could Democrats in Congress end the war in Iran?",
+            "link": "https://www.bbc.co.uk/news/videos/cqg7xkv1rze1o?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc"
+            ],
+            "pubDate": "Wed, 04 Nov 2026 22:14:41 GMT",
+            "snippet": "The BBC's Asma Khalid looks at how the two chambers of the US Congress could put an end to the months-long conflict, which began in February.",
+            "isNew": true
+          },
+          {
+            "title": "How could Israel break election deadlock? Here are four scenarios",
+            "link": "https://www.bbc.co.uk/news/articles/cm62y46d97wwo?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc"
+            ],
+            "pubDate": "Thu, 29 Oct 2026 09:06:48 GMT",
+            "snippet": "With more than 90% of votes counted, all signs point to an impasse. The most likely outcome may be new elections. ",
+            "isNew": true
+          },
+          {
+            "title": "How Arab parties could hold critical balance of power in Israeli election",
+            "link": "https://www.bbc.co.uk/news/articles/cx8dzrp768j8o?at_medium=RSS&at_campaign=rss",
+            "source": "bbc",
+            "sources": [
+              "bbc"
+            ],
+            "pubDate": "Thu, 22 Oct 2026 05:30:22 GMT",
+            "snippet": "Disaffection has often driven down turnout among Arab Israelis, but there is a strong push to get rid of the right-wing governing coalition.",
+            "isNew": true
+          },
+          {
+            "title": "June 17, 2024 - Israel-Gaza news",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-17-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "Israeli Prime Minister Benjamin Netanyahu has disbanded the country's war cabinet, an Israeli official says, just over a week after opposition leader Benny Gantz withdrew from the body.",
+            "isNew": true
+          }
+        ]
+      },
+      {
         "category_id": "other",
         "category_name": "기타",
         "category_icon": "📰",
@@ -857,6 +951,49 @@
         ]
       },
       {
+        "category_id": "diplomacy",
+        "category_name": "외교/협상",
+        "category_icon": "🤝",
+        "count": 3,
+        "new_count": 3,
+        "articles": [
+          {
+            "title": "Israel unity government talks stall: What happens now?",
+            "link": "https://www.aljazeera.com/news/2026/11/28/israel-unity-government-talks-stall-what-happens-now?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera",
+              "cnn"
+            ],
+            "pubDate": "Sat, 28 Nov 2026 11:29:21 +0000",
+            "snippet": "Eisenkot struggles to form a government as talks with Netanyahu stall over rotation deal and coalition compromises.",
+            "isNew": true
+          },
+          {
+            "title": "What can we learn from successful peace deals? | Episode 2",
+            "link": "https://www.aljazeera.com/video/the-art-of-negotiation/2026/11/28/what-can-we-learn-from-successful-peace-deals-episode-2?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Sat, 28 Nov 2026 08:30:00 +0000",
+            "snippet": "Top conflict negotiators who brokered historic peace deals reveal the secrets to ending intractable wars.",
+            "isNew": true
+          },
+          {
+            "title": "June 13, 2024 Israel-Hamas war",
+            "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-13-24/index.html",
+            "source": "cnn",
+            "sources": [
+              "cnn"
+            ],
+            "pubDate": "",
+            "snippet": "The US-backed Gaza ceasefire proposal doesn't meet Hamas' demands for an end to the war, a senior official has told CNN. Osama Hamdan also said that \"no one has an idea\" how many of the hostages held ",
+            "isNew": true
+          }
+        ]
+      },
+      {
         "category_id": "economy",
         "category_name": "경제 영향",
         "category_icon": "📊",
@@ -864,14 +1001,14 @@
         "new_count": 3,
         "articles": [
           {
-            "title": "OpenAI countersues Apple over trade secrets as AI race heats up",
-            "link": "https://www.aljazeera.com/economy/2026/11/27/openai-countersues-apple-over-trade-secrets-as-ai-race-heats-up?traffic_source=rss",
+            "title": "Norse Atlantic ends flights: How Iran war continues to batter aviation",
+            "link": "https://www.aljazeera.com/news/2026/11/28/norse-atlantic-ends-flights-how-iran-war-continues-to-batter-aviation?traffic_source=rss",
             "source": "aljazeera",
             "sources": [
               "aljazeera"
             ],
-            "pubDate": "Fri, 27 Nov 2026 20:40:51 +0000",
-            "snippet": "Tensions between the two tech companies have escalated as intensifying race to develop AI products fuels competition.",
+            "pubDate": "Sat, 28 Nov 2026 12:56:53 +0000",
+            "snippet": "The Norwegian budget carrier is the latest airline to fold under fuel costs driven by the Strait of Hormuz crisis.",
             "isNew": true
           },
           {
@@ -902,9 +1039,20 @@
         "category_id": "regional",
         "category_name": "지역 정세",
         "category_icon": "🌍",
-        "count": 2,
-        "new_count": 2,
+        "count": 3,
+        "new_count": 3,
         "articles": [
+          {
+            "title": "Why is Trump backing Iraq’s anti-smuggling campaign?",
+            "link": "https://www.aljazeera.com/news/2026/11/28/why-is-trump-backing-iraqs-anti-smuggling-campaign?traffic_source=rss",
+            "source": "aljazeera",
+            "sources": [
+              "aljazeera"
+            ],
+            "pubDate": "Sat, 28 Nov 2026 10:32:42 +0000",
+            "snippet": "Baghdad&#039;s push to seize control of smuggling routes, border crossings and oilfields has Washington&#039;s support. ",
+            "isNew": true
+          },
           {
             "title": "How an Iranian Ally Gained the Upper Hand in Yemen’s War",
             "link": "https://www.nytimes.com/2026/11/25/world/middleeast/yemen-houthis-war-government-losses.html",
@@ -933,42 +1081,17 @@
     "recent_30min": {
       "total_new": 50,
       "by_category": {
-        "military": {
-          "count": 26,
-          "titles": [
-            {
-              "title": "Israeli strike on Doctors Without Borders clinic in Gaza kills two staff",
-              "link": "https://www.aljazeera.com/news/2026/11/28/israeli-strike-on-doctors-without-borders-clinic-in-gaza-kills-two-staff?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Israel kills two MSF staff in targeted strike on Gaza clinic",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/11/28/israel-kills-two-msf-staff-in-targeted-strike-on-gaza-clinic?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "Iran war live: Italy says drone in deadly Kuwait attack was made in Iran",
-              "link": "https://www.aljazeera.com/news/liveblog/2026/11/28/iran-war-live-italy-says-drone-in-deadly-kuwait-attack-was-made-in-iran?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "US disables ship attempting to breach Iran blockade",
-              "link": "https://www.aljazeera.com/video/newsfeed/2026/11/27/us-disables-ship-attempting-to-breach-iran-blockade?traffic_source=rss",
-              "source": "aljazeera"
-            },
-            {
-              "title": "US military says it disabled merchant ship trying to breach Iran blockade",
-              "link": "https://www.aljazeera.com/news/2026/11/27/us-military-says-it-disabled-merchant-ship-trying-to-breach-iran-blockade?traffic_source=rss",
-              "source": "aljazeera"
-            }
-          ]
-        },
         "politics": {
           "count": 8,
           "titles": [
             {
-              "title": "Will Taiwan vote to revive nuclear power – and why does that matter for AI?",
-              "link": "https://www.aljazeera.com/news/2026/11/27/will-taiwan-vote-to-revive-nuclear-power-and-why-does-that-matter-for-ai?traffic_source=rss",
+              "title": "Putin unveils new nuclear submarine",
+              "link": "https://www.aljazeera.com/video/newsfeed/2026/11/28/putin-unveils-new-nuclear-submarine?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Trump’s tariffs have become America’s new normal",
+              "link": "https://www.aljazeera.com/opinions/2026/11/28/trumps-tariffs-have-become-americas-new-normal?traffic_source=rss",
               "source": "aljazeera"
             },
             {
@@ -982,13 +1105,38 @@
               "source": "bbc"
             },
             {
-              "title": "Netanyahu Associates Acknowledge Role in Setting Off Election Day Arrests",
-              "link": "https://www.nytimes.com/2026/11/19/world/middleeast/netanyahu-arab-activists-arrests-israel-election.html",
+              "title": "Could Democrats in Congress end the war in Iran?",
+              "link": "https://www.bbc.co.uk/news/videos/cqg7xkv1rze1o?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
+            }
+          ]
+        },
+        "humanitarian": {
+          "count": 8,
+          "titles": [
+            {
+              "title": "Bootleg alcohol poisonings in Iran see dozens dead and badly injured",
+              "link": "https://www.aljazeera.com/news/2026/11/28/bootleg-alcohol-poisonings-in-iran-see-dozens-dead-and-badly-injured?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "The perfect storm behind Congo’s deadliest Ebola outbreak",
+              "link": "https://www.aljazeera.com/features/longform/2026/11/28/the-perfect-storm-behind-congos-deadliest-ebola-outbreak?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Yemen government forces hit Houthi positions as UN warns of hunger crisis",
+              "link": "https://www.aljazeera.com/news/2026/11/28/yemen-governmen-forces-hit-houthi-positions-as-un-warns-of-hunger-crisis?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Opposition Makes Progress Toward Ousting Netanyahu, Party Leader Says",
+              "link": "https://www.nytimes.com/2026/11/25/world/middleeast/israel-opposition-netanyahu-new-government.html",
               "source": "nytimes"
             },
             {
-              "title": "Could Democrats in Congress end the war in Iran?",
-              "link": "https://www.bbc.co.uk/news/videos/cqg7xkv1rze1o?at_medium=RSS&at_campaign=rss",
+              "title": "Land mine casualties soar in Syria, two years after war",
+              "link": "https://www.bbc.co.uk/news/articles/c893rl37ywdgo?at_medium=RSS&at_campaign=rss",
               "source": "bbc"
             }
           ]
@@ -997,8 +1145,8 @@
           "count": 3,
           "titles": [
             {
-              "title": "OpenAI countersues Apple over trade secrets as AI race heats up",
-              "link": "https://www.aljazeera.com/economy/2026/11/27/openai-countersues-apple-over-trade-secrets-as-ai-race-heats-up?traffic_source=rss",
+              "title": "Norse Atlantic ends flights: How Iran war continues to batter aviation",
+              "link": "https://www.aljazeera.com/news/2026/11/28/norse-atlantic-ends-flights-how-iran-war-continues-to-batter-aviation?traffic_source=rss",
               "source": "aljazeera"
             },
             {
@@ -1013,39 +1161,34 @@
             }
           ]
         },
-        "humanitarian": {
-          "count": 5,
+        "diplomacy": {
+          "count": 3,
           "titles": [
             {
-              "title": "Opposition Makes Progress Toward Ousting Netanyahu, Party Leader Says",
-              "link": "https://www.nytimes.com/2026/11/25/world/middleeast/israel-opposition-netanyahu-new-government.html",
-              "source": "nytimes"
+              "title": "Israel unity government talks stall: What happens now?",
+              "link": "https://www.aljazeera.com/news/2026/11/28/israel-unity-government-talks-stall-what-happens-now?traffic_source=rss",
+              "source": "aljazeera"
             },
             {
-              "title": "Land mine casualties soar in Syria, two years after war",
-              "link": "https://www.bbc.co.uk/news/articles/c893rl37ywdgo?at_medium=RSS&at_campaign=rss",
-              "source": "bbc"
+              "title": "What can we learn from successful peace deals? | Episode 2",
+              "link": "https://www.aljazeera.com/video/the-art-of-negotiation/2026/11/28/what-can-we-learn-from-successful-peace-deals-episode-2?traffic_source=rss",
+              "source": "aljazeera"
             },
             {
-              "title": "Iran killed her teenage daughter - now she is facing up to the regime",
-              "link": "https://www.bbc.co.uk/news/articles/c3qjn8117kwjo?at_medium=RSS&at_campaign=rss",
-              "source": "bbc"
-            },
-            {
-              "title": "Israel's election deadlock is a sign of the country's deep divisions",
-              "link": "https://www.bbc.co.uk/news/articles/cqz0ve94ygpjo?at_medium=RSS&at_campaign=rss",
-              "source": "bbc"
-            },
-            {
-              "title": "Several dead after Israeli joint security forces raid in West Bank",
-              "link": "https://www.cnn.com/2022/10/25/middleeast/israel-forces-raid-nablus-palestine-intl-hnk/index.html",
+              "title": "June 13, 2024 Israel-Hamas war",
+              "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-06-13-24/index.html",
               "source": "cnn"
             }
           ]
         },
         "regional": {
-          "count": 2,
+          "count": 3,
           "titles": [
+            {
+              "title": "Why is Trump backing Iraq’s anti-smuggling campaign?",
+              "link": "https://www.aljazeera.com/news/2026/11/28/why-is-trump-backing-iraqs-anti-smuggling-campaign?traffic_source=rss",
+              "source": "aljazeera"
+            },
             {
               "title": "How an Iranian Ally Gained the Upper Hand in Yemen’s War",
               "link": "https://www.nytimes.com/2026/11/25/world/middleeast/yemen-houthis-war-government-losses.html",
@@ -1055,6 +1198,36 @@
               "title": "Iraq’s Prime Minister Aims to Wrest More Power From Kurdistan Region",
               "link": "https://www.nytimes.com/2026/11/24/world/middleeast/iraq-prime-minister-kurdistan-control.html",
               "source": "nytimes"
+            }
+          ]
+        },
+        "military": {
+          "count": 19,
+          "titles": [
+            {
+              "title": "How Israel is fast-tracking data centres in bid to become ‘AI superpower’",
+              "link": "https://www.aljazeera.com/news/2026/11/28/how-israel-is-fast-tracking-data-centres-in-bid-to-become-ai-superpower?traffic_source=rss",
+              "source": "aljazeera"
+            },
+            {
+              "title": "Inside Saudi Arabia, Houthi attacks test kingdom's image of security",
+              "link": "https://www.bbc.co.uk/news/articles/c6ly7jgv7jzdo?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
+            },
+            {
+              "title": "Two Italians killed in strike in Kuwait, as Iran denies responsibility",
+              "link": "https://www.bbc.co.uk/news/articles/c39w9y5dx4k5o?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
+            },
+            {
+              "title": "Two Italians Killed in Iranian Drone Attack on Kuwait, Officials Say",
+              "link": "https://www.nytimes.com/2026/11/26/world/middleeast/italians-killed-iran-drone-attack-kuwait.html",
+              "source": "nytimes"
+            },
+            {
+              "title": "Hamas political official and wife among eight Palestinians killed in Israeli strikes on Gaza",
+              "link": "https://www.bbc.co.uk/news/articles/cqvg2n4mzl1jo?at_medium=RSS&at_campaign=rss",
+              "source": "bbc"
             }
           ]
         },
@@ -1184,11 +1357,11 @@
       "changePercent": 3.75,
       "prev": 3535.8
     },
-    "WTI": {
-      "price": 83.08,
-      "change": -0.6,
-      "changePercent": -0.72,
-      "prev": 83.68
+    "BRENT": {
+      "price": 90.84,
+      "change": -3.77,
+      "changePercent": -3.98,
+      "prev": 94.61
     },
     "VIX": {
       "price": 23.81,
@@ -1196,17 +1369,17 @@
       "changePercent": -11.16,
       "prev": 26.8
     },
+    "WTI": {
+      "price": 83.08,
+      "change": -0.6,
+      "changePercent": -0.72,
+      "prev": 83.68
+    },
     "US2Y": {
       "price": 4.15,
       "change": 0,
       "changePercent": 0,
       "prev": 4.16
-    },
-    "US10Y": {
-      "price": 4.94,
-      "change": 0.09,
-      "changePercent": 1.86,
-      "prev": 4.85
     },
     "DXY": {
       "price": 104.01,
@@ -1214,17 +1387,33 @@
       "changePercent": 0.33,
       "prev": 103.67
     },
-    "BRENT": {
-      "price": 90.84,
-      "change": -3.77,
-      "changePercent": -3.98,
-      "prev": 94.61
+    "US10Y": {
+      "price": 4.94,
+      "change": 0.09,
+      "changePercent": 1.86,
+      "prev": 4.85
     }
   },
   "critical_events": [
     {
+      "id": "ceasefire_agreement",
+      "name": "공식 휴전/평화 합의",
+      "severity": "critical",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "shorten"
+    },
+    {
       "id": "unilateral_deescalation",
       "name": "일방적 전투 축소/자제 선언",
+      "severity": "high",
+      "confidence": 0.6666666666666666,
+      "matchCount": 2,
+      "direction": "shorten"
+    },
+    {
+      "id": "diplomatic_breakthrough",
+      "name": "외교적 돌파구/강대국 중재",
       "severity": "high",
       "confidence": 0.6666666666666666,
       "matchCount": 2,
